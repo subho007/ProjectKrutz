@@ -9,3 +9,24 @@ class ScraperItem(Item):
     # define the fields for your item here like:
     # name = Field()
     pass
+
+class AppCategoryItem(Item):
+    name = Field()
+    url = Field()
+    
+class AppItem(Item):
+    name = Field()
+    screenShots = Field()
+    description = Field()
+    downloads = Field()
+    rating = Field()
+    votes = Field()
+    image = Field()
+    price = Field()
+    category = Field()
+    author = Field()
+    contentRating = Field()
+    fileSize = Field()
+    version = Field()
+    datePublished = Field()
+    package = Field()
