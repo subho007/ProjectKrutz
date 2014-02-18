@@ -11,8 +11,9 @@ BOT_NAME = 'apkSpider'
 SPIDER_MODULES = ['apkSpider.spiders']
 NEWSPIDER_MODULE = 'apkSpider.spiders'
 
-ITEM_PIPELINES = ['apkSpider.files.FilesPipeline']
-# DOWNLOADER_MIDDLEWARES = {'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,'apkSpider.middlewares.ProxyMiddleware': 100,}
+ITEM_PIPELINES = {
+	'apkSpider.files.FilesPipeline' : 0,
+}
 
 DOWNLOAD_DELAY = 0.25
 

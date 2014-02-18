@@ -6,45 +6,25 @@
 from scrapy.item import Item, Field
 
 class ApkItem(Item):
-    # define the fields for your item here like:
+
+    # App name, developer, and genre
     name = Field()
-    packageName = Field() #Unique
-    company = Field()
+    developer = Field()
     genre = Field()
-    #rate
-    rate = Field()
-    votes = Field()
-    #about
-    datePublished = Field()
-    currentVersion = Field()
-    os = Field()
-    category = Field()
-    numDownloads = Field()
-    fileSize = Field()
-    price = Field()
-    #image
-    apkicon = Field()
-    apkiconPath = Field()
-    bannerimage = Field()
-    bannerimagePath = Field()
-    screenshot = Field()
-    screenshotPath = Field()
-    #video
-    video = Field()
-    #description
-    description = Field()
-    #whatsnew
-    whatsnew = Field()
-    #other
-    tags = Field()
-    downloadUrl = Field()
-    apkPath = Field()
-    comefrom = Field()
+
+    # User rating
+    score = Field()
+
+    # Additional information
+    date_published = Field()
+    file_size = Field()
+    num_downloads = Field()
+    software_version = Field()
+    operating_systems = Field()
+
+    # Where the APK file came from
+    download_url = Field()
+
+    # For Files Pipeline
     file_urls = Field()
     files = Field()
-
-class TopApkItem(Item):
-    topType = Field()
-    ranking = Field()
-    packageName = Field()
-    recordTime = Field()
