@@ -1,10 +1,10 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
-from apkSpider.items import ApkItem
+from scraper.items import ApkItem
 from scrapy.http import Request
 from play import parse_google
 
-class TeamApkSpider(CrawlSpider):
+class FDroidSpider(CrawlSpider):
     name = "fdroid"
     allowed_domains = ["f-droid.org", "play.google.com"]
     start_urls = ["https://f-droid.org/repository/browse/"]
@@ -17,7 +17,7 @@ class TeamApkSpider(CrawlSpider):
         for url in apk_page_urls:
             yield Request(url, callback=self.parse_page)
 
-        next_page = sel.xpath('//a[text()[contains(., "next")]]/@href').extract()
+        next_page = sel.xpath('//a[contains(@href, "page") and text()[contains(., "next")]]/@href').extract()
         
         yield Request(next_page[0])
 

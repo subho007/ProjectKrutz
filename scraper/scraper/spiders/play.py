@@ -1,5 +1,5 @@
 from scrapy.selector import Selector
-from apkSpider.items import ApkItem
+from scraper.items import ApkItem
 
 # Parse the information for an individual APK from the Google Play store
 def parse_google(response):
@@ -23,5 +23,4 @@ def parse_google(response):
     item['software_version'] = additional_information.xpath('//div[@itemprop="softwareVersion"]/text()').extract()
     item['operating_systems'] = additional_information.xpath('//div[@itemprop="operatingSystems"]/text()').extract()
 
-    # TODO: Store the information in SQL table
     yield item

@@ -1,6 +1,6 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
-from apkSpider.items import ApkItem
+from scraper.items import ApkItem
 from scrapy.http import Request
 from play import parse_google
 
