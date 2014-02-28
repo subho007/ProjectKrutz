@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#ffeaeaea" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <codeadore.textgram.custom_widgets.el7rTabPageIndicator android:id="@id/store_tabs" android:background="#ffac4949" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <codeadore.textgram.custom_widgets.NoScrollViewPager android:id="@id/store_viewpager" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</LinearLayout>

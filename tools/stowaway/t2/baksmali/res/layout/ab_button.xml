@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingRight="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <codeadore.textgram.custom_widgets.NewButton android:id="@id/ab_btn" android:background="@drawable/top_button" android:layout_width="70.0dip" android:layout_height="fill_parent" style="@style/ButtonText" />
-</LinearLayout>
