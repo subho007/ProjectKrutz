@@ -1,0 +1,64 @@
+.class codeadore/textgram/ResultActivity$5
+.super java/lang/Object
+.source ResultActivity.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/onSaveInstanceState(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/ResultActivity;
+
+.method <init>(Lcodeadore/textgram/ResultActivity;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/ResultActivity$5;)
+; parameter[0] : v1 (Lcodeadore/textgram/ResultActivity;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/ResultActivity$5.this$0 Lcodeadore/textgram/ResultActivity;
+; v1 : Lcodeadore/textgram/ResultActivity; , v0 : Lcodeadore/textgram/ResultActivity$5;
+.line 304
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/ResultActivity$5;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 6
+; this: v5 (Lcodeadore/textgram/ResultActivity$5;)
+.catch java/lang/Exception from la00e0 to la010a using la010c
+.var 1 is fos Ljava/io/FileOutputStream; from la00f2 to la010a
+la00e0:
+.line 311
+	iget-object	v2,v5,codeadore/textgram/ResultActivity$5.this$0 Lcodeadore/textgram/ResultActivity;
+; v2 : Lcodeadore/textgram/ResultActivity; , v5 : Lcodeadore/textgram/ResultActivity$5;
+	const-string	v3,"CACHE_BITMAP"
+; v3 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v2,v3,v4},codeadore/textgram/ResultActivity/openFileOutput	; openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
+; v2 : Lcodeadore/textgram/ResultActivity; , v3 : Ljava/lang/String; , v4 : single-length
+	move-result-object	v1
+; v1 : Ljava/io/FileOutputStream;
+.line 312
+	sget-object	v2,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap;
+	sget-object	v3,android/graphics/Bitmap$CompressFormat.PNG Landroid/graphics/Bitmap$CompressFormat;
+; v3 : Landroid/graphics/Bitmap$CompressFormat;
+	const/16	v4,100
+; v4 : single-length
+	invoke-virtual	{v2,v3,v4,v1},android/graphics/Bitmap/compress	; compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+; v2 : Landroid/graphics/Bitmap; , v3 : Landroid/graphics/Bitmap$CompressFormat; , v4 : single-length , v1 : Ljava/io/FileOutputStream;
+.line 313
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+la010a:
+.line 318
+	return-void	
+la010c:
+.line 314
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 315
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	la010a
+.end method
+
+

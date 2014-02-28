@@ -1,0 +1,135 @@
+.class android/support/v7/app/ActionBarImplHC
+.super android/support/v7/app/ActionBarImplBase
+.source ActionBarImplHC.java
+.implements android/support/v7/internal/widget/NativeActionModeAwareLayout$OnActionModeForChildListener
+
+.inner class CallbackWrapper inner android/support/v7/app/ActionBarImplHC$CallbackWrapper outer android/support/v7/app/ActionBarImplHC
+.field private mCurActionMode Landroid/view/ActionMode;
+.field final mNativeActionModeAwareLayout Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+
+.method public <init>(Landroid/support/v7/app/ActionBarActivity;Landroid/support/v7/app/ActionBar$Callback;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC;)
+; parameter[0] : v2 (Landroid/support/v7/app/ActionBarActivity;)
+; parameter[1] : v3 (Landroid/support/v7/app/ActionBar$Callback;)
+.line 32
+	invoke-direct	{v1,v2,v3},android/support/v7/app/ActionBarImplBase/<init>	; <init>(Landroid/support/v7/app/ActionBarActivity;Landroid/support/v7/app/ActionBar$Callback;)V
+; v1 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/support/v7/app/ActionBarActivity; , v3 : Landroid/support/v7/app/ActionBar$Callback;
+.line 35
+	sget	v0,android/support/v7/appcompat/R$id.action_bar_root I
+; v0 : single-length
+	invoke-virtual	{v2,v0},android/support/v7/app/ActionBarActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Landroid/support/v7/app/ActionBarActivity; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/support/v7/internal/widget/NativeActionModeAwareLayout
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+	iput-object	v0,v1,android/support/v7/app/ActionBarImplHC.mNativeActionModeAwareLayout Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+.line 39
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mNativeActionModeAwareLayout Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	if-eqz	v0,l157b48
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+.line 40
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mNativeActionModeAwareLayout Landroid/support/v7/internal/widget/NativeActionModeAwareLayout;
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	invoke-virtual	{v0,v1},android/support/v7/internal/widget/NativeActionModeAwareLayout/setActionModeForChildListener	; setActionModeForChildListener(Landroid/support/v7/internal/widget/NativeActionModeAwareLayout$OnActionModeForChildListener;)V
+; v0 : Landroid/support/v7/internal/widget/NativeActionModeAwareLayout; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+l157b48:
+.line 42
+	return-void	
+.end method
+
+.method static access$002(Landroid/support/v7/app/ActionBarImplHC;Landroid/view/ActionMode;)Landroid/view/ActionMode;
+.limit registers 2
+; parameter[0] : v0 (Landroid/support/v7/app/ActionBarImplHC;)
+; parameter[1] : v1 (Landroid/view/ActionMode;)
+.line 25
+	iput-object	v1,v0,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v1 : Landroid/view/ActionMode; , v0 : Landroid/support/v7/app/ActionBarImplHC;
+	return-object	v1
+; v1 : Landroid/view/ActionMode;
+.end method
+
+.method public hide()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC;)
+.line 60
+	invoke-super	{v1},android/support/v7/app/ActionBarImplBase/hide	; hide()V
+; v1 : Landroid/support/v7/app/ActionBarImplHC;
+.line 61
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	if-eqz	v0,l157b8c
+; v0 : Landroid/view/ActionMode;
+.line 62
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	invoke-virtual	{v0},android/view/ActionMode/finish	; finish()V
+; v0 : Landroid/view/ActionMode;
+l157b8c:
+.line 64
+	return-void	
+.end method
+
+.method isShowHideAnimationEnabled()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC;)
+.line 69
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	if-nez	v0,l157bb8
+; v0 : Landroid/view/ActionMode;
+	invoke-super	{v1},android/support/v7/app/ActionBarImplBase/isShowHideAnimationEnabled	; isShowHideAnimationEnabled()Z
+; v1 : Landroid/support/v7/app/ActionBarImplHC;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l157bb8
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l157bb6:
+	return	v0
+; v0 : single-length
+l157bb8:
+	const/4	v0,0
+; v0 : single-length
+	goto	l157bb6
+.end method
+
+.method public onActionModeForChild(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
+.limit registers 3
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC;)
+; parameter[0] : v2 (Landroid/view/ActionMode$Callback;)
+.line 47
+	new-instance	v0,android/support/v7/app/ActionBarImplHC$CallbackWrapper
+; v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-direct	{v0,v1,v2},android/support/v7/app/ActionBarImplHC$CallbackWrapper/<init>	; <init>(Landroid/support/v7/app/ActionBarImplHC;Landroid/view/ActionMode$Callback;)V
+; v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper; , v1 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/view/ActionMode$Callback;
+	return-object	v0
+; v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+.end method
+
+.method public show()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC;)
+.line 52
+	invoke-super	{v1},android/support/v7/app/ActionBarImplBase/show	; show()V
+; v1 : Landroid/support/v7/app/ActionBarImplHC;
+.line 53
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	if-eqz	v0,l157c00
+; v0 : Landroid/view/ActionMode;
+.line 54
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC.mCurActionMode Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/app/ActionBarImplHC;
+	invoke-virtual	{v0},android/view/ActionMode/finish	; finish()V
+; v0 : Landroid/view/ActionMode;
+l157c00:
+.line 56
+	return-void	
+.end method
+
+

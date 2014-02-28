@@ -1,0 +1,374 @@
+.class public android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+.super java/lang/Object
+.source AccessibilityServiceInfoCompat.java
+
+.inner class AccessibilityServiceInfoJellyBeanMr2 inner android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2 outer android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+.inner class AccessibilityServiceInfoIcsImpl inner android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl outer android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+.inner class AccessibilityServiceInfoStubImpl inner android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl outer android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+.inner class AccessibilityServiceInfoVersionImpl inner android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl outer android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+.field public static final CAPABILITY_CAN_FILTER_KEY_EVENTS I = 8	; 0x8
+.field public static final CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY I = 4	; 0x4
+.field public static final CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION I = 2	; 0x2
+.field public static final CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT I = 1	; 0x1
+.field public static final DEFAULT I = 1	; 0x1
+.field public static final FEEDBACK_ALL_MASK I = -1	; 0xffffffff
+.field public static final FEEDBACK_BRAILLE I = 32	; 0x20
+.field public static final FLAG_INCLUDE_NOT_IMPORTANT_VIEWS I = 2	; 0x2
+.field public static final FLAG_REPORT_VIEW_IDS I = 16	; 0x10
+.field public static final FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY I = 8	; 0x8
+.field public static final FLAG_REQUEST_FILTER_KEY_EVENTS I = 32	; 0x20
+.field public static final FLAG_REQUEST_TOUCH_EXPLORATION_MODE I = 4	; 0x4
+.field private static final IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+
+.method static <clinit>()V
+.limit registers 2
+.line 111
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v1,18
+; v1 : single-length
+	if-lt	v0,v1,l73154
+; v0 : single-length , v1 : single-length
+.line 112
+	new-instance	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2;
+	invoke-direct	{v0},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2/<init>	; <init>()V
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2;
+	sput-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+l73152:
+.line 118
+	return-void	
+l73154:
+.line 113
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v1,14
+; v1 : single-length
+	if-lt	v0,v1,l73170
+; v0 : single-length , v1 : single-length
+.line 114
+	new-instance	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl;
+	invoke-direct	{v0},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl;
+	sput-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	goto	l73152
+l73170:
+.line 116
+	new-instance	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl;
+	invoke-direct	{v0},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl;
+	sput-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	goto	l73152
+.end method
+
+.method private <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;)
+.line 280
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat;
+.line 282
+	return-void	
+.end method
+
+.method public static capabilityToString(I)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 438
+	packed-switch	v1,1
+		ps731a8_731b4	; case 1
+		ps731a8_731ba	; case 2
+		ps731a8_731ae	; case 3
+		ps731a8_731c0	; case 4
+		ps731a8_731ae	; case 5
+		ps731a8_731ae	; case 6
+		ps731a8_731ae	; case 7
+		ps731a8_731c6	; case 8
+		default: ps731a8_default
+; v1 : single-length
+ps731a8_default:
+.line 448
+	const-string	v0,"UNKNOWN"
+; v0 : Ljava/lang/String;
+l731b2:
+	return-object	v0
+; v0 : Ljava/lang/String;
+ps731a8_731b4:
+.line 440
+	const-string	v0,"CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT"
+; v0 : Ljava/lang/String;
+	goto	l731b2
+ps731a8_731ba:
+.line 442
+	const-string	v0,"CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION"
+; v0 : Ljava/lang/String;
+	goto	l731b2
+ps731a8_731c0:
+.line 444
+	const-string	v0,"CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
+; v0 : Ljava/lang/String;
+	goto	l731b2
+ps731a8_731c6:
+.line 446
+	const-string	v0,"CAPABILITY_CAN_FILTER_KEY_EVENTS"
+; v0 : Ljava/lang/String;
+	goto	l731b2
+.line 438
+.end method
+
+.method public static feedbackTypeToString(I)Ljava/lang/String;
+.limit registers 5
+; parameter[0] : v4 (I)
+.var 1 is feedbackTypeFlag I from l7322a to l7328a
+	const/4	v3,1
+; v3 : single-length
+.line 356
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+.line 357
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l7321a:
+.line 358
+	if-lez	v4,l7328a
+; v4 : single-length
+.line 359
+	invoke-static	{v4},java/lang/Integer/numberOfTrailingZeros	; numberOfTrailingZeros(I)I
+; v4 : single-length
+	move-result	v2
+; v2 : single-length
+	shl-int	v1,v3,v2
+; v1 : single-length , v3 : single-length , v2 : single-length
+.line 360
+	xor-int/lit8	v2,v1,255
+; v2 : single-length , v1 : single-length
+	and-int/2addr	v4,v2
+; v4 : single-length , v2 : single-length
+.line 361
+	invoke-virtual	{v0},java/lang/StringBuilder/length	; length()I
+; v0 : Ljava/lang/StringBuilder;
+	move-result	v2
+; v2 : single-length
+	if-le	v2,v3,l73246
+; v2 : single-length , v3 : single-length
+.line 362
+	const-string	v2,", "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l73246:
+.line 364
+	sparse-switch	v1
+		1 : sp73246_7324e
+		2 : sp73246_73266
+		4 : sp73246_7325a
+		8 : sp73246_7327e
+		16 : sp73246_73272
+		default: sp73246_default
+; v1 : single-length
+sp73246_default:
+	goto	l7321a
+sp73246_7324e:
+.line 375
+	const-string	v2,"FEEDBACK_SPOKEN"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	goto	l7321a
+sp73246_7325a:
+.line 366
+	const-string	v2,"FEEDBACK_AUDIBLE"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	goto	l7321a
+sp73246_73266:
+.line 369
+	const-string	v2,"FEEDBACK_HAPTIC"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	goto	l7321a
+sp73246_73272:
+.line 372
+	const-string	v2,"FEEDBACK_GENERIC"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	goto	l7321a
+sp73246_7327e:
+.line 378
+	const-string	v2,"FEEDBACK_VISUAL"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	goto	l7321a
+l7328a:
+.line 382
+	const-string	v2,"]"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+.line 383
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	return-object	v2
+; v2 : Ljava/lang/String;
+.line 364
+l7329e:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public static flagToString(I)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 395
+	sparse-switch	v1
+		1 : sp732dc_732e6
+		2 : sp732dc_732ec
+		4 : sp732dc_732f2
+		8 : sp732dc_732f8
+		16 : sp732dc_732fe
+		32 : sp732dc_73304
+		default: sp732dc_default
+; v1 : single-length
+sp732dc_default:
+.line 409
+	const/4	v0,0
+; v0 : single-length
+l732e4:
+	return-object	v0
+; v0 : Ljava/lang/String;
+sp732dc_732e6:
+.line 397
+	const-string	v0,"DEFAULT"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+sp732dc_732ec:
+.line 399
+	const-string	v0,"FLAG_INCLUDE_NOT_IMPORTANT_VIEWS"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+sp732dc_732f2:
+.line 401
+	const-string	v0,"FLAG_REQUEST_TOUCH_EXPLORATION_MODE"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+sp732dc_732f8:
+.line 403
+	const-string	v0,"FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+sp732dc_732fe:
+.line 405
+	const-string	v0,"FLAG_REPORT_VIEW_IDS"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+sp732dc_73304:
+.line 407
+	const-string	v0,"FLAG_REQUEST_FILTER_KEY_EVENTS"
+; v0 : Ljava/lang/String;
+	goto	l732e4
+.line 395
+l7330a:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public static getCanRetrieveWindowContent(Landroid/accessibilityservice/AccessibilityServiceInfo;)Z
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 331
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getCanRetrieveWindowContent	; getCanRetrieveWindowContent(Landroid/accessibilityservice/AccessibilityServiceInfo;)Z
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 426
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getCapabilities	; getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static getDescription(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 344
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getDescription	; getDescription(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public static getId(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 293
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getId	; getId(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public static getResolveInfo(Landroid/accessibilityservice/AccessibilityServiceInfo;)Landroid/content/pm/ResolveInfo;
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 305
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getResolveInfo	; getResolveInfo(Landroid/accessibilityservice/AccessibilityServiceInfo;)Landroid/content/pm/ResolveInfo;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result-object	v0
+; v0 : Landroid/content/pm/ResolveInfo;
+	return-object	v0
+; v0 : Landroid/content/pm/ResolveInfo;
+.end method
+
+.method public static getSettingsActivityName(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 318
+	sget-object	v0,android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat.IMPL Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;
+	invoke-interface	{v0,v1},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl/getSettingsActivityName	; getSettingsActivityName(Landroid/accessibilityservice/AccessibilityServiceInfo;)Ljava/lang/String;
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl; , v1 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

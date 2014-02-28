@@ -1,0 +1,326 @@
+.class android/support/v4/widget/DrawerLayout$AccessibilityDelegate
+.super android/support/v4/view/AccessibilityDelegateCompat
+.source DrawerLayout.java
+
+.inner class AccessibilityDelegate inner android/support/v4/widget/DrawerLayout$AccessibilityDelegate outer android/support/v4/widget/DrawerLayout
+.field private final mTmpRect Landroid/graphics/Rect;
+.field final this$0 Landroid/support/v4/widget/DrawerLayout;
+
+.method <init>(Landroid/support/v4/widget/DrawerLayout;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v2 (Landroid/support/v4/widget/DrawerLayout;)
+.line 1527
+	iput-object	v2,v1,android/support/v4/widget/DrawerLayout$AccessibilityDelegate.this$0 Landroid/support/v4/widget/DrawerLayout;
+; v2 : Landroid/support/v4/widget/DrawerLayout; , v1 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;
+	invoke-direct	{v1},android/support/v4/view/AccessibilityDelegateCompat/<init>	; <init>()V
+; v1 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;
+.line 1528
+	new-instance	v0,android/graphics/Rect
+; v0 : Landroid/graphics/Rect;
+	invoke-direct	{v0},android/graphics/Rect/<init>	; <init>()V
+; v0 : Landroid/graphics/Rect;
+	iput-object	v0,v1,android/support/v4/widget/DrawerLayout$AccessibilityDelegate.mTmpRect Landroid/graphics/Rect;
+; v0 : Landroid/graphics/Rect; , v1 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;
+	return-void	
+.end method
+
+.method private addChildrenForAccessibility(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/view/ViewGroup;)V
+.limit registers 8
+; this: v5 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v6 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)
+; parameter[1] : v7 (Landroid/view/ViewGroup;)
+.var 0 is child Landroid/view/View; from lded92 to lded9e
+.var 0 is child Landroid/view/View; from ldeda4 to ldedd0
+.var 3 is importance I from ldedac to ldedd8
+.line 1548
+	invoke-virtual	{v7},android/view/ViewGroup/getChildCount	; getChildCount()I
+; v7 : Landroid/view/ViewGroup;
+	move-result	v1
+; v1 : single-length
+.line 1549
+	const/4	v2,0
+; v2 : single-length
+lded86:
+	if-ge	v2,v1,ldedd8
+; v2 : single-length , v1 : single-length
+.line 1550
+	invoke-virtual	{v7,v2},android/view/ViewGroup/getChildAt	; getChildAt(I)Landroid/view/View;
+; v7 : Landroid/view/ViewGroup; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 1551
+	invoke-virtual	{v5,v0},android/support/v4/widget/DrawerLayout$AccessibilityDelegate/filter	; filter(Landroid/view/View;)Z
+; v5 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v0 : Landroid/view/View;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,ldeda4
+; v4 : single-length
+lded9e:
+.line 1549
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	lded86
+ldeda4:
+.line 1558
+	invoke-static	{v0},android/support/v4/view/ViewCompat/getImportantForAccessibility	; getImportantForAccessibility(Landroid/view/View;)I
+; v0 : Landroid/view/View;
+	move-result	v3
+; v3 : single-length
+.line 1559
+	packed-switch	v3,0
+		psdedac_dedb4	; case 0
+		psdedac_dedbc	; case 1
+		psdedac_dedc4	; case 2
+		psdedac_dedb2	; case 3
+		psdedac_ded9e	; case 4
+		default: psdedac_default
+; v3 : single-length
+psdedac_default:
+	goto	lded9e
+psdedac_dedb4:
+.line 1571
+	const/4	v4,1
+; v4 : single-length
+	invoke-static	{v0,v4},android/support/v4/view/ViewCompat/setImportantForAccessibility	; setImportantForAccessibility(Landroid/view/View;I)V
+; v0 : Landroid/view/View; , v4 : single-length
+psdedac_dedbc:
+.line 1574
+	invoke-virtual	{v6,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/addChild	; addChild(Landroid/view/View;)V
+; v6 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/view/View;
+	goto	lded9e
+psdedac_dedc4:
+.line 1565
+	instance-of	v4,v0,android/view/ViewGroup
+; v4 : single-length , v0 : Landroid/view/View;
+	if-eqz	v4,lded9e
+; v4 : single-length
+.line 1566
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+ldedd0:
+	invoke-direct	{v5,v6,v0},android/support/v4/widget/DrawerLayout$AccessibilityDelegate/addChildrenForAccessibility	; addChildrenForAccessibility(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/view/ViewGroup;)V
+; v5 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v6 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/view/ViewGroup;
+	goto	lded9e
+ldedd8:
+.line 1578
+	return-void	
+.line 1559
+ldedda:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method private copyNodeInfoNoChildren(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+.limit registers 5
+; this: v2 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v3 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)
+; parameter[1] : v4 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)
+.line 1601
+	iget-object	v0,v2,android/support/v4/widget/DrawerLayout$AccessibilityDelegate.mTmpRect Landroid/graphics/Rect;
+; v0 : Landroid/graphics/Rect; , v2 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;
+.line 1603
+	invoke-virtual	{v4,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getBoundsInParent	; getBoundsInParent(Landroid/graphics/Rect;)V
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/graphics/Rect;
+.line 1604
+	invoke-virtual	{v3,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setBoundsInParent	; setBoundsInParent(Landroid/graphics/Rect;)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/graphics/Rect;
+.line 1606
+	invoke-virtual	{v4,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getBoundsInScreen	; getBoundsInScreen(Landroid/graphics/Rect;)V
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/graphics/Rect;
+.line 1607
+	invoke-virtual	{v3,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setBoundsInScreen	; setBoundsInScreen(Landroid/graphics/Rect;)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/graphics/Rect;
+.line 1609
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isVisibleToUser	; isVisibleToUser()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setVisibleToUser	; setVisibleToUser(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1610
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getPackageName	; getPackageName()Ljava/lang/CharSequence;
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result-object	v1
+; v1 : Ljava/lang/CharSequence;
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setPackageName	; setPackageName(Ljava/lang/CharSequence;)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : Ljava/lang/CharSequence;
+.line 1611
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getClassName	; getClassName()Ljava/lang/CharSequence;
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result-object	v1
+; v1 : Ljava/lang/CharSequence;
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setClassName	; setClassName(Ljava/lang/CharSequence;)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : Ljava/lang/CharSequence;
+.line 1612
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getContentDescription	; getContentDescription()Ljava/lang/CharSequence;
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result-object	v1
+; v1 : Ljava/lang/CharSequence;
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setContentDescription	; setContentDescription(Ljava/lang/CharSequence;)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : Ljava/lang/CharSequence;
+.line 1614
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isEnabled	; isEnabled()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setEnabled	; setEnabled(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1615
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isClickable	; isClickable()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setClickable	; setClickable(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1616
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isFocusable	; isFocusable()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setFocusable	; setFocusable(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1617
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isFocused	; isFocused()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setFocused	; setFocused(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1618
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isAccessibilityFocused	; isAccessibilityFocused()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setAccessibilityFocused	; setAccessibilityFocused(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1619
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isSelected	; isSelected()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setSelected	; setSelected(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1620
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/isLongClickable	; isLongClickable()Z
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setLongClickable	; setLongClickable(Z)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1622
+	invoke-virtual	{v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/getActions	; getActions()I
+; v4 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v3,v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/addAction	; addAction(I)V
+; v3 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : single-length
+.line 1623
+	return-void	
+.end method
+
+.method public filter(Landroid/view/View;)Z
+.limit registers 4
+; this: v2 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v3 (Landroid/view/View;)
+.line 1590
+	iget-object	v1,v2,android/support/v4/widget/DrawerLayout$AccessibilityDelegate.this$0 Landroid/support/v4/widget/DrawerLayout;
+; v1 : Landroid/support/v4/widget/DrawerLayout; , v2 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;
+	invoke-virtual	{v1},android/support/v4/widget/DrawerLayout/findOpenDrawer	; findOpenDrawer()Landroid/view/View;
+; v1 : Landroid/support/v4/widget/DrawerLayout;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 1591
+	if-eqz	v0,ldeef8
+; v0 : Landroid/view/View;
+	if-eq	v0,v3,ldeef8
+; v0 : Landroid/view/View; , v3 : Landroid/view/View;
+	const/4	v1,1
+; v1 : single-length
+ldeef6:
+	return	v1
+; v1 : single-length
+ldeef8:
+	const/4	v1,0
+; v1 : single-length
+	goto	ldeef6
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+.limit registers 6
+; this: v3 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v4 (Landroid/view/View;)
+; parameter[1] : v5 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)
+.var 0 is parent Landroid/view/ViewParent; from ldef28 to ldef34
+.line 1532
+	invoke-static	{v5},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/obtain	; obtain(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+; v5 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	move-result-object	v1
+; v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.line 1533
+	invoke-super	{v3,v4,v1},android/support/v4/view/AccessibilityDelegateCompat/onInitializeAccessibilityNodeInfo	; onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+; v3 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v4 : Landroid/view/View; , v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.line 1535
+	invoke-virtual	{v5,v4},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setSource	; setSource(Landroid/view/View;)V
+; v5 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v4 : Landroid/view/View;
+.line 1536
+	invoke-static	{v4},android/support/v4/view/ViewCompat/getParentForAccessibility	; getParentForAccessibility(Landroid/view/View;)Landroid/view/ViewParent;
+; v4 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewParent;
+.line 1537
+	instance-of	v2,v0,android/view/View
+; v2 : single-length , v0 : Landroid/view/ViewParent;
+	if-eqz	v2,ldef3a
+; v2 : single-length
+.line 1538
+	check-cast	v0,android/view/View
+; v0 : Landroid/view/View;
+ldef34:
+	invoke-virtual	{v5,v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/setParent	; setParent(Landroid/view/View;)V
+; v5 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v0 : Landroid/view/View;
+ldef3a:
+.line 1540
+	invoke-direct	{v3,v5,v1},android/support/v4/widget/DrawerLayout$AccessibilityDelegate/copyNodeInfoNoChildren	; copyNodeInfoNoChildren(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+; v3 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v5 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.line 1542
+	invoke-virtual	{v1},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat/recycle	; recycle()V
+; v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+.line 1544
+	check-cast	v4,android/view/ViewGroup
+; v4 : Landroid/view/ViewGroup;
+	invoke-direct	{v3,v5,v4},android/support/v4/widget/DrawerLayout$AccessibilityDelegate/addChildrenForAccessibility	; addChildrenForAccessibility(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;Landroid/view/ViewGroup;)V
+; v3 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v5 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; , v4 : Landroid/view/ViewGroup;
+.line 1545
+	return-void	
+.end method
+
+.method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+.limit registers 5
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;)
+; parameter[0] : v2 (Landroid/view/ViewGroup;)
+; parameter[1] : v3 (Landroid/view/View;)
+; parameter[2] : v4 (Landroid/view/accessibility/AccessibilityEvent;)
+.line 1583
+	invoke-virtual	{v1,v3},android/support/v4/widget/DrawerLayout$AccessibilityDelegate/filter	; filter(Landroid/view/View;)Z
+; v1 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v3 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,ldef7a
+; v0 : single-length
+.line 1584
+	invoke-super	{v1,v2,v3,v4},android/support/v4/view/AccessibilityDelegateCompat/onRequestSendAccessibilityEvent	; onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+; v1 : Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate; , v2 : Landroid/view/ViewGroup; , v3 : Landroid/view/View; , v4 : Landroid/view/accessibility/AccessibilityEvent;
+	move-result	v0
+; v0 : single-length
+ldef78:
+.line 1586
+	return	v0
+; v0 : single-length
+ldef7a:
+	const/4	v0,0
+; v0 : single-length
+	goto	ldef78
+.end method
+
+

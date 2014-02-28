@@ -1,0 +1,247 @@
+.class public android/support/v7/widget/PopupMenu
+.super java/lang/Object
+.source PopupMenu.java
+.implements android/support/v7/internal/view/menu/MenuBuilder$Callback
+.implements android/support/v7/internal/view/menu/MenuPresenter$Callback
+
+.inner class OnMenuItemClickListener inner android/support/v7/widget/PopupMenu$OnMenuItemClickListener outer android/support/v7/widget/PopupMenu
+.inner class OnDismissListener inner android/support/v7/widget/PopupMenu$OnDismissListener outer android/support/v7/widget/PopupMenu
+.field private mAnchor Landroid/view/View;
+.field private mContext Landroid/content/Context;
+.field private mDismissListener Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+.field private mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+.field private mMenuItemClickListener Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+.field private mPopup Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+
+.method public <init>(Landroid/content/Context;Landroid/view/View;)V
+.limit registers 5
+; this: v2 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v3 (Landroid/content/Context;)
+; parameter[1] : v4 (Landroid/view/View;)
+.line 64
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Landroid/support/v7/widget/PopupMenu;
+.line 65
+	iput-object	v3,v2,android/support/v7/widget/PopupMenu.mContext Landroid/content/Context;
+; v3 : Landroid/content/Context; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 66
+	new-instance	v0,android/support/v7/internal/view/menu/MenuBuilder
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	invoke-direct	{v0,v3},android/support/v7/internal/view/menu/MenuBuilder/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : Landroid/content/Context;
+	iput-object	v0,v2,android/support/v7/widget/PopupMenu.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 67
+	iget-object	v0,v2,android/support/v7/widget/PopupMenu.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : Landroid/support/v7/widget/PopupMenu;
+	invoke-virtual	{v0,v2},android/support/v7/internal/view/menu/MenuBuilder/setCallback	; setCallback(Landroid/support/v7/internal/view/menu/MenuBuilder$Callback;)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 68
+	iput-object	v4,v2,android/support/v7/widget/PopupMenu.mAnchor Landroid/view/View;
+; v4 : Landroid/view/View; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 69
+	new-instance	v0,android/support/v7/internal/view/menu/MenuPopupHelper
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+	iget-object	v1,v2,android/support/v7/widget/PopupMenu.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : Landroid/support/v7/widget/PopupMenu;
+	invoke-direct	{v0,v3,v1,v4},android/support/v7/internal/view/menu/MenuPopupHelper/<init>	; <init>(Landroid/content/Context;Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/View;)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v3 : Landroid/content/Context; , v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v4 : Landroid/view/View;
+	iput-object	v0,v2,android/support/v7/widget/PopupMenu.mPopup Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 70
+	iget-object	v0,v2,android/support/v7/widget/PopupMenu.mPopup Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v2 : Landroid/support/v7/widget/PopupMenu;
+	invoke-virtual	{v0,v2},android/support/v7/internal/view/menu/MenuPopupHelper/setCallback	; setCallback(Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v2 : Landroid/support/v7/widget/PopupMenu;
+.line 71
+	return-void	
+.end method
+
+.method public dismiss()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/PopupMenu;)
+.line 116
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mPopup Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v1 : Landroid/support/v7/widget/PopupMenu;
+	invoke-virtual	{v0},android/support/v7/internal/view/menu/MenuPopupHelper/dismiss	; dismiss()V
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+.line 117
+	return-void	
+.end method
+
+.method public getMenu()Landroid/view/Menu;
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/PopupMenu;)
+.line 81
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v1 : Landroid/support/v7/widget/PopupMenu;
+	return-object	v0
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+.end method
+
+.method public getMenuInflater()Landroid/view/MenuInflater;
+.limit registers 3
+; this: v2 (Landroid/support/v7/widget/PopupMenu;)
+.line 91
+	new-instance	v0,android/support/v7/internal/view/SupportMenuInflater
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater;
+	iget-object	v1,v2,android/support/v7/widget/PopupMenu.mContext Landroid/content/Context;
+; v1 : Landroid/content/Context; , v2 : Landroid/support/v7/widget/PopupMenu;
+	invoke-direct	{v0,v1},android/support/v7/internal/view/SupportMenuInflater/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater; , v1 : Landroid/content/Context;
+	return-object	v0
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater;
+.end method
+
+.method public inflate(I)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v3 (I)
+.line 100
+	invoke-virtual	{v2},android/support/v7/widget/PopupMenu/getMenuInflater	; getMenuInflater()Landroid/view/MenuInflater;
+; v2 : Landroid/support/v7/widget/PopupMenu;
+	move-result-object	v0
+; v0 : Landroid/view/MenuInflater;
+	iget-object	v1,v2,android/support/v7/widget/PopupMenu.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : Landroid/support/v7/widget/PopupMenu;
+	invoke-virtual	{v0,v3,v1},android/view/MenuInflater/inflate	; inflate(ILandroid/view/Menu;)V
+; v0 : Landroid/view/MenuInflater; , v3 : single-length , v1 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+.line 101
+	return-void	
+.end method
+
+.method public onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+; parameter[1] : v3 (Z)
+.line 151
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mDismissListener Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+; v0 : Landroid/support/v7/widget/PopupMenu$OnDismissListener; , v1 : Landroid/support/v7/widget/PopupMenu;
+	if-eqz	v0,lef6f6
+; v0 : Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+.line 152
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mDismissListener Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+; v0 : Landroid/support/v7/widget/PopupMenu$OnDismissListener; , v1 : Landroid/support/v7/widget/PopupMenu;
+	invoke-interface	{v0,v1},android/support/v7/widget/PopupMenu$OnDismissListener/onDismiss	; onDismiss(Landroid/support/v7/widget/PopupMenu;)V
+; v0 : Landroid/support/v7/widget/PopupMenu$OnDismissListener; , v1 : Landroid/support/v7/widget/PopupMenu;
+lef6f6:
+.line 154
+	return-void	
+.end method
+
+.method public onCloseSubMenu(Landroid/support/v7/internal/view/menu/SubMenuBuilder;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/SubMenuBuilder;)
+.line 175
+	return-void	
+.end method
+
+.method public onMenuItemSelected(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+; parameter[1] : v3 (Landroid/view/MenuItem;)
+.line 141
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mMenuItemClickListener Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+; v0 : Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener; , v1 : Landroid/support/v7/widget/PopupMenu;
+	if-eqz	v0,lef732
+; v0 : Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+.line 142
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mMenuItemClickListener Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+; v0 : Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener; , v1 : Landroid/support/v7/widget/PopupMenu;
+	invoke-interface	{v0,v3},android/support/v7/widget/PopupMenu$OnMenuItemClickListener/onMenuItemClick	; onMenuItemClick(Landroid/view/MenuItem;)Z
+; v0 : Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener; , v3 : Landroid/view/MenuItem;
+	move-result	v0
+; v0 : single-length
+lef730:
+.line 144
+	return	v0
+; v0 : single-length
+lef732:
+	const/4	v0,0
+; v0 : single-length
+	goto	lef730
+.end method
+
+.method public onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+.line 181
+	return-void	
+.end method
+
+.method public onOpenSubMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)Z
+.limit registers 6
+; this: v4 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v5 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+	const/4	v0,1
+; v0 : single-length
+.line 160
+	if-nez	v5,lef766
+; v5 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	const/4	v0,0
+; v0 : single-length
+lef764:
+.line 168
+	return	v0
+; v0 : single-length
+lef766:
+.line 162
+	invoke-virtual	{v5},android/support/v7/internal/view/menu/MenuBuilder/hasVisibleItems	; hasVisibleItems()Z
+; v5 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lef764
+; v1 : single-length
+.line 167
+	new-instance	v1,android/support/v7/internal/view/menu/MenuPopupHelper
+; v1 : Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+	iget-object	v2,v4,android/support/v7/widget/PopupMenu.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v4 : Landroid/support/v7/widget/PopupMenu;
+	iget-object	v3,v4,android/support/v7/widget/PopupMenu.mAnchor Landroid/view/View;
+; v3 : Landroid/view/View; , v4 : Landroid/support/v7/widget/PopupMenu;
+	invoke-direct	{v1,v2,v5,v3},android/support/v7/internal/view/menu/MenuPopupHelper/<init>	; <init>(Landroid/content/Context;Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/View;)V
+; v1 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v2 : Landroid/content/Context; , v5 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : Landroid/view/View;
+	invoke-virtual	{v1},android/support/v7/internal/view/menu/MenuPopupHelper/show	; show()V
+; v1 : Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+	goto	lef764
+.end method
+
+.method public setOnDismissListener(Landroid/support/v7/widget/PopupMenu$OnDismissListener;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v1 (Landroid/support/v7/widget/PopupMenu$OnDismissListener;)
+.line 134
+	iput-object	v1,v0,android/support/v7/widget/PopupMenu.mDismissListener Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+; v1 : Landroid/support/v7/widget/PopupMenu$OnDismissListener; , v0 : Landroid/support/v7/widget/PopupMenu;
+.line 135
+	return-void	
+.end method
+
+.method public setOnMenuItemClickListener(Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/PopupMenu;)
+; parameter[0] : v1 (Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;)
+.line 125
+	iput-object	v1,v0,android/support/v7/widget/PopupMenu.mMenuItemClickListener Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+; v1 : Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener; , v0 : Landroid/support/v7/widget/PopupMenu;
+.line 126
+	return-void	
+.end method
+
+.method public show()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/PopupMenu;)
+.line 108
+	iget-object	v0,v1,android/support/v7/widget/PopupMenu.mPopup Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper; , v1 : Landroid/support/v7/widget/PopupMenu;
+	invoke-virtual	{v0},android/support/v7/internal/view/menu/MenuPopupHelper/show	; show()V
+; v0 : Landroid/support/v7/internal/view/menu/MenuPopupHelper;
+.line 109
+	return-void	
+.end method
+
+

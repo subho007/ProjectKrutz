@@ -1,0 +1,21 @@
+.class public final com/viewpagerindicator/R$style
+.super java/lang/Object
+.source R.java
+
+.inner class style inner com/viewpagerindicator/R$style outer com/viewpagerindicator/R
+.field public static final TextAppearance_TabPageIndicator I = 2131492994	; 0x7f0c0082
+.field public static final Theme_PageIndicatorDefaults I = 2131492991	; 0x7f0c007f
+.field public static final Widget I = 2131492992	; 0x7f0c0080
+.field public static final Widget_IconPageIndicator I = 2131492995	; 0x7f0c0083
+.field public static final Widget_TabPageIndicator I = 2131492993	; 0x7f0c0081
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/viewpagerindicator/R$style;)
+.line 109
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/R$style;
+	return-void	
+.end method
+
+

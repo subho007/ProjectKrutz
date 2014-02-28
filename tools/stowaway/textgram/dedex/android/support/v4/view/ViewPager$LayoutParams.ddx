@@ -1,0 +1,71 @@
+.class public android/support/v4/view/ViewPager$LayoutParams
+.super android/view/ViewGroup$LayoutParams
+.source ViewPager.java
+
+.inner class LayoutParams inner android/support/v4/view/ViewPager$LayoutParams outer android/support/v4/view/ViewPager
+.field childIndex I
+.field public gravity I
+.field public isDecor Z
+.field needsMeasure Z
+.field position I
+.field widthFactor F
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/view/ViewPager$LayoutParams;)
+	const/4	v0,15
+; v0 : single-length
+.line 2867
+	invoke-direct	{v1,v0,v0},android/view/ViewGroup$LayoutParams/<init>	; <init>(II)V
+; v1 : Landroid/support/v4/view/ViewPager$LayoutParams; , v0 : single-length , v0 : single-length
+.line 2848
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/view/ViewPager$LayoutParams.widthFactor F
+; v0 : single-length , v1 : Landroid/support/v4/view/ViewPager$LayoutParams;
+.line 2868
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 6
+; this: v3 (Landroid/support/v4/view/ViewPager$LayoutParams;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Landroid/util/AttributeSet;)
+.line 2871
+	invoke-direct	{v3,v4,v5},android/view/ViewGroup$LayoutParams/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v3 : Landroid/support/v4/view/ViewPager$LayoutParams; , v4 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet;
+.line 2848
+	const/4	v1,0
+; v1 : single-length
+	iput	v1,v3,android/support/v4/view/ViewPager$LayoutParams.widthFactor F
+; v1 : single-length , v3 : Landroid/support/v4/view/ViewPager$LayoutParams;
+.line 2873
+	invoke-static	{},android/support/v4/view/ViewPager/access$400	; access$400()[I
+; 
+	nop	
+	move-result-object	v1
+; v1 : [I
+	invoke-virtual	{v4,v5,v1},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+; v4 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet; , v1 : [I
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 2874
+	const/4	v1,0
+; v1 : single-length
+	const/16	v2,48
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getInteger	; getInteger(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v4/view/ViewPager$LayoutParams.gravity I
+; v1 : single-length , v3 : Landroid/support/v4/view/ViewPager$LayoutParams;
+.line 2875
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 2876
+	return-void	
+.end method
+
+

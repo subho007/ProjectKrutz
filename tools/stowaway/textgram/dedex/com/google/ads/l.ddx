@@ -1,0 +1,69 @@
+.class public final com/google/ads/l
+.super com/google/ads/util/i
+.source SourceFile
+
+.field public final a Lcom/google/ads/util/i$b;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Lcom/google/ads/util/i$b" , "<" , "Lcom/google/ads/n;" , ">;" }
+  .end annotation
+.end field
+.field public final b Lcom/google/ads/util/i$c;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Lcom/google/ads/util/i$c" , "<" , "Lcom/google/ads/internal/c;" , ">;" }
+  .end annotation
+.end field
+.field public final c Lcom/google/ads/util/i$c;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Lcom/google/ads/util/i$c" , "<" , "Ljava/lang/Boolean;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>(Lcom/google/ads/n;)V
+.limit registers 5
+; this: v3 (Lcom/google/ads/l;)
+; parameter[0] : v4 (Lcom/google/ads/n;)
+.line 44
+	invoke-direct	{v3},com/google/ads/util/i/<init>	; <init>()V
+; v3 : Lcom/google/ads/l;
+.line 33
+	new-instance	v0,com/google/ads/util/i$c
+; v0 : Lcom/google/ads/util/i$c;
+	const-string	v1,"disableNativeScroll"
+; v1 : Ljava/lang/String;
+	const/4	v2,0
+; v2 : single-length
+	invoke-static	{v2},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Boolean;
+	invoke-direct	{v0,v3,v1,v2},com/google/ads/util/i$c/<init>	; <init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v3 : Lcom/google/ads/l; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Boolean;
+	iput-object	v0,v3,com/google/ads/l.c Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v3 : Lcom/google/ads/l;
+.line 45
+	new-instance	v0,com/google/ads/util/i$b
+; v0 : Lcom/google/ads/util/i$b;
+	const-string	v1,"slotState"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v3,v1,v4},com/google/ads/util/i$b/<init>	; <init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$b; , v3 : Lcom/google/ads/l; , v1 : Ljava/lang/String; , v4 : Lcom/google/ads/n;
+	iput-object	v0,v3,com/google/ads/l.a Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v3 : Lcom/google/ads/l;
+.line 46
+	new-instance	v0,com/google/ads/util/i$c
+; v0 : Lcom/google/ads/util/i$c;
+	const-string	v1,"adLoader"
+; v1 : Ljava/lang/String;
+	new-instance	v2,com/google/ads/internal/c
+; v2 : Lcom/google/ads/internal/c;
+	invoke-direct	{v2,v3},com/google/ads/internal/c/<init>	; <init>(Lcom/google/ads/l;)V
+; v2 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/l;
+	invoke-direct	{v0,v3,v1,v2},com/google/ads/util/i$c/<init>	; <init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v3 : Lcom/google/ads/l; , v1 : Ljava/lang/String; , v2 : Lcom/google/ads/internal/c;
+	iput-object	v0,v3,com/google/ads/l.b Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v3 : Lcom/google/ads/l;
+.line 47
+	return-void	
+.end method
+
+

@@ -1,0 +1,79 @@
+.class public com/applovin/impl/sdk/AppLovinAdInternal
+.super com/applovin/sdk/AppLovinAd
+
+.field private final a Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.field private b Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+  .annotation runtimeVisibility Ljava/lang/Deprecated;
+  .end annotation
+.end field
+.field private final c Ljava/lang/String;
+
+.method public <init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/util/List;Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;Ljava/lang/String;)V
+.limit registers 9
+; this: v1 (Lcom/applovin/impl/sdk/AppLovinAdInternal;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[2] : v4 (Lcom/applovin/sdk/AppLovinAdType;)
+; parameter[3] : v5 (Ljava/util/List;)
+; parameter[4] : v6 (Ljava/lang/String;)
+; parameter[5] : v7 (Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;)
+; parameter[6] : v8 (Ljava/lang/String;)
+	invoke-direct/range	{v1..v6},com/applovin/sdk/AppLovinAd/<init>;	<init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/util/List;Ljava/lang/String;)V
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v2 : Ljava/lang/String; , v3 : Lcom/applovin/sdk/AppLovinAdSize; , v4 : Lcom/applovin/sdk/AppLovinAdType; , v5 : Ljava/util/List; , v6 : Ljava/lang/String;
+	iput-object	v7,v1,com/applovin/impl/sdk/AppLovinAdInternal.a Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v7 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	if-eqz	v8,lf7200
+; v8 : Ljava/lang/String;
+	iput-object	v8,v1,com/applovin/impl/sdk/AppLovinAdInternal.c Ljava/lang/String;
+; v8 : Ljava/lang/String; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+lf71fe:
+	return-void	
+lf7200:
+	const-string	v0,"Unknown"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,com/applovin/impl/sdk/AppLovinAdInternal.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	goto	lf71fe
+.end method
+
+.method public getCompatibilityLevel()Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/AppLovinAdInternal;)
+	iget-object	v0,v1,com/applovin/impl/sdk/AppLovinAdInternal.b Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	return-object	v0
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.end method
+
+.method public getCurrentAdIdNumber()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/AppLovinAdInternal;)
+	iget-object	v0,v1,com/applovin/impl/sdk/AppLovinAdInternal.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getTarget()Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/AppLovinAdInternal;)
+	iget-object	v0,v1,com/applovin/impl/sdk/AppLovinAdInternal.a Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	return-object	v0
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.end method
+
+.method public setCompatibilityLevel(Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;)V
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/sdk/AppLovinAdInternal;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;)
+	iput-object	v1,v0,com/applovin/impl/sdk/AppLovinAdInternal.b Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	return-void	
+.end method
+
+

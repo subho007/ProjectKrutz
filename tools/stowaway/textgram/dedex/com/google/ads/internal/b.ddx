@@ -1,0 +1,126 @@
+.class public final com/google/ads/internal/b
+.super java/lang/Exception
+.source SourceFile
+
+.field public final a Z
+
+.method public <init>(Ljava/lang/String;Z)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/internal/b;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Z)
+.line 23
+	invoke-direct	{v0,v1},java/lang/Exception/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/google/ads/internal/b; , v1 : Ljava/lang/String;
+.line 25
+	iput-boolean	v2,v0,com/google/ads/internal/b.a Z
+; v2 : single-length , v0 : Lcom/google/ads/internal/b;
+.line 26
+	return-void	
+.end method
+
+.method public <init>(Ljava/lang/String;ZLjava/lang/Throwable;)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/internal/b;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Z)
+; parameter[2] : v3 (Ljava/lang/Throwable;)
+.line 36
+	invoke-direct	{v0,v1,v3},java/lang/Exception/<init>	; <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v0 : Lcom/google/ads/internal/b; , v1 : Ljava/lang/String; , v3 : Ljava/lang/Throwable;
+.line 38
+	iput-boolean	v2,v0,com/google/ads/internal/b.a Z
+; v2 : single-length , v0 : Lcom/google/ads/internal/b;
+.line 39
+	return-void	
+.end method
+
+.method public a(Ljava/lang/String;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/b;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 42
+	invoke-virtual	{v1,v2},com/google/ads/internal/b/c	; c(Ljava/lang/String;)Ljava/lang/String;
+; v1 : Lcom/google/ads/internal/b; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 43
+	const/4	v0,0
+; v0 : single-length
+	invoke-static	{v0,v1},com/google/ads/util/b/a	; a(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v0 : single-length , v1 : Lcom/google/ads/internal/b;
+.line 44
+	return-void	
+.end method
+
+.method public b(Ljava/lang/String;)V
+.limit registers 5
+; this: v3 (Lcom/google/ads/internal/b;)
+; parameter[0] : v4 (Ljava/lang/String;)
+.line 47
+	new-instance	v0,java/lang/RuntimeException
+; v0 : Ljava/lang/RuntimeException;
+	invoke-virtual	{v3,v4},com/google/ads/internal/b/c	; c(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Lcom/google/ads/internal/b; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	iget-boolean	v2,v3,com/google/ads/internal/b.a Z
+; v2 : single-length , v3 : Lcom/google/ads/internal/b;
+	if-eqz	v2,lbbb38
+; v2 : single-length
+lbbb30:
+	invoke-direct	{v0,v1,v3},java/lang/RuntimeException/<init>	; <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v0 : Ljava/lang/RuntimeException; , v1 : Ljava/lang/String; , v3 : single-length
+	throw	v0
+; v0 : Ljava/lang/RuntimeException;
+lbbb38:
+	const/4	v3,0
+; v3 : single-length
+	goto	lbbb30
+.end method
+
+.method public c(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/b;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.line 56
+	iget-boolean	v0,v2,com/google/ads/internal/b.a Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/b;
+	if-eqz	v0,lbbb8a
+; v0 : single-length
+.line 57
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,": "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},com/google/ads/internal/b/getMessage	; getMessage()Ljava/lang/String;
+; v2 : Lcom/google/ads/internal/b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+lbbb8a:
+.line 59
+	return-object	v3
+; v3 : Ljava/lang/String;
+.end method
+
+

@@ -1,0 +1,74 @@
+.class public com/applovin/sdk/AppLovinSdkSettings
+.super java/lang/Object
+
+.field private a Z
+.field private b J
+.field private c Ljava/lang/String;
+
+.method public <init>()V
+.limit registers 3
+; this: v2 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	const-wide/16	v0,65535
+; v0 : double-length
+	iput-wide	v0,v2,com/applovin/sdk/AppLovinSdkSettings.b J
+; v0 : double-length , v2 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-void	
+.end method
+
+.method public getAutoPreloadSizes()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+	iget-object	v0,v1,com/applovin/sdk/AppLovinSdkSettings.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getBannerAdRefreshSeconds()J
+.limit registers 3
+; this: v2 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+	iget-wide	v0,v2,com/applovin/sdk/AppLovinSdkSettings.b J
+; v0 : double-length , v2 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method public isVerboseLoggingEnabled()Z
+.limit registers 2
+; this: v1 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+	iget-boolean	v0,v1,com/applovin/sdk/AppLovinSdkSettings.a Z
+; v0 : single-length , v1 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setAutoPreloadSizes(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+; parameter[0] : v1 (Ljava/lang/String;)
+	iput-object	v1,v0,com/applovin/sdk/AppLovinSdkSettings.c Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-void	
+.end method
+
+.method public setBannerAdRefreshSeconds(J)V
+.limit registers 3
+; this: v0 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+; parameter[0] : v1 (J)
+	iput-wide	v1,v0,com/applovin/sdk/AppLovinSdkSettings.b J
+; v1 : double-length , v0 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-void	
+.end method
+
+.method public setVerboseLogging(Z)V
+.limit registers 2
+; this: v0 (Lcom/applovin/sdk/AppLovinSdkSettings;)
+; parameter[0] : v1 (Z)
+	iput-boolean	v1,v0,com/applovin/sdk/AppLovinSdkSettings.a Z
+; v1 : single-length , v0 : Lcom/applovin/sdk/AppLovinSdkSettings;
+	return-void	
+.end method
+
+

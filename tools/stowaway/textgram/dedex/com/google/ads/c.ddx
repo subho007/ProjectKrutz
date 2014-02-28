@@ -1,0 +1,670 @@
+.class public com/google/ads/c
+.super java/lang/Object
+.source SourceFile
+
+.field private static final a Ljava/util/Map;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Lcom/google/ads/AdSize;" , ">;" }
+  .end annotation
+.end field
+.field private final b Ljava/lang/String;
+.field private final c Ljava/lang/String;
+.field private final d Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Lcom/google/ads/a;" , ">;" }
+  .end annotation
+.end field
+.field private final e Ljava/lang/Integer;
+.field private final f Ljava/lang/Integer;
+.field private final g Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private final h Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private final i Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+
+.method static <clinit>()V
+.limit registers 1
+.line 54
+	new-instance	v0,com/google/ads/c$1
+; v0 : Lcom/google/ads/c$1;
+	invoke-direct	{v0},com/google/ads/c$1/<init>	; <init>()V
+; v0 : Lcom/google/ads/c$1;
+	invoke-static	{v0},java/util/Collections/unmodifiableMap	; unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+; v0 : Lcom/google/ads/c$1;
+	move-result-object	v0
+; v0 : Ljava/util/Map;
+	sput-object	v0,com/google/ads/c.a Ljava/util/Map;
+; v0 : Ljava/util/Map;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/util/List" , "<" , "Lcom/google/ads/a;" , ">;" , "Ljava/lang/Integer;" , "Ljava/lang/Integer;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;)V" }
+.end annotation
+.limit registers 9
+; this: v0 (Lcom/google/ads/c;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (Ljava/util/List;)
+; parameter[3] : v4 (Ljava/lang/Integer;)
+; parameter[4] : v5 (Ljava/lang/Integer;)
+; parameter[5] : v6 (Ljava/util/List;)
+; parameter[6] : v7 (Ljava/util/List;)
+; parameter[7] : v8 (Ljava/util/List;)
+.line 256
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/c;
+.line 257
+	invoke-static	{v1},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+.line 258
+	iput-object	v1,v0,com/google/ads/c.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/google/ads/c;
+.line 259
+	iput-object	v2,v0,com/google/ads/c.c Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcom/google/ads/c;
+.line 260
+	iput-object	v3,v0,com/google/ads/c.d Ljava/util/List;
+; v3 : Ljava/util/List; , v0 : Lcom/google/ads/c;
+.line 261
+	iput-object	v4,v0,com/google/ads/c.e Ljava/lang/Integer;
+; v4 : Ljava/lang/Integer; , v0 : Lcom/google/ads/c;
+.line 262
+	iput-object	v5,v0,com/google/ads/c.f Ljava/lang/Integer;
+; v5 : Ljava/lang/Integer; , v0 : Lcom/google/ads/c;
+.line 263
+	iput-object	v6,v0,com/google/ads/c.g Ljava/util/List;
+; v6 : Ljava/util/List; , v0 : Lcom/google/ads/c;
+.line 264
+	iput-object	v7,v0,com/google/ads/c.h Ljava/util/List;
+; v7 : Ljava/util/List; , v0 : Lcom/google/ads/c;
+.line 265
+	iput-object	v8,v0,com/google/ads/c.i Ljava/util/List;
+; v8 : Ljava/util/List; , v0 : Lcom/google/ads/c;
+.line 266
+	return-void	
+.end method
+
+.method private static a(Lorg/json/JSONObject;)Lcom/google/ads/a;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lorg/json/JSONObject;" , "Ljava/lang/String;" , ")" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 10
+; parameter[0] : v9 (Lorg/json/JSONObject;)
+	const/4	v5,0
+; v5 : single-length
+.line 180
+	const-string	v0,"id"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 181
+	const-string	v0,"allocation_id"
+; v0 : Ljava/lang/String;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v9,v0,v1},org/json/JSONObject/optString	; optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String; , v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 184
+	const-string	v0,"adapters"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getJSONArray	; getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Lorg/json/JSONArray;
+.line 185
+	new-instance	v3,java/util/ArrayList
+; v3 : Ljava/util/ArrayList;
+	invoke-virtual	{v4},org/json/JSONArray/length	; length()I
+; v4 : Lorg/json/JSONArray;
+	move-result	v0
+; v0 : single-length
+	invoke-direct	{v3,v0},java/util/ArrayList/<init>	; <init>(I)V
+; v3 : Ljava/util/ArrayList; , v0 : single-length
+	move	v0,v5
+; v0 : single-length , v5 : single-length
+lb8a94:
+.line 186
+	invoke-virtual	{v4},org/json/JSONArray/length	; length()I
+; v4 : Lorg/json/JSONArray;
+	move-result	v6
+; v6 : single-length
+	if-ge	v0,v6,lb8ab4
+; v0 : single-length , v6 : single-length
+.line 187
+	invoke-virtual	{v4,v0},org/json/JSONArray/getString	; getString(I)Ljava/lang/String;
+; v4 : Lorg/json/JSONArray; , v0 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v3,v6},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v3 : Ljava/util/ArrayList; , v6 : Ljava/lang/String;
+.line 186
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lb8a94
+lb8ab4:
+.line 191
+	const-string	v0,"imp_urls"
+; v0 : Ljava/lang/String;
+	invoke-static	{v9,v0},com/google/ads/c/a	; a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/List;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/util/List;
+.line 194
+	const-string	v0,"data"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/optJSONObject	; optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Lorg/json/JSONObject;
+.line 196
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0,v5},java/util/HashMap/<init>	; <init>(I)V
+; v0 : Ljava/util/HashMap; , v5 : single-length
+.line 197
+	if-eqz	v6,lb8b1c
+; v6 : Lorg/json/JSONObject;
+.line 198
+	new-instance	v5,java/util/HashMap
+; v5 : Ljava/util/HashMap;
+	invoke-virtual	{v6},org/json/JSONObject/length	; length()I
+; v6 : Lorg/json/JSONObject;
+	move-result	v0
+; v0 : single-length
+	invoke-direct	{v5,v0},java/util/HashMap/<init>	; <init>(I)V
+; v5 : Ljava/util/HashMap; , v0 : single-length
+.line 199
+	invoke-virtual	{v6},org/json/JSONObject/keys	; keys()Ljava/util/Iterator;
+; v6 : Lorg/json/JSONObject;
+	move-result-object	v7
+; v7 : Ljava/util/Iterator;
+lb8af4:
+.line 200
+	invoke-interface	{v7},java/util/Iterator/hasNext	; hasNext()Z
+; v7 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb8b1e
+; v0 : single-length
+.line 201
+	invoke-interface	{v7},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v7 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+.line 202
+	invoke-virtual	{v6,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v6 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v5,v0,v8},java/util/HashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v5 : Ljava/util/HashMap; , v0 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	goto	lb8af4
+lb8b1c:
+	move-object	v5,v0
+; v5 : Ljava/util/HashMap; , v0 : Ljava/util/HashMap;
+lb8b1e:
+.line 205
+	new-instance	v0,com/google/ads/a
+; v0 : Lcom/google/ads/a;
+	invoke-direct/range	{v0..v5},com/google/ads/a/<init>;	<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/HashMap;)V
+; v0 : Lcom/google/ads/a; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : Ljava/util/ArrayList; , v4 : Ljava/util/List; , v5 : Ljava/util/HashMap;
+	return-object	v0
+; v0 : Lcom/google/ads/a;
+.end method
+
+.method public static a(Ljava/lang/String;)Lcom/google/ads/c;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lorg/json/JSONObject;" , "Ljava/lang/String;" , ")" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 10
+; parameter[0] : v9 (Ljava/lang/String;)
+	const/4	v0,0
+; v0 : single-length
+.line 97
+	new-instance	v5,org/json/JSONObject
+; v5 : Lorg/json/JSONObject;
+	invoke-direct	{v5,v9},org/json/JSONObject/<init>	; <init>(Ljava/lang/String;)V
+; v5 : Lorg/json/JSONObject; , v9 : Ljava/lang/String;
+.line 98
+	const-string	v1,"qdata"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v5,v1},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v5 : Lorg/json/JSONObject; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 99
+	const-string	v2,"ad_type"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v2},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v5 : Lorg/json/JSONObject; , v2 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,lb8bb8
+; v2 : single-length
+	const-string	v2,"ad_type"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v2},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v5 : Lorg/json/JSONObject; , v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+lb8b70:
+.line 102
+	const-string	v3,"ad_networks"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v5,v3},org/json/JSONObject/getJSONArray	; getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+; v5 : Lorg/json/JSONObject; , v3 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Lorg/json/JSONArray;
+.line 103
+	new-instance	v3,java/util/ArrayList
+; v3 : Ljava/util/ArrayList;
+	invoke-virtual	{v6},org/json/JSONArray/length	; length()I
+; v6 : Lorg/json/JSONArray;
+	move-result	v4
+; v4 : single-length
+	invoke-direct	{v3,v4},java/util/ArrayList/<init>	; <init>(I)V
+; v3 : Ljava/util/ArrayList; , v4 : single-length
+.line 105
+	const/4	v4,0
+; v4 : single-length
+lb8b90:
+	invoke-virtual	{v6},org/json/JSONArray/length	; length()I
+; v6 : Lorg/json/JSONArray;
+	move-result	v7
+; v7 : single-length
+	if-ge	v4,v7,lb8bbc
+; v4 : single-length , v7 : single-length
+.line 106
+	invoke-virtual	{v6,v4},org/json/JSONArray/getJSONObject	; getJSONObject(I)Lorg/json/JSONObject;
+; v6 : Lorg/json/JSONArray; , v4 : single-length
+	move-result-object	v7
+; v7 : Lorg/json/JSONObject;
+	invoke-static	{v7},com/google/ads/c/a	; a(Lorg/json/JSONObject;)Lcom/google/ads/a;
+; v7 : Lorg/json/JSONObject;
+	move-result-object	v7
+; v7 : Lcom/google/ads/a;
+	invoke-interface	{v3,v7},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v3 : Ljava/util/ArrayList; , v7 : Lcom/google/ads/a;
+.line 105
+	add-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	goto	lb8b90
+lb8bb8:
+	move-object	v2,v0
+; v2 : single-length , v0 : single-length
+.line 99
+	goto	lb8b70
+lb8bbc:
+.line 108
+	const-string	v4,"settings"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v5,v4},org/json/JSONObject/optJSONObject	; optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+; v5 : Lorg/json/JSONObject; , v4 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Lorg/json/JSONObject;
+.line 114
+	if-eqz	v5,lb8c4a
+; v5 : Lorg/json/JSONObject;
+.line 115
+	const-string	v4,"refresh"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v5,v4},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v5 : Lorg/json/JSONObject; , v4 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,lb8c46
+; v4 : single-length
+.line 116
+	const-string	v4,"refresh"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v5,v4},org/json/JSONObject/getInt	; getInt(Ljava/lang/String;)I
+; v5 : Lorg/json/JSONObject; , v4 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+	invoke-static	{v4},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v4 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/Integer;
+lb8bf0:
+.line 118
+	const-string	v6,"ad_network_timeout_millis"
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v5 : Lorg/json/JSONObject; , v6 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,lb8c14
+; v6 : single-length
+.line 119
+	const-string	v0,"ad_network_timeout_millis"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v5,v0},org/json/JSONObject/getInt	; getInt(Ljava/lang/String;)I
+; v5 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	invoke-static	{v0},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Integer;
+lb8c14:
+.line 123
+	const-string	v6,"imp_urls"
+; v6 : Ljava/lang/String;
+	invoke-static	{v5,v6},com/google/ads/c/a	; a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/List;
+; v5 : Lorg/json/JSONObject; , v6 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/util/List;
+.line 124
+	const-string	v7,"click_urls"
+; v7 : Ljava/lang/String;
+	invoke-static	{v5,v7},com/google/ads/c/a	; a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/List;
+; v5 : Lorg/json/JSONObject; , v7 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/util/List;
+.line 125
+	const-string	v8,"nofill_urls"
+; v8 : Ljava/lang/String;
+	invoke-static	{v5,v8},com/google/ads/c/a	; a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/List;
+; v5 : Lorg/json/JSONObject; , v8 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/util/List;
+	move-object	v5,v0
+; v5 : Ljava/lang/Integer; , v0 : Ljava/lang/Integer;
+lb8c3a:
+.line 127
+	new-instance	v0,com/google/ads/c
+; v0 : Lcom/google/ads/c;
+	invoke-direct/range	{v0..v8},com/google/ads/c/<init>;	<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+; v0 : Lcom/google/ads/c; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : Ljava/util/ArrayList; , v4 : Ljava/lang/Integer; , v5 : Ljava/lang/Integer; , v6 : Ljava/util/List; , v7 : Ljava/util/List; , v8 : Ljava/util/List;
+	return-object	v0
+; v0 : Lcom/google/ads/c;
+lb8c46:
+	move-object	v4,v0
+; v4 : single-length , v0 : single-length
+	goto	lb8bf0
+lb8c4a:
+	move-object	v8,v0
+; v8 : single-length , v0 : single-length
+	move-object	v6,v0
+; v6 : single-length , v0 : single-length
+	move-object	v7,v0
+; v7 : single-length , v0 : single-length
+	move-object	v5,v0
+; v5 : single-length , v0 : single-length
+	move-object	v4,v0
+; v4 : single-length , v0 : single-length
+	goto	lb8c3a
+.end method
+
+.method private static a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/List;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lorg/json/JSONObject;" , "Ljava/lang/String;" , ")" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 6
+; parameter[0] : v4 (Lorg/json/JSONObject;)
+; parameter[1] : v5 (Ljava/lang/String;)
+.line 237
+	invoke-virtual	{v4,v5},org/json/JSONObject/optJSONArray	; optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+; v4 : Lorg/json/JSONObject; , v5 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Lorg/json/JSONArray;
+.line 238
+	if-eqz	v2,lb8cac
+; v2 : Lorg/json/JSONArray;
+.line 239
+	new-instance	v1,java/util/ArrayList
+; v1 : Ljava/util/ArrayList;
+	invoke-virtual	{v2},org/json/JSONArray/length	; length()I
+; v2 : Lorg/json/JSONArray;
+	move-result	v0
+; v0 : single-length
+	invoke-direct	{v1,v0},java/util/ArrayList/<init>	; <init>(I)V
+; v1 : Ljava/util/ArrayList; , v0 : single-length
+.line 240
+	const/4	v0,0
+; v0 : single-length
+lb8c88:
+	invoke-virtual	{v2},org/json/JSONArray/length	; length()I
+; v2 : Lorg/json/JSONArray;
+	move-result	v3
+; v3 : single-length
+	if-ge	v0,v3,lb8ca8
+; v0 : single-length , v3 : single-length
+.line 241
+	invoke-virtual	{v2,v0},org/json/JSONArray/getString	; getString(I)Ljava/lang/String;
+; v2 : Lorg/json/JSONArray; , v0 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v3},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v3 : Ljava/lang/String;
+.line 240
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lb8c88
+lb8ca8:
+	move-object	v0,v1
+; v0 : Ljava/util/ArrayList; , v1 : Ljava/util/ArrayList;
+lb8caa:
+.line 246
+	return-object	v0
+; v0 : single-length
+lb8cac:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb8caa
+.end method
+
+.method public a()Z
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lorg/json/JSONObject;" , "Ljava/lang/String;" , ")" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 132
+	iget-object	v0,v1,com/google/ads/c.f Ljava/lang/Integer;
+; v0 : Ljava/lang/Integer; , v1 : Lcom/google/ads/c;
+	if-eqz	v0,lb8ccc
+; v0 : Ljava/lang/Integer;
+	const/4	v0,1
+; v0 : single-length
+lb8cca:
+	return	v0
+; v0 : single-length
+lb8ccc:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb8cca
+.end method
+
+.method public b()I
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 136
+	iget-object	v0,v1,com/google/ads/c.f Ljava/lang/Integer;
+; v0 : Ljava/lang/Integer; , v1 : Lcom/google/ads/c;
+	invoke-virtual	{v0},java/lang/Integer/intValue	; intValue()I
+; v0 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public c()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 140
+	iget-object	v0,v1,com/google/ads/c.b Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/c;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public d()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 149
+	iget-object	v0,v1,com/google/ads/c.e Ljava/lang/Integer;
+; v0 : Ljava/lang/Integer; , v1 : Lcom/google/ads/c;
+	if-eqz	v0,lb8d24
+; v0 : Ljava/lang/Integer;
+	const/4	v0,1
+; v0 : single-length
+lb8d22:
+	return	v0
+; v0 : single-length
+lb8d24:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb8d22
+.end method
+
+.method public e()I
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 153
+	iget-object	v0,v1,com/google/ads/c.e Ljava/lang/Integer;
+; v0 : Ljava/lang/Integer; , v1 : Lcom/google/ads/c;
+	invoke-virtual	{v0},java/lang/Integer/intValue	; intValue()I
+; v0 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public f()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Lcom/google/ads/a;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 157
+	iget-object	v0,v1,com/google/ads/c.d Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/c;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+.method public g()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 162
+	iget-object	v0,v1,com/google/ads/c.g Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/c;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+.method public h()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 167
+	iget-object	v0,v1,com/google/ads/c.h Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/c;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+.method public i()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/c;)
+.line 172
+	iget-object	v0,v1,com/google/ads/c.i Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/c;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+.method public j()Lcom/google/ads/internal/h;
+.limit registers 4
+; this: v3 (Lcom/google/ads/c;)
+	const/4	v1,0
+; v1 : single-length
+.line 214
+	iget-object	v0,v3,com/google/ads/c.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Lcom/google/ads/c;
+	if-nez	v0,lb8dc6
+; v0 : Ljava/lang/String;
+	move-object	v0,v1
+; v0 : single-length , v1 : single-length
+lb8dc4:
+.line 229
+	return-object	v0
+; v0 : Lcom/google/ads/internal/h;
+lb8dc6:
+.line 218
+	const-string	v0,"interstitial"
+; v0 : Ljava/lang/String;
+	iget-object	v2,v3,com/google/ads/c.c Ljava/lang/String;
+; v2 : Ljava/lang/String; , v3 : Lcom/google/ads/c;
+	invoke-virtual	{v0,v2},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb8de0
+; v0 : single-length
+.line 219
+	sget-object	v0,com/google/ads/internal/h.a Lcom/google/ads/internal/h;
+; v0 : Lcom/google/ads/internal/h;
+	goto	lb8dc4
+lb8de0:
+.line 224
+	sget-object	v0,com/google/ads/c.a Ljava/util/Map;
+; v0 : Ljava/util/Map;
+	iget-object	v2,v3,com/google/ads/c.c Ljava/lang/String;
+; v2 : Ljava/lang/String; , v3 : Lcom/google/ads/c;
+	invoke-interface	{v0,v2},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdSize
+; v0 : Lcom/google/ads/AdSize;
+.line 225
+	if-eqz	v0,lb8e02
+; v0 : Lcom/google/ads/AdSize;
+.line 226
+	invoke-static	{v0},com/google/ads/internal/h/a	; a(Lcom/google/ads/AdSize;)Lcom/google/ads/internal/h;
+; v0 : Lcom/google/ads/AdSize;
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/h;
+	goto	lb8dc4
+lb8e02:
+	move-object	v0,v1
+; v0 : single-length , v1 : single-length
+.line 229
+	goto	lb8dc4
+.end method
+
+

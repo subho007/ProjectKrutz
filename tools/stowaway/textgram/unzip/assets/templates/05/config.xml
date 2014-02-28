@@ -1,0 +1,12 @@
+<template>
+<title>BW Flower</title>
+<textcolor>#6b6b6b</textcolor>
+<textsize>32</textsize>
+<padding_top>32</padding_top>
+<padding_bottom>310</padding_bottom>
+<padding_right>32</padding_right>
+<padding_left>33</padding_left>
+<background>[assets]/backgrounds/05.jpg</background>
+<font>[assets]/fonts/segoepr.ttf</font>
+<author></author>
+</template>

@@ -1,0 +1,701 @@
+.class public com/applovin/impl/sdk/bg
+.super com/applovin/sdk/AppLovinSdkUtils
+
+.field private static final a [C
+.field private static final b [C
+
+.method static <clinit>()V
+.limit registers 1
+	const-string	v0,"0123456789abcdef"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toCharArray	; toCharArray()[C
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : [C
+	sput-object	v0,com/applovin/impl/sdk/bg.a [C
+; v0 : [C
+	const-string	v0,"-'"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toCharArray	; toCharArray()[C
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : [C
+	sput-object	v0,com/applovin/impl/sdk/bg.b [C
+; v0 : [C
+	return-void	
+.end method
+
+.method public static a(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
+.limit registers 5
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Landroid/content/Context;)
+	const-string	v0,"icon"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfb074
+; v0 : single-length
+	const-string	v0,"/"
+; v0 : Ljava/lang/String;
+	const-string	v1,"_"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v3,v0,v1},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"."
+; v1 : Ljava/lang/String;
+	const-string	v2,"_"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+lfb074:
+	new-instance	v0,java/io/File
+; v0 : Ljava/io/File;
+	invoke-virtual	{v4},android/content/Context/getCacheDir	; getCacheDir()Ljava/io/File;
+; v4 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/io/File;
+	const-string	v2,"al"
+; v2 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v0 : Ljava/io/File; , v1 : Ljava/io/File; , v2 : Ljava/lang/String;
+	new-instance	v1,java/io/File
+; v1 : Ljava/io/File;
+	invoke-direct	{v1,v0,v3},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v1 : Ljava/io/File; , v0 : Ljava/io/File; , v3 : Ljava/lang/String;
+	invoke-virtual	{v0},java/io/File/mkdirs	; mkdirs()Z
+; v0 : Ljava/io/File;
+	return-object	v1
+; v1 : Ljava/io/File;
+.end method
+
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+	if-eqz	v2,lfb0d4
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	const/4	v1,4
+; v1 : single-length
+	if-le	v0,v1,lfb0d4
+; v0 : single-length , v1 : single-length
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	add-int/lit8	v0,v0,252
+; v0 : single-length , v0 : single-length
+	invoke-virtual	{v2,v0},java/lang/String/substring	; substring(I)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lfb0d2:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lfb0d4:
+	const-string	v0,"NOKEY"
+; v0 : Ljava/lang/String;
+	goto	lfb0d2
+.end method
+
+.method public static a(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Ljava/lang/String;
+.limit registers 4
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	const/4	v0,15
+; v0 : single-length
+	invoke-static	{v0},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v0 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Integer;
+	sget-object	v0,com/applovin/impl/sdk/z.t Lcom/applovin/impl/sdk/ab;
+; v0 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v3,v0},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v3 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v0 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v2,v1,v0},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v1 : Ljava/lang/Integer; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method private static a(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/String;
+.limit registers 7
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Ljava/lang/Integer;)
+; parameter[2] : v6 (Ljava/lang/String;)
+.catch java/security/NoSuchAlgorithmException from lfb168 to lfb1c2 using lfb1c6
+.catch java/io/UnsupportedEncodingException from lfb168 to lfb1c2 using lfb206
+	const/4	v1,1
+; v1 : single-length
+	if-nez	v6,lfb136
+; v6 : Ljava/lang/String;
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No algorithm specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lfb136:
+	if-eqz	v4,lfb146
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-ge	v0,v1,lfb14c
+; v0 : single-length , v1 : single-length
+lfb146:
+	const-string	v4,""
+; v4 : Ljava/lang/String;
+lfb14a:
+	return-object	v4
+; v4 : Ljava/lang/String;
+lfb14c:
+	invoke-virtual	{v6},java/lang/String/length	; length()I
+; v6 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-lt	v0,v1,lfb14a
+; v0 : single-length , v1 : single-length
+	const-string	v0,"none"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0,v6},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v6 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lfb14a
+; v0 : single-length
+lfb168:
+	invoke-static	{v6},java/security/MessageDigest/getInstance	; getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+; v6 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/security/MessageDigest;
+	const-string	v1,"UTF-8"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v4,v1},java/lang/String/getBytes	; getBytes(Ljava/lang/String;)[B
+; v4 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : [B
+	invoke-virtual	{v0,v1},java/security/MessageDigest/update	; update([B)V
+; v0 : Ljava/security/MessageDigest; , v1 : [B
+	invoke-virtual	{v0},java/security/MessageDigest/digest	; digest()[B
+; v0 : Ljava/security/MessageDigest;
+	move-result-object	v0
+; v0 : [B
+	invoke-static	{v0},com/applovin/impl/sdk/bg/a	; a([B)Ljava/lang/String;
+; v0 : [B
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	if-eqz	v4,lfb14a
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v5},java/lang/Integer/intValue	; intValue()I
+; v5 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,lfb14a
+; v0 : single-length
+	invoke-virtual	{v5},java/lang/Integer/intValue	; intValue()I
+; v5 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	invoke-static	{v0,v1},java/lang/Math/min	; min(II)I
+; v0 : single-length , v1 : single-length
+	move-result	v0
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v4,v1,v0},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v4 : Ljava/lang/String; , v1 : single-length , v0 : single-length
+lfb1c2:
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	goto	lfb14a
+lfb1c6:
+	move-exception	v0
+; v0 : java/security/NoSuchAlgorithmException
+	new-instance	v1,java/lang/RuntimeException
+; v1 : Ljava/lang/RuntimeException;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Unknown algorithm ""
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"""
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2,v0},java/lang/RuntimeException/<init>	; <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/RuntimeException; , v2 : Ljava/lang/String; , v0 : java/security/NoSuchAlgorithmException
+	throw	v1
+; v1 : Ljava/lang/RuntimeException;
+lfb206:
+	move-exception	v0
+; v0 : java/io/UnsupportedEncodingException
+	new-instance	v1,java/lang/RuntimeException
+; v1 : Ljava/lang/RuntimeException;
+	const-string	v2,"Programming error: UTF-8 is not know encoding"
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2,v0},java/lang/RuntimeException/<init>	; <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/RuntimeException; , v2 : Ljava/lang/String; , v0 : java/io/UnsupportedEncodingException
+	throw	v1
+; v1 : Ljava/lang/RuntimeException;
+.end method
+
+.method static a(Ljava/util/Collection;Ljava/lang/String;I)Ljava/lang/String;
+.limit registers 7
+; parameter[0] : v4 (Ljava/util/Collection;)
+; parameter[1] : v5 (Ljava/lang/String;)
+; parameter[2] : v6 (I)
+	if-nez	v5,lfb24c
+; v5 : Ljava/lang/String;
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No glue specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lfb24c:
+	if-eqz	v4,lfb25e
+; v4 : Ljava/util/Collection;
+	invoke-interface	{v4},java/util/Collection/size	; size()I
+; v4 : Ljava/util/Collection;
+	move-result	v0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	if-ge	v0,v1,lfb264
+; v0 : single-length , v1 : single-length
+lfb25e:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+lfb262:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lfb264:
+	new-instance	v2,java/lang/StringBuffer
+; v2 : Ljava/lang/StringBuffer;
+	invoke-direct	{v2},java/lang/StringBuffer/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuffer;
+	const/4	v0,0
+; v0 : single-length
+	invoke-interface	{v4},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v4 : Ljava/util/Collection;
+	move-result-object	v3
+; v3 : Ljava/util/Iterator;
+	move	v1,v0
+; v1 : single-length , v0 : single-length
+lfb27a:
+	invoke-interface	{v3},java/util/Iterator/hasNext	; hasNext()Z
+; v3 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfb296
+; v0 : single-length
+	invoke-interface	{v3},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v3 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	if-lt	v1,v6,lfb2cc
+; v1 : single-length , v6 : single-length
+lfb296:
+	invoke-virtual	{v2},java/lang/StringBuffer/length	; length()I
+; v2 : Ljava/lang/StringBuffer;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v5},java/lang/String/length	; length()I
+; v5 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-le	v0,v1,lfb2c2
+; v0 : single-length , v1 : single-length
+	invoke-virtual	{v2},java/lang/StringBuffer/length	; length()I
+; v2 : Ljava/lang/StringBuffer;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v5},java/lang/String/length	; length()I
+; v5 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	sub-int/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	invoke-virtual	{v2,v0},java/lang/StringBuffer/setLength	; setLength(I)V
+; v2 : Ljava/lang/StringBuffer; , v0 : single-length
+lfb2c2:
+	invoke-virtual	{v2},java/lang/StringBuffer/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuffer;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lfb262
+lfb2cc:
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	invoke-virtual	{v2,v0},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v2 : Ljava/lang/StringBuffer; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuffer;
+	invoke-virtual	{v0,v5},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v0 : Ljava/lang/StringBuffer; , v5 : Ljava/lang/String;
+	goto	lfb27a
+.end method
+
+.method static a(Ljava/util/Map;)Ljava/lang/String;
+.limit registers 6
+; parameter[0] : v5 (Ljava/util/Map;)
+	if-eqz	v5,lfb300
+; v5 : Ljava/util/Map;
+	invoke-interface	{v5},java/util/Map/isEmpty	; isEmpty()Z
+; v5 : Ljava/util/Map;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfb306
+; v0 : single-length
+lfb300:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+lfb304:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lfb306:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-interface	{v5},java/util/Map/entrySet	; entrySet()Ljava/util/Set;
+; v5 : Ljava/util/Map;
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	invoke-interface	{v0},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v0 : Ljava/util/Set;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lfb320:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfb37a
+; v0 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map$Entry
+; v0 : Ljava/util/Map$Entry;
+	invoke-virtual	{v1},java/lang/StringBuilder/length	; length()I
+; v1 : Ljava/lang/StringBuilder;
+	move-result	v3
+; v3 : single-length
+	if-lez	v3,lfb34e
+; v3 : single-length
+	const-string	v3,"&"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v1,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+lfb34e:
+	invoke-interface	{v0},java/util/Map$Entry/getKey	; getKey()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	invoke-virtual	{v1,v3},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/Object;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const/16	v4,61
+; v4 : single-length
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(C)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-interface	{v0},java/util/Map$Entry/getValue	; getValue()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	invoke-virtual	{v3,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/Object;
+	goto	lfb320
+lfb37a:
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lfb304
+.end method
+
+.method public static a([B)Ljava/lang/String;
+.limit registers 6
+; parameter[0] : v5 ([B)
+	if-nez	v5,lfb3a8
+; v5 : [B
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No data specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lfb3a8:
+	array-length	v0,v5
+; v0 : single-length , v5 : [B
+	mul-int/lit-8	v0,v0,2
+; v0 : single-length , v0 : single-length
+	new-array	v1,v0,[C
+; v1 : [C , v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+lfb3b4:
+	array-length	v2,v5
+; v2 : single-length , v5 : [B
+	if-ge	v0,v2,lfb3f8
+; v0 : single-length , v2 : single-length
+	mul-int/lit-8	v2,v0,2
+; v2 : single-length , v0 : single-length
+	sget-object	v3,com/applovin/impl/sdk/bg.a [C
+; v3 : [C
+	aget-byte	v4,v5,v0
+; v4 : single-length , v5 : [B , v0 : single-length
+	and-int/lit16	v4,v4,240
+; v4 : single-length , v4 : single-length
+	ushr-int/lit8	v4,v4,4
+; v4 : single-length , v4 : single-length
+	aget-char	v3,v3,v4
+; v3 : single-length , v3 : single-length , v4 : single-length
+	aput-char	v3,v1,v2
+; v3 : single-length , v1 : [C , v2 : single-length
+	mul-int/lit-8	v2,v0,2
+; v2 : single-length , v0 : single-length
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	sget-object	v3,com/applovin/impl/sdk/bg.a [C
+; v3 : [C
+	aget-byte	v4,v5,v0
+; v4 : single-length , v5 : [B , v0 : single-length
+	and-int/lit8	v4,v4,15
+; v4 : single-length , v4 : single-length
+	aget-char	v3,v3,v4
+; v3 : single-length , v3 : single-length , v4 : single-length
+	aput-char	v3,v1,v2
+; v3 : single-length , v1 : [C , v2 : single-length
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lfb3b4
+lfb3f8:
+	new-instance	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/String/<init>	; <init>([C)V
+; v0 : Ljava/lang/String; , v1 : [C
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public static a(Lcom/applovin/impl/sdk/ab;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Z
+.limit registers 3
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/ab;)
+; parameter[1] : v2 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	invoke-virtual	{v2},com/applovin/impl/sdk/AppLovinSdkImpl/getSettingsManager	; getSettingsManager()Lcom/applovin/impl/sdk/ac;
+; v2 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ac;
+	invoke-static	{v1,v0},com/applovin/impl/sdk/bg/a	; a(Lcom/applovin/impl/sdk/ab;Lcom/applovin/impl/sdk/ac;)Z
+; v1 : Lcom/applovin/impl/sdk/ab; , v0 : Lcom/applovin/impl/sdk/ac;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static a(Lcom/applovin/impl/sdk/ab;Lcom/applovin/impl/sdk/ac;)Z
+.limit registers 9
+; parameter[0] : v7 (Lcom/applovin/impl/sdk/ab;)
+; parameter[1] : v8 (Lcom/applovin/impl/sdk/ac;)
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v1
+; v1 : double-length
+	invoke-virtual	{v8,v7},com/applovin/impl/sdk/ac/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v8 : Lcom/applovin/impl/sdk/ac; , v7 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	const-wide/16	v5,1000
+; v5 : double-length
+	mul-long/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	cmp-long	v0,v1,v3
+; v0 : single-length , v1 : double-length , v3 : double-length
+	if-lez	v0,lfb466
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+lfb464:
+	return	v0
+; v0 : single-length
+lfb466:
+	const/4	v0,0
+; v0 : single-length
+	goto	lfb464
+.end method
+
+.method public static b(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+	if-eqz	v2,lfb48e
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	if-ge	v0,v1,lfb494
+; v0 : single-length , v1 : single-length
+lfb48e:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+lfb492:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lfb494:
+	invoke-virtual	{v2},java/lang/String/trim	; trim()Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toLowerCase	; toLowerCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lfb492
+.end method
+
+.method public static b(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Ljava/lang/String;
+.limit registers 4
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	sget-object	v0,com/applovin/impl/sdk/z.u Lcom/applovin/impl/sdk/ab;
+; v0 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v3,v0},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v3 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v0 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Integer
+; v0 : Ljava/lang/Integer;
+	sget-object	v1,com/applovin/impl/sdk/z.t Lcom/applovin/impl/sdk/ab;
+; v1 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v3,v1},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v3 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+	invoke-static	{v2,v0,v1},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/Integer; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method static c(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+.catch java/io/UnsupportedEncodingException from lfb500 to lfb50a using lfb50e
+	invoke-static	{v2},com/applovin/impl/sdk/bg/d	; d(Ljava/lang/String;)Z
+; v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfb51c
+; v0 : single-length
+lfb500:
+	const-string	v0,"UTF-8"
+; v0 : Ljava/lang/String;
+	invoke-static	{v2,v0},java/net/URLEncoder/encode	; encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+lfb50a:
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lfb50c:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lfb50e:
+	move-exception	v0
+; v0 : java/io/UnsupportedEncodingException
+	new-instance	v1,java/lang/UnsupportedOperationException
+; v1 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v1,v0},java/lang/UnsupportedOperationException/<init>	; <init>(Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/UnsupportedOperationException; , v0 : java/io/UnsupportedEncodingException
+	throw	v1
+; v1 : Ljava/lang/UnsupportedOperationException;
+lfb51c:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	goto	lfb50c
+.end method
+
+.method static d(Ljava/lang/String;)Z
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+	const/4	v0,1
+; v0 : single-length
+	if-eqz	v2,lfb558
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-le	v1,v0,lfb558
+; v1 : single-length , v0 : single-length
+lfb556:
+	return	v0
+; v0 : single-length
+lfb558:
+	const/4	v0,0
+; v0 : single-length
+	goto	lfb556
+.end method
+
+

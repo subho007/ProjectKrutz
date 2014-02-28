@@ -1,0 +1,26 @@
+.class public final yuku/ambilwarna/R$id
+.super java/lang/Object
+.source R.java
+
+.inner class id inner yuku/ambilwarna/R$id outer yuku/ambilwarna/R
+.field public static final ambilwarna_cursor I = 2131099766	; 0x7f060076
+.field public static final ambilwarna_dialogView I = 2131099762	; 0x7f060072
+.field public static final ambilwarna_pref_widget_kotak I = 2131099771	; 0x7f06007b
+.field public static final ambilwarna_state I = 2131099768	; 0x7f060078
+.field public static final ambilwarna_target I = 2131099767	; 0x7f060077
+.field public static final ambilwarna_viewContainer I = 2131099763	; 0x7f060073
+.field public static final ambilwarna_viewHue I = 2131099765	; 0x7f060075
+.field public static final ambilwarna_viewSatBri I = 2131099764	; 0x7f060074
+.field public static final ambilwarna_warnaBaru I = 2131099770	; 0x7f06007a
+.field public static final ambilwarna_warnaLama I = 2131099769	; 0x7f060079
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lyuku/ambilwarna/R$id;)
+.line 23
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lyuku/ambilwarna/R$id;
+	return-void	
+.end method
+
+

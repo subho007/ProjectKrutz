@@ -1,0 +1,12 @@
+<template>
+<title>48</title>
+<textcolor>#403f44</textcolor>
+<textsize>40</textsize>
+<padding_top>25</padding_top>
+<padding_bottom>273</padding_bottom>
+<padding_right>20</padding_right>
+<padding_left>20</padding_left>
+<background>[assets]/backgrounds/48.jpg</background>
+<font>[assets]/fonts/comfortaa.ttf</font>
+<author></author>
+</template>

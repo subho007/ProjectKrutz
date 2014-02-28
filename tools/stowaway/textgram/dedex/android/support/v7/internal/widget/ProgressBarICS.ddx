@@ -1,0 +1,2467 @@
+.class public android/support/v7/internal/widget/ProgressBarICS
+.super android/view/View
+.source ProgressBarICS.java
+
+.inner class 1 inner android/support/v7/internal/widget/ProgressBarICS$1 outer android/support/v7/internal/widget/ProgressBarICS
+.inner class SavedState inner android/support/v7/internal/widget/ProgressBarICS$SavedState outer android/support/v7/internal/widget/ProgressBarICS
+.inner class RefreshProgressRunnable inner android/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable outer android/support/v7/internal/widget/ProgressBarICS
+.field private static final ANIMATION_RESOLUTION I = 200	; 0xc8
+.field private static final MAX_LEVEL I = 10000	; 0x2710
+.field private static final android_R_styleable_ProgressBar [I
+.field private mAnimation Landroid/view/animation/AlphaAnimation;
+.field private mBehavior I
+.field private mCurrentDrawable Landroid/graphics/drawable/Drawable;
+.field private mDuration I
+.field private mInDrawing Z
+.field private mIndeterminate Z
+.field private mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+.field private mInterpolator Landroid/view/animation/Interpolator;
+.field private mLastDrawTime J
+.field private mMax I
+.field mMaxHeight I
+.field mMaxWidth I
+.field mMinHeight I
+.field mMinWidth I
+.field private mNoInvalidate Z
+.field private mOnlyIndeterminate Z
+.field private mProgress I
+.field private mProgressDrawable Landroid/graphics/drawable/Drawable;
+.field private mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+.field mSampleTile Landroid/graphics/Bitmap;
+.field private mSecondaryProgress I
+.field private mShouldStartAnimationDrawable Z
+.field private mTransformation Landroid/view/animation/Transformation;
+.field private mUiThreadId J
+
+.method static <clinit>()V
+.limit registers 1
+.line 60
+	const/16	v0,14
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9acc0
+; v0 : [I
+	sput-object	v0,android/support/v7/internal/widget/ProgressBarICS.android_R_styleable_ProgressBar [I
+; v0 : [I
+	return-void	
+l9acc0:	data-array
+		0x36, 0x01, 0x01, 0x01	; #0
+		0x37, 0x01, 0x01, 0x01	; #1
+		0x38, 0x01, 0x01, 0x01	; #2
+		0x39, 0x01, 0x01, 0x01	; #3
+		0x3A, 0x01, 0x01, 0x01	; #4
+		0x3B, 0x01, 0x01, 0x01	; #5
+		0x3C, 0x01, 0x01, 0x01	; #6
+		0x3D, 0x01, 0x01, 0x01	; #7
+		0x3E, 0x01, 0x01, 0x01	; #8
+		0x3F, 0x01, 0x01, 0x01	; #9
+		0x1F, 0x01, 0x01, 0x01	; #10
+		0x40, 0x01, 0x01, 0x01	; #11
+		0x20, 0x01, 0x01, 0x01	; #12
+		0x41, 0x01, 0x01, 0x01	; #13
+	end data-array
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+.limit registers 13
+; this: v8 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v9 (Landroid/content/Context;)
+; parameter[1] : v10 (Landroid/util/AttributeSet;)
+; parameter[2] : v11 (I)
+; parameter[3] : v12 (I)
+	const/4	v5,1
+; v5 : single-length
+	const/4	v4,0
+; v4 : single-length
+.line 109
+	invoke-direct	{v8,v9,v10,v11},android/view/View/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v9 : Landroid/content/Context; , v10 : Landroid/util/AttributeSet; , v11 : single-length
+.line 110
+	invoke-static	{},java/lang/Thread/currentThread	; currentThread()Ljava/lang/Thread;
+; 
+	nop	
+	move-result-object	v6
+; v6 : Ljava/lang/Thread;
+	invoke-virtual	{v6},java/lang/Thread/getId	; getId()J
+; v6 : Ljava/lang/Thread;
+	move-result-wide	v6
+; v6 : double-length
+	iput-wide	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mUiThreadId J
+; v6 : double-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 111
+	invoke-direct	{v8},android/support/v7/internal/widget/ProgressBarICS/initProgressBar	; initProgressBar()V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 113
+	sget-object	v6,android/support/v7/internal/widget/ProgressBarICS.android_R_styleable_ProgressBar [I
+; v6 : [I
+	invoke-virtual	{v9,v10,v6,v11,v12},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+; v9 : Landroid/content/Context; , v10 : Landroid/util/AttributeSet; , v6 : [I , v11 : single-length , v12 : single-length
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 116
+	iput-boolean	v5,v8,android/support/v7/internal/widget/ProgressBarICS.mNoInvalidate Z
+; v5 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 118
+	iget	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v4,v6},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v4 : single-length , v6 : single-length
+	move-result	v6
+; v6 : single-length
+	invoke-virtual	{v8,v6},android/support/v7/internal/widget/ProgressBarICS/setMax	; setMax(I)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v6 : single-length
+.line 119
+	iget	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v5,v6},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v5 : single-length , v6 : single-length
+	move-result	v6
+; v6 : single-length
+	invoke-virtual	{v8,v6},android/support/v7/internal/widget/ProgressBarICS/setProgress	; setProgress(I)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v6 : single-length
+.line 120
+	const/4	v6,2
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	invoke-virtual	{v8,v6},android/support/v7/internal/widget/ProgressBarICS/setSecondaryProgress	; setSecondaryProgress(I)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v6 : single-length
+.line 122
+	const/4	v6,3
+; v6 : single-length
+	iget-boolean	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getBoolean	; getBoolean(IZ)Z
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v2
+; v2 : single-length
+.line 123
+	const/4	v6,4
+; v6 : single-length
+	iget-boolean	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getBoolean	; getBoolean(IZ)Z
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput-boolean	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 125
+	const/4	v6,5
+; v6 : single-length
+	invoke-virtual	{v0,v6},android/content/res/TypedArray/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 126
+	if-eqz	v1,l9adb8
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 127
+	invoke-direct	{v8,v1},android/support/v7/internal/widget/ProgressBarICS/tileifyIndeterminate	; tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : Landroid/graphics/drawable/Drawable;
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 128
+	invoke-virtual	{v8,v1},android/support/v7/internal/widget/ProgressBarICS/setIndeterminateDrawable	; setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : Landroid/graphics/drawable/Drawable;
+l9adb8:
+.line 131
+	const/4	v6,6
+; v6 : single-length
+	invoke-virtual	{v0,v6},android/content/res/TypedArray/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 132
+	if-eqz	v1,l9add4
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 133
+	invoke-direct	{v8,v1,v4},android/support/v7/internal/widget/ProgressBarICS/tileify	; tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : Landroid/graphics/drawable/Drawable; , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 136
+	invoke-virtual	{v8,v1},android/support/v7/internal/widget/ProgressBarICS/setProgressDrawable	; setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : Landroid/graphics/drawable/Drawable;
+l9add4:
+.line 139
+	const/4	v6,7
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mDuration I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mDuration I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 140
+	const/16	v6,8
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mBehavior I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mBehavior I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 141
+	const/16	v6,9
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mMinWidth I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mMinWidth I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 142
+	const/16	v6,10
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mMaxWidth I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mMaxWidth I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 143
+	const/16	v6,11
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mMinHeight I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mMinHeight I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 144
+	const/16	v6,12
+; v6 : single-length
+	iget	v7,v8,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v7 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	iput	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 146
+	const/16	v6,13
+; v6 : single-length
+	const	v7,17432587	; 0x10a000b
+; v7 : single-length
+	invoke-virtual	{v0,v6,v7},android/content/res/TypedArray/getResourceId	; getResourceId(II)I
+; v0 : Landroid/content/res/TypedArray; , v6 : single-length , v7 : single-length
+	move-result	v3
+; v3 : single-length
+.line 147
+	if-lez	v3,l9ae66
+; v3 : single-length
+.line 148
+	invoke-virtual	{v8,v9,v3},android/support/v7/internal/widget/ProgressBarICS/setInterpolator	; setInterpolator(Landroid/content/Context;I)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v9 : Landroid/content/Context; , v3 : single-length
+l9ae66:
+.line 151
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 153
+	iput-boolean	v4,v8,android/support/v7/internal/widget/ProgressBarICS.mNoInvalidate Z
+; v4 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 154
+	iget-boolean	v6,v8,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v6 : single-length , v8 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v6,l9ae7c
+; v6 : single-length
+	if-eqz	v2,l9ae7e
+; v2 : single-length
+l9ae7c:
+	move	v4,v5
+; v4 : single-length , v5 : single-length
+l9ae7e:
+	invoke-virtual	{v8,v4},android/support/v7/internal/widget/ProgressBarICS/setIndeterminate	; setIndeterminate(Z)V
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v4 : single-length
+.line 155
+	return-void	
+.end method
+
+.method static access$000(Landroid/support/v7/internal/widget/ProgressBarICS;IIZZ)V
+.limit registers 5
+; parameter[0] : v0 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[1] : v1 (I)
+; parameter[2] : v2 (I)
+; parameter[3] : v3 (Z)
+; parameter[4] : v4 (Z)
+.line 52
+	invoke-direct	{v0,v1,v2,v3,v4},android/support/v7/internal/widget/ProgressBarICS/doRefreshProgress	; doRefreshProgress(IIZZ)V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : single-length
+	return-void	
+.end method
+
+.method static access$102(Landroid/support/v7/internal/widget/ProgressBarICS;Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;)Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+.limit registers 2
+; parameter[0] : v0 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[1] : v1 (Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;)
+.line 52
+	iput-object	v1,v0,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v0 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-object	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+.end method
+
+.method private synchronized doRefreshProgress(IIZZ)V
+.limit registers 12
+; this: v7 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v8 (I)
+; parameter[1] : v9 (I)
+; parameter[2] : v10 (Z)
+; parameter[3] : v11 (Z)
+.catch java/lang/Exception from l9af20 to l9af26 using l9af28
+.catch java/lang/Exception from l9aeca to l9af14 using l9af28
+.var 3 is progressDrawable Landroid/graphics/drawable/Drawable; from l9aee8 to l9af0e
+.var 2 is level I from l9af0a to l9af14
+.var 1 is d Landroid/graphics/drawable/Drawable; from l9aee2 to l9af18
+.var 4 is scale F from l9aede to l9af18
+.var 2 is level I from l9af1c to l9af20
+.var 3 is progressDrawable Landroid/graphics/drawable/Drawable; from l9af1c to l9af20
+.var 1 is d Landroid/graphics/drawable/Drawable; from l9af1c to l9af28
+.var 4 is scale F from l9af1c to l9af28
+.line 418
+	monitor-enter	v7
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9aeca:
+	iget	v5,v7,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v5 : single-length , v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-lez	v5,l9af18
+; v5 : single-length
+	int-to-float	v5,v9
+; v5 : single-length , v9 : single-length
+	iget	v6,v7,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v6 : single-length , v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	div-float	v4,v5,v6
+; v4 : single-length , v5 : single-length , v6 : single-length
+l9aede:
+.line 419
+	iget-object	v1,v7,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 420
+	if-eqz	v1,l9af20
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 421
+	const/4	v3,0
+; v3 : single-length
+.line 423
+	instance-of	v5,v1,android/graphics/drawable/LayerDrawable
+; v5 : single-length , v1 : Landroid/graphics/drawable/Drawable;
+	if-eqz	v5,l9af00
+; v5 : single-length
+.line 424
+	move-object	v0,v1
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/graphics/drawable/Drawable;
+	check-cast	v0,android/graphics/drawable/LayerDrawable
+; v0 : Landroid/graphics/drawable/LayerDrawable;
+	move-object	v5,v0
+; v5 : Landroid/graphics/drawable/LayerDrawable; , v0 : Landroid/graphics/drawable/LayerDrawable;
+	invoke-virtual	{v5,v8},android/graphics/drawable/LayerDrawable/findDrawableByLayerId	; findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+; v5 : Landroid/graphics/drawable/LayerDrawable; , v8 : single-length
+	move-result-object	v3
+; v3 : Landroid/graphics/drawable/Drawable;
+l9af00:
+.line 427
+	const	v5,1176256512	; 0x461c4000
+; v5 : single-length
+	mul-float/2addr	v5,v4
+; v5 : single-length , v4 : single-length
+	float-to-int	v2,v5
+; v2 : single-length , v5 : single-length
+.line 428
+	if-eqz	v3,l9af1c
+; v3 : Landroid/graphics/drawable/Drawable;
+l9af0e:
+	invoke-virtual	{v3,v2},android/graphics/drawable/Drawable/setLevel	; setLevel(I)Z
+; v3 : Landroid/graphics/drawable/Drawable; , v2 : single-length
+l9af14:
+.line 432
+	monitor-exit	v7
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9af18:
+.line 418
+	const/4	v4,0
+; v4 : single-length
+	goto	l9aede
+l9af1c:
+	move-object	v3,v1
+; v3 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/graphics/drawable/Drawable;
+.line 428
+	goto	l9af0e
+l9af20:
+.line 430
+	invoke-virtual	{v7},android/support/v7/internal/widget/ProgressBarICS/invalidate	; invalidate()V
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9af26:
+	goto	l9af14
+l9af28:
+.line 418
+	move-exception	v5
+; v5 : java/lang/Exception
+	monitor-exit	v7
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v5
+; v5 : java/lang/Exception
+.end method
+
+.method private initProgressBar()V
+.limit registers 5
+; this: v4 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+	const/16	v3,48
+; v3 : single-length
+	const/16	v2,24
+; v2 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 242
+	const/16	v0,100
+; v0 : single-length
+	iput	v0,v4,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v0 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 243
+	iput	v1,v4,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v1 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 244
+	iput	v1,v4,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v1 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 245
+	iput-boolean	v1,v4,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v1 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 246
+	iput-boolean	v1,v4,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v1 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 247
+	const/16	v0,4000
+; v0 : single-length
+	iput	v0,v4,android/support/v7/internal/widget/ProgressBarICS.mDuration I
+; v0 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 248
+	const/4	v0,1
+; v0 : single-length
+	iput	v0,v4,android/support/v7/internal/widget/ProgressBarICS.mBehavior I
+; v0 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 249
+	iput	v2,v4,android/support/v7/internal/widget/ProgressBarICS.mMinWidth I
+; v2 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 250
+	iput	v3,v4,android/support/v7/internal/widget/ProgressBarICS.mMaxWidth I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 251
+	iput	v2,v4,android/support/v7/internal/widget/ProgressBarICS.mMinHeight I
+; v2 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 252
+	iput	v3,v4,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 253
+	return-void	
+.end method
+
+.method private synchronized refreshProgress(IIZ)V
+.limit registers 9
+; this: v5 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v6 (I)
+; parameter[1] : v7 (I)
+; parameter[2] : v8 (Z)
+.catch java/lang/Exception from l9aff8 to l9b002 using l9aff2
+.catch java/lang/Exception from l9afd2 to l9aff0 using l9aff2
+.catch java/lang/Exception from l9afaa to l9afce using l9aff2
+.var 0 is r Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; from l9afde to l9aff2
+.line 435
+	monitor-enter	v5
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9afaa:
+	iget-wide	v1,v5,android/support/v7/internal/widget/ProgressBarICS.mUiThreadId J
+; v1 : double-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-static	{},java/lang/Thread/currentThread	; currentThread()Ljava/lang/Thread;
+; 
+	nop	
+	move-result-object	v3
+; v3 : Ljava/lang/Thread;
+	invoke-virtual	{v3},java/lang/Thread/getId	; getId()J
+; v3 : Ljava/lang/Thread;
+	move-result-wide	v3
+; v3 : double-length
+	cmp-long	v1,v1,v3
+; v1 : single-length , v1 : single-length , v3 : double-length
+	if-nez	v1,l9afd2
+; v1 : single-length
+.line 436
+	const/4	v1,1
+; v1 : single-length
+	invoke-direct	{v5,v6,v7,v8,v1},android/support/v7/internal/widget/ProgressBarICS/doRefreshProgress	; doRefreshProgress(IIZZ)V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v6 : single-length , v7 : single-length , v8 : single-length , v1 : single-length
+l9afce:
+.line 451
+	monitor-exit	v5
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9afd2:
+.line 439
+	iget-object	v1,v5,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v1,l9aff8
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+.line 441
+	iget-object	v0,v5,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 443
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v5,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v1 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 444
+	invoke-virtual	{v0,v6,v7,v8},android/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable/setup	; setup(IIZ)V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v6 : single-length , v7 : single-length , v8 : single-length
+l9afea:
+.line 449
+	invoke-virtual	{v5,v0},android/support/v7/internal/widget/ProgressBarICS/post	; post(Ljava/lang/Runnable;)Z
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+l9aff0:
+	goto	l9afce
+l9aff2:
+.line 435
+	move-exception	v1
+; v1 : java/lang/Exception
+	monitor-exit	v5
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v1
+; v1 : java/lang/Exception
+l9aff8:
+.line 447
+	new-instance	v0,android/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+	invoke-direct	{v0,v5,v6,v7,v8},android/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable/<init>	; <init>(Landroid/support/v7/internal/widget/ProgressBarICS;IIZ)V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v6 : single-length , v7 : single-length , v8 : single-length
+l9b002:
+	goto	l9afea
+.end method
+
+.method private tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+.limit registers 15
+; this: v12 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v13 (Landroid/graphics/drawable/Drawable;)
+; parameter[1] : v14 (Z)
+.var 4 is id I from l9b05a to l9b08e
+.var 0 is N I from l9b048 to l9b0b2
+.var 1 is background Landroid/graphics/drawable/LayerDrawable; from l9b040 to l9b0b2
+.var 3 is i I from l9b04e to l9b0b2
+.var 5 is newBg Landroid/graphics/drawable/LayerDrawable; from l9b098 to l9b0b2
+.var 6 is outDrawables [Landroid/graphics/drawable/Drawable; from l9b04c to l9b0b2
+.var 7 is shapeDrawable Landroid/graphics/drawable/ShapeDrawable; from l9b0e4 to l9b116
+.var 2 is bitmapShader Landroid/graphics/BitmapShader; from l9b0f6 to l9b118
+.var 8 is tileBitmap Landroid/graphics/Bitmap; from l9b0c6 to l9b118
+	const/4	v10,1
+; v10 : single-length
+.line 163
+	instance-of	v9,v13,android/graphics/drawable/LayerDrawable
+; v9 : single-length , v13 : Landroid/graphics/drawable/Drawable;
+	if-eqz	v9,l9b0b2
+; v9 : single-length
+	move-object	v1,v13
+; v1 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/graphics/drawable/Drawable;
+.line 164
+	check-cast	v1,android/graphics/drawable/LayerDrawable
+; v1 : Landroid/graphics/drawable/LayerDrawable;
+.line 165
+	invoke-virtual	{v1},android/graphics/drawable/LayerDrawable/getNumberOfLayers	; getNumberOfLayers()I
+; v1 : Landroid/graphics/drawable/LayerDrawable;
+	move-result	v0
+; v0 : single-length
+.line 166
+	new-array	v6,v0,[Landroid/graphics/drawable/Drawable;
+; v6 : [Landroid/graphics/drawable/Drawable; , v0 : single-length
+.line 168
+	const/4	v3,0
+; v3 : single-length
+l9b04e:
+	if-ge	v3,v0,l9b08e
+; v3 : single-length , v0 : single-length
+.line 169
+	invoke-virtual	{v1,v3},android/graphics/drawable/LayerDrawable/getId	; getId(I)I
+; v1 : Landroid/graphics/drawable/LayerDrawable; , v3 : single-length
+	move-result	v4
+; v4 : single-length
+.line 170
+	invoke-virtual	{v1,v3},android/graphics/drawable/LayerDrawable/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/LayerDrawable; , v3 : single-length
+	move-result-object	v11
+; v11 : Landroid/graphics/drawable/Drawable;
+	const	v9,16908301	; 0x102000d
+; v9 : single-length
+	if-eq	v4,v9,l9b076
+; v4 : single-length , v9 : single-length
+	const	v9,16908303	; 0x102000f
+; v9 : single-length
+	if-ne	v4,v9,l9b08a
+; v4 : single-length , v9 : single-length
+l9b076:
+	move	v9,v10
+; v9 : single-length , v10 : single-length
+l9b078:
+	invoke-direct	{v12,v11,v9},android/support/v7/internal/widget/ProgressBarICS/tileify	; tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+; v12 : Landroid/support/v7/internal/widget/ProgressBarICS; , v11 : Landroid/graphics/drawable/Drawable; , v9 : single-length
+	move-result-object	v9
+; v9 : Landroid/graphics/drawable/Drawable;
+	aput-object	v9,v6,v3
+; v9 : Landroid/graphics/drawable/Drawable; , v6 : [Landroid/graphics/drawable/Drawable; , v3 : single-length
+.line 168
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	l9b04e
+l9b08a:
+.line 170
+	const/4	v9,0
+; v9 : single-length
+	goto	l9b078
+l9b08e:
+.line 174
+	new-instance	v5,android/graphics/drawable/LayerDrawable
+; v5 : Landroid/graphics/drawable/LayerDrawable;
+	invoke-direct	{v5,v6},android/graphics/drawable/LayerDrawable/<init>	; <init>([Landroid/graphics/drawable/Drawable;)V
+; v5 : Landroid/graphics/drawable/LayerDrawable; , v6 : [Landroid/graphics/drawable/Drawable;
+.line 176
+	const/4	v3,0
+; v3 : single-length
+l9b09a:
+	if-ge	v3,v0,l9b118
+; v3 : single-length , v0 : single-length
+.line 177
+	invoke-virtual	{v1,v3},android/graphics/drawable/LayerDrawable/getId	; getId(I)I
+; v1 : Landroid/graphics/drawable/LayerDrawable; , v3 : single-length
+	move-result	v9
+; v9 : single-length
+	invoke-virtual	{v5,v3,v9},android/graphics/drawable/LayerDrawable/setId	; setId(II)V
+; v5 : Landroid/graphics/drawable/LayerDrawable; , v3 : single-length , v9 : single-length
+.line 176
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	l9b09a
+l9b0b2:
+.line 182
+	instance-of	v9,v13,android/graphics/drawable/BitmapDrawable
+; v9 : single-length , v13 : Landroid/graphics/drawable/Drawable;
+	if-eqz	v9,l9b11a
+; v9 : single-length
+.line 183
+	check-cast	v13,android/graphics/drawable/BitmapDrawable
+; v13 : Landroid/graphics/drawable/BitmapDrawable;
+	invoke-virtual	{v13},android/graphics/drawable/BitmapDrawable/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v13 : Landroid/graphics/drawable/BitmapDrawable;
+	move-result-object	v8
+; v8 : Landroid/graphics/Bitmap;
+.line 184
+	iget-object	v9,v12,android/support/v7/internal/widget/ProgressBarICS.mSampleTile Landroid/graphics/Bitmap;
+; v9 : Landroid/graphics/Bitmap; , v12 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v9,l9b0d2
+; v9 : Landroid/graphics/Bitmap;
+.line 185
+	iput-object	v8,v12,android/support/v7/internal/widget/ProgressBarICS.mSampleTile Landroid/graphics/Bitmap;
+; v8 : Landroid/graphics/Bitmap; , v12 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b0d2:
+.line 188
+	new-instance	v7,android/graphics/drawable/ShapeDrawable
+; v7 : Landroid/graphics/drawable/ShapeDrawable;
+	invoke-virtual	{v12},android/support/v7/internal/widget/ProgressBarICS/getDrawableShape	; getDrawableShape()Landroid/graphics/drawable/shapes/Shape;
+; v12 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result-object	v9
+; v9 : Landroid/graphics/drawable/shapes/Shape;
+	invoke-direct	{v7,v9},android/graphics/drawable/ShapeDrawable/<init>	; <init>(Landroid/graphics/drawable/shapes/Shape;)V
+; v7 : Landroid/graphics/drawable/ShapeDrawable; , v9 : Landroid/graphics/drawable/shapes/Shape;
+.line 190
+	new-instance	v2,android/graphics/BitmapShader
+; v2 : Landroid/graphics/BitmapShader;
+	sget-object	v9,android/graphics/Shader$TileMode.REPEAT Landroid/graphics/Shader$TileMode;
+; v9 : Landroid/graphics/Shader$TileMode;
+	sget-object	v11,android/graphics/Shader$TileMode.CLAMP Landroid/graphics/Shader$TileMode;
+; v11 : Landroid/graphics/Shader$TileMode;
+	invoke-direct	{v2,v8,v9,v11},android/graphics/BitmapShader/<init>	; <init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
+; v2 : Landroid/graphics/BitmapShader; , v8 : Landroid/graphics/Bitmap; , v9 : Landroid/graphics/Shader$TileMode; , v11 : Landroid/graphics/Shader$TileMode;
+.line 192
+	invoke-virtual	{v7},android/graphics/drawable/ShapeDrawable/getPaint	; getPaint()Landroid/graphics/Paint;
+; v7 : Landroid/graphics/drawable/ShapeDrawable;
+	move-result-object	v9
+; v9 : Landroid/graphics/Paint;
+	invoke-virtual	{v9,v2},android/graphics/Paint/setShader	; setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+; v9 : Landroid/graphics/Paint; , v2 : Landroid/graphics/BitmapShader;
+.line 194
+	if-eqz	v14,l9b116
+; v14 : single-length
+	new-instance	v9,android/graphics/drawable/ClipDrawable
+; v9 : Landroid/graphics/drawable/ClipDrawable;
+	const/4	v11,3
+; v11 : single-length
+	invoke-direct	{v9,v7,v11,v10},android/graphics/drawable/ClipDrawable/<init>	; <init>(Landroid/graphics/drawable/Drawable;II)V
+; v9 : Landroid/graphics/drawable/ClipDrawable; , v7 : Landroid/graphics/drawable/ShapeDrawable; , v11 : single-length , v10 : single-length
+	move-object	v7,v9
+; v7 : Landroid/graphics/drawable/ClipDrawable; , v9 : Landroid/graphics/drawable/ClipDrawable;
+l9b116:
+	move-object	v5,v7
+; v5 : Landroid/graphics/drawable/ShapeDrawable; , v7 : Landroid/graphics/drawable/ShapeDrawable;
+l9b118:
+.line 198
+	return-object	v5
+; v5 : Ljava/lang/Object;
+l9b11a:
+	move-object	v5,v13
+; v5 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/graphics/drawable/Drawable;
+	goto	l9b118
+.end method
+
+.method private tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.limit registers 10
+; this: v8 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v9 (Landroid/graphics/drawable/Drawable;)
+.var 2 is frame Landroid/graphics/drawable/Drawable; from l9b17a to l9b194
+.var 0 is N I from l9b14a to l9b19c
+.var 1 is background Landroid/graphics/drawable/AnimationDrawable; from l9b142 to l9b19c
+.var 3 is i I from l9b164 to l9b19c
+.var 4 is newBg Landroid/graphics/drawable/AnimationDrawable; from l9b154 to l9b19c
+	const/16	v7,10000
+; v7 : single-length
+.line 212
+	instance-of	v5,v9,android/graphics/drawable/AnimationDrawable
+; v5 : single-length , v9 : Landroid/graphics/drawable/Drawable;
+	if-eqz	v5,l9b19c
+; v5 : single-length
+	move-object	v1,v9
+; v1 : Landroid/graphics/drawable/Drawable; , v9 : Landroid/graphics/drawable/Drawable;
+.line 213
+	check-cast	v1,android/graphics/drawable/AnimationDrawable
+; v1 : Landroid/graphics/drawable/AnimationDrawable;
+.line 214
+	invoke-virtual	{v1},android/graphics/drawable/AnimationDrawable/getNumberOfFrames	; getNumberOfFrames()I
+; v1 : Landroid/graphics/drawable/AnimationDrawable;
+	move-result	v0
+; v0 : single-length
+.line 215
+	new-instance	v4,android/graphics/drawable/AnimationDrawable
+; v4 : Landroid/graphics/drawable/AnimationDrawable;
+	invoke-direct	{v4},android/graphics/drawable/AnimationDrawable/<init>	; <init>()V
+; v4 : Landroid/graphics/drawable/AnimationDrawable;
+.line 216
+	invoke-virtual	{v1},android/graphics/drawable/AnimationDrawable/isOneShot	; isOneShot()Z
+; v1 : Landroid/graphics/drawable/AnimationDrawable;
+	move-result	v5
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/graphics/drawable/AnimationDrawable/setOneShot	; setOneShot(Z)V
+; v4 : Landroid/graphics/drawable/AnimationDrawable; , v5 : single-length
+.line 218
+	const/4	v3,0
+; v3 : single-length
+l9b164:
+	if-ge	v3,v0,l9b194
+; v3 : single-length , v0 : single-length
+.line 219
+	invoke-virtual	{v1,v3},android/graphics/drawable/AnimationDrawable/getFrame	; getFrame(I)Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/AnimationDrawable; , v3 : single-length
+	move-result-object	v5
+; v5 : Landroid/graphics/drawable/Drawable;
+	const/4	v6,1
+; v6 : single-length
+	invoke-direct	{v8,v5,v6},android/support/v7/internal/widget/ProgressBarICS/tileify	; tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+; v8 : Landroid/support/v7/internal/widget/ProgressBarICS; , v5 : Landroid/graphics/drawable/Drawable; , v6 : single-length
+	move-result-object	v2
+; v2 : Landroid/graphics/drawable/Drawable;
+.line 220
+	invoke-virtual	{v2,v7},android/graphics/drawable/Drawable/setLevel	; setLevel(I)Z
+; v2 : Landroid/graphics/drawable/Drawable; , v7 : single-length
+.line 221
+	invoke-virtual	{v1,v3},android/graphics/drawable/AnimationDrawable/getDuration	; getDuration(I)I
+; v1 : Landroid/graphics/drawable/AnimationDrawable; , v3 : single-length
+	move-result	v5
+; v5 : single-length
+	invoke-virtual	{v4,v2,v5},android/graphics/drawable/AnimationDrawable/addFrame	; addFrame(Landroid/graphics/drawable/Drawable;I)V
+; v4 : Landroid/graphics/drawable/AnimationDrawable; , v2 : Landroid/graphics/drawable/Drawable; , v5 : single-length
+.line 218
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	l9b164
+l9b194:
+.line 223
+	invoke-virtual	{v4,v7},android/graphics/drawable/AnimationDrawable/setLevel	; setLevel(I)Z
+; v4 : Landroid/graphics/drawable/AnimationDrawable; , v7 : single-length
+.line 224
+	move-object	v9,v4
+; v9 : Landroid/graphics/drawable/AnimationDrawable; , v4 : Landroid/graphics/drawable/AnimationDrawable;
+l9b19c:
+.line 226
+	return-object	v9
+; v9 : Ljava/lang/Object;
+.end method
+
+.method private updateDrawableBounds(II)V
+.limit registers 16
+; this: v13 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v14 (I)
+; parameter[1] : v15 (I)
+.var 1 is boundAspect F from l9b22a to l9b24c
+.var 3 is intrinsicAspect F from l9b222 to l9b24c
+.var 4 is intrinsicHeight I from l9b21a to l9b24c
+.var 5 is intrinsicWidth I from l9b20e to l9b24c
+.var 9 is width I from l9b240 to l9b24c
+	const/4	v12,0
+; v12 : single-length
+.line 732
+	invoke-virtual	{v13},android/support/v7/internal/widget/ProgressBarICS/getPaddingRight	; getPaddingRight()I
+; v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v10
+; v10 : single-length
+	sub-int	v10,v14,v10
+; v10 : single-length , v14 : single-length , v10 : single-length
+	invoke-virtual	{v13},android/support/v7/internal/widget/ProgressBarICS/getPaddingLeft	; getPaddingLeft()I
+; v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v11
+; v11 : single-length
+	sub-int	v7,v10,v11
+; v7 : single-length , v10 : single-length , v11 : single-length
+.line 733
+	invoke-virtual	{v13},android/support/v7/internal/widget/ProgressBarICS/getPaddingBottom	; getPaddingBottom()I
+; v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v10
+; v10 : single-length
+	sub-int	v10,v15,v10
+; v10 : single-length , v15 : single-length , v10 : single-length
+	invoke-virtual	{v13},android/support/v7/internal/widget/ProgressBarICS/getPaddingTop	; getPaddingTop()I
+; v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v11
+; v11 : single-length
+	sub-int	v0,v10,v11
+; v0 : single-length , v10 : single-length , v11 : single-length
+.line 734
+	const/4	v8,0
+; v8 : single-length
+.line 735
+	const/4	v6,0
+; v6 : single-length
+.line 737
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v10,l9b256
+; v10 : Landroid/graphics/drawable/Drawable;
+.line 739
+	iget-boolean	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v10 : single-length , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v10,l9b24c
+; v10 : single-length
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	instance-of	v10,v10,android/graphics/drawable/AnimationDrawable
+; v10 : single-length , v10 : single-length
+	if-nez	v10,l9b24c
+; v10 : single-length
+.line 742
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v10},android/graphics/drawable/Drawable/getIntrinsicWidth	; getIntrinsicWidth()I
+; v10 : Landroid/graphics/drawable/Drawable;
+	move-result	v5
+; v5 : single-length
+.line 743
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v10},android/graphics/drawable/Drawable/getIntrinsicHeight	; getIntrinsicHeight()I
+; v10 : Landroid/graphics/drawable/Drawable;
+	move-result	v4
+; v4 : single-length
+.line 744
+	int-to-float	v10,v5
+; v10 : single-length , v5 : single-length
+	int-to-float	v11,v4
+; v11 : single-length , v4 : single-length
+	div-float	v3,v10,v11
+; v3 : single-length , v10 : single-length , v11 : single-length
+.line 745
+	int-to-float	v10,v14
+; v10 : single-length , v14 : single-length
+	int-to-float	v11,v15
+; v11 : single-length , v15 : single-length
+	div-float	v1,v10,v11
+; v1 : single-length , v10 : single-length , v11 : single-length
+.line 746
+	cmpl-float	v10,v3,v1
+; v10 : single-length , v3 : single-length , v1 : single-length
+	if-eqz	v10,l9b24c
+; v10 : single-length
+.line 747
+	cmpl-float	v10,v1,v3
+; v10 : single-length , v1 : single-length , v3 : single-length
+	if-lez	v10,l9b26a
+; v10 : single-length
+.line 749
+	int-to-float	v10,v15
+; v10 : single-length , v15 : single-length
+	mul-float/2addr	v10,v3
+; v10 : single-length , v3 : single-length
+	float-to-int	v9,v10
+; v9 : single-length , v10 : single-length
+.line 750
+	sub-int	v10,v14,v9
+; v10 : single-length , v14 : single-length , v9 : single-length
+	div-int/lit8	v6,v10,2
+; v6 : single-length , v10 : single-length
+.line 751
+	add-int	v7,v6,v9
+; v7 : single-length , v6 : single-length , v9 : single-length
+l9b24c:
+.line 760
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v10,v6,v8,v7,v0},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v10 : Landroid/graphics/drawable/Drawable; , v6 : single-length , v8 : single-length , v7 : single-length , v0 : single-length
+l9b256:
+.line 763
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v10,l9b268
+; v10 : Landroid/graphics/drawable/Drawable;
+.line 764
+	iget-object	v10,v13,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v10 : Landroid/graphics/drawable/Drawable; , v13 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v10,v12,v12,v7,v0},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v10 : Landroid/graphics/drawable/Drawable; , v12 : single-length , v12 : single-length , v7 : single-length , v0 : single-length
+l9b268:
+.line 766
+	return-void	
+l9b26a:
+.line 754
+	int-to-float	v10,v14
+; v10 : single-length , v14 : single-length
+	const/high16	v11,16256
+; v11 : single-length
+	div-float/2addr	v11,v3
+; v11 : single-length , v3 : single-length
+	mul-float/2addr	v10,v11
+; v10 : single-length , v11 : single-length
+	float-to-int	v2,v10
+; v2 : single-length , v10 : single-length
+.line 755
+	sub-int	v10,v15,v2
+; v10 : single-length , v15 : single-length , v2 : single-length
+	div-int/lit8	v8,v10,2
+; v8 : single-length , v10 : single-length
+.line 756
+	add-int	v0,v8,v2
+; v0 : single-length , v8 : single-length , v2 : single-length
+	goto	l9b24c
+.end method
+
+.method private updateDrawableState()V
+.limit registers 3
+; this: v2 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 827
+	invoke-virtual	{v2},android/support/v7/internal/widget/ProgressBarICS/getDrawableState	; getDrawableState()[I
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result-object	v0
+; v0 : [I
+.line 829
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v1,l9b2be
+; v1 : Landroid/graphics/drawable/Drawable;
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v1},android/graphics/drawable/Drawable/isStateful	; isStateful()Z
+; v1 : Landroid/graphics/drawable/Drawable;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l9b2be
+; v1 : single-length
+.line 830
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v1,v0},android/graphics/drawable/Drawable/setState	; setState([I)Z
+; v1 : Landroid/graphics/drawable/Drawable; , v0 : [I
+l9b2be:
+.line 833
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v1,l9b2e0
+; v1 : Landroid/graphics/drawable/Drawable;
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v1},android/graphics/drawable/Drawable/isStateful	; isStateful()Z
+; v1 : Landroid/graphics/drawable/Drawable;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l9b2e0
+; v1 : single-length
+.line 834
+	iget-object	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v1,v0},android/graphics/drawable/Drawable/setState	; setState([I)Z
+; v1 : Landroid/graphics/drawable/Drawable; , v0 : [I
+l9b2e0:
+.line 836
+	return-void	
+.end method
+
+.method protected drawableStateChanged()V
+.limit registers 1
+; this: v0 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 822
+	invoke-super	{v0},android/view/View/drawableStateChanged	; drawableStateChanged()V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 823
+	invoke-direct	{v0},android/support/v7/internal/widget/ProgressBarICS/updateDrawableState	; updateDrawableState()V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 824
+	return-void	
+.end method
+
+.method getDrawableShape()Landroid/graphics/drawable/shapes/Shape;
+.limit registers 4
+; this: v3 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+	const/4	v2,0
+; v2 : single-length
+.line 202
+	const/16	v1,8
+; v1 : single-length
+	new-array	v0,v1,[F
+; v0 : [F , v1 : single-length
+	fill-array-data	v0,l9b330
+; v0 : [F
+.line 203
+	new-instance	v1,android/graphics/drawable/shapes/RoundRectShape
+; v1 : Landroid/graphics/drawable/shapes/RoundRectShape;
+	invoke-direct	{v1,v0,v2,v2},android/graphics/drawable/shapes/RoundRectShape/<init>	; <init>([FLandroid/graphics/RectF;[F)V
+; v1 : Landroid/graphics/drawable/shapes/RoundRectShape; , v0 : [F , v2 : single-length , v2 : single-length
+	return-object	v1
+; v1 : Landroid/graphics/drawable/shapes/RoundRectShape;
+.line 202
+l9b330:	data-array
+		0x00, 0x00, 0xA0, 0x40	; #0
+		0x00, 0x00, 0xA0, 0x40	; #1
+		0x00, 0x00, 0xA0, 0x40	; #2
+		0x00, 0x00, 0xA0, 0x40	; #3
+		0x00, 0x00, 0xA0, 0x40	; #4
+		0x00, 0x00, 0xA0, 0x40	; #5
+		0x00, 0x00, 0xA0, 0x40	; #6
+		0x00, 0x00, 0xA0, 0x40	; #7
+	end data-array
+.end method
+
+.method public getIndeterminateDrawable()Landroid/graphics/drawable/Drawable;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 299
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public getInterpolator()Landroid/view/animation/Interpolator;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 676
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mInterpolator Landroid/view/animation/Interpolator;
+; v0 : Landroid/view/animation/Interpolator; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-object	v0
+; v0 : Landroid/view/animation/Interpolator;
+.end method
+
+.method public synchronized getMax()I
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.catch java/lang/Exception from l9b39a to l9b39e using l9b3a2
+.line 560
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b39a:
+	iget	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b39e:
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return	v0
+; v0 : single-length
+l9b3a2:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized getProgress()I
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.catch java/lang/Exception from l9b3d4 to l9b3d8 using l9b3da
+.catch java/lang/Exception from l9b3c6 to l9b3ca using l9b3da
+.line 531
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b3c6:
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b3ca:
+	if-eqz	v0,l9b3d4
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+l9b3d0:
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return	v0
+; v0 : single-length
+l9b3d4:
+	iget	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b3d8:
+	goto	l9b3d0
+l9b3da:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public getProgressDrawable()Landroid/graphics/drawable/Drawable;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 332
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public synchronized getSecondaryProgress()I
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.catch java/lang/Exception from l9b42c to l9b430 using l9b432
+.catch java/lang/Exception from l9b41e to l9b422 using l9b432
+.line 547
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b41e:
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b422:
+	if-eqz	v0,l9b42c
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+l9b428:
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return	v0
+; v0 : single-length
+l9b42c:
+	iget	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b430:
+	goto	l9b428
+l9b432:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public final synchronized incrementProgressBy(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (I)
+.catch java/lang/Exception from l9b45e to l9b46a using l9b46e
+.line 595
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b45e:
+	iget	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	add-int/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	invoke-virtual	{v1,v0},android/support/v7/internal/widget/ProgressBarICS/setProgress	; setProgress(I)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : single-length
+l9b46a:
+.line 596
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b46e:
+.line 595
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public final synchronized incrementSecondaryProgressBy(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (I)
+.catch java/lang/Exception from l9b492 to l9b49e using l9b4a2
+.line 606
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b492:
+	iget	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	add-int/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	invoke-virtual	{v1,v0},android/support/v7/internal/widget/ProgressBarICS/setSecondaryProgress	; setSecondaryProgress(I)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : single-length
+l9b49e:
+.line 607
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b4a2:
+.line 606
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+.limit registers 9
+; this: v7 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v8 (Landroid/graphics/drawable/Drawable;)
+.var 0 is dirty Landroid/graphics/Rect; from l9b4e0 to l9b526
+.var 1 is scrollX I from l9b4f4 to l9b526
+.var 2 is scrollY I from l9b508 to l9b526
+.line 711
+	iget-boolean	v3,v7,android/support/v7/internal/widget/ProgressBarICS.mInDrawing Z
+; v3 : single-length , v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v3,l9b526
+; v3 : single-length
+.line 712
+	invoke-virtual	{v7,v8},android/support/v7/internal/widget/ProgressBarICS/verifyDrawable	; verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS; , v8 : Landroid/graphics/drawable/Drawable;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l9b528
+; v3 : single-length
+.line 713
+	invoke-virtual	{v8},android/graphics/drawable/Drawable/getBounds	; getBounds()Landroid/graphics/Rect;
+; v8 : Landroid/graphics/drawable/Drawable;
+	move-result-object	v0
+; v0 : Landroid/graphics/Rect;
+.line 714
+	invoke-virtual	{v7},android/support/v7/internal/widget/ProgressBarICS/getScrollX	; getScrollX()I
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v7},android/support/v7/internal/widget/ProgressBarICS/getPaddingLeft	; getPaddingLeft()I
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v4
+; v4 : single-length
+	add-int	v1,v3,v4
+; v1 : single-length , v3 : single-length , v4 : single-length
+.line 715
+	invoke-virtual	{v7},android/support/v7/internal/widget/ProgressBarICS/getScrollY	; getScrollY()I
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v7},android/support/v7/internal/widget/ProgressBarICS/getPaddingTop	; getPaddingTop()I
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v4
+; v4 : single-length
+	add-int	v2,v3,v4
+; v2 : single-length , v3 : single-length , v4 : single-length
+.line 717
+	iget	v3,v0,android/graphics/Rect.left I
+; v3 : single-length , v0 : Landroid/graphics/Rect;
+	add-int/2addr	v3,v1
+; v3 : single-length , v1 : single-length
+	iget	v4,v0,android/graphics/Rect.top I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	add-int/2addr	v4,v2
+; v4 : single-length , v2 : single-length
+	iget	v5,v0,android/graphics/Rect.right I
+; v5 : single-length , v0 : Landroid/graphics/Rect;
+	add-int/2addr	v5,v1
+; v5 : single-length , v1 : single-length
+	iget	v6,v0,android/graphics/Rect.bottom I
+; v6 : single-length , v0 : Landroid/graphics/Rect;
+	add-int/2addr	v6,v2
+; v6 : single-length , v2 : single-length
+	invoke-virtual	{v7,v3,v4,v5,v6},android/support/v7/internal/widget/ProgressBarICS/invalidate	; invalidate(IIII)V
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length
+l9b526:
+.line 723
+	return-void	
+l9b528:
+.line 720
+	invoke-super	{v7,v8},android/view/View/invalidateDrawable	; invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+; v7 : Landroid/support/v7/internal/widget/ProgressBarICS; , v8 : Landroid/graphics/drawable/Drawable;
+	goto	l9b526
+.end method
+
+.method public synchronized isIndeterminate()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.catch java/lang/Exception from l9b542 to l9b546 using l9b54a
+.line 261
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b542:
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b546:
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return	v0
+; v0 : single-length
+l9b54a:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected onAttachedToWindow()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 900
+	invoke-super	{v1},android/view/View/onAttachedToWindow	; onAttachedToWindow()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 901
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b580
+; v0 : single-length
+.line 902
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/startAnimation	; startAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b580:
+.line 904
+	return-void	
+.end method
+
+.method protected onDetachedFromWindow()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 908
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b5a2
+; v0 : single-length
+.line 909
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/stopAnimation	; stopAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b5a2:
+.line 911
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b5b4
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+.line 912
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mRefreshProgressRunnable Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v1,v0},android/support/v7/internal/widget/ProgressBarICS/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)Z
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$RefreshProgressRunnable;
+l9b5b4:
+.line 917
+	invoke-super	{v1},android/view/View/onDetachedFromWindow	; onDetachedFromWindow()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 918
+	return-void	
+.end method
+
+.method protected synchronized onDraw(Landroid/graphics/Canvas;)V
+.limit registers 12
+; this: v10 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v11 (Landroid/graphics/Canvas;)
+.catch java/lang/Exception from l9b6a6 to l9b6ac using l9b6ac
+.catch java/lang/Exception from l9b642 to l9b69e using l9b6ac
+.catch java/lang/Exception from l9b62c to l9b640 using l9b6a2
+.catch java/lang/Exception from l9b5d2 to l9b628 using l9b6ac
+.var 1 is scale F from l9b62a to l9b672
+.var 0 is d Landroid/graphics/drawable/Drawable; from l9b5dc to l9b692
+.var 2 is time J from l9b608 to l9b69e
+.var 0 is d Landroid/graphics/drawable/Drawable; from l9b6a2 to l9b6ac
+.var 1 is scale F from l9b6a2 to l9b6ac
+.var 2 is time J from l9b6a2 to l9b6ac
+	const-wide/16	v8,200
+; v8 : double-length
+.line 770
+	monitor-enter	v10
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b5d2:
+	invoke-super	{v10,v11},android/view/View/onDraw	; onDraw(Landroid/graphics/Canvas;)V
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS; , v11 : Landroid/graphics/Canvas;
+.line 772
+	iget-object	v0,v10,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 773
+	if-eqz	v0,l9b69e
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 776
+	invoke-virtual	{v11},android/graphics/Canvas/save	; save()I
+; v11 : Landroid/graphics/Canvas;
+.line 777
+	invoke-virtual	{v10},android/support/v7/internal/widget/ProgressBarICS/getPaddingLeft	; getPaddingLeft()I
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v4
+; v4 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	invoke-virtual	{v10},android/support/v7/internal/widget/ProgressBarICS/getPaddingTop	; getPaddingTop()I
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v5
+; v5 : single-length
+	int-to-float	v5,v5
+; v5 : single-length , v5 : single-length
+	invoke-virtual	{v11,v4,v5},android/graphics/Canvas/translate	; translate(FF)V
+; v11 : Landroid/graphics/Canvas; , v4 : single-length , v5 : single-length
+.line 778
+	invoke-virtual	{v10},android/support/v7/internal/widget/ProgressBarICS/getDrawingTime	; getDrawingTime()J
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result-wide	v2
+; v2 : double-length
+.line 779
+	iget-object	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v4 : Landroid/view/animation/AlphaAnimation; , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v4,l9b672
+; v4 : Landroid/view/animation/AlphaAnimation;
+.line 780
+	iget-object	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v4 : Landroid/view/animation/AlphaAnimation; , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget-object	v5,v10,android/support/v7/internal/widget/ProgressBarICS.mTransformation Landroid/view/animation/Transformation;
+; v5 : Landroid/view/animation/Transformation; , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v4,v2,v3,v5},android/view/animation/AlphaAnimation/getTransformation	; getTransformation(JLandroid/view/animation/Transformation;)Z
+; v4 : Landroid/view/animation/AlphaAnimation; , v2 : double-length , v5 : Landroid/view/animation/Transformation;
+.line 781
+	iget-object	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mTransformation Landroid/view/animation/Transformation;
+; v4 : Landroid/view/animation/Transformation; , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v4},android/view/animation/Transformation/getAlpha	; getAlpha()F
+; v4 : Landroid/view/animation/Transformation;
+l9b628:
+	move-result	v1
+; v1 : single-length
+.line 783
+	const/4	v4,1
+; v4 : single-length
+l9b62c:
+	iput-boolean	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mInDrawing Z
+; v4 : single-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 784
+	const	v4,1176256512	; 0x461c4000
+; v4 : single-length
+	mul-float/2addr	v4,v1
+; v4 : single-length , v1 : single-length
+	float-to-int	v4,v4
+; v4 : single-length , v4 : single-length
+	invoke-virtual	{v0,v4},android/graphics/drawable/Drawable/setLevel	; setLevel(I)Z
+; v0 : Landroid/graphics/drawable/Drawable; , v4 : single-length
+l9b640:
+.line 786
+	const/4	v4,0
+; v4 : single-length
+l9b642:
+	iput-boolean	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mInDrawing Z
+; v4 : single-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 788
+	invoke-static	{},android/os/SystemClock/uptimeMillis	; uptimeMillis()J
+; 
+	nop	
+	move-result-wide	v4
+; v4 : double-length
+	iget-wide	v6,v10,android/support/v7/internal/widget/ProgressBarICS.mLastDrawTime J
+; v6 : double-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	sub-long/2addr	v4,v6
+; v4 : double-length , v6 : double-length
+	cmp-long	v4,v4,v8
+; v4 : single-length , v4 : single-length , v8 : double-length
+	if-ltz	v4,l9b672
+; v4 : single-length
+.line 789
+	invoke-static	{},android/os/SystemClock/uptimeMillis	; uptimeMillis()J
+; 
+	nop	
+	move-result-wide	v4
+; v4 : double-length
+	iput-wide	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mLastDrawTime J
+; v4 : double-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 790
+	const-wide/16	v4,200
+; v4 : double-length
+	invoke-virtual	{v10,v4,v5},android/support/v7/internal/widget/ProgressBarICS/postInvalidateDelayed	; postInvalidateDelayed(J)V
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS; , v4 : double-length
+l9b672:
+.line 793
+	invoke-virtual	{v0,v11},android/graphics/drawable/Drawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Landroid/graphics/drawable/Drawable; , v11 : Landroid/graphics/Canvas;
+.line 794
+	invoke-virtual	{v11},android/graphics/Canvas/restore	; restore()V
+; v11 : Landroid/graphics/Canvas;
+.line 795
+	iget-boolean	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mShouldStartAnimationDrawable Z
+; v4 : single-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v4,l9b69e
+; v4 : single-length
+	instance-of	v4,v0,android/graphics/drawable/Animatable
+; v4 : single-length , v0 : Landroid/graphics/drawable/Drawable;
+	if-eqz	v4,l9b69e
+; v4 : single-length
+.line 796
+	check-cast	v0,android/graphics/drawable/Animatable
+; v0 : Landroid/graphics/drawable/Animatable;
+l9b692:
+	invoke-interface	{v0},android/graphics/drawable/Animatable/start	; start()V
+; v0 : Landroid/graphics/drawable/Animatable;
+.line 797
+	const/4	v4,0
+; v4 : single-length
+	iput-boolean	v4,v10,android/support/v7/internal/widget/ProgressBarICS.mShouldStartAnimationDrawable Z
+; v4 : single-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b69e:
+.line 800
+	monitor-exit	v10
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b6a2:
+.line 786
+	move-exception	v4
+; v4 : java/lang/Exception
+	const/4	v5,0
+; v5 : single-length
+l9b6a6:
+	iput-boolean	v5,v10,android/support/v7/internal/widget/ProgressBarICS.mInDrawing Z
+; v5 : single-length , v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v4
+; v4 : java/lang/Exception
+l9b6ac:
+.line 770
+	move-exception	v4
+; v4 : java/lang/Exception
+	monitor-exit	v10
+; v10 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v4
+; v4 : java/lang/Exception
+.end method
+
+.method protected synchronized onMeasure(II)V
+.limit registers 9
+; this: v6 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v7 (I)
+; parameter[1] : v8 (I)
+.catch java/lang/Exception from l9b6ee to l9b77e using l9b782
+.var 0 is d Landroid/graphics/drawable/Drawable; from l9b6f2 to l9b782
+.var 1 is dh I from l9b6f6 to l9b782
+.var 2 is dw I from l9b6f4 to l9b782
+.line 804
+	monitor-enter	v6
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b6ee:
+	iget-object	v0,v6,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 806
+	const/4	v2,0
+; v2 : single-length
+.line 807
+	const/4	v1,0
+; v1 : single-length
+.line 808
+	if-eqz	v0,l9b73a
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 809
+	iget	v3,v6,android/support/v7/internal/widget/ProgressBarICS.mMinWidth I
+; v3 : single-length , v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget	v4,v6,android/support/v7/internal/widget/ProgressBarICS.mMaxWidth I
+; v4 : single-length , v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0},android/graphics/drawable/Drawable/getIntrinsicWidth	; getIntrinsicWidth()I
+; v0 : Landroid/graphics/drawable/Drawable;
+	move-result	v5
+; v5 : single-length
+	invoke-static	{v4,v5},java/lang/Math/min	; min(II)I
+; v4 : single-length , v5 : single-length
+	move-result	v4
+; v4 : single-length
+	invoke-static	{v3,v4},java/lang/Math/max	; max(II)I
+; v3 : single-length , v4 : single-length
+	move-result	v2
+; v2 : single-length
+.line 810
+	iget	v3,v6,android/support/v7/internal/widget/ProgressBarICS.mMinHeight I
+; v3 : single-length , v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget	v4,v6,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v4 : single-length , v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0},android/graphics/drawable/Drawable/getIntrinsicHeight	; getIntrinsicHeight()I
+; v0 : Landroid/graphics/drawable/Drawable;
+	move-result	v5
+; v5 : single-length
+	invoke-static	{v4,v5},java/lang/Math/min	; min(II)I
+; v4 : single-length , v5 : single-length
+	move-result	v4
+; v4 : single-length
+	invoke-static	{v3,v4},java/lang/Math/max	; max(II)I
+; v3 : single-length , v4 : single-length
+	move-result	v1
+; v1 : single-length
+l9b73a:
+.line 812
+	invoke-direct	{v6},android/support/v7/internal/widget/ProgressBarICS/updateDrawableState	; updateDrawableState()V
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 813
+	invoke-virtual	{v6},android/support/v7/internal/widget/ProgressBarICS/getPaddingLeft	; getPaddingLeft()I
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v6},android/support/v7/internal/widget/ProgressBarICS/getPaddingRight	; getPaddingRight()I
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v4
+; v4 : single-length
+	add-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	add-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+.line 814
+	invoke-virtual	{v6},android/support/v7/internal/widget/ProgressBarICS/getPaddingTop	; getPaddingTop()I
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v6},android/support/v7/internal/widget/ProgressBarICS/getPaddingBottom	; getPaddingBottom()I
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v4
+; v4 : single-length
+	add-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	add-int/2addr	v1,v3
+; v1 : single-length , v3 : single-length
+.line 816
+	invoke-static	{v2,v7},android/support/v7/internal/widget/ProgressBarICS/resolveSize	; resolveSize(II)I
+; v2 : single-length , v7 : single-length
+	move-result	v3
+; v3 : single-length
+	invoke-static	{v1,v8},android/support/v7/internal/widget/ProgressBarICS/resolveSize	; resolveSize(II)I
+; v1 : single-length , v8 : single-length
+	move-result	v4
+; v4 : single-length
+	invoke-virtual	{v6,v3,v4},android/support/v7/internal/widget/ProgressBarICS/setMeasuredDimension	; setMeasuredDimension(II)V
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS; , v3 : single-length , v4 : single-length
+l9b77e:
+.line 818
+	monitor-exit	v6
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b782:
+.line 804
+	move-exception	v3
+; v3 : java/lang/Exception
+	monitor-exit	v6
+; v6 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v3
+; v3 : java/lang/Exception
+.end method
+
+.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v3 (Landroid/os/Parcelable;)
+.line 891
+	move-object	v0,v3
+; v0 : Landroid/os/Parcelable; , v3 : Landroid/os/Parcelable;
+	check-cast	v0,android/support/v7/internal/widget/ProgressBarICS$SavedState
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+.line 892
+	invoke-virtual	{v0},android/support/v7/internal/widget/ProgressBarICS$SavedState/getSuperState	; getSuperState()Landroid/os/Parcelable;
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+	move-result-object	v1
+; v1 : Landroid/os/Parcelable;
+	invoke-super	{v2,v1},android/view/View/onRestoreInstanceState	; onRestoreInstanceState(Landroid/os/Parcelable;)V
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : Landroid/os/Parcelable;
+.line 894
+	iget	v1,v0,android/support/v7/internal/widget/ProgressBarICS$SavedState.progress I
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+	invoke-virtual	{v2,v1},android/support/v7/internal/widget/ProgressBarICS/setProgress	; setProgress(I)V
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : single-length
+.line 895
+	iget	v1,v0,android/support/v7/internal/widget/ProgressBarICS$SavedState.secondaryProgress I
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+	invoke-virtual	{v2,v1},android/support/v7/internal/widget/ProgressBarICS/setSecondaryProgress	; setSecondaryProgress(I)V
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : single-length
+.line 896
+	return-void	
+.end method
+
+.method public onSaveInstanceState()Landroid/os/Parcelable;
+.limit registers 4
+; this: v3 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 880
+	invoke-super	{v3},android/view/View/onSaveInstanceState	; onSaveInstanceState()Landroid/os/Parcelable;
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result-object	v1
+; v1 : Landroid/os/Parcelable;
+.line 881
+	new-instance	v0,android/support/v7/internal/widget/ProgressBarICS$SavedState
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+	invoke-direct	{v0,v1},android/support/v7/internal/widget/ProgressBarICS$SavedState/<init>	; <init>(Landroid/os/Parcelable;)V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState; , v1 : Landroid/os/Parcelable;
+.line 883
+	iget	v2,v3,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v2 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iput	v2,v0,android/support/v7/internal/widget/ProgressBarICS$SavedState.progress I
+; v2 : single-length , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+.line 884
+	iget	v2,v3,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v2 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iput	v2,v0,android/support/v7/internal/widget/ProgressBarICS$SavedState.secondaryProgress I
+; v2 : single-length , v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+.line 886
+	return-object	v0
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS$SavedState;
+.end method
+
+.method protected onSizeChanged(IIII)V
+.limit registers 5
+; this: v0 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+.line 727
+	invoke-direct	{v0,v1,v2},android/support/v7/internal/widget/ProgressBarICS/updateDrawableBounds	; updateDrawableBounds(II)V
+; v0 : Landroid/support/v7/internal/widget/ProgressBarICS; , v1 : single-length , v2 : single-length
+.line 728
+	return-void	
+.end method
+
+.method protected onVisibilityChanged(Landroid/view/View;I)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (Landroid/view/View;)
+; parameter[1] : v3 (I)
+.line 697
+	invoke-super	{v1,v2,v3},android/view/View/onVisibilityChanged	; onVisibilityChanged(Landroid/view/View;I)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : Landroid/view/View; , v3 : single-length
+.line 699
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b84e
+; v0 : single-length
+.line 701
+	const/16	v0,8
+; v0 : single-length
+	if-eq	v3,v0,l9b848
+; v3 : single-length , v0 : single-length
+	const/4	v0,4
+; v0 : single-length
+	if-ne	v3,v0,l9b850
+; v3 : single-length , v0 : single-length
+l9b848:
+.line 702
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/stopAnimation	; stopAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b84e:
+.line 707
+	return-void	
+l9b850:
+.line 704
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/startAnimation	; startAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	goto	l9b84e
+.end method
+
+.method public postInvalidate()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 385
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mNoInvalidate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v0,l9b876
+; v0 : single-length
+.line 386
+	invoke-super	{v1},android/view/View/postInvalidate	; postInvalidate()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b876:
+.line 388
+	return-void	
+.end method
+
+.method public synchronized setIndeterminate(Z)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (Z)
+.catch java/lang/Exception from l9b8bc to l9b8ca using l9b8cc
+.catch java/lang/Exception from l9b88a to l9b8b8 using l9b8cc
+.line 275
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b88a:
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mOnlyIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b89a
+; v0 : single-length
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v0,l9b8b8
+; v0 : single-length
+l9b89a:
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v2,v0,l9b8b8
+; v2 : single-length , v0 : single-length
+.line 276
+	iput-boolean	v2,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v2 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 278
+	if-eqz	v2,l9b8bc
+; v2 : single-length
+.line 280
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iput-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 281
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/startAnimation	; startAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b8b8:
+.line 287
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b8bc:
+.line 283
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iput-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 284
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/stopAnimation	; stopAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b8ca:
+	goto	l9b8b8
+l9b8cc:
+.line 275
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (Landroid/graphics/drawable/Drawable;)
+.line 312
+	if-eqz	v2,l9b902
+; v2 : Landroid/graphics/drawable/Drawable;
+.line 313
+	invoke-virtual	{v2,v1},android/graphics/drawable/Drawable/setCallback	; setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+; v2 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b902:
+.line 315
+	iput-object	v2,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 316
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9b918
+; v0 : single-length
+.line 317
+	iput-object	v2,v1,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 318
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/postInvalidate	; postInvalidate()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b918:
+.line 320
+	return-void	
+.end method
+
+.method public setInterpolator(Landroid/content/Context;I)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (I)
+.line 657
+	invoke-static	{v2,v3},android/view/animation/AnimationUtils/loadInterpolator	; loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+; v2 : Landroid/content/Context; , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/animation/Interpolator;
+	invoke-virtual	{v1,v0},android/support/v7/internal/widget/ProgressBarICS/setInterpolator	; setInterpolator(Landroid/view/animation/Interpolator;)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : Landroid/view/animation/Interpolator;
+.line 658
+	return-void	
+.end method
+
+.method public setInterpolator(Landroid/view/animation/Interpolator;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v1 (Landroid/view/animation/Interpolator;)
+.line 667
+	iput-object	v1,v0,android/support/v7/internal/widget/ProgressBarICS.mInterpolator Landroid/view/animation/Interpolator;
+; v1 : Landroid/view/animation/Interpolator; , v0 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 668
+	return-void	
+.end method
+
+.method public synchronized setMax(I)V
+.limit registers 5
+; this: v3 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v4 (I)
+.catch java/lang/Exception from l9b96c to l9b99c using l9b9a0
+.line 573
+	monitor-enter	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-gez	v4,l9b96c
+; v4 : single-length
+.line 574
+	const/4	v4,0
+; v4 : single-length
+l9b96c:
+.line 576
+	iget	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v4,v0,l9b99c
+; v4 : single-length , v0 : single-length
+.line 577
+	iput	v4,v3,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v4 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 578
+	invoke-virtual	{v3},android/support/v7/internal/widget/ProgressBarICS/postInvalidate	; postInvalidate()V
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 580
+	iget	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-le	v0,v4,l9b98a
+; v0 : single-length , v4 : single-length
+.line 581
+	iput	v4,v3,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v4 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b98a:
+.line 583
+	const	v0,16908301	; 0x102000d
+; v0 : single-length
+	iget	v1,v3,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v1 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v3,v0,v1,v2},android/support/v7/internal/widget/ProgressBarICS/refreshProgress	; refreshProgress(IIZ)V
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : single-length , v1 : single-length , v2 : single-length
+l9b99c:
+.line 585
+	monitor-exit	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b9a0:
+.line 573
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized setProgress(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (I)
+.catch java/lang/Exception from l9b9c8 to l9b9ce using l9b9d2
+.line 465
+	monitor-enter	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const/4	v0,0
+; v0 : single-length
+l9b9c8:
+	invoke-virtual	{v1,v2,v0},android/support/v7/internal/widget/ProgressBarICS/setProgress	; setProgress(IZ)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : single-length , v0 : single-length
+l9b9ce:
+.line 466
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9b9d2:
+.line 465
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method synchronized setProgress(IZ)V
+.limit registers 5
+; this: v2 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (Z)
+.catch java/lang/Exception from l9ba08 to l9ba30 using l9ba32
+.catch java/lang/Exception from l9b9f6 to l9b9fa using l9ba32
+.line 469
+	monitor-enter	v2
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b9f6:
+	iget-boolean	v0,v2,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9b9fa:
+	if-eqz	v0,l9ba02
+; v0 : single-length
+l9b9fe:
+.line 485
+	monitor-exit	v2
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9ba02:
+.line 473
+	if-gez	v3,l9ba08
+; v3 : single-length
+.line 474
+	const/4	v3,0
+; v3 : single-length
+l9ba08:
+.line 477
+	iget	v0,v2,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v0 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-le	v3,v0,l9ba14
+; v3 : single-length , v0 : single-length
+.line 478
+	iget	v3,v2,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v3 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9ba14:
+.line 481
+	iget	v0,v2,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v0 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v3,v0,l9b9fe
+; v3 : single-length , v0 : single-length
+.line 482
+	iput	v3,v2,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v3 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 483
+	const	v0,16908301	; 0x102000d
+; v0 : single-length
+	iget	v1,v2,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v1 : single-length , v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-direct	{v2,v0,v1,v4},android/support/v7/internal/widget/ProgressBarICS/refreshProgress	; refreshProgress(IIZ)V
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : single-length , v1 : single-length , v4 : single-length
+l9ba30:
+	goto	l9b9fe
+l9ba32:
+.line 469
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
+.limit registers 7
+; this: v5 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v6 (Landroid/graphics/drawable/Drawable;)
+.var 0 is drawableHeight I from l9ba8e to l9baa0
+.var 1 is needUpdate Z from l9ba7c to l9baf8
+	const/4	v4,0
+; v4 : single-length
+.line 346
+	iget-object	v2,v5,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v2,l9baf8
+; v2 : Landroid/graphics/drawable/Drawable;
+	iget-object	v2,v5,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v6,v2,l9baf8
+; v6 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/graphics/drawable/Drawable;
+.line 347
+	iget-object	v2,v5,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/graphics/drawable/Drawable/setCallback	; setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+; v2 : Landroid/graphics/drawable/Drawable; , v3 : single-length
+.line 348
+	const/4	v1,1
+; v1 : single-length
+l9ba7c:
+.line 353
+	if-eqz	v6,l9baa0
+; v6 : Landroid/graphics/drawable/Drawable;
+.line 354
+	invoke-virtual	{v6,v5},android/graphics/drawable/Drawable/setCallback	; setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+; v6 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 357
+	invoke-virtual	{v6},android/graphics/drawable/Drawable/getMinimumHeight	; getMinimumHeight()I
+; v6 : Landroid/graphics/drawable/Drawable;
+	move-result	v0
+; v0 : single-length
+.line 358
+	iget	v2,v5,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v2 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-ge	v2,v0,l9baa0
+; v2 : single-length , v0 : single-length
+.line 359
+	iput	v0,v5,android/support/v7/internal/widget/ProgressBarICS.mMaxHeight I
+; v0 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 360
+	invoke-virtual	{v5},android/support/v7/internal/widget/ProgressBarICS/requestLayout	; requestLayout()V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9baa0:
+.line 363
+	iput-object	v6,v5,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v6 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 364
+	iget-boolean	v2,v5,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v2 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v2,l9bab6
+; v2 : single-length
+.line 365
+	iput-object	v6,v5,android/support/v7/internal/widget/ProgressBarICS.mCurrentDrawable Landroid/graphics/drawable/Drawable;
+; v6 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 366
+	invoke-virtual	{v5},android/support/v7/internal/widget/ProgressBarICS/postInvalidate	; postInvalidate()V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bab6:
+.line 369
+	if-eqz	v1,l9baf6
+; v1 : single-length
+.line 370
+	invoke-virtual	{v5},android/support/v7/internal/widget/ProgressBarICS/getWidth	; getWidth()I
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v5},android/support/v7/internal/widget/ProgressBarICS/getHeight	; getHeight()I
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v3
+; v3 : single-length
+	invoke-direct	{v5,v2,v3},android/support/v7/internal/widget/ProgressBarICS/updateDrawableBounds	; updateDrawableBounds(II)V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : single-length , v3 : single-length
+.line 371
+	invoke-direct	{v5},android/support/v7/internal/widget/ProgressBarICS/updateDrawableState	; updateDrawableState()V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 372
+	const	v2,16908301	; 0x102000d
+; v2 : single-length
+	iget	v3,v5,android/support/v7/internal/widget/ProgressBarICS.mProgress I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-direct	{v5,v2,v3,v4,v4},android/support/v7/internal/widget/ProgressBarICS/doRefreshProgress	; doRefreshProgress(IIZZ)V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : single-length , v3 : single-length , v4 : single-length , v4 : single-length
+.line 373
+	const	v2,16908303	; 0x102000f
+; v2 : single-length
+	iget	v3,v5,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-direct	{v5,v2,v3,v4,v4},android/support/v7/internal/widget/ProgressBarICS/doRefreshProgress	; doRefreshProgress(IIZZ)V
+; v5 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : single-length , v3 : single-length , v4 : single-length , v4 : single-length
+l9baf6:
+.line 375
+	return-void	
+l9baf8:
+.line 350
+	const/4	v1,0
+; v1 : single-length
+	goto	l9ba7c
+.end method
+
+.method public synchronized setSecondaryProgress(I)V
+.limit registers 5
+; this: v3 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v4 (I)
+.catch java/lang/Exception from l9bb20 to l9bb4a using l9bb4c
+.catch java/lang/Exception from l9bb0e to l9bb12 using l9bb4c
+.line 500
+	monitor-enter	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bb0e:
+	iget-boolean	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bb12:
+	if-eqz	v0,l9bb1a
+; v0 : single-length
+l9bb16:
+.line 516
+	monitor-exit	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	return-void	
+l9bb1a:
+.line 504
+	if-gez	v4,l9bb20
+; v4 : single-length
+.line 505
+	const/4	v4,0
+; v4 : single-length
+l9bb20:
+.line 508
+	iget	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-le	v4,v0,l9bb2c
+; v4 : single-length , v0 : single-length
+.line 509
+	iget	v4,v3,android/support/v7/internal/widget/ProgressBarICS.mMax I
+; v4 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bb2c:
+.line 512
+	iget	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v4,v0,l9bb16
+; v4 : single-length , v0 : single-length
+.line 513
+	iput	v4,v3,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v4 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 514
+	const	v0,16908303	; 0x102000f
+; v0 : single-length
+	iget	v1,v3,android/support/v7/internal/widget/ProgressBarICS.mSecondaryProgress I
+; v1 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v3,v0,v1,v2},android/support/v7/internal/widget/ProgressBarICS/refreshProgress	; refreshProgress(IIZ)V
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS; , v0 : single-length , v1 : single-length , v2 : single-length
+l9bb4a:
+	goto	l9bb16
+l9bb4c:
+.line 500
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public setVisibility(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (I)
+.line 681
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/getVisibility	; getVisibility()I
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v0
+; v0 : single-length
+	if-eq	v0,v2,l9bba6
+; v0 : single-length , v2 : single-length
+.line 682
+	invoke-super	{v1,v2},android/view/View/setVisibility	; setVisibility(I)V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : single-length
+.line 684
+	iget-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminate Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eqz	v0,l9bba6
+; v0 : single-length
+.line 686
+	const/16	v0,8
+; v0 : single-length
+	if-eq	v2,v0,l9bba0
+; v2 : single-length , v0 : single-length
+	const/4	v0,4
+; v0 : single-length
+	if-ne	v2,v0,l9bba8
+; v2 : single-length , v0 : single-length
+l9bba0:
+.line 687
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/stopAnimation	; stopAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bba6:
+.line 693
+	return-void	
+l9bba8:
+.line 689
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/startAnimation	; startAnimation()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	goto	l9bba6
+.end method
+
+.method startAnimation()V
+.limit registers 4
+; this: v3 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+.line 613
+	invoke-virtual	{v3},android/support/v7/internal/widget/ProgressBarICS/getVisibility	; getVisibility()I
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l9bbce
+; v0 : single-length
+l9bbcc:
+.line 634
+	return-void	
+l9bbce:
+.line 617
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	instance-of	v0,v0,android/graphics/drawable/Animatable
+; v0 : single-length , v0 : single-length
+	if-eqz	v0,l9bbee
+; v0 : single-length
+.line 618
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mShouldStartAnimationDrawable Z
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 619
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bbe6:
+.line 633
+	invoke-virtual	{v3},android/support/v7/internal/widget/ProgressBarICS/postInvalidate	; postInvalidate()V
+; v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	goto	l9bbcc
+l9bbee:
+.line 621
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mInterpolator Landroid/view/animation/Interpolator;
+; v0 : Landroid/view/animation/Interpolator; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-nez	v0,l9bc04
+; v0 : Landroid/view/animation/Interpolator;
+.line 622
+	new-instance	v0,android/view/animation/LinearInterpolator
+; v0 : Landroid/view/animation/LinearInterpolator;
+	invoke-direct	{v0},android/view/animation/LinearInterpolator/<init>	; <init>()V
+; v0 : Landroid/view/animation/LinearInterpolator;
+	iput-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mInterpolator Landroid/view/animation/Interpolator;
+; v0 : Landroid/view/animation/LinearInterpolator; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bc04:
+.line 625
+	new-instance	v0,android/view/animation/Transformation
+; v0 : Landroid/view/animation/Transformation;
+	invoke-direct	{v0},android/view/animation/Transformation/<init>	; <init>()V
+; v0 : Landroid/view/animation/Transformation;
+	iput-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mTransformation Landroid/view/animation/Transformation;
+; v0 : Landroid/view/animation/Transformation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 626
+	new-instance	v0,android/view/animation/AlphaAnimation
+; v0 : Landroid/view/animation/AlphaAnimation;
+	const/4	v1,0
+; v1 : single-length
+	const/high16	v2,16256
+; v2 : single-length
+	invoke-direct	{v0,v1,v2},android/view/animation/AlphaAnimation/<init>	; <init>(FF)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : single-length , v2 : single-length
+	iput-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 627
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget	v1,v3,android/support/v7/internal/widget/ProgressBarICS.mBehavior I
+; v1 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v1},android/view/animation/AlphaAnimation/setRepeatMode	; setRepeatMode(I)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : single-length
+.line 628
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const/4	v1,15
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/view/animation/AlphaAnimation/setRepeatCount	; setRepeatCount(I)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : single-length
+.line 629
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget	v1,v3,android/support/v7/internal/widget/ProgressBarICS.mDuration I
+; v1 : single-length , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	int-to-long	v1,v1
+; v1 : double-length , v1 : double-length
+	invoke-virtual	{v0,v1,v2},android/view/animation/AlphaAnimation/setDuration	; setDuration(J)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : double-length
+.line 630
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	iget-object	v1,v3,android/support/v7/internal/widget/ProgressBarICS.mInterpolator Landroid/view/animation/Interpolator;
+; v1 : Landroid/view/animation/Interpolator; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	invoke-virtual	{v0,v1},android/view/animation/AlphaAnimation/setInterpolator	; setInterpolator(Landroid/view/animation/Interpolator;)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : Landroid/view/animation/Interpolator;
+.line 631
+	iget-object	v0,v3,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : Landroid/view/animation/AlphaAnimation; , v3 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	const-wide/16	v1,65535
+; v1 : double-length
+	invoke-virtual	{v0,v1,v2},android/view/animation/AlphaAnimation/setStartTime	; setStartTime(J)V
+; v0 : Landroid/view/animation/AlphaAnimation; , v1 : double-length
+	goto	l9bbe6
+.end method
+
+.method stopAnimation()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+	const/4	v0,0
+; v0 : single-length
+.line 640
+	iput-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mAnimation Landroid/view/animation/AlphaAnimation;
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 641
+	iput-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mTransformation Landroid/view/animation/Transformation;
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 642
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	instance-of	v0,v0,android/graphics/drawable/Animatable
+; v0 : single-length , v0 : single-length
+	if-eqz	v0,l9bcaa
+; v0 : single-length
+.line 643
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	check-cast	v0,android/graphics/drawable/Animatable
+; v0 : Landroid/graphics/drawable/Animatable;
+	invoke-interface	{v0},android/graphics/drawable/Animatable/stop	; stop()V
+; v0 : Landroid/graphics/drawable/Animatable;
+.line 644
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mShouldStartAnimationDrawable Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+l9bcaa:
+.line 646
+	invoke-virtual	{v1},android/support/v7/internal/widget/ProgressBarICS/postInvalidate	; postInvalidate()V
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+.line 647
+	return-void	
+.end method
+
+.method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ProgressBarICS;)
+; parameter[0] : v2 (Landroid/graphics/drawable/Drawable;)
+.line 379
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mProgressDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v2,v0,l9bce0
+; v2 : Landroid/graphics/drawable/Drawable; , v0 : Landroid/graphics/drawable/Drawable;
+	iget-object	v0,v1,android/support/v7/internal/widget/ProgressBarICS.mIndeterminateDrawable Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/widget/ProgressBarICS;
+	if-eq	v2,v0,l9bce0
+; v2 : Landroid/graphics/drawable/Drawable; , v0 : Landroid/graphics/drawable/Drawable;
+	invoke-super	{v1,v2},android/view/View/verifyDrawable	; verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+; v1 : Landroid/support/v7/internal/widget/ProgressBarICS; , v2 : Landroid/graphics/drawable/Drawable;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l9bce4
+; v0 : single-length
+l9bce0:
+	const/4	v0,1
+; v0 : single-length
+l9bce2:
+	return	v0
+; v0 : single-length
+l9bce4:
+	const/4	v0,0
+; v0 : single-length
+	goto	l9bce2
+.end method
+
+

@@ -1,0 +1,724 @@
+.class public com/google/ads/util/g$a
+.super android/webkit/WebChromeClient
+.source SourceFile
+
+.inner class a inner com/google/ads/util/g$a outer com/google/ads/util/g
+.field private final a Lcom/google/ads/n;
+
+.method public <init>(Lcom/google/ads/n;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v1 (Lcom/google/ads/n;)
+.line 162
+	invoke-direct	{v0},android/webkit/WebChromeClient/<init>	; <init>()V
+; v0 : Lcom/google/ads/util/g$a;
+.line 163
+	iput-object	v1,v0,com/google/ads/util/g$a.a Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v0 : Lcom/google/ads/util/g$a;
+.line 164
+	return-void	
+.end method
+
+.method private static a(Landroid/app/AlertDialog$Builder;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)V
+.limit registers 9
+; parameter[0] : v4 (Landroid/app/AlertDialog$Builder;)
+; parameter[1] : v5 (Landroid/content/Context;)
+; parameter[2] : v6 (Ljava/lang/String;)
+; parameter[3] : v7 (Ljava/lang/String;)
+; parameter[4] : v8 (Landroid/webkit/JsPromptResult;)
+.line 394
+	new-instance	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	invoke-direct	{v0,v5},android/widget/LinearLayout/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/widget/LinearLayout; , v5 : Landroid/content/Context;
+.line 395
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setOrientation	; setOrientation(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+.line 396
+	new-instance	v1,android/widget/TextView
+; v1 : Landroid/widget/TextView;
+	invoke-direct	{v1,v5},android/widget/TextView/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/widget/TextView; , v5 : Landroid/content/Context;
+.line 397
+	invoke-virtual	{v1,v6},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v6 : Ljava/lang/String;
+.line 398
+	new-instance	v2,android/widget/EditText
+; v2 : Landroid/widget/EditText;
+	invoke-direct	{v2,v5},android/widget/EditText/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Landroid/widget/EditText; , v5 : Landroid/content/Context;
+.line 399
+	invoke-virtual	{v2,v7},android/widget/EditText/setText	; setText(Ljava/lang/CharSequence;)V
+; v2 : Landroid/widget/EditText; , v7 : Ljava/lang/String;
+.line 400
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/addView	; addView(Landroid/view/View;)V
+; v0 : Landroid/widget/LinearLayout; , v1 : Landroid/widget/TextView;
+.line 401
+	invoke-virtual	{v0,v2},android/widget/LinearLayout/addView	; addView(Landroid/view/View;)V
+; v0 : Landroid/widget/LinearLayout; , v2 : Landroid/widget/EditText;
+.line 404
+	invoke-virtual	{v4,v0},android/app/AlertDialog$Builder/setView	; setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+; v4 : Landroid/app/AlertDialog$Builder; , v0 : Landroid/widget/LinearLayout;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const	v1,17039370	; 0x104000a
+; v1 : single-length
+	new-instance	v3,com/google/ads/util/g$a$6
+; v3 : Lcom/google/ads/util/g$a$6;
+	invoke-direct	{v3,v8,v2},com/google/ads/util/g$a$6/<init>	; <init>(Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)V
+; v3 : Lcom/google/ads/util/g$a$6; , v8 : Landroid/webkit/JsPromptResult; , v2 : Landroid/widget/EditText;
+	invoke-virtual	{v0,v1,v3},android/app/AlertDialog$Builder/setPositiveButton	; setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : single-length , v3 : Lcom/google/ads/util/g$a$6;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const/high16	v1,260
+; v1 : single-length
+	new-instance	v2,com/google/ads/util/g$a$5
+; v2 : Lcom/google/ads/util/g$a$5;
+	invoke-direct	{v2,v8},com/google/ads/util/g$a$5/<init>	; <init>(Landroid/webkit/JsPromptResult;)V
+; v2 : Lcom/google/ads/util/g$a$5; , v8 : Landroid/webkit/JsPromptResult;
+	invoke-virtual	{v0,v1,v2},android/app/AlertDialog$Builder/setNegativeButton	; setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : single-length , v2 : Lcom/google/ads/util/g$a$5;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	new-instance	v1,com/google/ads/util/g$a$4
+; v1 : Lcom/google/ads/util/g$a$4;
+	invoke-direct	{v1,v8},com/google/ads/util/g$a$4/<init>	; <init>(Landroid/webkit/JsPromptResult;)V
+; v1 : Lcom/google/ads/util/g$a$4; , v8 : Landroid/webkit/JsPromptResult;
+	invoke-virtual	{v0,v1},android/app/AlertDialog$Builder/setOnCancelListener	; setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : Lcom/google/ads/util/g$a$4;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	invoke-virtual	{v0},android/app/AlertDialog$Builder/create	; create()Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog$Builder;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog;
+	invoke-virtual	{v0},android/app/AlertDialog/show	; show()V
+; v0 : Landroid/app/AlertDialog;
+.line 425
+	return-void	
+.end method
+
+.method private static a(Landroid/app/AlertDialog$Builder;Ljava/lang/String;Landroid/webkit/JsResult;)V
+.limit registers 6
+; parameter[0] : v3 (Landroid/app/AlertDialog$Builder;)
+; parameter[1] : v4 (Ljava/lang/String;)
+; parameter[2] : v5 (Landroid/webkit/JsResult;)
+.line 364
+	invoke-virtual	{v3,v4},android/app/AlertDialog$Builder/setMessage	; setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+; v3 : Landroid/app/AlertDialog$Builder; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const	v1,17039370	; 0x104000a
+; v1 : single-length
+	new-instance	v2,com/google/ads/util/g$a$3
+; v2 : Lcom/google/ads/util/g$a$3;
+	invoke-direct	{v2,v5},com/google/ads/util/g$a$3/<init>	; <init>(Landroid/webkit/JsResult;)V
+; v2 : Lcom/google/ads/util/g$a$3; , v5 : Landroid/webkit/JsResult;
+	invoke-virtual	{v0,v1,v2},android/app/AlertDialog$Builder/setPositiveButton	; setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : single-length , v2 : Lcom/google/ads/util/g$a$3;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const/high16	v1,260
+; v1 : single-length
+	new-instance	v2,com/google/ads/util/g$a$2
+; v2 : Lcom/google/ads/util/g$a$2;
+	invoke-direct	{v2,v5},com/google/ads/util/g$a$2/<init>	; <init>(Landroid/webkit/JsResult;)V
+; v2 : Lcom/google/ads/util/g$a$2; , v5 : Landroid/webkit/JsResult;
+	invoke-virtual	{v0,v1,v2},android/app/AlertDialog$Builder/setNegativeButton	; setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : single-length , v2 : Lcom/google/ads/util/g$a$2;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	new-instance	v1,com/google/ads/util/g$a$1
+; v1 : Lcom/google/ads/util/g$a$1;
+	invoke-direct	{v1,v5},com/google/ads/util/g$a$1/<init>	; <init>(Landroid/webkit/JsResult;)V
+; v1 : Lcom/google/ads/util/g$a$1; , v5 : Landroid/webkit/JsResult;
+	invoke-virtual	{v0,v1},android/app/AlertDialog$Builder/setOnCancelListener	; setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : Lcom/google/ads/util/g$a$1;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	invoke-virtual	{v0},android/app/AlertDialog$Builder/create	; create()Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog$Builder;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog;
+	invoke-virtual	{v0},android/app/AlertDialog/show	; show()V
+; v0 : Landroid/app/AlertDialog;
+.line 385
+	return-void	
+.end method
+
+.method private static a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;Landroid/webkit/JsPromptResult;Z)Z
+.limit registers 9
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/lang/String;)
+; parameter[2] : v4 (Ljava/lang/String;)
+; parameter[3] : v5 (Ljava/lang/String;)
+; parameter[4] : v6 (Landroid/webkit/JsResult;)
+; parameter[5] : v7 (Landroid/webkit/JsPromptResult;)
+; parameter[6] : v8 (Z)
+.line 339
+	instance-of	v0,v2,com/google/ads/internal/AdWebView
+; v0 : single-length , v2 : Landroid/webkit/WebView;
+	if-eqz	v0,lc4192
+; v0 : single-length
+.line 340
+	check-cast	v2,com/google/ads/internal/AdWebView
+; v2 : Lcom/google/ads/internal/AdWebView;
+.line 341
+	invoke-virtual	{v2},com/google/ads/internal/AdWebView/i	; i()Lcom/google/ads/AdActivity;
+; v2 : Lcom/google/ads/internal/AdWebView;
+	move-result-object	v0
+; v0 : Lcom/google/ads/AdActivity;
+.line 342
+	if-eqz	v0,lc4192
+; v0 : Lcom/google/ads/AdActivity;
+.line 343
+	new-instance	v1,android/app/AlertDialog$Builder
+; v1 : Landroid/app/AlertDialog$Builder;
+	invoke-direct	{v1,v0},android/app/AlertDialog$Builder/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/app/AlertDialog$Builder; , v0 : Lcom/google/ads/AdActivity;
+.line 344
+	invoke-virtual	{v1,v3},android/app/AlertDialog$Builder/setTitle	; setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+; v1 : Landroid/app/AlertDialog$Builder; , v3 : Ljava/lang/String;
+.line 345
+	if-eqz	v8,lc418a
+; v8 : single-length
+.line 346
+	invoke-static	{v1,v0,v4,v5,v7},com/google/ads/util/g$a/a	; a(Landroid/app/AlertDialog$Builder;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)V
+; v1 : Landroid/app/AlertDialog$Builder; , v0 : Lcom/google/ads/AdActivity; , v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v7 : Landroid/webkit/JsPromptResult;
+lc4186:
+.line 351
+	const/4	v0,1
+; v0 : single-length
+lc4188:
+.line 355
+	return	v0
+; v0 : single-length
+lc418a:
+.line 348
+	invoke-static	{v1,v4,v6},com/google/ads/util/g$a/a	; a(Landroid/app/AlertDialog$Builder;Ljava/lang/String;Landroid/webkit/JsResult;)V
+; v1 : Landroid/app/AlertDialog$Builder; , v4 : Ljava/lang/String; , v6 : Landroid/webkit/JsResult;
+	goto	lc4186
+lc4192:
+.line 355
+	const/4	v0,0
+; v0 : single-length
+	goto	lc4188
+.end method
+
+.method public onCloseWindow(Landroid/webkit/WebView;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+.line 168
+	instance-of	v0,v2,com/google/ads/internal/AdWebView
+; v0 : single-length , v2 : Landroid/webkit/WebView;
+	if-eqz	v0,lc41ba
+; v0 : single-length
+.line 169
+	check-cast	v2,com/google/ads/internal/AdWebView
+; v2 : Lcom/google/ads/internal/AdWebView;
+.line 170
+	invoke-virtual	{v2},com/google/ads/internal/AdWebView/f	; f()V
+; v2 : Lcom/google/ads/internal/AdWebView;
+lc41ba:
+.line 172
+	return-void	
+.end method
+
+.method public onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z
+.limit registers 5
+; this: v3 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v4 (Landroid/webkit/ConsoleMessage;)
+.line 176
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"JS: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},android/webkit/ConsoleMessage/message	; message()Ljava/lang/String;
+; v4 : Landroid/webkit/ConsoleMessage;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," ("
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},android/webkit/ConsoleMessage/sourceId	; sourceId()Ljava/lang/String;
+; v4 : Landroid/webkit/ConsoleMessage;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,":"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},android/webkit/ConsoleMessage/lineNumber	; lineNumber()I
+; v4 : Landroid/webkit/ConsoleMessage;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,")"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 178
+	sget-object	v1,com/google/ads/util/g$1.a [I
+; v1 : [I
+	invoke-virtual	{v4},android/webkit/ConsoleMessage/messageLevel	; messageLevel()Landroid/webkit/ConsoleMessage$MessageLevel;
+; v4 : Landroid/webkit/ConsoleMessage;
+	move-result-object	v2
+; v2 : Landroid/webkit/ConsoleMessage$MessageLevel;
+	invoke-virtual	{v2},android/webkit/ConsoleMessage$MessageLevel/ordinal	; ordinal()I
+; v2 : Landroid/webkit/ConsoleMessage$MessageLevel;
+	move-result	v2
+; v2 : single-length
+	aget	v1,v1,v2
+; v1 : single-length , v1 : single-length , v2 : single-length
+	packed-switch	v1,1
+		psc4256_c4266	; case 1
+		psc4256_c426e	; case 2
+		psc4256_c4276	; case 3
+		psc4256_c4276	; case 4
+		psc4256_c427e	; case 5
+		default: psc4256_default
+; v1 : single-length
+lc425c:
+.line 194
+	invoke-super	{v3,v4},android/webkit/WebChromeClient/onConsoleMessage	; onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z
+; v3 : Lcom/google/ads/util/g$a; , v4 : Landroid/webkit/ConsoleMessage;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+psc4256_c4266:
+.line 180
+	invoke-static	{v0},com/google/ads/util/b/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lc425c
+psc4256_c426e:
+.line 183
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lc425c
+psc4256_c4276:
+.line 188
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lc425c
+psc4256_c427e:
+.line 191
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lc425c
+.line 178
+lc4286:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V
+.limit registers 16
+; this: v6 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v7 (Ljava/lang/String;)
+; parameter[1] : v8 (Ljava/lang/String;)
+; parameter[2] : v9 (J)
+; parameter[3] : v11 (J)
+; parameter[4] : v13 (J)
+; parameter[5] : v15 (Landroid/webkit/WebStorage$QuotaUpdater;)
+	const-wide/16	v2,0
+; v2 : double-length
+.line 215
+	iget-object	v0,v6,com/google/ads/util/g$a.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v6 : Lcom/google/ads/util/g$a;
+	iget-object	v0,v0,com/google/ads/n.d Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.b Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m$a
+; v0 : Lcom/google/ads/m$a;
+.line 218
+	iget-object	v1,v0,com/google/ads/m$a.l Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/m$a;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Long
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v1},java/lang/Long/longValue	; longValue()J
+; v1 : Ljava/lang/Long;
+	move-result-wide	v4
+; v4 : double-length
+	sub-long/2addr	v4,v13
+; v4 : double-length , v13 : double-length
+.line 219
+	cmp-long	v1,v4,v2
+; v1 : single-length , v4 : double-length , v2 : double-length
+	if-gtz	v1,lc4306
+; v1 : single-length
+.line 221
+	invoke-interface	{v15,v9,v10},android/webkit/WebStorage$QuotaUpdater/updateQuota	; updateQuota(J)V
+; v15 : Landroid/webkit/WebStorage$QuotaUpdater; , v9 : double-length
+lc4304:
+.line 263
+	return-void	
+lc4306:
+.line 227
+	cmp-long	v1,v9,v2
+; v1 : single-length , v9 : double-length , v2 : double-length
+	if-nez	v1,lc4342
+; v1 : single-length
+.line 231
+	cmp-long	v1,v11,v4
+; v1 : single-length , v11 : double-length , v4 : double-length
+	if-gtz	v1,lc433e
+; v1 : single-length
+	iget-object	v0,v0,com/google/ads/m$a.m Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v0
+; v0 : double-length
+	cmp-long	v0,v11,v0
+; v0 : single-length , v11 : double-length , v0 : single-length
+	if-gtz	v0,lc433e
+; v0 : single-length
+lc4336:
+.line 262
+	invoke-interface	{v15,v11,v12},android/webkit/WebStorage$QuotaUpdater/updateQuota	; updateQuota(J)V
+; v15 : Landroid/webkit/WebStorage$QuotaUpdater; , v11 : double-length
+	goto	lc4304
+lc433e:
+	move-wide	v11,v2
+; v11 : double-length , v2 : double-length
+.line 231
+	goto	lc4336
+lc4342:
+.line 243
+	cmp-long	v1,v11,v2
+; v1 : single-length , v11 : double-length , v2 : double-length
+	if-nez	v1,lc438e
+; v1 : single-length
+.line 245
+	iget-object	v1,v0,com/google/ads/m$a.n Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/m$a;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Long
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v1},java/lang/Long/longValue	; longValue()J
+; v1 : Ljava/lang/Long;
+	move-result-wide	v1
+; v1 : double-length
+	invoke-static	{v1,v2,v4,v5},java/lang/Math/min	; min(JJ)J
+; v1 : double-length , v4 : double-length
+	move-result-wide	v1
+; v1 : double-length
+.line 247
+	add-long/2addr	v1,v9
+; v1 : double-length , v9 : double-length
+	iget-object	v0,v0,com/google/ads/m$a.m Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	invoke-static	{v1,v2,v3,v4},java/lang/Math/min	; min(JJ)J
+; v1 : double-length , v3 : double-length
+	move-result-wide	v11
+; v11 : double-length
+	goto	lc4336
+lc438e:
+.line 252
+	iget-object	v0,v0,com/google/ads/m$a.m Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v0
+; v0 : double-length
+	sub-long/2addr	v0,v9
+; v0 : double-length , v9 : double-length
+	invoke-static	{v0,v1,v4,v5},java/lang/Math/min	; min(JJ)J
+; v0 : double-length , v4 : double-length
+	move-result-wide	v0
+; v0 : double-length
+.line 255
+	cmp-long	v0,v11,v0
+; v0 : single-length , v11 : double-length , v0 : single-length
+	if-gtz	v0,lc43ba
+; v0 : single-length
+	add-long/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+lc43ba:
+	move-wide	v11,v9
+; v11 : double-length , v9 : double-length
+	goto	lc4336
+.end method
+
+.method public onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.limit registers 12
+; this: v7 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v8 (Landroid/webkit/WebView;)
+; parameter[1] : v9 (Ljava/lang/String;)
+; parameter[2] : v10 (Ljava/lang/String;)
+; parameter[3] : v11 (Landroid/webkit/JsResult;)
+	const/4	v3,0
+; v3 : single-length
+.line 267
+	const/4	v6,0
+; v6 : single-length
+	move-object	v0,v8
+; v0 : Landroid/webkit/WebView; , v8 : Landroid/webkit/WebView;
+	move-object	v1,v9
+; v1 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move-object	v2,v10
+; v2 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v4,v11
+; v4 : Landroid/webkit/JsResult; , v11 : Landroid/webkit/JsResult;
+	move-object	v5,v3
+; v5 : single-length , v3 : single-length
+	invoke-static/range	{v0..v6},com/google/ads/util/g$a/a;	a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;Landroid/webkit/JsPromptResult;Z)Z
+; v0 : Landroid/webkit/WebView; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : single-length , v4 : Landroid/webkit/JsResult; , v5 : single-length , v6 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.limit registers 12
+; this: v7 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v8 (Landroid/webkit/WebView;)
+; parameter[1] : v9 (Ljava/lang/String;)
+; parameter[2] : v10 (Ljava/lang/String;)
+; parameter[3] : v11 (Landroid/webkit/JsResult;)
+	const/4	v3,0
+; v3 : single-length
+.line 272
+	const/4	v6,0
+; v6 : single-length
+	move-object	v0,v8
+; v0 : Landroid/webkit/WebView; , v8 : Landroid/webkit/WebView;
+	move-object	v1,v9
+; v1 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move-object	v2,v10
+; v2 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v4,v11
+; v4 : Landroid/webkit/JsResult; , v11 : Landroid/webkit/JsResult;
+	move-object	v5,v3
+; v5 : single-length , v3 : single-length
+	invoke-static/range	{v0..v6},com/google/ads/util/g$a/a;	a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;Landroid/webkit/JsPromptResult;Z)Z
+; v0 : Landroid/webkit/WebView; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : single-length , v4 : Landroid/webkit/JsResult; , v5 : single-length , v6 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
+.limit registers 12
+; this: v7 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v8 (Landroid/webkit/WebView;)
+; parameter[1] : v9 (Ljava/lang/String;)
+; parameter[2] : v10 (Ljava/lang/String;)
+; parameter[3] : v11 (Landroid/webkit/JsResult;)
+	const/4	v3,0
+; v3 : single-length
+.line 277
+	const/4	v6,0
+; v6 : single-length
+	move-object	v0,v8
+; v0 : Landroid/webkit/WebView; , v8 : Landroid/webkit/WebView;
+	move-object	v1,v9
+; v1 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move-object	v2,v10
+; v2 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v4,v11
+; v4 : Landroid/webkit/JsResult; , v11 : Landroid/webkit/JsResult;
+	move-object	v5,v3
+; v5 : single-length , v3 : single-length
+	invoke-static/range	{v0..v6},com/google/ads/util/g$a/a;	a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;Landroid/webkit/JsPromptResult;Z)Z
+; v0 : Landroid/webkit/WebView; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : single-length , v4 : Landroid/webkit/JsResult; , v5 : single-length , v6 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z
+.limit registers 13
+; this: v7 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v8 (Landroid/webkit/WebView;)
+; parameter[1] : v9 (Ljava/lang/String;)
+; parameter[2] : v10 (Ljava/lang/String;)
+; parameter[3] : v11 (Ljava/lang/String;)
+; parameter[4] : v12 (Landroid/webkit/JsPromptResult;)
+.line 283
+	const/4	v4,0
+; v4 : single-length
+	const/4	v6,1
+; v6 : single-length
+	move-object	v0,v8
+; v0 : Landroid/webkit/WebView; , v8 : Landroid/webkit/WebView;
+	move-object	v1,v9
+; v1 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move-object	v2,v10
+; v2 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v3,v11
+; v3 : Ljava/lang/String; , v11 : Ljava/lang/String;
+	move-object	v5,v12
+; v5 : Landroid/webkit/JsPromptResult; , v12 : Landroid/webkit/JsPromptResult;
+	invoke-static/range	{v0..v6},com/google/ads/util/g$a/a;	a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;Landroid/webkit/JsPromptResult;Z)Z
+; v0 : Landroid/webkit/WebView; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : single-length , v5 : Landroid/webkit/JsPromptResult; , v6 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onReachedMaxAppCacheSize(JJLandroid/webkit/WebStorage$QuotaUpdater;)V
+.limit registers 11
+; this: v5 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v6 (J)
+; parameter[1] : v8 (J)
+; parameter[2] : v10 (Landroid/webkit/WebStorage$QuotaUpdater;)
+.line 301
+	iget-object	v0,v5,com/google/ads/util/g$a.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v5 : Lcom/google/ads/util/g$a;
+	iget-object	v0,v0,com/google/ads/n.d Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.b Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m$a
+; v0 : Lcom/google/ads/m$a;
+.line 305
+	iget-object	v1,v0,com/google/ads/m$a.k Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/m$a;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Long
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v1},java/lang/Long/longValue	; longValue()J
+; v1 : Ljava/lang/Long;
+	move-result-wide	v1
+; v1 : double-length
+	sub-long/2addr	v1,v8
+; v1 : double-length , v8 : double-length
+.line 306
+	iget-object	v0,v0,com/google/ads/m$a.j Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	add-long/2addr	v3,v6
+; v3 : double-length , v6 : double-length
+.line 307
+	cmp-long	v0,v1,v3
+; v0 : single-length , v1 : double-length , v3 : double-length
+	if-gez	v0,lc44dc
+; v0 : single-length
+.line 309
+	const-wide/16	v0,0
+; v0 : double-length
+	invoke-interface	{v10,v0,v1},android/webkit/WebStorage$QuotaUpdater/updateQuota	; updateQuota(J)V
+; v10 : Landroid/webkit/WebStorage$QuotaUpdater; , v0 : double-length
+lc44da:
+.line 314
+	return-void	
+lc44dc:
+.line 312
+	invoke-interface	{v10,v3,v4},android/webkit/WebStorage$QuotaUpdater/updateQuota	; updateQuota(J)V
+; v10 : Landroid/webkit/WebStorage$QuotaUpdater; , v3 : double-length
+	goto	lc44da
+.end method
+
+.method public onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/util/g$a;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Landroid/webkit/WebChromeClient$CustomViewCallback;)
+.line 322
+	invoke-interface	{v2},android/webkit/WebChromeClient$CustomViewCallback/onCustomViewHidden	; onCustomViewHidden()V
+; v2 : Landroid/webkit/WebChromeClient$CustomViewCallback;
+.line 323
+	return-void	
+.end method
+
+

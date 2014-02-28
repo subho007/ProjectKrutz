@@ -1,0 +1,94 @@
+.class codeadore/textgram/StylingActivity$1
+.super java/lang/Object
+.source StylingActivity.java
+.implements android/view/ViewTreeObserver$OnGlobalLayoutListener
+
+.enclosing method codeadore/onCreate(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/StylingActivity;
+.field private final val$savedInstanceState Landroid/os/Bundle;
+
+.method <init>(Lcodeadore/textgram/StylingActivity;Landroid/os/Bundle;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/StylingActivity$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/StylingActivity;)
+; parameter[1] : v2 (Landroid/os/Bundle;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/StylingActivity$1.this$0 Lcodeadore/textgram/StylingActivity;
+; v1 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity$1;
+	iput-object	v2,v0,codeadore/textgram/StylingActivity$1.val$savedInstanceState Landroid/os/Bundle;
+; v2 : Landroid/os/Bundle; , v0 : Lcodeadore/textgram/StylingActivity$1;
+.line 161
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/StylingActivity$1;
+	return-void	
+.end method
+
+.method public onGlobalLayout()V
+.limit registers 5
+; this: v4 (Lcodeadore/textgram/StylingActivity$1;)
+	const/4	v2,1
+; v2 : single-length
+.line 165
+	iget-object	v0,v4,codeadore/textgram/StylingActivity$1.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v4 : Lcodeadore/textgram/StylingActivity$1;
+	iget-boolean	v0,v0,codeadore/textgram/StylingActivity.superSurfaceSetupDone Z
+; v0 : single-length , v0 : single-length
+	if-nez	v0,la0784
+; v0 : single-length
+.line 167
+	sget-object	v0,codeadore/textgram/StylingActivity.mainTextItem Lcodeadore/textgram/SuperSurfaceItem;
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	const-string	v1,"text"
+; v1 : Ljava/lang/String;
+	iput-object	v1,v0,codeadore/textgram/SuperSurfaceItem.type Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 169
+	iget-object	v0,v4,codeadore/textgram/StylingActivity$1.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v4 : Lcodeadore/textgram/StylingActivity$1;
+	if-nez	v0,la0786
+; v0 : Landroid/os/Bundle;
+.line 170
+	sget-object	v0,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v0 : Lcodeadore/textgram/SuperSurface;
+	sget-object	v1,codeadore/textgram/StylingActivity.mainTextItem Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/addItem	; addItem(Lcodeadore/textgram/SuperSurfaceItem;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 172
+	iget-object	v0,v4,codeadore/textgram/StylingActivity$1.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v4 : Lcodeadore/textgram/StylingActivity$1;
+	iput-boolean	v2,v0,codeadore/textgram/StylingActivity.superSurfaceSetupDone Z
+; v2 : single-length , v0 : Lcodeadore/textgram/StylingActivity;
+.line 174
+	sget-object	v0,codeadore/textgram/StylingActivity.UIHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler;
+	new-instance	v1,codeadore/textgram/StylingActivity$1$1
+; v1 : Lcodeadore/textgram/StylingActivity$1$1;
+	invoke-direct	{v1,v4},codeadore/textgram/StylingActivity$1$1/<init>	; <init>(Lcodeadore/textgram/StylingActivity$1;)V
+; v1 : Lcodeadore/textgram/StylingActivity$1$1; , v4 : Lcodeadore/textgram/StylingActivity$1;
+.line 191
+	const-wide/16	v2,100
+; v2 : double-length
+.line 174
+	invoke-virtual	{v0,v1,v2,v3},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v1 : Lcodeadore/textgram/StylingActivity$1$1; , v2 : double-length
+la0784:
+.line 200
+	return-void	
+la0786:
+.line 194
+	iget-object	v0,v4,codeadore/textgram/StylingActivity$1.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v4 : Lcodeadore/textgram/StylingActivity$1;
+	iput-boolean	v2,v0,codeadore/textgram/StylingActivity.superSurfaceSetupDone Z
+; v2 : single-length , v0 : Lcodeadore/textgram/StylingActivity;
+.line 195
+	sget-object	v0,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v0 : Lcodeadore/textgram/SuperSurface;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/setVisibility	; setVisibility(I)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	goto	la0784
+.end method
+
+

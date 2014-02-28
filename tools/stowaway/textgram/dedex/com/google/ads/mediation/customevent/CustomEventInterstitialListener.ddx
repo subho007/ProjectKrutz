@@ -1,0 +1,10 @@
+.interface public abstract com/google/ads/mediation/customevent/CustomEventInterstitialListener
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/mediation/customevent/CustomEventListener
+
+
+.method public abstract onReceivedAd()V
+.end method
+
+

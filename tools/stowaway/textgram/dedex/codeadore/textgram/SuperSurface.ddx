@@ -1,0 +1,2371 @@
+.class public codeadore/textgram/SuperSurface
+.super android/view/SurfaceView
+.source SuperSurface.java
+.implements java/lang/Runnable
+
+.field static canvasBackground Landroid/graphics/Bitmap;
+.field static canvasBackgroundPath Ljava/lang/String;
+.field static canvasFilter Landroid/graphics/Bitmap;
+.field static canvasFilterPath Ljava/lang/String;
+.field static canvasFrame Landroid/graphics/Bitmap;
+.field static canvasFramePath Ljava/lang/String;
+.field static canvasHeight I
+.field static canvasOriginalFilter Landroid/graphics/Bitmap;
+.field static canvasOriginalFrame Landroid/graphics/Bitmap;
+.field static canvasWidth I
+.field public static currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+.field private static filterOpacity I
+.field static lastScreenHeight I
+.field static lastScreenWidth I
+.field static originalCanvasBackground Landroid/graphics/Bitmap;
+.field static screenHeight I
+.field static screenWidth I
+.field static startPosX I
+.field static startPosY I
+.field public static update Z
+.field TAG Ljava/lang/String;
+.field context Landroid/content/Context;
+.field currentPointersSizeDiffe F
+.field deleteCornerBitmap Landroid/graphics/Bitmap;
+.field firstTime Z
+.field holder Landroid/view/SurfaceHolder;
+.field isItOK Z
+.field isTwoPointers Z
+.field itemsList Ljava/util/ArrayList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/ArrayList" , "<" , "Lcodeadore/textgram/SuperSurfaceItem;" , ">;" }
+  .end annotation
+.end field
+.field lastChangePercent F
+.field lastPointersXDiffe F
+.field lastPointersYDiffe F
+.field lastSelectedItem Lcodeadore/textgram/SuperSurfaceItem;
+.field lastTouchX F
+.field lastTouchY F
+.field movePointerID I
+.field pinchZoomActive Z
+.field pinchZoomRate I
+.field resizePinActiveBitmap Landroid/graphics/Bitmap;
+.field resizePinBitmap Landroid/graphics/Bitmap;
+.field rotatePinActiveBitmap Landroid/graphics/Bitmap;
+.field rotatePinBitmap Landroid/graphics/Bitmap;
+.field selectedItem Lcodeadore/textgram/SuperSurfaceItem;
+.field private startUpOpacity I
+.field private stateToSave I
+.field t Ljava/lang/Thread;
+.field thisView Landroid/view/View;
+.field threadIsWorking Z
+.field tpe Ljava/util/concurrent/ExecutorService;
+
+.method static <clinit>()V
+.limit registers 6
+	const/16	v5,612
+; v5 : single-length
+	const/16	v4,480
+; v4 : single-length
+	const/16	v3,320
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 48
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasBackground Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 49
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasBackgroundPath Ljava/lang/String;
+; v1 : Ljava/lang/String;
+.line 50
+	sput-object	v1,codeadore/textgram/SuperSurface.originalCanvasBackground Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 51
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFrame Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 52
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v1 : Ljava/lang/String;
+.line 53
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFrame Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 54
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 55
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v1 : Ljava/lang/String;
+.line 56
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 58
+	const/16	v0,100
+; v0 : single-length
+	sput	v0,codeadore/textgram/SuperSurface.filterOpacity I
+; v0 : I
+.line 60
+	sput	v5,codeadore/textgram/SuperSurface.canvasWidth I
+; v5 : I
+.line 61
+	sput	v5,codeadore/textgram/SuperSurface.canvasHeight I
+; v5 : I
+.line 63
+	sput	v4,codeadore/textgram/SuperSurface.screenHeight I
+; v4 : I
+.line 64
+	sput	v3,codeadore/textgram/SuperSurface.screenWidth I
+; v3 : I
+.line 66
+	sput	v4,codeadore/textgram/SuperSurface.lastScreenHeight I
+; v4 : I
+.line 67
+	sput	v3,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v3 : I
+.line 69
+	sput	v2,codeadore/textgram/SuperSurface.startPosX I
+; v2 : I
+.line 70
+	sput	v2,codeadore/textgram/SuperSurface.startPosY I
+; v2 : I
+.line 72
+	const/4	v0,1
+; v0 : single-length
+	sput-boolean	v0,codeadore/textgram/SuperSurface.update Z
+; v0 : Z
+.line 95
+	sput-object	v1,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 6
+; this: v4 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v5 (Landroid/content/Context;)
+	const/4	v3,0
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 98
+	invoke-direct	{v4,v5},android/view/SurfaceView/<init>	; <init>(Landroid/content/Context;)V
+; v4 : Lcodeadore/textgram/SuperSurface; , v5 : Landroid/content/Context;
+.line 29
+	iput-object	v3,v4,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v3 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 32
+	new-instance	v0,java/util/ArrayList
+; v0 : Ljava/util/ArrayList;
+	invoke-direct	{v0},java/util/ArrayList/<init>	; <init>()V
+; v0 : Ljava/util/ArrayList;
+	iput-object	v0,v4,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v4 : Lcodeadore/textgram/SuperSurface;
+.line 34
+	iput-object	v3,v4,codeadore/textgram/SuperSurface.selectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v3 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 35
+	iput-object	v3,v4,codeadore/textgram/SuperSurface.lastSelectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v3 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 36
+	iput-boolean	v2,v4,codeadore/textgram/SuperSurface.isTwoPointers Z
+; v2 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 37
+	iput	v1,v4,codeadore/textgram/SuperSurface.currentPointersSizeDiffe F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 38
+	const/4	v0,15
+; v0 : single-length
+	iput	v0,v4,codeadore/textgram/SuperSurface.movePointerID I
+; v0 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 39
+	iput	v1,v4,codeadore/textgram/SuperSurface.lastTouchX F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 40
+	iput	v1,v4,codeadore/textgram/SuperSurface.lastTouchY F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 41
+	iput	v1,v4,codeadore/textgram/SuperSurface.lastPointersYDiffe F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 42
+	iput	v1,v4,codeadore/textgram/SuperSurface.lastPointersXDiffe F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 44
+	iput-boolean	v2,v4,codeadore/textgram/SuperSurface.pinchZoomActive Z
+; v2 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 45
+	iput	v2,v4,codeadore/textgram/SuperSurface.pinchZoomRate I
+; v2 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 46
+	iput	v1,v4,codeadore/textgram/SuperSurface.lastChangePercent F
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 76
+	const-string	v0,"SuperSurface"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v4,codeadore/textgram/SuperSurface.TAG Ljava/lang/String;
+; v0 : Ljava/lang/String; , v4 : Lcodeadore/textgram/SuperSurface;
+.line 84
+	iput	v2,v4,codeadore/textgram/SuperSurface.startUpOpacity I
+; v2 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 86
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v4,codeadore/textgram/SuperSurface.firstTime Z
+; v0 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 92
+	iput-boolean	v2,v4,codeadore/textgram/SuperSurface.threadIsWorking Z
+; v2 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 93
+	invoke-static	{},java/util/concurrent/Executors/newSingleThreadExecutor	; newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/concurrent/ExecutorService;
+	iput-object	v0,v4,codeadore/textgram/SuperSurface.tpe Ljava/util/concurrent/ExecutorService;
+; v0 : Ljava/util/concurrent/ExecutorService; , v4 : Lcodeadore/textgram/SuperSurface;
+.line 99
+	invoke-virtual	{v4},codeadore/textgram/SuperSurface/getHolder	; getHolder()Landroid/view/SurfaceHolder;
+; v4 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v0
+; v0 : Landroid/view/SurfaceHolder;
+	iput-object	v0,v4,codeadore/textgram/SuperSurface.holder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v4 : Lcodeadore/textgram/SuperSurface;
+.line 101
+	iput-object	v5,v4,codeadore/textgram/SuperSurface.context Landroid/content/Context;
+; v5 : Landroid/content/Context; , v4 : Lcodeadore/textgram/SuperSurface;
+.line 103
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 9
+; this: v6 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v7 (Landroid/content/Context;)
+; parameter[1] : v8 (Landroid/util/AttributeSet;)
+	const/4	v5,0
+; v5 : single-length
+	const/4	v4,0
+; v4 : single-length
+	const/4	v3,0
+; v3 : single-length
+.line 106
+	invoke-direct	{v6,v7,v8},android/view/SurfaceView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v6 : Lcodeadore/textgram/SuperSurface; , v7 : Landroid/content/Context; , v8 : Landroid/util/AttributeSet;
+.line 29
+	iput-object	v5,v6,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v5 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 32
+	new-instance	v2,java/util/ArrayList
+; v2 : Ljava/util/ArrayList;
+	invoke-direct	{v2},java/util/ArrayList/<init>	; <init>()V
+; v2 : Ljava/util/ArrayList;
+	iput-object	v2,v6,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v2 : Ljava/util/ArrayList; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 34
+	iput-object	v5,v6,codeadore/textgram/SuperSurface.selectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v5 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 35
+	iput-object	v5,v6,codeadore/textgram/SuperSurface.lastSelectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v5 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 36
+	iput-boolean	v4,v6,codeadore/textgram/SuperSurface.isTwoPointers Z
+; v4 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 37
+	iput	v3,v6,codeadore/textgram/SuperSurface.currentPointersSizeDiffe F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 38
+	const/4	v2,15
+; v2 : single-length
+	iput	v2,v6,codeadore/textgram/SuperSurface.movePointerID I
+; v2 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 39
+	iput	v3,v6,codeadore/textgram/SuperSurface.lastTouchX F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 40
+	iput	v3,v6,codeadore/textgram/SuperSurface.lastTouchY F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 41
+	iput	v3,v6,codeadore/textgram/SuperSurface.lastPointersYDiffe F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 42
+	iput	v3,v6,codeadore/textgram/SuperSurface.lastPointersXDiffe F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 44
+	iput-boolean	v4,v6,codeadore/textgram/SuperSurface.pinchZoomActive Z
+; v4 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 45
+	iput	v4,v6,codeadore/textgram/SuperSurface.pinchZoomRate I
+; v4 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 46
+	iput	v3,v6,codeadore/textgram/SuperSurface.lastChangePercent F
+; v3 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 76
+	const-string	v2,"SuperSurface"
+; v2 : Ljava/lang/String;
+	iput-object	v2,v6,codeadore/textgram/SuperSurface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 84
+	iput	v4,v6,codeadore/textgram/SuperSurface.startUpOpacity I
+; v4 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 86
+	const/4	v2,1
+; v2 : single-length
+	iput-boolean	v2,v6,codeadore/textgram/SuperSurface.firstTime Z
+; v2 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 92
+	iput-boolean	v4,v6,codeadore/textgram/SuperSurface.threadIsWorking Z
+; v4 : single-length , v6 : Lcodeadore/textgram/SuperSurface;
+.line 93
+	invoke-static	{},java/util/concurrent/Executors/newSingleThreadExecutor	; newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Ljava/util/concurrent/ExecutorService;
+	iput-object	v2,v6,codeadore/textgram/SuperSurface.tpe Ljava/util/concurrent/ExecutorService;
+; v2 : Ljava/util/concurrent/ExecutorService; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 107
+	invoke-virtual	{v6},codeadore/textgram/SuperSurface/getHolder	; getHolder()Landroid/view/SurfaceHolder;
+; v6 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v2
+; v2 : Landroid/view/SurfaceHolder;
+	iput-object	v2,v6,codeadore/textgram/SuperSurface.holder Landroid/view/SurfaceHolder;
+; v2 : Landroid/view/SurfaceHolder; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 109
+	iput-object	v6,v6,codeadore/textgram/SuperSurface.thisView Landroid/view/View;
+; v6 : Lcodeadore/textgram/SuperSurface; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 110
+	iput-object	v7,v6,codeadore/textgram/SuperSurface.context Landroid/content/Context;
+; v7 : Landroid/content/Context; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 112
+	invoke-virtual	{v6},codeadore/textgram/SuperSurface/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v6 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v1
+; v1 : Landroid/view/ViewTreeObserver;
+.line 113
+	new-instance	v2,codeadore/textgram/SuperSurface$1
+; v2 : Lcodeadore/textgram/SuperSurface$1;
+	invoke-direct	{v2,v6},codeadore/textgram/SuperSurface$1/<init>	; <init>(Lcodeadore/textgram/SuperSurface;)V
+; v2 : Lcodeadore/textgram/SuperSurface$1; , v6 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v1,v2},android/view/ViewTreeObserver/addOnGlobalLayoutListener	; addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+; v1 : Landroid/view/ViewTreeObserver; , v2 : Lcodeadore/textgram/SuperSurface$1;
+.line 205
+	new-instance	v0,android/view/GestureDetector
+; v0 : Landroid/view/GestureDetector;
+.line 206
+	new-instance	v2,codeadore/textgram/SuperSurface$1DoubleTapGestureDetector
+; v2 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+	invoke-direct	{v2,v6},codeadore/textgram/SuperSurface$1DoubleTapGestureDetector/<init>	; <init>(Lcodeadore/textgram/SuperSurface;)V
+; v2 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector; , v6 : Lcodeadore/textgram/SuperSurface;
+.line 205
+	invoke-direct	{v0,v2},android/view/GestureDetector/<init>	; <init>(Landroid/view/GestureDetector$OnGestureListener;)V
+; v0 : Landroid/view/GestureDetector; , v2 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+.line 208
+	new-instance	v2,codeadore/textgram/SuperSurface$2
+; v2 : Lcodeadore/textgram/SuperSurface$2;
+	invoke-direct	{v2,v6,v0},codeadore/textgram/SuperSurface$2/<init>	; <init>(Lcodeadore/textgram/SuperSurface;Landroid/view/GestureDetector;)V
+; v2 : Lcodeadore/textgram/SuperSurface$2; , v6 : Lcodeadore/textgram/SuperSurface; , v0 : Landroid/view/GestureDetector;
+	invoke-virtual	{v6,v2},codeadore/textgram/SuperSurface/setOnTouchListener	; setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+; v6 : Lcodeadore/textgram/SuperSurface; , v2 : Lcodeadore/textgram/SuperSurface$2;
+.line 633
+	return-void	
+.end method
+
+.method static access$0(Lcodeadore/textgram/SuperSurface;)I
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/SuperSurface;)
+.line 84
+	iget	v0,v1,codeadore/textgram/SuperSurface.startUpOpacity I
+; v0 : single-length , v1 : Lcodeadore/textgram/SuperSurface;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$1(Lcodeadore/textgram/SuperSurface;I)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/SuperSurface;)
+; parameter[1] : v1 (I)
+.line 84
+	iput	v1,v0,codeadore/textgram/SuperSurface.startUpOpacity I
+; v1 : single-length , v0 : Lcodeadore/textgram/SuperSurface;
+	return-void	
+.end method
+
+.method public static resetFixedSizeLast(F)I
+.limit registers 11
+; parameter[0] : v10 (F)
+.var 1 is finalReturn I from la3ca0 to la3cd0
+.var 2 is fixedSize F from la3c9c to la3cd0
+.var 3 is percentOfCanvas F from la3c92 to la3cd0
+.var 5 is working Ljava/lang/String; from la3ca8 to la3cd0
+	const/high16	v9,17096
+; v9 : single-length
+.line 1280
+	const-string	v6,"resetFixedSizeLast"
+; v6 : Ljava/lang/String;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"lastW: "
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	sget	v8,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v8 : single-length
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8," - lastH: "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+.line 1281
+	sget	v8,codeadore/textgram/SuperSurface.lastScreenHeight I
+; v8 : single-length
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+.line 1280
+	invoke-static	{v6,v7},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+.line 1283
+	sget	v0,codeadore/textgram/SuperSurface.canvasWidth I
+; v0 : single-length
+.line 1285
+	const/16	v4,320
+; v4 : single-length
+.line 1286
+	sget	v6,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v6 : single-length
+	sget	v7,codeadore/textgram/SuperSurface.lastScreenHeight I
+; v7 : single-length
+	if-ge	v6,v7,la3cd0
+; v6 : single-length , v7 : single-length
+.line 1287
+	sget	v4,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v4 : single-length
+la3c88:
+.line 1292
+	int-to-float	v6,v4
+; v6 : single-length , v4 : single-length
+	div-float	v6,v10,v6
+; v6 : single-length , v10 : single-length , v6 : single-length
+	mul-float	v3,v6,v9
+; v3 : single-length , v6 : single-length , v9 : single-length
+.line 1293
+	div-float	v6,v3,v9
+; v6 : single-length , v3 : single-length , v9 : single-length
+	int-to-float	v7,v0
+; v7 : single-length , v0 : single-length
+	mul-float	v2,v6,v7
+; v2 : single-length , v6 : single-length , v7 : single-length
+.line 1295
+	const/16	v1,100
+; v1 : single-length
+.line 1297
+	invoke-static	{v2},java/lang/String/valueOf	; valueOf(F)Ljava/lang/String;
+; v2 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1298
+	const/4	v6,0
+; v6 : single-length
+	const-string	v7,"."
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v5,v7},java/lang/String/lastIndexOf	; lastIndexOf(Ljava/lang/String;)I
+; v5 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	invoke-virtual	{v5,v6,v7},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v5 : Ljava/lang/String; , v6 : single-length , v7 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1300
+	invoke-static	{v5},java/lang/Integer/valueOf	; valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+; v5 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/Integer;
+	invoke-virtual	{v6},java/lang/Integer/intValue	; intValue()I
+; v6 : Ljava/lang/Integer;
+	move-result	v1
+; v1 : single-length
+.line 1302
+	return	v1
+; v1 : single-length
+la3cd0:
+.line 1289
+	sget	v4,codeadore/textgram/SuperSurface.lastScreenHeight I
+; v4 : single-length
+	goto	la3c88
+.end method
+
+.method public addItem(Lcodeadore/textgram/SuperSurfaceItem;)V
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v3 (Lcodeadore/textgram/SuperSurfaceItem;)
+.line 677
+	iget-object	v0,v2,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v2 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v3},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/ArrayList; , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 679
+	iget	v0,v3,codeadore/textgram/SuperSurfaceItem.height F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v2,v0},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v2 : Lcodeadore/textgram/SuperSurface; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	iput	v0,v3,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 680
+	iget	v0,v3,codeadore/textgram/SuperSurfaceItem.width F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v2,v0},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v2 : Lcodeadore/textgram/SuperSurface; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	iput	v0,v3,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 681
+	iget	v0,v3,codeadore/textgram/SuperSurfaceItem.posX F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v2,v0},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v2 : Lcodeadore/textgram/SuperSurface; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	iput	v0,v3,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 682
+	iget	v0,v3,codeadore/textgram/SuperSurfaceItem.posY F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v2,v0},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v2 : Lcodeadore/textgram/SuperSurface; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	iput	v0,v3,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v0 : single-length , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 684
+	const/4	v0,1
+; v0 : single-length
+	sput-boolean	v0,codeadore/textgram/SuperSurface.update Z
+; v0 : Z
+.line 686
+	iget-object	v0,v3,codeadore/textgram/SuperSurfaceItem.type Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	const-string	v1,"text"
+; v1 : Ljava/lang/String;
+	if-ne	v0,v1,la3d50
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	sget-object	v0,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-nez	v0,la3d50
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 687
+	sput-object	v3,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v3 : Lcodeadore/textgram/SuperSurfaceItem;
+la3d50:
+.line 690
+	return-void	
+.end method
+
+.method public clearSelection()V
+.limit registers 5
+; this: v4 (Lcodeadore/textgram/SuperSurface;)
+	const/4	v3,0
+; v3 : single-length
+.line 1398
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v4,codeadore/textgram/SuperSurface.selectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : single-length , v4 : Lcodeadore/textgram/SuperSurface;
+.line 1399
+	iget-object	v1,v4,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v4 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v1},java/util/ArrayList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/ArrayList;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+la3d78:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,la3d8c
+; v2 : single-length
+.line 1403
+	invoke-virtual	{v4},codeadore/textgram/SuperSurface/requestUpdate	; requestUpdate()V
+; v4 : Lcodeadore/textgram/SuperSurface;
+.line 1404
+	return-void	
+la3d8c:
+.line 1399
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,codeadore/textgram/SuperSurfaceItem
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1400
+	iput-boolean	v3,v0,codeadore/textgram/SuperSurfaceItem.selected Z
+; v3 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1401
+	iput-boolean	v3,v0,codeadore/textgram/SuperSurfaceItem.highlight Z
+; v3 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto	la3d78
+.end method
+
+.method public export()Landroid/graphics/Bitmap;
+.limit registers 21
+; this: v20 (Lcodeadore/textgram/SuperSurface;)
+.var 3 is filterPaint Landroid/graphics/Paint; from la3e4e to la3e88
+.var 11 is settingsPrefs Landroid/content/SharedPreferences; from la3ee0 to la3ef6
+.var 6 is opacity I from la4028 to la403a
+.var 8 is posY F from la40da to la40f4
+.var 10 is rotatedBitmap Landroid/graphics/Bitmap; from la4080 to la40f4
+.var 13 is textHeight I from la40a4 to la40f4
+.var 4 is finalBitmap Landroid/graphics/Bitmap; from la4006 to la4106
+.var 7 is paint Landroid/graphics/Paint; from la4014 to la4106
+.line 1078
+	sget	v14,codeadore/textgram/SuperSurface.canvasWidth I
+; v14 : single-length
+	sget	v15,codeadore/textgram/SuperSurface.canvasHeight I
+; v15 : single-length
+.line 1079
+	sget-object	v16,android/graphics/Bitmap$Config.ARGB_8888 Landroid/graphics/Bitmap$Config;
+; v16 : Landroid/graphics/Bitmap$Config;
+.line 1078
+	invoke-static/range	{v14..v16},android/graphics/Bitmap/createBitmap;	createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+; v14 : single-length , v15 : single-length , v16 : Landroid/graphics/Bitmap$Config;
+	move-result-object	v9
+; v9 : Landroid/graphics/Bitmap;
+.line 1080
+	new-instance	v2,android/graphics/Canvas
+; v2 : Landroid/graphics/Canvas;
+	invoke-direct	{v2,v9},android/graphics/Canvas/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v2 : Landroid/graphics/Canvas; , v9 : Landroid/graphics/Bitmap;
+.line 1081
+	new-instance	v14,android/graphics/PaintFlagsDrawFilter
+; v14 : Landroid/graphics/PaintFlagsDrawFilter;
+	const/4	v15,0
+; v15 : single-length
+	const/16	v16,2
+; v16 : single-length
+	invoke-direct/range	{v14..v16},android/graphics/PaintFlagsDrawFilter/<init>;	<init>(II)V
+; v14 : Landroid/graphics/PaintFlagsDrawFilter; , v15 : single-length , v16 : single-length
+	invoke-virtual	{v2,v14},android/graphics/Canvas/setDrawFilter	; setDrawFilter(Landroid/graphics/DrawFilter;)V
+; v2 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/PaintFlagsDrawFilter;
+.line 1082
+	const/16	v14,23
+; v14 : single-length
+	const/16	v15,24
+; v15 : single-length
+	const/16	v16,18
+; v16 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	invoke-virtual	{v2,v14,v15,v0},android/graphics/Canvas/drawRGB	; drawRGB(III)V
+; v2 : Landroid/graphics/Canvas; , v14 : single-length , v15 : single-length , v0 : single-length
+.line 1084
+	new-instance	v12,android/graphics/Paint
+; v12 : Landroid/graphics/Paint;
+	invoke-direct	{v12},android/graphics/Paint/<init>	; <init>()V
+; v12 : Landroid/graphics/Paint;
+.line 1085
+	const/4	v14,1
+; v14 : single-length
+	invoke-virtual	{v12,v14},android/graphics/Paint/setFilterBitmap	; setFilterBitmap(Z)V
+; v12 : Landroid/graphics/Paint; , v14 : single-length
+.line 1086
+	const/4	v14,1
+; v14 : single-length
+	invoke-virtual	{v12,v14},android/graphics/Paint/setDither	; setDither(Z)V
+; v12 : Landroid/graphics/Paint; , v14 : single-length
+.line 1087
+	const/4	v14,1
+; v14 : single-length
+	invoke-virtual	{v12,v14},android/graphics/Paint/setAntiAlias	; setAntiAlias(Z)V
+; v12 : Landroid/graphics/Paint; , v14 : single-length
+.line 1089
+	sget-object	v14,codeadore/textgram/SuperSurface.originalCanvasBackground Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	if-eqz	v14,la3e3c
+; v14 : Landroid/graphics/Bitmap;
+.line 1090
+	sget-object	v14,codeadore/textgram/SuperSurface.originalCanvasBackground Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	const/4	v15,0
+; v15 : single-length
+	const/16	v16,0
+; v16 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	invoke-virtual	{v2,v14,v15,v0,v12},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/Bitmap; , v15 : single-length , v0 : single-length , v12 : Landroid/graphics/Paint;
+la3e3c:
+.line 1093
+	sget-object	v14,codeadore/textgram/SuperSurface.canvasFilter Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	if-eqz	v14,la3e88
+; v14 : Landroid/graphics/Bitmap;
+.line 1094
+	new-instance	v3,android/graphics/Paint
+; v3 : Landroid/graphics/Paint;
+	invoke-direct	{v3},android/graphics/Paint/<init>	; <init>()V
+; v3 : Landroid/graphics/Paint;
+.line 1095
+	invoke-virtual/range	{v20},codeadore/textgram/SuperSurface/getFilterOpacity;	getFilterOpacity()I
+; v20 : Lcodeadore/textgram/SuperSurface;
+	move-result	v14
+; v14 : single-length
+	const/16	v15,100
+; v15 : single-length
+	if-eq	v14,v15,la3e74
+; v14 : single-length , v15 : single-length
+.line 1096
+	invoke-virtual/range	{v20},codeadore/textgram/SuperSurface/getFilterOpacity;	getFilterOpacity()I
+; v20 : Lcodeadore/textgram/SuperSurface;
+	move-result	v14
+; v14 : single-length
+	mul-int/lit16	v14,v14,255
+; v14 : single-length , v14 : single-length
+	div-int/lit8	v14,v14,100
+; v14 : single-length , v14 : single-length
+	invoke-virtual	{v3,v14},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v3 : Landroid/graphics/Paint; , v14 : single-length
+la3e74:
+.line 1098
+	sget-object	v14,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	const/4	v15,0
+; v15 : single-length
+	const/16	v16,0
+; v16 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	invoke-virtual	{v2,v14,v15,v0,v3},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/Bitmap; , v15 : single-length , v0 : single-length , v3 : Landroid/graphics/Paint;
+la3e88:
+.line 1101
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	iget-object	v14,v0,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v14 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v14},java/util/ArrayList/iterator	; iterator()Ljava/util/Iterator;
+; v14 : Ljava/util/ArrayList;
+	move-result-object	v14
+; v14 : Ljava/util/Iterator;
+la3e98:
+	invoke-interface	{v14},java/util/Iterator/hasNext	; hasNext()Z
+; v14 : Ljava/util/Iterator;
+	move-result	v15
+; v15 : single-length
+	if-nez	v15,la3ef6
+; v15 : single-length
+.line 1161
+	sget-object	v14,codeadore/textgram/SuperSurface.canvasFrame Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	if-eqz	v14,la3ec8
+; v14 : Landroid/graphics/Bitmap;
+.line 1162
+	sget-object	v14,codeadore/textgram/SuperSurface.canvasOriginalFrame Landroid/graphics/Bitmap;
+; v14 : Landroid/graphics/Bitmap;
+	const/4	v15,0
+; v15 : single-length
+	const/16	v16,0
+; v16 : single-length
+	const/16	v17,0
+; v17 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	move-object/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v2,v14,v15,v0,v1},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/Bitmap; , v15 : single-length , v0 : single-length , v1 : single-length
+la3ec8:
+.line 1165
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	iget-object	v14,v0,codeadore/textgram/SuperSurface.context Landroid/content/Context;
+; v14 : Landroid/content/Context; , v0 : Lcodeadore/textgram/SuperSurface;
+.line 1166
+	const-string	v15,"TextgramSettings"
+; v15 : Ljava/lang/String;
+	const/16	v16,0
+; v16 : single-length
+.line 1165
+	invoke-virtual/range	{v14..v16},android/content/Context/getSharedPreferences;	getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v14 : Landroid/content/Context; , v15 : Ljava/lang/String; , v16 : single-length
+	move-result-object	v11
+; v11 : Landroid/content/SharedPreferences;
+.line 1167
+	sget-boolean	v14,codeadore/textgram/Settings.isPro Z
+; v14 : single-length
+	if-nez	v14,la3ef4
+; v14 : single-length
+.line 1168
+	const-string	v14,"removeWatermark"
+; v14 : Ljava/lang/String;
+	const/4	v15,0
+; v15 : single-length
+	invoke-interface	{v11,v14,v15},android/content/SharedPreferences/getBoolean	; getBoolean(Ljava/lang/String;Z)Z
+; v11 : Landroid/content/SharedPreferences; , v14 : Ljava/lang/String; , v15 : single-length
+la3ef4:
+.line 1182
+	return-object	v9
+; v9 : Landroid/graphics/Bitmap;
+la3ef6:
+.line 1101
+	invoke-interface	{v14},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v14 : Ljava/util/Iterator;
+	move-result-object	v5
+; v5 : Ljava/lang/Object;
+	check-cast	v5,codeadore/textgram/SuperSurfaceItem
+; v5 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1104
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.rotation I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-eqz	v15,la3f9e
+; v15 : single-length
+.line 1105
+	const/4	v15,1
+; v15 : single-length
+	invoke-virtual	{v2,v15},android/graphics/Canvas/save	; save(I)I
+; v2 : Landroid/graphics/Canvas; , v15 : single-length
+.line 1106
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.rotation I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	int-to-float	v15,v15
+; v15 : single-length , v15 : single-length
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+.line 1107
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	const/high16	v18,16384
+; v18 : single-length
+	div-float	v17,v17,v18
+; v17 : single-length , v17 : single-length , v18 : single-length
+	add-float	v16,v16,v17
+; v16 : single-length , v16 : single-length , v17 : single-length
+.line 1108
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+.line 1109
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v18
+; v18 : single-length
+	const/high16	v19,16384
+; v19 : single-length
+	div-float	v18,v18,v19
+; v18 : single-length , v18 : single-length , v19 : single-length
+.line 1108
+	add-float	v17,v17,v18
+; v17 : single-length , v17 : single-length , v18 : single-length
+.line 1106
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v2,v15,v0,v1},android/graphics/Canvas/rotate	; rotate(FFF)V
+; v2 : Landroid/graphics/Canvas; , v15 : single-length , v0 : single-length , v1 : single-length
+la3f9e:
+.line 1112
+	iget-object	v15,v5,codeadore/textgram/SuperSurfaceItem.type Ljava/lang/String;
+; v15 : Ljava/lang/String; , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	const-string	v16,"text"
+; v16 : Ljava/lang/String;
+	invoke-virtual/range	{v15..v16},java/lang/String/equals;	equals(Ljava/lang/Object;)Z
+; v15 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	move-result	v15
+; v15 : single-length
+	if-eqz	v15,la4106
+; v15 : single-length
+.line 1113
+	iget-object	v15,v5,codeadore/textgram/SuperSurfaceItem.bitmap Landroid/graphics/Bitmap;
+; v15 : Landroid/graphics/Bitmap; , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1114
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(I)I
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+.line 1115
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(I)I
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	const/16	v18,1
+; v18 : single-length
+.line 1113
+	invoke-static/range	{v15..v18},android/graphics/Bitmap/createScaledBitmap;	createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v15 : Landroid/graphics/Bitmap; , v16 : single-length , v17 : single-length , v18 : single-length
+	move-result-object	v4
+; v4 : Landroid/graphics/Bitmap;
+la4006:
+.line 1123
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.rotation I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1128
+	new-instance	v7,android/graphics/Paint
+; v7 : Landroid/graphics/Paint;
+	invoke-direct	{v7},android/graphics/Paint/<init>	; <init>()V
+; v7 : Landroid/graphics/Paint;
+.line 1129
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.opacity I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	const/16	v16,100
+; v16 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	if-eq	v15,v0,la403a
+; v15 : single-length , v0 : single-length
+.line 1130
+	const/16	v6,100
+; v6 : single-length
+.line 1131
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.opacity I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	mul-int/lit16	v15,v15,255
+; v15 : single-length , v15 : single-length
+	div-int/lit8	v6,v15,100
+; v6 : single-length , v15 : single-length
+.line 1132
+	invoke-virtual	{v7,v6},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v7 : Landroid/graphics/Paint; , v6 : single-length
+la403a:
+.line 1135
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v15},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v15 : single-length
+	move-result	v15
+; v15 : single-length
+.line 1136
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+.line 1135
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	invoke-virtual	{v2,v4,v15,v0,v7},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v4 : Landroid/graphics/Bitmap; , v15 : single-length , v0 : single-length , v7 : Landroid/graphics/Paint;
+.line 1139
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.reflection I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-lez	v15,la40f4
+; v15 : single-length
+.line 1141
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.reflection I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1140
+	invoke-static	{v4,v15},codeadore/textgram/Utilities/createReflectedBitmap	; createReflectedBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+; v4 : Landroid/graphics/Bitmap; , v15 : single-length
+	move-result-object	v10
+; v10 : Landroid/graphics/Bitmap;
+.line 1144
+	invoke-virtual	{v5},codeadore/textgram/SuperSurfaceItem/getTextHeight	; getTextHeight()I
+; v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move-result	v15
+; v15 : single-length
+	int-to-float	v15,v15
+; v15 : single-length , v15 : single-length
+.line 1143
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v15},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v15 : single-length
+	move-result	v15
+; v15 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v15},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v15 : single-length
+	move-result	v15
+; v15 : single-length
+	float-to-int	v13,v15
+; v13 : single-length , v15 : single-length
+.line 1146
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v15},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v15 : single-length
+	move-result	v15
+; v15 : single-length
+.line 1147
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+	int-to-float	v0,v13
+; v0 : single-length , v13 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	sub-float	v16,v16,v17
+; v16 : single-length , v16 : single-length , v17 : single-length
+.line 1146
+	sub-float	v8,v15,v16
+; v8 : single-length , v15 : single-length , v16 : single-length
+.line 1148
+	int-to-float	v15,v13
+; v15 : single-length , v13 : single-length
+	add-float/2addr	v8,v15
+; v8 : single-length , v15 : single-length
+.line 1150
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v15},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v0 : Lcodeadore/textgram/SuperSurface; , v15 : single-length
+	move-result	v15
+; v15 : single-length
+	invoke-virtual	{v2,v10,v15,v8,v7},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v10 : Landroid/graphics/Bitmap; , v15 : single-length , v8 : single-length , v7 : Landroid/graphics/Paint;
+la40f4:
+.line 1155
+	iget	v15,v5,codeadore/textgram/SuperSurfaceItem.rotation I
+; v15 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-eqz	v15,la3e98
+; v15 : single-length
+.line 1156
+	invoke-virtual	{v2},android/graphics/Canvas/restore	; restore()V
+; v2 : Landroid/graphics/Canvas;
+	goto/16	la3e98
+la4106:
+.line 1118
+	iget-object	v15,v5,codeadore/textgram/SuperSurfaceItem.bitmap Landroid/graphics/Bitmap;
+; v15 : Landroid/graphics/Bitmap; , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1119
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v16,v0
+; v16 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(I)I
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+.line 1120
+	iget	v0,v5,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v0 : single-length , v5 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/SuperSurface; , v20 : Lcodeadore/textgram/SuperSurface;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(I)I
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	const/16	v18,1
+; v18 : single-length
+.line 1118
+	invoke-static/range	{v15..v18},android/graphics/Bitmap/createScaledBitmap;	createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v15 : Landroid/graphics/Bitmap; , v16 : single-length , v17 : single-length , v18 : single-length
+	move-result-object	v4
+; v4 : Landroid/graphics/Bitmap;
+	goto/16	la4006
+.end method
+
+.method public fixToSize(F)F
+.limit registers 10
+; this: v8 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v9 (F)
+.var 1 is finalReturn F from la41a4 to la41a8
+.var 2 is fixedSize F from la41a0 to la41a8
+.var 3 is percentOfCanvas F from la4196 to la41a8
+	const/high16	v7,17096
+; v7 : single-length
+.line 1211
+	sget	v0,codeadore/textgram/SuperSurface.canvasWidth I
+; v0 : single-length
+.line 1213
+	const/16	v4,320
+; v4 : single-length
+.line 1214
+	sget	v5,codeadore/textgram/SuperSurface.screenWidth I
+; v5 : single-length
+	sget	v6,codeadore/textgram/SuperSurface.screenHeight I
+; v6 : single-length
+	if-ge	v5,v6,la41a8
+; v5 : single-length , v6 : single-length
+.line 1215
+	sget	v4,codeadore/textgram/SuperSurface.screenWidth I
+; v4 : single-length
+la418c:
+.line 1220
+	int-to-float	v5,v0
+; v5 : single-length , v0 : single-length
+	div-float	v5,v9,v5
+; v5 : single-length , v9 : single-length , v5 : single-length
+	mul-float	v3,v5,v7
+; v3 : single-length , v5 : single-length , v7 : single-length
+.line 1221
+	div-float	v5,v3,v7
+; v5 : single-length , v3 : single-length , v7 : single-length
+	int-to-float	v6,v4
+; v6 : single-length , v4 : single-length
+	mul-float	v2,v5,v6
+; v2 : single-length , v5 : single-length , v6 : single-length
+.line 1223
+	const/high16	v1,17096
+; v1 : single-length
+.line 1225
+	move	v1,v2
+; v1 : single-length , v2 : single-length
+.line 1227
+	return	v1
+; v1 : single-length
+la41a8:
+.line 1217
+	sget	v4,codeadore/textgram/SuperSurface.screenHeight I
+; v4 : single-length
+	goto	la418c
+.end method
+
+.method public getCanvasBackgroundPath()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1375
+	sget-object	v0,codeadore/textgram/SuperSurface.canvasBackgroundPath Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getCanvasFilterPath()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1383
+	sget-object	v0,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getCanvasFramePath()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1379
+	sget-object	v0,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getCurrentTextItem()Lcodeadore/textgram/SuperSurfaceItem;
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1407
+	sget-object	v0,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	return-object	v0
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.end method
+
+.method public getFilterOpacity()I
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1363
+	sget	v0,codeadore/textgram/SuperSurface.filterOpacity I
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getItemsList()Ljava/util/ArrayList;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/ArrayList" , "<" , "Lcodeadore/textgram/SuperSurfaceItem;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1371
+	iget-object	v0,v1,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Lcodeadore/textgram/SuperSurface;
+	return-object	v0
+; v0 : Ljava/util/ArrayList;
+.end method
+
+.method protected onRestoreInstanceState(Landroid/os/Parcelable;)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v2 (Landroid/os/Parcelable;)
+.line 1388
+	const/16	v0,300
+; v0 : single-length
+	iput	v0,v1,codeadore/textgram/SuperSurface.startUpOpacity I
+; v0 : single-length , v1 : Lcodeadore/textgram/SuperSurface;
+.line 1389
+	invoke-super	{v1,v2},android/view/SurfaceView/onRestoreInstanceState	; onRestoreInstanceState(Landroid/os/Parcelable;)V
+; v1 : Lcodeadore/textgram/SuperSurface; , v2 : Landroid/os/Parcelable;
+.line 1390
+	return-void	
+.end method
+
+.method protected onSaveInstanceState()Landroid/os/Parcelable;
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1394
+	invoke-super	{v1},android/view/SurfaceView/onSaveInstanceState	; onSaveInstanceState()Landroid/os/Parcelable;
+; v1 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v0
+; v0 : Landroid/os/Parcelable;
+	return-object	v0
+; v0 : Landroid/os/Parcelable;
+.end method
+
+.method public pause()V
+.limit registers 3
+; this: v2 (Lcodeadore/textgram/SuperSurface;)
+.catch java/lang/Exception from la429a to la42a4 using la42ac
+.line 1186
+	const/4	v1,0
+; v1 : single-length
+	iput-boolean	v1,v2,codeadore/textgram/SuperSurface.isItOK Z
+; v1 : single-length , v2 : Lcodeadore/textgram/SuperSurface;
+.line 1187
+	iget-object	v1,v2,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v1 : Ljava/lang/Thread; , v2 : Lcodeadore/textgram/SuperSurface;
+	if-eqz	v1,la42a4
+; v1 : Ljava/lang/Thread;
+la429a:
+.line 1190
+	iget-object	v1,v2,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v1 : Ljava/lang/Thread; , v2 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v1},java/lang/Thread/join	; join()V
+; v1 : Ljava/lang/Thread;
+la42a4:
+.line 1197
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v2,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v1 : single-length , v2 : Lcodeadore/textgram/SuperSurface;
+.line 1199
+	return-void	
+la42ac:
+.line 1191
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 1192
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	la42a4
+.end method
+
+.method public requestUpdate()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1306
+	const/4	v0,1
+; v0 : single-length
+	sput-boolean	v0,codeadore/textgram/SuperSurface.update Z
+; v0 : Z
+.line 1307
+	return-void	
+.end method
+
+.method public reset(Ljava/lang/String;)V
+.limit registers 7
+; this: v5 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v6 (Ljava/lang/String;)
+	const/4	v3,0
+; v3 : single-length
+.line 1310
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasFrame Landroid/graphics/Bitmap;
+; v3 : Landroid/graphics/Bitmap;
+.line 1311
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v3 : Ljava/lang/String;
+.line 1312
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasFilter Landroid/graphics/Bitmap;
+; v3 : Landroid/graphics/Bitmap;
+.line 1313
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v3 : Ljava/lang/String;
+.line 1314
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasBackground Landroid/graphics/Bitmap;
+; v3 : Landroid/graphics/Bitmap;
+.line 1315
+	sput-object	v3,codeadore/textgram/SuperSurface.canvasBackgroundPath Ljava/lang/String;
+; v3 : Ljava/lang/String;
+.line 1316
+	invoke-virtual	{v5},codeadore/textgram/SuperSurface/pause	; pause()V
+; v5 : Lcodeadore/textgram/SuperSurface;
+.line 1317
+	const-string	v3,"full"
+; v3 : Ljava/lang/String;
+	if-ne	v6,v3,la432a
+; v6 : Ljava/lang/String; , v3 : Ljava/lang/String;
+.line 1318
+	iget-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3},java/util/ArrayList/clear	; clear()V
+; v3 : Ljava/util/ArrayList;
+la4322:
+.line 1330
+	invoke-virtual	{v5},codeadore/textgram/SuperSurface/resume	; resume()V
+; v5 : Lcodeadore/textgram/SuperSurface;
+.line 1331
+	return-void	
+la432a:
+.line 1320
+	const/4	v1,0
+; v1 : single-length
+la432c:
+	iget-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3},java/util/ArrayList/size	; size()I
+; v3 : Ljava/util/ArrayList;
+	move-result	v3
+; v3 : single-length
+	if-ge	v1,v3,la4322
+; v1 : single-length , v3 : single-length
+.line 1321
+	iget-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3,v1},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v3 : Ljava/util/ArrayList; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,codeadore/textgram/SuperSurfaceItem
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1323
+	iget-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v3,v4},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v3 : Ljava/util/ArrayList; , v4 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,codeadore/textgram/SuperSurfaceItem
+; v2 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1324
+	new-instance	v3,java/util/ArrayList
+; v3 : Ljava/util/ArrayList;
+	invoke-direct	{v3},java/util/ArrayList/<init>	; <init>()V
+; v3 : Ljava/util/ArrayList;
+	iput-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+.line 1325
+	iget-object	v3,v5,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v5 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3,v2},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v3 : Ljava/util/ArrayList; , v2 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1320
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	la432c
+.end method
+
+.method public resetFixedSize(F)F
+.limit registers 11
+; this: v9 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v10 (F)
+.var 1 is finalReturn F from la43c0 to la43f0
+.var 2 is fixedSize F from la43bc to la43f0
+.var 3 is percentOfCanvas F from la43b2 to la43f0
+.var 5 is working Ljava/lang/String; from la43c8 to la43f0
+	const/high16	v8,17096
+; v8 : single-length
+.line 1232
+	sget	v0,codeadore/textgram/SuperSurface.canvasWidth I
+; v0 : single-length
+.line 1234
+	const/16	v4,320
+; v4 : single-length
+.line 1235
+	sget	v6,codeadore/textgram/SuperSurface.screenWidth I
+; v6 : single-length
+	sget	v7,codeadore/textgram/SuperSurface.screenHeight I
+; v7 : single-length
+	if-ge	v6,v7,la43f0
+; v6 : single-length , v7 : single-length
+.line 1236
+	sget	v4,codeadore/textgram/SuperSurface.screenWidth I
+; v4 : single-length
+la43a8:
+.line 1241
+	int-to-float	v6,v4
+; v6 : single-length , v4 : single-length
+	div-float	v6,v10,v6
+; v6 : single-length , v10 : single-length , v6 : single-length
+	mul-float	v3,v6,v8
+; v3 : single-length , v6 : single-length , v8 : single-length
+.line 1242
+	div-float	v6,v3,v8
+; v6 : single-length , v3 : single-length , v8 : single-length
+	int-to-float	v7,v0
+; v7 : single-length , v0 : single-length
+	mul-float	v2,v6,v7
+; v2 : single-length , v6 : single-length , v7 : single-length
+.line 1244
+	const/high16	v1,17096
+; v1 : single-length
+.line 1246
+	invoke-static	{v2},java/lang/String/valueOf	; valueOf(F)Ljava/lang/String;
+; v2 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1247
+	const/4	v6,0
+; v6 : single-length
+	const-string	v7,"."
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v5,v7},java/lang/String/lastIndexOf	; lastIndexOf(Ljava/lang/String;)I
+; v5 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	invoke-virtual	{v5,v6,v7},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v5 : Ljava/lang/String; , v6 : single-length , v7 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1249
+	invoke-static	{v5},java/lang/Float/valueOf	; valueOf(Ljava/lang/String;)Ljava/lang/Float;
+; v5 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/Float;
+	invoke-virtual	{v6},java/lang/Float/floatValue	; floatValue()F
+; v6 : Ljava/lang/Float;
+	move-result	v1
+; v1 : single-length
+.line 1251
+	return	v1
+; v1 : single-length
+la43f0:
+.line 1238
+	sget	v4,codeadore/textgram/SuperSurface.screenHeight I
+; v4 : single-length
+	goto	la43a8
+.end method
+
+.method public resetFixedSize(I)I
+.limit registers 11
+; this: v9 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v10 (I)
+.var 1 is finalReturn I from la443c to la446c
+.var 2 is fixedSize F from la4438 to la446c
+.var 3 is percentOfCanvas F from la442e to la446c
+.var 5 is working Ljava/lang/String; from la4444 to la446c
+	const/high16	v8,17096
+; v8 : single-length
+.line 1256
+	sget	v0,codeadore/textgram/SuperSurface.canvasWidth I
+; v0 : single-length
+.line 1258
+	const/16	v4,320
+; v4 : single-length
+.line 1259
+	sget	v6,codeadore/textgram/SuperSurface.screenWidth I
+; v6 : single-length
+	sget	v7,codeadore/textgram/SuperSurface.screenHeight I
+; v7 : single-length
+	if-ge	v6,v7,la446c
+; v6 : single-length , v7 : single-length
+.line 1260
+	sget	v4,codeadore/textgram/SuperSurface.screenWidth I
+; v4 : single-length
+la4424:
+.line 1265
+	int-to-float	v6,v10
+; v6 : single-length , v10 : single-length
+	int-to-float	v7,v4
+; v7 : single-length , v4 : single-length
+	div-float/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	mul-float	v3,v6,v8
+; v3 : single-length , v6 : single-length , v8 : single-length
+.line 1266
+	div-float	v6,v3,v8
+; v6 : single-length , v3 : single-length , v8 : single-length
+	int-to-float	v7,v0
+; v7 : single-length , v0 : single-length
+	mul-float	v2,v6,v7
+; v2 : single-length , v6 : single-length , v7 : single-length
+.line 1268
+	const/16	v1,100
+; v1 : single-length
+.line 1270
+	invoke-static	{v2},java/lang/String/valueOf	; valueOf(F)Ljava/lang/String;
+; v2 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1271
+	const/4	v6,0
+; v6 : single-length
+	const-string	v7,"."
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v5,v7},java/lang/String/lastIndexOf	; lastIndexOf(Ljava/lang/String;)I
+; v5 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	invoke-virtual	{v5,v6,v7},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v5 : Ljava/lang/String; , v6 : single-length , v7 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 1273
+	invoke-static	{v5},java/lang/Integer/valueOf	; valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+; v5 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/Integer;
+	invoke-virtual	{v6},java/lang/Integer/intValue	; intValue()I
+; v6 : Ljava/lang/Integer;
+	move-result	v1
+; v1 : single-length
+.line 1275
+	return	v1
+; v1 : single-length
+la446c:
+.line 1262
+	sget	v4,codeadore/textgram/SuperSurface.screenHeight I
+; v4 : single-length
+	goto	la4424
+.end method
+
+.method public resume()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/SuperSurface;)
+.line 1202
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,codeadore/textgram/SuperSurface.isItOK Z
+; v0 : single-length , v1 : Lcodeadore/textgram/SuperSurface;
+.line 1203
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	invoke-direct	{v0,v1},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v0 : Ljava/lang/Thread; , v1 : Lcodeadore/textgram/SuperSurface;
+	iput-object	v0,v1,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lcodeadore/textgram/SuperSurface;
+.line 1204
+	iget-object	v0,v1,codeadore/textgram/SuperSurface.t Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+.line 1205
+	invoke-virtual	{v1},codeadore/textgram/SuperSurface/requestUpdate	; requestUpdate()V
+; v1 : Lcodeadore/textgram/SuperSurface;
+.line 1207
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcodeadore/textgram/SuperSurface;)
+.catch java/lang/InterruptedException from la4518 to la451e using la4520
+la44bc:
+.line 748
+	iget-boolean	v1,v3,codeadore/textgram/SuperSurface.isItOK Z
+; v1 : single-length , v3 : Lcodeadore/textgram/SuperSurface;
+	if-nez	v1,la44c6
+; v1 : single-length
+.line 1075
+	return-void	
+la44c6:
+.line 749
+	iget-object	v1,v3,codeadore/textgram/SuperSurface.holder Landroid/view/SurfaceHolder;
+; v1 : Landroid/view/SurfaceHolder; , v3 : Lcodeadore/textgram/SuperSurface;
+	invoke-interface	{v1},android/view/SurfaceHolder/getSurface	; getSurface()Landroid/view/Surface;
+; v1 : Landroid/view/SurfaceHolder;
+	move-result-object	v1
+; v1 : Landroid/view/Surface;
+	invoke-virtual	{v1},android/view/Surface/isValid	; isValid()Z
+; v1 : Landroid/view/Surface;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,la44bc
+; v1 : single-length
+.line 753
+	sget-boolean	v1,codeadore/textgram/SuperSurface.update Z
+; v1 : single-length
+	if-eqz	v1,la44bc
+; v1 : single-length
+.line 755
+	iget	v1,v3,codeadore/textgram/SuperSurface.startUpOpacity I
+; v1 : single-length , v3 : Lcodeadore/textgram/SuperSurface;
+	const/16	v2,255
+; v2 : single-length
+	if-le	v1,v2,la44f8
+; v1 : single-length , v2 : single-length
+.line 756
+	const/4	v1,0
+; v1 : single-length
+	sput-boolean	v1,codeadore/textgram/SuperSurface.update Z
+; v1 : Z
+la44f8:
+.line 759
+	iget-boolean	v1,v3,codeadore/textgram/SuperSurface.threadIsWorking Z
+; v1 : single-length , v3 : Lcodeadore/textgram/SuperSurface;
+	if-nez	v1,la4514
+; v1 : single-length
+.line 761
+	iget-object	v1,v3,codeadore/textgram/SuperSurface.tpe Ljava/util/concurrent/ExecutorService;
+; v1 : Ljava/util/concurrent/ExecutorService; , v3 : Lcodeadore/textgram/SuperSurface;
+	new-instance	v2,codeadore/textgram/SuperSurface$3
+; v2 : Lcodeadore/textgram/SuperSurface$3;
+	invoke-direct	{v2,v3},codeadore/textgram/SuperSurface$3/<init>	; <init>(Lcodeadore/textgram/SuperSurface;)V
+; v2 : Lcodeadore/textgram/SuperSurface$3; , v3 : Lcodeadore/textgram/SuperSurface;
+	invoke-interface	{v1,v2},java/util/concurrent/ExecutorService/submit	; submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+; v1 : Ljava/util/concurrent/ExecutorService; , v2 : Lcodeadore/textgram/SuperSurface$3;
+la4514:
+.line 1069
+	const-wide/16	v1,20
+; v1 : double-length
+la4518:
+	invoke-static	{v1,v2},java/lang/Thread/sleep	; sleep(J)V
+; v1 : double-length
+la451e:
+	goto	la44bc
+la4520:
+.line 1070
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+.line 1071
+	invoke-virtual	{v0},java/lang/InterruptedException/printStackTrace	; printStackTrace()V
+; v0 : java/lang/InterruptedException
+	goto	la44bc
+.end method
+
+.method public setBackground(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+.limit registers 8
+; this: v5 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v6 (Landroid/graphics/Bitmap;)
+; parameter[1] : v7 (Ljava/lang/String;)
+.catch java/lang/Exception from la454c to la4594 using la4596
+.var 1 is finalBitmap Landroid/graphics/Bitmap; from la4576 to la4594
+la454c:
+.line 694
+.line 695
+	sget	v2,codeadore/textgram/SuperSurface.canvasWidth I
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v5,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v5 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+.line 696
+	sget	v3,codeadore/textgram/SuperSurface.canvasHeight I
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	invoke-virtual	{v5,v3},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v5 : Lcodeadore/textgram/SuperSurface; , v3 : single-length
+	move-result	v3
+; v3 : single-length
+	float-to-int	v3,v3
+; v3 : single-length , v3 : single-length
+	const/4	v4,1
+; v4 : single-length
+.line 694
+	invoke-static	{v6,v2,v3,v4},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v6 : Landroid/graphics/Bitmap; , v2 : single-length , v3 : single-length , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+.line 697
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasBackground Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 698
+	sput-object	v7,codeadore/textgram/SuperSurface.canvasBackgroundPath Ljava/lang/String;
+; v7 : Ljava/lang/String;
+.line 700
+	sget	v2,codeadore/textgram/SuperSurface.canvasWidth I
+; v2 : single-length
+	sget	v3,codeadore/textgram/SuperSurface.canvasHeight I
+; v3 : single-length
+	const/4	v4,1
+; v4 : single-length
+.line 699
+	invoke-static	{v6,v2,v3,v4},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v6 : Landroid/graphics/Bitmap; , v2 : single-length , v3 : single-length , v4 : single-length
+	move-result-object	v2
+; v2 : Landroid/graphics/Bitmap;
+	sput-object	v2,codeadore/textgram/SuperSurface.originalCanvasBackground Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap;
+la4594:
+.line 705
+	return-void	
+la4596:
+.line 701
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 702
+	iget-object	v2,v5,codeadore/textgram/SuperSurface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String; , v5 : Lcodeadore/textgram/SuperSurface;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"in superSurface.setBackground: "
+; v4 : Ljava/lang/String;
+	invoke-direct	{v3,v4},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/Exception/toString	; toString()Ljava/lang/String;
+; v0 : java/lang/Exception
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-static	{v2,v3},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+.line 703
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	la4594
+.end method
+
+.method public setFilter(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+.limit registers 7
+; this: v4 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v5 (Landroid/graphics/Bitmap;)
+; parameter[1] : v6 (Ljava/lang/String;)
+	const/4	v3,1
+; v3 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 724
+	if-nez	v5,la4606
+; v5 : Landroid/graphics/Bitmap;
+.line 725
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 726
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 727
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v1 : Ljava/lang/String;
+la4604:
+.line 744
+	return-void	
+la4606:
+.line 730
+	sget	v1,codeadore/textgram/SuperSurface.canvasWidth I
+; v1 : single-length
+	int-to-float	v1,v1
+; v1 : single-length , v1 : single-length
+	invoke-virtual	{v4,v1},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v1
+; v1 : single-length
+	float-to-int	v1,v1
+; v1 : single-length , v1 : single-length
+.line 731
+	sget	v2,codeadore/textgram/SuperSurface.canvasHeight I
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+.line 729
+	invoke-static	{v5,v1,v2,v3},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v5 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/graphics/Bitmap;
+.line 732
+	sput-object	v0,codeadore/textgram/SuperSurface.canvasFilter Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap;
+.line 733
+	sput-object	v6,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v6 : Ljava/lang/String;
+.line 735
+	invoke-virtual	{v5},android/graphics/Bitmap/getWidth	; getWidth()I
+; v5 : Landroid/graphics/Bitmap;
+	move-result	v1
+; v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.canvasWidth I
+; v2 : single-length
+	if-ne	v1,v2,la465c
+; v1 : single-length , v2 : single-length
+.line 736
+	invoke-virtual	{v5},android/graphics/Bitmap/getHeight	; getHeight()I
+; v5 : Landroid/graphics/Bitmap;
+	move-result	v1
+; v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.canvasHeight I
+; v2 : single-length
+	if-ne	v1,v2,la465c
+; v1 : single-length , v2 : single-length
+.line 737
+	sput-object	v5,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v5 : Landroid/graphics/Bitmap;
+	goto	la4604
+la465c:
+.line 740
+	sget	v1,codeadore/textgram/SuperSurface.canvasWidth I
+; v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.canvasHeight I
+; v2 : single-length
+.line 739
+	invoke-static	{v5,v1,v2,v3},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v5 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+	goto	la4604
+.end method
+
+.method public setFilterOpacity(I)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v1 (I)
+.line 1367
+	sput	v1,codeadore/textgram/SuperSurface.filterOpacity I
+; v1 : I
+.line 1368
+	return-void	
+.end method
+
+.method public setFrame(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+.limit registers 7
+; this: v4 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v5 (Landroid/graphics/Bitmap;)
+; parameter[1] : v6 (Ljava/lang/String;)
+	const/4	v1,0
+; v1 : single-length
+.line 708
+	if-nez	v5,la46b0
+; v5 : Landroid/graphics/Bitmap;
+.line 709
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFrame Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 710
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFrame Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+.line 711
+	sput-object	v1,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v1 : Ljava/lang/String;
+la46ae:
+.line 721
+	return-void	
+la46b0:
+.line 714
+	sget	v1,codeadore/textgram/SuperSurface.canvasWidth I
+; v1 : single-length
+	int-to-float	v1,v1
+; v1 : single-length , v1 : single-length
+	invoke-virtual	{v4,v1},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v1
+; v1 : single-length
+	float-to-int	v1,v1
+; v1 : single-length , v1 : single-length
+.line 715
+	sget	v2,codeadore/textgram/SuperSurface.canvasHeight I
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	const/4	v3,1
+; v3 : single-length
+.line 713
+	invoke-static	{v5,v1,v2,v3},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v5 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/graphics/Bitmap;
+.line 716
+	sput-object	v0,codeadore/textgram/SuperSurface.canvasFrame Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap;
+.line 717
+	sput-object	v6,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v6 : Ljava/lang/String;
+.line 719
+	sput-object	v5,codeadore/textgram/SuperSurface.canvasOriginalFrame Landroid/graphics/Bitmap;
+; v5 : Landroid/graphics/Bitmap;
+	goto	la46ae
+.end method
+
+.method public updateScreenVariables(Lcodeadore/textgram/SuperSurface;II)V
+.limit registers 9
+; this: v5 (Lcodeadore/textgram/SuperSurface;)
+; parameter[0] : v6 (Lcodeadore/textgram/SuperSurface;)
+; parameter[1] : v7 (I)
+; parameter[2] : v8 (I)
+	const/4	v4,0
+; v4 : single-length
+.line 639
+	const-string	v1,"LASTWIDTH"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	sget	v3,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v3 : single-length
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 641
+	iput-object	v6,v5,codeadore/textgram/SuperSurface.thisView Landroid/view/View;
+; v6 : Lcodeadore/textgram/SuperSurface; , v5 : Lcodeadore/textgram/SuperSurface;
+.line 643
+	sput	v7,codeadore/textgram/SuperSurface.screenHeight I
+; v7 : I
+.line 644
+	sput	v8,codeadore/textgram/SuperSurface.screenWidth I
+; v8 : I
+.line 646
+	sput	v4,codeadore/textgram/SuperSurface.startPosX I
+; v4 : I
+.line 647
+	sput	v4,codeadore/textgram/SuperSurface.startPosY I
+; v4 : I
+.line 649
+	sget	v1,codeadore/textgram/SuperSurface.screenWidth I
+; v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.screenHeight I
+; v2 : single-length
+	if-le	v1,v2,la4758
+; v1 : single-length , v2 : single-length
+.line 650
+	sget	v1,codeadore/textgram/SuperSurface.screenWidth I
+; v1 : single-length
+	div-int/lit8	v1,v1,2
+; v1 : single-length , v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.screenHeight I
+; v2 : single-length
+	div-int/lit8	v2,v2,2
+; v2 : single-length , v2 : single-length
+	sub-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	sput	v1,codeadore/textgram/SuperSurface.startPosX I
+; v1 : I
+la4758:
+.line 653
+	sget	v1,codeadore/textgram/SuperSurface.screenHeight I
+; v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.screenWidth I
+; v2 : single-length
+	if-le	v1,v2,la477a
+; v1 : single-length , v2 : single-length
+.line 654
+	sget	v1,codeadore/textgram/SuperSurface.screenHeight I
+; v1 : single-length
+	div-int/lit8	v1,v1,2
+; v1 : single-length , v1 : single-length
+	sget	v2,codeadore/textgram/SuperSurface.screenWidth I
+; v2 : single-length
+	div-int/lit8	v2,v2,2
+; v2 : single-length , v2 : single-length
+	sub-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	sput	v1,codeadore/textgram/SuperSurface.startPosY I
+; v1 : I
+la477a:
+.line 657
+	iget-object	v1,v5,codeadore/textgram/SuperSurface.context Landroid/content/Context;
+; v1 : Landroid/content/Context; , v5 : Lcodeadore/textgram/SuperSurface;
+.line 658
+	const-string	v2,"[assets]/data/supersurface_del.png"
+; v2 : Ljava/lang/String;
+.line 657
+	invoke-static	{v1,v2},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v1 : Landroid/content/Context; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/graphics/Bitmap;
+.line 660
+	invoke-virtual	{v0},android/graphics/Bitmap/getWidth	; getWidth()I
+; v0 : Landroid/graphics/Bitmap;
+	move-result	v1
+; v1 : single-length
+	int-to-float	v1,v1
+; v1 : single-length , v1 : single-length
+	invoke-virtual	{v5,v1},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v5 : Lcodeadore/textgram/SuperSurface; , v1 : single-length
+	move-result	v1
+; v1 : single-length
+	float-to-int	v1,v1
+; v1 : single-length , v1 : single-length
+.line 661
+	invoke-virtual	{v0},android/graphics/Bitmap/getHeight	; getHeight()I
+; v0 : Landroid/graphics/Bitmap;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v5,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v5 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	const/4	v3,1
+; v3 : single-length
+.line 659
+	invoke-static	{v0,v1,v2,v3},android/graphics/Bitmap/createScaledBitmap	; createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	iput-object	v1,v5,codeadore/textgram/SuperSurface.deleteCornerBitmap Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap; , v5 : Lcodeadore/textgram/SuperSurface;
+.line 663
+	invoke-virtual	{v5},codeadore/textgram/SuperSurface/updateTempsChanged	; updateTempsChanged()V
+; v5 : Lcodeadore/textgram/SuperSurface;
+.line 664
+	sget	v1,codeadore/textgram/SuperSurface.screenHeight I
+; v1 : single-length
+	sput	v1,codeadore/textgram/SuperSurface.lastScreenHeight I
+; v1 : I
+.line 665
+	sget	v1,codeadore/textgram/SuperSurface.screenWidth I
+; v1 : single-length
+	sput	v1,codeadore/textgram/SuperSurface.lastScreenWidth I
+; v1 : I
+.line 667
+	sget-object	v1,codeadore/textgram/SuperSurface.originalCanvasBackground Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+	sget-object	v2,codeadore/textgram/SuperSurface.canvasBackgroundPath Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v1,v2},codeadore/textgram/SuperSurface/setBackground	; setBackground(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v5 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v2 : Ljava/lang/String;
+.line 668
+	sget-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFilter Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+	sget-object	v2,codeadore/textgram/SuperSurface.canvasFilterPath Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v1,v2},codeadore/textgram/SuperSurface/setFilter	; setFilter(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v5 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v2 : Ljava/lang/String;
+.line 669
+	sget-object	v1,codeadore/textgram/SuperSurface.canvasOriginalFrame Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap;
+	sget-object	v2,codeadore/textgram/SuperSurface.canvasFramePath Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v1,v2},codeadore/textgram/SuperSurface/setFrame	; setFrame(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v5 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v2 : Ljava/lang/String;
+.line 671
+	invoke-virtual	{v5},codeadore/textgram/SuperSurface/requestUpdate	; requestUpdate()V
+; v5 : Lcodeadore/textgram/SuperSurface;
+.line 673
+	return-void	
+.end method
+
+.method public updateTemps()V
+.limit registers 5
+; this: v4 (Lcodeadore/textgram/SuperSurface;)
+	const/4	v3,0
+; v3 : single-length
+.line 1334
+	iget-object	v1,v4,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v4 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v1},java/util/ArrayList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/ArrayList;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+la4826:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,la4834
+; v2 : single-length
+.line 1349
+	return-void	
+la4834:
+.line 1334
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,codeadore/textgram/SuperSurfaceItem
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1336
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.width F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1337
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.height F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1339
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.posX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	cmpl-float	v2,v2,v3
+; v2 : single-length , v2 : single-length , v3 : single-length
+	if-nez	v2,la48aa
+; v2 : single-length
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.posY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	cmpl-float	v2,v2,v3
+; v2 : single-length , v2 : single-length , v3 : single-length
+	if-nez	v2,la48aa
+; v2 : single-length
+.line 1340
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1341
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/resetFixedSize	; resetFixedSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto	la4826
+la48aa:
+.line 1343
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.posX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1344
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.posY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-virtual	{v4,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v4 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto	la4826
+.end method
+
+.method public updateTempsChanged()V
+.limit registers 4
+; this: v3 (Lcodeadore/textgram/SuperSurface;)
+.line 1352
+	iget-object	v1,v3,codeadore/textgram/SuperSurface.itemsList Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v3 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v1},java/util/ArrayList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/ArrayList;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+la48e8:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,la48f6
+; v2 : single-length
+.line 1360
+	return-void	
+la48f6:
+.line 1352
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,codeadore/textgram/SuperSurfaceItem
+; v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1354
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-static	{v2},codeadore/textgram/SuperSurface/resetFixedSizeLast	; resetFixedSizeLast(F)I
+; v2 : single-length
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v3,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v3 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempWidth F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1355
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-static	{v2},codeadore/textgram/SuperSurface/resetFixedSizeLast	; resetFixedSizeLast(F)I
+; v2 : single-length
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v3,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v3 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempHeight F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1356
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-static	{v2},codeadore/textgram/SuperSurface/resetFixedSizeLast	; resetFixedSizeLast(F)I
+; v2 : single-length
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v3,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v3 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosX F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 1357
+	iget	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-static	{v2},codeadore/textgram/SuperSurface/resetFixedSizeLast	; resetFixedSizeLast(F)I
+; v2 : single-length
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v3,v2},codeadore/textgram/SuperSurface/fixToSize	; fixToSize(F)F
+; v3 : Lcodeadore/textgram/SuperSurface; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,codeadore/textgram/SuperSurfaceItem.tempPosY F
+; v2 : single-length , v0 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto	la48e8
+.end method
+
+

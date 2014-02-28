@@ -1,0 +1,589 @@
+.class android/support/v4/media/TransportMediatorJellybeanMR2
+.super java/lang/Object
+.source TransportMediatorJellybeanMR2.java
+.implements android/media/RemoteControlClient$OnGetPlaybackPositionListener
+.implements android/media/RemoteControlClient$OnPlaybackPositionUpdateListener
+
+.field mAudioFocusChangeListener Landroid/media/AudioManager$OnAudioFocusChangeListener;
+.field mAudioFocused Z
+.field final mAudioManager Landroid/media/AudioManager;
+.field final mContext Landroid/content/Context;
+.field mFocused Z
+.field final mIntent Landroid/content/Intent;
+.field final mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+.field mPendingIntent Landroid/app/PendingIntent;
+.field mPlayState I
+.field final mReceiverAction Ljava/lang/String;
+.field final mReceiverFilter Landroid/content/IntentFilter;
+.field mRemoteControl Landroid/media/RemoteControlClient;
+.field final mTargetView Landroid/view/View;
+.field final mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+.field final mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+.field final mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+
+.method public <init>(Landroid/content/Context;Landroid/media/AudioManager;Landroid/view/View;Landroid/support/v4/media/TransportMediatorCallback;)V
+.limit registers 7
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+; parameter[0] : v3 (Landroid/content/Context;)
+; parameter[1] : v4 (Landroid/media/AudioManager;)
+; parameter[2] : v5 (Landroid/view/View;)
+; parameter[3] : v6 (Landroid/support/v4/media/TransportMediatorCallback;)
+.line 86
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 41
+	new-instance	v0,android/support/v4/media/TransportMediatorJellybeanMR2$1
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	invoke-direct	{v0,v2},android/support/v4/media/TransportMediatorJellybeanMR2$1/<init>	; <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 52
+	new-instance	v0,android/support/v4/media/TransportMediatorJellybeanMR2$2
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	invoke-direct	{v0,v2},android/support/v4/media/TransportMediatorJellybeanMR2$2/<init>	; <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 60
+	new-instance	v0,android/support/v4/media/TransportMediatorJellybeanMR2$3
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$3;
+	invoke-direct	{v0,v2},android/support/v4/media/TransportMediatorJellybeanMR2$3/<init>	; <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$3; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$3; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 71
+	new-instance	v0,android/support/v4/media/TransportMediatorJellybeanMR2$4
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$4;
+	invoke-direct	{v0,v2},android/support/v4/media/TransportMediatorJellybeanMR2$4/<init>	; <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$4; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocusChangeListener Landroid/media/AudioManager$OnAudioFocusChangeListener;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$4; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 82
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 87
+	iput-object	v3,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mContext Landroid/content/Context;
+; v3 : Landroid/content/Context; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 88
+	iput-object	v4,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v4 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 89
+	iput-object	v5,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTargetView Landroid/view/View;
+; v5 : Landroid/view/View; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 90
+	iput-object	v6,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+; v6 : Landroid/support/v4/media/TransportMediatorCallback; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 91
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v3 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,":transport:"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-static	{v2},java/lang/System/identityHashCode	; identityHashCode(Ljava/lang/Object;)I
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverAction Ljava/lang/String;
+; v0 : Ljava/lang/String; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 92
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverAction Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-direct	{v0,v1},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mIntent Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 93
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mIntent Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v3},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v3 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Intent/setPackage	; setPackage(Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+.line 94
+	new-instance	v0,android/content/IntentFilter
+; v0 : Landroid/content/IntentFilter;
+	invoke-direct	{v0},android/content/IntentFilter/<init>	; <init>()V
+; v0 : Landroid/content/IntentFilter;
+	iput-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverFilter Landroid/content/IntentFilter;
+; v0 : Landroid/content/IntentFilter; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 95
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverFilter Landroid/content/IntentFilter;
+; v0 : Landroid/content/IntentFilter; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverAction Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/content/IntentFilter/addAction	; addAction(Ljava/lang/String;)V
+; v0 : Landroid/content/IntentFilter; , v1 : Ljava/lang/String;
+.line 96
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTargetView Landroid/view/View;
+; v0 : Landroid/view/View; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0},android/view/View/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v0 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewTreeObserver;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+; v1 : Landroid/view/ViewTreeObserver$OnWindowAttachListener; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/view/ViewTreeObserver/addOnWindowAttachListener	; addOnWindowAttachListener(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V
+; v0 : Landroid/view/ViewTreeObserver; , v1 : Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+.line 97
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTargetView Landroid/view/View;
+; v0 : Landroid/view/View; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0},android/view/View/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v0 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewTreeObserver;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+; v1 : Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/view/ViewTreeObserver/addOnWindowFocusChangeListener	; addOnWindowFocusChangeListener(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V
+; v0 : Landroid/view/ViewTreeObserver; , v1 : Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+.line 98
+	return-void	
+.end method
+
+.method public destroy()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 105
+	invoke-virtual	{v2},android/support/v4/media/TransportMediatorJellybeanMR2/windowDetached	; windowDetached()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 106
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTargetView Landroid/view/View;
+; v0 : Landroid/view/View; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0},android/view/View/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v0 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewTreeObserver;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+; v1 : Landroid/view/ViewTreeObserver$OnWindowAttachListener; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/view/ViewTreeObserver/removeOnWindowAttachListener	; removeOnWindowAttachListener(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V
+; v0 : Landroid/view/ViewTreeObserver; , v1 : Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+.line 107
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTargetView Landroid/view/View;
+; v0 : Landroid/view/View; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0},android/view/View/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v0 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewTreeObserver;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+; v1 : Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/view/ViewTreeObserver/removeOnWindowFocusChangeListener	; removeOnWindowFocusChangeListener(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V
+; v0 : Landroid/view/ViewTreeObserver; , v1 : Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+.line 108
+	return-void	
+.end method
+
+.method dropAudioFocus()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 183
+	iget-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v0,l7c610
+; v0 : single-length
+.line 184
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 185
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocusChangeListener Landroid/media/AudioManager$OnAudioFocusChangeListener;
+; v1 : Landroid/media/AudioManager$OnAudioFocusChangeListener; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/AudioManager/abandonAudioFocus	; abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/media/AudioManager$OnAudioFocusChangeListener;
+l7c610:
+.line 187
+	return-void	
+.end method
+
+.method gainFocus()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 120
+	iget-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-nez	v0,l7c65e
+; v0 : single-length
+.line 121
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 122
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v1 : Landroid/app/PendingIntent; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/AudioManager/registerMediaButtonEventReceiver	; registerMediaButtonEventReceiver(Landroid/app/PendingIntent;)V
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/app/PendingIntent;
+.line 123
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v1 : Landroid/media/RemoteControlClient; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/AudioManager/registerRemoteControlClient	; registerRemoteControlClient(Landroid/media/RemoteControlClient;)V
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/media/RemoteControlClient;
+.line 124
+	iget	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	const/4	v1,3
+; v1 : single-length
+	if-ne	v0,v1,l7c65e
+; v0 : single-length , v1 : single-length
+.line 125
+	invoke-virtual	{v2},android/support/v4/media/TransportMediatorJellybeanMR2/takeAudioFocus	; takeAudioFocus()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+l7c65e:
+.line 128
+	return-void	
+.end method
+
+.method public getRemoteControlClient()Ljava/lang/Object;
+.limit registers 2
+; this: v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 101
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	return-object	v0
+; v0 : Landroid/media/RemoteControlClient;
+.end method
+
+.method loseFocus()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 190
+	invoke-virtual	{v2},android/support/v4/media/TransportMediatorJellybeanMR2/dropAudioFocus	; dropAudioFocus()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 191
+	iget-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v0,l7c6b8
+; v0 : single-length
+.line 192
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 193
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v1 : Landroid/media/RemoteControlClient; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/AudioManager/unregisterRemoteControlClient	; unregisterRemoteControlClient(Landroid/media/RemoteControlClient;)V
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/media/RemoteControlClient;
+.line 194
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v1 : Landroid/app/PendingIntent; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/AudioManager/unregisterMediaButtonEventReceiver	; unregisterMediaButtonEventReceiver(Landroid/app/PendingIntent;)V
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/app/PendingIntent;
+l7c6b8:
+.line 196
+	return-void	
+.end method
+
+.method public onGetPlaybackPosition()J
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 150
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+; v0 : Landroid/support/v4/media/TransportMediatorCallback; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-interface	{v0},android/support/v4/media/TransportMediatorCallback/getPlaybackPosition	; getPlaybackPosition()J
+; v0 : Landroid/support/v4/media/TransportMediatorCallback;
+	move-result-wide	v0
+; v0 : double-length
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method public onPlaybackPositionUpdate(J)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+; parameter[0] : v2 (J)
+.line 155
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2.mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+; v0 : Landroid/support/v4/media/TransportMediatorCallback; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-interface	{v0,v2,v3},android/support/v4/media/TransportMediatorCallback/playbackPositionUpdate	; playbackPositionUpdate(J)V
+; v0 : Landroid/support/v4/media/TransportMediatorCallback; , v2 : double-length
+.line 156
+	return-void	
+.end method
+
+.method public pausePlaying()V
+.limit registers 4
+; this: v3 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+	const/4	v2,2
+; v2 : single-length
+.line 167
+	iget	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v0 : single-length , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	const/4	v1,3
+; v1 : single-length
+	if-ne	v0,v1,l7c722
+; v0 : single-length , v1 : single-length
+.line 168
+	iput	v2,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v2 : single-length , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 169
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v2},android/media/RemoteControlClient/setPlaybackState	; setPlaybackState(I)V
+; v0 : Landroid/media/RemoteControlClient; , v2 : single-length
+l7c722:
+.line 171
+	invoke-virtual	{v3},android/support/v4/media/TransportMediatorJellybeanMR2/dropAudioFocus	; dropAudioFocus()V
+; v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 172
+	return-void	
+.end method
+
+.method public refreshState(ZJI)V
+.limit registers 8
+; this: v3 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+; parameter[0] : v4 (Z)
+; parameter[1] : v5 (J)
+; parameter[2] : v7 (I)
+.line 159
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v0,l7c768
+; v0 : Landroid/media/RemoteControlClient;
+.line 160
+	iget-object	v2,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v2 : Landroid/media/RemoteControlClient; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v4,l7c76a
+; v4 : single-length
+	const/4	v0,3
+; v0 : single-length
+	move	v1,v0
+; v1 : single-length , v0 : single-length
+l7c750:
+	if-eqz	v4,l7c770
+; v4 : single-length
+	const/high16	v0,16256
+; v0 : single-length
+l7c758:
+	invoke-virtual	{v2,v1,v5,v6,v0},android/media/RemoteControlClient/setPlaybackState	; setPlaybackState(IJF)V
+; v2 : Landroid/media/RemoteControlClient; , v1 : single-length , v5 : double-length , v0 : single-length
+.line 162
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v7},android/media/RemoteControlClient/setTransportControlFlags	; setTransportControlFlags(I)V
+; v0 : Landroid/media/RemoteControlClient; , v7 : single-length
+l7c768:
+.line 164
+	return-void	
+l7c76a:
+.line 160
+	const/4	v0,1
+; v0 : single-length
+	move	v1,v0
+; v1 : single-length , v0 : single-length
+	goto	l7c750
+l7c770:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7c758
+.end method
+
+.method public startPlaying()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+	const/4	v1,3
+; v1 : single-length
+.line 139
+	iget	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eq	v0,v1,l7c79c
+; v0 : single-length , v1 : single-length
+.line 140
+	iput	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v1 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 141
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/RemoteControlClient/setPlaybackState	; setPlaybackState(I)V
+; v0 : Landroid/media/RemoteControlClient; , v1 : single-length
+l7c79c:
+.line 143
+	iget-boolean	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mFocused Z
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v0,l7c7aa
+; v0 : single-length
+.line 144
+	invoke-virtual	{v2},android/support/v4/media/TransportMediatorJellybeanMR2/takeAudioFocus	; takeAudioFocus()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+l7c7aa:
+.line 146
+	return-void	
+.end method
+
+.method public stopPlaying()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+	const/4	v1,1
+; v1 : single-length
+.line 175
+	iget	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v0 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eq	v0,v1,l7c7d4
+; v0 : single-length , v1 : single-length
+.line 176
+	iput	v1,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mPlayState I
+; v1 : single-length , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 177
+	iget-object	v0,v2,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/media/RemoteControlClient/setPlaybackState	; setPlaybackState(I)V
+; v0 : Landroid/media/RemoteControlClient; , v1 : single-length
+l7c7d4:
+.line 179
+	invoke-virtual	{v2},android/support/v4/media/TransportMediatorJellybeanMR2/dropAudioFocus	; dropAudioFocus()V
+; v2 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 180
+	return-void	
+.end method
+
+.method takeAudioFocus()V
+.limit registers 5
+; this: v4 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+	const/4	v3,1
+; v3 : single-length
+.line 131
+	iget-boolean	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocused Z
+; v0 : single-length , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-nez	v0,l7c80a
+; v0 : single-length
+.line 132
+	iput-boolean	v3,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocused Z
+; v3 : single-length , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 133
+	iget-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioManager Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mAudioFocusChangeListener Landroid/media/AudioManager$OnAudioFocusChangeListener;
+; v1 : Landroid/media/AudioManager$OnAudioFocusChangeListener; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	const/4	v2,3
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2,v3},android/media/AudioManager/requestAudioFocus	; requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
+; v0 : Landroid/media/AudioManager; , v1 : Landroid/media/AudioManager$OnAudioFocusChangeListener; , v2 : single-length , v3 : single-length
+l7c80a:
+.line 136
+	return-void	
+.end method
+
+.method windowAttached()V
+.limit registers 5
+; this: v4 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 111
+	iget-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+; v1 : Landroid/content/BroadcastReceiver; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v2,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mReceiverFilter Landroid/content/IntentFilter;
+; v2 : Landroid/content/IntentFilter; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1,v2},android/content/Context/registerReceiver	; registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+; v0 : Landroid/content/Context; , v1 : Landroid/content/BroadcastReceiver; , v2 : Landroid/content/IntentFilter;
+.line 112
+	iget-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	const/4	v1,0
+; v1 : single-length
+	iget-object	v2,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mIntent Landroid/content/Intent;
+; v2 : Landroid/content/Intent; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	const/high16	v3,4096
+; v3 : single-length
+	invoke-static	{v0,v1,v2,v3},android/app/PendingIntent/getBroadcast	; getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+; v0 : Landroid/content/Context; , v1 : single-length , v2 : Landroid/content/Intent; , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/app/PendingIntent;
+	iput-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v0 : Landroid/app/PendingIntent; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 114
+	new-instance	v0,android/media/RemoteControlClient
+; v0 : Landroid/media/RemoteControlClient;
+	iget-object	v1,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v1 : Landroid/app/PendingIntent; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-direct	{v0,v1},android/media/RemoteControlClient/<init>	; <init>(Landroid/app/PendingIntent;)V
+; v0 : Landroid/media/RemoteControlClient; , v1 : Landroid/app/PendingIntent;
+	iput-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 115
+	iget-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v4},android/media/RemoteControlClient/setOnGetPlaybackPositionListener	; setOnGetPlaybackPositionListener(Landroid/media/RemoteControlClient$OnGetPlaybackPositionListener;)V
+; v0 : Landroid/media/RemoteControlClient; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 116
+	iget-object	v0,v4,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v0 : Landroid/media/RemoteControlClient; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v4},android/media/RemoteControlClient/setPlaybackPositionUpdateListener	; setPlaybackPositionUpdateListener(Landroid/media/RemoteControlClient$OnPlaybackPositionUpdateListener;)V
+; v0 : Landroid/media/RemoteControlClient; , v4 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 117
+	return-void	
+.end method
+
+.method windowDetached()V
+.limit registers 4
+; this: v3 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+	const/4	v2,0
+; v2 : single-length
+.line 199
+	invoke-virtual	{v3},android/support/v4/media/TransportMediatorJellybeanMR2/loseFocus	; loseFocus()V
+; v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 200
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v0 : Landroid/app/PendingIntent; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	if-eqz	v0,l7c8b0
+; v0 : Landroid/app/PendingIntent;
+.line 201
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	iget-object	v1,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+; v1 : Landroid/content/BroadcastReceiver; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0,v1},android/content/Context/unregisterReceiver	; unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+; v0 : Landroid/content/Context; , v1 : Landroid/content/BroadcastReceiver;
+.line 202
+	iget-object	v0,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v0 : Landroid/app/PendingIntent; , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	invoke-virtual	{v0},android/app/PendingIntent/cancel	; cancel()V
+; v0 : Landroid/app/PendingIntent;
+.line 203
+	iput-object	v2,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mPendingIntent Landroid/app/PendingIntent;
+; v2 : single-length , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 204
+	iput-object	v2,v3,android/support/v4/media/TransportMediatorJellybeanMR2.mRemoteControl Landroid/media/RemoteControlClient;
+; v2 : single-length , v3 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+l7c8b0:
+.line 206
+	return-void	
+.end method
+
+

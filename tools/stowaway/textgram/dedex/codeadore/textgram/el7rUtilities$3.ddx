@@ -1,0 +1,125 @@
+.class codeadore/textgram/el7rUtilities$3
+.super android/webkit/WebViewClient
+.source el7rUtilities.java
+
+.enclosing method codeadore/viewHTMLMessage(Landroid/content/Context;Ljava/lang/String;)V
+.field private final val$context Landroid/content/Context;
+
+.method <init>(Landroid/content/Context;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/el7rUtilities$3;)
+; parameter[0] : v1 (Landroid/content/Context;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/el7rUtilities$3.val$context Landroid/content/Context;
+; v1 : Landroid/content/Context; , v0 : Lcodeadore/textgram/el7rUtilities$3;
+.line 122
+	invoke-direct	{v0},android/webkit/WebViewClient/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/el7rUtilities$3;
+	return-void	
+.end method
+
+.method public onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.limit registers 9
+; this: v5 (Lcodeadore/textgram/el7rUtilities$3;)
+; parameter[0] : v6 (Landroid/webkit/WebView;)
+; parameter[1] : v7 (Ljava/lang/String;)
+; parameter[2] : v8 (Landroid/graphics/Bitmap;)
+.var 1 is itemActivity Landroid/content/Intent; from la8420 to la8434
+.var 2 is unique_id Ljava/lang/String; from la840e to la8434
+.var 0 is i Landroid/content/Intent; from la846a to la8484
+.line 128
+	const-string	v3,"store://"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v7,v3},java/lang/String/startsWith	; startsWith(Ljava/lang/String;)Z
+; v7 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la8436
+; v3 : single-length
+.line 129
+	invoke-virtual	{v6},android/webkit/WebView/stopLoading	; stopLoading()V
+; v6 : Landroid/webkit/WebView;
+.line 130
+	const-string	v3,"store://"
+; v3 : Ljava/lang/String;
+	const-string	v4,""
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v7,v3,v4},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v7 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 132
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	iget-object	v3,v5,codeadore/textgram/el7rUtilities$3.val$context Landroid/content/Context;
+; v3 : Landroid/content/Context; , v5 : Lcodeadore/textgram/el7rUtilities$3;
+.line 133
+	const-class	v4,codeadore/textgram/StoreItemActivity
+; v4 : Ljava/lang/Class;
+.line 132
+	invoke-direct	{v1,v3,v4},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v1 : Landroid/content/Intent; , v3 : Landroid/content/Context; , v4 : Ljava/lang/Class;
+.line 134
+	const-string	v3,"unique_id"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v1,v3,v2},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+; v1 : Landroid/content/Intent; , v3 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 135
+	iget-object	v3,v5,codeadore/textgram/el7rUtilities$3.val$context Landroid/content/Context;
+; v3 : Landroid/content/Context; , v5 : Lcodeadore/textgram/el7rUtilities$3;
+	invoke-virtual	{v3,v1},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v3 : Landroid/content/Context; , v1 : Landroid/content/Intent;
+la8434:
+.line 146
+	return-void	
+la8436:
+.line 137
+	const-string	v3,"http"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v7,v3},java/lang/String/startsWith	; startsWith(Ljava/lang/String;)Z
+; v7 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,la8456
+; v3 : single-length
+.line 138
+	const-string	v3,"market://"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v7,v3},java/lang/String/startsWith	; startsWith(Ljava/lang/String;)Z
+; v7 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la8484
+; v3 : single-length
+la8456:
+.line 139
+	invoke-virtual	{v6},android/webkit/WebView/stopLoading	; stopLoading()V
+; v6 : Landroid/webkit/WebView;
+.line 140
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-string	v3,"android.intent.action.VIEW"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v3},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Landroid/content/Intent; , v3 : Ljava/lang/String;
+.line 141
+	invoke-static	{v7},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v7 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Landroid/net/Uri;
+	invoke-virtual	{v0,v3},android/content/Intent/setData	; setData(Landroid/net/Uri;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v3 : Landroid/net/Uri;
+.line 142
+	iget-object	v3,v5,codeadore/textgram/el7rUtilities$3.val$context Landroid/content/Context;
+; v3 : Landroid/content/Context; , v5 : Lcodeadore/textgram/el7rUtilities$3;
+	invoke-virtual	{v3,v0},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v3 : Landroid/content/Context; , v0 : Landroid/content/Intent;
+	goto	la8434
+la8484:
+.line 144
+	invoke-super	{v5,v6,v7,v8},android/webkit/WebViewClient/onPageStarted	; onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+; v5 : Lcodeadore/textgram/el7rUtilities$3; , v6 : Landroid/webkit/WebView; , v7 : Ljava/lang/String; , v8 : Landroid/graphics/Bitmap;
+	goto	la8434
+.end method
+
+

@@ -1,0 +1,195 @@
+.class public com/applovin/sdk/AppLovinAdType
+.super java/lang/Object
+
+.field public static final INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+.field public static final REGULAR Lcom/applovin/sdk/AppLovinAdType;
+.field private final a Ljava/lang/String;
+
+.method static <clinit>()V
+.limit registers 2
+	new-instance	v0,com/applovin/sdk/AppLovinAdType
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	const-string	v1,"REGULAR"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},com/applovin/sdk/AppLovinAdType/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinAdType; , v1 : Ljava/lang/String;
+	sput-object	v0,com/applovin/sdk/AppLovinAdType.REGULAR Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	new-instance	v0,com/applovin/sdk/AppLovinAdType
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	const-string	v1,"VIDEOA"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},com/applovin/sdk/AppLovinAdType/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinAdType; , v1 : Ljava/lang/String;
+	sput-object	v0,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	return-void	
+.end method
+
+.method public <init>(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/sdk/AppLovinAdType;)
+; parameter[0] : v1 (Ljava/lang/String;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	iput-object	v1,v0,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/applovin/sdk/AppLovinAdType;
+	return-void	
+.end method
+
+.method public static allTypes()Ljava/util/Set;
+.limit registers 2
+	new-instance	v0,java/util/HashSet
+; v0 : Ljava/util/HashSet;
+	const/4	v1,2
+; v1 : single-length
+	invoke-direct	{v0,v1},java/util/HashSet/<init>	; <init>(I)V
+; v0 : Ljava/util/HashSet; , v1 : single-length
+	sget-object	v1,com/applovin/sdk/AppLovinAdType.REGULAR Lcom/applovin/sdk/AppLovinAdType;
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-interface	{v0,v1},java/util/Set/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/HashSet; , v1 : Lcom/applovin/sdk/AppLovinAdType;
+	sget-object	v1,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-interface	{v0,v1},java/util/Set/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/HashSet; , v1 : Lcom/applovin/sdk/AppLovinAdType;
+	return-object	v0
+; v0 : Ljava/util/HashSet;
+.end method
+
+.method public static fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdType;
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+	invoke-virtual	{v2},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sget-object	v1,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v1},com/applovin/sdk/AppLovinAdType/getLabel	; getLabel()Ljava/lang/String;
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb46ca
+; v0 : single-length
+	sget-object	v0,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+lb46c8:
+	return-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+lb46ca:
+	sget-object	v0,com/applovin/sdk/AppLovinAdType.REGULAR Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	goto	lb46c8
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+.limit registers 6
+; this: v4 (Lcom/applovin/sdk/AppLovinAdType;)
+; parameter[0] : v5 (Ljava/lang/Object;)
+	const/4	v0,1
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+	if-ne	v4,v5,lb46ea
+; v4 : Lcom/applovin/sdk/AppLovinAdType; , v5 : Ljava/lang/Object;
+lb46e8:
+	return	v0
+; v0 : single-length
+lb46ea:
+	if-eqz	v5,lb4702
+; v5 : Ljava/lang/Object;
+	invoke-virtual	{v4},java/lang/Object/getClass	; getClass()Ljava/lang/Class;
+; v4 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v2
+; v2 : Ljava/lang/Class;
+	invoke-virtual	{v5},java/lang/Object/getClass	; getClass()Ljava/lang/Class;
+; v5 : Ljava/lang/Object;
+	move-result-object	v3
+; v3 : Ljava/lang/Class;
+	if-eq	v2,v3,lb4706
+; v2 : Ljava/lang/Class; , v3 : Ljava/lang/Class;
+lb4702:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	lb46e8
+lb4706:
+	check-cast	v5,com/applovin/sdk/AppLovinAdType
+; v5 : Lcom/applovin/sdk/AppLovinAdType;
+	iget-object	v2,v4,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lcom/applovin/sdk/AppLovinAdType;
+	if-eqz	v2,lb472a
+; v2 : Ljava/lang/String;
+	iget-object	v2,v4,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lcom/applovin/sdk/AppLovinAdType;
+	iget-object	v3,v5,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v3 : Ljava/lang/String; , v5 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v2,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,lb46e8
+; v2 : single-length
+lb4726:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	lb46e8
+lb472a:
+	iget-object	v2,v5,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v2 : Ljava/lang/String; , v5 : Lcom/applovin/sdk/AppLovinAdType;
+	if-eqz	v2,lb46e8
+; v2 : Ljava/lang/String;
+	goto	lb4726
+.end method
+
+.method public getLabel()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/applovin/sdk/AppLovinAdType;)
+	iget-object	v0,v1,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v0},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public hashCode()I
+.limit registers 2
+; this: v1 (Lcom/applovin/sdk/AppLovinAdType;)
+	iget-object	v0,v1,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinAdType;
+	if-eqz	v0,lb477a
+; v0 : Ljava/lang/String;
+	iget-object	v0,v1,com/applovin/sdk/AppLovinAdType.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v0},java/lang/String/hashCode	; hashCode()I
+; v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+lb4778:
+	return	v0
+; v0 : single-length
+lb477a:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb4778
+.end method
+
+.method public toString()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/applovin/sdk/AppLovinAdType;)
+	invoke-virtual	{v1},com/applovin/sdk/AppLovinAdType/getLabel	; getLabel()Ljava/lang/String;
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

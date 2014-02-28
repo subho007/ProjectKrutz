@@ -1,0 +1,475 @@
+.class com/applovin/impl/sdk/ae
+.super java/lang/Object
+
+.field private final a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private final b Ljava/util/Map;
+
+.method <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v3 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Lcom/applovin/impl/sdk/ae;
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v2,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/HashMap; , v2 : Lcom/applovin/impl/sdk/ae;
+	if-nez	v3,lb0ad4
+; v3 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No sdk specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lb0ad4:
+	iput-object	v3,v2,com/applovin/impl/sdk/ae.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v3 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v2 : Lcom/applovin/impl/sdk/ae;
+	return-void	
+.end method
+
+.method a()V
+.limit registers 3
+; this: v2 (Lcom/applovin/impl/sdk/ae;)
+.catch java/lang/Exception from lb0b08 to lb0b0a using lb0b06
+.catch java/lang/Exception from lb0af2 to lb0afe using lb0b06
+	iget-object	v1,v2,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v1 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v1
+; v1 : Ljava/util/Map;
+lb0af2:
+	iget-object	v0,v2,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v0},java/util/Map/clear	; clear()V
+; v0 : Ljava/util/Map;
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0afe:
+	invoke-virtual	{v2},com/applovin/impl/sdk/ae/d	; d()V
+; v2 : Lcom/applovin/impl/sdk/ae;
+	return-void	
+lb0b06:
+	move-exception	v0
+; v0 : java/lang/Exception
+lb0b08:
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0b0a:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method a(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	const-wide/16	v0,1
+; v0 : double-length
+	invoke-virtual	{v2,v3,v0,v1},com/applovin/impl/sdk/ae/a	; a(Ljava/lang/String;J)V
+; v2 : Lcom/applovin/impl/sdk/ae; , v3 : Ljava/lang/String; , v0 : double-length
+	return-void	
+.end method
+
+.method a(Ljava/lang/String;J)V
+.limit registers 8
+; this: v4 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (J)
+.catch java/lang/Exception from lb0b9a to lb0b9c using lb0b98
+.catch java/lang/Exception from lb0b52 to lb0b90 using lb0b98
+	iget-object	v1,v4,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v1 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v1
+; v1 : Ljava/util/Map;
+lb0b52:
+	iget-object	v0,v4,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v0,v5},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	if-nez	v0,lb0b72
+; v0 : Ljava/lang/Long;
+	const-wide/16	v2,0
+; v2 : double-length
+	invoke-static	{v2,v3},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v2 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/Long;
+lb0b72:
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v2
+; v2 : double-length
+	add-long/2addr	v2,v6
+; v2 : double-length , v6 : double-length
+	invoke-static	{v2,v3},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v2 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/Long;
+	iget-object	v2,v4,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v2 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v2,v5,v0},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/Map; , v5 : Ljava/lang/String; , v0 : Ljava/lang/Long;
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0b90:
+	invoke-virtual	{v4},com/applovin/impl/sdk/ae/d	; d()V
+; v4 : Lcom/applovin/impl/sdk/ae;
+	return-void	
+lb0b98:
+	move-exception	v0
+; v0 : java/lang/Exception
+lb0b9a:
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0b9c:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method b(Ljava/lang/String;)J
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v5 (Ljava/lang/String;)
+.catch java/lang/Exception from lb0bca to lb0bfa using lb0bf6
+	iget-object	v1,v4,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v1 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v1
+; v1 : Ljava/util/Map;
+lb0bca:
+	iget-object	v0,v4,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v0,v5},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	if-nez	v0,lb0bea
+; v0 : Ljava/lang/Long;
+	const-wide/16	v2,0
+; v2 : double-length
+	invoke-static	{v2,v3},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v2 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/Long;
+lb0bea:
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v2
+; v2 : double-length
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+	return-wide	v2
+; v2 : double-length
+lb0bf6:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0bfa:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method b()Lorg/json/JSONObject;
+.limit registers 6
+; this: v5 (Lcom/applovin/impl/sdk/ae;)
+.catch java/lang/Exception from lb0c76 to lb0c78 using lb0c70
+.catch java/lang/Exception from lb0c1e to lb0c74 using lb0c70
+	iget-object	v2,v5,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v2 : Ljava/util/Map; , v5 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v2
+; v2 : Ljava/util/Map;
+lb0c1e:
+	new-instance	v3,org/json/JSONObject
+; v3 : Lorg/json/JSONObject;
+	invoke-direct	{v3},org/json/JSONObject/<init>	; <init>()V
+; v3 : Lorg/json/JSONObject;
+	iget-object	v0,v5,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v5 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v0},java/util/Map/entrySet	; entrySet()Ljava/util/Set;
+; v0 : Ljava/util/Map;
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	invoke-interface	{v0},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v0 : Ljava/util/Set;
+	move-result-object	v4
+; v4 : Ljava/util/Iterator;
+lb0c3c:
+	invoke-interface	{v4},java/util/Iterator/hasNext	; hasNext()Z
+; v4 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb0c76
+; v0 : single-length
+	invoke-interface	{v4},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v4 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map$Entry
+; v0 : Ljava/util/Map$Entry;
+	invoke-interface	{v0},java/util/Map$Entry/getKey	; getKey()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0},java/util/Map$Entry/getValue	; getValue()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	invoke-virtual	{v3,v1,v0},org/json/JSONObject/put	; put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+; v3 : Lorg/json/JSONObject; , v1 : Ljava/lang/String; , v0 : Ljava/lang/Object;
+	goto	lb0c3c
+lb0c70:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Ljava/util/Map;
+lb0c74:
+	throw	v0
+; v0 : java/lang/Exception
+lb0c76:
+	monitor-exit	v2
+; v2 : Ljava/util/Map;
+lb0c78:
+	return-object	v3
+; v3 : Lorg/json/JSONObject;
+.end method
+
+.method b(Ljava/lang/String;J)V
+.limit registers 7
+; this: v3 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (J)
+.catch java/lang/Exception from lb0cc4 to lb0cc6 using lb0cc2
+.catch java/lang/Exception from lb0ca6 to lb0cba using lb0cc2
+	iget-object	v1,v3,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v1 : Ljava/util/Map; , v3 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v1
+; v1 : Ljava/util/Map;
+lb0ca6:
+	iget-object	v0,v3,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v3 : Lcom/applovin/impl/sdk/ae;
+	invoke-static	{v5,v6},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v5 : double-length
+	move-result-object	v2
+; v2 : Ljava/lang/Long;
+	invoke-interface	{v0,v4,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v4 : Ljava/lang/String; , v2 : Ljava/lang/Long;
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0cba:
+	invoke-virtual	{v3},com/applovin/impl/sdk/ae/d	; d()V
+; v3 : Lcom/applovin/impl/sdk/ae;
+	return-void	
+lb0cc2:
+	move-exception	v0
+; v0 : java/lang/Exception
+lb0cc4:
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0cc6:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method c()V
+.limit registers 8
+; this: v7 (Lcom/applovin/impl/sdk/ae;)
+.catch java/lang/Throwable from lb0d68 to lb0d6a using lb0d6a
+.catch java/lang/Exception from lb0d60 to lb0d68 using lb0d64
+.catch org/json/JSONException from lb0d34 to lb0d5a using lb0d5c
+.catch java/lang/Exception from lb0d34 to lb0d5a using lb0d64
+.catch java/lang/Exception from lb0d20 to lb0d2e using lb0d64
+.catch java/lang/Throwable from lb0d10 to lb0d20 using lb0d6a
+	iget-object	v0,v7,com/applovin/impl/sdk/ae.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v7 : Lcom/applovin/impl/sdk/ae;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getSettingsManager	; getSettingsManager()Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ac;
+	invoke-virtual	{v0},com/applovin/impl/sdk/ac/a	; a()Landroid/content/SharedPreferences;
+; v0 : Lcom/applovin/impl/sdk/ac;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	const-string	v1,"stats"
+; v1 : Ljava/lang/String;
+	const-string	v2,"{}"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences/getString	; getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Landroid/content/SharedPreferences; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lb0d10:
+	new-instance	v1,org/json/JSONObject
+; v1 : Lorg/json/JSONObject;
+	invoke-direct	{v1,v0},org/json/JSONObject/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	iget-object	v2,v7,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v2 : Ljava/util/Map; , v7 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v2
+; v2 : Ljava/util/Map;
+lb0d20:
+	invoke-virtual	{v1},org/json/JSONObject/keys	; keys()Ljava/util/Iterator;
+; v1 : Lorg/json/JSONObject;
+	move-result-object	v3
+; v3 : Ljava/util/Iterator;
+lb0d28:
+	invoke-interface	{v3},java/util/Iterator/hasNext	; hasNext()Z
+; v3 : Ljava/util/Iterator;
+lb0d2e:
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb0d60
+; v0 : single-length
+lb0d34:
+	invoke-interface	{v3},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v3 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},org/json/JSONObject/getLong	; getLong(Ljava/lang/String;)J
+; v1 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-wide	v4
+; v4 : double-length
+	iget-object	v6,v7,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v6 : Ljava/util/Map; , v7 : Lcom/applovin/impl/sdk/ae;
+	invoke-static	{v4,v5},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v4 : double-length
+	move-result-object	v4
+; v4 : Ljava/lang/Long;
+	invoke-interface	{v6,v0,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v6 : Ljava/util/Map; , v0 : Ljava/lang/String; , v4 : Ljava/lang/Long;
+lb0d5a:
+	goto	lb0d28
+lb0d5c:
+	move-exception	v0
+; v0 : org/json/JSONException
+	goto	lb0d28
+lb0d60:
+	monitor-exit	v2
+; v2 : Ljava/util/Map;
+lb0d62:
+	return-void	
+lb0d64:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Ljava/util/Map;
+lb0d68:
+	throw	v0
+; v0 : java/lang/Exception
+lb0d6a:
+	move-exception	v0
+; v0 : java/lang/Throwable
+	iget-object	v1,v7,com/applovin/impl/sdk/ae.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v7 : Lcom/applovin/impl/sdk/ae;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v2,"StatsManager"
+; v2 : Ljava/lang/String;
+	const-string	v3,"Unable to load stats"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Throwable
+	goto	lb0d62
+.end method
+
+.method c(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/ae;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.catch java/lang/Exception from lb0de8 to lb0dea using lb0de6
+.catch java/lang/Exception from lb0dd2 to lb0dde using lb0de6
+	iget-object	v1,v2,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v1 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/ae;
+	monitor-enter	v1
+; v1 : Ljava/util/Map;
+lb0dd2:
+	iget-object	v0,v2,com/applovin/impl/sdk/ae.b Ljava/util/Map;
+; v0 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/ae;
+	invoke-interface	{v0,v3},java/util/Map/remove	; remove(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v3 : Ljava/lang/String;
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0dde:
+	invoke-virtual	{v2},com/applovin/impl/sdk/ae/d	; d()V
+; v2 : Lcom/applovin/impl/sdk/ae;
+	return-void	
+lb0de6:
+	move-exception	v0
+; v0 : java/lang/Exception
+lb0de8:
+	monitor-exit	v1
+; v1 : Ljava/util/Map;
+lb0dea:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method d()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/ae;)
+.catch org/json/JSONException from lb0e10 to lb0e4c using lb0e4e
+lb0e10:
+	iget-object	v0,v4,com/applovin/impl/sdk/ae.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/ae;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getSettingsManager	; getSettingsManager()Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ac;
+	invoke-virtual	{v0},com/applovin/impl/sdk/ac/a	; a()Landroid/content/SharedPreferences;
+; v0 : Lcom/applovin/impl/sdk/ac;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	invoke-interface	{v0},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	const-string	v1,"stats"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v4},com/applovin/impl/sdk/ae/b	; b()Lorg/json/JSONObject;
+; v4 : Lcom/applovin/impl/sdk/ae;
+	move-result-object	v2
+; v2 : Lorg/json/JSONObject;
+	invoke-virtual	{v2},org/json/JSONObject/toString	; toString()Ljava/lang/String;
+; v2 : Lorg/json/JSONObject;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences$Editor/putString	; putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+lb0e4c:
+	return-void	
+lb0e4e:
+	move-exception	v0
+; v0 : org/json/JSONException
+	iget-object	v1,v4,com/applovin/impl/sdk/ae.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/ae;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v2,"StatsManager"
+; v2 : Ljava/lang/String;
+	const-string	v3,"Unable to save stats"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : org/json/JSONException
+	goto	lb0e4c
+.end method
+
+

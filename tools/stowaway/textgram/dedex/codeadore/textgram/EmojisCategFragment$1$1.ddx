@@ -1,0 +1,90 @@
+.class codeadore/textgram/EmojisCategFragment$1$1
+.super java/lang/Object
+.source EmojisCategFragment.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/run()V
+.field final this$1 Lcodeadore/textgram/EmojisCategFragment$1;
+.field private final val$activity Landroid/app/Activity;
+.field private final val$category Ljava/lang/String;
+.field private final val$emojisGridView Landroid/widget/GridView;
+.field private final val$smileysPB Landroid/widget/ProgressBar;
+
+.method <init>(Lcodeadore/textgram/EmojisCategFragment$1;Landroid/app/Activity;Ljava/lang/String;Landroid/widget/GridView;Landroid/widget/ProgressBar;)V
+.limit registers 6
+; this: v0 (Lcodeadore/textgram/EmojisCategFragment$1$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/EmojisCategFragment$1;)
+; parameter[1] : v2 (Landroid/app/Activity;)
+; parameter[2] : v3 (Ljava/lang/String;)
+; parameter[3] : v4 (Landroid/widget/GridView;)
+; parameter[4] : v5 (Landroid/widget/ProgressBar;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/EmojisCategFragment$1$1.this$1 Lcodeadore/textgram/EmojisCategFragment$1;
+; v1 : Lcodeadore/textgram/EmojisCategFragment$1; , v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iput-object	v2,v0,codeadore/textgram/EmojisCategFragment$1$1.val$activity Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iput-object	v3,v0,codeadore/textgram/EmojisCategFragment$1$1.val$category Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iput-object	v4,v0,codeadore/textgram/EmojisCategFragment$1$1.val$emojisGridView Landroid/widget/GridView;
+; v4 : Landroid/widget/GridView; , v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iput-object	v5,v0,codeadore/textgram/EmojisCategFragment$1$1.val$smileysPB Landroid/widget/ProgressBar;
+; v5 : Landroid/widget/ProgressBar; , v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+.line 60
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 6
+; this: v5 (Lcodeadore/textgram/EmojisCategFragment$1$1;)
+.line 64
+	iget-object	v0,v5,codeadore/textgram/EmojisCategFragment$1$1.this$1 Lcodeadore/textgram/EmojisCategFragment$1;
+; v0 : Lcodeadore/textgram/EmojisCategFragment$1; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	invoke-static	{v0},codeadore/textgram/EmojisCategFragment$1/access$0	; access$0(Lcodeadore/textgram/EmojisCategFragment$1;)Lcodeadore/textgram/EmojisCategFragment;
+; v0 : Lcodeadore/textgram/EmojisCategFragment$1;
+	move-result-object	v0
+; v0 : Lcodeadore/textgram/EmojisCategFragment;
+	new-instance	v1,codeadore/textgram/adapters/EmojisGridAdapter
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter;
+	iget-object	v2,v5,codeadore/textgram/EmojisCategFragment$1$1.val$activity Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+.line 65
+	iget-object	v3,v5,codeadore/textgram/EmojisCategFragment$1$1.val$category Ljava/lang/String;
+; v3 : Ljava/lang/String; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iget-object	v4,v5,codeadore/textgram/EmojisCategFragment$1$1.val$activity Landroid/app/Activity;
+; v4 : Landroid/app/Activity; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	invoke-virtual	{v4},android/app/Activity/getWindowManager	; getWindowManager()Landroid/view/WindowManager;
+; v4 : Landroid/app/Activity;
+	move-result-object	v4
+; v4 : Landroid/view/WindowManager;
+	invoke-direct	{v1,v2,v3,v4},codeadore/textgram/adapters/EmojisGridAdapter/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;Landroid/view/WindowManager;)V
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter; , v2 : Landroid/app/Activity; , v3 : Ljava/lang/String; , v4 : Landroid/view/WindowManager;
+.line 64
+	iput-object	v1,v0,codeadore/textgram/EmojisCategFragment.emojisAdapter Lcodeadore/textgram/adapters/EmojisGridAdapter;
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter; , v0 : Lcodeadore/textgram/EmojisCategFragment;
+.line 66
+	iget-object	v0,v5,codeadore/textgram/EmojisCategFragment$1$1.val$emojisGridView Landroid/widget/GridView;
+; v0 : Landroid/widget/GridView; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	iget-object	v1,v5,codeadore/textgram/EmojisCategFragment$1$1.this$1 Lcodeadore/textgram/EmojisCategFragment$1;
+; v1 : Lcodeadore/textgram/EmojisCategFragment$1; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	invoke-static	{v1},codeadore/textgram/EmojisCategFragment$1/access$0	; access$0(Lcodeadore/textgram/EmojisCategFragment$1;)Lcodeadore/textgram/EmojisCategFragment;
+; v1 : Lcodeadore/textgram/EmojisCategFragment$1;
+	move-result-object	v1
+; v1 : Lcodeadore/textgram/EmojisCategFragment;
+	iget-object	v1,v1,codeadore/textgram/EmojisCategFragment.emojisAdapter Lcodeadore/textgram/adapters/EmojisGridAdapter;
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter; , v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter;
+	invoke-virtual	{v0,v1},android/widget/GridView/setAdapter	; setAdapter(Landroid/widget/ListAdapter;)V
+; v0 : Landroid/widget/GridView; , v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter;
+.line 67
+	iget-object	v0,v5,codeadore/textgram/EmojisCategFragment$1$1.val$smileysPB Landroid/widget/ProgressBar;
+; v0 : Landroid/widget/ProgressBar; , v5 : Lcodeadore/textgram/EmojisCategFragment$1$1;
+	const/16	v1,8
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/ProgressBar/setVisibility	; setVisibility(I)V
+; v0 : Landroid/widget/ProgressBar; , v1 : single-length
+.line 68
+	return-void	
+.end method
+
+

@@ -1,0 +1,8 @@
+.interface public abstract com/applovin/sdk/AppLovinAdUpdateListener
+.super java/lang/Object
+
+
+.method public abstract adUpdated(Lcom/applovin/sdk/AppLovinAd;)V
+.end method
+
+

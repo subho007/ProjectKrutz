@@ -1,0 +1,114 @@
+.class final eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+.super java/lang/Enum
+.source HighlightView.java
+
+.inner class ModifyMode inner eu/janmuller/android/simplecropimage/HighlightView$ModifyMode outer eu/janmuller/android/simplecropimage/HighlightView
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Enum" , "<" , "Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;" , ">;" }
+.end annotation
+
+.field private static final ENUM$VALUES [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.field public static final Grow Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.field public static final Move Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.field public static final None Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+
+.method static <clinit>()V
+.limit registers 5
+	const/4	v4,2
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 443
+	new-instance	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	const-string	v1,"None"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},eu/janmuller/android/simplecropimage/HighlightView$ModifyMode/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v1 : Ljava/lang/String; , v2 : single-length
+	sput-object	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.None Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	new-instance	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	const-string	v1,"Move"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3},eu/janmuller/android/simplecropimage/HighlightView$ModifyMode/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v1 : Ljava/lang/String; , v3 : single-length
+	sput-object	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.Move Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	new-instance	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	const-string	v1,"Grow"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v4},eu/janmuller/android/simplecropimage/HighlightView$ModifyMode/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v1 : Ljava/lang/String; , v4 : single-length
+	sput-object	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.Grow Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.line 442
+	const/4	v0,3
+; v0 : single-length
+	new-array	v0,v0,[Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	sget-object	v1,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.None Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	aput-object	v1,v0,v2
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v2 : single-length
+	sget-object	v1,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.Move Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	aput-object	v1,v0,v3
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v3 : single-length
+	sget-object	v1,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.Grow Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	aput-object	v1,v0,v4
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v4 : single-length
+	sput-object	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.ENUM$VALUES [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;I)V
+.limit registers 3
+; this: v0 (Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+.line 442
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v1 : Ljava/lang/String; , v2 : single-length
+	return-void	
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 1
+	const-class	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Enum;
+	check-cast	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	return-object	v0
+; v0 : Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.end method
+
+.method public static values()[Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.limit registers 4
+	const/4	v3,0
+; v3 : single-length
+.line 1
+	sget-object	v0,eu/janmuller/android/simplecropimage/HighlightView$ModifyMode.ENUM$VALUES [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	array-length	v1,v0
+; v1 : single-length , v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+	new-array	v2,v1,[Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+; v2 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v1 : single-length
+	invoke-static	{v0,v3,v2,v3,v1},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v0 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v3 : single-length , v2 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode; , v3 : single-length , v1 : single-length
+	return-object	v2
+; v2 : [Leu/janmuller/android/simplecropimage/HighlightView$ModifyMode;
+.end method
+
+

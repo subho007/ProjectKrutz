@@ -1,0 +1,11 @@
+.interface public abstract com/applovin/sdk/AppLovinAdDisplayListener
+.super java/lang/Object
+
+
+.method public abstract adDisplayed(Lcom/applovin/sdk/AppLovinAd;)V
+.end method
+
+.method public abstract adHidden(Lcom/applovin/sdk/AppLovinAd;)V
+.end method
+
+

@@ -1,0 +1,13 @@
+.interface public abstract yuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener
+.super java/lang/Object
+.source AmbilWarnaDialog.java
+
+.inner class OnAmbilWarnaListener inner yuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener outer yuku/ambilwarna/AmbilWarnaDialog
+
+.method public abstract onCancel(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+.end method
+
+.method public abstract onOk(Lyuku/ambilwarna/AmbilWarnaDialog;I)V
+.end method
+
+

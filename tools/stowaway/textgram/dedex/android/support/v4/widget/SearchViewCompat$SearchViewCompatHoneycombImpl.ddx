@@ -1,0 +1,224 @@
+.class android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl
+.super android/support/v4/widget/SearchViewCompat$SearchViewCompatStubImpl
+.source SearchViewCompat.java
+
+.inner class SearchViewCompatHoneycombImpl inner android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl outer android/support/v4/widget/SearchViewCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+.line 135
+	invoke-direct	{v0},android/support/v4/widget/SearchViewCompat$SearchViewCompatStubImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;
+	return-void	
+.end method
+
+.method public getQuery(Landroid/view/View;)Ljava/lang/CharSequence;
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 185
+	invoke-static	{v2},android/support/v4/widget/SearchViewCompatHoneycomb/getQuery	; getQuery(Landroid/view/View;)Ljava/lang/CharSequence;
+; v2 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+	return-object	v0
+; v0 : Ljava/lang/CharSequence;
+.end method
+
+.method public isIconified(Landroid/view/View;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 205
+	invoke-static	{v2},android/support/v4/widget/SearchViewCompatHoneycomb/isIconified	; isIconified(Landroid/view/View;)Z
+; v2 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isQueryRefinementEnabled(Landroid/view/View;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 225
+	invoke-static	{v2},android/support/v4/widget/SearchViewCompatHoneycomb/isQueryRefinementEnabled	; isQueryRefinementEnabled(Landroid/view/View;)Z
+; v2 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isSubmitButtonEnabled(Landroid/view/View;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 215
+	invoke-static	{v2},android/support/v4/widget/SearchViewCompatHoneycomb/isSubmitButtonEnabled	; isSubmitButtonEnabled(Landroid/view/View;)Z
+; v2 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public newOnCloseListener(Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)
+.line 169
+	new-instance	v0,android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$2
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$2;
+	invoke-direct	{v0,v1,v2},android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$2/<init>	; <init>(Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)V
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$2; , v1 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl; , v2 : Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;
+	invoke-static	{v0},android/support/v4/widget/SearchViewCompatHoneycomb/newOnCloseListener	; newOnCloseListener(Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$2;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public newOnQueryTextListener(Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;)
+.line 149
+	new-instance	v0,android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$1
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$1;
+	invoke-direct	{v0,v1,v2},android/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$1/<init>	; <init>(Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;)V
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$1; , v1 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl; , v2 : Landroid/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat;
+	invoke-static	{v0},android/support/v4/widget/SearchViewCompatHoneycomb/newOnQueryTextListener	; newOnQueryTextListener(Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl$1;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public newSearchView(Landroid/content/Context;)Landroid/view/View;
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 139
+	invoke-static	{v2},android/support/v4/widget/SearchViewCompatHoneycomb/newSearchView	; newSearchView(Landroid/content/Context;)Landroid/view/View;
+; v2 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	return-object	v0
+; v0 : Landroid/view/View;
+.end method
+
+.method public setIconified(Landroid/view/View;Z)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Z)
+.line 200
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setIconified	; setIconified(Landroid/view/View;Z)V
+; v1 : Landroid/view/View; , v2 : single-length
+.line 201
+	return-void	
+.end method
+
+.method public setMaxWidth(Landroid/view/View;I)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (I)
+.line 230
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setMaxWidth	; setMaxWidth(Landroid/view/View;I)V
+; v1 : Landroid/view/View; , v2 : single-length
+.line 231
+	return-void	
+.end method
+
+.method public setOnCloseListener(Ljava/lang/Object;Ljava/lang/Object;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (Ljava/lang/Object;)
+.line 180
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setOnCloseListener	; setOnCloseListener(Ljava/lang/Object;Ljava/lang/Object;)V
+; v1 : Ljava/lang/Object; , v2 : Ljava/lang/Object;
+.line 181
+	return-void	
+.end method
+
+.method public setOnQueryTextListener(Ljava/lang/Object;Ljava/lang/Object;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (Ljava/lang/Object;)
+.line 164
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setOnQueryTextListener	; setOnQueryTextListener(Ljava/lang/Object;Ljava/lang/Object;)V
+; v1 : Ljava/lang/Object; , v2 : Ljava/lang/Object;
+.line 165
+	return-void	
+.end method
+
+.method public setQuery(Landroid/view/View;Ljava/lang/CharSequence;Z)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Ljava/lang/CharSequence;)
+; parameter[2] : v3 (Z)
+.line 190
+	invoke-static	{v1,v2,v3},android/support/v4/widget/SearchViewCompatHoneycomb/setQuery	; setQuery(Landroid/view/View;Ljava/lang/CharSequence;Z)V
+; v1 : Landroid/view/View; , v2 : Ljava/lang/CharSequence; , v3 : single-length
+.line 191
+	return-void	
+.end method
+
+.method public setQueryHint(Landroid/view/View;Ljava/lang/CharSequence;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Ljava/lang/CharSequence;)
+.line 195
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setQueryHint	; setQueryHint(Landroid/view/View;Ljava/lang/CharSequence;)V
+; v1 : Landroid/view/View; , v2 : Ljava/lang/CharSequence;
+.line 196
+	return-void	
+.end method
+
+.method public setQueryRefinementEnabled(Landroid/view/View;Z)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Z)
+.line 220
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setQueryRefinementEnabled	; setQueryRefinementEnabled(Landroid/view/View;Z)V
+; v1 : Landroid/view/View; , v2 : single-length
+.line 221
+	return-void	
+.end method
+
+.method public setSearchableInfo(Landroid/view/View;Landroid/content/ComponentName;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Landroid/content/ComponentName;)
+.line 144
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setSearchableInfo	; setSearchableInfo(Landroid/view/View;Landroid/content/ComponentName;)V
+; v1 : Landroid/view/View; , v2 : Landroid/content/ComponentName;
+.line 145
+	return-void	
+.end method
+
+.method public setSubmitButtonEnabled(Landroid/view/View;Z)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatHoneycombImpl;)
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (Z)
+.line 210
+	invoke-static	{v1,v2},android/support/v4/widget/SearchViewCompatHoneycomb/setSubmitButtonEnabled	; setSubmitButtonEnabled(Landroid/view/View;Z)V
+; v1 : Landroid/view/View; , v2 : single-length
+.line 211
+	return-void	
+.end method
+
+

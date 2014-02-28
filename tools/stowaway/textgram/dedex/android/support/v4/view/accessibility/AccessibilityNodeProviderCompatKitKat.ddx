@@ -1,0 +1,29 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat
+.super java/lang/Object
+.source AccessibilityNodeProviderCompatKitKat.java
+
+.inner class AccessibilityNodeInfoBridge inner android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge outer android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat;)
+.line 28
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat;
+.line 29
+	return-void	
+.end method
+
+.method public static newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)Ljava/lang/Object;
+.limit registers 2
+; parameter[0] : v1 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)
+.line 39
+	new-instance	v0,android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;
+	invoke-direct	{v0,v1},android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1/<init>	; <init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1; , v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;
+	return-object	v0
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;
+.end method
+
+

@@ -1,0 +1,3 @@
+android.permission.READ_CONTACTS
+android.permission.READ_PHONE_STATE
+android.permission.WAKE_LOCK

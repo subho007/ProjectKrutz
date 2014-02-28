@@ -1,0 +1,13 @@
+<template>
+<title>Book</title>
+<textcolor>#453229</textcolor>
+<textsize>34</textsize>
+<rotation>-2</rotation>
+<padding_top>165</padding_top>
+<padding_bottom>90</padding_bottom>
+<padding_right>120</padding_right>
+<padding_left>65</padding_left>
+<background>[assets]/backgrounds/02.jpg</background>
+<font>[assets]/fonts/za_1.ttf</font>
+<author></author>
+</template>

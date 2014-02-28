@@ -1,0 +1,42 @@
+.class final com/applovin/adview/d
+.super java/lang/Object
+.implements java/lang/Runnable
+
+.field final a Lcom/applovin/sdk/AppLovinSdk;
+.field final b Landroid/app/Activity;
+
+.method <init>(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)V
+.limit registers 3
+; this: v0 (Lcom/applovin/adview/d;)
+; parameter[0] : v1 (Lcom/applovin/sdk/AppLovinSdk;)
+; parameter[1] : v2 (Landroid/app/Activity;)
+	iput-object	v1,v0,com/applovin/adview/d.a Lcom/applovin/sdk/AppLovinSdk;
+; v1 : Lcom/applovin/sdk/AppLovinSdk; , v0 : Lcom/applovin/adview/d;
+	iput-object	v2,v0,com/applovin/adview/d.b Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v0 : Lcom/applovin/adview/d;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/adview/d;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcom/applovin/adview/d;)
+	new-instance	v0,com/applovin/impl/adview/InterstitialAdDialogCreatorImpl
+; v0 : Lcom/applovin/impl/adview/InterstitialAdDialogCreatorImpl;
+	invoke-direct	{v0},com/applovin/impl/adview/InterstitialAdDialogCreatorImpl/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/adview/InterstitialAdDialogCreatorImpl;
+	iget-object	v1,v3,com/applovin/adview/d.a Lcom/applovin/sdk/AppLovinSdk;
+; v1 : Lcom/applovin/sdk/AppLovinSdk; , v3 : Lcom/applovin/adview/d;
+	iget-object	v2,v3,com/applovin/adview/d.b Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v3 : Lcom/applovin/adview/d;
+	invoke-interface	{v0,v1,v2},com/applovin/adview/InterstitialAdDialogCreator/createInterstitialAdDialog	; createInterstitialAdDialog(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)Lcom/applovin/adview/AppLovinInterstitialAdDialog;
+; v0 : Lcom/applovin/impl/adview/InterstitialAdDialogCreatorImpl; , v1 : Lcom/applovin/sdk/AppLovinSdk; , v2 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Lcom/applovin/adview/AppLovinInterstitialAdDialog;
+	invoke-interface	{v0},com/applovin/adview/AppLovinInterstitialAdDialog/show	; show()V
+; v0 : Lcom/applovin/adview/AppLovinInterstitialAdDialog;
+	return-void	
+.end method
+
+

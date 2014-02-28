@@ -1,0 +1,180 @@
+.class public com/applovin/impl/sdk/t
+.super java/lang/Object
+
+.field private a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private b Lcom/applovin/impl/sdk/b;
+.field private c Lcom/applovin/sdk/AppLovinAd;
+.field private final d Ljava/lang/String;
+
+.method public <init>(Lcom/applovin/sdk/AppLovinSdk;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/sdk/t;)
+; parameter[0] : v2 (Lcom/applovin/sdk/AppLovinSdk;)
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/applovin/impl/sdk/t;
+	const-string	v0,"IncentivizedAdController"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,com/applovin/impl/sdk/t.d Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/applovin/impl/sdk/t;
+	move-object	v0,v2
+; v0 : Lcom/applovin/sdk/AppLovinSdk; , v2 : Lcom/applovin/sdk/AppLovinSdk;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinSdkImpl
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	iput-object	v0,v1,com/applovin/impl/sdk/t.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/t;
+	invoke-virtual	{v2},com/applovin/sdk/AppLovinSdk/getAdService	; getAdService()Lcom/applovin/sdk/AppLovinAdService;
+; v2 : Lcom/applovin/sdk/AppLovinSdk;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdService;
+	check-cast	v0,com/applovin/impl/sdk/b
+; v0 : Lcom/applovin/impl/sdk/b;
+	iput-object	v0,v1,com/applovin/impl/sdk/t.b Lcom/applovin/impl/sdk/b;
+; v0 : Lcom/applovin/impl/sdk/b; , v1 : Lcom/applovin/impl/sdk/t;
+	return-void	
+.end method
+
+.method static a(Lcom/applovin/impl/sdk/t;Lcom/applovin/sdk/AppLovinAd;)Lcom/applovin/sdk/AppLovinAd;
+.limit registers 2
+; parameter[0] : v0 (Lcom/applovin/impl/sdk/t;)
+; parameter[1] : v1 (Lcom/applovin/sdk/AppLovinAd;)
+	iput-object	v1,v0,com/applovin/impl/sdk/t.c Lcom/applovin/sdk/AppLovinAd;
+; v1 : Lcom/applovin/sdk/AppLovinAd; , v0 : Lcom/applovin/impl/sdk/t;
+	return-object	v1
+; v1 : Lcom/applovin/sdk/AppLovinAd;
+.end method
+
+.method public a(Landroid/app/Activity;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/sdk/AppLovinAdDisplayListener;Lcom/applovin/sdk/AppLovinAdClickListener;)V
+.limit registers 9
+; this: v4 (Lcom/applovin/impl/sdk/t;)
+; parameter[0] : v5 (Landroid/app/Activity;)
+; parameter[1] : v6 (Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)
+; parameter[2] : v7 (Lcom/applovin/sdk/AppLovinAdDisplayListener;)
+; parameter[3] : v8 (Lcom/applovin/sdk/AppLovinAdClickListener;)
+	iget-object	v0,v4,com/applovin/impl/sdk/t.c Lcom/applovin/sdk/AppLovinAd;
+; v0 : Lcom/applovin/sdk/AppLovinAd; , v4 : Lcom/applovin/impl/sdk/t;
+	if-eqz	v0,lb3b04
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	iget-object	v0,v4,com/applovin/impl/sdk/t.c Lcom/applovin/sdk/AppLovinAd;
+; v0 : Lcom/applovin/sdk/AppLovinAd; , v4 : Lcom/applovin/impl/sdk/t;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinAdInternal
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinAdInternal/getType	; getType()Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	move-result-object	v1
+; v1 : Lcom/applovin/sdk/AppLovinAdType;
+	sget-object	v2,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v2 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v1,v2},com/applovin/sdk/AppLovinAdType/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Lcom/applovin/sdk/AppLovinAdType; , v2 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lb3a9e
+; v1 : single-length
+	iget-object	v1,v4,com/applovin/impl/sdk/t.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/t;
+	invoke-static	{v1,v5},com/applovin/adview/AppLovinInterstitialAd/create	; create(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)Lcom/applovin/adview/AppLovinInterstitialAdDialog;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Lcom/applovin/adview/AppLovinInterstitialAdDialog;
+	invoke-interface	{v1,v7},com/applovin/adview/AppLovinInterstitialAdDialog/setAdDisplayListener	; setAdDisplayListener(Lcom/applovin/sdk/AppLovinAdDisplayListener;)V
+; v1 : Lcom/applovin/adview/AppLovinInterstitialAdDialog; , v7 : Lcom/applovin/sdk/AppLovinAdDisplayListener;
+	new-instance	v2,com/applovin/impl/sdk/w
+; v2 : Lcom/applovin/impl/sdk/w;
+	const/4	v3,0
+; v3 : single-length
+	invoke-direct	{v2,v4,v6,v3},com/applovin/impl/sdk/w/<init>	; <init>(Lcom/applovin/impl/sdk/t;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;Lcom/applovin/impl/sdk/u;)V
+; v2 : Lcom/applovin/impl/sdk/w; , v4 : Lcom/applovin/impl/sdk/t; , v6 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener; , v3 : single-length
+	invoke-interface	{v1,v2},com/applovin/adview/AppLovinInterstitialAdDialog/setAdVideoPlaybackListener	; setAdVideoPlaybackListener(Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)V
+; v1 : Lcom/applovin/adview/AppLovinInterstitialAdDialog; , v2 : Lcom/applovin/impl/sdk/w;
+	invoke-interface	{v1,v8},com/applovin/adview/AppLovinInterstitialAdDialog/setAdClickListener	; setAdClickListener(Lcom/applovin/sdk/AppLovinAdClickListener;)V
+; v1 : Lcom/applovin/adview/AppLovinInterstitialAdDialog; , v8 : Lcom/applovin/sdk/AppLovinAdClickListener;
+	invoke-interface	{v1,v0},com/applovin/adview/AppLovinInterstitialAdDialog/showAndRender	; showAndRender(Lcom/applovin/sdk/AppLovinAd;)V
+; v1 : Lcom/applovin/adview/AppLovinInterstitialAdDialog; , v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+lb3a9c:
+	return-void	
+lb3a9e:
+	iget-object	v0,v4,com/applovin/impl/sdk/t.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/t;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v1,"IncentivizedAdController"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Attempted to render an ad of type "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	iget-object	v3,v4,com/applovin/impl/sdk/t.c Lcom/applovin/sdk/AppLovinAd;
+; v3 : Lcom/applovin/sdk/AppLovinAd; , v4 : Lcom/applovin/impl/sdk/t;
+	invoke-virtual	{v3},com/applovin/sdk/AppLovinAd/getType	; getType()Lcom/applovin/sdk/AppLovinAdType;
+; v3 : Lcom/applovin/sdk/AppLovinAd;
+	move-result-object	v3
+; v3 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3," in an Incentivized Ad interstitial."
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	iget-object	v0,v4,com/applovin/impl/sdk/t.c Lcom/applovin/sdk/AppLovinAd;
+; v0 : Lcom/applovin/sdk/AppLovinAd; , v4 : Lcom/applovin/impl/sdk/t;
+	const-wide/16	v1,0
+; v1 : double-length
+	const/4	v3,0
+; v3 : single-length
+	invoke-interface	{v6,v0,v1,v2,v3},com/applovin/sdk/AppLovinAdVideoPlaybackListener/videoPlaybackEnded	; videoPlaybackEnded(Lcom/applovin/sdk/AppLovinAd;DZ)V
+; v6 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener; , v0 : Lcom/applovin/sdk/AppLovinAd; , v1 : double-length , v3 : single-length
+	goto	lb3a9c
+lb3b04:
+	iget-object	v0,v4,com/applovin/impl/sdk/t.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/t;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v1,"IncentivizedAdController"
+; v1 : Ljava/lang/String;
+	const-string	v2,"Skipping incentivized video playback: user attempted to play an incentivized video before one was preloaded."
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	lb3a9c
+.end method
+
+.method public a(Lcom/applovin/sdk/AppLovinAdLoadListener;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/t;)
+; parameter[0] : v5 (Lcom/applovin/sdk/AppLovinAdLoadListener;)
+	iget-object	v0,v4,com/applovin/impl/sdk/t.b Lcom/applovin/impl/sdk/b;
+; v0 : Lcom/applovin/impl/sdk/b; , v4 : Lcom/applovin/impl/sdk/t;
+	sget-object	v1,com/applovin/sdk/AppLovinAdSize.INTERSTITIAL Lcom/applovin/sdk/AppLovinAdSize;
+; v1 : Lcom/applovin/sdk/AppLovinAdSize;
+	sget-object	v2,com/applovin/sdk/AppLovinAdType.INCENTIVIZED Lcom/applovin/sdk/AppLovinAdType;
+; v2 : Lcom/applovin/sdk/AppLovinAdType;
+	new-instance	v3,com/applovin/impl/sdk/v
+; v3 : Lcom/applovin/impl/sdk/v;
+	invoke-direct	{v3,v4,v5},com/applovin/impl/sdk/v/<init>	; <init>(Lcom/applovin/impl/sdk/t;Lcom/applovin/sdk/AppLovinAdLoadListener;)V
+; v3 : Lcom/applovin/impl/sdk/v; , v4 : Lcom/applovin/impl/sdk/t; , v5 : Lcom/applovin/sdk/AppLovinAdLoadListener;
+	invoke-virtual	{v0,v1,v2,v3},com/applovin/impl/sdk/b/a	; a(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Lcom/applovin/sdk/AppLovinAdLoadListener;)V
+; v0 : Lcom/applovin/impl/sdk/b; , v1 : Lcom/applovin/sdk/AppLovinAdSize; , v2 : Lcom/applovin/sdk/AppLovinAdType; , v3 : Lcom/applovin/impl/sdk/v;
+	return-void	
+.end method
+
+

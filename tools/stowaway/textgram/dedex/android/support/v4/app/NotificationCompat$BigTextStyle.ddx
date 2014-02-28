@@ -1,0 +1,73 @@
+.class public android/support/v4/app/NotificationCompat$BigTextStyle
+.super android/support/v4/app/NotificationCompat$Style
+.source NotificationCompat.java
+
+.inner class BigTextStyle inner android/support/v4/app/NotificationCompat$BigTextStyle outer android/support/v4/app/NotificationCompat
+.field mBigText Ljava/lang/CharSequence;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigTextStyle;)
+.line 723
+	invoke-direct	{v0},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 724
+	return-void	
+.end method
+
+.method public <init>(Landroid/support/v4/app/NotificationCompat$Builder;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigTextStyle;)
+; parameter[0] : v1 (Landroid/support/v4/app/NotificationCompat$Builder;)
+.line 726
+	invoke-direct	{v0},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 727
+	invoke-virtual	{v0,v1},android/support/v4/app/NotificationCompat$BigTextStyle/setBuilder	; setBuilder(Landroid/support/v4/app/NotificationCompat$Builder;)V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle; , v1 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 728
+	return-void	
+.end method
+
+.method public bigText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigTextStyle;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+.line 753
+	iput-object	v1,v0,android/support/v4/app/NotificationCompat$BigTextStyle.mBigText Ljava/lang/CharSequence;
+; v1 : Ljava/lang/CharSequence; , v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 754
+	return-object	v0
+; v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.end method
+
+.method public setBigContentTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigTextStyle;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+.line 735
+	iput-object	v1,v0,android/support/v4/app/NotificationCompat$BigTextStyle.mBigContentTitle Ljava/lang/CharSequence;
+; v1 : Ljava/lang/CharSequence; , v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 736
+	return-object	v0
+; v0 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.end method
+
+.method public setSummaryText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$BigTextStyle;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 743
+	iput-object	v2,v1,android/support/v4/app/NotificationCompat$BigTextStyle.mSummaryText Ljava/lang/CharSequence;
+; v2 : Ljava/lang/CharSequence; , v1 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 744
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/app/NotificationCompat$BigTextStyle.mSummaryTextSet Z
+; v0 : single-length , v1 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.line 745
+	return-object	v1
+; v1 : Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+.end method
+
+

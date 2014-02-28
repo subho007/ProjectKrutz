@@ -1,0 +1,48 @@
+.class yuku/ambilwarna/AmbilWarnaDialog$4
+.super java/lang/Object
+.source AmbilWarnaDialog.java
+.implements android/content/DialogInterface$OnClickListener
+
+.enclosing method yuku/<init>(Landroid/content/Context;ILyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;)V
+.field final this$0 Lyuku/ambilwarna/AmbilWarnaDialog;
+
+.method <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+.limit registers 2
+; this: v0 (Lyuku/ambilwarna/AmbilWarnaDialog$4;)
+; parameter[0] : v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 1
+	iput-object	v1,v0,yuku/ambilwarna/AmbilWarnaDialog$4.this$0 Lyuku/ambilwarna/AmbilWarnaDialog;
+; v1 : Lyuku/ambilwarna/AmbilWarnaDialog; , v0 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+.line 112
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	return-void	
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+.limit registers 5
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog$4;)
+; parameter[0] : v3 (Landroid/content/DialogInterface;)
+; parameter[1] : v4 (I)
+.line 114
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog$4.this$0 Lyuku/ambilwarna/AmbilWarnaDialog;
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog; , v2 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	iget-object	v0,v0,yuku/ambilwarna/AmbilWarnaDialog.listener Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener; , v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+	if-eqz	v0,ld0922
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+.line 115
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog$4.this$0 Lyuku/ambilwarna/AmbilWarnaDialog;
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog; , v2 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	iget-object	v0,v0,yuku/ambilwarna/AmbilWarnaDialog.listener Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener; , v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+	iget-object	v1,v2,yuku/ambilwarna/AmbilWarnaDialog$4.this$0 Lyuku/ambilwarna/AmbilWarnaDialog;
+; v1 : Lyuku/ambilwarna/AmbilWarnaDialog; , v2 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	invoke-interface	{v0,v1},yuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener/onCancel	; onCancel(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener; , v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+ld0922:
+.line 117
+	return-void	
+.end method
+
+

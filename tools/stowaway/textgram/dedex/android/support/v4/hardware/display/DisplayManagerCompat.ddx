@@ -1,0 +1,118 @@
+.class public abstract android/support/v4/hardware/display/DisplayManagerCompat
+.super java/lang/Object
+.source DisplayManagerCompat.java
+
+.inner class JellybeanMr1Impl inner android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl outer android/support/v4/hardware/display/DisplayManagerCompat
+.inner class LegacyImpl inner android/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl outer android/support/v4/hardware/display/DisplayManagerCompat
+.field public static final DISPLAY_CATEGORY_PRESENTATION Ljava/lang/String; = "android.hardware.display.category.PRESENTATION"
+.field private static final sInstances Ljava/util/WeakHashMap;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/WeakHashMap" , "<" , "Landroid/content/Context;" , "Landroid/support/v4/hardware/display/DisplayManagerCompat;" , ">;" }
+  .end annotation
+.end field
+
+.method static <clinit>()V
+.limit registers 1
+.line 30
+	new-instance	v0,java/util/WeakHashMap
+; v0 : Ljava/util/WeakHashMap;
+	invoke-direct	{v0},java/util/WeakHashMap/<init>	; <init>()V
+; v0 : Ljava/util/WeakHashMap;
+	sput-object	v0,android/support/v4/hardware/display/DisplayManagerCompat.sInstances Ljava/util/WeakHashMap;
+; v0 : Ljava/util/WeakHashMap;
+	return-void	
+.end method
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/hardware/display/DisplayManagerCompat;)
+.line 47
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat;
+.line 48
+	return-void	
+.end method
+
+.method public static getInstance(Landroid/content/Context;)Landroid/support/v4/hardware/display/DisplayManagerCompat;
+.limit registers 5
+; parameter[0] : v4 (Landroid/content/Context;)
+.catch java/lang/Exception from l7c196 to l7c1de using l7c1da
+.var 0 is instance Landroid/support/v4/hardware/display/DisplayManagerCompat; from l7c1a6 to l7c1ba
+.var 1 is version I from l7c1ae to l7c1ca
+.var 0 is instance Landroid/support/v4/hardware/display/DisplayManagerCompat; from l7c1c0 to l7c1d2
+.var 0 is instance Landroid/support/v4/hardware/display/DisplayManagerCompat; from l7c1d8 to l7c1da
+.var 1 is version I from l7c1ce to l7c1da
+.line 54
+	sget-object	v3,android/support/v4/hardware/display/DisplayManagerCompat.sInstances Ljava/util/WeakHashMap;
+; v3 : Ljava/util/WeakHashMap;
+	monitor-enter	v3
+; v3 : Ljava/util/WeakHashMap;
+l7c196:
+.line 55
+	sget-object	v2,android/support/v4/hardware/display/DisplayManagerCompat.sInstances Ljava/util/WeakHashMap;
+; v2 : Ljava/util/WeakHashMap;
+	invoke-virtual	{v2,v4},java/util/WeakHashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/WeakHashMap; , v4 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/support/v4/hardware/display/DisplayManagerCompat
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat;
+.line 56
+	if-nez	v0,l7c1ca
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat;
+.line 57
+	sget	v1,android/os/Build$VERSION.SDK_INT I
+; v1 : single-length
+.line 58
+	const/16	v2,17
+; v2 : single-length
+	if-lt	v1,v2,l7c1ce
+; v1 : single-length , v2 : single-length
+.line 59
+	new-instance	v0,android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+l7c1ba:
+	invoke-direct	{v0,v4},android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl; , v4 : Landroid/content/Context;
+l7c1c0:
+.line 63
+	sget-object	v2,android/support/v4/hardware/display/DisplayManagerCompat.sInstances Ljava/util/WeakHashMap;
+; v2 : Ljava/util/WeakHashMap;
+	invoke-virtual	{v2,v4,v0},java/util/WeakHashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/WeakHashMap; , v4 : Landroid/content/Context; , v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;
+l7c1ca:
+.line 65
+	monitor-exit	v3
+; v3 : Ljava/util/WeakHashMap;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+l7c1ce:
+.line 61
+	new-instance	v0,android/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;
+l7c1d2:
+	invoke-direct	{v0,v4},android/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl; , v4 : Landroid/content/Context;
+l7c1d8:
+	goto	l7c1c0
+l7c1da:
+.line 66
+	move-exception	v2
+; v2 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Ljava/util/WeakHashMap;
+l7c1de:
+	throw	v2
+; v2 : java/lang/Exception
+.end method
+
+.method public abstract getDisplay(I)Landroid/view/Display;
+.end method
+
+.method public abstract getDisplays()[Landroid/view/Display;
+.end method
+
+.method public abstract getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+.end method
+
+

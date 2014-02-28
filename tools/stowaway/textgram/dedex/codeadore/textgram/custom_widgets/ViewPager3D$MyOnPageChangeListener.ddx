@@ -1,0 +1,146 @@
+.class codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener
+.super java/lang/Object
+.source ViewPager3D.java
+.implements android/support/v4/view/ViewPager$OnPageChangeListener
+
+.inner class MyOnPageChangeListener inner codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener outer codeadore/textgram/custom_widgets/ViewPager3D
+.field final this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+
+.method private <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 264
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	return-void	
+.end method
+
+.method <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D;Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[1] : v2 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+.line 264
+	invoke-direct	{v0,v1},codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener/<init>	; <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D;)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return-void	
+.end method
+
+.method public onPageScrollStateChanged(I)V
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+; parameter[0] : v3 (I)
+.line 290
+	iget-object	v0,v2,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	if-eqz	v0,lf1f0a
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 291
+	iget-object	v0,v2,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	invoke-interface	{v0,v3},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrollStateChanged	; onPageScrollStateChanged(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v3 : single-length
+lf1f0a:
+.line 293
+	if-nez	v3,lf1f1a
+; v3 : single-length
+.line 294
+	iget-object	v0,v2,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	const/4	v1,0
+; v1 : single-length
+	invoke-static	{v0,v1},codeadore/textgram/custom_widgets/ViewPager3D/access$6	; access$6(Lcodeadore/textgram/custom_widgets/ViewPager3D;F)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : single-length
+lf1f1a:
+.line 296
+	return-void	
+.end method
+
+.method public onPageScrolled(IFI)V
+.limit registers 5
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (F)
+; parameter[2] : v4 (I)
+.line 269
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	if-eqz	v0,lf1f4e
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 270
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	invoke-interface	{v0,v2,v3,v4},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrolled	; onPageScrolled(IFI)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length , v3 : single-length , v4 : single-length
+lf1f4e:
+.line 273
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0,v2},codeadore/textgram/custom_widgets/ViewPager3D/access$5	; access$5(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : single-length
+.line 274
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0,v3},codeadore/textgram/custom_widgets/ViewPager3D/access$6	; access$6(Lcodeadore/textgram/custom_widgets/ViewPager3D;F)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v3 : single-length
+.line 275
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0,v2},codeadore/textgram/custom_widgets/ViewPager3D/access$7	; access$7(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : single-length
+.line 276
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0,v2},codeadore/textgram/custom_widgets/ViewPager3D/access$1	; access$1(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v2 : single-length
+.line 277
+	return-void	
+.end method
+
+.method public onPageSelected(I)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)
+; parameter[0] : v2 (I)
+.line 282
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	if-eqz	v0,lf1faa
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 283
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener.this$0 Lcodeadore/textgram/custom_widgets/ViewPager3D;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-static	{v0},codeadore/textgram/custom_widgets/ViewPager3D/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	invoke-interface	{v0,v2},android/support/v4/view/ViewPager$OnPageChangeListener/onPageSelected	; onPageSelected(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length
+lf1faa:
+.line 285
+	return-void	
+.end method
+
+

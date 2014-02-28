@@ -1,0 +1,121 @@
+.class codeadore/textgram/store/StoreFeaturedFragment$4$2$1
+.super java/lang/Object
+.source StoreFeaturedFragment.java
+.implements android/view/View$OnClickListener
+
+.enclosing method codeadore/run()V
+.field final this$2 Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;
+.field private final val$JSONObjects Ljava/util/ArrayList;
+.field private final val$icons Ljava/util/ArrayList;
+.field private final val$listAdapter Landroid/widget/ArrayAdapter;
+.field private final val$moreBtn Landroid/widget/Button;
+.field private final val$thePb Landroid/widget/ProgressBar;
+.field private final val$titlesList Ljava/util/ArrayList;
+.field private final val$type Ljava/lang/String;
+.field private final val$view Landroid/view/View;
+
+.method <init>(Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;Landroid/widget/Button;Landroid/widget/ProgressBar;Landroid/widget/ArrayAdapter;Ljava/lang/String;Landroid/view/View;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.limit registers 10
+; this: v0 (Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;)
+; parameter[1] : v2 (Landroid/widget/Button;)
+; parameter[2] : v3 (Landroid/widget/ProgressBar;)
+; parameter[3] : v4 (Landroid/widget/ArrayAdapter;)
+; parameter[4] : v5 (Ljava/lang/String;)
+; parameter[5] : v6 (Landroid/view/View;)
+; parameter[6] : v7 (Ljava/util/ArrayList;)
+; parameter[7] : v8 (Ljava/util/ArrayList;)
+; parameter[8] : v9 (Ljava/util/ArrayList;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.this$2 Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;
+; v1 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v2,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$moreBtn Landroid/widget/Button;
+; v2 : Landroid/widget/Button; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v3,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$thePb Landroid/widget/ProgressBar;
+; v3 : Landroid/widget/ProgressBar; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v4,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$listAdapter Landroid/widget/ArrayAdapter;
+; v4 : Landroid/widget/ArrayAdapter; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v5,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$type Ljava/lang/String;
+; v5 : Ljava/lang/String; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v6,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$view Landroid/view/View;
+; v6 : Landroid/view/View; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v7,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$JSONObjects Ljava/util/ArrayList;
+; v7 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v8,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$icons Ljava/util/ArrayList;
+; v8 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iput-object	v9,v0,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$titlesList Ljava/util/ArrayList;
+; v9 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+.line 408
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	return-void	
+.end method
+
+.method private loadMore(Landroid/widget/ArrayAdapter;Ljava/lang/String;I)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/widget/ArrayAdapter" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "I)V" }
+.end annotation
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;)
+; parameter[0] : v1 (Landroid/widget/ArrayAdapter;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (I)
+.line 425
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 11
+; this: v9 (Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;)
+; parameter[0] : v10 (Landroid/view/View;)
+.line 412
+	iget-object	v0,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$moreBtn Landroid/widget/Button;
+; v0 : Landroid/widget/Button; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	const/16	v1,8
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/Button/setVisibility	; setVisibility(I)V
+; v0 : Landroid/widget/Button; , v1 : single-length
+.line 413
+	iget-object	v0,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$thePb Landroid/widget/ProgressBar;
+; v0 : Landroid/widget/ProgressBar; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/ProgressBar/setVisibility	; setVisibility(I)V
+; v0 : Landroid/widget/ProgressBar; , v1 : single-length
+.line 414
+	iget-object	v0,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.this$2 Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	invoke-static	{v0},codeadore/textgram/store/StoreFeaturedFragment$4$2/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;)Lcodeadore/textgram/store/StoreFeaturedFragment$4;
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2;
+	move-result-object	v0
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4;
+	invoke-static	{v0},codeadore/textgram/store/StoreFeaturedFragment$4/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$4;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$4;
+	move-result-object	v0
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	iget-object	v1,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$listAdapter Landroid/widget/ArrayAdapter;
+; v1 : Landroid/widget/ArrayAdapter; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iget-object	v2,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$type Ljava/lang/String;
+; v2 : Ljava/lang/String; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$view Landroid/view/View;
+; v3 : Landroid/view/View; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+.line 415
+	iget-object	v4,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$JSONObjects Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iget-object	v5,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$icons Ljava/util/ArrayList;
+; v5 : Ljava/util/ArrayList; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iget-object	v6,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$titlesList Ljava/util/ArrayList;
+; v6 : Ljava/util/ArrayList; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+.line 416
+	iget-object	v7,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$moreBtn Landroid/widget/Button;
+; v7 : Landroid/widget/Button; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+	iget-object	v8,v9,codeadore/textgram/store/StoreFeaturedFragment$4$2$1.val$thePb Landroid/widget/ProgressBar;
+; v8 : Landroid/widget/ProgressBar; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$4$2$1;
+.line 414
+	invoke-virtual/range	{v0..v8},codeadore/textgram/store/StoreFeaturedFragment/loadMoreItems;	loadMoreItems(Landroid/widget/ArrayAdapter;Ljava/lang/String;Landroid/view/View;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/Button;Landroid/widget/ProgressBar;)V
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment; , v1 : Landroid/widget/ArrayAdapter; , v2 : Ljava/lang/String; , v3 : Landroid/view/View; , v4 : Ljava/util/ArrayList; , v5 : Ljava/util/ArrayList; , v6 : Ljava/util/ArrayList; , v7 : Landroid/widget/Button; , v8 : Landroid/widget/ProgressBar;
+.line 418
+	return-void	
+.end method
+
+

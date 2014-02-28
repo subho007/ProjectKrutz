@@ -1,0 +1,41 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl
+.super android/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl
+.source AccessibilityNodeInfoCompat.java
+
+.inner class AccessibilityNodeInfoJellybeanMr2Impl inner android/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl outer android/support/v4/view/accessibility/AccessibilityNodeInfoCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl;)
+.line 730
+	invoke-direct	{v0},android/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl;
+	return-void	
+.end method
+
+.method public getViewIdResourceName(Ljava/lang/Object;)Ljava/lang/String;
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 734
+	invoke-static	{v2},android/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellybeanMr2/getViewIdResourceName	; getViewIdResourceName(Ljava/lang/Object;)Ljava/lang/String;
+; v2 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public setViewIdResourceName(Ljava/lang/Object;Ljava/lang/String;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanMr2Impl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (Ljava/lang/String;)
+.line 739
+	invoke-static	{v1,v2},android/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellybeanMr2/setViewIdResourceName	; setViewIdResourceName(Ljava/lang/Object;Ljava/lang/String;)V
+; v1 : Ljava/lang/Object; , v2 : Ljava/lang/String;
+.line 740
+	return-void	
+.end method
+
+

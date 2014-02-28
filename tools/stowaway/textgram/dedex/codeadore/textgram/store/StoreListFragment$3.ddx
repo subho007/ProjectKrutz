@@ -1,0 +1,368 @@
+.class codeadore/textgram/store/StoreListFragment$3
+.super java/lang/Object
+.source StoreListFragment.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/loadMoreItems(Landroid/widget/ArrayAdapter;Ljava/lang/String;Landroid/view/View;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/Button;Landroid/widget/ProgressBar;)V
+.field final this$0 Lcodeadore/textgram/store/StoreListFragment;
+.field private final val$JSONObjects Ljava/util/ArrayList;
+.field private final val$icons Ljava/util/ArrayList;
+.field private final val$moreBtn Landroid/widget/Button;
+.field private final val$nextPage I
+.field private final val$thePb Landroid/widget/ProgressBar;
+.field private final val$titlesList Ljava/util/ArrayList;
+.field private final val$type Ljava/lang/String;
+.field private final val$view Landroid/view/View;
+
+.method <init>(Lcodeadore/textgram/store/StoreListFragment;Ljava/lang/String;ILjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/view/View;Landroid/widget/Button;Landroid/widget/ProgressBar;)V
+.limit registers 10
+; this: v0 (Lcodeadore/textgram/store/StoreListFragment$3;)
+; parameter[0] : v1 (Lcodeadore/textgram/store/StoreListFragment;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (Ljava/util/ArrayList;)
+; parameter[4] : v5 (Ljava/util/ArrayList;)
+; parameter[5] : v6 (Ljava/util/ArrayList;)
+; parameter[6] : v7 (Landroid/view/View;)
+; parameter[7] : v8 (Landroid/widget/Button;)
+; parameter[8] : v9 (Landroid/widget/ProgressBar;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.this$0 Lcodeadore/textgram/store/StoreListFragment;
+; v1 : Lcodeadore/textgram/store/StoreListFragment; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v2,v0,codeadore/textgram/store/StoreListFragment$3.val$type Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput	v3,v0,codeadore/textgram/store/StoreListFragment$3.val$nextPage I
+; v3 : single-length , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v4,v0,codeadore/textgram/store/StoreListFragment$3.val$JSONObjects Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v5,v0,codeadore/textgram/store/StoreListFragment$3.val$titlesList Ljava/util/ArrayList;
+; v5 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v6,v0,codeadore/textgram/store/StoreListFragment$3.val$icons Ljava/util/ArrayList;
+; v6 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v7,v0,codeadore/textgram/store/StoreListFragment$3.val$view Landroid/view/View;
+; v7 : Landroid/view/View; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v8,v0,codeadore/textgram/store/StoreListFragment$3.val$moreBtn Landroid/widget/Button;
+; v8 : Landroid/widget/Button; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iput-object	v9,v0,codeadore/textgram/store/StoreListFragment$3.val$thePb Landroid/widget/ProgressBar;
+; v9 : Landroid/widget/ProgressBar; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+.line 256
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 21
+; this: v20 (Lcodeadore/textgram/store/StoreListFragment$3;)
+.catch java/lang/Exception from laac64 to laacc6 using laaccc
+.catch java/lang/Exception from laabf8 to laac0a using laaccc
+.catch java/lang/Exception from laab5c to laab62 using laabba
+.var 10 is e Ljava/lang/Exception; from laabbc to laabf6
+.var 11 is i I from laac04 to laac10
+.var 13 is items Lorg/json/JSONArray; from laac02 to laac10
+.var 9 is finalNewItems I from laac12 to laac60
+.var 11 is i I from laac60 to laaccc
+.var 12 is iconLink Ljava/lang/String; from laac92 to laaccc
+.var 13 is items Lorg/json/JSONArray; from laac60 to laaccc
+.var 16 is thisObject Lorg/json/JSONObject; from laac6c to laaccc
+.var 17 is title Ljava/lang/String; from laaca6 to laaccc
+.line 260
+	const/16	v18,0
+; v18 : single-length
+.line 261
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	sget-object	v2,codeadore/textgram/Settings.store_api_url Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	invoke-static	{v2},java/lang/String/valueOf	; valueOf(Ljava/lang/Object;)Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+.line 262
+	const-string	v2,"/items.php?action=items_list&type="
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v2,v0,codeadore/textgram/store/StoreListFragment$3.val$type Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+.line 263
+	const-string	v2,"&page="
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget	v2,v0,codeadore/textgram/store/StoreListFragment$3.val$nextPage I
+; v2 : single-length , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+.line 261
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v18
+; v18 : Ljava/lang/String;
+.line 265
+	const-string	v1,"fuck"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"loaded url: "
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 267
+	const/4	v15,0
+; v15 : single-length
+laab5c:
+.line 269
+	invoke-static/range	{v18},codeadore/textgram/el7rUtilities/geHTTPtContents;	geHTTPtContents(Ljava/lang/String;)Ljava/lang/String;
+; v18 : Ljava/lang/String;
+laab62:
+	move-result-object	v15
+; v15 : Ljava/lang/String;
+laab64:
+.line 276
+	const-string	v1,"ERROR"
+; v1 : Ljava/lang/String;
+	if-eq	v15,v1,laab70
+; v15 : single-length , v1 : Ljava/lang/String;
+	if-nez	v15,laabf6
+; v15 : single-length
+laab70:
+.line 277
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.this$0 Lcodeadore/textgram/store/StoreListFragment;
+; v1 : Lcodeadore/textgram/store/StoreListFragment; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v1,codeadore/textgram/store/StoreListFragment.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"failed to load the url, theJSON:"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v15},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v15 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 278
+	sget-object	v1,codeadore/textgram/StoreActivity.UIHandler Landroid/os/Handler;
+; v1 : Landroid/os/Handler;
+	new-instance	v2,codeadore/textgram/store/StoreListFragment$3$1
+; v2 : Lcodeadore/textgram/store/StoreListFragment$3$1;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-direct	{v2,v0},codeadore/textgram/store/StoreListFragment$3$1/<init>	; <init>(Lcodeadore/textgram/store/StoreListFragment$3;)V
+; v2 : Lcodeadore/textgram/store/StoreListFragment$3$1; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-virtual	{v1,v2},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v1 : Landroid/os/Handler; , v2 : Lcodeadore/textgram/store/StoreListFragment$3$1;
+laabb8:
+.line 343
+	return-void	
+laabba:
+.line 270
+	move-exception	v10
+; v10 : java/lang/Exception
+.line 271
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.this$0 Lcodeadore/textgram/store/StoreListFragment;
+; v1 : Lcodeadore/textgram/store/StoreListFragment; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v1,codeadore/textgram/store/StoreListFragment.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String; , v1 : Ljava/lang/String;
+.line 272
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"in loading the url of the api: "
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+.line 273
+	invoke-virtual	{v10},java/lang/Exception/toString	; toString()Ljava/lang/String;
+; v10 : java/lang/Exception
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+.line 272
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 271
+	invoke-static	{v1,v2},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	laab64
+laabf6:
+.line 292
+	const/4	v14,0
+; v14 : single-length
+laabf8:
+.line 294
+	new-instance	v13,org/json/JSONArray
+; v13 : Lorg/json/JSONArray;
+	invoke-direct	{v13,v15},org/json/JSONArray/<init>	; <init>(Ljava/lang/String;)V
+; v13 : Lorg/json/JSONArray; , v15 : single-length
+.line 296
+	const/4	v11,0
+; v11 : single-length
+laac04:
+	invoke-virtual	{v13},org/json/JSONArray/length	; length()I
+; v13 : Lorg/json/JSONArray;
+laac0a:
+	move-result	v1
+; v1 : single-length
+	if-lt	v11,v1,laac60
+; v11 : single-length , v1 : single-length
+laac10:
+.line 313
+	move	v9,v14
+; v9 : single-length , v14 : single-length
+.line 315
+	sget-object	v19,codeadore/textgram/StoreActivity.UIHandler Landroid/os/Handler;
+; v19 : Landroid/os/Handler;
+	new-instance	v1,codeadore/textgram/store/StoreListFragment$3$2
+; v1 : Lcodeadore/textgram/store/StoreListFragment$3$2;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v3,v0,codeadore/textgram/store/StoreListFragment$3.val$JSONObjects Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v4,v0,codeadore/textgram/store/StoreListFragment$3.val$icons Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v5,v0,codeadore/textgram/store/StoreListFragment$3.val$titlesList Ljava/util/ArrayList;
+; v5 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v6,v0,codeadore/textgram/store/StoreListFragment$3.val$view Landroid/view/View;
+; v6 : Landroid/view/View; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v7,v0,codeadore/textgram/store/StoreListFragment$3.val$moreBtn Landroid/widget/Button;
+; v7 : Landroid/widget/Button; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v8,v0,codeadore/textgram/store/StoreListFragment$3.val$thePb Landroid/widget/ProgressBar;
+; v8 : Landroid/widget/ProgressBar; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v2,v20
+; v2 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-direct/range	{v1..v9},codeadore/textgram/store/StoreListFragment$3$2/<init>;	<init>(Lcodeadore/textgram/store/StoreListFragment$3;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/view/View;Landroid/widget/Button;Landroid/widget/ProgressBar;I)V
+; v1 : Lcodeadore/textgram/store/StoreListFragment$3$2; , v2 : Lcodeadore/textgram/store/StoreListFragment$3; , v3 : Ljava/util/ArrayList; , v4 : Ljava/util/ArrayList; , v5 : Ljava/util/ArrayList; , v6 : Landroid/view/View; , v7 : Landroid/widget/Button; , v8 : Landroid/widget/ProgressBar; , v9 : single-length
+	move-object/from16	v0,v19
+; v0 : Landroid/os/Handler; , v19 : Landroid/os/Handler;
+	invoke-virtual	{v0,v1},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v0 : Landroid/os/Handler; , v1 : Lcodeadore/textgram/store/StoreListFragment$3$2;
+	goto	laabb8
+laac60:
+.line 297
+	add-int/lit8	v14,v14,1
+; v14 : single-length , v14 : single-length
+laac64:
+.line 298
+	invoke-virtual	{v13,v11},org/json/JSONArray/getJSONObject	; getJSONObject(I)Lorg/json/JSONObject;
+; v13 : Lorg/json/JSONArray; , v11 : single-length
+	move-result-object	v16
+; v16 : Lorg/json/JSONObject;
+.line 299
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.val$JSONObjects Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v16
+; v0 : Lorg/json/JSONObject; , v16 : Lorg/json/JSONObject;
+	invoke-virtual	{v1,v0},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v0 : Lorg/json/JSONObject;
+.line 301
+	invoke-virtual	{v13,v11},org/json/JSONArray/getJSONObject	; getJSONObject(I)Lorg/json/JSONObject;
+; v13 : Lorg/json/JSONArray; , v11 : single-length
+	move-result-object	v1
+; v1 : Lorg/json/JSONObject;
+.line 302
+	const-string	v2,"icon_link"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v1 : Lorg/json/JSONObject; , v2 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+.line 303
+	invoke-virtual	{v13,v11},org/json/JSONArray/getJSONObject	; getJSONObject(I)Lorg/json/JSONObject;
+; v13 : Lorg/json/JSONArray; , v11 : single-length
+	move-result-object	v1
+; v1 : Lorg/json/JSONObject;
+.line 304
+	const-string	v2,"title"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v1 : Lorg/json/JSONObject; , v2 : Ljava/lang/String;
+	move-result-object	v17
+; v17 : Ljava/lang/String;
+.line 305
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.val$titlesList Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	move-object/from16	v0,v17
+; v0 : Ljava/lang/String; , v17 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v0 : Ljava/lang/String;
+.line 307
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/store/StoreListFragment$3; , v20 : Lcodeadore/textgram/store/StoreListFragment$3;
+	iget-object	v1,v0,codeadore/textgram/store/StoreListFragment$3.val$icons Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/store/StoreListFragment$3;
+	invoke-virtual	{v1,v12},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v12 : Ljava/lang/String;
+laacc6:
+.line 296
+	add-int/lit8	v11,v11,1
+; v11 : single-length , v11 : single-length
+	goto	laac04
+laaccc:
+.line 309
+	move-exception	v10
+; v10 : java/lang/Exception
+.line 310
+	invoke-virtual	{v10},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v10 : java/lang/Exception
+	goto	laac10
+.end method
+
+

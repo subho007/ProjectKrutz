@@ -1,0 +1,40 @@
+.class android/support/v4/app/ShareCompat$ShareCompatImplJB
+.super android/support/v4/app/ShareCompat$ShareCompatImplICS
+.source ShareCompat.java
+
+.inner class ShareCompatImplJB inner android/support/v4/app/ShareCompat$ShareCompatImplJB outer android/support/v4/app/ShareCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/app/ShareCompat$ShareCompatImplJB;)
+.line 137
+	invoke-direct	{v0},android/support/v4/app/ShareCompat$ShareCompatImplICS/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/ShareCompat$ShareCompatImplJB;
+	return-void	
+.end method
+
+.method public escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/ShareCompat$ShareCompatImplJB;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 139
+	invoke-static	{v2},android/support/v4/app/ShareCompatJB/escapeHtml	; escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
+; v2 : Ljava/lang/CharSequence;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method shouldAddChooserIntent(Landroid/view/MenuItem;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/ShareCompat$ShareCompatImplJB;)
+; parameter[0] : v2 (Landroid/view/MenuItem;)
+.line 144
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,137 @@
+.class abstract android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl
+.super java/lang/Object
+.source TextDirectionHeuristicsCompat.java
+.implements android/support/v4/text/TextDirectionHeuristicCompat
+
+.inner class TextDirectionHeuristicImpl inner android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl outer android/support/v4/text/TextDirectionHeuristicsCompat
+.field private final mAlgorithm Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+
+.method public <init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;)
+; parameter[0] : v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)
+.line 114
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+.line 115
+	iput-object	v1,v0,android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl.mAlgorithm Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+; v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm; , v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+.line 116
+	return-void	
+.end method
+
+.method private doCheck(Ljava/lang/CharSequence;II)Z
+.limit registers 5
+; this: v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (I)
+.line 140
+	iget-object	v0,v1,android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl.mAlgorithm Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm; , v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+	invoke-interface	{v0,v2,v3,v4},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm/checkRtl	; checkRtl(Ljava/lang/CharSequence;II)I
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm; , v2 : Ljava/lang/CharSequence; , v3 : single-length , v4 : single-length
+	move-result	v0
+; v0 : single-length
+	packed-switch	v0,0
+		psdaae8_daaf8	; case 0
+		psdaae8_daafc	; case 1
+		default: psdaae8_default
+; v0 : single-length
+psdaae8_default:
+.line 146
+	invoke-virtual	{v1},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl/defaultIsRtl	; defaultIsRtl()Z
+; v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+	move-result	v0
+; v0 : single-length
+ldaaf6:
+	return	v0
+; v0 : single-length
+psdaae8_daaf8:
+.line 142
+	const/4	v0,1
+; v0 : single-length
+	goto	ldaaf6
+psdaae8_daafc:
+.line 144
+	const/4	v0,0
+; v0 : single-length
+	goto	ldaaf6
+.line 140
+.end method
+
+.method protected abstract defaultIsRtl()Z
+.end method
+
+.method public isRtl(Ljava/lang/CharSequence;II)Z
+.limit registers 5
+; this: v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (I)
+.line 130
+	if-eqz	v2,ldab3a
+; v2 : Ljava/lang/CharSequence;
+	if-ltz	v3,ldab3a
+; v3 : single-length
+	if-ltz	v4,ldab3a
+; v4 : single-length
+	invoke-interface	{v2},java/lang/CharSequence/length	; length()I
+; v2 : Ljava/lang/CharSequence;
+	move-result	v0
+; v0 : single-length
+	sub-int/2addr	v0,v4
+; v0 : single-length , v4 : single-length
+	if-ge	v0,v3,ldab46
+; v0 : single-length , v3 : single-length
+ldab3a:
+.line 131
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	invoke-direct	{v0},java/lang/IllegalArgumentException/<init>	; <init>()V
+; v0 : Ljava/lang/IllegalArgumentException;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+ldab46:
+.line 133
+	iget-object	v0,v1,android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl.mAlgorithm Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm; , v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+	if-nez	v0,ldab58
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+.line 134
+	invoke-virtual	{v1},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl/defaultIsRtl	; defaultIsRtl()Z
+; v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
+	move-result	v0
+; v0 : single-length
+ldab56:
+.line 136
+	return	v0
+; v0 : single-length
+ldab58:
+	invoke-direct	{v1,v2,v3,v4},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl/doCheck	; doCheck(Ljava/lang/CharSequence;II)Z
+; v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl; , v2 : Ljava/lang/CharSequence; , v3 : single-length , v4 : single-length
+	move-result	v0
+; v0 : single-length
+	goto	ldab56
+.end method
+
+.method public isRtl([CII)Z
+.limit registers 5
+; this: v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;)
+; parameter[0] : v2 ([C)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (I)
+.line 125
+	invoke-static	{v2},java/nio/CharBuffer/wrap	; wrap([C)Ljava/nio/CharBuffer;
+; v2 : [C
+	move-result-object	v0
+; v0 : Ljava/nio/CharBuffer;
+	invoke-virtual	{v1,v0,v3,v4},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl/isRtl	; isRtl(Ljava/lang/CharSequence;II)Z
+; v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl; , v0 : Ljava/nio/CharBuffer; , v3 : single-length , v4 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,32 @@
+.class public com/applovin/adview/AppLovinOptinView
+.super android/view/View
+
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/adview/AppLovinOptinView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},com/applovin/adview/AppLovinOptinView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Lcom/applovin/adview/AppLovinOptinView; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v0 : single-length
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 5
+; this: v1 (Lcom/applovin/adview/AppLovinOptinView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+; parameter[2] : v4 (I)
+	invoke-direct	{v1,v2,v3,v4},android/view/View/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Lcom/applovin/adview/AppLovinOptinView; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v4 : single-length
+	const/16	v0,8
+; v0 : single-length
+	invoke-virtual	{v1,v0},com/applovin/adview/AppLovinOptinView/setVisibility	; setVisibility(I)V
+; v1 : Lcom/applovin/adview/AppLovinOptinView; , v0 : single-length
+	return-void	
+.end method
+
+

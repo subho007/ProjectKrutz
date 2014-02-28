@@ -1,0 +1,82 @@
+.class public final android/support/v7/appcompat/R$id
+.super java/lang/Object
+.source R.java
+
+.inner class id inner android/support/v7/appcompat/R$id outer android/support/v7/appcompat/R
+.field public static final action_bar I = 2131099680	; 0x7f060020
+.field public static final action_bar_activity_content I = 2131099669	; 0x7f060015
+.field public static final action_bar_container I = 2131099679	; 0x7f06001f
+.field public static final action_bar_overlay_layout I = 2131099683	; 0x7f060023
+.field public static final action_bar_root I = 2131099678	; 0x7f06001e
+.field public static final action_bar_subtitle I = 2131099687	; 0x7f060027
+.field public static final action_bar_title I = 2131099686	; 0x7f060026
+.field public static final action_context_bar I = 2131099681	; 0x7f060021
+.field public static final action_menu_divider I = 2131099670	; 0x7f060016
+.field public static final action_menu_presenter I = 2131099671	; 0x7f060017
+.field public static final action_mode_bar I = 2131099701	; 0x7f060035
+.field public static final action_mode_bar_stub I = 2131099700	; 0x7f060034
+.field public static final action_mode_close_button I = 2131099688	; 0x7f060028
+.field public static final activity_chooser_view_content I = 2131099689	; 0x7f060029
+.field public static final always I = 2131099659	; 0x7f06000b
+.field public static final beginning I = 2131099665	; 0x7f060011
+.field public static final checkbox I = 2131099697	; 0x7f060031
+.field public static final collapseActionView I = 2131099661	; 0x7f06000d
+.field public static final default_activity_button I = 2131099692	; 0x7f06002c
+.field public static final dialog I = 2131099662	; 0x7f06000e
+.field public static final disableHome I = 2131099656	; 0x7f060008
+.field public static final dropdown I = 2131099663	; 0x7f06000f
+.field public static final edit_query I = 2131099708	; 0x7f06003c
+.field public static final end I = 2131099667	; 0x7f060013
+.field public static final expand_activities_button I = 2131099690	; 0x7f06002a
+.field public static final expanded_menu I = 2131099696	; 0x7f060030
+.field public static final home I = 2131099668	; 0x7f060014
+.field public static final homeAsUp I = 2131099653	; 0x7f060005
+.field public static final icon I = 2131099694	; 0x7f06002e
+.field public static final ifRoom I = 2131099658	; 0x7f06000a
+.field public static final image I = 2131099691	; 0x7f06002b
+.field public static final left_icon I = 2131099703	; 0x7f060037
+.field public static final listMode I = 2131099649	; 0x7f060001
+.field public static final list_item I = 2131099693	; 0x7f06002d
+.field public static final middle I = 2131099666	; 0x7f060012
+.field public static final never I = 2131099657	; 0x7f060009
+.field public static final none I = 2131099664	; 0x7f060010
+.field public static final normal I = 2131099648	; 0x7f060000
+.field public static final progress_circular I = 2131099706	; 0x7f06003a
+.field public static final progress_horizontal I = 2131099707	; 0x7f06003b
+.field public static final radio I = 2131099699	; 0x7f060033
+.field public static final right_container I = 2131099704	; 0x7f060038
+.field public static final right_icon I = 2131099705	; 0x7f060039
+.field public static final search_badge I = 2131099710	; 0x7f06003e
+.field public static final search_bar I = 2131099709	; 0x7f06003d
+.field public static final search_button I = 2131099711	; 0x7f06003f
+.field public static final search_close_btn I = 2131099716	; 0x7f060044
+.field public static final search_edit_frame I = 2131099712	; 0x7f060040
+.field public static final search_go_btn I = 2131099718	; 0x7f060046
+.field public static final search_mag_icon I = 2131099713	; 0x7f060041
+.field public static final search_plate I = 2131099714	; 0x7f060042
+.field public static final search_src_text I = 2131099715	; 0x7f060043
+.field public static final search_voice_btn I = 2131099719	; 0x7f060047
+.field public static final shortcut I = 2131099698	; 0x7f060032
+.field public static final showCustom I = 2131099655	; 0x7f060007
+.field public static final showHome I = 2131099652	; 0x7f060004
+.field public static final showTitle I = 2131099654	; 0x7f060006
+.field public static final split_action_bar I = 2131099682	; 0x7f060022
+.field public static final submit_area I = 2131099717	; 0x7f060045
+.field public static final tabMode I = 2131099650	; 0x7f060002
+.field public static final title I = 2131099695	; 0x7f06002f
+.field public static final title_container I = 2131099702	; 0x7f060036
+.field public static final top_action_bar I = 2131099684	; 0x7f060024
+.field public static final up I = 2131099685	; 0x7f060025
+.field public static final useLogo I = 2131099651	; 0x7f060003
+.field public static final withText I = 2131099660	; 0x7f06000c
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v7/appcompat/R$id;)
+.line 247
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/appcompat/R$id;
+	return-void	
+.end method
+
+

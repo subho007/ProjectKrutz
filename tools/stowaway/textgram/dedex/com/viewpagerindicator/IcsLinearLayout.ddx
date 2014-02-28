@@ -1,0 +1,664 @@
+.class com/viewpagerindicator/IcsLinearLayout
+.super android/widget/LinearLayout
+.source IcsLinearLayout.java
+
+.field private static final LL [I = null
+.field private static final LL_DIVIDER I = 0	; 0x0
+.field private static final LL_DIVIDER_PADDING I = 2	; 0x2
+.field private static final LL_SHOW_DIVIDER I = 1	; 0x1
+.field private mDivider Landroid/graphics/drawable/Drawable;
+.field private mDividerHeight I
+.field private mDividerPadding I
+.field private mDividerWidth I
+.field private mShowDividers I
+
+.method static <clinit>()V
+.limit registers 1
+.line 18
+	const/4	v0,3
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,lcc54c
+; v0 : [I
+	sput-object	v0,com/viewpagerindicator/IcsLinearLayout.LL [I
+; v0 : [I
+.line 25
+	return-void	
+.line 18
+lcc54a:	data-array
+		0x00, 0x00
+	end data-array
+lcc54c:	data-array
+		0x29, 0x01, 0x01, 0x01	; #0
+		0x29, 0x03, 0x01, 0x01	; #1
+		0x2A, 0x03, 0x01, 0x01	; #2
+	end data-array
+.end method
+
+.method public <init>(Landroid/content/Context;I)V
+.limit registers 7
+; this: v4 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (I)
+	const/4	v3,0
+; v3 : single-length
+.line 35
+	invoke-direct	{v4,v5},android/widget/LinearLayout/<init>	; <init>(Landroid/content/Context;)V
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout; , v5 : Landroid/content/Context;
+.line 37
+	const/4	v1,0
+; v1 : single-length
+	sget-object	v2,com/viewpagerindicator/IcsLinearLayout.LL [I
+; v2 : [I
+	invoke-virtual	{v5,v1,v2,v6,v3},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+; v5 : Landroid/content/Context; , v1 : single-length , v2 : [I , v6 : single-length , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 38
+	invoke-virtual	{v0,v3},android/content/res/TypedArray/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/content/res/TypedArray; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+	invoke-virtual	{v4,v1},com/viewpagerindicator/IcsLinearLayout/setDividerDrawable	; setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout; , v1 : Landroid/graphics/drawable/Drawable;
+.line 39
+	const/4	v1,2
+; v1 : single-length
+	invoke-virtual	{v0,v1,v3},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v3 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,com/viewpagerindicator/IcsLinearLayout.mDividerPadding I
+; v1 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+.line 40
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1,v3},android/content/res/TypedArray/getInteger	; getInteger(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v3 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,com/viewpagerindicator/IcsLinearLayout.mShowDividers I
+; v1 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+.line 41
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 42
+	return-void	
+.end method
+
+.method private drawDividersHorizontal(Landroid/graphics/Canvas;)V
+.limit registers 10
+; this: v8 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v9 (Landroid/graphics/Canvas;)
+.var 0 is child Landroid/view/View; from lcc5ee to lcc614
+.var 5 is right I from lcc5f0 to lcc614
+.var 3 is left I from lcc65a to lcc660
+.var 4 is lp Landroid/widget/LinearLayout$LayoutParams; from lcc64a to lcc660
+.line 128
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getChildCount	; getChildCount()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v1
+; v1 : single-length
+.line 129
+	const/4	v2,0
+; v2 : single-length
+lcc5d2:
+	if-lt	v2,v1,lcc616
+; v2 : single-length , v1 : single-length
+.line 141
+	invoke-direct	{v8,v1},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v1 : single-length
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,lcc614
+; v6 : single-length
+.line 142
+	add-int/lit8	v6,v1,255
+; v6 : single-length , v1 : single-length
+	invoke-virtual	{v8,v6},com/viewpagerindicator/IcsLinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v6 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 143
+	const/4	v5,0
+; v5 : single-length
+.line 144
+	if-nez	v0,lcc666
+; v0 : Landroid/view/View;
+.line 145
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getWidth	; getWidth()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v6
+; v6 : single-length
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getPaddingRight	; getPaddingRight()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v7
+; v7 : single-length
+	sub-int/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	iget	v7,v8,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v7 : single-length , v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	sub-int	v5,v6,v7
+; v5 : single-length , v6 : single-length , v7 : single-length
+lcc60e:
+.line 150
+	invoke-direct	{v8,v9,v5},com/viewpagerindicator/IcsLinearLayout/drawVerticalDivider	; drawVerticalDivider(Landroid/graphics/Canvas;I)V
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v9 : Landroid/graphics/Canvas; , v5 : single-length
+lcc614:
+.line 152
+	return-void	
+lcc616:
+.line 130
+	invoke-virtual	{v8,v2},com/viewpagerindicator/IcsLinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 132
+	if-eqz	v0,lcc660
+; v0 : Landroid/view/View;
+	invoke-virtual	{v0},android/view/View/getVisibility	; getVisibility()I
+; v0 : Landroid/view/View;
+	move-result	v6
+; v6 : single-length
+	const/16	v7,8
+; v7 : single-length
+	if-eq	v6,v7,lcc660
+; v6 : single-length , v7 : single-length
+.line 133
+	invoke-direct	{v8,v2},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v2 : single-length
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,lcc660
+; v6 : single-length
+.line 134
+	invoke-virtual	{v0},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v0 : Landroid/view/View;
+	move-result-object	v4
+; v4 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v4,android/widget/LinearLayout$LayoutParams
+; v4 : Landroid/widget/LinearLayout$LayoutParams;
+.line 135
+	invoke-virtual	{v0},android/view/View/getLeft	; getLeft()I
+; v0 : Landroid/view/View;
+	move-result	v6
+; v6 : single-length
+	iget	v7,v4,android/widget/LinearLayout$LayoutParams.leftMargin I
+; v7 : single-length , v4 : Landroid/widget/LinearLayout$LayoutParams;
+	sub-int	v3,v6,v7
+; v3 : single-length , v6 : single-length , v7 : single-length
+.line 136
+	invoke-direct	{v8,v9,v3},com/viewpagerindicator/IcsLinearLayout/drawVerticalDivider	; drawVerticalDivider(Landroid/graphics/Canvas;I)V
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v9 : Landroid/graphics/Canvas; , v3 : single-length
+lcc660:
+.line 129
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	lcc5d2
+lcc666:
+.line 148
+	invoke-virtual	{v0},android/view/View/getRight	; getRight()I
+; v0 : Landroid/view/View;
+	move-result	v5
+; v5 : single-length
+	goto	lcc60e
+.end method
+
+.method private drawDividersVertical(Landroid/graphics/Canvas;)V
+.limit registers 10
+; this: v8 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v9 (Landroid/graphics/Canvas;)
+.var 0 is bottom I from lcc6a8 to lcc6cc
+.var 1 is child Landroid/view/View; from lcc6a6 to lcc6cc
+.var 4 is lp Landroid/widget/LinearLayout$LayoutParams; from lcc702 to lcc718
+.var 5 is top I from lcc712 to lcc718
+.line 101
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getChildCount	; getChildCount()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v2
+; v2 : single-length
+.line 102
+	const/4	v3,0
+; v3 : single-length
+lcc68a:
+	if-lt	v3,v2,lcc6ce
+; v3 : single-length , v2 : single-length
+.line 114
+	invoke-direct	{v8,v2},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v2 : single-length
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,lcc6cc
+; v6 : single-length
+.line 115
+	add-int/lit8	v6,v2,255
+; v6 : single-length , v2 : single-length
+	invoke-virtual	{v8,v6},com/viewpagerindicator/IcsLinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v6 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 116
+	const/4	v0,0
+; v0 : single-length
+.line 117
+	if-nez	v1,lcc71e
+; v1 : Landroid/view/View;
+.line 118
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getHeight	; getHeight()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v6
+; v6 : single-length
+	invoke-virtual	{v8},com/viewpagerindicator/IcsLinearLayout/getPaddingBottom	; getPaddingBottom()I
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v7
+; v7 : single-length
+	sub-int/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	iget	v7,v8,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v7 : single-length , v8 : Lcom/viewpagerindicator/IcsLinearLayout;
+	sub-int	v0,v6,v7
+; v0 : single-length , v6 : single-length , v7 : single-length
+lcc6c6:
+.line 123
+	invoke-direct	{v8,v9,v0},com/viewpagerindicator/IcsLinearLayout/drawHorizontalDivider	; drawHorizontalDivider(Landroid/graphics/Canvas;I)V
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v9 : Landroid/graphics/Canvas; , v0 : single-length
+lcc6cc:
+.line 125
+	return-void	
+lcc6ce:
+.line 103
+	invoke-virtual	{v8,v3},com/viewpagerindicator/IcsLinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 105
+	if-eqz	v1,lcc718
+; v1 : Landroid/view/View;
+	invoke-virtual	{v1},android/view/View/getVisibility	; getVisibility()I
+; v1 : Landroid/view/View;
+	move-result	v6
+; v6 : single-length
+	const/16	v7,8
+; v7 : single-length
+	if-eq	v6,v7,lcc718
+; v6 : single-length , v7 : single-length
+.line 106
+	invoke-direct	{v8,v3},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v3 : single-length
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,lcc718
+; v6 : single-length
+.line 107
+	invoke-virtual	{v1},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v1 : Landroid/view/View;
+	move-result-object	v4
+; v4 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v4,android/widget/LinearLayout$LayoutParams
+; v4 : Landroid/widget/LinearLayout$LayoutParams;
+.line 108
+	invoke-virtual	{v1},android/view/View/getTop	; getTop()I
+; v1 : Landroid/view/View;
+	move-result	v6
+; v6 : single-length
+	iget	v7,v4,android/widget/LinearLayout$LayoutParams.topMargin I
+; v7 : single-length , v4 : Landroid/widget/LinearLayout$LayoutParams;
+	sub-int	v5,v6,v7
+; v5 : single-length , v6 : single-length , v7 : single-length
+.line 109
+	invoke-direct	{v8,v9,v5},com/viewpagerindicator/IcsLinearLayout/drawHorizontalDivider	; drawHorizontalDivider(Landroid/graphics/Canvas;I)V
+; v8 : Lcom/viewpagerindicator/IcsLinearLayout; , v9 : Landroid/graphics/Canvas; , v5 : single-length
+lcc718:
+.line 102
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	lcc68a
+lcc71e:
+.line 121
+	invoke-virtual	{v1},android/view/View/getBottom	; getBottom()I
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcc6c6
+.end method
+
+.method private drawHorizontalDivider(Landroid/graphics/Canvas;I)V
+.limit registers 7
+; this: v4 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v5 (Landroid/graphics/Canvas;)
+; parameter[1] : v6 (I)
+.line 155
+	iget-object	v0,v4,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	invoke-virtual	{v4},com/viewpagerindicator/IcsLinearLayout/getPaddingLeft	; getPaddingLeft()I
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v1
+; v1 : single-length
+	iget	v2,v4,com/viewpagerindicator/IcsLinearLayout.mDividerPadding I
+; v2 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	add-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+.line 156
+	invoke-virtual	{v4},com/viewpagerindicator/IcsLinearLayout/getWidth	; getWidth()I
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v4},com/viewpagerindicator/IcsLinearLayout/getPaddingRight	; getPaddingRight()I
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v3
+; v3 : single-length
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	iget	v3,v4,com/viewpagerindicator/IcsLinearLayout.mDividerPadding I
+; v3 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	iget	v3,v4,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v3 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	add-int/2addr	v3,v6
+; v3 : single-length , v6 : single-length
+.line 155
+	invoke-virtual	{v0,v1,v6,v2,v3},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : single-length , v6 : single-length , v2 : single-length , v3 : single-length
+.line 157
+	iget-object	v0,v4,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	invoke-virtual	{v0,v5},android/graphics/drawable/Drawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/graphics/Canvas;
+.line 158
+	return-void	
+.end method
+
+.method private drawVerticalDivider(Landroid/graphics/Canvas;I)V
+.limit registers 8
+; this: v5 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v6 (Landroid/graphics/Canvas;)
+; parameter[1] : v7 (I)
+.line 161
+	iget-object	v0,v5,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	invoke-virtual	{v5},com/viewpagerindicator/IcsLinearLayout/getPaddingTop	; getPaddingTop()I
+; v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v1
+; v1 : single-length
+	iget	v2,v5,com/viewpagerindicator/IcsLinearLayout.mDividerPadding I
+; v2 : single-length , v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	add-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+.line 162
+	iget	v2,v5,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v2 : single-length , v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	add-int/2addr	v2,v7
+; v2 : single-length , v7 : single-length
+	invoke-virtual	{v5},com/viewpagerindicator/IcsLinearLayout/getHeight	; getHeight()I
+; v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v5},com/viewpagerindicator/IcsLinearLayout/getPaddingBottom	; getPaddingBottom()I
+; v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v4
+; v4 : single-length
+	sub-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	iget	v4,v5,com/viewpagerindicator/IcsLinearLayout.mDividerPadding I
+; v4 : single-length , v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	sub-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+.line 161
+	invoke-virtual	{v0,v7,v1,v2,v3},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v0 : Landroid/graphics/drawable/Drawable; , v7 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 163
+	iget-object	v0,v5,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Lcom/viewpagerindicator/IcsLinearLayout;
+	invoke-virtual	{v0,v6},android/graphics/drawable/Drawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Landroid/graphics/drawable/Drawable; , v6 : Landroid/graphics/Canvas;
+.line 164
+	return-void	
+.end method
+
+.method private hasDividerBeforeChildAt(I)Z
+.limit registers 6
+; this: v4 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v5 (I)
+	const/4	v0,0
+; v0 : single-length
+.line 167
+	if-eqz	v5,lcc7f2
+; v5 : single-length
+	invoke-virtual	{v4},com/viewpagerindicator/IcsLinearLayout/getChildCount	; getChildCount()I
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v2
+; v2 : single-length
+	if-ne	v5,v2,lcc7f4
+; v5 : single-length , v2 : single-length
+lcc7f2:
+.line 180
+	return	v0
+; v0 : single-length
+lcc7f4:
+.line 170
+	iget	v2,v4,com/viewpagerindicator/IcsLinearLayout.mShowDividers I
+; v2 : single-length , v4 : Lcom/viewpagerindicator/IcsLinearLayout;
+	and-int/lit8	v2,v2,2
+; v2 : single-length , v2 : single-length
+	if-eqz	v2,lcc7f2
+; v2 : single-length
+.line 171
+	const/4	v0,0
+; v0 : single-length
+.line 172
+	add-int/lit8	v1,v5,255
+; v1 : single-length , v5 : single-length
+lcc806:
+	if-ltz	v1,lcc7f2
+; v1 : single-length
+.line 173
+	invoke-virtual	{v4,v1},com/viewpagerindicator/IcsLinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v4 : Lcom/viewpagerindicator/IcsLinearLayout; , v1 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	invoke-virtual	{v2},android/view/View/getVisibility	; getVisibility()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	const/16	v3,8
+; v3 : single-length
+	if-eq	v2,v3,lcc826
+; v2 : single-length , v3 : single-length
+.line 174
+	const/4	v0,1
+; v0 : single-length
+.line 175
+	goto	lcc7f2
+lcc826:
+.line 172
+	add-int/lit8	v1,v1,255
+; v1 : single-length , v1 : single-length
+	goto	lcc806
+.end method
+
+.method protected measureChildWithMargins(Landroid/view/View;IIII)V
+.limit registers 12
+; this: v6 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v7 (Landroid/view/View;)
+; parameter[1] : v8 (I)
+; parameter[2] : v9 (I)
+; parameter[3] : v10 (I)
+; parameter[4] : v11 (I)
+.var 0 is count I from lcc87a to lcc8a2
+	const/4	v5,1
+; v5 : single-length
+.line 62
+	invoke-virtual	{v6,v7},com/viewpagerindicator/IcsLinearLayout/indexOfChild	; indexOfChild(Landroid/view/View;)I
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout; , v7 : Landroid/view/View;
+	move-result	v1
+; v1 : single-length
+.line 63
+	invoke-virtual	{v6},com/viewpagerindicator/IcsLinearLayout/getOrientation	; getOrientation()I
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v2
+; v2 : single-length
+.line 64
+	invoke-virtual	{v7},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v7 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v3,android/widget/LinearLayout$LayoutParams
+; v3 : Landroid/widget/LinearLayout$LayoutParams;
+.line 65
+	invoke-direct	{v6,v1},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout; , v1 : single-length
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,lcc872
+; v4 : single-length
+.line 66
+	if-ne	v2,v5,lcc8a2
+; v2 : single-length , v5 : single-length
+.line 68
+	iget	v4,v6,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v4 : single-length , v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	iput	v4,v3,android/widget/LinearLayout$LayoutParams.topMargin I
+; v4 : single-length , v3 : Landroid/widget/LinearLayout$LayoutParams;
+lcc872:
+.line 75
+	invoke-virtual	{v6},com/viewpagerindicator/IcsLinearLayout/getChildCount	; getChildCount()I
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v0
+; v0 : single-length
+.line 76
+	add-int/lit8	v4,v0,255
+; v4 : single-length , v0 : single-length
+	if-ne	v1,v4,lcc89a
+; v1 : single-length , v4 : single-length
+.line 77
+	invoke-direct	{v6,v0},com/viewpagerindicator/IcsLinearLayout/hasDividerBeforeChildAt	; hasDividerBeforeChildAt(I)Z
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout; , v0 : single-length
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,lcc89a
+; v4 : single-length
+.line 78
+	if-ne	v2,v5,lcc8ac
+; v2 : single-length , v5 : single-length
+.line 79
+	iget	v4,v6,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v4 : single-length , v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	iput	v4,v3,android/widget/LinearLayout$LayoutParams.bottomMargin I
+; v4 : single-length , v3 : Landroid/widget/LinearLayout$LayoutParams;
+lcc89a:
+.line 85
+	invoke-super/range	{v6..v11},android/widget/LinearLayout/measureChildWithMargins;	measureChildWithMargins(Landroid/view/View;IIII)V
+; v6 : Lcom/viewpagerindicator/IcsLinearLayout; , v7 : Landroid/view/View; , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+.line 86
+	return-void	
+lcc8a2:
+.line 71
+	iget	v4,v6,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v4 : single-length , v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	iput	v4,v3,android/widget/LinearLayout$LayoutParams.leftMargin I
+; v4 : single-length , v3 : Landroid/widget/LinearLayout$LayoutParams;
+	goto	lcc872
+lcc8ac:
+.line 81
+	iget	v4,v6,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v4 : single-length , v6 : Lcom/viewpagerindicator/IcsLinearLayout;
+	iput	v4,v3,android/widget/LinearLayout$LayoutParams.rightMargin I
+; v4 : single-length , v3 : Landroid/widget/LinearLayout$LayoutParams;
+	goto	lcc89a
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v3 (Landroid/graphics/Canvas;)
+.line 90
+	iget-object	v0,v2,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+	if-eqz	v0,lcc8e4
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 91
+	invoke-virtual	{v2},com/viewpagerindicator/IcsLinearLayout/getOrientation	; getOrientation()I
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+	move-result	v0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	if-ne	v0,v1,lcc8ec
+; v0 : single-length , v1 : single-length
+.line 92
+	invoke-direct	{v2,v3},com/viewpagerindicator/IcsLinearLayout/drawDividersVertical	; drawDividersVertical(Landroid/graphics/Canvas;)V
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout; , v3 : Landroid/graphics/Canvas;
+lcc8e4:
+.line 97
+	invoke-super	{v2,v3},android/widget/LinearLayout/onDraw	; onDraw(Landroid/graphics/Canvas;)V
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout; , v3 : Landroid/graphics/Canvas;
+.line 98
+	return-void	
+lcc8ec:
+.line 94
+	invoke-direct	{v2,v3},com/viewpagerindicator/IcsLinearLayout/drawDividersHorizontal	; drawDividersHorizontal(Landroid/graphics/Canvas;)V
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout; , v3 : Landroid/graphics/Canvas;
+	goto	lcc8e4
+.end method
+
+.method public setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/IcsLinearLayout;)
+; parameter[0] : v3 (Landroid/graphics/drawable/Drawable;)
+	const/4	v0,0
+; v0 : single-length
+.line 45
+	iget-object	v1,v2,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/graphics/drawable/Drawable; , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+	if-ne	v3,v1,lcc910
+; v3 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/graphics/drawable/Drawable;
+lcc90e:
+.line 58
+	return-void	
+lcc910:
+.line 48
+	iput-object	v3,v2,com/viewpagerindicator/IcsLinearLayout.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+.line 49
+	if-eqz	v3,lcc944
+; v3 : Landroid/graphics/drawable/Drawable;
+.line 50
+	invoke-virtual	{v3},android/graphics/drawable/Drawable/getIntrinsicWidth	; getIntrinsicWidth()I
+; v3 : Landroid/graphics/drawable/Drawable;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v2,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v1 : single-length , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+.line 51
+	invoke-virtual	{v3},android/graphics/drawable/Drawable/getIntrinsicHeight	; getIntrinsicHeight()I
+; v3 : Landroid/graphics/drawable/Drawable;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v2,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v1 : single-length , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+lcc930:
+.line 56
+	if-nez	v3,lcc936
+; v3 : Landroid/graphics/drawable/Drawable;
+	const/4	v0,1
+; v0 : single-length
+lcc936:
+	invoke-virtual	{v2,v0},com/viewpagerindicator/IcsLinearLayout/setWillNotDraw	; setWillNotDraw(Z)V
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout; , v0 : single-length
+.line 57
+	invoke-virtual	{v2},com/viewpagerindicator/IcsLinearLayout/requestLayout	; requestLayout()V
+; v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+	goto	lcc90e
+lcc944:
+.line 53
+	iput	v0,v2,com/viewpagerindicator/IcsLinearLayout.mDividerWidth I
+; v0 : single-length , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+.line 54
+	iput	v0,v2,com/viewpagerindicator/IcsLinearLayout.mDividerHeight I
+; v0 : single-length , v2 : Lcom/viewpagerindicator/IcsLinearLayout;
+	goto	lcc930
+.end method
+
+

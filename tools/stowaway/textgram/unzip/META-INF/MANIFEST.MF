@@ -1,0 +1,5453 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/fonts/za_8.jpg
+SHA1-Digest: Na0SR3jIP4CmoxzsZerRVUjqyIY=
+
+Name: assets/emojis/car/e506.png
+SHA1-Digest: U3qLfy5KC0h4FK6PFHZzgy7tYkE=
+
+Name: res/drawable/abc_spinner_ab_holo_light.xml
+SHA1-Digest: RLJ6JbG8GtQ9sZIMfVboLHqQfNo=
+
+Name: assets/emojis/bell/em_1f510.png
+SHA1-Digest: qPJ7U6CflYViCEGrWKDZG/qOlC8=
+
+Name: assets/emojis/flower/em_1f31b.png
+SHA1-Digest: zUGYVpt8L2eIgALJnLwvkkQ4nUg=
+
+Name: assets/emojis/symbols/e23b.png
+SHA1-Digest: cGs1faAX56uzuubP4wEXoceB5sU=
+
+Name: res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_light.pn
+ g
+SHA1-Digest: POMOeAlguZlbMbGoPhcyZRJSqPc=
+
+Name: assets/emojis/bell/em_1f4de.png
+SHA1-Digest: +lzJV8ifVNfmnJXkK0cLdazLH3I=
+
+Name: assets/emojis/face/e04e.png
+SHA1-Digest: JEsB9xjgy/0lTCnb6M29BrMmkNs=
+
+Name: res/drawable-hdpi/vpi__tab_selected_holo.9.png
+SHA1-Digest: EGcWvzBVZLpn4Mxtlr8jgNaaysg=
+
+Name: assets/backgrounds/06.thumb.jpg
+SHA1-Digest: uvWigu2NyInYQKG6cKJBEMb8T7M=
+
+Name: assets/emojis/symbols/e216.png
+SHA1-Digest: MXjx0kzQTyPeMFc/rumCGz9MTUM=
+
+Name: assets/backgrounds/14.jpg
+SHA1-Digest: oYXB4Ciu5NUZ2/qFQnXiN63G6fk=
+
+Name: assets/emojis/bell/e33f.png
+SHA1-Digest: Qoi3RrTRbn/ZKumKLhq1HNfZu+c=
+
+Name: res/drawable-nodpi/separator.png
+SHA1-Digest: hnnbiG881YrYh8gK2pZhS5yBTCY=
+
+Name: assets/emojis/flower/e305.png
+SHA1-Digest: P0eIZ8iQdeXaEziWmzb6JFVfUa0=
+
+Name: assets/emojis/symbols/em_1f51c.png
+SHA1-Digest: Ek6S9evgWqKf9h2yx37mucprkuU=
+
+Name: assets/emojis/symbols/em_1f560.png
+SHA1-Digest: 4yhzmmsoJ1J7Tntkr1q9/j5eLGw=
+
+Name: res/drawable-hdpi/abc_list_pressed_holo_light.9.png
+SHA1-Digest: AVyWywHVmqUlb40Lr0kWmnyG6x4=
+
+Name: assets/emojis/flower/em_1f301.png
+SHA1-Digest: tZboAiJROk+xV4o/LmuxLbpvQjw=
+
+Name: assets/templates/29/config.xml
+SHA1-Digest: YoNlrjqMLIxzBEd3Z+1+xCHxHi4=
+
+Name: assets/templates/06/config.xml
+SHA1-Digest: q3hKsEYq7qGGz22PWoW3jpBpcaE=
+
+Name: res/drawable-xhdpi/abc_menu_dropdown_panel_holo_dark.9.png
+SHA1-Digest: xzzCpsOndTXJK6uyTA5GrtmW2+E=
+
+Name: assets/emojis/flower/em_1f40b.png
+SHA1-Digest: ly+XkLIGYT7Rlc/AX/rpSQJjvqw=
+
+Name: assets/emojis/symbols/em_1f567.png
+SHA1-Digest: Kp253rlwbo5kE5JGQ7cqPQXeh0k=
+
+Name: assets/backgrounds/26.jpg
+SHA1-Digest: n3omHMTou7wwraZGvGOE6h4EHWI=
+
+Name: res/drawable/instagram_icon.png
+SHA1-Digest: 4bUETePbMpiNteq5wfX62NYaahU=
+
+Name: res/drawable-mdpi/abc_ab_stacked_solid_light_holo.9.png
+SHA1-Digest: 4z/eU56yZV8k0VhCXB0LhD0TrxI=
+
+Name: assets/backgrounds/18.thumb.jpg
+SHA1-Digest: hzoFMFHf5nrVci8+y4aI87C3qsk=
+
+Name: res/drawable/drawer_port_bg.xml
+SHA1-Digest: 8wvomzBkhlWdzZGF2xsS3ua4f+Q=
+
+Name: assets/backgrounds/16.thumb.jpg
+SHA1-Digest: UehcZVB+RlLbCNzGHSVG8hCOEvo=
+
+Name: assets/emojis/bell/e03f.png
+SHA1-Digest: u9hKuBDQPPxCVVKXsF3bX8cuJpE=
+
+Name: assets/emojis/face/e41c.png
+SHA1-Digest: 3O0QgYpF15TsP9oEy2942O5i5YY=
+
+Name: assets/emojis/face/em_1f64b.png
+SHA1-Digest: qSILngofNZl34ZseGMPKwNpXWko=
+
+Name: assets/emojis/car/e01e.png
+SHA1-Digest: DF3jIIpW4ONrakZ4+oGP2+SP8V8=
+
+Name: res/drawable-mdpi/abc_spinner_ab_focused_holo_light.9.png
+SHA1-Digest: X0Z4EgnEZul8EiRPCkwddJ2uJdk=
+
+Name: assets/backgrounds/25.thumb.jpg
+SHA1-Digest: JXfFmlKRCcA0Wv78B5dIml8Oazk=
+
+Name: assets/backgrounds/23.thumb.jpg
+SHA1-Digest: wTHwgSFjB0LMny86sbBt7Rx4zlU=
+
+Name: assets/emojis/bell/e014.png
+SHA1-Digest: l0XtEMMBCpMCz2YbRTthM7+fH2s=
+
+Name: assets/frames/f-23.thumb.jpg
+SHA1-Digest: Fo8CBzkHBI4Akwougu930usChF4=
+
+Name: assets/templates/21/icon.jpg
+SHA1-Digest: /t77EpZeO9yl3Y9aOzpRBa0BijI=
+
+Name: res/layout/store_page.xml
+SHA1-Digest: V015ppy3XPhWJmiazA0XzrnkirE=
+
+Name: assets/stickers/nomnom.png
+SHA1-Digest: NEVQR+C5hv3JY2XpDnJP/sFw8cU=
+
+Name: assets/emojis/flower/em_1f400.png
+SHA1-Digest: rg1/L/gbaHD6Qbrzd2RBhkTcXKE=
+
+Name: res/drawable-mdpi/abc_ic_clear_search_api_disabled_holo_light.pn
+ g
+SHA1-Digest: wCxaEjecL1hHnkXFfguOJlH5fmc=
+
+Name: assets/stickers/ohu.thumb.jpg
+SHA1-Digest: UdxBzBmreiMjFOzFFvAkTftcs2M=
+
+Name: assets/emojis/symbols/em_2796.png
+SHA1-Digest: KX3FnCHFt9sXWg/3yOVkbQMeXt4=
+
+Name: assets/templates/22/config.xml
+SHA1-Digest: SzvvXJfVdiEKTJnSTs63v6pkJ2o=
+
+Name: assets/emojis/symbols/e229.png
+SHA1-Digest: l0Hs4GCdqOFLdqrMUePMqhjREnE=
+
+Name: assets/emojis/car/em_1f68e.png
+SHA1-Digest: EOahRQ3WISxMRfbVWfVHxj9M13o=
+
+Name: assets/backgrounds/34.thumb.jpg
+SHA1-Digest: ocvbUaFIwOAjd+OdzFjEfkum6Ho=
+
+Name: res/anim/abc_slide_in_top.xml
+SHA1-Digest: NrUpW1x6ZiO4EBnJmGZpL1puDHs=
+
+Name: res/drawable-mdpi/abc_ic_clear_search_api_holo_light.png
+SHA1-Digest: QAFEm0zCvZ4Xmc8sOzVOr0LSD4k=
+
+Name: assets/emojis/face/em_1f626.png
+SHA1-Digest: sZZpNZSA6VjcBvqyEFE3XIVIp/I=
+
+Name: assets/emojis/bell/e445.png
+SHA1-Digest: CJ3Y1IfGUgpcf3LzyoNyh42Tl88=
+
+Name: assets/fonts/swinsberg.ttf
+SHA1-Digest: dKzVTC45ARBZp32SQ2+9p0wwLUE=
+
+Name: res/drawable-hdpi/abc_spinner_ab_default_holo_light.9.png
+SHA1-Digest: wWu5/YILFrLd4DisVCC/Y7T/zNQ=
+
+Name: res/drawable-ldpi/ambilwarna_arrow_down.png
+SHA1-Digest: 24n5bbhtZN/s+JyErSCuapep2Zc=
+
+Name: assets/backgrounds/27.thumb.jpg
+SHA1-Digest: FMVozRIUD+vAyXN5QVeaddgOGYw=
+
+Name: assets/emojis/bell/e33b.png
+SHA1-Digest: zUjtgOJhs0+LE6UEGWLHditoacM=
+
+Name: assets/emojis/symbols/em_23eb.png
+SHA1-Digest: 85OHHW3qm1ZWL0c29v/xvI7MMr4=
+
+Name: assets/emojis/bell/em_1f515.png
+SHA1-Digest: 8GMaGW0ziRUfHuGpQ++f7lQiw8E=
+
+Name: assets/emojis/flower/e030.png
+SHA1-Digest: rsM4JqekiRgJJFdsFI0RnG3RNso=
+
+Name: assets/emojis/flower/e52c.png
+SHA1-Digest: FUBx0OnTRiWcmiRVjlYJRX8liw0=
+
+Name: assets/emojis/symbols/e020.png
+SHA1-Digest: SmdDk2Zhscwe4N4JF6EjsdXw2KY=
+
+Name: res/drawable-hdpi/abc_textfield_search_default_holo_light.9.png
+SHA1-Digest: RQ1u0qcbQA7OtqKzXyoz2n2WHz4=
+
+Name: assets/backgrounds/45.jpg
+SHA1-Digest: b7sQSTwDrqLBvf7R/4H8m5lmr+M=
+
+Name: assets/templates/35/config.xml
+SHA1-Digest: vv4w9biK13riDVFzplaOXwUK6RU=
+
+Name: res/drawable-mdpi/abc_list_focused_holo.9.png
+SHA1-Digest: 8R46vZNVIaSbUPpkOYlv1uISCHE=
+
+Name: assets/emojis/face/e425.png
+SHA1-Digest: 5O1ouL6+yrh5EwgmahoTlU2oxRM=
+
+Name: assets/emojis/symbols/em_1f234.png
+SHA1-Digest: EU7er6oroi0QUGLVD2XYyulWZYI=
+
+Name: res/layout/gridview_item.xml
+SHA1-Digest: yhFzJ6US+A+KpTyhB65cfvorLVU=
+
+Name: assets/stickers/relief.png
+SHA1-Digest: 7qLZ5sRt75QFF5j5inu2TfCsYiw=
+
+Name: res/drawable-mdpi/abc_ic_commit_search_api_holo_light.png
+SHA1-Digest: 44dPcAtGK/QepYgMiScSVbRHY2A=
+
+Name: assets/emojis/car/e03a.png
+SHA1-Digest: /sxp63pq7su+f+tRmw7QJlgFeSY=
+
+Name: assets/emojis/symbols/em_1f502.png
+SHA1-Digest: 26tQM5+NK2VDamJiPpt8JvcpKgo=
+
+Name: assets/fonts/bulkyrefuse.ttf
+SHA1-Digest: KQe+yrfsVOl++BTLzxw6OwqW9Tw=
+
+Name: assets/emojis/face/e13e.png
+SHA1-Digest: WMd3qFSQJmv9ydcgenWc4eM3o7c=
+
+Name: assets/stickers/psychotic.png
+SHA1-Digest: dYvKs79zGdeSJcqrVjpfmh7Vdds=
+
+Name: assets/stickers/a_beach_chair.png
+SHA1-Digest: eVAGc+k8jPEsmfiw/EnDpe4asAU=
+
+Name: assets/filters/0.png
+SHA1-Digest: 0l5Xsn2g381cMXoY5DF9mpynkH4=
+
+Name: assets/emojis/flower/e134.png
+SHA1-Digest: sVAD1BDYgfYu/W/bAWwLpnKccCE=
+
+Name: assets/emojis/face/em_1f4ac.png
+SHA1-Digest: 9aKGVruG2784aAIbwTzuzgfIyZ4=
+
+Name: res/drawable-hdpi/abc_textfield_search_default_holo_dark.9.png
+SHA1-Digest: Knnz6VTOCTON2Bb4zhfPnmOvd9o=
+
+Name: assets/emojis/car/e511.png
+SHA1-Digest: xYMBXFC2PP9ou9xCLvykkFgG6SY=
+
+Name: assets/emojis/symbols/e243.png
+SHA1-Digest: MOnItcCkamvv6maZdNgsdrvxqPo=
+
+Name: res/layout-sw600dp-land/styling.xml
+SHA1-Digest: NAi+Jk4R++uLmCoTy4bWF+quzPs=
+
+Name: assets/emojis/face/em_1f62b.png
+SHA1-Digest: dXPSzMqUW9opKKHJGkQtBXe6Wtw=
+
+Name: assets/fonts/RomanAntique.ttf
+SHA1-Digest: 5GipJrx5liNRetPbMdofAmkA31I=
+
+Name: assets/backgrounds/21.jpg
+SHA1-Digest: R5HHHZEWOksbLDoPCGJzq0qAV+U=
+
+Name: assets/emojis/flower/e521.png
+SHA1-Digest: vebmfCcAYiS7ucLNacv/j+lpEBU=
+
+Name: assets/emojis/bell/e016.png
+SHA1-Digest: Rz5+QOA0Fci2YfEdks4B4cvvcBM=
+
+Name: assets/emojis/face/e00e.png
+SHA1-Digest: bjxu7ePdaBJqa/Wmt9TdVQ68J1Y=
+
+Name: assets/emojis/car/em_1f68a.png
+SHA1-Digest: Hu8k8QnXTQK9GWUozz3xyXTyX1s=
+
+Name: assets/emojis/car/e146.png
+SHA1-Digest: pC2S6lywmOTUTBGuc6+DSuhpx0w=
+
+Name: assets/templates/39/icon.jpg
+SHA1-Digest: g7GZdBkWGjvCROlC3Pg2M8H+a5s=
+
+Name: assets/emojis/car/em_1f69c.png
+SHA1-Digest: IU+D1hBclgyDLjNHxCisIZ9crtI=
+
+Name: assets/stickers/a_coffe.png
+SHA1-Digest: 7cznbYE1ooMM5j5st+2dogwCwaY=
+
+Name: res/drawable-ldpi/ambilwarna_arrow_right.png
+SHA1-Digest: KGuP7dRLnqxGgAB8xM1jLrR2JHU=
+
+Name: assets/emojis/flower/e118.png
+SHA1-Digest: 8Le552Wi8ZgzE8QElYKACu/MH6Q=
+
+Name: assets/emojis/symbols/em_21a9.png
+SHA1-Digest: oRmgK2T5jqBwLAH++FIkN0C7xhg=
+
+Name: assets/stickers/indifferent .png
+SHA1-Digest: VoTD8m2cvTlAKEkCQFigReWW9QA=
+
+Name: assets/templates/06/icon.jpg
+SHA1-Digest: uvWigu2NyInYQKG6cKJBEMb8T7M=
+
+Name: res/anim/slide_in_right.xml
+SHA1-Digest: GAA5I/pBHMDV9g1xjJnDDdV7w7U=
+
+Name: assets/emojis/face/e32c.png
+SHA1-Digest: ZYZqxIxqz18Kjoi+XaZs3ZMJ4Fk=
+
+Name: assets/fonts/spray.ttf
+SHA1-Digest: 0sRdT3g37iTBsebKgyDYS4xAMuo=
+
+Name: res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png
+SHA1-Digest: 22fLKEhsfFYJxZ+lu7ceCOzFHHo=
+
+Name: assets/emojis/symbols/em_25aa.png
+SHA1-Digest: oB+vrJcCmZt3TlX5AhxK/3+RBBk=
+
+Name: res/drawable-xhdpi/abc_list_longpressed_holo.9.png
+SHA1-Digest: mnKcBxCAwD79+LDCs2GZ5ihR4dA=
+
+Name: assets/emojis/flower/e43e.png
+SHA1-Digest: SSb/PUMNs5xUcuLqlzNJuhcW1tA=
+
+Name: assets/emojis/symbols/em_1f6c3.png
+SHA1-Digest: EpGnCSr2+J/z82EMhPU8aroK7ew=
+
+Name: assets/fonts/bulkyrefuse.jpg
+SHA1-Digest: jvZneV4AtMFVShuyXg42XlunFZ0=
+
+Name: assets/emojis/face/e22e.png
+SHA1-Digest: PxrQ1C9ycwHwXF/Vu1rLeUMoJRw=
+
+Name: assets/emojis/bell/em_1f52e.png
+SHA1-Digest: rHMlWr4Rf0crW7zGAv4q+SO32yk=
+
+Name: assets/stickers/bouaaaaah.png
+SHA1-Digest: I6CueilzwAjwiOYNdgH/Rn8HzEk=
+
+Name: assets/emojis/face/em_1f453.png
+SHA1-Digest: BcvGskmtF9mlggolL6Jt5M7TfNQ=
+
+Name: assets/emojis/symbols/em_1f6b0.png
+SHA1-Digest: h7JbeGyb+PV9kaVTXB5aPuA5u1s=
+
+Name: assets/emojis/face/e51f.png
+SHA1-Digest: jRs7v1fFskoEi+awZwIRr2YerQk=
+
+Name: assets/stickers/a_beach_chair.thumb.jpg
+SHA1-Digest: 1xLjdRjxFwvqBOHjlrFXkHu+KVI=
+
+Name: assets/stickers/zzz.thumb.jpg
+SHA1-Digest: d5SDJ/sW1iIveMpm7QD54k6957k=
+
+Name: assets/backgrounds/34.jpg
+SHA1-Digest: 6PPEVO4kpMUFguabxrgZ6nu5h+E=
+
+Name: assets/backgrounds/43.jpg
+SHA1-Digest: XLkqGZvHXpulmy7tQFp40tuGwLk=
+
+Name: assets/fonts/za_2.jpg
+SHA1-Digest: 5oXp3i9YFAKf+JpkcZJOaUMsDVI=
+
+Name: assets/emojis/flower/em_1f413.png
+SHA1-Digest: k5DYVf1Gl/+wdiQzhFljEnfaxgA=
+
+Name: assets/emojis/symbols/e24e.png
+SHA1-Digest: XXcjZqM3lf4RHRSTHOXzGPzyGfU=
+
+Name: assets/emojis/flower/e520.png
+SHA1-Digest: 3N2SsjLgKPCmipO/DeAfK8tt9W0=
+
+Name: assets/emojis/symbols/em_1f251.png
+SHA1-Digest: B6byItgdjMdTSBYrm93o9xk2gnk=
+
+Name: res/layout/abc_action_bar_decor_include.xml
+SHA1-Digest: TFqTs7wjsewpJ/VtYe9kww/HdEk=
+
+Name: assets/emojis/face/e410.png
+SHA1-Digest: Erg3Ak2fin9iEYkfUO2JfFA5QNE=
+
+Name: assets/emojis/bell/em_1f34d.png
+SHA1-Digest: kIFq++FvXKRDh939Ly26ENlbyx0=
+
+Name: assets/emojis/face/em_1f635.png
+SHA1-Digest: H5+XJqPlwRv3RRw2HUB8USCEP1o=
+
+Name: res/drawable-xhdpi/btn_bg.9.png
+SHA1-Digest: yM3ruzIJXNHlmDrXYVG1OFQUFHA=
+
+Name: assets/emojis/flower/e019.png
+SHA1-Digest: doXqF7ERWPGaF6Z4nwUf53kK8EY=
+
+Name: assets/emojis/car/e04d.png
+SHA1-Digest: a5ugozGG/brAHL/KMA9Sa9i8W+0=
+
+Name: assets/emojis/flower/e529.png
+SHA1-Digest: Bp5hwagP8r33Zhn13bB3gcqdQb0=
+
+Name: assets/stickers/faill.thumb.jpg
+SHA1-Digest: l1Xy9SkWrDiGxzABDTzk4IFRGNc=
+
+Name: assets/emojis/car/em_1f696.png
+SHA1-Digest: oXJWunKgzdYRWLaigwsUyFgaZnQ=
+
+Name: res/drawable-xhdpi/abc_menu_dropdown_panel_holo_light.9.png
+SHA1-Digest: lAU5lLoFJ9d94FJtzI8M3qY03+g=
+
+Name: assets/emojis/flower/e52a.png
+SHA1-Digest: Lf9uJQft2SzO6oTK+qF+mubJWb0=
+
+Name: assets/emojis/face/em_1f63e.png
+SHA1-Digest: dzMk1FQTzAfoTAbWClKcz+zs7ug=
+
+Name: assets/emojis/bell/e00a.png
+SHA1-Digest: nY4TFhbd2wpke7qjWXSHSr+EwQU=
+
+Name: assets/emojis/flower/e049.png
+SHA1-Digest: 6c+SClPczNzfb/yrFXQ6yl7RWEk=
+
+Name: assets/emojis/symbols/e227.png
+SHA1-Digest: b6y8dcZtjkKAyESnZmNtQUbZTGw=
+
+Name: assets/stickers/a_megaphone.png
+SHA1-Digest: 9SgXxbg1NHLSXdb1Yp0DGKasPJU=
+
+Name: res/layout/activity_gopro.xml
+SHA1-Digest: vvzb5rn2gUT5lvyEchXRTafHl6w=
+
+Name: assets/emojis/bell/e116.png
+SHA1-Digest: AUddVT0+7Sj0meepGytLabE//+k=
+
+Name: assets/emojis/symbols/em_1f55d.png
+SHA1-Digest: V7XT68vhVxkd9yf1V55lQbwnJtk=
+
+Name: assets/emojis/flower/e051.png
+SHA1-Digest: hpcygaZorwRvjAw9D23ab+zNeoc=
+
+Name: assets/emojis/face/em_1f63b.png
+SHA1-Digest: 1E430tZK0i5QX670bn5PJnJPbJA=
+
+Name: assets/emojis/face/em_1f45e.png
+SHA1-Digest: wf+JQrPmRqGlxCIVZUocNHyDta4=
+
+Name: assets/emojis/face/e51b.png
+SHA1-Digest: MAnZTv8yBIFpdZXI3JKqef2PJUE=
+
+Name: assets/emojis/symbols/em_1f6b8.png
+SHA1-Digest: ShOBYLRwWN3cG5+IZL3ofDsxBDI=
+
+Name: res/drawable/ambilwarna_arrow_down.png
+SHA1-Digest: 8lUKRzaBFdWXdMNp46QuIWpFH50=
+
+Name: assets/emojis/car/e435.png
+SHA1-Digest: JT8CFE3PgXOkO5yZGHSZQYI9Fwo=
+
+Name: res/drawable/seek_thumb.xml
+SHA1-Digest: dYhpvT04+lIG5oOcsam0NKNCZs8=
+
+Name: assets/emojis/symbols/e12e.png
+SHA1-Digest: AiopNPehmH7junhKjS5wMkrHtSo=
+
+Name: res/drawable-xhdpi/camera_crop_height.png
+SHA1-Digest: tj0u63dLEO43eyEthSKEU0xgS+E=
+
+Name: res/drawable-xhdpi/abc_ab_bottom_solid_light_holo.9.png
+SHA1-Digest: 98aPD0Xqx5q4D+vZs6Jb7lXg2Go=
+
+Name: assets/emojis/bell/e42d.png
+SHA1-Digest: IscteH03I5e7PQebC7Q02EmqsEM=
+
+Name: assets/backgrounds/35.jpg
+SHA1-Digest: /xj1vLaJr9teZTW57cMR79SFcw8=
+
+Name: assets/emojis/symbols/em_1f53c.png
+SHA1-Digest: BPnFltqss8iaKRCADUa2kPItfmA=
+
+Name: assets/templates/09/config.xml
+SHA1-Digest: +MZfLaVvIH9BCoA/p1bYdqQ4PCw=
+
+Name: assets/emojis/symbols/e535.png
+SHA1-Digest: S4ku23ZaqLIrtIL8UkULPw1vWoA=
+
+Name: assets/frames/a_light2.png
+SHA1-Digest: TezHnGfufwNFn2Pi6hwuRHpeugw=
+
+Name: res/drawable-ldpi/store_installed.png
+SHA1-Digest: 3mHWoME02edfRCRF+GVno4e/4lc=
+
+Name: assets/emojis/bell/em_1f4ec.png
+SHA1-Digest: K58alSoiTaV9KjQ1uNOId7aDEg8=
+
+Name: assets/emojis/flower/em_1f402.png
+SHA1-Digest: CLrXebIsFnlZ/wRoB31BpSI7dT4=
+
+Name: assets/emojis/bell/em_1f4c9.png
+SHA1-Digest: zSigDRcmoBlCJsSLo5aQU79H0J8=
+
+Name: assets/emojis/bell/e104.png
+SHA1-Digest: pcw4B/PL5F2owLLkQlFjtrCpPyg=
+
+Name: assets/templates/15/icon.jpg
+SHA1-Digest: nYK90s9iATYD79YwETgOjcTiCsI=
+
+Name: res/drawable-xhdpi/abc_ab_stacked_solid_dark_holo.9.png
+SHA1-Digest: dpjB6BOrhRPOK5N48hRjtBoUCLw=
+
+Name: assets/emojis/bell/e341.png
+SHA1-Digest: +pT2F6puJ2jUKAsuh5N/jsR0h2M=
+
+Name: assets/backgrounds/37.thumb.jpg
+SHA1-Digest: Mp+UZQCBwmA58OJgD7UDTf+XFtg=
+
+Name: res/layout/abc_list_menu_item_layout.xml
+SHA1-Digest: RyxFjxIUyXOXDlsai3rRvhtCwz0=
+
+Name: res/drawable-hdpi/ambilwarna_cursor.png
+SHA1-Digest: D3Q5bVQwM9zalq8Y12++nDQcO/E=
+
+Name: assets/emojis/car/em_1f3ad.png
+SHA1-Digest: 29ydc3WtE6osdg77iDhyR8b1Ug0=
+
+Name: assets/templates/08/config.xml
+SHA1-Digest: M2ZjHLBtHjnDJeuvffekO3ikA8o=
+
+Name: assets/templates/39/config.xml
+SHA1-Digest: vDO8Y9ZXSr9VrO0V8xLkaNP7hYs=
+
+Name: res/anim/slide_down.xml
+SHA1-Digest: TDwaPyzlt76TkcgrWpISLPqzafw=
+
+Name: res/anim/unfreeze.xml
+SHA1-Digest: 4R6eEwWKc0IDbyWqOmhiTToChwY=
+
+Name: assets/emojis/bell/e017.png
+SHA1-Digest: 98Y+8VpF5cmHrm/RHiXl4xi0lms=
+
+Name: assets/emojis/car/e252.png
+SHA1-Digest: 0NSfJI6S4b4CBnabZeql0AQRcu4=
+
+Name: res/drawable-xhdpi/abc_ic_cab_done_holo_light.png
+SHA1-Digest: c9TvWCMataZvt30VdBp4tsgJl0A=
+
+Name: assets/emojis/flower/em_1f314.png
+SHA1-Digest: ykw7fc0bd0JoxRwFeBDF9yFXH8E=
+
+Name: assets/fonts/za_geezapro.ttf
+SHA1-Digest: IRLFvHxsNLv4V7HIVODh0IFjS2A=
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: BCGQnkN5lZjHo1LknyIMgtH7Mq4=
+
+Name: res/layout/store_item_activity.xml
+SHA1-Digest: 6ON2wSOhTpuSP8XtH/RPt2fe+/Q=
+
+Name: res/anim/abc_slide_out_bottom.xml
+SHA1-Digest: z/eRqym0IoEB4mxud0Cu+FFWVVY=
+
+Name: assets/emojis/flower/em_1f401.png
+SHA1-Digest: fL0E6K9qIR6YhoxzlGIEPH+uPm0=
+
+Name: assets/emojis/bell/e347.png
+SHA1-Digest: vemCC72p+Rty+T9WqdzduLB23t0=
+
+Name: assets/emojis/bell/em_1f4cc.png
+SHA1-Digest: SpMrtP+WVfAO7UFoWzMjSXXUbbA=
+
+Name: res/drawable-hdpi/abc_ab_stacked_solid_dark_holo.9.png
+SHA1-Digest: e/3oEnng6AZTLOo92djFPdIPXLc=
+
+Name: res/layout/abc_action_bar_tabbar.xml
+SHA1-Digest: wvguQP3BX3v+6vPZ7sUvx8n4J+o=
+
+Name: assets/emojis/face/em_1f62e.png
+SHA1-Digest: mlwi7yJrNQWV2lLxfAsRr1N+us4=
+
+Name: assets/emojis/car/e50d.png
+SHA1-Digest: gNovBBd117M5q3hUqN/F9jbxH7o=
+
+Name: res/drawable-nodpi/edit_text_big.png
+SHA1-Digest: W7dv3UylJJLyYXbKXmXsyrzerxs=
+
+Name: assets/emojis/bell/em_1f4b3.png
+SHA1-Digest: 90N/3+DX3j50sYNUfYDK0FmUaPQ=
+
+Name: assets/backgrounds/48.thumb.jpg
+SHA1-Digest: n3oJ4pg99BC4RZl4ppYnQP0NN18=
+
+Name: assets/emojis/car/em_1f6a0.png
+SHA1-Digest: cW+7wVbOS1UqxvDch3a+CFq2+Nc=
+
+Name: res/drawable-mdpi/abc_ic_menu_share_holo_dark.png
+SHA1-Digest: dKBPvxvHnfDdTkNPCCyZ+j6OcpI=
+
+Name: assets/templates/50/icon.jpg
+SHA1-Digest: 0HU2c8RfSIx1fo3j0GNTPUvgrXw=
+
+Name: assets/emojis/bell/em_2709.png
+SHA1-Digest: sbO8pB1ARei3D0SCDHFS6vgUhLo=
+
+Name: res/drawable-xhdpi/ambilwarna_arrow_right.png
+SHA1-Digest: Otp6DuJ2lO/jVmLmuw3bkV5g4pQ=
+
+Name: assets/emojis/bell/e33c.png
+SHA1-Digest: rKsAIKU0VL7LpdzXS3GBd4lh7xM=
+
+Name: assets/backgrounds/21.thumb.jpg
+SHA1-Digest: ILd+qi5orDVW4wZkpzH5BogQAXw=
+
+Name: assets/emojis/flower/em_1f429.png
+SHA1-Digest: PylNW1N8iXLWLFWHiSUgSYQeBwI=
+
+Name: assets/emojis/bell/e326.png
+SHA1-Digest: a64x3PnmWnhOtIcgZUFy1h3fDq4=
+
+Name: res/drawable/abc_ic_clear.xml
+SHA1-Digest: 5oKrZcRxe1tERlqp3NKQga7Yp00=
+
+Name: assets/emojis/face/e517.png
+SHA1-Digest: odeC2xgXiBa2aYSEBLlKAgVCqzg=
+
+Name: assets/emojis/car/e513.png
+SHA1-Digest: DDOAx534MEY0F0lNMg6AZ+Kenwo=
+
+Name: res/drawable-xhdpi/abc_ab_stacked_solid_light_holo.9.png
+SHA1-Digest: NumxU3xNFNCDIiGpV4kETCuT3E0=
+
+Name: assets/emojis/flower/em_1f31e.png
+SHA1-Digest: Ew/gkZk11aYgtj/GD0wFpzHgir8=
+
+Name: assets/emojis/face/e40c.png
+SHA1-Digest: c+wNSlRIn5xMSKLonRAHxE259dw=
+
+Name: res/drawable-xhdpi/abc_ab_transparent_dark_holo.9.png
+SHA1-Digest: 4wBFyqxq6yJT8s+tLaUXTGtgDxs=
+
+Name: res/drawable-hdpi/abc_ic_commit_search_api_holo_light.png
+SHA1-Digest: t8+kBAmUUzLJc6yDyhgTu3/gMxw=
+
+Name: assets/fonts/electron8f.ttf
+SHA1-Digest: EPGPG4aY16sPd4/yglZR71hCkmE=
+
+Name: res/drawable-hdpi/abc_ic_search.png
+SHA1-Digest: CrytxI8uVBp6hwcuxzOEz1ft4qc=
+
+Name: assets/emojis/bell/em_2712.png
+SHA1-Digest: sUPWEN7eCQ00csQQQygWAxuT8a0=
+
+Name: assets/emojis/car/e123.png
+SHA1-Digest: odO2bmZW40WNB5CLAxsVhPYjesc=
+
+Name: assets/emojis/symbols/e213.png
+SHA1-Digest: WLk7caAMip1G5d6klsHeD/DV0+4=
+
+Name: res/drawable-hdpi/abc_list_divider_holo_dark.9.png
+SHA1-Digest: stTgeZCrCJ/rcueRykiUYhtUunM=
+
+Name: res/drawable-mdpi/abc_spinner_ab_default_holo_dark.9.png
+SHA1-Digest: e04B1fR7YdX5nMhnq5CYMKsgo9A=
+
+Name: assets/emojis/bell/e438.png
+SHA1-Digest: tJLynwJZSM8SS2vZdu+QLDS7C10=
+
+Name: assets/emojis/bell/em_1f4ea.png
+SHA1-Digest: M5C4+o5FuVoXckRJ7hCnJS7pgwg=
+
+Name: res/layout-sw600dp-land/styling_hi_fragment.xml
+SHA1-Digest: bW1/k9quxekdQYRikzZj2uLicxQ=
+
+Name: assets/emojis/car/e504.png
+SHA1-Digest: bWieY0XAhcnSepiDhkDTD7J4aFY=
+
+Name: res/color/abc_search_url_text_holo.xml
+SHA1-Digest: DQQszSbSILqOtHf4soYXEwSKanc=
+
+Name: res/drawable-hdpi/abc_ic_voice_search.png
+SHA1-Digest: 7agxXcJ4MH0+LLTQS2TgG3KWMkQ=
+
+Name: res/drawable-xhdpi/abc_ab_bottom_transparent_dark_holo.9.png
+SHA1-Digest: nJhiu7bpctu8lefeEmofMayi/xU=
+
+Name: assets/emojis/symbols/em_2139.png
+SHA1-Digest: ovL2i8FQZyzd1CSVG5yV0iu451k=
+
+Name: res/drawable-hdpi/abc_textfield_search_right_default_holo_light.
+ 9.png
+SHA1-Digest: I+9OSt1Eq0rxHvqBYiGfE+S2cdA=
+
+Name: assets/fonts/notepad.ttf
+SHA1-Digest: rhUpfHKHs+jsUZHBIAI+6UNBBbc=
+
+Name: assets/emojis/symbols/e336.png
+SHA1-Digest: ybghS7B2NQ3o3PVBV7LS487q960=
+
+Name: assets/stickers/sockedin.png
+SHA1-Digest: SMbdAvc8w2isl/lXt4yAoZhvzFM=
+
+Name: assets/emojis/bell/e033.png
+SHA1-Digest: kcW4FEOjtGlgkW+bxS4eTsWCQwY=
+
+Name: res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png
+SHA1-Digest: ltRMlwy92kVfao/EAq/X0OsL1oc=
+
+Name: assets/emojis/bell/em_1f4c4.png
+SHA1-Digest: l6x+F7YhpQH/uwDDjzoKXLqTWps=
+
+Name: assets/fonts/comfortaa.jpg
+SHA1-Digest: BYq/0K88ZI3vsVTy1cSWnrs9CuI=
+
+Name: res/drawable/abc_textfield_searchview_right_holo_light.xml
+SHA1-Digest: 0xQqSnZpXYQ4AiJXAqAnLCc7KSw=
+
+Name: assets/emojis/bell/e30e.png
+SHA1-Digest: OdzE4QgeuCAvVeH4PJxDTu8McSo=
+
+Name: assets/frames/1.png
+SHA1-Digest: uh7LdD3ppsk9sXDcHKpJU94tbMM=
+
+Name: assets/emojis/face/em_1f634.png
+SHA1-Digest: 4J+fiMnUVF3L3DziDz2h9qaCRFA=
+
+Name: assets/emojis/symbols/em_2934.png
+SHA1-Digest: 6a/fqM6mfAH/l4XHIPX2xGfm1Sk=
+
+Name: assets/emojis/flower/em_1f409.png
+SHA1-Digest: EnRHyfxaoYneZxyosqJPa4RNpEs=
+
+Name: assets/emojis/flower/e444.png
+SHA1-Digest: 90B+hQNdd0ae7lQByw5oLaIsv44=
+
+Name: assets/templates/44/icon.jpg
+SHA1-Digest: Rly1VGyMwTtQms/O3iH3bBXRweY=
+
+Name: res/drawable-hdpi/abc_ab_solid_dark_holo.9.png
+SHA1-Digest: hdQBvg0A8WtuUaVh01UxevHX+cM=
+
+Name: res/drawable/ambilwarna_target.png
+SHA1-Digest: VfSO79rd7u/b2rKixtM9pkXRcgU=
+
+Name: assets/emojis/face/e503.png
+SHA1-Digest: I1IhLTUaeQNKnQrCctgfa1tWCUQ=
+
+Name: assets/emojis/symbols/e533.png
+SHA1-Digest: S98YpGirC9mAf2xvseNxpnVTvkI=
+
+Name: res/drawable-xhdpi/ambilwarna_cursor.png
+SHA1-Digest: wIcmmeXep2CC4bGS3uCbF/W+BlM=
+
+Name: assets/emojis/symbols/e20a.png
+SHA1-Digest: 6K9heev+LkRuTPrva13xIOENN9U=
+
+Name: res/color/vpi__dark_theme.xml
+SHA1-Digest: kUi4T4zHnosHsmq/nyhhpWQt8Gg=
+
+Name: assets/templates/46/icon.jpg
+SHA1-Digest: gqGY+0ngPmJlVg8+bp9f8uj1Ees=
+
+Name: assets/emojis/flower/em_1f30e.png
+SHA1-Digest: hv/CzmW3j3gJ76UYyN8CRaS3va0=
+
+Name: assets/emojis/bell/e142.png
+SHA1-Digest: y5CcOitpUlkjb3NivHbQTLbFhpY=
+
+Name: res/drawable-mdpi/abc_spinner_ab_focused_holo_dark.9.png
+SHA1-Digest: RuWlvKvHjMCehGnKJrdZ7W2u0tY=
+
+Name: assets/emojis/bell/em_1f4c1.png
+SHA1-Digest: +8OqEud8OsynVbuqvy1gw0+NXKg=
+
+Name: assets/emojis/bell/e34a.png
+SHA1-Digest: gHZZ2/YFDk1yuksloYRziJ7DX7Q=
+
+Name: assets/stickers/disapointed.png
+SHA1-Digest: Ggvd1oXJNX0EuJYuo4+s4xwclrg=
+
+Name: assets/emojis/bell/e349.png
+SHA1-Digest: LT7jHWlb11hBEO2D8RHzlCsYR1o=
+
+Name: assets/templates/23/icon.jpg
+SHA1-Digest: wTHwgSFjB0LMny86sbBt7Rx4zlU=
+
+Name: assets/emojis/face/e056.png
+SHA1-Digest: flnmcWVgTj3FsJt+B7r6CZjJrMI=
+
+Name: res/drawable-mdpi/abc_menu_dropdown_panel_holo_dark.9.png
+SHA1-Digest: KScKpfvAeyABjiIKyk9wm5pLhtY=
+
+Name: res/drawable-mdpi/abc_cab_background_top_holo_light.9.png
+SHA1-Digest: qMevukEhpyInxcS1esEpETafNM8=
+
+Name: assets/emojis/flower/em_1f318.png
+SHA1-Digest: COS9EDzqMgI5k2QHLfKBGswawaI=
+
+Name: assets/backgrounds/17.jpg
+SHA1-Digest: zWQR4T4ppIWd4Y5bPeVZgWuIXfA=
+
+Name: res/drawable-hdpi/pc_coin.png
+SHA1-Digest: 66UmhTbf/4a+QCTQw5vyi4aKAFk=
+
+Name: res/drawable-xhdpi/abc_ic_commit_search_api_holo_light.png
+SHA1-Digest: RyMw1JQlbs8SAa9k6Dg4FrhILiU=
+
+Name: assets/emojis/bell/e140.png
+SHA1-Digest: 9abvre5Co7nT6IGK/0ViLPUdhII=
+
+Name: assets/backgrounds/35.thumb.jpg
+SHA1-Digest: 2EBBX7kaZlxueFhMOZjYsPqpno0=
+
+Name: assets/emojis/bell/e33e.png
+SHA1-Digest: zyGPElemFILQQB6uYToC7VBZZFU=
+
+Name: assets/templates/45/icon.jpg
+SHA1-Digest: J68c9JduSonWK22yiIohC3VvoME=
+
+Name: res/drawable-mdpi/abc_ab_stacked_transparent_dark_holo.9.png
+SHA1-Digest: 7zJocL+RBdbu1NudnJijcfct7to=
+
+Name: assets/emojis/bell/e448.png
+SHA1-Digest: TKA2HeziO2ullpYhO4Bk9iTjmUg=
+
+Name: res/drawable-sw600dp-land/align_center.png
+SHA1-Digest: ALTSz41jPEMq2GC5414dNKfMsYw=
+
+Name: res/drawable-xhdpi/abc_textfield_search_selected_holo_light.9.pn
+ g
+SHA1-Digest: SOTRH+ZLBH6hlAUidIvPnY82AbM=
+
+Name: assets/emojis/flower/em_1f31c.png
+SHA1-Digest: uv/pfI/Di2B7kmPlXC9TbwJ7YKc=
+
+Name: res/drawable-xhdpi/store_icon.png
+SHA1-Digest: rYB2QIl5um+N2+8smIapz5w2vPI=
+
+Name: assets/stickers/a_heart_hurt.thumb.jpg
+SHA1-Digest: wewR02xRIx06jpy67Qhr/sfLTbU=
+
+Name: assets/stickers/a_heart.thumb.jpg
+SHA1-Digest: OzQjOM2R4BM9KP6HTkSOTgF/iNk=
+
+Name: assets/emojis/car/e42f.png
+SHA1-Digest: 4e9VOurUxSaBCBw2k51rAqoCFJU=
+
+Name: assets/emojis/face/em_1f464.png
+SHA1-Digest: 5R+AkT3vgwkcXgDL51IzUWRlFIw=
+
+Name: assets/emojis/face/e329.png
+SHA1-Digest: w8dX/+GsOqmDiIRm0z7ZHVW0SAQ=
+
+Name: assets/emojis/symbols/e24b.png
+SHA1-Digest: uq3lL0V50zbalGL3QTsgLDg46fM=
+
+Name: res/drawable-sw600dp-land/align_left.png
+SHA1-Digest: 12kiKPYNqJcjBAYpbyBKIfabsRc=
+
+Name: res/drawable-hdpi/btn_selected_normal_holo_light.9.png
+SHA1-Digest: duacNGJhdFtPB5Bc2jywKNJWN5w=
+
+Name: assets/emojis/car/e125.png
+SHA1-Digest: Rq8QLUEIvdMl9oWseePwKihEpds=
+
+Name: res/drawable-mdpi/abc_ic_clear_disabled.png
+SHA1-Digest: UoYHZszhWw4lnx9sRD5pSHz4UOY=
+
+Name: assets/frames/decorated453.thumb.jpg
+SHA1-Digest: jLdhfAzy/QxmGnqrhHkgkWndKaA=
+
+Name: assets/emojis/symbols/e149.png
+SHA1-Digest: 84NtOZIeKI09XGVR+zbrqQoJ6zY=
+
+Name: assets/frames/04.thumb.jpg
+SHA1-Digest: lDvX5rxbITLDQioMny+GCgQVUI4=
+
+Name: assets/stickers/innocent.thumb.jpg
+SHA1-Digest: 6djkCtLoUOIfAOEnQy9Qjb8ctIs=
+
+Name: assets/emojis/symbols/em_1f51b.png
+SHA1-Digest: DDpwzD1+q37j4Zof9ZEE6xT/VnA=
+
+Name: assets/emojis/flower/em_1f416.png
+SHA1-Digest: hUV86FJOigU9F4Z+yk6H2460hiY=
+
+Name: assets/backgrounds/36.jpg
+SHA1-Digest: 6h38Iu5VHnK/f+ICPGFh5hrixt8=
+
+Name: res/layout/abc_action_menu_item_layout.xml
+SHA1-Digest: ETtj2Xm8ou+tcsXdIeSbTBNg3pc=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: O8LHYmfoewQyHJfypnOPCYm3HRE=
+
+Name: assets/backgrounds/15.thumb.jpg
+SHA1-Digest: nYK90s9iATYD79YwETgOjcTiCsI=
+
+Name: assets/frames/1.thumb.jpg
+SHA1-Digest: 608lJ5jbOCe1ORkOBcchIeXZjl8=
+
+Name: res/drawable-hdpi/abc_ic_search_api_holo_light.png
+SHA1-Digest: bMnzUJcqz/t9bTcMG8lGmcFNl+c=
+
+Name: assets/emojis/car/em_1f6a1.png
+SHA1-Digest: heHrwjjiuH8dAksOBiTo0chdl5U=
+
+Name: assets/emojis/flower/em_1f41d.png
+SHA1-Digest: 8GscNYo/fDqDbrTEE48h6twSMuQ=
+
+Name: assets/frames/03.png
+SHA1-Digest: qAF7TI5i27e8VrKlgF2P/4/tRHU=
+
+Name: assets/emojis/bell/e12b.png
+SHA1-Digest: 5RlCb7GbIDkhifoIaDFmK9tf1Pc=
+
+Name: res/drawable-xhdpi/abc_cab_background_top_holo_light.9.png
+SHA1-Digest: dQOFNUKa7MYclycFOkPhZd6R4+8=
+
+Name: assets/fonts/za_5.ttf
+SHA1-Digest: yt64T9dbVy++6Y9l5gjsjjlMOno=
+
+Name: assets/emojis/face/em_1f627.png
+SHA1-Digest: pYMgAcYYDfDOcKoHNQf61BE4Ihc=
+
+Name: assets/backgrounds/33.thumb.jpg
+SHA1-Digest: XafENAjoZkFKGtEORu0R+TuNNLs=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_focused_holo_light.9.png
+SHA1-Digest: 0XoEDfcpq1jkUyOddVVjMnlb67g=
+
+Name: assets/emojis/symbols/em_1f520.png
+SHA1-Digest: 4bGW4FEtfXQ3JXnvOVgRmTTfVus=
+
+Name: assets/emojis/symbols/e235.png
+SHA1-Digest: Y/gpaQtcFQ76jAI63UHEIbsUOqo=
+
+Name: assets/templates/20/icon.jpg
+SHA1-Digest: rzx6++JlO7NRgGU0cfg45ossx/4=
+
+Name: assets/emojis/symbols/e21f.png
+SHA1-Digest: osrMfC8wwXB2nqmf8nW7jaYtRrU=
+
+Name: assets/filters/colored_stripes3.png
+SHA1-Digest: 68iohDWKwll4eYHcQJ3D80VNoVE=
+
+Name: res/drawable-mdpi/abc_ab_stacked_transparent_light_holo.9.png
+SHA1-Digest: g0P9ougo3IG7j30q3NJ2uKKesEo=
+
+Name: assets/emojis/face/e334.png
+SHA1-Digest: HmheI7/3m7Tdh+o7wLSKI8A3D9Q=
+
+Name: assets/fonts/ubuntu_title.jpg
+SHA1-Digest: 9mWwGhkzGOIz2Mh7KjO8DuJW3OE=
+
+Name: assets/fonts/za_10.jpg
+SHA1-Digest: r0v1jLivs4Nl/B9hojHz40r6l9o=
+
+Name: assets/templates/29/icon.jpg
+SHA1-Digest: 4rTT6YrrgEOupgECVyjMM1d27iQ=
+
+Name: assets/fonts/beachtyp.ttf
+SHA1-Digest: P6qfW1nTMt9zvoRHp0jHUnqmOzM=
+
+Name: res/drawable-hdpi/abc_ic_menu_share_holo_light.png
+SHA1-Digest: 0tLlLqR2d/Ih26WbDIDIdyF4Hxg=
+
+Name: assets/emojis/flower/em_1f421.png
+SHA1-Digest: rHh/cdhAz2B1nqZPPTO+b+DSV6o=
+
+Name: assets/emojis/bell/e346.png
+SHA1-Digest: HhN5sX5cacUhnu+Co+b0r0YcZtI=
+
+Name: res/drawable-mdpi/abc_textfield_search_selected_holo_dark.9.png
+SHA1-Digest: ZQ8sXjtBSFVuUrvpILUvUmO3qx8=
+
+Name: assets/fonts/za_1.ttf
+SHA1-Digest: 26gw9IeoblMQFfzn9Sy1b+brcbs=
+
+Name: assets/emojis/flower/e13d.png
+SHA1-Digest: LOmPWtNuAXD0Q+J7hOicAcsA8kI=
+
+Name: assets/emojis/face/e31c.png
+SHA1-Digest: 2V5JwO31toy+MeAnmZpD5FX2bJE=
+
+Name: res/drawable-hdpi/abc_list_pressed_holo_dark.9.png
+SHA1-Digest: AVyWywHVmqUlb40Lr0kWmnyG6x4=
+
+Name: assets/emojis/symbols/em_1f6af.png
+SHA1-Digest: WQxUZj6+m/dsezavQl3EPCHeURc=
+
+Name: assets/emojis/face/e424.png
+SHA1-Digest: JGTE7s7k58AIbk+w8Ir9BXI3jTc=
+
+Name: res/drawable-mdpi/abc_ic_cab_done_holo_light.png
+SHA1-Digest: xLtep77kLVwbASmGNfTrXbTFt4U=
+
+Name: assets/emojis/face/em_1f636.png
+SHA1-Digest: FyZ9BnlaQ88MZUvkZid0lnc0wco=
+
+Name: assets/emojis/face/em_1f64a.png
+SHA1-Digest: f/4fCiHdSXy14Wy0Inf3t0fdjRE=
+
+Name: assets/emojis/bell/em_1f4d5.png
+SHA1-Digest: 2AgtNGFCemTuXUJ5bWlwk4V1tyQ=
+
+Name: assets/emojis/bell/e30b.png
+SHA1-Digest: NEwZtIJceGVf9tz+EBIOgYdBlUg=
+
+Name: assets/emojis/bell/e34d.png
+SHA1-Digest: yg98kX4/3oBUbdV6SR31JQu7Eio=
+
+Name: assets/emojis/bell/e009.png
+SHA1-Digest: 6LYJ8Qbj1Nvvv5LyiqgABHa+HaM=
+
+Name: assets/fonts/yellow.jpg
+SHA1-Digest: 6yIV/qyiIa/hUgfQHvFZOOFub8U=
+
+Name: assets/emojis/bell/e131.png
+SHA1-Digest: tVO/5u3Q+Srx5jm3EmxDSMs/Ln0=
+
+Name: assets/emojis/face/e51c.png
+SHA1-Digest: cjQXydX1B/pO4xtsSGzvbJaKxhM=
+
+Name: assets/emojis/flower/e304.png
+SHA1-Digest: PI45oz3hMtNBY0o2u4QwF9471bg=
+
+Name: assets/emojis/symbols/em_1f55f.png
+SHA1-Digest: hzig98mHHm58xqiTf6ldn4nW0Sw=
+
+Name: res/drawable-hdpi/abc_ic_go_search_api_holo_light.png
+SHA1-Digest: vP+8iDmun52JwJ35SzGze1IhkWI=
+
+Name: assets/data/about/facebook_icon.png
+SHA1-Digest: b3P4f3QifHs5cLy0o+eUokRRkUY=
+
+Name: assets/backgrounds/27.jpg
+SHA1-Digest: ml7C+GGJLAWI6fpKm1qYhfs15MY=
+
+Name: assets/emojis/symbols/e207.png
+SHA1-Digest: fPKT+TRGPYa+IZR0Kk7nQefVBco=
+
+Name: res/drawable-mdpi/abc_textfield_search_right_default_holo_light.
+ 9.png
+SHA1-Digest: p1nqADd/aYF0mOi9k3+UWqfqECU=
+
+Name: res/drawable-mdpi/abc_spinner_ab_default_holo_light.9.png
+SHA1-Digest: gpx1YaLsV8NAhIonjZfrMqgPSXQ=
+
+Name: assets/templates/07/icon.jpg
+SHA1-Digest: nVwIORkVT9zPAt+FuCVxOD2IL0o=
+
+Name: assets/emojis/bell/em_1f3c2.png
+SHA1-Digest: 7wyPZVMl2S6R1DUuzLm4U7+vQzw=
+
+Name: assets/emojis/face/e51a.png
+SHA1-Digest: BO2082uL3136BFF8hbAiQnlkq7M=
+
+Name: assets/templates/27/icon.jpg
+SHA1-Digest: FMVozRIUD+vAyXN5QVeaddgOGYw=
+
+Name: assets/fonts/janeausten.jpg
+SHA1-Digest: qea0LFGKtfXra4mWJ+YhE20oqk4=
+
+Name: assets/emojis/bell/e013.png
+SHA1-Digest: l8vSUOkpYos2u5vSWYEqEZrpfKY=
+
+Name: assets/emojis/symbols/e20e.png
+SHA1-Digest: iIl+V755Jlk83iEkAHpo46ptB0E=
+
+Name: assets/fonts/trash.ttf
+SHA1-Digest: SKRyIwcnKDLIWesN9wttg14pWHs=
+
+Name: assets/emojis/symbols/e22a.png
+SHA1-Digest: y2v5lNmvvSqXvJE0TzLULNV2Qzo=
+
+Name: assets/emojis/symbols/e211.png
+SHA1-Digest: GF/pGqAPeRLTJ0O5DsYVN2QWhhU=
+
+Name: assets/emojis/symbols/em_25fd.png
+SHA1-Digest: jg6DXIEJ+gmysc5KYBWSeCVxO44=
+
+Name: assets/emojis/bell/e043.png
+SHA1-Digest: 9pqLDA2ilLlgDeIKxeK8+fbxanM=
+
+Name: assets/emojis/bell/em_1f50f.png
+SHA1-Digest: CfELptgJv6k4QQ9H9uMo5HpOhLg=
+
+Name: res/drawable/seekbar_progress_bg.xml
+SHA1-Digest: 4ausALk3VBFjN9sz0svFzzI4vbs=
+
+Name: res/drawable-xhdpi/abc_ic_ab_back_holo_dark.png
+SHA1-Digest: sq4yGEUKX3IePUBAZG7mwdMnHUU=
+
+Name: res/drawable-hdpi/abc_tab_selected_focused_holo.9.png
+SHA1-Digest: YyCZ0NHjYUP2jEOwswAoE6MoWsc=
+
+Name: res/drawable-xhdpi/abc_textfield_search_right_default_holo_light
+ .9.png
+SHA1-Digest: /UIFeo6oXwL7NSIU/486wBQ0Xls=
+
+Name: assets/emojis/car/e512.png
+SHA1-Digest: jqyZZ836kJvdeHDYYO8nCvAhBE0=
+
+Name: assets/emojis/flower/em_1f41c.png
+SHA1-Digest: T2O3SDKnBfgTOaOJgo+kgy6Qbss=
+
+Name: assets/emojis/bell/em_1f4d2.png
+SHA1-Digest: r3MZhsddGKRPieOMF9TV9lZ92gk=
+
+Name: assets/fonts/black_jack.jpg
+SHA1-Digest: DU2NG6iaEivJhhGGogfhYf4oCz8=
+
+Name: assets/emojis/car/e137.png
+SHA1-Digest: 83ULvjpkeKGkQDhRlmFAWutxlFA=
+
+Name: res/drawable-hdpi/tgvpi__tab_unselected_holo.9.png
+SHA1-Digest: wxoY8BJwnDIRO89MYUedsqcKO2M=
+
+Name: assets/frames/!fds45f.thumb.jpg
+SHA1-Digest: 5Tlw/MRmV5j6tt3/9Wo9dhTYQDI=
+
+Name: assets/emojis/bell/em_1f509.png
+SHA1-Digest: BFShPMCo6gyHJd3Onfc6Hc3P0g0=
+
+Name: assets/stickers/brzzzzz.png
+SHA1-Digest: AijMp8IkYkNzRFMYugdyJpLItes=
+
+Name: res/drawable/progress_horizontal.xml
+SHA1-Digest: z2T8E6EaSxp8La7iLHlahevWU9o=
+
+Name: assets/emojis/symbols/em_1f196.png
+SHA1-Digest: qsgZa8O+QoI2kVbEEJhkQNfxQ4Y=
+
+Name: assets/fonts/keycomic.jpg
+SHA1-Digest: tNhUTHXGrjyzxf+al8cOQmEbDDk=
+
+Name: res/layout/abc_action_bar_decor_overlay.xml
+SHA1-Digest: /iHW7AC1nhOnvV+MCnupcZhnVaw=
+
+Name: res/drawable-ldpi/ambilwarna_target.png
+SHA1-Digest: h2TWX3ME0NysGAHtVB6RGgRBjJk=
+
+Name: res/anim/abc_slide_out_top.xml
+SHA1-Digest: xllnV+sHQiejDO6t4NX0h0Dj0fg=
+
+Name: assets/emojis/symbols/em_1f193.png
+SHA1-Digest: S02hkYS5eEOUa2POcQviZrQe8Lo=
+
+Name: res/drawable-mdpi/message_icon.png
+SHA1-Digest: Wlu1T3ainxZu1pmjSt3O+t3huSw=
+
+Name: assets/emojis/bell/em_1f379.png
+SHA1-Digest: Ch/KGah6SmGdUrDjx7PxQ3Gx9B0=
+
+Name: assets/fonts/twelvetongoldfish.jpg
+SHA1-Digest: 67h6VLwCieDREHmcshxR2ASp8lQ=
+
+Name: assets/emojis/bell/em_1f347.png
+SHA1-Digest: pKJwMi5uIjhSyyQvaJCLCAAgQmE=
+
+Name: assets/emojis/face/e31e.png
+SHA1-Digest: 4xo8CtFOABfvS0LMBqSdIyb0u4s=
+
+Name: assets/data/rotate_pin.png
+SHA1-Digest: r5dmQQscU8RGUZXjNT1x/XhTvss=
+
+Name: res/drawable-hdpi/abc_ab_stacked_solid_light_holo.9.png
+SHA1-Digest: g+r7FkwU8IObn5YShy0gWd8kQqs=
+
+Name: assets/emojis/symbols/e21c.png
+SHA1-Digest: F7FXQ9DWr2zqyLObjjLKP9v+JUg=
+
+Name: assets/frames/blue_strips.png
+SHA1-Digest: 81x0UyR6tKd9KhYJ2pqYfT/QjpA=
+
+Name: assets/backgrounds/48.jpg
+SHA1-Digest: z49K7j2BfCa9gYFxYiJJYj/Nw7g=
+
+Name: assets/emojis/face/em_1f47a.png
+SHA1-Digest: qsfRumDN6mxH6UaCjtt0Rlz1xj8=
+
+Name: assets/emojis/bell/e047.png
+SHA1-Digest: PQul9xyMRdRDxvE7zOvHHOBvgao=
+
+Name: assets/emojis/bell/em_1f4b4.png
+SHA1-Digest: eT5B3u/hugR4IS14nHZRNkI29MQ=
+
+Name: assets/fonts/danielbd.ttf
+SHA1-Digest: 5vJeVGetimk9k/nNfur2Onu7O4k=
+
+Name: assets/stickers/tastey.png
+SHA1-Digest: x3C/FhLtOx08cnVVvKqaLQ3oZYA=
+
+Name: assets/fonts/days.jpg
+SHA1-Digest: 8zf5L+Jz8MuNwqnCfhi3Ofm0WYE=
+
+Name: assets/emojis/bell/em_1f4d9.png
+SHA1-Digest: uTFYj8/tArzbuP29ZhczR3SQRVE=
+
+Name: assets/emojis/symbols/em_2195.png
+SHA1-Digest: E3VeC3zCa78hWwVh7ZZWIx8gYnI=
+
+Name: res/drawable-hdpi/abc_tab_selected_holo.9.png
+SHA1-Digest: EGcWvzBVZLpn4Mxtlr8jgNaaysg=
+
+Name: assets/fonts/za_3.jpg
+SHA1-Digest: D39lCOIbzYc1PRrw/V3u/9P8MdU=
+
+Name: assets/fonts/alkisah.ttf
+SHA1-Digest: lncBAXbH8vbtbto2vzuweUgdWck=
+
+Name: assets/emojis/car/em_1f681.png
+SHA1-Digest: bQdgh82HNG/9Z9gRNcSN69+ALCM=
+
+Name: assets/emojis/car/e01d.png
+SHA1-Digest: npFLdxnnXN3YpGUXKJSpMzmTWso=
+
+Name: assets/emojis/flower/em_1f432.png
+SHA1-Digest: nTJhdCZIzik+i+9q9seitbhdmBE=
+
+Name: assets/emojis/symbols/em_23ec.png
+SHA1-Digest: vlSMlHl96tlMpwj7ZE6y9vnWC2w=
+
+Name: assets/backgrounds/25.jpg
+SHA1-Digest: zn/rwSkbmKIQwcZzwfk78dEF3Qg=
+
+Name: assets/stickers/a_surfing.thumb.jpg
+SHA1-Digest: RVT/kZFWfwEEgnZlT8nbWi5kRvE=
+
+Name: assets/fonts/raavi.thumb.jpg
+SHA1-Digest: smW9RqhDfOcBi2xqQirLpsP4fgE=
+
+Name: assets/filters/rainbow.png
+SHA1-Digest: UTcE+rWa2qEVVWxyt+ag2KWLuzw=
+
+Name: assets/templates/08/icon.jpg
+SHA1-Digest: 3BSymAYEcidpmiLzMkOy1UicONE=
+
+Name: assets/emojis/face/e331.png
+SHA1-Digest: AbdaKTfwswuHHcsIDfy7P0L2OcU=
+
+Name: assets/backgrounds/45.thumb.jpg
+SHA1-Digest: J68c9JduSonWK22yiIohC3VvoME=
+
+Name: assets/emojis/symbols/e251.png
+SHA1-Digest: Cjov1BV/nkdL46xy7G5/CF8e/mM=
+
+Name: res/drawable-hdpi/abc_textfield_search_right_selected_holo_light
+ .9.png
+SHA1-Digest: bXWiiIAT50k1Ql0b/Uqk6dDyDCU=
+
+Name: res/layout-sw600dp-land/styling_filter_options.xml
+SHA1-Digest: 4t23/GBhI9wr0tJudtx7+v3yIrU=
+
+Name: assets/templates/37/icon.jpg
+SHA1-Digest: Mp+UZQCBwmA58OJgD7UDTf+XFtg=
+
+Name: assets/emojis/face/e402.png
+SHA1-Digest: J9do57eh7L/kGO5cFWMQqDKRb6E=
+
+Name: assets/emojis/face/e32a.png
+SHA1-Digest: DguszjPTWCYd1igrHQS+2pglRP0=
+
+Name: assets/emojis/symbols/e246.png
+SHA1-Digest: bldsc1rOtYU6FpaORBFbEhyh9h4=
+
+Name: assets/emojis/bell/em_1f352.png
+SHA1-Digest: sNFIIR69svOW9U4EV8Olj/BrSw4=
+
+Name: assets/stickers/shocked.png
+SHA1-Digest: BKj0auNJJssZLju1WoJQ/QeuTLw=
+
+Name: assets/emojis/bell/e147.png
+SHA1-Digest: kc9NlwgnQHyU+1FLo3OKZY4FMUM=
+
+Name: assets/emojis/face/e034.png
+SHA1-Digest: 3V20TSTq+iKgr8LunN8ihh0rmgo=
+
+Name: assets/emojis/flower/e306.png
+SHA1-Digest: pzpznRsn7X4wMqekpFKkd44jFTU=
+
+Name: assets/stickers/whistle.thumb.jpg
+SHA1-Digest: z9Nl9PraKS6asTeQpoCg73ZAzeI=
+
+Name: res/drawable-mdpi/abc_ic_menu_moreoverflow_normal_holo_light.png
+SHA1-Digest: q31S80yh9uuXmGO1Wglkfk2Z3Lo=
+
+Name: res/drawable-xhdpi/abc_ic_cab_done_holo_dark.png
+SHA1-Digest: 1XD1KsYvae/WOB8WnfjzrdtJBzk=
+
+Name: assets/emojis/flower/e44c.png
+SHA1-Digest: nJrS6FAq+eA2F7NvuOnnKfane0w=
+
+Name: assets/emojis/bell/em_1f4e8.png
+SHA1-Digest: cE2XMz9LxsEJ/M36vG/X5J/9u6M=
+
+Name: res/drawable-xhdpi/abc_tab_selected_focused_holo.9.png
+SHA1-Digest: AmjEYxvpuVtaYTL71e9rnvkbedE=
+
+Name: assets/frames/zframe1.png
+SHA1-Digest: KRbZxYCPygKCGVWgf+JLpp8sOZY=
+
+Name: assets/fonts/journal.ttf
+SHA1-Digest: 3e+OUrvoet2LasHFXaXTg6msml0=
+
+Name: res/layout/abc_activity_chooser_view_list_item.xml
+SHA1-Digest: sMI8OW9JbRty7p5tumong8fxQs4=
+
+Name: assets/emojis/car/e434.png
+SHA1-Digest: NvfL8j+L8pCg2dwLTawg+TLqqRM=
+
+Name: assets/emojis/bell/e442.png
+SHA1-Digest: imPDGZxuw4ahMP9nzcgxGvJn+bM=
+
+Name: assets/frames/24.png
+SHA1-Digest: zd9dMYY7R1CI5JAvGrOIPrBtlxo=
+
+Name: assets/fonts/za_4.jpg
+SHA1-Digest: Kn4hRkx0ssjAGLCf9DIKFcS8oxg=
+
+Name: assets/emojis/car/em_1f686.png
+SHA1-Digest: JQuggqHGERDcHmpQqnM+xyqfsuM=
+
+Name: res/drawable-xhdpi/vpi__tab_unselected_focused_holo.9.png
+SHA1-Digest: NmRDFePyPs5iQYP0m4GdvViXRv8=
+
+Name: assets/fonts/whateverittakes.ttf
+SHA1-Digest: WPvPH6CQIu22YlfZF5yaZREcCyA=
+
+Name: assets/templates/23/config.xml
+SHA1-Digest: NgDapI2VtkXmLKRuluq2WRTYg9Y=
+
+Name: assets/emojis/bell/em_1f364.png
+SHA1-Digest: nKVLUFuBHQ7vemIGQ2V38p1G0mU=
+
+Name: assets/emojis/symbols/e233.png
+SHA1-Digest: CcpISAKQdvzNXRzOdnYpk/bV7nU=
+
+Name: res/layout/abc_action_mode_close_item.xml
+SHA1-Digest: ZVdBSBCpxkq0bkdFlbO5eeEaOhQ=
+
+Name: assets/emojis/car/em_1f309.png
+SHA1-Digest: r6r1x+UscaAIV/tY7LinuRW7O8U=
+
+Name: assets/backgrounds/12.jpg
+SHA1-Digest: VCtA9hGczVRL0Q18MzghcQJmm38=
+
+Name: assets/emojis/symbols/e221.png
+SHA1-Digest: ImXvSTd8r6TPuy8unycC9teotCI=
+
+Name: assets/frames/wf54.png
+SHA1-Digest: vTwSFD/vMqoPgox0p8ENqK+o9k0=
+
+Name: assets/backgrounds/31.jpg
+SHA1-Digest: 6nFrfMvbjFVGU3gC4P0s/blU7ec=
+
+Name: assets/filters/colored_stripes.thumb.jpg
+SHA1-Digest: zH12kE1ug1kB+XvjpIyfFrcf3d4=
+
+Name: res/drawable-mdpi/abc_tab_selected_holo.9.png
+SHA1-Digest: 8sgxuVxhFo6eSxCIpjtdalG/XP8=
+
+Name: assets/fonts/za_KacstTitle.ttf
+SHA1-Digest: JiwV+kOLAfBYJ4y5JAm+fVpz2R8=
+
+Name: assets/stickers/psychotic.thumb.jpg
+SHA1-Digest: 309JV2ZFAbieNNj5R1WPdOg3AW8=
+
+Name: assets/emojis/flower/em_1f407.png
+SHA1-Digest: /l1IQ3ibwm/uS7ffesnAXVL0QzM=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: UXY6ZWcHDkKHHBmZW7J+RZVYjqM=
+
+Name: res/drawable-xhdpi/align_left.png
+SHA1-Digest: fCBSw25QvnRc5I3GBPITMxN+0lE=
+
+Name: assets/emojis/flower/e52f.png
+SHA1-Digest: oSMfDAN/dOHBcYETKNeWr7hppkg=
+
+Name: res/drawable-xhdpi/abc_tab_unselected_pressed_holo.9.png
+SHA1-Digest: YqrTPkw0EJvd8lkN0Y76St2GtT0=
+
+Name: assets/emojis/flower/e523.png
+SHA1-Digest: L73ZNS48N1WGhq9vwkuieg/c2nQ=
+
+Name: res/drawable-xhdpi/btn_bg_pressed.9.png
+SHA1-Digest: rBepFldPWGWsvy/qMjVVvqkkxG8=
+
+Name: assets/emojis/bell/em_1f4d8.png
+SHA1-Digest: kmcs9P7A3mLY5n99GNmC8KXqIK8=
+
+Name: assets/emojis/face/em_1f49e.png
+SHA1-Digest: VBh1poyPo5EB73WpyB8ZYNKB8D8=
+
+Name: res/layout-sw600dp-land/activity_result.xml
+SHA1-Digest: HeVrpBSq2XSRW1cIAN4DAIwi5u0=
+
+Name: assets/templates/26/icon.jpg
+SHA1-Digest: cWyFkjkVjqFDyvny4qSsWNRytMU=
+
+Name: assets/emojis/symbols/e226.png
+SHA1-Digest: lDFhyy8oc5kr71nHP99Tk7uHQyI=
+
+Name: assets/frames/gf4sd56.thumb.jpg
+SHA1-Digest: Ax0eF+T5H3+ROXmlKk6/xUfuTpQ=
+
+Name: res/drawable-hdpi/abc_tab_selected_pressed_holo.9.png
+SHA1-Digest: 22fLKEhsfFYJxZ+lu7ceCOzFHHo=
+
+Name: assets/stickers/a_heart_hurt.png
+SHA1-Digest: 6x/+PoSd7qm9Wl+ZnPqCkDjGfNQ=
+
+Name: assets/emojis/symbols/e249.png
+SHA1-Digest: 1x7/AJ/pbo8ZKtSZcXjnqnp96jg=
+
+Name: assets/emojis/car/e50c.png
+SHA1-Digest: bS94wxV9g2F119gO3r1na+oBcYI=
+
+Name: assets/emojis/face/e108.png
+SHA1-Digest: sk+iaAL/Z7905M2vzOjx/YzZrfs=
+
+Name: assets/emojis/flower/em_1f415.png
+SHA1-Digest: yZn0qBez4HEu8Z6YwpRHljLzCD8=
+
+Name: assets/emojis/flower/e109.png
+SHA1-Digest: jf5cgPI7T6nkr+1TZENFFFdQHgo=
+
+Name: assets/emojis/face/e302.png
+SHA1-Digest: C418Mnp33B6iA0ud0OX9T3JfkUs=
+
+Name: res/drawable-mdpi/abc_textfield_search_default_holo_dark.9.png
+SHA1-Digest: NJBxkI0AkveoHvUUGxD0nWqr0bo=
+
+Name: assets/fonts/za_11.jpg
+SHA1-Digest: u6unMNJN2XuSA5amH4AiUQaDHPU=
+
+Name: assets/stickers/whistle.png
+SHA1-Digest: j+84WfSJvuoNzouuR4iutIcJkn8=
+
+Name: assets/fonts/za_8.ttf
+SHA1-Digest: 66Pj3T2cM3/cHk1OBdDRlpptZz8=
+
+Name: assets/emojis/face/e519.png
+SHA1-Digest: vcLwzs733Mv0wPdD7XBVRnPEfcQ=
+
+Name: assets/emojis/bell/e144.png
+SHA1-Digest: tqXKUqXsuUvQZ6wSJlLiq+OZP1A=
+
+Name: assets/backgrounds/16.jpg
+SHA1-Digest: 7CnYX1S/6wIHYftm+NWx/qGlPZA=
+
+Name: assets/emojis/bell/em_1f52c.png
+SHA1-Digest: 6Tw0we4Q5quaqFaboB/JuKqaIA8=
+
+Name: res/layout/abc_action_bar_home.xml
+SHA1-Digest: z8Ajnhi5+6HS7p8GEz3EYAjOEzM=
+
+Name: assets/emojis/bell/e148.png
+SHA1-Digest: mxUm7dZDlFaiAYS/5o63Uplnv8M=
+
+Name: assets/templates/38/icon.jpg
+SHA1-Digest: XBgdHX5wCGxVT9n0bnJH7DCPx4o=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_default_holo_dark.9.png
+SHA1-Digest: rUobgcE0d650nKLzw1k/EGIDvoo=
+
+Name: assets/templates/10/config.xml
+SHA1-Digest: ni53qsvnjC44fO7cEAt4lIfAWU0=
+
+Name: res/drawable-hdpi/abc_list_focused_holo.9.png
+SHA1-Digest: iZ2QqYCoQEmMGGOg2+XZ3jNssnA=
+
+Name: res/drawable/seekbar_background.9.png
+SHA1-Digest: ICc02Fg7UkndbBEApBAKfZztNFA=
+
+Name: res/drawable-hdpi/abc_spinner_ab_disabled_holo_dark.9.png
+SHA1-Digest: 4DosuVvlLXbq5fFxHaJA1b1WDL8=
+
+Name: res/drawable-mdpi/abc_ab_share_pack_holo_dark.9.png
+SHA1-Digest: KJS1Jy2tQBvRRzA2VLecoWKcXPI=
+
+Name: assets/backgrounds/22.jpg
+SHA1-Digest: abFK9Chko7y8tjnYLo9Gyqx8eVM=
+
+Name: assets/templates/40/icon.jpg
+SHA1-Digest: as346+y3udmd2NQjH/3Hc++OWZA=
+
+Name: assets/backgrounds/44.jpg
+SHA1-Digest: AsOEGBEctV7FCxg6T73MZ97ypck=
+
+Name: assets/templates/16/config.xml
+SHA1-Digest: bgcDAdftyNW0o0J45Yg6DVK56PE=
+
+Name: assets/backgrounds/41.thumb.jpg
+SHA1-Digest: bCW6Dmx0zXeGSfzmsGYeoDvKo60=
+
+Name: assets/emojis/face/e41b.png
+SHA1-Digest: ajDraJkj+ooRqYA0a3JrQ+M2/Q0=
+
+Name: assets/templates/13/config.xml
+SHA1-Digest: AMPGRJTJawunxA7ZFgvC1Vawvao=
+
+Name: assets/emojis/symbols/em_1f6b3.png
+SHA1-Digest: h0CLm1dlEBep1167VW246YawyTE=
+
+Name: assets/emojis/car/e10d.png
+SHA1-Digest: JHROqqENYLSmCkiwIdvRzUOj0zc=
+
+Name: res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png
+SHA1-Digest: MPK9TZpR5zmZ8sAT2LoQZ0lNLyo=
+
+Name: assets/fonts/sing.ttf
+SHA1-Digest: 5gveFpOwiaFXo3rOhaQXZsbZwK0=
+
+Name: res/drawable-hdpi/abc_spinner_ab_focused_holo_dark.9.png
+SHA1-Digest: BpDRdeAe1btUerbTAi1b/yJ7BtQ=
+
+Name: assets/stickers/nosebleeding.thumb.jpg
+SHA1-Digest: gHMNOxHPjcFUFhgB6Qh2Pqy6X5Y=
+
+Name: assets/emojis/bell/em_1f4c6.png
+SHA1-Digest: GVr5Uu+KIqpvbCc+Y4nMEq/Odk4=
+
+Name: assets/frames/decorated453.png
+SHA1-Digest: 5Iz6Kc4VynkBbIpNgGtpTuSDpPA=
+
+Name: assets/emojis/face/em_1f4ab.png
+SHA1-Digest: +iESMLfGk16hPrKgU5f2VRHVwNs=
+
+Name: res/drawable/abc_textfield_searchview_holo_light.xml
+SHA1-Digest: 4NMjQ2QCkOZgf1dECb/SPNfCLEc=
+
+Name: res/drawable-xhdpi/underline.png
+SHA1-Digest: afGlS09lS02g3BEVe1/lrAMVsGk=
+
+Name: assets/frames/a_light1.thumb.jpg
+SHA1-Digest: SsOjU2y/xOLXOfd1jIjk0zHNA/g=
+
+Name: assets/emojis/car/em_1f4cd.png
+SHA1-Digest: lk/dP19R88YMlOUXTMilq3nU+sU=
+
+Name: assets/emojis/car/e433.png
+SHA1-Digest: kGAFluuQ46kDZX6Zbkbh3C422Vc=
+
+Name: assets/emojis/bell/em_1f4d7.png
+SHA1-Digest: mPXKQ3YOjsP61Z9cOY/5l06zhCU=
+
+Name: assets/emojis/flower/em_1f41e.png
+SHA1-Digest: TxdvwHzKSegT6dbeXoG3Clg58HY=
+
+Name: assets/stickers/scared.thumb.jpg
+SHA1-Digest: 5sUuDuCIb7ijlOS1V7oGL4aQ6Rs=
+
+Name: assets/emojis/face/em_1f617.png
+SHA1-Digest: uAQx/TQr1OagXe34XetbLjWYBng=
+
+Name: res/drawable-xhdpi/abc_ab_share_pack_holo_light.9.png
+SHA1-Digest: uiys8hJTJ258/cinC6+niOV+cGI=
+
+Name: assets/emojis/flower/em_1f315.png
+SHA1-Digest: umvmWoWFmXv9lNSMrb5tqKbqPe0=
+
+Name: assets/emojis/face/em_1f479.png
+SHA1-Digest: EY+nQpdIfbBtIgqOKAxtWQ1bphA=
+
+Name: assets/emojis/symbols/e22c.png
+SHA1-Digest: PBktvYpQ+XMNmSrrv7hqPJfWOdU=
+
+Name: res/drawable/seekbar_progress.9.png
+SHA1-Digest: MtDdfqGCv12uZwHjtx7nUjiay3g=
+
+Name: res/drawable-mdpi/abc_spinner_ab_pressed_holo_dark.9.png
+SHA1-Digest: QPEiigWqZCLywKXBbDyxReoJFgY=
+
+Name: assets/emojis/symbols/em_1f519.png
+SHA1-Digest: fNTJo8kAN6C2D6OsV3OGX40AilQ=
+
+Name: assets/emojis/car/e036.png
+SHA1-Digest: PBj9OcoHeJGD43rnVW0IMu6Suxc=
+
+Name: assets/emojis/symbols/e332.png
+SHA1-Digest: RJaj06kCvVUk8lmD/mac+yidYu0=
+
+Name: res/drawable/seek_thumb_normal.png
+SHA1-Digest: mSdn7gABqrvV1IXkbOBDQRqgDYE=
+
+Name: assets/emojis/symbols/e02a.png
+SHA1-Digest: 9R+8Yq+xPMSNvzFGsIjNnmbJAzI=
+
+Name: assets/backgrounds/20.thumb.jpg
+SHA1-Digest: w8tIatLWhg8ejlAF4ugpnyml+lw=
+
+Name: res/drawable-hdpi/vpi__tab_unselected_focused_holo.9.png
+SHA1-Digest: nWJc9kk4n+f01tPdBo4qlYKFDpw=
+
+Name: assets/templates/35/icon.jpg
+SHA1-Digest: 2EBBX7kaZlxueFhMOZjYsPqpno0=
+
+Name: assets/filters/rainbow.thumb.jpg
+SHA1-Digest: DEEBzHiSAhCgpHnv4xuT03QPQOE=
+
+Name: assets/emojis/bell/em_1f37c.png
+SHA1-Digest: 14GRkOKfL5TKgOuzRKF3FXzCm24=
+
+Name: assets/stickers/a_heart_broken.png
+SHA1-Digest: HD8BIgK2L0c3u4l/oHVPO9KqHpo=
+
+Name: assets/emojis/bell/em_1f4b7.png
+SHA1-Digest: 15cuclHj1wYOo6EOJ800Mexvfv8=
+
+Name: assets/emojis/flower/e055.png
+SHA1-Digest: APWB6v1UmkdEZXLdafJqLQtpPvY=
+
+Name: assets/emojis/bell/e00b.png
+SHA1-Digest: sIv3RjwA4VY7xrEb8yDZ1zo/eo0=
+
+Name: assets/frames/22.thumb.jpg
+SHA1-Digest: 23cvSke6dJ3Ca2BZWI9cd1QJMv8=
+
+Name: assets/fonts/TYPEABRIL.ttf
+SHA1-Digest: zla0G9Y6vQ9WRLkfj5u4W5GRBuo=
+
+Name: assets/emojis/face/em_1f46c.png
+SHA1-Digest: oAjpkAW3fmW0gc4QwXMDRxm2r94=
+
+Name: res/drawable-mdpi/abc_ic_voice_search.png
+SHA1-Digest: 5JaDsXVK2Dbj7cLliiy1vur2i54=
+
+Name: assets/emojis/bell/e440.png
+SHA1-Digest: NM+xDc+cVLWbUHGbsgE8QXmQWms=
+
+Name: assets/emojis/symbols/em_3030.png
+SHA1-Digest: vfCU1PFR+kUpFNk2oP/JDS3U6i4=
+
+Name: res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png
+SHA1-Digest: DdbxkH04CKw8kZDBH8buX43Cz3A=
+
+Name: assets/backgrounds/29.jpg
+SHA1-Digest: tTNg8l2dmUcrFgZTYv/utEWycgU=
+
+Name: assets/emojis/bell/e310.png
+SHA1-Digest: O11iNc/iJnG4k11BEaz0RSo15i0=
+
+Name: res/layout/abc_screen.xml
+SHA1-Digest: uakGZB5hxfyjcJLabsWkZ+MI66k=
+
+Name: assets/templates/31/icon.jpg
+SHA1-Digest: BB+uzwfzT9oW9Ln9DYtUbDsI4Ug=
+
+Name: res/drawable-mdpi/vpi__tab_unselected_holo.9.png
+SHA1-Digest: /71sOjny+8x0RzmcT9xIIVQwZeA=
+
+Name: assets/stickers/a_car.thumb.jpg
+SHA1-Digest: HjdfeBXVFWzYga75yQ8AC7xe+Uc=
+
+Name: res/drawable/abc_list_selector_background_transition_holo_light.
+ xml
+SHA1-Digest: vzFiJUWWQuAV+ZqSbrVENWimaG0=
+
+Name: res/layout-sw600dp-port/styling_hi_fragment.xml
+SHA1-Digest: ygNbugnBh/7siDfdJqkAKkG38B8=
+
+Name: res/drawable-xhdpi/ambilwarna_target.png
+SHA1-Digest: 1Y1xN2xlLWMD/v8enr7NlMhvBtY=
+
+Name: assets/emojis/face/em_1f496.png
+SHA1-Digest: 97c5aB0S8UpO2h705yjpzbXClck=
+
+Name: assets/emojis/symbols/em_1f503.png
+SHA1-Digest: FqV5UZjZoK7DmnCGQ3vQkP52q8k=
+
+Name: assets/emojis/face/e406.png
+SHA1-Digest: AZtoqnVm2Jgn5t/nNpTEiXJTOt8=
+
+Name: assets/emojis/bell/e335.png
+SHA1-Digest: uuiQyEkWV5X/RMvcCtnCo2YjAEA=
+
+Name: assets/fonts/gilles_handwriting.ttf
+SHA1-Digest: dk4LtypNoTnysytDN1/JLITwIjk=
+
+Name: assets/emojis/face/e111.png
+SHA1-Digest: wXGZH2BrfAFxwEioZ1Lr9lbt438=
+
+Name: assets/backgrounds/49.jpg
+SHA1-Digest: QM7m7tEWSFvaJLBrhtwKEyluO54=
+
+Name: assets/emojis/symbols/e244.png
+SHA1-Digest: Z7O3L9El/gRMZpfGEEa5PXvqoQA=
+
+Name: res/drawable-mdpi/abc_list_longpressed_holo.9.png
+SHA1-Digest: /uU9+qqC9MjC0cwR3L+DskCy9xM=
+
+Name: assets/emojis/bell/e129.png
+SHA1-Digest: nM1Vp2vzsL/SewxKiKMj57GnFMc=
+
+Name: assets/templates/40/config.xml
+SHA1-Digest: 70UVTBhplFUHQ1S28l0je4ddUk0=
+
+Name: assets/fonts/1942report.jpg
+SHA1-Digest: EDHey2WPGO6lK3F0Cy1l2ezC3oY=
+
+Name: assets/emojis/symbols/e217.png
+SHA1-Digest: ofDYgDm/2oprRYt3/FQZTi2I1a0=
+
+Name: assets/templates/04/icon.jpg
+SHA1-Digest: 97kHPcQ3qAguamzIK8quMP9sftg=
+
+Name: assets/emojis/symbols/em_21aa.png
+SHA1-Digest: UIPoMuPEI3tQeOmSfq7yMvwF4/w=
+
+Name: res/layout/emoji_item.xml
+SHA1-Digest: WfgrfSbl+u7ywLtgYXzQyQSWR/Q=
+
+Name: assets/stickers/sockedin.thumb.jpg
+SHA1-Digest: f2a3esoLsR0tBUvi/+oItsMG1Ek=
+
+Name: res/drawable-hdpi/vpi__tab_unselected_holo.9.png
+SHA1-Digest: 3oL+KsNtl9Id7Lyuy0VUakRW0j0=
+
+Name: assets/emojis/car/e430.png
+SHA1-Digest: 8tw118XqTF32Pl0XXoTH29v+Eig=
+
+Name: assets/stickers/a_heart.png
+SHA1-Digest: k+oILWyNYQ17/OX5VJHGJQmqGFQ=
+
+Name: res/drawable-mdpi/abc_spinner_ab_pressed_holo_light.9.png
+SHA1-Digest: s9zlABQs/kHvpwf4/VQRRYqfX4o=
+
+Name: assets/stickers/ignoring.png
+SHA1-Digest: 48yQ+34BXrBL3RMjiPG61AU1eWw=
+
+Name: res/drawable/abc_tab_indicator_ab_holo.xml
+SHA1-Digest: iFX4peDvqwrrLiAb6M2671mWh5A=
+
+Name: assets/emojis/car/e51d.png
+SHA1-Digest: poy1+QWLYU2gyEwVw478bHT/qv8=
+
+Name: res/drawable-xhdpi/btn_keyboard_key_light_pressed_holo.9.png
+SHA1-Digest: qYbyjddr3bMraOGMVBWukJNGeV8=
+
+Name: assets/emojis/bell/em_1f508.png
+SHA1-Digest: LTigp9Acm4cBnl5YJju3BTt8qGc=
+
+Name: assets/emojis/car/em_1f6a9.png
+SHA1-Digest: h2oBYzXuNP7CrHlloP2rHp4UKuM=
+
+Name: assets/emojis/flower/em_2744.png
+SHA1-Digest: CtKgs7whM8wevwT1hiTqC6exuwo=
+
+Name: res/drawable-mdpi/abc_ic_clear_normal.png
+SHA1-Digest: IVNSUzQls0KKQlwiu8nOXEn0LxM=
+
+Name: assets/fonts/eager.jpg
+SHA1-Digest: V+JM8VakuVpQIPWte/l2kyauu0A=
+
+Name: res/layout/abc_activity_chooser_view.xml
+SHA1-Digest: XqFQyqZTimRbkNQGcGhlP1K9bAo=
+
+Name: res/drawable-xhdpi/abc_ic_menu_share_holo_dark.png
+SHA1-Digest: Pbz9ftkb5zDPfW+EkEnxZWslEXE=
+
+Name: res/drawable-xhdpi/abc_textfield_search_selected_holo_dark.9.png
+SHA1-Digest: qMRDp7Uax7PZUIwpp9hZ0jIK7OI=
+
+Name: assets/emojis/bell/em_1f4c2.png
+SHA1-Digest: XM4mWo6yY5c+yE34UDp+PP0xAVg=
+
+Name: assets/emojis/bell/e13f.png
+SHA1-Digest: 41fWPCGWhmKsSc5uTHRv052eM7U=
+
+Name: assets/emojis/bell/em_1f50e.png
+SHA1-Digest: gknfFMWe8IvHNWX4FwBqiSb8mb4=
+
+Name: assets/emojis/symbols/e309.png
+SHA1-Digest: bOtI4kYF+0z/3DbbKbOzIYFRZUE=
+
+Name: assets/emojis/symbols/e20f.png
+SHA1-Digest: 8nJ7C+vCTDUfb2otDLmZfOMDKFk=
+
+Name: assets/frames/a_light2.thumb.jpg
+SHA1-Digest: QUSkZ7prb0Hbi0zCUm5RHMVeBhM=
+
+Name: res/drawable-hdpi/abc_list_selector_disabled_holo_dark.9.png
+SHA1-Digest: H6QyACqlrLL5v6tTVSXDgysUOqU=
+
+Name: assets/backgrounds/49.thumb.jpg
+SHA1-Digest: wHmYQ+dFPcLG4Af7nYc1xy3E8ng=
+
+Name: assets/fonts/eager.ttf
+SHA1-Digest: /g5UvJ6TNn1CIesZgSwdRcdpzyc=
+
+Name: assets/emojis/face/e318.png
+SHA1-Digest: W3yOxTNgGY4QnWI4MH5oOIi0mWo=
+
+Name: assets/fonts/za_KacstFarsi.ttf
+SHA1-Digest: xzOfxB0L5m6ym4fJzZ3NXabhpoY=
+
+Name: res/drawable-xhdpi/result_instagram_icon.png
+SHA1-Digest: ZxEboGZ8nhteA4kygSiyn6X6KHk=
+
+Name: res/drawable/edittext_bg.xml
+SHA1-Digest: id2MK7I9KB3EtQcyWWxM5Zre6ew=
+
+Name: assets/emojis/flower/e522.png
+SHA1-Digest: b4948ggyVfE0rQi2hz8bCMJBEB8=
+
+Name: assets/emojis/symbols/e250.png
+SHA1-Digest: Ism36Q/9cuDoXLNHDSAcGwzlu8Y=
+
+Name: assets/frames/f-26.thumb.jpg
+SHA1-Digest: zB2HN+oo9f+C7DeJGdfZ+YEices=
+
+Name: assets/emojis/face/em_1f62f.png
+SHA1-Digest: MkWVtfmWEAI/QhZnTvv7njRl3/4=
+
+Name: assets/stickers/a_heart_stitch.thumb.jpg
+SHA1-Digest: xSZi7lOouTavK9cj000kNx6Pgps=
+
+Name: assets/emojis/symbols/e232.png
+SHA1-Digest: 5PpVFVofNMXrAqUaDuv7Pzo0rxc=
+
+Name: assets/stickers/a_megaphone.thumb.jpg
+SHA1-Digest: 9YyjxYft/8ScOaPdzsKni2MjGDA=
+
+Name: assets/backgrounds/50.jpg
+SHA1-Digest: CYCNiVkn8taz8zQmbi7PCRKe00A=
+
+Name: assets/emojis/symbols/e333.png
+SHA1-Digest: f/hvr2+QkadlLOjo+zJl2dNxs90=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 4yfNglHH8Np2Pbrb8bz5Vm+WJRE=
+
+Name: assets/backgrounds/32.jpg
+SHA1-Digest: CUg8U11SxX5XSAxJ9JuVOB3jKsc=
+
+Name: assets/stickers/eyesonfire.thumb.jpg
+SHA1-Digest: 0RQCFCbD5u/JwdecNBd61gBFlFg=
+
+Name: assets/emojis/flower/e10a.png
+SHA1-Digest: 78p9c7dxRWJHy92oLCPjiM/JWOA=
+
+Name: assets/emojis/bell/em_1f516.png
+SHA1-Digest: F4iXXA10C4zi3CKwxOvUVDcNetw=
+
+Name: assets/emojis/symbols/e029.png
+SHA1-Digest: ZebKxp0Wp+/e9FvNjPbWMV0aLHg=
+
+Name: assets/emojis/bell/em_2049.png
+SHA1-Digest: UQunz7k8DUqAHkNNLTFBvReBPBQ=
+
+Name: assets/emojis/face/em_1f615.png
+SHA1-Digest: OdpwNEz3rWJLEb8TNiyN1HcsrM4=
+
+Name: assets/emojis/car/e159.png
+SHA1-Digest: VnoD+TrCht/Ul61Wj97MWXkf358=
+
+Name: res/drawable-mdpi/abc_ic_ab_back_holo_dark.png
+SHA1-Digest: VzN10zMjoV+N+zP3SwwUmOBmUAs=
+
+Name: assets/emojis/flower/e526.png
+SHA1-Digest: rg3HDOcWQObTSGqsyFoBuB9Xz+M=
+
+Name: assets/templates/47/config.xml
+SHA1-Digest: KEjtg1rM6Mo0mnMCn9ydpkkcGdM=
+
+Name: res/layout/styling_fragment.xml
+SHA1-Digest: ypPEXz/QWbZAp3Y55OUdnhoTauI=
+
+Name: assets/emojis/bell/e03d.png
+SHA1-Digest: BXqzx2k8lUcR274/IeRoqLmW5x4=
+
+Name: assets/emojis/face/e41f.png
+SHA1-Digest: eWAs5OgTSDVSXKTYpjnLTAOVYs8=
+
+Name: res/drawable-hdpi/abc_ic_clear_search_api_disabled_holo_light.pn
+ g
+SHA1-Digest: qqp8zIaefWz8rJ9YnzxAPjg8Mbg=
+
+Name: res/drawable-xhdpi/abc_textfield_search_default_holo_dark.9.png
+SHA1-Digest: J5SOooTw1DRH20MILK0EZAWDrbc=
+
+Name: assets/fonts/roboto/roboto_l.ttf
+SHA1-Digest: fQQh3k4TmPuQhzeKnMySl728hLk=
+
+Name: assets/backgrounds/43.thumb.jpg
+SHA1-Digest: JCCUu3nHUdbocUsLozkWmt4hFA4=
+
+Name: res/drawable/ambilwarna_cursor.png
+SHA1-Digest: dT5Y356jWBG9Y1xfXqchfcTDwlo=
+
+Name: assets/emojis/face/em_1f639.png
+SHA1-Digest: iikTF4j8WPlaWh8kaEPJG0nbLz4=
+
+Name: res/drawable-mdpi/abc_spinner_ab_disabled_holo_dark.9.png
+SHA1-Digest: o+C2VMQN+LwnT3U6IBTsby8DbPc=
+
+Name: assets/emojis/bell/em_1f34b.png
+SHA1-Digest: KFQ5lZ8JE+JMKDZgk+7hPGqJZfs=
+
+Name: assets/emojis/symbols/em_24c2.png
+SHA1-Digest: ygc+kZLcriGPqO0cqBc56gmL9xc=
+
+Name: res/layout/styling_slider.xml
+SHA1-Digest: GJIegcO6IhZzu3TeZHsLSqTDRrE=
+
+Name: assets/emojis/face/e330.png
+SHA1-Digest: WJQDHwpc/TX9JRX6jem4YandL3c=
+
+Name: assets/templates/51/icon.jpg
+SHA1-Digest: eOaFSydklh1UteWlcjecQKBnwRA=
+
+Name: assets/emojis/bell/e117.png
+SHA1-Digest: EIPKYWfVtqaOXcT4tK6kosSj4bU=
+
+Name: assets/filters/1.thumb.jpg
+SHA1-Digest: iHjwOZiM90LBlRzsMnO8sN7xda4=
+
+Name: assets/frames/!border564.thumb.jpg
+SHA1-Digest: WfKlx9SOt+bLK3CtN63C77BrhSM=
+
+Name: assets/backgrounds/01.thumb.jpg
+SHA1-Digest: 0VXx6r0NG3wknyBMnwsxbqw12yE=
+
+Name: res/layout/ab_progress_item.xml
+SHA1-Digest: NJq42NKyVdOAUgx8bU5NnpH5B1M=
+
+Name: assets/emojis/face/e32e.png
+SHA1-Digest: uQxwHk3CBgWTSlFNFgJE66P3r2A=
+
+Name: assets/emojis/bell/e502.png
+SHA1-Digest: 4aaOcoSdBdtBxbIvw6v/enRvZAw=
+
+Name: res/drawable-hdpi/abc_spinner_ab_focused_holo_light.9.png
+SHA1-Digest: 5ogtluLp179D5LexN3sxh2u4kts=
+
+Name: res/drawable/abc_ic_clear_holo_light.xml
+SHA1-Digest: 6cE9QqYWo7hIoKwjBFNZYC+X2OQ=
+
+Name: res/drawable/btn_default_holo_light.xml
+SHA1-Digest: bThR9ZpWP9U0TNO3AfzQLQA7B0U=
+
+Name: res/drawable-xhdpi/abc_cab_background_bottom_holo_dark.9.png
+SHA1-Digest: FGC4LwdURzJD4ypKClYAam2rt/U=
+
+Name: assets/emojis/flower/e441.png
+SHA1-Digest: xCOTC3Np4uoCc2mDiWM10BJ+UJs=
+
+Name: assets/templates/12/icon.jpg
+SHA1-Digest: edQOGxzaBhZGvZPnOGq/zlG6120=
+
+Name: res/layout/ab_view.xml
+SHA1-Digest: Ni2AvlH7Wt25avHt/HvxDndNSAE=
+
+Name: assets/fonts/notepad.jpg
+SHA1-Digest: UYbvS6xoX+ueqEw3i3xJc8t+i2k=
+
+Name: assets/emojis/bell/em_1f3b9.png
+SHA1-Digest: g9hP+h4uWwhMWqx2kUiHjljTp5U=
+
+Name: assets/emojis/symbols/e228.png
+SHA1-Digest: uZkhAcwWNdobI0VbqtCB2bDehx4=
+
+Name: assets/emojis/symbols/em_274e.png
+SHA1-Digest: I3D+B1B5em6Zpaj+QL2wYK8WrpI=
+
+Name: res/drawable-xhdpi/abc_list_divider_holo_dark.9.png
+SHA1-Digest: 8+TP02NA3lGiMXaQ8fIb7yOyVIE=
+
+Name: assets/emojis/face/em_1f608.png
+SHA1-Digest: HF56F9dt/SzifhuOHnSPdy+lWuM=
+
+Name: assets/emojis/symbols/em_2716.png
+SHA1-Digest: gtvbZtpzQNGUbSGwQPJki35hz+g=
+
+Name: assets/emojis/face/e005.png
+SHA1-Digest: Kl5vGykU52mr3ZXQxZMTzFMJ9o0=
+
+Name: assets/emojis/symbols/em_1f539.png
+SHA1-Digest: Ld8nsT8w0mqGumzfYWMv10snPoM=
+
+Name: res/anim/freeze.xml
+SHA1-Digest: OcmFZpecU/E6uzuzSG8h6JB/WJk=
+
+Name: res/drawable-hdpi/coin.png
+SHA1-Digest: NCtLVrNpQPkWB+qie9nK8pl59Gw=
+
+Name: assets/emojis/bell/em_1f36c.png
+SHA1-Digest: P1KebhlD+VR8Uq3W2VwQgIUdJA8=
+
+Name: assets/fonts/1942report.ttf
+SHA1-Digest: 09CRVeQVhqmBJ4G27CTUWm+5Snc=
+
+Name: assets/emojis/bell/e324.png
+SHA1-Digest: cjKBg2d9mwlj+QrM0XzELaOZI8o=
+
+Name: res/drawable-hdpi/abc_list_divider_holo_light.9.png
+SHA1-Digest: PoxeeFE1gxgKYYjKMfN1ri2qqEo=
+
+Name: assets/emojis/symbols/e23a.png
+SHA1-Digest: LeuqCKQEvrrgN3F0vrUXsY0QyUk=
+
+Name: assets/emojis/symbols/em_1f4ae.png
+SHA1-Digest: GvyETPzx3v3c/iDdSxzyyGqW7T0=
+
+Name: assets/emojis/flower/em_1f405.png
+SHA1-Digest: e2/K/4Wi8mT2YkBZ85wiAIKnM9U=
+
+Name: res/layout/abc_popup_menu_item_layout.xml
+SHA1-Digest: RZwPdfi4pSV/5Y9wL2An/dslgOQ=
+
+Name: res/drawable-mdpi/vpi__tab_unselected_focused_holo.9.png
+SHA1-Digest: bRiJ4s/uB/Jt6SfNSmYPrmuEQUk=
+
+Name: assets/emojis/face/e32b.png
+SHA1-Digest: gRgBYMT+thgCCgBVBn6o8pOB874=
+
+Name: res/drawable-mdpi/abc_ab_share_pack_holo_light.9.png
+SHA1-Digest: gT4sGIbOhJJBbv6h5B4mckwkWEQ=
+
+Name: res/drawable/vpi__tab_indicator.xml
+SHA1-Digest: vrdTsovEL/OeFRmASANYDai8d2s=
+
+Name: assets/backgrounds/07.thumb.jpg
+SHA1-Digest: nVwIORkVT9zPAt+FuCVxOD2IL0o=
+
+Name: assets/templates/49/icon.jpg
+SHA1-Digest: wHmYQ+dFPcLG4Af7nYc1xy3E8ng=
+
+Name: res/drawable-xhdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png
+SHA1-Digest: 5t4DfVjrPREO9eze1ze3wKU7zgs=
+
+Name: assets/emojis/car/e150.png
+SHA1-Digest: 7BbyHIi2w8O3QjTPh3qrXCfoEYw=
+
+Name: res/drawable-xhdpi/abc_ic_commit_search_api_holo_dark.png
+SHA1-Digest: nB+JV5Dhuzax/D2FuBPx9JF9Wo4=
+
+Name: assets/emojis/face/e11e.png
+SHA1-Digest: qaipIE3ENDzDrWf22jq1ZgqnNgk=
+
+Name: assets/emojis/face/em_1f600.png
+SHA1-Digest: qZPsykm4qHSUOa02ljdCm1WXYYc=
+
+Name: res/drawable-xhdpi/rotate_right.png
+SHA1-Digest: IqbaX+IORYVzC1bqdj2FRSOWCe0=
+
+Name: res/drawable-xhdpi/abc_textfield_search_default_holo_light.9.png
+SHA1-Digest: B3u/NUESQeVChG8EEgyGVuMiHH0=
+
+Name: assets/stickers/ohu.png
+SHA1-Digest: mNeRExLgPkzL+1XXo35r4NoxSCo=
+
+Name: assets/emojis/bell/e33d.png
+SHA1-Digest: /YDjjCb3TvFKiIxPcs0ucz0ESTU=
+
+Name: assets/backgrounds/15.jpg
+SHA1-Digest: bhclsjGaDeISm+44LssaAYGT09g=
+
+Name: assets/filters/filter3.thumb.jpg
+SHA1-Digest: hO4F3YsehSgIWtk2Hz/qgWPGGoM=
+
+Name: assets/emojis/symbols/em_1f53a.png
+SHA1-Digest: 397dxaNa6LuK7ocvwhHT70gz2dw=
+
+Name: res/layout-sw600dp-port/styling.xml
+SHA1-Digest: x8NNmGNueUkUL922zM8UWBwSNRE=
+
+Name: assets/emojis/face/e00f.png
+SHA1-Digest: onHEHrfgcSCiQkzLJyBhvflsA8Q=
+
+Name: assets/emojis/bell/e30c.png
+SHA1-Digest: tD6qS6cd3wSEvw9aHhcNlVXQ5YM=
+
+Name: assets/templates/12/config.xml
+SHA1-Digest: juSk+kB//jNF/3AkowwDcb91dpI=
+
+Name: assets/templates/49/config.xml
+SHA1-Digest: QNHNfdlx6vAkiDHozE4xPkProqk=
+
+Name: res/drawable-nodpi/template.png
+SHA1-Digest: Jj308eUu8Wjed87UBI5XXo5kZg0=
+
+Name: assets/emojis/car/em_1f5fe.png
+SHA1-Digest: qob+zswdlm4BUddPIL4Qyohkbvo=
+
+Name: res/layout/activity_r_apps.xml
+SHA1-Digest: rFh9ZNp8KptAYzzELoeHSV75uKw=
+
+Name: assets/emojis/categs/recent.png
+SHA1-Digest: CAGJPjEqySSSBAESD6OAG+SDuXs=
+
+Name: assets/emojis/flower/e303.png
+SHA1-Digest: 5tNLgjYIv47YdW4juU4Q4MoB76s=
+
+Name: assets/backgrounds/28.jpg
+SHA1-Digest: mlzEzCfLFAO4z13Bio4aWLT42NY=
+
+Name: assets/emojis/face/em_1f4a5.png
+SHA1-Digest: hD1tJvGA5k73CRH60QnvEBzNoeI=
+
+Name: assets/emojis/symbols/em_2795.png
+SHA1-Digest: zN/00z/1wIG5bVMU6xYZYT/PlA0=
+
+Name: res/drawable-mdpi/abc_spinner_ab_disabled_holo_light.9.png
+SHA1-Digest: MIWI/WuDi8xwHrnKs7SUJ6Qp4e4=
+
+Name: res/drawable-xhdpi/bold.png
+SHA1-Digest: etRcUGwDOALrGjHCzIgNy7lSipA=
+
+Name: res/drawable-mdpi/abc_textfield_search_default_holo_light.9.png
+SHA1-Digest: Kr6ws1po8jgIXHRlWJhgXZIhPQ0=
+
+Name: assets/fonts/eraser_dust.jpg
+SHA1-Digest: lgz7BaIbVmPKpAiFaxOys9r0I58=
+
+Name: res/drawable-hdpi/ambilwarna_arrow_right.png
+SHA1-Digest: L4wA3q+tJVsN4FMf3ZuKbwlc5+E=
+
+Name: res/drawable-xhdpi/done_icon.png
+SHA1-Digest: FZR5RdF9ol382Gjm5eVdEQiogXM=
+
+Name: res/drawable-xhdpi/share_icon.png
+SHA1-Digest: /myyHGPV93matONcLwalJBw3ZU4=
+
+Name: res/drawable-mdpi/abc_ic_go_search_api_holo_light.png
+SHA1-Digest: rC1xpGLbgIYBFq7uRkjdIdRR0F8=
+
+Name: assets/templates/18/icon.jpg
+SHA1-Digest: hzoFMFHf5nrVci8+y4aI87C3qsk=
+
+Name: res/drawable-xhdpi/abc_tab_selected_pressed_holo.9.png
+SHA1-Digest: OLaMsKJKZf1gU3w0fFirc0TUvPI=
+
+Name: assets/stickers/nomnom.thumb.jpg
+SHA1-Digest: fSZRdd+ani0BM+p+iVV4Ts1Zh/I=
+
+Name: res/drawable-sw600dp-land/bold.png
+SHA1-Digest: nrIdvGiwYfIsReaScE0XKWX2e/Y=
+
+Name: assets/emojis/symbols/e24a.png
+SHA1-Digest: GLIWDAkyhykGvAILvdHZKCm4Xrg=
+
+Name: res/drawable-hdpi/vpi__tab_unselected_pressed_holo.9.png
+SHA1-Digest: TJPqye6pp5Iw3LyfyGWFUjWAkKc=
+
+Name: res/drawable-xhdpi/topbtn_bg.9.png
+SHA1-Digest: fQbhGG84JQ3k9nfHGBsQ/mTrGHY=
+
+Name: res/drawable-hdpi/tgvpi__tab_unselected_focused_holo.9.png
+SHA1-Digest: U5i/0I6aydIn3OAmMNlYXurZk84=
+
+Name: assets/emojis/face/em_1f46d.png
+SHA1-Digest: 4SVYX1NQ/ulVKeCSUphZ5tQdWnM=
+
+Name: assets/emojis/symbols/em_26ab.png
+SHA1-Digest: Of4iGR1vQQ5a37rZhnG4UYkfZ6A=
+
+Name: res/drawable-xhdpi/btn_default_disabled_focused_holo_light.9.png
+SHA1-Digest: qYbyjddr3bMraOGMVBWukJNGeV8=
+
+Name: assets/emojis/symbols/e234.png
+SHA1-Digest: 0IeNp5qFq8s/LHYZCR3NDv9I7ME=
+
+Name: res/drawable/button_red_2.xml
+SHA1-Digest: V9anRVhHH0ZjoSKSKCYDNu/byCg=
+
+Name: assets/emojis/face/em_1f470.png
+SHA1-Digest: pGFOJtipDgdb8rY8jO1wMBbb3ys=
+
+Name: res/drawable-mdpi/btn_selected_normal_holo_light.9.png
+SHA1-Digest: PNDHyJ5afc9wy2htZ6n2MHuLGZc=
+
+Name: assets/stickers/a_umberlla.png
+SHA1-Digest: QPjDuhMMdzij1nJ9c/nMffC3JuE=
+
+Name: res/drawable-hdpi/abc_spinner_ab_default_holo_dark.9.png
+SHA1-Digest: XbnDfsOcLM/WnNThMPdpTZTd99Q=
+
+Name: assets/emojis/bell/em_1f4d0.png
+SHA1-Digest: rVK5rxD6rb5OQcYVPgJL7pRD1wA=
+
+Name: assets/emojis/bell/e339.png
+SHA1-Digest: h3DDRWcNIthrRlKrrf6bt7DdAgM=
+
+Name: assets/emojis/flower/e443.png
+SHA1-Digest: DuM+wMAELLUDXSGyVY0wZIudwvk=
+
+Name: assets/templates/48/config.xml
+SHA1-Digest: lLhszCGZQ0FifmMiJaMEs0iIXM4=
+
+Name: assets/emojis/bell/em_1f3a3.png
+SHA1-Digest: +aS9vdDhQeoaivxWduARIymebNo=
+
+Name: assets/emojis/symbols/e223.png
+SHA1-Digest: ZtBfEIK1X++gXyAq39RapPZczrs=
+
+Name: assets/emojis/symbols/em_25fe.png
+SHA1-Digest: sz5GSt3T5dS4nM5OIWTbovdvkHI=
+
+Name: assets/emojis/face/em_1f45d.png
+SHA1-Digest: gEoGoi4sH+us6QXm4vkTlDj7L3k=
+
+Name: assets/emojis/symbols/e20b.png
+SHA1-Digest: So/W2GXK+DPFVO12ymV+Z9nxYCA=
+
+Name: assets/templates/51/config.xml
+SHA1-Digest: Ad9gOQh9m+PyGBT1TX2hwSqXkTM=
+
+Name: assets/emojis/flower/e447.png
+SHA1-Digest: g5o5oBm0AQ7ZbAeyWt+8EL65SH0=
+
+Name: assets/emojis/face/em_1f63a.png
+SHA1-Digest: F7jYDVcv9NvQ4m3ziL1JPOr49Ds=
+
+Name: assets/emojis/car/e11f.png
+SHA1-Digest: FFIAEERpVpWLt6qXM9Xy8/hnlQ8=
+
+Name: assets/emojis/face/e32d.png
+SHA1-Digest: bBjahMc9zzpfR8KHZ09TFKiMkAY=
+
+Name: assets/templates/15/config.xml
+SHA1-Digest: NONxoDfdjHCByElbzYg0F11hGfQ=
+
+Name: res/drawable/tab_indicator.xml
+SHA1-Digest: vrdTsovEL/OeFRmASANYDai8d2s=
+
+Name: assets/emojis/flower/em_1f330.png
+SHA1-Digest: e7a1CaQszdAVv7ScEvkxL0I9Rsw=
+
+Name: res/drawable-xhdpi/abc_ab_solid_light_holo.9.png
+SHA1-Digest: BuJ7qLxJ3yylQEGM/1Gcnz9bnDw=
+
+Name: res/drawable-mdpi/abc_textfield_search_selected_holo_light.9.png
+SHA1-Digest: ZQ8sXjtBSFVuUrvpILUvUmO3qx8=
+
+Name: assets/backgrounds/08.thumb.jpg
+SHA1-Digest: 3BSymAYEcidpmiLzMkOy1UicONE=
+
+Name: res/drawable/no_photo.png
+SHA1-Digest: giM9Zs9dmDD6l7ISvxl6uCa2OTw=
+
+Name: assets/emojis/face/em_1f629.png
+SHA1-Digest: 7ycUP4k5O77sPYE7+mAzs3I219E=
+
+Name: assets/emojis/face/em_1f445.png
+SHA1-Digest: Y7ZTueVTkGkBDFgNup4vrQFLc5A=
+
+Name: assets/emojis/symbols/e021.png
+SHA1-Digest: J5d7LbTeP356CIzhuNHVN748Fx4=
+
+Name: assets/templates/17/icon.jpg
+SHA1-Digest: AQm581z3Q6+SXRuYN+bd5lhd9eM=
+
+Name: assets/emojis/face/e40f.png
+SHA1-Digest: vSq2Hw0QPNykx5EDHVLe5insMx4=
+
+Name: assets/backgrounds/09.thumb.jpg
+SHA1-Digest: 68OeZbyz92l8IWlZF5jgVM1HXcA=
+
+Name: assets/backgrounds/38.thumb.jpg
+SHA1-Digest: XBgdHX5wCGxVT9n0bnJH7DCPx4o=
+
+Name: res/drawable-hdpi/abc_spinner_ab_disabled_holo_light.9.png
+SHA1-Digest: wobwsdZih3M/jR+WUhRoG1ehon8=
+
+Name: assets/emojis/face/e536.png
+SHA1-Digest: mXURLNlrfD333xWbqQWkxYpcxoo=
+
+Name: assets/backgrounds/39.thumb.jpg
+SHA1-Digest: g7GZdBkWGjvCROlC3Pg2M8H+a5s=
+
+Name: res/drawable-mdpi/abc_ic_ab_back_holo_light.png
+SHA1-Digest: M2S/kyzAD2oQ/8uslADa1LuAjW0=
+
+Name: assets/emojis/categs/face.png
+SHA1-Digest: wFu8qwfwVMQHzfL3m1Lma0Vknpo=
+
+Name: assets/fonts/segoepr.ttf
+SHA1-Digest: 8CBO0VKDYm4M/raS6aBDEUlzxjI=
+
+Name: assets/emojis/car/em_1f682.png
+SHA1-Digest: wJ18XzetfthhfA16wgJq97jnbEc=
+
+Name: res/drawable-xhdpi/abc_ab_bottom_solid_dark_holo.9.png
+SHA1-Digest: zBTk9VwPeMgIgu4tbm1ueFAvr+k=
+
+Name: assets/emojis/symbols/em_1f523.png
+SHA1-Digest: e08QcY1l1sMLjnmUY9Hwm2ef+wc=
+
+Name: assets/data/resize_pin.png
+SHA1-Digest: 6v4lcJIlBaIxnTD/OENJ8KTzjAo=
+
+Name: assets/stickers/gangs.png
+SHA1-Digest: YqUAuLVdDhsFEsEQcGvVeNebvhY=
+
+Name: assets/emojis/flower/e10b.png
+SHA1-Digest: 2+rh4NgclyvFkmN0+1r/Qmr9RdE=
+
+Name: assets/emojis/symbols/em_1f536.png
+SHA1-Digest: XItKpe16bS4J4i/jToq7SpxiHuc=
+
+Name: assets/emojis/symbols/em_1f504.png
+SHA1-Digest: 7GnX2FwSJ6zo46Kj1D+gXedLVqc=
+
+Name: assets/fonts/roboto/roboto_r.ttf
+SHA1-Digest: oY3L+ZyNIyXC+/IqZOjMKKDPTTs=
+
+Name: assets/filters/0.thumb.jpg
+SHA1-Digest: fTwWsoYsCExtloWaMzz67CFnCbE=
+
+Name: assets/filters/f7.thumb.jpg
+SHA1-Digest: NEBLPsVc0P6YyLuJMKeGx5M0UoA=
+
+Name: assets/emojis/symbols/em_26d4.png
+SHA1-Digest: GxThVPUuBZf0MJNrXfZFD/38uu4=
+
+Name: res/drawable-hdpi/tgvpi__tab_unselected_pressed_holo.9.png
+SHA1-Digest: U5i/0I6aydIn3OAmMNlYXurZk84=
+
+Name: assets/templates/42/icon.jpg
+SHA1-Digest: 1rqKpEUkfvqzWHUdt84iZqafsFE=
+
+Name: assets/emojis/bell/em_1f4b5.png
+SHA1-Digest: cRQpEQEMraamLusweLwSFBBtb6Q=
+
+Name: res/drawable/stripe_bg.png
+SHA1-Digest: LfhwgbJqouqKpPGA+V41SmfmRJ8=
+
+Name: assets/emojis/symbols/em_1f232.png
+SHA1-Digest: MrW1oswIUMPJFGy53i1+k8BJT48=
+
+Name: assets/emojis/face/e035.png
+SHA1-Digest: MkrKTTWaVQOGDWc3b0XKCmSDoSI=
+
+Name: res/drawable/btn_holo_golden_round.xml
+SHA1-Digest: eanaE/1fr8DGU0vVnuoW+ATjVL4=
+
+Name: assets/emojis/flower/em_1f344.png
+SHA1-Digest: WoRcoLsxiuw30+cu4k14DlXl/4g=
+
+Name: res/layout/abc_action_bar_title_item.xml
+SHA1-Digest: yk4qbWboj4Vp2ZryY2nWwk2Px+E=
+
+Name: assets/fonts/RomanAntique.thumb.jpg
+SHA1-Digest: oXOIRQ/LOZRt1taozY4aAOznGpQ=
+
+Name: assets/emojis/face/em_1f495.png
+SHA1-Digest: 4hNKwGsVgbSlye7i93gOFprd5Oo=
+
+Name: res/drawable-xhdpi/btn_bg_focused.9.png
+SHA1-Digest: Ea1/zEbl4qYL9iioR10epsCv9GA=
+
+Name: res/drawable-hdpi/abc_spinner_ab_pressed_holo_dark.9.png
+SHA1-Digest: 5S7AhjM9W3J8jKIRcnrz9WMLFTM=
+
+Name: assets/emojis/car/em_1f6a8.png
+SHA1-Digest: jtIVagJL+sVNlBeQ0TRT95bbAI8=
+
+Name: assets/emojis/face/e012.png
+SHA1-Digest: N3YYGYDhmvX7G5BDGvzM9aVIS7I=
+
+Name: assets/emojis/face/e31f.png
+SHA1-Digest: jRvMU/8bZN2lUJcxXTwDFf8Rnn0=
+
+Name: assets/templates/24/icon.jpg
+SHA1-Digest: ygMCwq0hAbmzqeHbdPFURmiWAR4=
+
+Name: assets/emojis/bell/e311.png
+SHA1-Digest: QyU27kddx+TXwgN29OhNNu4ro/E=
+
+Name: assets/emojis/face/e011.png
+SHA1-Digest: fsPQ3YMsAvI9PMCM444gmqzbf78=
+
+Name: res/drawable-hdpi/abc_ab_stacked_transparent_dark_holo.9.png
+SHA1-Digest: QeVPBZISJz+N12VyjvKj6lwfGP0=
+
+Name: assets/frames/wf54.thumb.jpg
+SHA1-Digest: ZK1AQJy0qchLDCcrbV2FugMQFaw=
+
+Name: assets/emojis/face/em_1f648.png
+SHA1-Digest: N0gRP4F3CdbBodxzhs1Ve6rsMgQ=
+
+Name: assets/emojis/bell/e141.png
+SHA1-Digest: ONIxsBZEumhFhzethMw2MUPizRU=
+
+Name: assets/emojis/symbols/e02c.png
+SHA1-Digest: T0SaD85KMDTZaPACTF9PqAoJY9g=
+
+Name: res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_light.png
+SHA1-Digest: BxRbrMy1vKFl2bV5l1w7isKmc1I=
+
+Name: assets/emojis/symbols/e210.png
+SHA1-Digest: 64P2RLsJB2fDYl7yp783pmqo6jE=
+
+Name: assets/emojis/symbols/e21b.png
+SHA1-Digest: TpSA9V7HcF6tXk9dcn05kiBqRk8=
+
+Name: assets/emojis/flower/e528.png
+SHA1-Digest: pdnaVztSwByX42V1F0dLtlAHp6M=
+
+Name: assets/stickers/yo.thumb.jpg
+SHA1-Digest: r94Nv8NRdgu0ctrt8aAGF16MUjg=
+
+Name: assets/emojis/car/e133.png
+SHA1-Digest: RBs/JY+skQf36ydOrwSW+xBqB6A=
+
+Name: assets/emojis/face/em_1f610.png
+SHA1-Digest: 1f3gavYYWZLjxNZia7JC7WvgGWI=
+
+Name: assets/emojis/car/em_1f3e4.png
+SHA1-Digest: kJ5XC9vx33GCbA2JAYOJnYkcD4w=
+
+Name: assets/emojis/symbols/em_1f561.png
+SHA1-Digest: TUJUfRdsPZPbsFZFjjuiy+JL29E=
+
+Name: assets/emojis/bell/em_1f4e5.png
+SHA1-Digest: JPlfZ0EtC20fPyYjNDJ6ExN2NpQ=
+
+Name: res/layout/styling_images_fragment.xml
+SHA1-Digest: /A9P/pHt41R6Dwl0d/wVWEK5Shs=
+
+Name: assets/backgrounds/05.thumb.jpg
+SHA1-Digest: 4RLfOkjPDW1UieBIGENYPWq5UPY=
+
+Name: assets/emojis/bell/e040.png
+SHA1-Digest: h8WqN4a33gyXTqPYgzUyWdpwQho=
+
+Name: assets/stickers/gangs.thumb.jpg
+SHA1-Digest: I3u0d42HwQAo19lPa61T7DThG2Q=
+
+Name: assets/emojis/car/e509.png
+SHA1-Digest: s7tBrcbJHit/0rTz6WdFtSa7ZgU=
+
+Name: assets/emojis/bell/em_1f6b4.png
+SHA1-Digest: 5HAbGJkBn2oq3xksAAMFmbJoDsc=
+
+Name: assets/emojis/bell/e042.png
+SHA1-Digest: yWNwAxk1cDvAwcDUfrhl5/VQ4ec=
+
+Name: assets/stickers/a_surfing.png
+SHA1-Digest: EfoOY2FRg74JPPJSMkAnBplntFg=
+
+Name: assets/fonts/black_jack.ttf
+SHA1-Digest: PELFYs8ZcmkdFA0m3a6PCznWzWs=
+
+Name: assets/emojis/flower/e32f.png
+SHA1-Digest: ThsUZHdf0YYnrcqQzu8ER63xpxI=
+
+Name: res/drawable-mdpi/abc_ab_stacked_solid_dark_holo.9.png
+SHA1-Digest: xtlobvUj60P3h0OWzOOcO3YkAWU=
+
+Name: assets/emojis/face/e006.png
+SHA1-Digest: Az1zG2IkO4DuBWWlK8BBOXGXI2M=
+
+Name: assets/frames/!fds45f.png
+SHA1-Digest: Q+mVHV6vazYkqntsNqXe+05q8iE=
+
+Name: assets/emojis/symbols/em_1f6c4.png
+SHA1-Digest: QBTalj8++sjPF9tw/PuMvrQZlks=
+
+Name: assets/emojis/symbols/e220.png
+SHA1-Digest: liW9gs0BE/HlJPUA0iXRM8mQyMU=
+
+Name: assets/filters/3.thumb.jpg
+SHA1-Digest: c0W93/VtrsRsUQd5tngzNGpr1bk=
+
+Name: assets/backgrounds/08.jpg
+SHA1-Digest: VsGh6IIFYqYDcNkde7N/cnnuQZM=
+
+Name: assets/emojis/bell/e43a.png
+SHA1-Digest: +Zub5yzaoGoBT3LHq8MewSL8YSg=
+
+Name: res/anim/abc_fade_in.xml
+SHA1-Digest: AcuBNEx7Jg8K6XCieCSQfQAJk5Q=
+
+Name: res/drawable-hdpi/abc_textfield_search_right_default_holo_dark.9
+ .png
+SHA1-Digest: sPAjQ1VlXhSwrT4aW1ghmimxciU=
+
+Name: assets/emojis/face/e407.png
+SHA1-Digest: N0fD69B29i/ieK17AtSGjNJ7Z3I=
+
+Name: res/drawable-xhdpi/abc_ab_stacked_transparent_light_holo.9.png
+SHA1-Digest: YKCakYSOTJrRo5RRzbj2ydASXLE=
+
+Name: res/drawable/gradient_one.xml
+SHA1-Digest: f2+Q+4oi4zHSSNV3NUfCqp9mcHg=
+
+Name: assets/emojis/symbols/e22d.png
+SHA1-Digest: nVYTVa179YrIu8UqAWAu0/UiQr0=
+
+Name: assets/emojis/car/e157.png
+SHA1-Digest: 4SGFRawiZoXaw/JIEIkDbh2T6Ik=
+
+Name: assets/emojis/bell/e12a.png
+SHA1-Digest: CzKBX3jkyxv3Knpk/9YfGyKxlWg=
+
+Name: res/layout/abc_search_dropdown_item_icons_2line.xml
+SHA1-Digest: 4nlWcI3n4CIgaIybpoah1oo7X34=
+
+Name: assets/emojis/bell/em_1f4c3.png
+SHA1-Digest: mcEj25NX2b6t9D9xfQV2eE+/dFQ=
+
+Name: assets/emojis/face/e40b.png
+SHA1-Digest: KcaiJnyK27ceE46wn9YKa4euXwg=
+
+Name: assets/stickers/shocked.thumb.jpg
+SHA1-Digest: 0pRczmEv0tAWQnY2zX9fXCUpQjI=
+
+Name: assets/emojis/car/em_1f68b.png
+SHA1-Digest: kEeSagLAk+d44eeiEyOe2m546ro=
+
+Name: assets/fonts/days.ttf
+SHA1-Digest: Mkkb910jcQQrNqvKKS4krmRF4Dc=
+
+Name: res/drawable-hdpi/abc_ic_clear_normal.png
+SHA1-Digest: PCoZiLOS4J/56HawmRvUThZql9M=
+
+Name: assets/templates/24/config.xml
+SHA1-Digest: mIt2szPZuBofh+zPN1N5ZBlbFG0=
+
+Name: res/drawable/gv_icon_add.png
+SHA1-Digest: DBdmaXBdUWRV7hDApG3A4G3fPV4=
+
+Name: assets/stickers/zzz.png
+SHA1-Digest: NWkCdIlicHP2+BPbiIrwc41CjXo=
+
+Name: assets/emojis/car/e153.png
+SHA1-Digest: yzwEnAWtQDW0RVup31cNCB83SfE=
+
+Name: assets/fonts/z-barabics.jpg
+SHA1-Digest: qEnM6nbq/0VzmHmb1s+qDoVbvFE=
+
+Name: assets/templates/05/config.xml
+SHA1-Digest: jPpeImK8sZyJgOJkIXmJ0C/ArJM=
+
+Name: assets/emojis/bell/e018.png
+SHA1-Digest: ihFek66gjYbOKa/pe1TmuzSijiw=
+
+Name: res/anim/slide_up.xml
+SHA1-Digest: DqoRtnlVnnXJGNa1mmk+1qRuC+M=
+
+Name: assets/emojis/face/e411.png
+SHA1-Digest: F2Y0A7F4Me+9hG9/P8BaiBovldc=
+
+Name: res/layout-v11/abc_action_bar_decor.xml
+SHA1-Digest: O2yjxNNs2xrWopG8nSU+zUhULWw=
+
+Name: assets/emojis/symbols/e212.png
+SHA1-Digest: +a/d7SeHuyz6fOTno8aaBDg+eTw=
+
+Name: assets/backgrounds/01.jpg
+SHA1-Digest: rVjIYX0NBYDTgdFUK/5nr16ucPk=
+
+Name: res/drawable-hdpi/abc_cab_background_top_holo_light.9.png
+SHA1-Digest: 49UGaCleY6DzwqgTga8B+AMa7mU=
+
+Name: assets/emojis/face/em_1f45a.png
+SHA1-Digest: RnZsjgmCWVKWISwa4DLCK490+vo=
+
+Name: assets/stickers/saryoureal.png
+SHA1-Digest: bXc6o2Q+Un9XOv2HWsssV5Wg8qA=
+
+Name: assets/emojis/bell/e342.png
+SHA1-Digest: 1JS7n8zU9/C5/Idom7z9nb3ebco=
+
+Name: res/drawable-mdpi/abc_ic_search_api_holo_light.png
+SHA1-Digest: XyfNd6baGKrwD/t+2U3a+XZzQyA=
+
+Name: assets/emojis/flower/em_1f43c.png
+SHA1-Digest: TJAWluObUv7NOa9HOFtX4vrO9wM=
+
+Name: res/drawable-hdpi/abc_list_longpressed_holo.9.png
+SHA1-Digest: CryqHoFcxjamvNzipiGDoWeVOGw=
+
+Name: assets/emojis/symbols/e532.png
+SHA1-Digest: lw2egs27DqCSz7Yf1LdFM0Od0xQ=
+
+Name: assets/backgrounds/20.jpg
+SHA1-Digest: WALy+ENMOG44+72CzWBbGV6u7TA=
+
+Name: assets/emojis/symbols/e208.png
+SHA1-Digest: srnwGr/1Zo6ABlxJb3F732ab/RY=
+
+Name: assets/templates/21/config.xml
+SHA1-Digest: HL3i4jXF+i7Pt+5AS8UOwZAkruA=
+
+Name: res/drawable-mdpi/abc_ic_go.png
+SHA1-Digest: kNve7ufi2BNs5M7o6wfM+ULbk/E=
+
+Name: assets/fonts/trash.jpg
+SHA1-Digest: 4MESDOsUmo1oFrzcQAGMAsrSQ5w=
+
+Name: assets/frames/blue_strips.thumb.jpg
+SHA1-Digest: mjqx1HRRk0uXsD68ptqk0JeCj4w=
+
+Name: assets/emojis/symbols/em_1f53d.png
+SHA1-Digest: gA+F/jqD7P5CA2uJJWBLH2h1CLs=
+
+Name: assets/emojis/symbols/e13a.png
+SHA1-Digest: Z0S3vvda15Ce9IoPrWh/6soQ3nw=
+
+Name: res/drawable-xhdpi/rotate_left.png
+SHA1-Digest: lmVs33TIBFyBtPYwrilfSdSSeJI=
+
+Name: assets/backgrounds/11.thumb.jpg
+SHA1-Digest: Hb1sJs+YDjmXfSJO0/npTrvradE=
+
+Name: assets/fonts/za_KacstDecorative.ttf
+SHA1-Digest: qvypDiaFns645kEhotgG7CaaDws=
+
+Name: res/drawable/button_icon.xml
+SHA1-Digest: bThR9ZpWP9U0TNO3AfzQLQA7B0U=
+
+Name: res/drawable-hdpi/abc_ic_clear_disabled.png
+SHA1-Digest: YvwDlm7HOzynv8MCUZdxCZoESuQ=
+
+Name: assets/emojis/car/e501.png
+SHA1-Digest: KVU17fBtMB0qsr5UUoeTd8M2Kkc=
+
+Name: assets/emojis/symbols/e236.png
+SHA1-Digest: ugnt1v+wXS22d55wwaqJGJrp9AQ=
+
+Name: res/drawable-xhdpi/abc_list_focused_holo.9.png
+SHA1-Digest: YizJ6E9i4qjStCvPOCfhrYribWs=
+
+Name: assets/emojis/symbols/em_2194.png
+SHA1-Digest: ABcOetXsGbfp8aYE1Z/O4mnVS/I=
+
+Name: assets/stickers/ohnoes.png
+SHA1-Digest: rjx5y/dWV96R5LZpuRXBboFiYw0=
+
+Name: assets/templates/09/icon.jpg
+SHA1-Digest: 68OeZbyz92l8IWlZF5jgVM1HXcA=
+
+Name: assets/fonts/mcgarg.ttf
+SHA1-Digest: 3oPC5Hpl8AVQvJltn68ZCu8Pf6w=
+
+Name: assets/frames/anonymous.png
+SHA1-Digest: z2Pq711ndb0Ti1IMxv5RgsiXfXg=
+
+Name: assets/emojis/car/e42e.png
+SHA1-Digest: Gxl+efszrp92lVaxNz1Lt8K7j4s=
+
+Name: res/drawable-hdpi/abc_ab_transparent_dark_holo.9.png
+SHA1-Digest: re6f3Dt6EmMQ1BAhi28dpZ+KSqg=
+
+Name: assets/emojis/face/e401.png
+SHA1-Digest: C3mlfLSDwGKsGxlxHygqqLTNw6I=
+
+Name: assets/emojis/car/e124.png
+SHA1-Digest: RuVi4nwaEJNrQ2/XLVcCwFq1Ckc=
+
+Name: assets/data/resize_pin_active.png
+SHA1-Digest: G9jnXnknZLo/Kld0456sOedsZFw=
+
+Name: assets/fonts/za_6.ttf
+SHA1-Digest: hVF2EYauvmuA3pxNMGH+sKy5CjQ=
+
+Name: assets/emojis/bell/e446.png
+SHA1-Digest: Urf29kbA0/vdVEFX2Z9bqS3ZPEo=
+
+Name: assets/stickers/yum.png
+SHA1-Digest: lplITVscj6uZ5u3WNcRTMSONKrs=
+
+Name: assets/emojis/car/em_1f688.png
+SHA1-Digest: SN3XfRjksPjoOsAODHtvFw/2BQ4=
+
+Name: res/drawable-hdpi/abc_ab_bottom_solid_light_holo.9.png
+SHA1-Digest: d3zzB2nQ2k8nh8wt560Gg+RI/Wc=
+
+Name: assets/emojis/symbols/em_1f500.png
+SHA1-Digest: kRBVZp77+hrJDXzeUR/TcEsHDLg=
+
+Name: assets/emojis/face/e518.png
+SHA1-Digest: L8LhaHCed5JKx3gQqa9Y688s5jM=
+
+Name: assets/emojis/face/e51e.png
+SHA1-Digest: kjqrzz5jLOoJUD1Qam4teYNxgMo=
+
+Name: assets/emojis/categs/flower.png
+SHA1-Digest: M0FEraHjqFvEi0/ORv2zFlBTpsY=
+
+Name: assets/emojis/face/e31a.png
+SHA1-Digest: X87carJucN1xvoJQW2RWZ+NdNSQ=
+
+Name: assets/templates/30/icon.jpg
+SHA1-Digest: 0chG8ww4bE38z1bjHZXvfubgM8E=
+
+Name: assets/fonts/whateverittakes.jpg
+SHA1-Digest: cyazLwziMkSivzOVy9t8HPteQ0g=
+
+Name: assets/emojis/bell/e33a.png
+SHA1-Digest: 6ZFWfUBtf98cA4g9frFoMCRgiUM=
+
+Name: assets/emojis/bell/em_1f356.png
+SHA1-Digest: MyoHeGeoGrFEX+trh5NJavoHdPU=
+
+Name: assets/stickers/nosebleeding.png
+SHA1-Digest: WN4L3a8XiE+d/IFS5j1VAwK3qI0=
+
+Name: res/drawable-mdpi/abc_ab_solid_light_holo.9.png
+SHA1-Digest: w5eNJ2dsSzfy7QRf9OUKUQrv0hM=
+
+Name: res/drawable/gv_get_more.png
+SHA1-Digest: lzXLAxi0A7nECvAtdebQ9DztYxY=
+
+Name: assets/fonts/za_2.ttf
+SHA1-Digest: iJC0C3kQmC4FkyeeUYgcVhcpbtc=
+
+Name: res/drawable/seek_thumb_selected.png
+SHA1-Digest: 6SFLqkD1QQVX5wxMi8O7ekmLvNU=
+
+Name: assets/templates/16/icon.jpg
+SHA1-Digest: UehcZVB+RlLbCNzGHSVG8hCOEvo=
+
+Name: assets/backgrounds/06.jpg
+SHA1-Digest: SWQ3jQ+H2lMevYXZhrfb3yLuDKc=
+
+Name: assets/fonts/za_KacstTitle.jpg
+SHA1-Digest: Kfm9bo1qYqFR/j8C8bDKtj4uU2w=
+
+Name: assets/emojis/face/e105.png
+SHA1-Digest: xziJd9plthjY13YjNgLqHNenN1o=
+
+Name: res/drawable-xhdpi/content_discard.png
+SHA1-Digest: xX5IHKD3ISmyqDD8XaBaJfKGUKk=
+
+Name: res/drawable/facebook_icon.png
+SHA1-Digest: pvXDGqD/GPi06TsFqshW2gxwp/E=
+
+Name: assets/fonts/za_7.jpg
+SHA1-Digest: GUDLr+NcL6o7ObLOjLu+lXy3TFg=
+
+Name: assets/fonts/journal.jpg
+SHA1-Digest: Yp3LaTDYsSfigSDvlIcEGUjYljM=
+
+Name: assets/templates/01/icon.jpg
+SHA1-Digest: 0VXx6r0NG3wknyBMnwsxbqw12yE=
+
+Name: assets/data/about/about.html
+SHA1-Digest: MQhoYwD9DjmMXuXUYTz8nhlhe/E=
+
+Name: assets/fonts/za_KacstFarsi.jpg
+SHA1-Digest: fCLNKbqHww0V0zZyDQNuWUUks/M=
+
+Name: assets/fonts/sing.jpg
+SHA1-Digest: BTBnnxkIFHPv0cOCgwbW1aUppW8=
+
+Name: assets/emojis/flower/e52e.png
+SHA1-Digest: 0Avoj2CD2vFW13QFoNRxXCLPUfI=
+
+Name: res/drawable-hdpi/abc_ab_bottom_transparent_light_holo.9.png
+SHA1-Digest: TJtDiWDSVn6ZNgciU8o4aEYqa0s=
+
+Name: assets/emojis/symbols/em_1f562.png
+SHA1-Digest: 8B4A6w6LZfNLo+an6sPUqPEFmXE=
+
+Name: assets/emojis/face/e408.png
+SHA1-Digest: QzTppqH6LsNF0fLj5mQ5TOTOpE8=
+
+Name: res/layout/support_simple_spinner_dropdown_item.xml
+SHA1-Digest: PGyI6ICUliGLsK1LZTBZPrhxsbQ=
+
+Name: res/drawable-xhdpi/abc_menu_hardkey_panel_holo_light.9.png
+SHA1-Digest: 1+rqs/SPG8uwJraWxo+/NUGr4RE=
+
+Name: assets/emojis/flower/e052.png
+SHA1-Digest: gHsp8aepo8MyNoxb4dFdYqwL+OU=
+
+Name: res/drawable-xhdpi/strikethrough.png
+SHA1-Digest: h98We9Zrt3AEgMAKqgV7u3XCNlc=
+
+Name: assets/emojis/bell/em_1f33d.png
+SHA1-Digest: zmpkpFL9ND46w1YRclxYZWr6qaU=
+
+Name: assets/backgrounds/30.jpg
+SHA1-Digest: Iwp50dyScMjHcnGwvSh3h6RTL+4=
+
+Name: assets/data/about/instagram_icon.png
+SHA1-Digest: KLyALWceJZcwrkNn4n1TEHtNAJk=
+
+Name: assets/fonts/za_10.TTF
+SHA1-Digest: sUUiE1Fi91n3zu/adZ7N1HaWprs=
+
+Name: assets/emojis/symbols/em_2935.png
+SHA1-Digest: lUg8BK39AfjnUJCWqW19thoRPyA=
+
+Name: assets/backgrounds/13.jpg
+SHA1-Digest: dz20hq9T9UcP72jPHRMNln0XcVk=
+
+Name: assets/emojis/symbols/e02d.png
+SHA1-Digest: SaxbJyUGo8e0FxTkmorbI1IQT4s=
+
+Name: assets/backgrounds/30.thumb.jpg
+SHA1-Digest: 0chG8ww4bE38z1bjHZXvfubgM8E=
+
+Name: assets/data/about/twitter_icon.png
+SHA1-Digest: lk213pSXGR510hTOruRl4vbs/lM=
+
+Name: assets/fonts/za_9.ttf
+SHA1-Digest: S1pSFva4XFK3614/nB+UJbMQVdk=
+
+Name: assets/backgrounds/19.jpg
+SHA1-Digest: 9UsqH2B6RlRVRc9NqrZbp0YLIRI=
+
+Name: assets/emojis/face/e107.png
+SHA1-Digest: cfl+xwRHDTOS8Cb1mc7a/x4pRUU=
+
+Name: assets/backgrounds/33.jpg
+SHA1-Digest: OfDQ8VJ1SRtzy0RLaf4159M+wEo=
+
+Name: assets/templates/18/config.xml
+SHA1-Digest: day1rZOl1IT5Lux/fG21Mdr4jCI=
+
+Name: assets/fonts/comfortaa.ttf
+SHA1-Digest: nbnqsx42RpC2G11O9rrCY8R8R+8=
+
+Name: assets/emojis/face/e41a.png
+SHA1-Digest: aA6phRF+xpCcbIvFNx6nzknf9iM=
+
+Name: assets/emojis/flower/em_1f31d.png
+SHA1-Digest: e0UqWs1tcIbueN+kEGqQMO4q5Gw=
+
+Name: assets/emojis/bell/em_1f6bf.png
+SHA1-Digest: 5PxtD0+mfzPNtwdezylzesBRFTI=
+
+Name: res/drawable-mdpi/abc_tab_unselected_pressed_holo.9.png
+SHA1-Digest: UvHnw9Thh4MmbDM+aFqQ5sWmLq4=
+
+Name: res/drawable-mdpi/abc_ab_bottom_transparent_light_holo.9.png
+SHA1-Digest: IWbFY9JE6tLDg3vps8a1XGSmx7I=
+
+Name: res/drawable-hdpi/abc_ab_solid_light_holo.9.png
+SHA1-Digest: iVAzmC25Uwto74jHtkTBV2YHVsw=
+
+Name: assets/emojis/flower/e048.png
+SHA1-Digest: XMt6yNz6W3Pa9TKMY4jT0ssRyuQ=
+
+Name: assets/fonts/kronika.jpg
+SHA1-Digest: osbK9iSOSlHjdC8TDmrLPUVneSY=
+
+Name: res/layout/abc_action_bar_view_list_nav_layout.xml
+SHA1-Digest: Bz+FbMHxBd/NU7MzL1tu8wD2p/s=
+
+Name: res/drawable/emojis_keyboard_btn.xml
+SHA1-Digest: MbNNMBFS4C9casRRk0V7s590W/k=
+
+Name: assets/emojis/symbols/e031.png
+SHA1-Digest: QSAHxs+R6BUianA+oPkG755PuDk=
+
+Name: assets/emojis/symbols/e242.png
+SHA1-Digest: WljYxdMcmcc9bAClDAtaqBtWMpQ=
+
+Name: res/drawable-hdpi/abc_menu_dropdown_panel_holo_light.9.png
+SHA1-Digest: KBXph5g75I7azjgmq8SI46zDre0=
+
+Name: assets/emojis/flower/e04a.png
+SHA1-Digest: 6VCWs8k4otpELrOwKGX3b1c7ucY=
+
+Name: assets/emojis/face/e421.png
+SHA1-Digest: v4AGRny3lvSHPnbHvDEAtcpE+GA=
+
+Name: assets/emojis/face/e231.png
+SHA1-Digest: 2Xx7n9eDP1v19rDmaO31HnbgsKU=
+
+Name: res/drawable-mdpi/abc_list_selector_disabled_holo_light.9.png
+SHA1-Digest: cKGQg8jgT0IkOi1RPo5Y+TSnQb4=
+
+Name: assets/emojis/car/em_1f3aa.png
+SHA1-Digest: 1XDEbfXccdHOQbx/JHhEdeM4Wi8=
+
+Name: assets/backgrounds/24.jpg
+SHA1-Digest: vbFv+F5kXwfP65K6uUvvI/V4oo8=
+
+Name: assets/emojis/flower/em_1f316.png
+SHA1-Digest: 4SsCOOWCndbbSr/Ti8ua5sOVoWo=
+
+Name: assets/emojis/face/e417.png
+SHA1-Digest: QJYdevns/FOBAgQ0wABIt2Qga9E=
+
+Name: assets/emojis/car/e01c.png
+SHA1-Digest: uIKIIkNwDCyYMVbExNiLgBZtLhk=
+
+Name: res/drawable-xhdpi/save_icon.png
+SHA1-Digest: 3dEMYT3+I6LsbqvxX48q9zWN7K8=
+
+Name: assets/emojis/bell/e015.png
+SHA1-Digest: uDsNHf5D+bpFzqWHafh3wVHVoqs=
+
+Name: assets/templates/07/config.xml
+SHA1-Digest: /AkVr8elvvLtwupMW1KLiEUI9Bk=
+
+Name: assets/templates/22/icon.jpg
+SHA1-Digest: WPYGvUlo5y/gBPc80mrAPbDrlCU=
+
+Name: assets/frames/04.png
+SHA1-Digest: Bu9dg5z5lkS3sS2ada8viJkO1JM=
+
+Name: assets/emojis/car/e136.png
+SHA1-Digest: MPiHL9QIPgVPFvW3F6tkpfjVwxQ=
+
+Name: res/anim/abc_slide_in_bottom.xml
+SHA1-Digest: Vq6ffZxDELv69NU3J5pAHb8q/Fc=
+
+Name: res/anim/slide_out_right.xml
+SHA1-Digest: P1jQBT+9sk9K0ePiEXQnpEEgISk=
+
+Name: assets/emojis/car/em_1f6a6.png
+SHA1-Digest: j1/kkWTpLEj6nnUMY5ZOT42On30=
+
+Name: res/drawable-hdpi/abc_ic_go.png
+SHA1-Digest: 5FfaxDmXF8pisl5t0dWDsWzbWCg=
+
+Name: assets/filters/rain.png
+SHA1-Digest: KCGD6Chh5HNoec5KPudObyTA+EI=
+
+Name: assets/templates/38/config.xml
+SHA1-Digest: MzFS8J+DVPZetsOmvDqUUmoKIw0=
+
+Name: assets/emojis/bell/e340.png
+SHA1-Digest: DBYTFHXbRLiTurOAFfcbtfMi/pc=
+
+Name: assets/frames/!phone.png
+SHA1-Digest: 0B4hzZfxH4Z9beQwhCTPHlW5gbQ=
+
+Name: assets/stickers/relief.thumb.jpg
+SHA1-Digest: dm//Qy/MDRqkX7twrsAeemZPSDw=
+
+Name: assets/emojis/symbols/e30d.png
+SHA1-Digest: ZJ/d8RNrXG38Rd4+RlF1zNaS8RE=
+
+Name: assets/emojis/symbols/em_2714.png
+SHA1-Digest: 7o+TEEMoJ5DfrmLAm53BAkXREG8=
+
+Name: assets/fonts/gilles_handwriting.jpg
+SHA1-Digest: k+QtlwYAzlPjYa6CkhP2IiL+iKg=
+
+Name: res/drawable-hdpi/ambilwarna_target.png
+SHA1-Digest: vsNU4IzvBB4ENCOLbW71BDWLS2Q=
+
+Name: assets/emojis/bell/e348.png
+SHA1-Digest: Ym0/ieltdTBFNhVnREqpIPchHvI=
+
+Name: assets/backgrounds/39.jpg
+SHA1-Digest: imBAgNWh2ZNzQa/nXLRdvb3SciI=
+
+Name: res/drawable-mdpi/abc_list_divider_holo_light.9.png
+SHA1-Digest: PoxeeFE1gxgKYYjKMfN1ri2qqEo=
+
+Name: assets/fonts/spray.thumb.jpg
+SHA1-Digest: ufjI1DSJwvf4zdp5Hz2OgYz0rag=
+
+Name: assets/emojis/flower/e531.png
+SHA1-Digest: ripWZXfnxUAtzgYO5NIv7FhtQKc=
+
+Name: assets/templates/28/config.xml
+SHA1-Digest: VxSS/QSpsVsGdLe3QJVBYbAoQEY=
+
+Name: assets/stickers/hidden.png
+SHA1-Digest: rXjVyEcLoS9m3GqtFBblgZ+WvBA=
+
+Name: assets/emojis/bell/e42b.png
+SHA1-Digest: 2vjjg2ikrO4ZBsEz2DP94YgAeBk=
+
+Name: assets/templates/20/config.xml
+SHA1-Digest: GO379ajDmfgZeQc6qrbh4weqsww=
+
+Name: assets/emojis/flower/em_1f310.png
+SHA1-Digest: b4QYjapvbled/666EOtVUbDG9Gw=
+
+Name: assets/emojis/flower/em_1f30c.png
+SHA1-Digest: B/DiOD/MutIlQJT56dE2QZVhDE4=
+
+Name: assets/emojis/flower/em_1f317.png
+SHA1-Digest: tHYuDIqVwjfI8hgBOr2du+UnQlc=
+
+Name: assets/emojis/face/e405.png
+SHA1-Digest: gBOnWAnhnX4ASvIzcRlEyrNVxQg=
+
+Name: res/drawable-nodpi/reset_big.png
+SHA1-Digest: TnIAmPq0WofXEBox/m18t16+dSg=
+
+Name: assets/emojis/bell/e132.png
+SHA1-Digest: LOjiZUgvgYx+MzlmnaOT4yxUido=
+
+Name: res/drawable-xhdpi/btn_keyboard_key_light_hover_holo.9.png
+SHA1-Digest: qYbyjddr3bMraOGMVBWukJNGeV8=
+
+Name: assets/emojis/bell/em_1f365.png
+SHA1-Digest: OGx0Z0MahjutgT+SWARwqcq61sc=
+
+Name: res/drawable/abc_spinner_ab_holo_dark.xml
+SHA1-Digest: MQjHthaiSRJ0pBDSQ+Lt5TZQkHU=
+
+Name: assets/emojis/symbols/e24f.png
+SHA1-Digest: 339g/X/TL4a3a4y2k6G4GWNAoqM=
+
+Name: assets/emojis/bell/e128.png
+SHA1-Digest: CyNb/1JKUzi7QbdafbDKaun7UrI=
+
+Name: assets/emojis/symbols/em_1f4b2.png
+SHA1-Digest: 0567LuZ/+Jl80yV7ihv1GkyC+Mk=
+
+Name: res/drawable-mdpi/abc_list_divider_holo_dark.9.png
+SHA1-Digest: stTgeZCrCJ/rcueRykiUYhtUunM=
+
+Name: res/drawable-hdpi/abc_textfield_search_selected_holo_dark.9.png
+SHA1-Digest: tWM+3dapvHkg+XJsCoqxCKhfcP0=
+
+Name: assets/emojis/bell/e343.png
+SHA1-Digest: /g2tXEQ4qNACsLIqOYEYiNP9lZw=
+
+Name: assets/emojis/symbols/em_2747.png
+SHA1-Digest: CC+XsmBIAxnLxfY3MvzCWuGnw88=
+
+Name: res/drawable/tgvpi__tab_indicator.xml
+SHA1-Digest: 3OZ5mjVk0/4zt3DtBDDCyoTrZ5w=
+
+Name: assets/emojis/symbols/em_2b1b.png
+SHA1-Digest: kzCJuoLWr2UTT4FTs6Wpn/sSAHs=
+
+Name: assets/emojis/face/em_1f619.png
+SHA1-Digest: Ji2ILYeoWkXy9borB4+zlnyyp4Y=
+
+Name: assets/emojis/symbols/e337.png
+SHA1-Digest: JV0uZEVMdL5vPq2mJAqMQYILMgw=
+
+Name: assets/emojis/symbols/em_2705.png
+SHA1-Digest: EU2eZiR3J+53Bdm44WEDGeYHBzU=
+
+Name: assets/backgrounds/02.thumb.jpg
+SHA1-Digest: qwd/bcXbWvlUz/rlSik8BPGYZuM=
+
+Name: assets/backgrounds/07.jpg
+SHA1-Digest: nacG8gESIEZJDw5OSt6Rn2EMdN4=
+
+Name: assets/emojis/face/e022.png
+SHA1-Digest: RuLnlV/6rL8FxWtsF8LB0xXHlGg=
+
+Name: assets/emojis/face/e412.png
+SHA1-Digest: ujtm9bY0LIZ4CfGf4yQkyFdUzhE=
+
+Name: assets/emojis/symbols/e21a.png
+SHA1-Digest: OJu/VwNHVzRMSkSKvHmAjKtGxqo=
+
+Name: res/layout-sw600dp-land/activity_main.xml
+SHA1-Digest: 2FvmbIE3txmu4moSPilwXhBwy2Q=
+
+Name: assets/emojis/bell/em_1f4c7.png
+SHA1-Digest: ry2QIfksK5CbAao3h33aaBhglFw=
+
+Name: assets/emojis/bell/em_1f506.png
+SHA1-Digest: 5FHGWZdSqTfkweKoTPbSM1n/Ib0=
+
+Name: assets/emojis/symbols/e224.png
+SHA1-Digest: J0cllo4viOwE8XDorz3Eg6BXpF0=
+
+Name: res/layout/abc_expanded_menu_layout.xml
+SHA1-Digest: Dz+xtN1ZswM5T0kMIcB2O0uSoIE=
+
+Name: res/drawable-xhdpi/abs__ic_ab_back_holo_light.png
+SHA1-Digest: j6b6r0SxTxaZYmg4Do8GNfr/5So=
+
+Name: assets/emojis/bell/e439.png
+SHA1-Digest: CyllUxf+uYwrvMrFw4N2DdDGTW4=
+
+Name: assets/emojis/symbols/e315.png
+SHA1-Digest: OnKgKGH2/Jit8a+1HPcvETKcYTI=
+
+Name: assets/templates/36/icon.jpg
+SHA1-Digest: iGB0/sVN4YlItaovGbkQV2YOyP8=
+
+Name: assets/emojis/car/e508.png
+SHA1-Digest: v60V8m1745zjHbUPaWYrdftqcsQ=
+
+Name: assets/emojis/flower/e527.png
+SHA1-Digest: Ij53I6+lQricz3Gc0h6+Axg4i3Q=
+
+Name: assets/stickers/X3.png
+SHA1-Digest: rg3nwL4R+0zyDdq/ALPdrTNsKSM=
+
+Name: assets/emojis/car/e135.png
+SHA1-Digest: L6CQ+SrELBEhcu+1HAmmkZquXsA=
+
+Name: assets/backgrounds/40.thumb.jpg
+SHA1-Digest: as346+y3udmd2NQjH/3Hc++OWZA=
+
+Name: assets/emojis/bell/em_1f4d4.png
+SHA1-Digest: wobZhJB4zb7pSsMldtSzJnV0IAk=
+
+Name: assets/fonts/electron8f.jpg
+SHA1-Digest: FQ59xdwV6zVFMXF84Wk50cl3vNc=
+
+Name: res/drawable-xhdpi/btn_keyboard_key_light_golden_holo.9.png
+SHA1-Digest: W6CipYwBuQlE1+yz9ppwVgY2GGM=
+
+Name: res/drawable-hdpi/abc_ab_share_pack_holo_dark.9.png
+SHA1-Digest: vbWqIHZogWYg5NGOzMVEVEwIH7s=
+
+Name: assets/emojis/bell/e112.png
+SHA1-Digest: NdtsKZx0H/yFur8pL72vPWjGP2Q=
+
+Name: assets/backgrounds/42.jpg
+SHA1-Digest: zB9FJcu4vOQmw6CGPeguCYC/jQg=
+
+Name: assets/stickers/ohnoes.thumb.jpg
+SHA1-Digest: jyMMCWY7++KmptqtSIc0/4hCAUg=
+
+Name: assets/emojis/bell/em_1f4d1.png
+SHA1-Digest: PpF86lPDIkaLpAbgBXv8qG59918=
+
+Name: assets/emojis/flower/em_1f331.png
+SHA1-Digest: C2EKS8c4QKhkaT40+EXcEqX1pxk=
+
+Name: res/color/vpi__light_theme.xml
+SHA1-Digest: RalMGIU7X7XM5YElQ71AIqE1gEA=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: MCCdfRixNnt+YhxXLKkosE3ZwSQ=
+
+Name: assets/emojis/face/em_1f64e.png
+SHA1-Digest: kIVaDBSH3C7zyyjuBgBynKLOGO8=
+
+Name: assets/emojis/symbols/e537.png
+SHA1-Digest: /1ZNwF7tneaLBD5LoMJl/46N3sY=
+
+Name: assets/templates/33/icon.jpg
+SHA1-Digest: 8hylyRPEbom2I0SIkKebsRYmazM=
+
+Name: assets/filters/colored_stripes3.thumb.jpg
+SHA1-Digest: ohqVrZGKjro1dXh6mHlqQryb0qM=
+
+Name: res/drawable-xhdpi/abc_textfield_search_right_default_holo_dark.
+ 9.png
+SHA1-Digest: +tv7pXDQ39ETo0AN2rRd00R6//o=
+
+Name: assets/fonts/janeausten.ttf
+SHA1-Digest: F57P7PH/jPutReo2BFN++miU0tA=
+
+Name: assets/emojis/car/e15a.png
+SHA1-Digest: pVvUd9I+X0lPoXtyuzs30E3hyDI=
+
+Name: assets/fonts/hyperball.ttf
+SHA1-Digest: JehWApFwQnD2GXlEcfEjBXWIFyM=
+
+Name: res/drawable-xhdpi/abc_ic_clear_search_api_holo_light.png
+SHA1-Digest: 3amzDMs5C1zU0+T2IQhw6+cxKro=
+
+Name: assets/templates/01/config.xml
+SHA1-Digest: Zk0XiKkdhjTXO3MxFZK15QbTtdQ=
+
+Name: assets/emojis/bell/e301.png
+SHA1-Digest: rV4n4nn3RMJUWJqYbYTFnJlIWiI=
+
+Name: assets/frames/a_light1.png
+SHA1-Digest: orh4wJB6RT41jTst2G9yREeSn8M=
+
+Name: assets/emojis/flower/em_1f312.png
+SHA1-Digest: Vg8yXpEi8uLJRUypTrSS1EkvOo0=
+
+Name: assets/emojis/flower/e110.png
+SHA1-Digest: coeoKBNam+G5aq2YsQYX3G05Nu0=
+
+Name: assets/emojis/symbols/em_1f4f5.png
+SHA1-Digest: 6gBas2n5H1gx6FzM/gwokFkTNdA=
+
+Name: res/drawable-mdpi/abc_ic_menu_share_holo_light.png
+SHA1-Digest: IlEK98Eg/sFPcHXFekaYSKoPIM0=
+
+Name: assets/templates/05/icon.jpg
+SHA1-Digest: 4RLfOkjPDW1UieBIGENYPWq5UPY=
+
+Name: assets/data/rotate_pin_active.png
+SHA1-Digest: KylKayqkOCc+iQO4B7ZXFZXNLnc=
+
+Name: res/drawable-xhdpi/text_bg.9.png
+SHA1-Digest: 6jPczXEXknTVbo1OVHX3BnHRKRg=
+
+Name: assets/templates/19/config.xml
+SHA1-Digest: +KbAut4FZOxA6J2ITG7kowEBBA8=
+
+Name: assets/emojis/categs/car.png
+SHA1-Digest: XUQE+e89mL07Sj7o1b0EKSdUCtM=
+
+Name: assets/emojis/face/e414.png
+SHA1-Digest: /TOsn22sziAWenDTrn9Y2EOdYhM=
+
+Name: assets/emojis/flower/em_1f404.png
+SHA1-Digest: 7R+PwzT3vktDOj/hmZaA4Vi6VTc=
+
+Name: assets/emojis/face/em_1f465.png
+SHA1-Digest: oQSWQ0cUKAgDhhu0m0PV7RA1aRc=
+
+Name: res/drawable-ldpi/back_icon.png
+SHA1-Digest: BwbsoIxmvZsI2lD9ZsA70YIkN6Y=
+
+Name: assets/emojis/face/e10c.png
+SHA1-Digest: ajNGLdE+Le+SdH3MoFNp2lPJi60=
+
+Name: assets/emojis/bell/em_1f34f.png
+SHA1-Digest: WwIBwNBkGqMvroygy0USl6p1mwo=
+
+Name: assets/emojis/face/e11a.png
+SHA1-Digest: 9vASHt3hFb/wi/7/1S2F/wKhrys=
+
+Name: assets/templates/19/icon.jpg
+SHA1-Digest: r99xSnCFfBAOsuX2o6Gwk2cxn8I=
+
+Name: assets/emojis/symbols/em_1f565.png
+SHA1-Digest: /dkMEVd7CtgwANwMLt82ChwsfmI=
+
+Name: assets/emojis/bell/e317.png
+SHA1-Digest: x3lY23q0o5iEzO2/AYXqM2VtWXA=
+
+Name: assets/emojis/car/e432.png
+SHA1-Digest: sR89uHnUC07/j0nT0f/YXn6G5sA=
+
+Name: res/drawable-mdpi/abc_ab_solid_dark_holo.9.png
+SHA1-Digest: qBqeEvt8ayDdAJlaVjck+51a8u4=
+
+Name: res/drawable/gallery_item_bg.xml
+SHA1-Digest: 0Taot7MELEQqwhFCKLGm5NAtWio=
+
+Name: assets/fonts/yellow.ttf
+SHA1-Digest: zXmnfQ+69MPdnbzv/1rtDuFhQJA=
+
+Name: assets/emojis/face/e516.png
+SHA1-Digest: 7RPVIgxqH+z1fMqjyKe45mtt6zU=
+
+Name: assets/filters/1.png
+SHA1-Digest: fLV+fNkuoARF8SgW5+CfozLWl1g=
+
+Name: jsr305_annotations/Jsr305_annotations.gwt.xml
+SHA1-Digest: UBXHoAGmseBGDwjR6/MFHfcIK7g=
+
+Name: assets/emojis/car/e202.png
+SHA1-Digest: 8LBTurdbjnv7aP90hWfs5rTdDb8=
+
+Name: assets/templates/28/icon.jpg
+SHA1-Digest: usAP+9Gh9LzSFaIsXUsyWX8VB6E=
+
+Name: res/drawable-hdpi/abc_ic_cab_done_holo_dark.png
+SHA1-Digest: t34iCishQIjbaoIrhnBAwlzZEjM=
+
+Name: assets/emojis/bell/em_1f377.png
+SHA1-Digest: ad9I2mTDrBSDTrz2mzZJ/qxyXsE=
+
+Name: assets/emojis/flower/em_1f40f.png
+SHA1-Digest: D8o5nUJMPYk2RDnT3EHr44/c22M=
+
+Name: assets/emojis/face/e403.png
+SHA1-Digest: JlBmutdEkdw9oqu7cbh0zHZvdO4=
+
+Name: res/drawable-sw600dp-land/underline.png
+SHA1-Digest: 4BB9nj+WtwDxrWLOn7jXm1ahWBU=
+
+Name: assets/emojis/symbols/e024.png
+SHA1-Digest: 4yupfbLemc+Z0cuwOKz9w45Wokw=
+
+Name: assets/emojis/face/e314.png
+SHA1-Digest: QWiI7TTdKme/KhpKOw0h82SnWc8=
+
+Name: assets/fonts/lobster_13.jpg
+SHA1-Digest: Ek8VmchR165UG/LYsJQawVT6pmM=
+
+Name: assets/emojis/bell/em_1f36e.png
+SHA1-Digest: 7rLhVTvRaetjOBXCbSB8YmOk9nc=
+
+Name: assets/emojis/symbols/em_1f6ae.png
+SHA1-Digest: L8TGlK35Yn8P0oB+WGXcDAx1d4w=
+
+Name: assets/emojis/face/e423.png
+SHA1-Digest: O2RZjCq8DanhhDx+lUuqJ44fJd4=
+
+Name: assets/emojis/face/e321.png
+SHA1-Digest: V2f933sw9BMQgQl66OMHW0K2Ok8=
+
+Name: assets/templates/43/icon.jpg
+SHA1-Digest: JCCUu3nHUdbocUsLozkWmt4hFA4=
+
+Name: assets/emojis/bell/em_1f4be.png
+SHA1-Digest: RNklh+23uOJjRPH4OpIgQQFj3JA=
+
+Name: assets/emojis/bell/e008.png
+SHA1-Digest: gy7cX9hk0cA/SsyQtfzT0ByKct4=
+
+Name: assets/emojis/symbols/em_25ab.png
+SHA1-Digest: M8KSU+k0IVbtGEdCvW2sG2fT/Uk=
+
+Name: res/layout/abc_action_mode_bar.xml
+SHA1-Digest: y7XJe+SqH0Dez7w2TNSb4Q9hksA=
+
+Name: assets/templates/48/icon.jpg
+SHA1-Digest: n3oJ4pg99BC4RZl4ppYnQP0NN18=
+
+Name: res/anim/abc_fade_out.xml
+SHA1-Digest: iBBOWKGzwQJmVQ6pSSb3xiJEcag=
+
+Name: res/drawable-mdpi/abc_textfield_search_right_selected_holo_light
+ .9.png
+SHA1-Digest: dk4/jC/lwUb2wXpAv3FNfBqsmkM=
+
+Name: assets/backgrounds/42.thumb.jpg
+SHA1-Digest: DI43A96N5Mpca9atVjCWtH9oH+g=
+
+Name: assets/emojis/symbols/em_1f521.png
+SHA1-Digest: m1hlc++7yQLC0M6LBB71KAgrNbs=
+
+Name: res/layout-land/activity_result.xml
+SHA1-Digest: CuQvq+N2QnzMDWeVHHU8PGcOjGY=
+
+Name: assets/emojis/symbols/e23f.png
+SHA1-Digest: MbCc5ykmbRDSs/CaOdimQnowsvA=
+
+Name: assets/emojis/face/e40e.png
+SHA1-Digest: OlilH3hcAzCvp8bPQCsTMEwMZ4o=
+
+Name: res/layout/store_page_lv_loadmore.xml
+SHA1-Digest: 5nLTKsrFbSWdlygIr2nOUQpiKNQ=
+
+Name: assets/emojis/face/e253.png
+SHA1-Digest: mlkkx5kgv+NnAToprES0jpKai+w=
+
+Name: res/layout/styling_text_fragment.xml
+SHA1-Digest: 3xSdOHmFll/2bKoOitDDGc+w2yk=
+
+Name: assets/emojis/bell/em_1f4b6.png
+SHA1-Digest: lvvEfLGwoCMB5AgFqNnHCAqPp1k=
+
+Name: assets/stickers/mahchilling.thumb.jpg
+SHA1-Digest: kcK2/3sfsCoR/ly3AySumE6Ct5M=
+
+Name: res/drawable-xhdpi/abs__ic_menu_moreoverflow_normal_holo_light.p
+ ng
+SHA1-Digest: POMOeAlguZlbMbGoPhcyZRJSqPc=
+
+Name: assets/emojis/flower/e054.png
+SHA1-Digest: tnvQtPErBgzfyeO+0UjWHmmTDfQ=
+
+Name: assets/emojis/face/em_1f45b.png
+SHA1-Digest: iMAFqsesUtsWBUHNYCs21BYxmuQ=
+
+Name: assets/fonts/hyperball.jpg
+SHA1-Digest: Okrhc+eJZRIrotzYtHdPtCNq+DA=
+
+Name: assets/emojis/bell/em_1f38a.png
+SHA1-Digest: pRbmCTRMgVcfrJHZKMzlt0Hdve8=
+
+Name: assets/emojis/bell/e30f.png
+SHA1-Digest: imAqAcZQQ4GzPAK80nwCkiiqQ7w=
+
+Name: assets/fonts/lobster_13.ttf
+SHA1-Digest: ghN+ltBlouuS9cryKRvTF3CRvEM=
+
+Name: assets/emojis/bell/e312.png
+SHA1-Digest: +LsKXCcqv+ZSrvnBZzxgqRNj3vw=
+
+Name: assets/emojis/symbols/e239.png
+SHA1-Digest: EOu31y/RxHhqHDmjJZo2DbKj1uY=
+
+Name: assets/fonts/raavi.ttf
+SHA1-Digest: T99mbVtWmnjN39WEZbxBN2ScVow=
+
+Name: assets/emojis/symbols/em_1f563.png
+SHA1-Digest: dw6wq8iRvHi4SAPeYuBlLLHDSv0=
+
+Name: assets/emojis/symbols/e214.png
+SHA1-Digest: Ioret6VQs39mQqnjaztnqNi+dDw=
+
+Name: assets/emojis/face/em_1f605.png
+SHA1-Digest: zBe5H6dBn2v8WNqxSURBY9iWEFc=
+
+Name: assets/templates/42/config.xml
+SHA1-Digest: jz2Jt7BEPoDWc7ncM0Qo7J/d2+I=
+
+Name: assets/emojis/face/em_1f638.png
+SHA1-Digest: 4zJv6Xl58SGoOZ0WftayRyO17uc=
+
+Name: assets/emojis/face/e413.png
+SHA1-Digest: paN1uh1UOXjqBwJR48MF6mZmFvQ=
+
+Name: assets/emojis/bell/em_1f4f9.png
+SHA1-Digest: SfP69wwapBPx4FZr7QLBVh2UAlc=
+
+Name: assets/emojis/car/em_1f3ee.png
+SHA1-Digest: tyFxle2eL2lz3QNh516xA3/qWtY=
+
+Name: assets/emojis/car/e209.png
+SHA1-Digest: /Bup8Sg334TnkfVN5vHHEtLqmxM=
+
+Name: assets/emojis/symbols/e219.png
+SHA1-Digest: lufxk4GLGIei3CzIpExPoC14gxs=
+
+Name: res/drawable-xhdpi/abc_list_pressed_holo_light.9.png
+SHA1-Digest: 6mFx7W/WZzwz8KaB8gz1FwlUflU=
+
+Name: assets/emojis/bell/em_1f6b5.png
+SHA1-Digest: r2VQzGqGzuZOveSk4nFBZm8+mGo=
+
+Name: assets/emojis/bell/e12f.png
+SHA1-Digest: d7wLC8SrBbFTfrq8EBkuVRCBcuY=
+
+Name: res/drawable/separator.xml
+SHA1-Digest: urSxns83xX96hzSkEzYxpDLrTls=
+
+Name: res/layout/abc_search_view.xml
+SHA1-Digest: 2QDs7hNbUU33iZDoxFRIOVxxJQ8=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_disabled_holo_dark.9.png
+SHA1-Digest: qk7umgfAVfqgrVcBS3XZJ1DjZgc=
+
+Name: res/drawable-hdpi/tgvpi__tab_selected_pressed_holo.9.png
+SHA1-Digest: DZHgtW/y11z4DXSiehTg8d6d5zI=
+
+Name: assets/emojis/car/e505.png
+SHA1-Digest: D+6IdG2hzUG8enwPZJwaoeI/Sog=
+
+Name: res/layout/store_featured.xml
+SHA1-Digest: AaBBehcYxYNfVQdojHigihmRxEY=
+
+Name: res/drawable-xhdpi/abc_ic_menu_share_holo_light.png
+SHA1-Digest: ktod2zHisp5F/9ClTQMEo0Nu5z4=
+
+Name: assets/stickers/burnt.png
+SHA1-Digest: YSVcihYoh1tirXVFT7yGRIqRam8=
+
+Name: res/drawable/btn_holo_round.xml
+SHA1-Digest: QY9+6wYWuTfPOYXsn1TG5RTvUSo=
+
+Name: assets/emojis/bell/e126.png
+SHA1-Digest: CPIdqsbNsKnIkrC6x8MDN4h/VpA=
+
+Name: assets/stickers/a_gift.png
+SHA1-Digest: W9e6wQbObyP6Phi57Kz9x9GUftg=
+
+Name: assets/templates/11/icon.jpg
+SHA1-Digest: Hb1sJs+YDjmXfSJO0/npTrvradE=
+
+Name: assets/emojis/face/e230.png
+SHA1-Digest: 3zzyuuLJ3y338EDWKwT2mlwStNE=
+
+Name: assets/emojis/symbols/e12c.png
+SHA1-Digest: gkNFryF8h4E9cm7xtO5oJvz1yQ0=
+
+Name: assets/stickers/secretlaugh.png
+SHA1-Digest: QkYM7W8n+1S9N6M3rXJxDLYrlW0=
+
+Name: assets/emojis/car/e038.png
+SHA1-Digest: TF5IbdiLCMA6G5Ilrw9EMCIIZNQ=
+
+Name: res/drawable-hdpi/abc_ab_stacked_transparent_light_holo.9.png
+SHA1-Digest: bS7Ss6M/uhtIfOU7aXXVHhX2Poc=
+
+Name: assets/emojis/flower/em_1f425.png
+SHA1-Digest: E1UaasHA/z8D+YKl5fQZrr3Z68o=
+
+Name: assets/stickers/a_coffe.thumb.jpg
+SHA1-Digest: ITLnhlQIX2Tgpc3xDEmflZ/ZjYs=
+
+Name: assets/stickers/a_car.png
+SHA1-Digest: QVlmPqdW3omEItG9bIixHEL6UPk=
+
+Name: res/drawable-xhdpi/btn_selected_normal_holo_light.9.png
+SHA1-Digest: pj/qsj3Kc/+hWsAxkr2ZPxMKrm8=
+
+Name: res/drawable/lazylist_stub.png
+SHA1-Digest: qFOb5icAmN4kv3kCaI7FNb4bLJI=
+
+Name: assets/emojis/face/e327.png
+SHA1-Digest: pwKMDr00fVTdi1XAJcgMZdl//zA=
+
+Name: assets/filters/!f5.png
+SHA1-Digest: TUDqowXTM12xNYYg/LAlJwrLGAs=
+
+Name: assets/fonts/eraser_dust.ttf
+SHA1-Digest: CEFj8Y5wwSr3076OujA2juRgw1w=
+
+Name: res/layout/abc_action_bar_tab.xml
+SHA1-Digest: AtPhAEawPp0FkQEwMieAxpUG4Dc=
+
+Name: assets/emojis/bell/e045.png
+SHA1-Digest: IZgYTAdC0QXBQRrucV1RDoL/VjE=
+
+Name: res/drawable/button_icon_selected.xml
+SHA1-Digest: jfhTGlvCiK8g+XW1Cr/5jjUaiQM=
+
+Name: assets/stickers/bouaaaaah.thumb.jpg
+SHA1-Digest: HFIO4CqKCc/+TesMWEu1grumT6M=
+
+Name: res/drawable/gv_icon_none.png
+SHA1-Digest: HPGCF8ltaHlGW8H2OzYzun/CaGU=
+
+Name: assets/templates/03/config.xml
+SHA1-Digest: TRhdedIusb1i6ealv6NJ7alhhO0=
+
+Name: assets/stickers/yo.png
+SHA1-Digest: UFDcbHXiWSOTm6Oeldp3KydKOFs=
+
+Name: res/layout/abc_list_menu_item_icon.xml
+SHA1-Digest: VYqHX6rg6avUlbCzghdPFttT1mA=
+
+Name: assets/emojis/face/em_1f46a.png
+SHA1-Digest: EdPpgiT/k9bhTXhMCKnXrBEJAY0=
+
+Name: assets/filters/3.png
+SHA1-Digest: ag+RDePJ/7F8VVwf/VmHZGFhfqQ=
+
+Name: assets/templates/13/icon.jpg
+SHA1-Digest: sws2iECj721yY9QfVtSFVMrlSCQ=
+
+Name: res/drawable-sw600dp-land/strikethrough.png
+SHA1-Digest: vOMY3Zxa8gRxgqRbM+6zwoLEA1o=
+
+Name: assets/emojis/face/e201.png
+SHA1-Digest: G5vXVCoqcHQm6Rr1+V22n29Emok=
+
+Name: assets/templates/32/config.xml
+SHA1-Digest: t+9XYHlTbDtVuwzqjw4F0eRD7aM=
+
+Name: res/drawable-mdpi/abc_ab_transparent_light_holo.9.png
+SHA1-Digest: XWDzwunfA77b0yNocbomq0jPulo=
+
+Name: res/drawable-mdpi/abc_cab_background_bottom_holo_light.9.png
+SHA1-Digest: xaK+sWCPT47/QiqeFNHU+6mso9s=
+
+Name: assets/stickers/a_umberlla.thumb.jpg
+SHA1-Digest: 2i2zUPYgkPRoGsRkyce6t24P6UM=
+
+Name: assets/emojis/face/e41d.png
+SHA1-Digest: 223GZ0+3NZzpBw3fYpM7jjPESo4=
+
+Name: assets/fonts/ballpark_weiner.ttf
+SHA1-Digest: 5Or7pxVNQ4DBtfcPxZ0uY/baNlc=
+
+Name: assets/emojis/car/e431.png
+SHA1-Digest: TRCZaBQ9s4VhzQ2CFBBEaJY0YeU=
+
+Name: assets/frames/112.png
+SHA1-Digest: 8aebbKlGzZFbsHK9LyS8syP6Rt4=
+
+Name: assets/emojis/face/em_1f624.png
+SHA1-Digest: EjfAPO9AGZw+0QSen+AxJn8j3Cs=
+
+Name: assets/emojis/symbols/em_1f4af.png
+SHA1-Digest: CbnfQL5rKUtYbpw21rymjlF42vQ=
+
+Name: res/layout/styling_images_fragment_all.xml
+SHA1-Digest: CEgDRBL67I56dAYL7rIdJZTBD4k=
+
+Name: assets/backgrounds/17.thumb.jpg
+SHA1-Digest: AQm581z3Q6+SXRuYN+bd5lhd9eM=
+
+Name: assets/stickers/X3.thumb.jpg
+SHA1-Digest: cvZOBHGNzFyszOki0qI6/mmJp0w=
+
+Name: res/drawable-xhdpi/smiley_icon.png
+SHA1-Digest: hz2r/lpLNYXjcxH+HAonIsUs86w=
+
+Name: res/drawable-nodpi/edit_text.png
+SHA1-Digest: y+5oD2MF/GwQ6Aamkx0667Iwef0=
+
+Name: assets/emojis/bell/e046.png
+SHA1-Digest: Mr6gNx28sMEHIgKPOIeDZ14LVsU=
+
+Name: res/layout-sw600dp-port/gallery_item.xml
+SHA1-Digest: wqfUKk4zyheg7L4cbvP5mvpV/5o=
+
+Name: assets/filters/f7.png
+SHA1-Digest: hoYQaZ1GsB24vK/vfBmd/4+/ci8=
+
+Name: assets/emojis/bell/em_1f526.png
+SHA1-Digest: oFOU8sZQDQi3CJSeatu8ZEx3s68=
+
+Name: assets/emojis/face/em_1f63c.png
+SHA1-Digest: wOec0QrFH03jH13nbt9HNdIb44g=
+
+Name: res/drawable/button_yellow.xml
+SHA1-Digest: 7Pk+iJG4hOVBNTy/jSrbNMPiHGs=
+
+Name: res/drawable-ldpi/ambilwarna_cursor.png
+SHA1-Digest: 0KvTn0PnEipH2UWuvk7lG8ClBlQ=
+
+Name: res/drawable-hdpi/abc_ic_cab_done_holo_light.png
+SHA1-Digest: ISvmrlOfXbsp9lBrwReYqWtx9o0=
+
+Name: assets/backgrounds/32.thumb.jpg
+SHA1-Digest: he9qvR4bQ8/PR8hj+vsxdscxS+k=
+
+Name: assets/emojis/symbols/e238.png
+SHA1-Digest: tEaHVYTWwHy8zStuDndIZzw4HFA=
+
+Name: res/drawable-mdpi/abc_textfield_search_right_default_holo_dark.9
+ .png
+SHA1-Digest: kbmf07fyikp5TPCnqcSz0GRTdIA=
+
+Name: res/drawable/abc_search_dropdown_light.xml
+SHA1-Digest: HqoPZlllFWPjcWfdGm4HMQwClEE=
+
+Name: res/anim/slide_out_left.xml
+SHA1-Digest: 0J6HIeIOKpO5YQr5HT9/y3jZiA4=
+
+Name: res/drawable-mdpi/vpi__tab_unselected_pressed_holo.9.png
+SHA1-Digest: UvHnw9Thh4MmbDM+aFqQ5sWmLq4=
+
+Name: assets/emojis/bell/em_1f505.png
+SHA1-Digest: jtW02hZi86DhEXPHddOdovM+zF0=
+
+Name: assets/stickers/saryoureal.thumb.jpg
+SHA1-Digest: xgLhVQhApqlL1/P8MFGA5DS8Yx8=
+
+Name: assets/emojis/face/e515.png
+SHA1-Digest: F5QE+zaZ45RLGvyOE2bLRjHjelg=
+
+Name: assets/emojis/car/e44a.png
+SHA1-Digest: J+YXCwuVQv3R0HIB2xd99HDS1cw=
+
+Name: assets/emojis/car/e03b.png
+SHA1-Digest: +rzZeexTZdwG6ojGc5VT9hjQMzQ=
+
+Name: assets/stickers/a_heart_stitch.png
+SHA1-Digest: 8BnEjJwpkUKgNDv4j7ht2Vl+RkA=
+
+Name: assets/emojis/symbols/e151.png
+SHA1-Digest: HiAr8hhJhfYILuWgTb1shbbx7RI=
+
+Name: assets/stickers/scared.png
+SHA1-Digest: GipfHsy7mPNidJh9MsssPv9FNg8=
+
+Name: assets/emojis/flower/e307.png
+SHA1-Digest: ve/JGuHkh7nWntb/qXovK7SvKuQ=
+
+Name: assets/emojis/symbols/em_1f6b1.png
+SHA1-Digest: FiHWpuaMWkX8a80PfuJLC3yfqz8=
+
+Name: res/drawable/abc_textfield_searchview_right_holo_dark.xml
+SHA1-Digest: wlgkTNmlDKl9zn9XDBkFMyOXszE=
+
+Name: assets/stickers/hidden.thumb.jpg
+SHA1-Digest: Uyz+WogbYMUlNE65b5W7AZuXA0c=
+
+Name: assets/emojis/bell/em_1f3c7.png
+SHA1-Digest: 8Jh/b13H2l3tPwIpyz+K2TCfZyw=
+
+Name: assets/emojis/bell/e34b.png
+SHA1-Digest: Qqk9HBGfqMukfokM3lfLMgYG8p0=
+
+Name: res/drawable/button_blue.xml
+SHA1-Digest: JrpmMJqTxB3FTeh6+mfkp2QCvMU=
+
+Name: res/layout-land/ambilwarna_dialog.xml
+SHA1-Digest: zi6dvh7bvKyJdO0NSulLB/xqYB0=
+
+Name: assets/emojis/face/e14c.png
+SHA1-Digest: k6aT6Z3UY4hYceAS6vnnkGZBhVk=
+
+Name: res/drawable-hdpi/ambilwarna_arrow_down.png
+SHA1-Digest: CYBGa/2t9EfyIqe4kvuSp0bvE5I=
+
+Name: assets/stickers/tastey.thumb.jpg
+SHA1-Digest: Qr+Zc/t+mx3bDu9h3YiLINaaQpU=
+
+Name: res/layout/abc_activity_chooser_view_include.xml
+SHA1-Digest: zz/dm89JNYKenBphks3OQJ+UDD4=
+
+Name: assets/stickers/darkmood.png
+SHA1-Digest: fedP5HMq5F+NE2+cCtD/uKlE5tw=
+
+Name: assets/frames/gfd546.png
+SHA1-Digest: BWDprn3Y9Q1xCCPNvnfJHW0NWAs=
+
+Name: assets/stickers/secretlaugh.thumb.jpg
+SHA1-Digest: wYre+15924Giyis83p3lVG+ghYY=
+
+Name: assets/emojis/face/em_1f64d.png
+SHA1-Digest: uZSfrsQ+AfnH+I+q0vDC1Garzvw=
+
+Name: res/layout/cropimage.xml
+SHA1-Digest: WkN64r8Qe1FJhsD3QRgw9X/NTQY=
+
+Name: res/layout/abc_action_menu_layout.xml
+SHA1-Digest: cbIEubdgneZMyrCPL+vlLvtS5uM=
+
+Name: assets/emojis/symbols/e23c.png
+SHA1-Digest: YLj+rYqXQhi4bNzUIh1BANwrLRo=
+
+Name: assets/emojis/symbols/e026.png
+SHA1-Digest: hq0s2+ne6zzRmd/hs1rkIgCJt+g=
+
+Name: assets/emojis/symbols/e138.png
+SHA1-Digest: OL0T0QbjqAT6bnNJEXAnClvQqfQ=
+
+Name: assets/stickers/indifferent .thumb.jpg
+SHA1-Digest: emHr8bHI8Rta2ee+JIuIk4QiSOs=
+
+Name: res/drawable/loading_bg.jpg
+SHA1-Digest: ywhWYuMvFpNgfCTz/uQg1Z0p4Cs=
+
+Name: assets/emojis/flower/em_1f43e.png
+SHA1-Digest: f2KJEmwlG76UBFEz59q0frXQ4zU=
+
+Name: res/drawable-mdpi/abc_ab_bottom_solid_dark_holo.9.png
+SHA1-Digest: 4yQfpkBrRkBsuNAfQ9ENpvqvEqQ=
+
+Name: assets/emojis/face/e427.png
+SHA1-Digest: 3VqwOeO/s31iPIlB7jBzsgHOMfQ=
+
+Name: res/drawable-xhdpi/abc_ic_clear_search_api_disabled_holo_light.p
+ ng
+SHA1-Digest: UTzyvWsXOq8h61wuNZzbaIw/Iu0=
+
+Name: assets/emojis/bell/e14b.png
+SHA1-Digest: sn2PUDWHv7ozZ8wkCTMObvGEi70=
+
+Name: assets/emojis/bell/em_1f350.png
+SHA1-Digest: 10jCghDaAAU8CRRL/ckAQf7hU/8=
+
+Name: assets/templates/33/config.xml
+SHA1-Digest: ovLR11IVr85kH2TyOsI7LcbmJS8=
+
+Name: assets/emojis/face/e319.png
+SHA1-Digest: +u+U2hSlePv6bmmf6yQlBF1ViT8=
+
+Name: assets/emojis/car/em_1f698.png
+SHA1-Digest: qEn5olw5NLcH0EPuq+7lSrKyAaQ=
+
+Name: assets/emojis/bell/em_1f4ce.png
+SHA1-Digest: UIfIlnxcbnQ1iVUVCXdaBNQSuqA=
+
+Name: res/drawable-mdpi/abc_ic_search.png
+SHA1-Digest: PC1F8nqODWQpI1dkYj+S1w8KJdc=
+
+Name: assets/emojis/car/e158.png
+SHA1-Digest: 9ZjWPmfe5qPC61boZirRdgxgfvo=
+
+Name: assets/emojis/bell/em_1f3ae.png
+SHA1-Digest: LHb4EcE5tn4bAbkXuYjTMnUUqX8=
+
+Name: assets/emojis/bell/e437.png
+SHA1-Digest: o1jZat5k+Ll5iDTPHnN4UJBMNIM=
+
+Name: assets/emojis/face/em_1f456.png
+SHA1-Digest: GpQXQEUjbsZCz2bhZisn9/KNb08=
+
+Name: assets/emojis/face/e007.png
+SHA1-Digest: nEw0UquGA2idh5g61QtuX78N+fU=
+
+Name: assets/emojis/face/e152.png
+SHA1-Digest: 4rJLPvFoImQksOPtMMpwrd41giE=
+
+Name: assets/backgrounds/37.jpg
+SHA1-Digest: 8nK1n2d+41TEoiajx013ubhHWb8=
+
+Name: assets/emojis/bell/e338.png
+SHA1-Digest: yRCnYH2Gbn65yyU0EVaTDz+ozEM=
+
+Name: assets/emojis/car/e50b.png
+SHA1-Digest: xqJ+3LDHM+lRRNGxUeELd+MLMPU=
+
+Name: assets/emojis/flower/e525.png
+SHA1-Digest: KjraEUn+mPq2lyCCW9RQNLagiHo=
+
+Name: assets/frames/112.thumb.jpg
+SHA1-Digest: tBymEeHGwLfNy/tqUg934TOsTPE=
+
+Name: assets/emojis/flower/em_1f30d.png
+SHA1-Digest: Ue6066icZrYasYwZrSL2wXS08Bc=
+
+Name: assets/frames/zframe1.thumb.jpg
+SHA1-Digest: 9gUBK9UNKT6X9Ylj1IrBGfv0ngc=
+
+Name: assets/stickers/youseemtobeserious.png
+SHA1-Digest: W38B4B5JJUYcG+i7Li3Ql80n2pg=
+
+Name: assets/emojis/bell/em_1f527.png
+SHA1-Digest: hfWyXlnDNYfXQMww1+2LkZZP5tc=
+
+Name: assets/emojis/car/e122.png
+SHA1-Digest: DUefc6aPGUMc+YBYq+Bln61b1r0=
+
+Name: res/drawable-hdpi/abc_ic_ab_back_holo_light.png
+SHA1-Digest: 2190+21f7tmW4QHksA5MDH2ccTI=
+
+Name: assets/frames/zbhframe.png
+SHA1-Digest: E3L35xPUDpS4tqPCFXAmee7g7xs=
+
+Name: res/menu/activity_main.xml
+SHA1-Digest: +LbP/C9o64VbqPvPrEqfEGqcVMc=
+
+Name: assets/emojis/symbols/e025.png
+SHA1-Digest: Zc6eIaIkjvZb65Lo1uNC/7WKNPs=
+
+Name: assets/emojis/flower/em_1f408.png
+SHA1-Digest: 9iM0upzk5rvsc1uObZHMOApKqPg=
+
+Name: assets/emojis/flower/em_1f403.png
+SHA1-Digest: 3TBkEsR1HMquwbyVhxbHHuMPqqE=
+
+Name: assets/backgrounds/23.jpg
+SHA1-Digest: 2/y4Fk/I/J8i+ZwTYzcFNLxnjEA=
+
+Name: res/layout/abc_action_bar_decor.xml
+SHA1-Digest: e2/g60f1GEqyrfahKrZR2usBgOM=
+
+Name: assets/emojis/bell/e101.png
+SHA1-Digest: Eg4eA0mQ80YQoTP7A2sNt1vh2ig=
+
+Name: assets/fonts/alkisah.jpg
+SHA1-Digest: iNY8KrCtZ2e7QRcS+hTYeOwseVY=
+
+Name: res/layout/ambilwarna_pref_widget.xml
+SHA1-Digest: jYAt6mjxjxviOyNhd8Gts9mYt1g=
+
+Name: res/drawable-sw600dp-land/gv_icon_add.png
+SHA1-Digest: 4lo9WP4gcu2xVMWIyKxJMmztbmo=
+
+Name: assets/fonts/kronika.ttf
+SHA1-Digest: 4/DECGR6SbNhBh+9+LmLU7EcMWw=
+
+Name: res/drawable-hdpi/abc_ab_share_pack_holo_light.9.png
+SHA1-Digest: bFdE56QD5zmKc1Kcyk6zx1kaG40=
+
+Name: assets/backgrounds/10.jpg
+SHA1-Digest: JTkeKeW5yHTvf7cMpk+cVM9KzOA=
+
+Name: assets/fonts/StarryNight.thumb.jpg
+SHA1-Digest: QAL8pbtE5aw8ZZq1AOEHRztr9RQ=
+
+Name: res/drawable-mdpi/abc_menu_dropdown_panel_holo_light.9.png
+SHA1-Digest: E+9ycqMfwtPH+GZhwrG/ke/wKww=
+
+Name: assets/emojis/bell/em_231a.png
+SHA1-Digest: BCkynVhGfCiFzJdKxMO+ZbBG0WM=
+
+Name: assets/emojis/car/e156.png
+SHA1-Digest: GKNb627avCzVohYT/MbiTEdjInU=
+
+Name: assets/stickers/faill.png
+SHA1-Digest: mkyflyQOfSlOlpMj/BorRN+/gUM=
+
+Name: assets/stickers/wat.png
+SHA1-Digest: cYvS5UpiGv+js0GMbi23G/mrH/g=
+
+Name: assets/emojis/bell/em_1f3bb.png
+SHA1-Digest: sOZb74noH/oKgbHFODNclGwWQOo=
+
+Name: assets/emojis/car/em_1f5ff.png
+SHA1-Digest: YvslUWeweiO6RFIH/fwRuJS28XE=
+
+Name: assets/emojis/bell/em_1f360.png
+SHA1-Digest: zCE+vWmQ+wzn1E/JbnlGeYOrQYk=
+
+Name: assets/emojis/car/e14e.png
+SHA1-Digest: KYQysjM5WGRXN10di0o0BiA1ESY=
+
+Name: assets/emojis/face/e115.png
+SHA1-Digest: Usph4UUjlFpORIHk3GCmGTW/eXM=
+
+Name: assets/emojis/bell/e103.png
+SHA1-Digest: f1JHAzF3xWsTNOivROksOxrqneU=
+
+Name: assets/emojis/flower/em_1f422.png
+SHA1-Digest: Vc/2+eP9Paf7e6tjpoHJqDyu5Lc=
+
+Name: assets/data/supersurface_del.png
+SHA1-Digest: dRRQOtSbRWxmPOGjmq5JfM6TpGw=
+
+Name: assets/fonts/beachtyp.jpg
+SHA1-Digest: zrrEA04p/OHQt6B9rahdgzAZlXc=
+
+Name: assets/emojis/car/em_1f68d.png
+SHA1-Digest: MSQuRhPj9DGGmGAELFIx353zha4=
+
+Name: assets/emojis/face/em_1f606.png
+SHA1-Digest: 5Za/L8yZ7P2DIAy2qmZ0EbvHmM0=
+
+Name: assets/emojis/face/em_1f61b.png
+SHA1-Digest: rtRXQXEf95ipph7j9taDYSskuTc=
+
+Name: res/drawable-mdpi/vpi__tab_selected_holo.9.png
+SHA1-Digest: 8sgxuVxhFo6eSxCIpjtdalG/XP8=
+
+Name: assets/emojis/face/e04f.png
+SHA1-Digest: CaziG5IgehxfrQE0NSNnqOxSMVk=
+
+Name: assets/emojis/car/e514.png
+SHA1-Digest: o3liKH8nlt3UeYEV+OERqC6G9PU=
+
+Name: assets/emojis/bell/em_1f36a.png
+SHA1-Digest: vEP8nKhljH0hRYO4UzSM6b7Zb+I=
+
+Name: assets/emojis/flower/em_1f33c.png
+SHA1-Digest: SkBFIcYL+F+kLOraFMXhDDYKoVY=
+
+Name: assets/emojis/car/em_1f694.png
+SHA1-Digest: NXGP7njIWA9xXl77sC+i87QRECY=
+
+Name: assets/emojis/bell/e316.png
+SHA1-Digest: Uez/OgrxlEoZzQWSSrtKj1QkzdM=
+
+Name: assets/emojis/face/e058.png
+SHA1-Digest: ZjnynKgi4LrYW+W95QwX8Y0YL+g=
+
+Name: assets/emojis/symbols/em_27b0.png
+SHA1-Digest: MNN/OscPiPrGMKEP2N61Mbrpt4M=
+
+Name: assets/emojis/face/em_1f48c.png
+SHA1-Digest: 1Cz4GQYz8y/yaxd8/j0XCsYyWuo=
+
+Name: assets/emojis/bell/e13b.png
+SHA1-Digest: sT36hQUGXbOlRjexT6+wvgxCqH8=
+
+Name: assets/emojis/symbols/e248.png
+SHA1-Digest: dJpAz50tESUL6XxsA+O6zcIm2+o=
+
+Name: assets/emojis/face/e11d.png
+SHA1-Digest: z9EIYR1POgI10Y0qGwXB9Oni9fg=
+
+Name: assets/emojis/car/e320.png
+SHA1-Digest: CUSla6IhTkKVE+sucdvkn46vna0=
+
+Name: assets/frames/22.png
+SHA1-Digest: Ojh5uM0R6I/rWMvJgdXSttfwRRM=
+
+Name: assets/emojis/face/e001.png
+SHA1-Digest: OZxpOZ4/+88xDJPbJdim+VNwW+k=
+
+Name: assets/backgrounds/46.thumb.jpg
+SHA1-Digest: gqGY+0ngPmJlVg8+bp9f8uj1Ees=
+
+Name: assets/emojis/bell/e325.png
+SHA1-Digest: ZpJfiZ3NflJkRWHNdC9RMwhh7TE=
+
+Name: assets/emojis/symbols/e218.png
+SHA1-Digest: bRWl7CgbhKzE1fySZgr9Q8J3jA8=
+
+Name: assets/templates/02/icon.jpg
+SHA1-Digest: qwd/bcXbWvlUz/rlSik8BPGYZuM=
+
+Name: res/drawable-hdpi/abc_ic_menu_share_holo_dark.png
+SHA1-Digest: SpbWnJMbZ3HRdVLZqaechE5B8lM=
+
+Name: assets/emojis/flower/e530.png
+SHA1-Digest: CzDQXzxf1DPOxKxvba9EciM5S4E=
+
+Name: assets/emojis/bell/em_1f36b.png
+SHA1-Digest: 9NVcvn1I2j8Unwljojd25DqtYIU=
+
+Name: assets/emojis/symbols/em_1f564.png
+SHA1-Digest: Hd3wzHtF71yRKblOfuNK3q3RMO4=
+
+Name: assets/emojis/bell/em_1f4e6.png
+SHA1-Digest: xCaY+913DMQEiBTe6fm6lOxyxsA=
+
+Name: assets/emojis/symbols/e245.png
+SHA1-Digest: javV5phu9x1Grk1nxB7K9ITKWBo=
+
+Name: assets/emojis/flower/em_26c5.png
+SHA1-Digest: EnR82qpowR+ZltPQNKwiBlF5fB8=
+
+Name: assets/emojis/bell/em_1f4cb.png
+SHA1-Digest: nQnt8UtCbukBgVHZc1rfVhYcwhE=
+
+Name: assets/emojis/face/e004.png
+SHA1-Digest: s6cSWC+W0zPJBCUEZlAC78jJR4I=
+
+Name: assets/emojis/face/em_1f3bd.png
+SHA1-Digest: QSaYUIVyPKszpeg2egAVJ0ffefo=
+
+Name: assets/templates/47/icon.jpg
+SHA1-Digest: HKJTKZYFFtG94JHDD+6hLlMqryQ=
+
+Name: assets/frames/03.thumb.jpg
+SHA1-Digest: GoIldGG7dBe1x0onTU9bJ08xuK4=
+
+Name: assets/emojis/car/em_1f69b.png
+SHA1-Digest: uZGvaAbfD/LGoS1xFWdRAGrjA3I=
+
+Name: assets/emojis/bell/e30a.png
+SHA1-Digest: R160bVn6h/zlS+3EFZtrM6m+cdQ=
+
+Name: assets/emojis/bell/e127.png
+SHA1-Digest: Ok3DxvobHHJU3h3XrUOmNZra5tU=
+
+Name: assets/emojis/face/e00d.png
+SHA1-Digest: tHCeJJnaJKDUuzZHSEimgbU3Kww=
+
+Name: assets/emojis/symbols/em_1f522.png
+SHA1-Digest: 6vtboJX1zbqMgjSvmO0/UT4SY3U=
+
+Name: assets/emojis/symbols/em_1f55e.png
+SHA1-Digest: Ov9qJW8/OM49PGxjDt4+cgrvcbU=
+
+Name: res/drawable-hdpi/abc_ab_bottom_transparent_dark_holo.9.png
+SHA1-Digest: fXDWMuV/2UJCMKk6MVwjYBFcVWY=
+
+Name: res/drawable-xhdpi/vpi__tab_selected_focused_holo.9.png
+SHA1-Digest: AmjEYxvpuVtaYTL71e9rnvkbedE=
+
+Name: res/drawable/top_button.xml
+SHA1-Digest: PMbAhhVbgI/6iegFGWLEuZYeuFE=
+
+Name: res/drawable-ldpi/grid_icon.png
+SHA1-Digest: m08sJjywZvP9eTiW9OdYb+taSvI=
+
+Name: assets/emojis/flower/e01a.png
+SHA1-Digest: MLbWf3PjkUuqo3NJqkotPQ9n0XA=
+
+Name: assets/emojis/bell/em_1f34c.png
+SHA1-Digest: X+uoCkpiyttgFjWf7NLtKyGV6xA=
+
+Name: res/drawable-ldpi/options_icon.png
+SHA1-Digest: IWiko3TbcKnIyp9UqwBM6nEB0Es=
+
+Name: assets/emojis/bell/e11b.png
+SHA1-Digest: 9/Ph3iE9/ZJ1mzVnknnqlmaIg/E=
+
+Name: assets/templates/26/config.xml
+SHA1-Digest: JtYhuUa13e34h/rY345eFm4Kfsg=
+
+Name: res/drawable-xhdpi/result_bg.9.png
+SHA1-Digest: jsuLI+R/ao3FufjxTfM4Man6IAQ=
+
+Name: assets/emojis/bell/em_1f348.png
+SHA1-Digest: FaX6E3lmUcmp+WilDkh9OMpkKoo=
+
+Name: assets/emojis/bell/em_1f6c1.png
+SHA1-Digest: FzZ7OQNv15GwWFrvoLH0ziT/nIE=
+
+Name: res/drawable-hdpi/abc_ic_clear_search_api_holo_light.png
+SHA1-Digest: lySLLFGrRykDN0crMWsDOJvAcPI=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_focused_holo_dark.9.png
+SHA1-Digest: wwy5fjCH/nukeZVgKh8IzsrW1tU=
+
+Name: res/drawable/twitter_icon.png
+SHA1-Digest: bbKWSQ/YlmlxU/K6g9dgLAhlrWU=
+
+Name: assets/emojis/symbols/em_1f518.png
+SHA1-Digest: 1RbHheMflwUo7dyx2MtBNLCxYCc=
+
+Name: assets/emojis/face/em_1f649.png
+SHA1-Digest: 46u6YOcklXYFOIHz7TPUuhvxLWY=
+
+Name: assets/backgrounds/05.jpg
+SHA1-Digest: mexeePUEvv1zShJWd+R4dSdn3BI=
+
+Name: assets/emojis/bell/em_1f3bc.png
+SHA1-Digest: 7uBpRvHhoyo8xrcmoCxPAfVwVns=
+
+Name: assets/emojis/face/e322.png
+SHA1-Digest: w61yTNNaqwJB9eITq1y3eMMc0r4=
+
+Name: assets/emojis/bell/e345.png
+SHA1-Digest: cFd9ttpfJZ5BpaKoN2XeTeStvL4=
+
+Name: assets/emojis/bell/em_1f4b8.png
+SHA1-Digest: 6aBir6i+nW9JhN62jvn5Ic3sJ78=
+
+Name: assets/backgrounds/46.jpg
+SHA1-Digest: QCs2pWhWwDhV232zZfR+DmMjNUY=
+
+Name: assets/emojis/symbols/e203.png
+SHA1-Digest: DhSAu0oCzK5TRNWWPmJtOx06QEM=
+
+Name: res/drawable-mdpi/abc_menu_hardkey_panel_holo_dark.9.png
+SHA1-Digest: u6FB7eaIkIS5HkqHm+QtCdY8lo0=
+
+Name: res/drawable-mdpi/abc_list_pressed_holo_dark.9.png
+SHA1-Digest: ughAWBlhb5fxIgHli8NgEiGGjGY=
+
+Name: res/drawable-hdpi/abc_ab_bottom_solid_dark_holo.9.png
+SHA1-Digest: cLS2FCoJG9FXWLrDfRPFRX/xznk=
+
+Name: assets/templates/41/icon.jpg
+SHA1-Digest: bCW6Dmx0zXeGSfzmsGYeoDvKo60=
+
+Name: assets/backgrounds/38.jpg
+SHA1-Digest: +SvIO5dVDPW5BC1iGAaov38V2rc=
+
+Name: assets/fonts/za_9.jpg
+SHA1-Digest: zqlFqTwHlDuqmYNSJT8UbPpxJ2A=
+
+Name: assets/emojis/symbols/em_1f538.png
+SHA1-Digest: iDnJfYighxcvC0MY2f7OFmkiCpY=
+
+Name: assets/emojis/symbols/e24c.png
+SHA1-Digest: xSuo5YKHtszQ5LpcDRSAvr4yWyI=
+
+Name: assets/emojis/symbols/em_1f55c.png
+SHA1-Digest: 48ROCn5RYrpJluqUlb2RF0nMxfQ=
+
+Name: res/drawable/abc_list_selector_background_transition_holo_dark.x
+ ml
+SHA1-Digest: v6wLmO8e0asfxhtgEZalB/YTTR4=
+
+Name: res/drawable-xhdpi/abc_ab_stacked_transparent_dark_holo.9.png
+SHA1-Digest: wrh0g/eAYbHVMW1SRt3aKHdk8p4=
+
+Name: jsr305_annotations/v0_r47/V0_r47.gwt.xml
+SHA1-Digest: /f34xYwskAvrKqRB+jFPzJ8rPJg=
+
+Name: res/drawable-hdpi/abc_spinner_ab_pressed_holo_light.9.png
+SHA1-Digest: OHP/R1vdgtwQs68PXi/igkApMB0=
+
+Name: res/drawable-xhdpi/abc_ab_bottom_transparent_light_holo.9.png
+SHA1-Digest: aJd1ZELtINjFvNa/Fkx7VYPZO8c=
+
+Name: assets/emojis/symbols/e139.png
+SHA1-Digest: fp3Bpitwu9oqsN0rVphu9SvE1Wo=
+
+Name: assets/emojis/bell/em_1f4db.png
+SHA1-Digest: LQKf4YKJt6hrN+3oVi6OZv5YXDM=
+
+Name: assets/emojis/symbols/em_1f535.png
+SHA1-Digest: 6h4LwRuPyQ//dU06fWEP7n41lLo=
+
+Name: assets/emojis/bell/em_1f36d.png
+SHA1-Digest: EFotKjUZ3fRgRjUAnZQcRipEhz8=
+
+Name: assets/stickers/shout.thumb.jpg
+SHA1-Digest: 1EMiDNUUOyLDUB+nyF3ux/sqegA=
+
+Name: assets/emojis/car/e01b.png
+SHA1-Digest: T5bJPd1lBuBEmS8yOB1VdHVj6EM=
+
+Name: assets/emojis/face/em_1f63d.png
+SHA1-Digest: 1/mUowS3tY3Wkcus1yX9BMR9QNg=
+
+Name: assets/backgrounds/03.jpg
+SHA1-Digest: YZEDgAPQTMoEHtUWrg7p5FAfQ5w=
+
+Name: assets/frames/!border564.png
+SHA1-Digest: DJHQnqFmiyABOHYMQoFoiWASn0A=
+
+Name: assets/emojis/flower/em_1f313.png
+SHA1-Digest: +70CaAehCc9itp3MCuvO5qh1Uus=
+
+Name: res/layout/gallery_item.xml
+SHA1-Digest: cde70+lemXYnu/ltTwRI2v+w4Pw=
+
+Name: res/drawable-xhdpi/abc_ic_go.png
+SHA1-Digest: M8tIyrLn23zsA2xJdKwQa2udV3k=
+
+Name: assets/fonts/keycomic.ttf
+SHA1-Digest: Udo65Goebt2GiUiFHJxKtdqq89A=
+
+Name: assets/emojis/face/e323.png
+SHA1-Digest: VPlrh3YZwB2hAQMAz4b8Fg7xX4Q=
+
+Name: assets/backgrounds/12.thumb.jpg
+SHA1-Digest: edQOGxzaBhZGvZPnOGq/zlG6120=
+
+Name: res/drawable-xhdpi/abc_cab_background_bottom_holo_light.9.png
+SHA1-Digest: fa1RuiOfmCR5TUqsvGoHdqDKEMc=
+
+Name: assets/emojis/car/e037.png
+SHA1-Digest: wPZB+kAnRWSp6zMZE0XrkEhT9dk=
+
+Name: assets/emojis/symbols/e237.png
+SHA1-Digest: Ri8eSX3WbibeXVY6ka5bqbvfHS0=
+
+Name: assets/backgrounds/04.thumb.jpg
+SHA1-Digest: 97kHPcQ3qAguamzIK8quMP9sftg=
+
+Name: assets/emojis/bell/em_1f4c8.png
+SHA1-Digest: Z3eo6d48yvt6jWCsGamQRDlk7jU=
+
+Name: assets/emojis/face/e404.png
+SHA1-Digest: AE5yxMu6bmTw/rQyLAXkAysk66c=
+
+Name: assets/templates/14/config.xml
+SHA1-Digest: s9noPRLDEjtduifU4caAt0xz1UM=
+
+Name: assets/emojis/symbols/e027.png
+SHA1-Digest: xr4UKcXP+s12pcaBXa0mWhfU1bQ=
+
+Name: assets/emojis/bell/em_1f4ed.png
+SHA1-Digest: ueM3BGRmOoL6gGoi3YkpyvHB4hc=
+
+Name: assets/emojis/symbols/em_1f566.png
+SHA1-Digest: 2FLO+tY4wzjb1WUJkeZpywLjn2E=
+
+Name: assets/fonts/za_7.ttf
+SHA1-Digest: jKPOFvjCZukqqrmr/DINbUN/Z9A=
+
+Name: assets/emojis/face/em_1f60b.png
+SHA1-Digest: kQ8+GS9WYE7601jndtJ4848AvDM=
+
+Name: assets/frames/24.thumb.jpg
+SHA1-Digest: T48On6dsDYnEJpZOx/YvIYLq/h8=
+
+Name: assets/emojis/face/e31d.png
+SHA1-Digest: FF5jpcQyQY0+3WfvNb3laZhGWrU=
+
+Name: assets/emojis/bell/e50a.png
+SHA1-Digest: f50FTAB5z2sZy/3j29Cc4BZ1lxc=
+
+Name: assets/templates/34/config.xml
+SHA1-Digest: Yr4uyWKmqYCfIjvvVa9EjoA6JfI=
+
+Name: assets/backgrounds/50.thumb.jpg
+SHA1-Digest: 0HU2c8RfSIx1fo3j0GNTPUvgrXw=
+
+Name: assets/emojis/symbols/em_2797.png
+SHA1-Digest: q0K/HP/7qxTHQR5q17bxX9OjvJ4=
+
+Name: assets/emojis/flower/em_1f31a.png
+SHA1-Digest: oGIsZHRsOPENVwcRv/VPcpSPJpY=
+
+Name: res/drawable/drawer_bg.xml
+SHA1-Digest: QDrLspYyunniblz2Qhd0XDSRkd0=
+
+Name: assets/backgrounds/41.jpg
+SHA1-Digest: ZBHMdbMXwxh4T4Bi9sD1vqs2Z4I=
+
+Name: res/drawable-xhdpi/add_textbox.png
+SHA1-Digest: WuEf5jqeMQ8ql7C6jzJFzItGhHc=
+
+Name: assets/frames/anonymous.thumb.jpg
+SHA1-Digest: 37MjJ5GCXCImpiBr6k9WKlHr3CE=
+
+Name: assets/emojis/face/em_1f607.png
+SHA1-Digest: GF9ZcTXdGmDAeqJWt5bae17F6iw=
+
+Name: assets/emojis/bell/em_1f4d3.png
+SHA1-Digest: t8s7NzSHqSkDyLIorAf9fd4U87k=
+
+Name: assets/emojis/symbols/e154.png
+SHA1-Digest: SNXXC/w3uNypaIsRJ3iMDXU4d/I=
+
+Name: res/drawable-hdpi/abc_textfield_search_right_selected_holo_dark.
+ 9.png
+SHA1-Digest: R1EZVQP24tOfKlzCjC8RxUbY2Ro=
+
+Name: res/drawable-hdpi/abc_cab_background_bottom_holo_dark.9.png
+SHA1-Digest: xXf8LeJnhCd2O9P9F87lxA4jWyM=
+
+Name: res/drawable-xhdpi/camera_crop_width.png
+SHA1-Digest: VfwSs6b9Osiy5RSvonLL+CY6iGQ=
+
+Name: assets/emojis/bell/e114.png
+SHA1-Digest: OfTbsNllqmNrTmVJVonSg1BlmFM=
+
+Name: assets/stickers/beaten.png
+SHA1-Digest: TTJhTyKsWN1TmE9U9ZXmp8kV/DI=
+
+Name: assets/emojis/flower/em_1f410.png
+SHA1-Digest: 1P6hlMi29tf/ZQKCdY7u020A1Xc=
+
+Name: assets/emojis/symbols/e028.png
+SHA1-Digest: RkDLy6JKcaANXqe8/M5TXHUxngA=
+
+Name: assets/backgrounds/18.jpg
+SHA1-Digest: A5i/GJmZV0la3JFN6nODeGfRT7U=
+
+Name: assets/stickers/eyesonfire.png
+SHA1-Digest: R7WS/Bufrrkh1glOc8hzStakOgs=
+
+Name: assets/templates/45/config.xml
+SHA1-Digest: LzTt2Pi1mstxHaZWuUuu4tqa0Vk=
+
+Name: assets/emojis/symbols/e20c.png
+SHA1-Digest: cvDbu0fbCWhUNiuXVdaBqatqMjU=
+
+Name: res/drawable-mdpi/abc_ic_commit_search_api_holo_dark.png
+SHA1-Digest: /cJiokkO1RiK2Epw0kPayiNJiNw=
+
+Name: assets/emojis/car/em_1f690.png
+SHA1-Digest: Ay+icQ1VMWkFH6ZxOwhR1YgIbTc=
+
+Name: res/drawable-mdpi/abc_menu_hardkey_panel_holo_light.9.png
+SHA1-Digest: 0WfbJH3/Ad2VjJcGCB/iRzpk5Cc=
+
+Name: assets/emojis/bell/em_231b.png
+SHA1-Digest: LGOWanPdjLt2IzStuU/rUBf/A5Y=
+
+Name: assets/emojis/symbols/e507.png
+SHA1-Digest: n18q/6XGbhzlPBS3vDFe2/ape9s=
+
+Name: res/drawable-hdpi/tgvpi__tab_selected_holo.9.png
+SHA1-Digest: DZHgtW/y11z4DXSiehTg8d6d5zI=
+
+Name: assets/emojis/flower/e053.png
+SHA1-Digest: vxXL8aiojEaq5EB2PITA6FC8cF8=
+
+Name: assets/emojis/face/em_1f4a7.png
+SHA1-Digest: fulay8wRqAHKBL7IHWFv2X0en1U=
+
+Name: assets/emojis/bell/em_270f.png
+SHA1-Digest: Wa5z/Sk9q0sKgGlkWCKavMUdGb4=
+
+Name: assets/emojis/flower/em_1f42a.png
+SHA1-Digest: 8vR1TuNgvJ03Zlblh/kRmnY4LrE=
+
+Name: res/drawable-nodpi/randomize.png
+SHA1-Digest: t5lKSO8elxTCsSpdp/K2TRYcDCM=
+
+Name: res/drawable/button_black.xml
+SHA1-Digest: fI3fx5eUJR8sGcEifwjvZu2WPiQ=
+
+Name: assets/emojis/bell/em_1f3b2.png
+SHA1-Digest: ZXBHjqS17+XP9jzCesp7KoK1jLY=
+
+Name: assets/emojis/bell/em_1f351.png
+SHA1-Digest: zWGu/KxXvT/GQYceFa+xlMSYTGY=
+
+Name: res/drawable-xhdpi/ambilwarna_arrow_down.png
+SHA1-Digest: ufFRmRrRrDBJWBrbDa8PTwNLLKU=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_default_holo_light.9.png
+SHA1-Digest: JvTsm7syx30FLm9LSy3E8OsnH7w=
+
+Name: assets/templates/27/config.xml
+SHA1-Digest: eGwBYWroQbrgstolzJg+QyWOuq0=
+
+Name: assets/emojis/symbols/e247.png
+SHA1-Digest: Q4w2GlFzgfQuPHrZL1JPa2vbhpc=
+
+Name: assets/emojis/bell/e34c.png
+SHA1-Digest: 1+Ltvm5TjbDeAFAGSha6YewHiDs=
+
+Name: res/drawable-hdpi/tgvpi__tab_selected_focused_holo.9.png
+SHA1-Digest: ZwNSG+FrLYULtfsCJJ15FKjbQyM=
+
+Name: res/layout/fragment_friends_list.xml
+SHA1-Digest: 2zpBICni9EjFc1GV6iWOF26MoQU=
+
+Name: res/drawable/abc_item_background_holo_light.xml
+SHA1-Digest: pSXx54+9YR9srFdXStfgXC2FrnU=
+
+Name: res/drawable-mdpi/abc_ab_transparent_dark_holo.9.png
+SHA1-Digest: dxctP2/uKuqLc17wZwWWmBuG7d8=
+
+Name: res/layout/first_time.xml
+SHA1-Digest: kQUMeQAb3KSYA79n2pD97gysKoc=
+
+Name: assets/backgrounds/09.jpg
+SHA1-Digest: NQX6UrdEX1yKM61YtQYMjfMmNWw=
+
+Name: assets/backgrounds/40.jpg
+SHA1-Digest: c+Kprny75F6jktGxmaDufaO9UhI=
+
+Name: res/drawable-ldpi/ic_launcher.png
+SHA1-Digest: OdAulYgDzfzH2pbD0P7blU64WQ8=
+
+Name: res/drawable-hdpi/abc_ic_commit_search_api_holo_dark.png
+SHA1-Digest: +ZOJ5osYc6JA/GL1Raum7SrsM0w=
+
+Name: assets/backgrounds/47.jpg
+SHA1-Digest: 2C5O3MIb30BTz4g2jlQNdIT31wc=
+
+Name: assets/filters/colored_stripes.png
+SHA1-Digest: gq6L0OTUs3dcIEsHE++P74IXPg0=
+
+Name: assets/emojis/symbols/em_1f501.png
+SHA1-Digest: yXmTh4PIwkZ0Qs361Knc0i05j/8=
+
+Name: res/drawable/btn_icon_selected.xml
+SHA1-Digest: 67+5bNKb1YVt1Mv+WwUYJMGGX/A=
+
+Name: assets/emojis/symbols/em_25fc.png
+SHA1-Digest: kzCJuoLWr2UTT4FTs6Wpn/sSAHs=
+
+Name: res/drawable-hdpi/abc_list_selector_disabled_holo_light.9.png
+SHA1-Digest: N4pxrY//CzQeTPqMUlApq1xAKjk=
+
+Name: assets/emojis/face/e409.png
+SHA1-Digest: /BkgyKNOtSDJ/RpDkstmqUiTUYE=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_pressed_holo_dark.9.png
+SHA1-Digest: cmeUT35al0XEaWB5A204hAS6SJM=
+
+Name: assets/templates/03/icon.jpg
+SHA1-Digest: Hah1oYPjRQAkMVQ1P4ZfTqp2CKI=
+
+Name: res/drawable-xhdpi/indicator_autocrop.png
+SHA1-Digest: c3SYXqmpjvg6lGlOqn+3yEIcZZs=
+
+Name: assets/emojis/categs/bell.png
+SHA1-Digest: lSqVAZgHMQBFAA0yKasTe4bV5aU=
+
+Name: assets/emojis/face/e22f.png
+SHA1-Digest: Zb6W8TbscG6LyWSu4tKi8q7O6L8=
+
+Name: assets/emojis/bell/e344.png
+SHA1-Digest: v6EIhC8iXfWQ5h0Q8Z5IWxFKHQ4=
+
+Name: res/drawable-xhdpi/abc_ab_transparent_light_holo.9.png
+SHA1-Digest: PxNOG5fD+V4Mf2OzxZBveW63eh0=
+
+Name: res/drawable-xhdpi/abc_ab_share_pack_holo_dark.9.png
+SHA1-Digest: CoBYyaHGiMgtJYNEGsJMBx5zpx8=
+
+Name: assets/emojis/face/e13c.png
+SHA1-Digest: 9onS50e6OqQJ6EiIVCSjf52IVLI=
+
+Name: assets/emojis/car/em_1f3e1.png
+SHA1-Digest: 43lJf0lmlDS1Qv0zEhsyMb4Cw+o=
+
+Name: res/drawable-xhdpi/vpi__tab_selected_holo.9.png
+SHA1-Digest: 8I6CrxyEqEIidVSRbOTA56OrDPM=
+
+Name: res/drawable-mdpi/abc_tab_selected_pressed_holo.9.png
+SHA1-Digest: LldjWhl2yLUbokSickpz3Mb8isk=
+
+Name: assets/fonts/za_11.otf
+SHA1-Digest: XOwqW8o3EjWNichPu4s20Vuwu2g=
+
+Name: assets/emojis/face/em_1f62c.png
+SHA1-Digest: Idp2DHAuxMZRsebQnxLfriq4G4c=
+
+Name: res/drawable-hdpi/abc_textfield_search_selected_holo_light.9.png
+SHA1-Digest: tWM+3dapvHkg+XJsCoqxCKhfcP0=
+
+Name: assets/emojis/face/em_1f60e.png
+SHA1-Digest: tkIhBb5thd50DjnrSZ4I7Bpkm4E=
+
+Name: assets/emojis/bell/em_1f3c9.png
+SHA1-Digest: C5qGuL1zqndQA/p/fVjJCGdQ9QQ=
+
+Name: res/layout/store_featured_item.xml
+SHA1-Digest: Ixozj+p5Km+eGoM07pAO4R0DgOo=
+
+Name: assets/emojis/bell/em_1f4c5.png
+SHA1-Digest: ZmD6uD8mstL8PNzJwipORs0bAZ0=
+
+Name: assets/fonts/za_KacstDecorative.jpg
+SHA1-Digest: sGienK00TI0N1XUQdRq2o5isLvU=
+
+Name: assets/stickers/a_heart_broken.thumb.jpg
+SHA1-Digest: TRGlU0t0asKbP7QwZ4K6TWGkHH8=
+
+Name: res/drawable-hdpi/abc_cab_background_top_holo_dark.9.png
+SHA1-Digest: BgzwPG8d9Rc3q2/kPXGPQUPekZo=
+
+Name: assets/templates/17/config.xml
+SHA1-Digest: PgRHDsiOXiKvCeIyMRyMNZCQE2Q=
+
+Name: res/drawable-xhdpi/align_right.png
+SHA1-Digest: OYKrY2ZYQGEM83tg1wA3mXAEdn0=
+
+Name: assets/emojis/face/e418.png
+SHA1-Digest: VIRbPeb5tBGDaOPbCf8M67IR+Lc=
+
+Name: res/drawable/abc_item_background_holo_dark.xml
+SHA1-Digest: GDWaYZwtEE/gLPNNkF06P3Aqoas=
+
+Name: assets/fonts/za_geezapro.jpg
+SHA1-Digest: tLGOkvvcIiyEkpfOP6eto+vZR9I=
+
+Name: assets/emojis/symbols/em_1f6ab.png
+SHA1-Digest: WMgBx0g4NmpCLos25E8rO33M1JM=
+
+Name: assets/stickers/brzzzzz.thumb.jpg
+SHA1-Digest: zt9G+syBQ3kgVVpjH39rBwe4MSU=
+
+Name: res/layout-sw600dp-land/styling_text_fragment.xml
+SHA1-Digest: TvSL4pq9eIL5Z5QeuRjTC0tEOEM=
+
+Name: assets/emojis/bell/em_1f50b.png
+SHA1-Digest: fdlEknsGQ4cdhi8hAYknqlt8KUY=
+
+Name: assets/stickers/disapointed.thumb.jpg
+SHA1-Digest: dVaaEI6ZSeME1z3Mnxr+1tA4sbA=
+
+Name: assets/emojis/flower/em_1f320.png
+SHA1-Digest: L1TLCYt+s2KC6MvpedBn1h7c1jM=
+
+Name: assets/fonts/swinsberg.jpg
+SHA1-Digest: oBsvLyUfvjCUJdNfyOZWIPfKgb8=
+
+Name: assets/emojis/bell/em_1f4f0.png
+SHA1-Digest: XnqguEsnGbEt4aGaWJ89Z8o61kc=
+
+Name: res/drawable/button_pink.xml
+SHA1-Digest: J7Uba3e1WaqwHHTtkQKxjzHi/Zs=
+
+Name: assets/emojis/flower/em_1f333.png
+SHA1-Digest: FwMEVB1u8tLkjU07s41ID7roiWk=
+
+Name: assets/emojis/face/e057.png
+SHA1-Digest: 0A0bdxBIhiUlGbmz+Ko9dqqvbx8=
+
+Name: res/anim/slide_in_left.xml
+SHA1-Digest: IQKiZQYsnTvMGeRcCxeIVjG3r20=
+
+Name: assets/emojis/symbols/em_1f517.png
+SHA1-Digest: g/GzMVx86bBJrnYkEp6xydniPKU=
+
+Name: res/drawable-mdpi/abc_list_selector_disabled_holo_dark.9.png
+SHA1-Digest: jVPtpYAlDpgcnAlu72OtcG8IpPg=
+
+Name: assets/templates/41/config.xml
+SHA1-Digest: uYw1chk5RrnzfU3dpqUxARj4x6s=
+
+Name: assets/emojis/car/e449.png
+SHA1-Digest: e/C9Yj1nPduiEbsbwY5UOnduzcw=
+
+Name: assets/emojis/face/e43c.png
+SHA1-Digest: Db+QmdUUE94BeURqigzVSCncbp8=
+
+Name: assets/emojis/flower/em_1f30b.png
+SHA1-Digest: KOOfYagliI1tnXpRTBSfba2/HbA=
+
+Name: assets/emojis/symbols/e23e.png
+SHA1-Digest: D6Cr9qExNjt2d7I4iIVuTSY9f/s=
+
+Name: assets/emojis/bell/em_23f3.png
+SHA1-Digest: O/9R//kzVPzjg8kgC9vgDzbiBoo=
+
+Name: assets/emojis/flower/em_1f311.png
+SHA1-Digest: aqDbPaDP8dzDu/bUa/qQT0vuogU=
+
+Name: res/drawable-xhdpi/abc_ic_clear_disabled.png
+SHA1-Digest: G8GDUr3hiAK4FA4HKJF0SSRH+cM=
+
+Name: assets/emojis/flower/e032.png
+SHA1-Digest: XA9z0NHNjb97KWRuaeFAAFKy3zQ=
+
+Name: res/drawable-xhdpi/abc_textfield_search_right_selected_holo_dark
+ .9.png
+SHA1-Digest: Byf+SHlZ50jexhmnrSo/DgwsFkY=
+
+Name: assets/emojis/bell/e03c.png
+SHA1-Digest: Ur3F4M9CHMbvslJh4tsA8L/CcUg=
+
+Name: assets/emojis/car/em_1f6a3.png
+SHA1-Digest: DK+n/s6DoS5ko0PFfgZsCCIqqJo=
+
+Name: assets/fonts/TYPEABRIL.thumb.jpg
+SHA1-Digest: kdaFnslmPYjjuYv4H8mgRq8fB1c=
+
+Name: res/drawable/ambilwarna_arrow_right.png
+SHA1-Digest: pz+A7a2Jl0pYEg97I86zuoRqcDA=
+
+Name: assets/emojis/symbols/em_1f6b7.png
+SHA1-Digest: DHCyqPZOUcYeGih9C6GoB0fkrbc=
+
+Name: assets/templates/25/config.xml
+SHA1-Digest: NByrBE/cf2tkHionKOtLK4VFVOo=
+
+Name: assets/emojis/symbols/e204.png
+SHA1-Digest: IwVEe4+mc1YiBpxAZNfvBkxj5qI=
+
+Name: assets/templates/02/config.xml
+SHA1-Digest: FBXbAgG18P01MJUyIR5og1A8BhA=
+
+Name: res/layout/edittext.xml
+SHA1-Digest: ONkkDCrOGU1DHplBCQ43G+ioklU=
+
+Name: assets/emojis/bell/em_1f4df.png
+SHA1-Digest: issRx4O3LbN6bhjSldhsNsRV+LI=
+
+Name: res/drawable-xhdpi/result_facebook_icon.png
+SHA1-Digest: tC19HOfsWbblVV/XhX7uqYW8kHA=
+
+Name: assets/emojis/bell/em_1f4da.png
+SHA1-Digest: VEfzDB3lJW1qQCHqAaMOlo95eVY=
+
+Name: res/drawable-xhdpi/abc_menu_hardkey_panel_holo_dark.9.png
+SHA1-Digest: 1WWuWa3ro5cykKCh1UEJLRSeNlA=
+
+Name: classes.dex
+SHA1-Digest: 5Z0YIEU22Qqg6v6HrTNw7RqWj14=
+
+Name: assets/emojis/bell/em_1f3b3.png
+SHA1-Digest: nJJ9VQXH69oFds1aReIqq1shoV4=
+
+Name: assets/backgrounds/47.thumb.jpg
+SHA1-Digest: HKJTKZYFFtG94JHDD+6hLlMqryQ=
+
+Name: res/layout-sw600dp-land/styling_images_fragment.xml
+SHA1-Digest: NeNHNWqfV6Co5rzu5Oc/oOfeG8w=
+
+Name: assets/emojis/flower/em_1f43d.png
+SHA1-Digest: zBBfF8qBj4X6aVbpWVnMqFnZrqQ=
+
+Name: assets/emojis/flower/e308.png
+SHA1-Digest: uaaMoeCRytWAP88Xxqc9WGP+tr8=
+
+Name: res/drawable/button_small.xml
+SHA1-Digest: qTp6p18TCJERPsGMO79w0Xjoju0=
+
+Name: assets/emojis/flower/em_1f40c.png
+SHA1-Digest: toRktrDjAgGTTqKe7twFNYrHUgA=
+
+Name: res/drawable-xhdpi/abc_list_divider_holo_light.9.png
+SHA1-Digest: 8T9xOqrSTFBKeaztPQX0ZmWE2mQ=
+
+Name: res/drawable-sw600dp-land/align_right.png
+SHA1-Digest: zr6u8jNX2EOVjTtYhsogiYnfX/A=
+
+Name: assets/backgrounds/31.thumb.jpg
+SHA1-Digest: BB+uzwfzT9oW9Ln9DYtUbDsI4Ug=
+
+Name: assets/emojis/bell/em_203c.png
+SHA1-Digest: 0k7WrOnLJTw+6uSb91M7ua17jL8=
+
+Name: assets/emojis/symbols/em_26aa.png
+SHA1-Digest: GKqEa9diplHwCyPwfHYOhzsXTtw=
+
+Name: res/layout-sw600dp-port/activity_main.xml
+SHA1-Digest: nIqpIgyZPA47nTHXdMuWmOsKrKo=
+
+Name: assets/templates/50/config.xml
+SHA1-Digest: N0y1Qd9F6m1SOaXxKpcMPWvUEto=
+
+Name: res/drawable-mdpi/vpi__tab_selected_pressed_holo.9.png
+SHA1-Digest: LldjWhl2yLUbokSickpz3Mb8isk=
+
+Name: assets/stickers/confident.thumb.jpg
+SHA1-Digest: YRb3kQVbqovliMncqyWnQI6UZD4=
+
+Name: assets/templates/46/config.xml
+SHA1-Digest: WeIBJcW4rjyoeyylwnSC8YBPIMU=
+
+Name: assets/emojis/symbols/em_1f6c5.png
+SHA1-Digest: 63M+pkey5HDutfnea/wgyx0Do2I=
+
+Name: res/drawable-hdpi/abc_menu_hardkey_panel_holo_light.9.png
+SHA1-Digest: SdW3kG04Oz0DVS8imQ8uAutwztU=
+
+Name: assets/emojis/bell/e313.png
+SHA1-Digest: 0yEQF9WaMRVI/NLZtQT/R2r71yM=
+
+Name: assets/frames/23.thumb.jpg
+SHA1-Digest: O7oLNgfakIdG2DGSiuYGWE5JeNo=
+
+Name: assets/fonts/za_5.jpg
+SHA1-Digest: D8B3pjerPm+Uw/PytRANC+vcc9Y=
+
+Name: assets/emojis/symbols/e22b.png
+SHA1-Digest: VRtcFHWzmCnsNXki23MXoW82fbk=
+
+Name: assets/stickers/yum.thumb.jpg
+SHA1-Digest: 1rvqmfCn/jz+eV7k0LHsh/e+MLI=
+
+Name: assets/emojis/face/e106.png
+SHA1-Digest: P3JOqqy/zfqZIqzDf+wmTPIYzds=
+
+Name: res/layout-sw600dp-port/styling_images_fragment.xml
+SHA1-Digest: rsjirP+wmuTa5fVBRk7dqDP8YKA=
+
+Name: res/drawable-xhdpi/btn_default_disabled_holo_light.9.png
+SHA1-Digest: /IZRcqk94oDo0ncUmmMN9sE4H04=
+
+Name: res/drawable-hdpi/abc_menu_dropdown_panel_holo_dark.9.png
+SHA1-Digest: iUKAAn7PDlXTx+llGLmEot86KcY=
+
+Name: assets/emojis/symbols/e534.png
+SHA1-Digest: zCiwjjhGZWYDflVXZl1uMVNsv9g=
+
+Name: assets/emojis/bell/em_1f52a.png
+SHA1-Digest: QvK5m1IKsVMyrSSfaPbTORqCGMQ=
+
+Name: res/drawable-mdpi/abc_tab_selected_focused_holo.9.png
+SHA1-Digest: NV47wCsoNb/8Hg8H1PyNA3MgoVs=
+
+Name: res/xml/settings.xml
+SHA1-Digest: 2Ih8zVqVTutVqUVc49HsjbVeTZM=
+
+Name: res/layout/activity_about.xml
+SHA1-Digest: Kvv6JB5oKdRKSswBq7/FUZ3o3mI=
+
+Name: res/drawable-xhdpi/item_bg_hover.9.png
+SHA1-Digest: wOLEH8sfUHnRV8kbCDYmwJzgQgk=
+
+Name: assets/emojis/bell/e436.png
+SHA1-Digest: TbggU/F4jHfccJlBITxRAU5VZpc=
+
+Name: assets/backgrounds/24.thumb.jpg
+SHA1-Digest: z0Oc3zTM5ADRZ9sjHPkgNAqL1aQ=
+
+Name: assets/backgrounds/11.jpg
+SHA1-Digest: A+W6WVOvgABZqIJjr7TcbapKfzw=
+
+Name: assets/emojis/flower/e119.png
+SHA1-Digest: r99vstcOCnmZNa7bMB+SewCihN4=
+
+Name: res/layout/styling.xml
+SHA1-Digest: MGfbUtb+4zZ5nWgiiQMT06lFvaA=
+
+Name: res/drawable-nodpi/reset.png
+SHA1-Digest: 7xcLejdJaL+WimMJ9KdE9FRS59I=
+
+Name: assets/emojis/car/em_1f69d.png
+SHA1-Digest: 4DANL0sGtdVy+T+uPxy4iV9eOsc=
+
+Name: assets/templates/44/config.xml
+SHA1-Digest: UxFsORRN6wZMNbUrBv+Razy7wUk=
+
+Name: res/drawable-xhdpi/vpi__tab_unselected_pressed_holo.9.png
+SHA1-Digest: YqrTPkw0EJvd8lkN0Y76St2GtT0=
+
+Name: assets/emojis/symbols/em_1f51f.png
+SHA1-Digest: m6YUi8WPr6SKpTZqiJbG1gL3Itk=
+
+Name: assets/emojis/bell/em_1f507.png
+SHA1-Digest: oHq20tdBYkTyIgRlFpDWcum65FM=
+
+Name: assets/emojis/symbols/e225.png
+SHA1-Digest: Ef36Xx0cGAtq2Bkq2v3n6Vp8jj0=
+
+Name: assets/stickers/innocent.png
+SHA1-Digest: KB556VaWfAVtBXa0fM9stAeXpwo=
+
+Name: assets/emojis/face/e415.png
+SHA1-Digest: Z6ty3jT13gIs2k3t486z2FsqqHw=
+
+Name: assets/emojis/car/em_1f3a0.png
+SHA1-Digest: RVf74SxJmv3u/acg/6j5QQegVak=
+
+Name: assets/emojis/car/e43d.png
+SHA1-Digest: kmC9jnYzr0ucmZxFQfUg7RO0onQ=
+
+Name: assets/emojis/symbols/e21d.png
+SHA1-Digest: tpGdNklOgdBbmtc3gjuNF3z/NPo=
+
+Name: assets/emojis/symbols/em_267b.png
+SHA1-Digest: aJ4LFWD6Jt/rY4vnu0nJ8mnSBqw=
+
+Name: assets/emojis/bell/em_1f4e7.png
+SHA1-Digest: 6QSrmxYq7TzSfx5Dh6FuOAYvT/s=
+
+Name: assets/emojis/face/e31b.png
+SHA1-Digest: aVIZOOqGunaUtHeU2Zx0LIOw4wM=
+
+Name: assets/backgrounds/02.jpg
+SHA1-Digest: Kc1UexjLIAgiwrt4lotIHknDLmI=
+
+Name: assets/backgrounds/13.thumb.jpg
+SHA1-Digest: sws2iECj721yY9QfVtSFVMrlSCQ=
+
+Name: assets/emojis/bell/em_1f369.png
+SHA1-Digest: hhEinVCKWdouB83f5C9HkrDHmjc=
+
+Name: assets/frames/gfd546.thumb.jpg
+SHA1-Digest: ka/UKIpSn+WyeShR+BJyUcZtpcA=
+
+Name: res/drawable-mdpi/abc_list_pressed_holo_light.9.png
+SHA1-Digest: ughAWBlhb5fxIgHli8NgEiGGjGY=
+
+Name: assets/emojis/flower/em_1f423.png
+SHA1-Digest: /KrdDU6cbmqHCCjWXio0EtYUUY0=
+
+Name: res/drawable-xhdpi/align_center.png
+SHA1-Digest: Td/Jm7kRhthjw7QPYtz5CrojZ0k=
+
+Name: assets/emojis/symbols/em_1f198.png
+SHA1-Digest: TDbPcu3t34fyIF8uoinYZgFZ8eo=
+
+Name: assets/templates/37/config.xml
+SHA1-Digest: /tOteShUS/XvjJLZaGb8P/88/Ek=
+
+Name: assets/emojis/face/e426.png
+SHA1-Digest: P13SCP/H04ekRb12knkatAcO3bM=
+
+Name: assets/backgrounds/28.thumb.jpg
+SHA1-Digest: usAP+9Gh9LzSFaIsXUsyWX8VB6E=
+
+Name: assets/emojis/face/em_1f63f.png
+SHA1-Digest: 0oFAkOsBiciZ75OyoVIVNfNwbBI=
+
+Name: assets/templates/10/icon.jpg
+SHA1-Digest: dZ/+nXcr13NkhLByJRpJic+3Wcs=
+
+Name: assets/emojis/car/em_2693.png
+SHA1-Digest: 9aWOZY4RDdmfD6tWH+IIt7l804E=
+
+Name: assets/emojis/bell/e42a.png
+SHA1-Digest: Loh+qWc183uniSVipyD7/XI112I=
+
+Name: assets/emojis/bell/em_1f4ef.png
+SHA1-Digest: Db0i6/rcnolLlyFpzHuD9g8H0h0=
+
+Name: assets/stickers/mahchilling.png
+SHA1-Digest: 98zLc1xSlJtFpSeD/7k0SiAp/E8=
+
+Name: assets/frames/zbhframe.thumb.jpg
+SHA1-Digest: Dh3tLT5nnkfyCyfGLxfQCYMYruc=
+
+Name: res/drawable-xhdpi/abc_ic_go_search_api_holo_light.png
+SHA1-Digest: xdY9kP5INqW6j3rI+AJK95oizGY=
+
+Name: assets/templates/31/config.xml
+SHA1-Digest: J2lQdsP8tlChJxEzqOM/qSrxxIU=
+
+Name: assets/emojis/face/e416.png
+SHA1-Digest: BwDDW64wU65JZMKv4JpHC7blL7o=
+
+Name: res/drawable/warning_icon.png
+SHA1-Digest: F+o8KlLOGIvE4cgWSsomR7f+Kb4=
+
+Name: assets/emojis/bell/e041.png
+SHA1-Digest: wJBKrVTTQBRHDKezGdtQFWVHJ7Y=
+
+Name: assets/emojis/bell/em_1f6aa.png
+SHA1-Digest: TveRqAVqw2srHCLpxHyGdYmqzUs=
+
+Name: assets/emojis/car/em_1f69e.png
+SHA1-Digest: rWCCanUu+aR3q7BXfNRUzhxrko8=
+
+Name: res/drawable/ambilwarna_hue.png
+SHA1-Digest: u2dPpzAy+q6Y2Zq4qOYJIMX6LLU=
+
+Name: assets/emojis/face/e328.png
+SHA1-Digest: dJuPw+CCkq6lCe7pH01B3+qq+lk=
+
+Name: res/drawable-mdpi/abc_cab_background_bottom_holo_dark.9.png
+SHA1-Digest: sXUh1a054bWtm2NSgK70cbl4mis=
+
+Name: assets/backgrounds/44.thumb.jpg
+SHA1-Digest: Rly1VGyMwTtQms/O3iH3bBXRweY=
+
+Name: assets/fonts/ubuntu_title.ttf
+SHA1-Digest: eVsbATzTEM4SuYmvtqaakqhAgfc=
+
+Name: res/drawable/btn_icon.xml
+SHA1-Digest: knsdlDTRw6o2VDTq7PXEH1APkGw=
+
+Name: res/layout/ambilwarna_dialog.xml
+SHA1-Digest: 9ovxLxVsmEbjRfDuXb7ndKFaI/w=
+
+Name: res/drawable-mdpi/abc_ab_bottom_solid_light_holo.9.png
+SHA1-Digest: NMBIh/bnWT3qQP/nmyNVDeRnYIE=
+
+Name: assets/emojis/bell/em_1f36f.png
+SHA1-Digest: DY/h6izgXkZjfUybFTxS2EOJfcc=
+
+Name: assets/emojis/face/e023.png
+SHA1-Digest: tSRPW9ldLCwAONw7UZkA19VXtuE=
+
+Name: assets/emojis/symbols/e240.png
+SHA1-Digest: AP4Xle0NIpl0zipGtQEC1TdUM7E=
+
+Name: res/drawable/abc_search_dropdown_dark.xml
+SHA1-Digest: 4iujdSpf2N+1B00p9qH57alZutU=
+
+Name: res/drawable-xhdpi/vpi__tab_unselected_holo.9.png
+SHA1-Digest: /gfvVpjO7f9rI352ttw9SGtdR7Y=
+
+Name: assets/emojis/symbols/em_1f51a.png
+SHA1-Digest: dFOqCE4ekaZHYI2hh7Yfyf3JyEI=
+
+Name: assets/emojis/symbols/em_1f524.png
+SHA1-Digest: edOUkbRwTlEUE5s4gdTRVYIE+C0=
+
+Name: assets/frames/f-26.png
+SHA1-Digest: FTKacyBfN3fFlzvaw0wCrqKCtb8=
+
+Name: assets/stickers/darkmood.thumb.jpg
+SHA1-Digest: s8XE2I49x8dhgHachwTXz89TPzU=
+
+Name: assets/emojis/face/e11c.png
+SHA1-Digest: JnJN1mc4ugHQp6Z1cwGf+g7T49k=
+
+Name: res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png
+SHA1-Digest: 6mFx7W/WZzwz8KaB8gz1FwlUflU=
+
+Name: assets/frames/!phone.thumb.jpg
+SHA1-Digest: Al8KbDpo/6JIMnVVrYUCEPjUHNw=
+
+Name: assets/stickers/burnt.thumb.jpg
+SHA1-Digest: /KbUTbF/6cW4/r3zKmbRGqufPUE=
+
+Name: assets/emojis/bell/em_1f0cf.png
+SHA1-Digest: pOvc6LofvVB4IyaSwyCe1h7nMus=
+
+Name: assets/emojis/flower/e52b.png
+SHA1-Digest: dtMjFSQH4KEZdvAOWCHazAdGz30=
+
+Name: res/drawable-xhdpi/btn_default_focused_holo_light.9.png
+SHA1-Digest: /IZRcqk94oDo0ncUmmMN9sE4H04=
+
+Name: assets/emojis/face/e428.png
+SHA1-Digest: fgNfgl956szJdK7ynV88LReuGsM=
+
+Name: res/drawable-xhdpi/abc_ic_voice_search.png
+SHA1-Digest: nU66i5kbGAPc4Me8xGu5YdCaewc=
+
+Name: assets/frames/f-23.png
+SHA1-Digest: 4ydl7wPIcSQihCoxIpJMz5NN8RM=
+
+Name: assets/emojis/bell/e03e.png
+SHA1-Digest: WKWAedrMD26HSFhKLYHLLwUYD1k=
+
+Name: assets/backgrounds/10.thumb.jpg
+SHA1-Digest: dZ/+nXcr13NkhLByJRpJic+3Wcs=
+
+Name: assets/emojis/symbols/em_25fb.png
+SHA1-Digest: IyzKu1ShSTYPOwcfHMXA7U2gJwg=
+
+Name: res/drawable-xhdpi/abc_ic_search.png
+SHA1-Digest: q8O3pO21Z1GUDY9tDu0OFWcFQw0=
+
+Name: assets/emojis/face/e003.png
+SHA1-Digest: 0F76/HE+9bIupvWqvTakpPQ8Pjo=
+
+Name: assets/emojis/bell/e42c.png
+SHA1-Digest: psMOJZ5YssIElGIrfLDxTZFWz0E=
+
+Name: assets/emojis/categs/symbols.png
+SHA1-Digest: k8qE+kfdDDKMcTmnWeS5/RY1htU=
+
+Name: assets/emojis/bell/e10f.png
+SHA1-Digest: kEVftVStWxTteIhO7z/lV88whVs=
+
+Name: assets/emojis/bell/e00c.png
+SHA1-Digest: zDIclf7iMVMu1DaYQZjOqTDoGq8=
+
+Name: assets/emojis/symbols/e14a.png
+SHA1-Digest: pGSLCIRIlDY6lKimGUYKy69Fc2Q=
+
+Name: res/drawable-xhdpi/topbtn_bg_pressed.9.png
+SHA1-Digest: mXD6jGvK5sIYAPW5l6RtOhu3+W4=
+
+Name: assets/emojis/bell/e12d.png
+SHA1-Digest: b+vBtwlrkCmv28+5hJnz57RUUso=
+
+Name: assets/emojis/bell/em_1f357.png
+SHA1-Digest: nOgX/fSZ4f4wc/XLJbRH2vTn/1U=
+
+Name: assets/fonts/za_1.jpg
+SHA1-Digest: c8yuL2Xol1GPTgs0S1x+4pT+3tg=
+
+Name: res/layout-sw600dp-land/styling_slider.xml
+SHA1-Digest: hIVYmNODYbmPK/myTL3Y220CzsM=
+
+Name: assets/emojis/bell/e102.png
+SHA1-Digest: 7xi5vEHWvqDfM0Em9t6zkUDK5Sw=
+
+Name: assets/templates/30/config.xml
+SHA1-Digest: dUD/AQJMAtTqG6HgIiJ1/cTBM/k=
+
+Name: res/drawable-mdpi/abc_textfield_search_right_selected_holo_dark.
+ 9.png
+SHA1-Digest: dk4/jC/lwUb2wXpAv3FNfBqsmkM=
+
+Name: assets/emojis/symbols/e205.png
+SHA1-Digest: vur7959cko7zYUuShLgn/l783ng=
+
+Name: assets/templates/32/icon.jpg
+SHA1-Digest: he9qvR4bQ8/PR8hj+vsxdscxS+k=
+
+Name: assets/emojis/face/em_1f4ad.png
+SHA1-Digest: LFNFAqQY8ZtHlNtPOpsnrv+Gsxk=
+
+Name: assets/emojis/bell/em_1f52d.png
+SHA1-Digest: 8n61y2S5PTzSL3bMiAzeHPqmvs4=
+
+Name: assets/filters/rain.thumb.jpg
+SHA1-Digest: YdHevpUk//ud1vcJasvcd02OKlU=
+
+Name: assets/emojis/flower/e04b.png
+SHA1-Digest: lhnPzAIEFGbX2Xqz7MsSG9dduy0=
+
+Name: assets/emojis/bell/e130.png
+SHA1-Digest: n6FxWs+vLQcYJh/KODQc16Fd5HI=
+
+Name: assets/emojis/symbols/e14f.png
+SHA1-Digest: 8OnPcQjEkttVrk3zYD83S9KNNMs=
+
+Name: assets/emojis/face/e40a.png
+SHA1-Digest: wdS1HOvOuob6ACqJ6YxFAU6n7UU=
+
+Name: assets/emojis/bell/em_1f50c.png
+SHA1-Digest: ZjIhAPj9l2vVqqcrUNzHFKMdGxk=
+
+Name: res/drawable/abc_list_selector_holo_dark.xml
+SHA1-Digest: ruQBtqFhNubyJExHw1FyeB1RzRo=
+
+Name: assets/emojis/symbols/em_2b1c.png
+SHA1-Digest: io/FYL11lnWW9aoliCl49JEfVbY=
+
+Name: res/drawable-xhdpi/vpi__tab_selected_pressed_holo.9.png
+SHA1-Digest: OLaMsKJKZf1gU3w0fFirc0TUvPI=
+
+Name: assets/backgrounds/22.thumb.jpg
+SHA1-Digest: 1VLxCoQabjqa2+Xdc9D5Lr35AWk=
+
+Name: assets/templates/34/icon.jpg
+SHA1-Digest: ocvbUaFIwOAjd+OdzFjEfkum6Ho=
+
+Name: assets/emojis/face/e419.png
+SHA1-Digest: 6XLGTZ4iVgkPVcI+ZxPuQG89N6c=
+
+Name: assets/fonts/ballpark_weiner.jpg
+SHA1-Digest: lM0VVe9vbYB8o3bBL61JlzkgezY=
+
+Name: assets/emojis/car/e14d.png
+SHA1-Digest: IUi4MOdTb9MOMCSqNQULkjgTH0A=
+
+Name: assets/emojis/face/e059.png
+SHA1-Digest: Vu6SHfCtZtrj9Rg1yHEwemWB95Y=
+
+Name: assets/emojis/symbols/e20d.png
+SHA1-Digest: KDFrjURxqErxl9vEtm/a7a2exUI=
+
+Name: assets/emojis/face/em_1f640.png
+SHA1-Digest: DqfxG46Tj3RkZgD+YZSBAmqLp10=
+
+Name: assets/emojis/bell/em_1f4cf.png
+SHA1-Digest: Y+6cIFcyvsPHmyD9ualrnDyI8r0=
+
+Name: assets/emojis/symbols/e21e.png
+SHA1-Digest: U/fFux1tyfLppgXM1fq4zCLZSpc=
+
+Name: assets/emojis/bell/em_1f38b.png
+SHA1-Digest: veC992KtbdsWf1pEVlnOmNONlIM=
+
+Name: assets/emojis/car/e50e.png
+SHA1-Digest: 1cCv6TCQMYmrJHI9y7lCvbJ/OfE=
+
+Name: res/layout/alert_dialog.xml
+SHA1-Digest: 3OL3zKEJTs1WloS795DhfAUCkOY=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_disabled_holo_light.9.png
+SHA1-Digest: XdFbDpXgGR+vTlM6m2tOgHS2uRE=
+
+Name: assets/emojis/symbols/e206.png
+SHA1-Digest: 6CdaO0bco7OunprmN52JJtM1ZQ4=
+
+Name: assets/emojis/face/e010.png
+SHA1-Digest: xooj+vR6GuWZ4Kjejivk2irLXoQ=
+
+Name: assets/emojis/car/e155.png
+SHA1-Digest: TxVkSgM1gFPIDl4oLuhXdrW0wSM=
+
+Name: assets/emojis/face/e40d.png
+SHA1-Digest: ApMRTDsxT10aO0PwgtYTdRS6hIo=
+
+Name: assets/emojis/flower/em_1f40a.png
+SHA1-Digest: xb7/0X+DWyvljTXDFr9w1Gc6Hps=
+
+Name: assets/filters/filter3.png
+SHA1-Digest: 5dNRKgtXjE0ae0htPAWEECtK5Rs=
+
+Name: assets/emojis/symbols/e23d.png
+SHA1-Digest: 9yTkvGW8OB3yCKmakxv3/z+J+V4=
+
+Name: assets/stickers/wat.thumb.jpg
+SHA1-Digest: 9qLROPGb/dB9SOiUOvn/yrQCpOc=
+
+Name: assets/stickers/whisper.thumb.jpg
+SHA1-Digest: jCSAZ9wcSabjo9GZiaNTEGL9UT0=
+
+Name: assets/emojis/flower/em_1f33f.png
+SHA1-Digest: 386LWnSS58OplE7WX8O61Bm0WDI=
+
+Name: res/drawable-mdpi/vpi__tab_selected_focused_holo.9.png
+SHA1-Digest: NV47wCsoNb/8Hg8H1PyNA3MgoVs=
+
+Name: assets/fonts/segoepr.thumb.jpg
+SHA1-Digest: SJJYR3bi0YsEf44MZOBbElsU0ek=
+
+Name: assets/templates/04/config.xml
+SHA1-Digest: B191W0HryQ8SaRcqppxL/JaiQUo=
+
+Name: res/drawable-xhdpi/abc_cab_background_top_holo_dark.9.png
+SHA1-Digest: eeVecDE50vv1K9dXgo5Xu/ICv/k=
+
+Name: assets/emojis/face/e422.png
+SHA1-Digest: Sf5SwnIFCJTsci6sp6MXIf+tBsg=
+
+Name: assets/stickers/youseemtobeserious.thumb.jpg
+SHA1-Digest: wMjE01XgYvjIldxWY9tXzUdfDaI=
+
+Name: res/drawable-hdpi/abc_ic_voice_search_api_holo_light.png
+SHA1-Digest: MwVFn7g4chkw9rs0iOSThqzhxSw=
+
+Name: res/layout/ab_button.xml
+SHA1-Digest: pQ1ZssrBEwIs86NQVK1MDBghnM8=
+
+Name: assets/fonts/za_3.ttf
+SHA1-Digest: /nGdrmNRnXyotUa4MlejUlnxOlM=
+
+Name: assets/backgrounds/51.jpg
+SHA1-Digest: VeZ+DPtC7TKpacAjq0iI8rRGVqc=
+
+Name: res/drawable/gridview_item_bg.xml
+SHA1-Digest: SJ5gMXoZimebxjcGds0+ekBnWWE=
+
+Name: res/drawable-xhdpi/item_bg.9.png
+SHA1-Digest: wOLEH8sfUHnRV8kbCDYmwJzgQgk=
+
+Name: assets/templates/25/icon.jpg
+SHA1-Digest: JXfFmlKRCcA0Wv78B5dIml8Oazk=
+
+Name: assets/emojis/face/e429.png
+SHA1-Digest: st9BjtzwIw01h5H45mBAi77GzeI=
+
+Name: assets/emojis/symbols/em_1f6c2.png
+SHA1-Digest: 5qkXmQfXhlDM5WN7nnq/f/Ho0gI=
+
+Name: assets/templates/14/icon.jpg
+SHA1-Digest: gnAvMPsLpZGg0aMKVweNTl+V6ag=
+
+Name: assets/emojis/bell/em_1f4dc.png
+SHA1-Digest: I94Hsysy5vZgXm9I4WT+zz/InYs=
+
+Name: assets/filters/!f5.thumb.jpg
+SHA1-Digest: L5GwzbBwvZIjVL/9VCr6NDdk0XA=
+
+Name: res/drawable-xhdpi/abc_ic_search_api_holo_light.png
+SHA1-Digest: IFyWqXZDtH8JzzXL1LVLhIiVasQ=
+
+Name: res/drawable-xhdpi/btn_keyboard_key_light_normal_holo.9.png
+SHA1-Digest: qD7nvAYXjg2uZV3Nkpi8khbEwLA=
+
+Name: assets/emojis/face/e41e.png
+SHA1-Digest: QojoIU5B+1RsIDUeAKQK3ukFWN8=
+
+Name: assets/emojis/bell/em_1f529.png
+SHA1-Digest: +156x3A2y1FZZDuA9rULUYa6QNg=
+
+Name: assets/stickers/ignoring.thumb.jpg
+SHA1-Digest: tka6mx4bV/sqLNAbrqankgRDZeo=
+
+Name: assets/emojis/bell/e113.png
+SHA1-Digest: lO9ndtoYuwmGdEzaozhKRP/3yb0=
+
+Name: res/layout/styling_hi_fragment.xml
+SHA1-Digest: lNXPYjH+yCc6Ad1402B5l+3AmRs=
+
+Name: assets/emojis/bell/e143.png
+SHA1-Digest: 1qAidS8DB0YxZKvyJuzUj4uz8/w=
+
+Name: res/drawable/emojis_bg.xml
+SHA1-Digest: 0nRHd7jMAlGHVEds8DlQa0hGFE8=
+
+Name: res/drawable-mdpi/abc_ab_bottom_transparent_dark_holo.9.png
+SHA1-Digest: QViCByhwfrxu6epf5FigPsnyCdg=
+
+Name: assets/emojis/symbols/e215.png
+SHA1-Digest: EUEKB6ZvFdd0xyaeftIcXFjibl4=
+
+Name: assets/emojis/symbols/em_1f53b.png
+SHA1-Digest: /PVeKCF8dZfmGf43/ppXfHfuQTk=
+
+Name: res/drawable-xhdpi/clear.png
+SHA1-Digest: JF++EAND3UysBBfH6SrlxK7pOdM=
+
+Name: res/drawable-mdpi/abc_ic_cab_done_holo_dark.png
+SHA1-Digest: bReJxscH6ASuWZVUiV0H+XMY9iw=
+
+Name: assets/fonts/za_6.jpg
+SHA1-Digest: Vn38aeHlXOkrfeiFuniOUxKTuP0=
+
+Name: assets/fonts/danielbd.jpg
+SHA1-Digest: jCZswdncbxel/TaIzQYkoNxduHk=
+
+Name: res/drawable-hdpi/abc_tab_unselected_pressed_holo.9.png
+SHA1-Digest: TJPqye6pp5Iw3LyfyGWFUjWAkKc=
+
+Name: assets/backgrounds/14.thumb.jpg
+SHA1-Digest: gnAvMPsLpZGg0aMKVweNTl+V6ag=
+
+Name: assets/emojis/face/em_1f611.png
+SHA1-Digest: b6FubDQp8pweIWEeCNH6kZ0g7uQ=
+
+Name: assets/emojis/face/e10e.png
+SHA1-Digest: O+Zhd1Bi82pT0o45578uDT8YvQg=
+
+Name: assets/emojis/symbols/e24d.png
+SHA1-Digest: 7TETcFpCP8KegG2qRI1/iPS+zR0=
+
+Name: assets/backgrounds/19.thumb.jpg
+SHA1-Digest: r99xSnCFfBAOsuX2o6Gwk2cxn8I=
+
+Name: assets/emojis/bell/em_1f368.png
+SHA1-Digest: QJ4Jn/SGvL6ccgsALFBqpLCBqFM=
+
+Name: assets/backgrounds/29.thumb.jpg
+SHA1-Digest: 4rTT6YrrgEOupgECVyjMM1d27iQ=
+
+Name: assets/emojis/bell/e145.png
+SHA1-Digest: qANwbJVPf09dvTZvwXYYIIE+rc8=
+
+Name: assets/stickers/shout.png
+SHA1-Digest: A52V5wUSe7Yj6rPpL+XUItVDGd0=
+
+Name: assets/fonts/StarryNight.ttf
+SHA1-Digest: 1yh7jdMtffaEznbPYhdAdlnAY1Q=
+
+Name: res/layout/store_list_item.xml
+SHA1-Digest: /cn4HZ0EBjOt4BZMnSFfZ7ACfOE=
+
+Name: res/layout/abc_list_menu_item_checkbox.xml
+SHA1-Digest: aQOO4Zx5lCZgTTMK9qq28J8pgQM=
+
+Name: assets/emojis/car/e01f.png
+SHA1-Digest: lq27QP5l/EzKfEI6sjre4MsasDI=
+
+Name: assets/stickers/whisper.png
+SHA1-Digest: 1yt9/e8OzuDs+oocsC02buFHE8o=
+
+Name: assets/emojis/car/e44b.png
+SHA1-Digest: EhKgwwOlvJYxH6tTSjt43eFVIJA=
+
+Name: res/layout/activity_result.xml
+SHA1-Digest: aNdusynQFmRMBgBrAQal+qsUUFg=
+
+Name: assets/emojis/car/e50f.png
+SHA1-Digest: UM7quIoyRKAXoRg2szV6Yggm3RU=
+
+Name: res/drawable-mdpi/abc_ic_voice_search_api_holo_light.png
+SHA1-Digest: 3U4xALJUfZbDalwlHZfcv6kkCQY=
+
+Name: assets/emojis/bell/em_23f0.png
+SHA1-Digest: hbLLmRDxxQP86gfk3yFmutBg77I=
+
+Name: resources.arsc
+SHA1-Digest: Fm8z8mAiULuh0GcDAV16wWXsIJk=
+
+Name: assets/emojis/bell/e43f.png
+SHA1-Digest: b9TQUjfNBCZwzMgfCANMpKAifX4=
+
+Name: assets/emojis/symbols/em_1f191.png
+SHA1-Digest: El0i7FQ2m9Hx0ORtH78vC8moGwQ=
+
+Name: assets/emojis/flower/e050.png
+SHA1-Digest: ML4CV/xyT1kMdW0LXMZp640OWRc=
+
+Name: assets/fonts/mcgarg.jpg
+SHA1-Digest: 5wdrFrXv2fBREQzdXBEHfT9wgNc=
+
+Name: res/drawable/button_blue_2.xml
+SHA1-Digest: SF+1nlIp/w5sxcPWusOD5Kao1HI=
+
+Name: res/layout/activity_store.xml
+SHA1-Digest: E8ar7xYNw+qzR6EgRlemUoNcVnw=
+
+Name: res/drawable-xhdpi/abc_ic_voice_search_api_holo_light.png
+SHA1-Digest: P1jpz8ofWbmEG86xdzBCJ2/oV1Q=
+
+Name: assets/emojis/bell/em_1f4e4.png
+SHA1-Digest: 4EtAi8zn0qvnVXHWna5ar+ZqYwI=
+
+Name: assets/fonts/twelvetongoldfish.ttf
+SHA1-Digest: ZaYu4CWkhHm9b4TgUMjIcOxfrwA=
+
+Name: res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png
+SHA1-Digest: YyCZ0NHjYUP2jEOwswAoE6MoWsc=
+
+Name: assets/stickers/teeth.png
+SHA1-Digest: YTfAvmJPIsC68w8/LCYK4wzrLTA=
+
+Name: res/drawable-hdpi/abc_ic_ab_back_holo_dark.png
+SHA1-Digest: 4wLdJxzHSQAOwUbt6n9aUD6G3qQ=
+
+Name: assets/emojis/symbols/e02f.png
+SHA1-Digest: cm2AybSbjklyz1yx7Y9pacsfSbI=
+
+Name: res/drawable-xhdpi/abc_ab_solid_dark_holo.9.png
+SHA1-Digest: CO+2Zr1i8f5JnXbsdTd+j1z+vlU=
+
+Name: assets/emojis/bell/e43b.png
+SHA1-Digest: LWAjm3pLW1Dv648ou/WalzCe+sQ=
+
+Name: res/drawable-xhdpi/item_bg_selected.9.png
+SHA1-Digest: wOLEH8sfUHnRV8kbCDYmwJzgQgk=
+
+Name: res/layout/activity_prepare_bitmap.xml
+SHA1-Digest: 0K7/Wp4kS0kRGGNoZhCi1qXt5sw=
+
+Name: assets/emojis/flower/e04c.png
+SHA1-Digest: Q9dZmnyMRu9oTMKxAkVMFi4/61M=
+
+Name: assets/emojis/bell/em_1f4ca.png
+SHA1-Digest: 5CMh1uTHW8WpwbdhndXFMcrApu8=
+
+Name: assets/emojis/symbols/em_1f4a0.png
+SHA1-Digest: F8huOw3n+0Q4bBLnKMVnIKpWnMc=
+
+Name: assets/emojis/flower/em_1f30f.png
+SHA1-Digest: 9ee9VlJtS1USpLtWVPjP/Hof9L0=
+
+Name: assets/stickers/beaten.thumb.jpg
+SHA1-Digest: cc0ugif6mzXsEQIDYXBvfEY6UCA=
+
+Name: assets/emojis/face/e05a.png
+SHA1-Digest: Adzb6VSh7ldwj1ehgJ5Kp/MQpNw=
+
+Name: res/drawable/abc_textfield_searchview_holo_dark.xml
+SHA1-Digest: h9W70PUTT7kJ2rcxPIqRJMzYpxQ=
+
+Name: res/drawable-xhdpi/abc_textfield_search_right_selected_holo_ligh
+ t.9.png
+SHA1-Digest: Byf+SHlZ50jexhmnrSo/DgwsFkY=
+
+Name: assets/fonts/z-barabics.ttf
+SHA1-Digest: 2IdlBCMRqX1urji/MXxWVMRkbPs=
+
+Name: res/drawable-mdpi/abc_cab_background_top_holo_dark.9.png
+SHA1-Digest: qHOlIBCTp7yOL2yem2ErbJbCUP8=
+
+Name: assets/backgrounds/26.thumb.jpg
+SHA1-Digest: aQpuYiFrMJNvuRy2nSPDcvc15uc=
+
+Name: assets/emojis/face/e002.png
+SHA1-Digest: AcXa1kD5CO6K6PgAATtDmyC+ADs=
+
+Name: res/drawable-xhdpi/resize_pin.png
+SHA1-Digest: LMxnMYgA7HBN+/RXBkY3CDm3WBw=
+
+Name: assets/stickers/teeth.thumb.jpg
+SHA1-Digest: Cj/9oDoTTXMi69yGmIPBl1bSn5M=
+
+Name: res/drawable/footer_bg.xml
+SHA1-Digest: PvulCGPVmUw92gglKf3me20uuao=
+
+Name: assets/stickers/a_gift.thumb.jpg
+SHA1-Digest: IL06G0XLHnSyKQJZh8RlWrQwVR4=
+
+Name: assets/emojis/car/e510.png
+SHA1-Digest: EnHnN1mttlV3yfYT81e8yVIbj1Q=
+
+Name: assets/emojis/symbols/e02e.png
+SHA1-Digest: q3QEPzviICVvfYDMMh0O/bXPpn4=
+
+Name: res/layout/abc_list_menu_item_radio.xml
+SHA1-Digest: YcYS8yZ/PoN4xAqTA10XvUY6icI=
+
+Name: assets/emojis/bell/e120.png
+SHA1-Digest: r45/q6oIBEQ4QwNwzz3uxVZL2DQ=
+
+Name: assets/backgrounds/51.thumb.jpg
+SHA1-Digest: eOaFSydklh1UteWlcjecQKBnwRA=
+
+Name: res/drawable-xhdpi/abc_ic_ab_back_holo_light.png
+SHA1-Digest: j6b6r0SxTxaZYmg4Do8GNfr/5So=
+
+Name: res/drawable/abc_list_selector_holo_light.xml
+SHA1-Digest: gWPaDsR8dbk8NHDTQKBthA6WUpc=
+
+Name: assets/templates/36/config.xml
+SHA1-Digest: 1Jt//sQf+ZpsN7OahzT2L5rKjkA=
+
+Name: assets/data/gv_icon_custom_color.png
+SHA1-Digest: Nz4F2qyiogRlXrtKsi19SC+Br/8=
+
+Name: assets/emojis/symbols/em_1f537.png
+SHA1-Digest: g507dyN4ub3pdOuLUbWBG6BShNM=
+
+Name: assets/templates/43/config.xml
+SHA1-Digest: fVBZ2FfDnNt/trO/ea21CGbgtdo=
+
+Name: assets/emojis/symbols/e02b.png
+SHA1-Digest: /A6ALZm1Ol6oqiBEfDn5oNUjNwg=
+
+Name: assets/backgrounds/36.thumb.jpg
+SHA1-Digest: iGB0/sVN4YlItaovGbkQV2YOyP8=
+
+Name: assets/frames/23.png
+SHA1-Digest: 7BDHH042J++7IC5UId6Z9FazhAw=
+
+Name: res/drawable-xhdpi/abc_tab_selected_holo.9.png
+SHA1-Digest: 8I6CrxyEqEIidVSRbOTA56OrDPM=
+
+Name: res/drawable-hdpi/abc_ab_transparent_light_holo.9.png
+SHA1-Digest: 1PPVbeoSyqliqkyfY/H08fVRpjw=
+
+Name: res/layout-v14/abc_activity_chooser_view.xml
+SHA1-Digest: jmsunPrwCXtWvH1kLoMjX4U/F34=
+
+Name: assets/fonts/za_4.ttf
+SHA1-Digest: 1kEtnIGHOi3zL3NBUneNXtynR84=
+
+Name: assets/emojis/car/e039.png
+SHA1-Digest: H1Id4VVPO2kNefLiXRcB3yp7QPM=
+
+Name: assets/frames/gf4sd56.png
+SHA1-Digest: hNu306fJrtY7vdPeNZ028lT6Kvg=
+
+Name: assets/emojis/bell/em_1f355.png
+SHA1-Digest: TiCuO72a2piGXylgiDvz7TW9THc=
+
+Name: res/layout/fragment_emojis.xml
+SHA1-Digest: omOTS7hx7fTFZ7JelQR4vQ+r/vc=
+
+Name: assets/emojis/face/e420.png
+SHA1-Digest: UU4adirqaLvDU6rcfvBE9GwOTjY=
+
+Name: res/drawable-hdpi/abc_ic_menu_moreoverflow_normal_holo_dark.png
+SHA1-Digest: T1g+8G/BP3L25AP/FXpk1PSSCqk=
+
+Name: assets/emojis/car/em_1f69f.png
+SHA1-Digest: Udrgd3bb4E1Z+SACa8hFJvAXTJc=
+
+Name: assets/emojis/symbols/e222.png
+SHA1-Digest: HnC8/hzl9kxDJ6LWFsu3IXEQea8=
+
+Name: assets/emojis/symbols/em_2611.png
+SHA1-Digest: CKPhNEp+ZO0x1Vtb9w2bjg52YNg=
+
+Name: assets/backgrounds/03.thumb.jpg
+SHA1-Digest: Hah1oYPjRQAkMVQ1P4ZfTqp2CKI=
+
+Name: assets/emojis/bell/e044.png
+SHA1-Digest: rsO/yWBx9Y1FGoh3bsHWfunDbgM=
+
+Name: assets/emojis/bell/em_1f3b4.png
+SHA1-Digest: gVL5kQcJNEN7yPhZwnly0fMgqaE=
+
+Name: assets/emojis/face/em_1f61f.png
+SHA1-Digest: IRwZbo8z/9vq/bVEUqlZSV5aftg=
+
+Name: assets/backgrounds/04.jpg
+SHA1-Digest: gwogu9szHhNYjiHTg4jBls0YCEk=
+
+Name: assets/stickers/confident.png
+SHA1-Digest: 1wezp0qY5WPkTYsbstoNoM02O8E=
+
+Name: assets/templates/11/config.xml
+SHA1-Digest: FHKIqqcD8I1zCgiiJAw4wJ64UWQ=
+
+Name: assets/emojis/flower/e52d.png
+SHA1-Digest: lucMBVE4O9lc2CGh6i/dn/dJazA=
+
+Name: assets/emojis/flower/em_1f332.png
+SHA1-Digest: cKRxiK/pQVMB7bH+/kUVT5WBXNE=
+
+Name: res/drawable-hdpi/abc_cab_background_bottom_holo_light.9.png
+SHA1-Digest: rsWlScRgXqJe76pnUyUvp+TLsXg=
+
+Name: res/drawable-hdpi/abc_menu_hardkey_panel_holo_dark.9.png
+SHA1-Digest: bvWQnkF0p61BrZv6yKUfNwGNKk8=
+
+Name: res/drawable-xhdpi/abc_spinner_ab_pressed_holo_light.9.png
+SHA1-Digest: DzfMRkn6SIhqHTzLdO5ffLTjkYA=
+
+Name: assets/emojis/flower/em_1f406.png
+SHA1-Digest: jfE35Ypfgrup18Sxp3pPXI9KHiM=
+
+Name: assets/emojis/car/e121.png
+SHA1-Digest: 3WuDYVvWt1bMF9DKxMh1SOB5vao=
+
+Name: assets/emojis/flower/e524.png
+SHA1-Digest: 6TcJ0B6Fn//v69KQIow6WPM9UbM=
+
+Name: assets/emojis/symbols/e241.png
+SHA1-Digest: 0avJ3oHsmkk+OyanEDqkBkeYY3M=
+

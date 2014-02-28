@@ -1,0 +1,62 @@
+.class public com/applovin/impl/adview/AppLovinAdViewInternal
+.super com/applovin/adview/AppLovinAdView
+
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/adview/AppLovinAdViewInternal;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/util/AttributeSet;)
+	invoke-direct	{v0,v1,v2},com/applovin/adview/AppLovinAdView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v0 : Lcom/applovin/impl/adview/AppLovinAdViewInternal; , v1 : Landroid/content/Context; , v2 : Landroid/util/AttributeSet;
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 4
+; this: v0 (Lcom/applovin/impl/adview/AppLovinAdViewInternal;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/util/AttributeSet;)
+; parameter[2] : v3 (I)
+	invoke-direct	{v0,v1,v2,v3},com/applovin/adview/AppLovinAdView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v0 : Lcom/applovin/impl/adview/AppLovinAdViewInternal; , v1 : Landroid/content/Context; , v2 : Landroid/util/AttributeSet; , v3 : single-length
+	return-void	
+.end method
+
+.method public <init>(Lcom/applovin/sdk/AppLovinAdSize;Landroid/app/Activity;)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/adview/AppLovinAdViewInternal;)
+; parameter[0] : v1 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[1] : v2 (Landroid/app/Activity;)
+	invoke-direct	{v0,v1,v2},com/applovin/adview/AppLovinAdView/<init>	; <init>(Lcom/applovin/sdk/AppLovinAdSize;Landroid/app/Activity;)V
+; v0 : Lcom/applovin/impl/adview/AppLovinAdViewInternal; , v1 : Lcom/applovin/sdk/AppLovinAdSize; , v2 : Landroid/app/Activity;
+	return-void	
+.end method
+
+.method public <init>(Lcom/applovin/sdk/AppLovinSdk;Lcom/applovin/sdk/AppLovinAdSize;Landroid/app/Activity;)V
+.limit registers 4
+; this: v0 (Lcom/applovin/impl/adview/AppLovinAdViewInternal;)
+; parameter[0] : v1 (Lcom/applovin/sdk/AppLovinSdk;)
+; parameter[1] : v2 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[2] : v3 (Landroid/app/Activity;)
+	invoke-direct	{v0,v1,v2,v3},com/applovin/adview/AppLovinAdView/<init>	; <init>(Lcom/applovin/sdk/AppLovinSdk;Lcom/applovin/sdk/AppLovinAdSize;Landroid/app/Activity;)V
+; v0 : Lcom/applovin/impl/adview/AppLovinAdViewInternal; , v1 : Lcom/applovin/sdk/AppLovinSdk; , v2 : Lcom/applovin/sdk/AppLovinAdSize; , v3 : Landroid/app/Activity;
+	return-void	
+.end method
+
+.method public getAdViewControllerJsInterface()Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/adview/AppLovinAdViewInternal;)
+	iget-object	v0,v1,com/applovin/impl/adview/AppLovinAdViewInternal.controller Lcom/applovin/adview/AdViewController;
+; v0 : Lcom/applovin/adview/AdViewController; , v1 : Lcom/applovin/impl/adview/AppLovinAdViewInternal;
+	check-cast	v0,com/applovin/impl/adview/AdViewControllerImpl
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	invoke-virtual	{v0},com/applovin/impl/adview/AdViewControllerImpl/a	; a()Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+.end method
+
+

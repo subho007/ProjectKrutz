@@ -1,0 +1,683 @@
+.class com/applovin/impl/adview/y
+.super android/webkit/WebViewClient
+
+.field private final a Lcom/applovin/sdk/AppLovinSdk;
+.field private final b Lcom/applovin/sdk/AppLovinLogger;
+.field private c Lcom/applovin/impl/adview/AdViewControllerImpl;
+
+.method public <init>(Lcom/applovin/impl/adview/AdViewControllerImpl;Lcom/applovin/sdk/AppLovinSdk;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v2 (Lcom/applovin/impl/adview/AdViewControllerImpl;)
+; parameter[1] : v3 (Lcom/applovin/sdk/AppLovinSdk;)
+	invoke-direct	{v1},android/webkit/WebViewClient/<init>	; <init>()V
+; v1 : Lcom/applovin/impl/adview/y;
+	iput-object	v3,v1,com/applovin/impl/adview/y.a Lcom/applovin/sdk/AppLovinSdk;
+; v3 : Lcom/applovin/sdk/AppLovinSdk; , v1 : Lcom/applovin/impl/adview/y;
+	invoke-virtual	{v3},com/applovin/sdk/AppLovinSdk/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v3 : Lcom/applovin/sdk/AppLovinSdk;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	iput-object	v0,v1,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Lcom/applovin/impl/adview/y;
+	iput-object	v2,v1,com/applovin/impl/adview/y.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v2 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v1 : Lcom/applovin/impl/adview/y;
+	return-void	
+.end method
+
+.method private a(Landroid/net/Uri;)Ljava/util/Set;
+.limit registers 8
+; this: v6 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v7 (Landroid/net/Uri;)
+	const/4	v5,15
+; v5 : single-length
+	invoke-virtual	{v7},android/net/Uri/isOpaque	; isOpaque()Z
+; v7 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,laef2a
+; v0 : single-length
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	const-string	v1,"This isn't a hierarchical URI."
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/UnsupportedOperationException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/UnsupportedOperationException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+laef2a:
+	invoke-virtual	{v7},android/net/Uri/getEncodedQuery	; getEncodedQuery()Ljava/lang/String;
+; v7 : Landroid/net/Uri;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-nez	v3,laef40
+; v3 : Ljava/lang/String;
+	invoke-static	{},java/util/Collections/emptySet	; emptySet()Ljava/util/Set;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+laef3e:
+	return-object	v0
+; v0 : Ljava/util/Set;
+laef40:
+	new-instance	v4,java/util/LinkedHashSet
+; v4 : Ljava/util/LinkedHashSet;
+	invoke-direct	{v4},java/util/LinkedHashSet/<init>	; <init>()V
+; v4 : Ljava/util/LinkedHashSet;
+	const/4	v0,0
+; v0 : single-length
+laef4c:
+	const/16	v1,38
+; v1 : single-length
+	invoke-virtual	{v3,v1,v0},java/lang/String/indexOf	; indexOf(II)I
+; v3 : Ljava/lang/String; , v1 : single-length , v0 : single-length
+	move-result	v1
+; v1 : single-length
+	if-ne	v1,v5,laef64
+; v1 : single-length , v5 : single-length
+	invoke-virtual	{v3},java/lang/String/length	; length()I
+; v3 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+laef64:
+	const/16	v2,61
+; v2 : single-length
+	invoke-virtual	{v3,v2,v0},java/lang/String/indexOf	; indexOf(II)I
+; v3 : Ljava/lang/String; , v2 : single-length , v0 : single-length
+	move-result	v2
+; v2 : single-length
+	if-gt	v2,v1,laef78
+; v2 : single-length , v1 : single-length
+	if-ne	v2,v5,laef7a
+; v2 : single-length , v5 : single-length
+laef78:
+	move	v2,v1
+; v2 : single-length , v1 : single-length
+laef7a:
+	invoke-virtual	{v3,v0,v2},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : single-length , v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},android/net/Uri/decode	; decode(Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-interface	{v4,v0},java/util/Set/add	; add(Ljava/lang/Object;)Z
+; v4 : Ljava/util/LinkedHashSet; , v0 : Ljava/lang/String;
+	add-int/lit8	v0,v1,1
+; v0 : single-length , v1 : single-length
+	invoke-virtual	{v3},java/lang/String/length	; length()I
+; v3 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-lt	v0,v1,laef4c
+; v0 : single-length , v1 : single-length
+	invoke-static	{v4},java/util/Collections/unmodifiableSet	; unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+; v4 : Ljava/util/LinkedHashSet;
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	goto	laef3e
+.end method
+
+.method private a(Landroid/net/Uri;Lcom/applovin/impl/adview/v;)V
+.limit registers 8
+; this: v5 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v6 (Landroid/net/Uri;)
+; parameter[1] : v7 (Lcom/applovin/impl/adview/v;)
+.catch java/lang/Throwable from laefbc to laefd8 using laefda
+laefbc:
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-string	v1,"android.intent.action.VIEW"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v6},android/content/Intent/<init>	; <init>(Ljava/lang/String;Landroid/net/Uri;)V
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v6 : Landroid/net/Uri;
+	invoke-virtual	{v7},com/applovin/impl/adview/v/getContext	; getContext()Landroid/content/Context;
+; v7 : Lcom/applovin/impl/adview/v;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-virtual	{v1,v0},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v1 : Landroid/content/Context; , v0 : Landroid/content/Intent;
+laefd8:
+	return-void	
+laefda:
+	move-exception	v0
+; v0 : java/lang/Throwable
+	iget-object	v1,v5,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/adview/y;
+	const-string	v2,"AdWebViewClient"
+; v2 : Ljava/lang/String;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Unable to show ""
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v6 : Landroid/net/Uri;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,""."
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Throwable
+	goto	laefd8
+.end method
+
+.method private d(Lcom/applovin/impl/adview/v;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v3 (Lcom/applovin/impl/adview/v;)
+	invoke-virtual	{v3},com/applovin/impl/adview/v/a	; a()Lcom/applovin/sdk/AppLovinAd;
+; v3 : Lcom/applovin/impl/adview/v;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	if-eqz	v0,laf056
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	iget-object	v1,v2,com/applovin/impl/adview/y.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v1 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v2 : Lcom/applovin/impl/adview/y;
+	invoke-virtual	{v1,v0},com/applovin/impl/adview/AdViewControllerImpl/a	; a(Lcom/applovin/sdk/AppLovinAd;)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v0 : Lcom/applovin/sdk/AppLovinAd;
+laf056:
+	return-void	
+.end method
+
+.method a(Landroid/webkit/WebView;Ljava/lang/String;)V
+.limit registers 10
+; this: v7 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v8 (Landroid/webkit/WebView;)
+; parameter[1] : v9 (Ljava/lang/String;)
+.catch java/lang/Exception from laf180 to laf1a4 using laf1a6
+	const/4	v6,1
+; v6 : single-length
+	iget-object	v0,v7,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v7 : Lcom/applovin/impl/adview/y;
+	const-string	v1,"AdWebViewClient"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Processing click on ad URL ""
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"""
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	if-eqz	v9,laf112
+; v9 : Ljava/lang/String;
+	instance-of	v0,v8,com/applovin/impl/adview/v
+; v0 : single-length , v8 : Landroid/webkit/WebView;
+	if-eqz	v0,laf112
+; v0 : single-length
+	invoke-static	{v9},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v9 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Landroid/net/Uri;
+	move-object	v0,v8
+; v0 : Landroid/webkit/WebView; , v8 : Landroid/webkit/WebView;
+	check-cast	v0,com/applovin/impl/adview/v
+; v0 : Lcom/applovin/impl/adview/v;
+	invoke-virtual	{v2},android/net/Uri/getScheme	; getScheme()Ljava/lang/String;
+; v2 : Landroid/net/Uri;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v2},android/net/Uri/getHost	; getHost()Ljava/lang/String;
+; v2 : Landroid/net/Uri;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2},android/net/Uri/getPath	; getPath()Ljava/lang/String;
+; v2 : Landroid/net/Uri;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	const-string	v5,"applovin"
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v5,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v5 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf376
+; v1 : single-length
+	const-string	v1,"com.applovin.sdk"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf376
+; v1 : single-length
+	const-string	v1,"/adservice/track_click"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v4},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf114
+; v1 : single-length
+	invoke-virtual	{v7,v0},com/applovin/impl/adview/y/c	; c(Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v0 : Lcom/applovin/impl/adview/v;
+laf112:
+	return-void	
+laf114:
+	const-string	v1,"/adservice/next_ad"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v4},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf12c
+; v1 : single-length
+	invoke-virtual	{v7,v0},com/applovin/impl/adview/y/a	; a(Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v0 : Lcom/applovin/impl/adview/v;
+	goto	laf112
+laf12c:
+	const-string	v1,"/adservice/close_ad"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v4},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf144
+; v1 : single-length
+	invoke-virtual	{v7,v0},com/applovin/impl/adview/y/b	; b(Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v0 : Lcom/applovin/impl/adview/v;
+	goto	laf112
+laf144:
+	const-string	v1,"/launch/"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v4,v1},java/lang/String/startsWith	; startsWith(Ljava/lang/String;)Z
+; v4 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf1de
+; v1 : single-length
+	invoke-virtual	{v2},android/net/Uri/getPathSegments	; getPathSegments()Ljava/util/List;
+; v2 : Landroid/net/Uri;
+	move-result-object	v1
+; v1 : Ljava/util/List;
+	invoke-interface	{v1},java/util/List/size	; size()I
+; v1 : Ljava/util/List;
+	move-result	v2
+; v2 : single-length
+	if-le	v2,v6,laf112
+; v2 : single-length , v6 : single-length
+	invoke-interface	{v1},java/util/List/size	; size()I
+; v1 : Ljava/util/List;
+	move-result	v2
+; v2 : single-length
+	add-int/lit8	v2,v2,255
+; v2 : single-length , v2 : single-length
+	invoke-interface	{v1,v2},java/util/List/get	; get(I)Ljava/lang/Object;
+; v1 : Ljava/util/List; , v2 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+laf180:
+	invoke-virtual	{v8},android/webkit/WebView/getContext	; getContext()Landroid/content/Context;
+; v8 : Landroid/webkit/WebView;
+	move-result-object	v2
+; v2 : Landroid/content/Context;
+	invoke-virtual	{v2},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v2 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Landroid/content/pm/PackageManager;
+	invoke-virtual	{v3,v1},android/content/pm/PackageManager/getLaunchIntentForPackage	; getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+; v3 : Landroid/content/pm/PackageManager; , v1 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Landroid/content/Intent;
+	invoke-virtual	{v2,v3},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v2 : Landroid/content/Context; , v3 : Landroid/content/Intent;
+	invoke-direct	{v7,v0},com/applovin/impl/adview/y/d	; d(Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v0 : Lcom/applovin/impl/adview/v;
+laf1a4:
+	goto	laf112
+laf1a6:
+	move-exception	v0
+; v0 : java/lang/Exception
+	iget-object	v2,v7,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v2 : Lcom/applovin/sdk/AppLovinLogger; , v7 : Lcom/applovin/impl/adview/y;
+	const-string	v3,"AdWebViewClient"
+; v3 : Ljava/lang/String;
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	invoke-direct	{v4},java/lang/StringBuilder/<init>	; <init>()V
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v5,"Threw Exception Trying to Launch App for Package: "
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v2,v3,v1,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v2 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Ljava/lang/String; , v1 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	laf112
+laf1de:
+	const-string	v0,"/openurl"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v4 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,laf27e
+; v0 : single-length
+	invoke-virtual	{v2},android/net/Uri/getPathSegments	; getPathSegments()Ljava/util/List;
+; v2 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/util/List;
+	invoke-interface	{v0},java/util/List/size	; size()I
+; v0 : Ljava/util/List;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,laf112
+; v0 : single-length
+	const-string	v0,"url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2,v0},android/net/Uri/getQueryParameter	; getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+; v2 : Landroid/net/Uri; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v9,laf246
+; v9 : Ljava/lang/String;
+	invoke-static	{v0},android/webkit/URLUtil/isValidUrl	; isValidUrl(Ljava/lang/String;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf246
+; v1 : single-length
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	const-string	v2,"android.intent.action.VIEW"
+; v2 : Ljava/lang/String;
+	invoke-static	{v0},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/net/Uri;
+	invoke-direct	{v1,v2,v0},android/content/Intent/<init>	; <init>(Ljava/lang/String;Landroid/net/Uri;)V
+; v1 : Landroid/content/Intent; , v2 : Ljava/lang/String; , v0 : Landroid/net/Uri;
+	invoke-virtual	{v8},android/webkit/WebView/getContext	; getContext()Landroid/content/Context;
+; v8 : Landroid/webkit/WebView;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-virtual	{v0,v1},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v0 : Landroid/content/Context; , v1 : Landroid/content/Intent;
+	goto/16	laf112
+laf246:
+	iget-object	v1,v7,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v7 : Lcom/applovin/impl/adview/y;
+	const-string	v2,"AdWebViewClient"
+; v2 : Ljava/lang/String;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"SDK was asked to launch invalid URL externally:"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto/16	laf112
+laf27e:
+	const-string	v0,"/function/"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v4 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,laf30a
+; v0 : single-length
+	invoke-virtual	{v2},android/net/Uri/getPathSegments	; getPathSegments()Ljava/util/List;
+; v2 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/util/List;
+	invoke-interface	{v0},java/util/List/size	; size()I
+; v0 : Ljava/util/List;
+	move-result	v1
+; v1 : single-length
+	if-le	v1,v6,laf112
+; v1 : single-length , v6 : single-length
+	invoke-interface	{v0},java/util/List/size	; size()I
+; v0 : Ljava/util/List;
+	move-result	v1
+; v1 : single-length
+	add-int/lit8	v1,v1,255
+; v1 : single-length , v1 : single-length
+	invoke-interface	{v0,v1},java/util/List/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/List; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	new-instance	v3,java/util/HashMap
+; v3 : Ljava/util/HashMap;
+	invoke-direct	{v3},java/util/HashMap/<init>	; <init>()V
+; v3 : Ljava/util/HashMap;
+	invoke-direct	{v7,v2},com/applovin/impl/adview/y/a	; a(Landroid/net/Uri;)Ljava/util/Set;
+; v7 : Lcom/applovin/impl/adview/y; , v2 : Landroid/net/Uri;
+	move-result-object	v1
+; v1 : Ljava/util/Set;
+	invoke-interface	{v1},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/Set;
+	move-result-object	v4
+; v4 : Ljava/util/Iterator;
+laf2d4:
+	invoke-interface	{v4},java/util/Iterator/hasNext	; hasNext()Z
+; v4 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,laf2fc
+; v1 : single-length
+	invoke-interface	{v4},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v4 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v2,v1},android/net/Uri/getQueryParameter	; getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+; v2 : Landroid/net/Uri; , v1 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-interface	{v3,v1,v5},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v3 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v5 : Ljava/lang/String;
+	goto	laf2d4
+laf2fc:
+	iget-object	v1,v7,com/applovin/impl/adview/y.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v1 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v7 : Lcom/applovin/impl/adview/y;
+	invoke-virtual	{v1,v0,v3},com/applovin/impl/adview/AdViewControllerImpl/handleCommandInvocation	; handleCommandInvocation(Ljava/lang/String;Ljava/util/Map;)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v0 : Ljava/lang/String; , v3 : Ljava/util/HashMap;
+	goto/16	laf112
+laf30a:
+	iget-object	v0,v7,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v7 : Lcom/applovin/impl/adview/y;
+	const-string	v1,"AdWebViewClient"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Unknown URL: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	iget-object	v0,v7,com/applovin/impl/adview/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v7 : Lcom/applovin/impl/adview/y;
+	const-string	v1,"AdWebViewClient"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Path: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto/16	laf112
+laf376:
+	invoke-direct	{v7,v0},com/applovin/impl/adview/y/d	; d(Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v0 : Lcom/applovin/impl/adview/v;
+	invoke-direct	{v7,v2,v0},com/applovin/impl/adview/y/a	; a(Landroid/net/Uri;Lcom/applovin/impl/adview/v;)V
+; v7 : Lcom/applovin/impl/adview/y; , v2 : Landroid/net/Uri; , v0 : Lcom/applovin/impl/adview/v;
+	goto/16	laf112
+.end method
+
+.method protected a(Lcom/applovin/impl/adview/v;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v3 (Lcom/applovin/impl/adview/v;)
+	invoke-virtual	{v3},com/applovin/impl/adview/v/getParent	; getParent()Landroid/view/ViewParent;
+; v3 : Lcom/applovin/impl/adview/v;
+	move-result-object	v0
+; v0 : Landroid/view/ViewParent;
+	instance-of	v1,v0,com/applovin/adview/AppLovinAdView
+; v1 : single-length , v0 : Landroid/view/ViewParent;
+	if-eqz	v1,laf3c2
+; v1 : single-length
+	check-cast	v0,com/applovin/adview/AppLovinAdView
+; v0 : Lcom/applovin/adview/AppLovinAdView;
+	invoke-virtual	{v0},com/applovin/adview/AppLovinAdView/loadNextAd	; loadNextAd()V
+; v0 : Lcom/applovin/adview/AppLovinAdView;
+laf3c2:
+	return-void	
+.end method
+
+.method protected b(Lcom/applovin/impl/adview/v;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v2 (Lcom/applovin/impl/adview/v;)
+	iget-object	v0,v1,com/applovin/impl/adview/y.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v1 : Lcom/applovin/impl/adview/y;
+	invoke-virtual	{v0,v2},com/applovin/impl/adview/AdViewControllerImpl/a	; a(Landroid/webkit/WebView;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v2 : Lcom/applovin/impl/adview/v;
+	return-void	
+.end method
+
+.method protected c(Lcom/applovin/impl/adview/v;)V
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v3 (Lcom/applovin/impl/adview/v;)
+	invoke-virtual	{v3},com/applovin/impl/adview/v/a	; a()Lcom/applovin/sdk/AppLovinAd;
+; v3 : Lcom/applovin/impl/adview/v;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	if-eqz	v0,laf418
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	invoke-virtual	{v0},com/applovin/sdk/AppLovinAd/getDestinationUrls	; getDestinationUrls()Ljava/util/List;
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	move-result-object	v0
+; v0 : Ljava/util/List;
+	const/4	v1,0
+; v1 : single-length
+	invoke-interface	{v0,v1},java/util/List/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/List; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2,v3,v0},com/applovin/impl/adview/y/a	; a(Landroid/webkit/WebView;Ljava/lang/String;)V
+; v2 : Lcom/applovin/impl/adview/y; , v3 : Lcom/applovin/impl/adview/v; , v0 : Ljava/lang/String;
+laf418:
+	return-void	
+.end method
+
+.method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	invoke-super	{v1,v2,v3},android/webkit/WebViewClient/onPageFinished	; onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
+; v1 : Lcom/applovin/impl/adview/y; , v2 : Landroid/webkit/WebView; , v3 : Ljava/lang/String;
+	iget-object	v0,v1,com/applovin/impl/adview/y.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v1 : Lcom/applovin/impl/adview/y;
+	invoke-virtual	{v0,v2},com/applovin/impl/adview/AdViewControllerImpl/onAdHtmlLoaded	; onAdHtmlLoaded(Landroid/webkit/WebView;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v2 : Landroid/webkit/WebView;
+	return-void	
+.end method
+
+.method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/adview/y;)
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	invoke-virtual	{v1,v2,v3},com/applovin/impl/adview/y/a	; a(Landroid/webkit/WebView;Ljava/lang/String;)V
+; v1 : Lcom/applovin/impl/adview/y; , v2 : Landroid/webkit/WebView; , v3 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,25 @@
+.interface abstract android/support/v7/internal/widget/SpinnerICS$SpinnerPopup
+.super java/lang/Object
+.source SpinnerICS.java
+
+.inner class SpinnerPopup inner android/support/v7/internal/widget/SpinnerICS$SpinnerPopup outer android/support/v7/internal/widget/SpinnerICS
+
+.method public abstract dismiss()V
+.end method
+
+.method public abstract getHintText()Ljava/lang/CharSequence;
+.end method
+
+.method public abstract isShowing()Z
+.end method
+
+.method public abstract setAdapter(Landroid/widget/ListAdapter;)V
+.end method
+
+.method public abstract setPromptText(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract show()V
+.end method
+
+

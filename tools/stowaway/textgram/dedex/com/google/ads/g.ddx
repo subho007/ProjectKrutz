@@ -1,0 +1,179 @@
+.class public final com/google/ads/g
+.super java/lang/Object
+.source SourceFile
+
+.inner class a inner com/google/ads/g$a outer com/google/ads/g
+
+.method public static a(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+.throws Ljava/lang/ClassNotFoundException;
+.throws Ljava/lang/ClassCastException;
+.throws Ljava/lang/IllegalAccessException;
+.throws Ljava/lang/InstantiationException;
+.throws Ljava/lang/LinkageError;
+.throws Ljava/lang/ExceptionInInitializerError;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">(" , "Ljava/lang/String;" , "Ljava/lang/Class" , "<TT;>;)TT;" }
+.end annotation
+.limit registers 3
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Ljava/lang/Class;)
+.line 133
+	invoke-static	{v1},java/lang/Class/forName	; forName(Ljava/lang/String;)Ljava/lang/Class;
+; v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Class;
+.line 134
+	invoke-virtual	{v0},java/lang/Class/newInstance	; newInstance()Ljava/lang/Object;
+; v0 : Ljava/lang/Class;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+.line 144
+	invoke-virtual	{v2,v0},java/lang/Class/cast	; cast(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/lang/Class; , v0 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.throws Ljava/lang/ClassNotFoundException;
+.throws Ljava/lang/ClassCastException;
+.throws Ljava/lang/IllegalAccessException;
+.throws Ljava/lang/InstantiationException;
+.throws Ljava/lang/LinkageError;
+.throws Ljava/lang/ExceptionInInitializerError;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">(" , "Ljava/lang/String;" , "Ljava/lang/Class" , "<TT;>;)TT;" }
+.end annotation
+.limit registers 14
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Ljava/lang/String;)
+; parameter[2] : v5 (Ljava/lang/Boolean;)
+; parameter[3] : v6 (Ljava/lang/String;)
+; parameter[4] : v7 (Ljava/lang/String;)
+; parameter[5] : v8 (Ljava/lang/String;)
+; parameter[6] : v9 (Ljava/lang/String;)
+; parameter[7] : v10 (Ljava/lang/String;)
+; parameter[8] : v11 (Ljava/lang/String;)
+; parameter[9] : v12 (Ljava/lang/String;)
+; parameter[10] : v13 (Ljava/lang/String;)
+.line 76
+	const-string	v0,"@gw_adlocid@"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0,v4},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"@gw_qdata@"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v9},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"@gw_sdkver@"
+; v1 : Ljava/lang/String;
+	const-string	v2,"afma-sdk-a-v6.4.1"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"@gw_sessid@"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v10},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"@gw_seqnum@"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v11},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v11 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"@gw_devid@"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v6},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v6 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 84
+	if-eqz	v8,lb9f0c
+; v8 : Ljava/lang/String;
+.line 85
+	const-string	v0,"@gw_adnetid@"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0,v8},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+lb9f0c:
+.line 88
+	if-eqz	v7,lb9f1c
+; v7 : Ljava/lang/String;
+.line 89
+	const-string	v0,"@gw_allocid@"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0,v7},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+lb9f1c:
+.line 92
+	if-eqz	v12,lb9f2c
+; v12 : Ljava/lang/String;
+.line 93
+	const-string	v0,"@gw_adt@"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0,v12},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String; , v12 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+lb9f2c:
+.line 96
+	if-eqz	v13,lb9f3c
+; v13 : Ljava/lang/String;
+.line 97
+	const-string	v0,"@gw_aec@"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0,v13},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String; , v13 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+lb9f3c:
+.line 100
+	if-eqz	v5,lb9f64
+; v5 : Ljava/lang/Boolean;
+.line 101
+	invoke-virtual	{v5},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v5 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb9f5e
+; v0 : single-length
+	const-string	v0,"1"
+; v0 : Ljava/lang/String;
+lb9f50:
+.line 102
+	const-string	v2,"@gw_adnetrefresh@"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2,v0},java/lang/String/replaceAll	; replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lb9f5c:
+.line 105
+	return-object	v0
+; v0 : Ljava/lang/String;
+lb9f5e:
+.line 101
+	const-string	v0,"0"
+; v0 : Ljava/lang/String;
+	goto	lb9f50
+lb9f64:
+	move-object	v0,v1
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	goto	lb9f5c
+.end method
+
+

@@ -1,0 +1,499 @@
+.class final android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask
+.super android/os/AsyncTask
+.source ActivityChooserModel.java
+
+.inner class PersistHistoryAsyncTask inner android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask outer android/support/v7/internal/widget/ActivityChooserModel
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Landroid/os/AsyncTask" , "<" , "Ljava/lang/Object;" , "Ljava/lang/Void;" , "Ljava/lang/Void;" , ">;" }
+.end annotation
+
+.field final this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+
+.method private <init>(Landroid/support/v7/internal/widget/ActivityChooserModel;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;)
+; parameter[0] : v1 (Landroid/support/v7/internal/widget/ActivityChooserModel;)
+.line 1049
+	iput-object	v1,v0,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v1 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v0 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	invoke-direct	{v0},android/os/AsyncTask/<init>	; <init>()V
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	return-void	
+.end method
+
+.method <init>(Landroid/support/v7/internal/widget/ActivityChooserModel;Landroid/support/v7/internal/widget/ActivityChooserModel$1;)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;)
+; parameter[0] : v1 (Landroid/support/v7/internal/widget/ActivityChooserModel;)
+; parameter[1] : v2 (Landroid/support/v7/internal/widget/ActivityChooserModel$1;)
+.line 1049
+	invoke-direct	{v0,v1},android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask/<init>	; <init>(Landroid/support/v7/internal/widget/ActivityChooserModel;)V
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask; , v1 : Landroid/support/v7/internal/widget/ActivityChooserModel;
+	return-void	
+.end method
+
+.method public doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;)
+; parameter[0] : v2 ([Ljava/lang/Object;)
+.line 1049
+	invoke-virtual	{v1,v2},android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask/doInBackground	; doInBackground([Ljava/lang/Object;)Ljava/lang/Void;
+; v1 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask; , v2 : [Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/Void;
+	return-object	v0
+; v0 : Ljava/lang/Void;
+.end method
+
+.method public doInBackground([Ljava/lang/Object;)Ljava/lang/Void;
+.limit registers 17
+; this: v15 (Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;)
+; parameter[0] : v16 ([Ljava/lang/Object;)
+.catch java/io/IOException from l96a60 to l96a66 using l96a6e
+.catch java/io/IOException from l96a3e to l96a44 using l96a48
+.catch java/lang/Exception from l969ee to l96a2e using l96a4e
+.catch java/io/IOException from l969e0 to l969e6 using l969e8
+.catch java/lang/Exception from l96990 to l969d0 using l96a4e
+.catch java/io/IOException from l96982 to l96988 using l9698a
+.catch java/lang/Exception from l96932 to l96972 using l96a4e
+.catch java/io/IOException from l96926 to l9692c using l96a68
+.catch java/lang/IllegalArgumentException from l96906 to l96916 using l96930
+.catch java/lang/IllegalStateException from l96906 to l96916 using l9698e
+.catch java/io/IOException from l96906 to l96916 using l969ec
+.catch java/lang/Exception from l96906 to l96916 using l96a4e
+.catch java/lang/IllegalArgumentException from l96822 to l968c4 using l96930
+.catch java/lang/IllegalStateException from l96822 to l968c4 using l9698e
+.catch java/io/IOException from l96822 to l968c4 using l969ec
+.catch java/lang/Exception from l96822 to l968c4 using l96a4e
+.catch java/io/FileNotFoundException from l96802 to l96816 using l968ca
+.var 4 is i I from l96852 to l968ca
+.var 8 is record Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord; from l96864 to l968ca
+.var 9 is recordCount I from l96850 to l968ca
+.var 10 is serializer Lorg/xmlpull/v1/XmlSerializer; from l96820 to l968ca
+.var 0 is fnfe Ljava/io/FileNotFoundException; from l968cc to l96902
+.var 4 is i I from l96904 to l9692c
+.var 9 is recordCount I from l96904 to l9692c
+.var 5 is iae Ljava/lang/IllegalArgumentException; from l96932 to l9698e
+.var 7 is ise Ljava/lang/IllegalStateException; from l96990 to l969ec
+.var 6 is ioe Ljava/io/IOException; from l969ee to l96a4e
+.var 4 is i I from l96a68 to l96a6e
+.var 9 is recordCount I from l96a68 to l96a6e
+.line 1054
+	const/4	v11,0
+; v11 : single-length
+	aget-object	v2,v16,v11
+; v2 : Ljava/lang/Object; , v16 : [Ljava/lang/Object; , v11 : single-length
+	check-cast	v2,java/util/List
+; v2 : Ljava/util/List;
+.line 1055
+	const/4	v11,1
+; v11 : single-length
+	aget-object	v3,v16,v11
+; v3 : Ljava/lang/Object; , v16 : [Ljava/lang/Object; , v11 : single-length
+	check-cast	v3,java/lang/String
+; v3 : Ljava/lang/String;
+.line 1057
+	const/4	v1,0
+; v1 : single-length
+l96802:
+.line 1060
+	iget-object	v11,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	invoke-static	{v11},android/support/v7/internal/widget/ActivityChooserModel/access$200	; access$200(Landroid/support/v7/internal/widget/ActivityChooserModel;)Landroid/content/Context;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel;
+	move-result-object	v11
+; v11 : Landroid/content/Context;
+	const/4	v12,0
+; v12 : single-length
+	invoke-virtual	{v11,v3,v12},android/content/Context/openFileOutput	; openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
+; v11 : Landroid/content/Context; , v3 : Ljava/lang/String; , v12 : single-length
+l96816:
+	move-result-object	v1
+; v1 : Ljava/io/FileOutputStream;
+.line 1066
+	invoke-static	{},android/util/Xml/newSerializer	; newSerializer()Lorg/xmlpull/v1/XmlSerializer;
+; 
+	nop	
+	move-result-object	v10
+; v10 : Lorg/xmlpull/v1/XmlSerializer;
+.line 1069
+	const/4	v11,0
+; v11 : single-length
+l96822:
+	invoke-interface	{v10,v1,v11},org/xmlpull/v1/XmlSerializer/setOutput	; setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v1 : Ljava/io/FileOutputStream; , v11 : single-length
+.line 1070
+	const-string	v11,"UTF-8"
+; v11 : Ljava/lang/String;
+	const/4	v12,1
+; v12 : single-length
+	invoke-static	{v12},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v12 : single-length
+	move-result-object	v12
+; v12 : Ljava/lang/Boolean;
+	invoke-interface	{v10,v11,v12},org/xmlpull/v1/XmlSerializer/startDocument	; startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : Ljava/lang/String; , v12 : Ljava/lang/Boolean;
+.line 1071
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"historical-records"
+; v12 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12},org/xmlpull/v1/XmlSerializer/startTag	; startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String;
+.line 1073
+	invoke-interface	{v2},java/util/List/size	; size()I
+; v2 : Ljava/util/List;
+	move-result	v9
+; v9 : single-length
+.line 1074
+	const/4	v4,0
+; v4 : single-length
+l96852:
+	if-ge	v4,v9,l96904
+; v4 : single-length , v9 : single-length
+.line 1075
+	const/4	v11,0
+; v11 : single-length
+	invoke-interface	{v2,v11},java/util/List/remove	; remove(I)Ljava/lang/Object;
+; v2 : Ljava/util/List; , v11 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/Object;
+	check-cast	v8,android/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord
+; v8 : Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord;
+.line 1076
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"historical-record"
+; v12 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12},org/xmlpull/v1/XmlSerializer/startTag	; startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String;
+.line 1077
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"activity"
+; v12 : Ljava/lang/String;
+	iget-object	v13,v8,android/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord.activity Landroid/content/ComponentName;
+; v13 : Landroid/content/ComponentName; , v8 : Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord;
+	invoke-virtual	{v13},android/content/ComponentName/flattenToString	; flattenToString()Ljava/lang/String;
+; v13 : Landroid/content/ComponentName;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12,v13},org/xmlpull/v1/XmlSerializer/attribute	; attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String; , v13 : Ljava/lang/String;
+.line 1079
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"time"
+; v12 : Ljava/lang/String;
+	iget-wide	v13,v8,android/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord.time J
+; v13 : double-length , v8 : Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord;
+	invoke-static	{v13,v14},java/lang/String/valueOf	; valueOf(J)Ljava/lang/String;
+; v13 : double-length
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12,v13},org/xmlpull/v1/XmlSerializer/attribute	; attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String; , v13 : Ljava/lang/String;
+.line 1080
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"weight"
+; v12 : Ljava/lang/String;
+	iget	v13,v8,android/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord.weight F
+; v13 : single-length , v8 : Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord;
+	invoke-static	{v13},java/lang/String/valueOf	; valueOf(F)Ljava/lang/String;
+; v13 : single-length
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12,v13},org/xmlpull/v1/XmlSerializer/attribute	; attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String; , v13 : Ljava/lang/String;
+.line 1081
+	const/4	v11,0
+; v11 : single-length
+	const-string	v12,"historical-record"
+; v12 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12},org/xmlpull/v1/XmlSerializer/endTag	; endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String;
+l968c4:
+.line 1074
+	add-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	goto	l96852
+l968ca:
+.line 1061
+	move-exception	v0
+; v0 : java/io/FileNotFoundException
+.line 1062
+	invoke-static	{},android/support/v7/internal/widget/ActivityChooserModel/access$300	; access$300()Ljava/lang/String;
+; 
+	nop	
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	new-instance	v12,java/lang/StringBuilder
+; v12 : Ljava/lang/StringBuilder;
+	invoke-direct	{v12},java/lang/StringBuilder/<init>	; <init>()V
+; v12 : Ljava/lang/StringBuilder;
+	const-string	v13,"Error writing historical recrod file: "
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v12,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v12},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v12 : Ljava/lang/StringBuilder;
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+	invoke-static	{v11,v12,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v11 : Ljava/lang/String; , v12 : Ljava/lang/String; , v0 : java/io/FileNotFoundException
+.line 1063
+	const/4	v11,0
+; v11 : single-length
+l96902:
+.line 1109
+	return-object	v11
+; v11 : single-length
+l96904:
+.line 1087
+	const/4	v11,0
+; v11 : single-length
+l96906:
+	const-string	v12,"historical-records"
+; v12 : Ljava/lang/String;
+	invoke-interface	{v10,v11,v12},org/xmlpull/v1/XmlSerializer/endTag	; endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
+; v10 : Lorg/xmlpull/v1/XmlSerializer; , v11 : single-length , v12 : Ljava/lang/String;
+.line 1088
+	invoke-interface	{v10},org/xmlpull/v1/XmlSerializer/endDocument	; endDocument()V
+; v10 : Lorg/xmlpull/v1/XmlSerializer;
+l96916:
+.line 1100
+	iget-object	v11,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	const/4	v12,1
+; v12 : single-length
+	invoke-static	{v11,v12},android/support/v7/internal/widget/ActivityChooserModel/access$502	; access$502(Landroid/support/v7/internal/widget/ActivityChooserModel;Z)Z
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v12 : single-length
+.line 1101
+	if-eqz	v1,l9692c
+; v1 : Ljava/io/FileOutputStream;
+l96926:
+.line 1103
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+l9692c:
+.line 1109
+	const/4	v11,0
+; v11 : single-length
+	goto	l96902
+l96930:
+.line 1093
+	move-exception	v5
+; v5 : java/lang/IllegalArgumentException
+l96932:
+.line 1094
+	invoke-static	{},android/support/v7/internal/widget/ActivityChooserModel/access$300	; access$300()Ljava/lang/String;
+; 
+	nop	
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	new-instance	v12,java/lang/StringBuilder
+; v12 : Ljava/lang/StringBuilder;
+	invoke-direct	{v12},java/lang/StringBuilder/<init>	; <init>()V
+; v12 : Ljava/lang/StringBuilder;
+	const-string	v13,"Error writing historical recrod file: "
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	iget-object	v13,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	invoke-static	{v13},android/support/v7/internal/widget/ActivityChooserModel/access$400	; access$400(Landroid/support/v7/internal/widget/ActivityChooserModel;)Ljava/lang/String;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v12},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v12 : Ljava/lang/StringBuilder;
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+	invoke-static	{v11,v12,v5},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v11 : Ljava/lang/String; , v12 : Ljava/lang/String; , v5 : java/lang/IllegalArgumentException
+l96972:
+.line 1100
+	iget-object	v11,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	const/4	v12,1
+; v12 : single-length
+	invoke-static	{v11,v12},android/support/v7/internal/widget/ActivityChooserModel/access$502	; access$502(Landroid/support/v7/internal/widget/ActivityChooserModel;Z)Z
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v12 : single-length
+.line 1101
+	if-eqz	v1,l9692c
+; v1 : Ljava/io/FileOutputStream;
+l96982:
+.line 1103
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+l96988:
+	goto	l9692c
+l9698a:
+.line 1104
+	move-exception	v11
+; v11 : java/io/IOException
+	goto	l9692c
+l9698e:
+.line 1095
+	move-exception	v7
+; v7 : java/lang/IllegalStateException
+l96990:
+.line 1096
+	invoke-static	{},android/support/v7/internal/widget/ActivityChooserModel/access$300	; access$300()Ljava/lang/String;
+; 
+	nop	
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	new-instance	v12,java/lang/StringBuilder
+; v12 : Ljava/lang/StringBuilder;
+	invoke-direct	{v12},java/lang/StringBuilder/<init>	; <init>()V
+; v12 : Ljava/lang/StringBuilder;
+	const-string	v13,"Error writing historical recrod file: "
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	iget-object	v13,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	invoke-static	{v13},android/support/v7/internal/widget/ActivityChooserModel/access$400	; access$400(Landroid/support/v7/internal/widget/ActivityChooserModel;)Ljava/lang/String;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v12},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v12 : Ljava/lang/StringBuilder;
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+	invoke-static	{v11,v12,v7},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v11 : Ljava/lang/String; , v12 : Ljava/lang/String; , v7 : java/lang/IllegalStateException
+l969d0:
+.line 1100
+	iget-object	v11,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	const/4	v12,1
+; v12 : single-length
+	invoke-static	{v11,v12},android/support/v7/internal/widget/ActivityChooserModel/access$502	; access$502(Landroid/support/v7/internal/widget/ActivityChooserModel;Z)Z
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v12 : single-length
+.line 1101
+	if-eqz	v1,l9692c
+; v1 : Ljava/io/FileOutputStream;
+l969e0:
+.line 1103
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+l969e6:
+	goto	l9692c
+l969e8:
+.line 1104
+	move-exception	v11
+; v11 : java/io/IOException
+	goto	l9692c
+l969ec:
+.line 1097
+	move-exception	v6
+; v6 : java/io/IOException
+l969ee:
+.line 1098
+	invoke-static	{},android/support/v7/internal/widget/ActivityChooserModel/access$300	; access$300()Ljava/lang/String;
+; 
+	nop	
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	new-instance	v12,java/lang/StringBuilder
+; v12 : Ljava/lang/StringBuilder;
+	invoke-direct	{v12},java/lang/StringBuilder/<init>	; <init>()V
+; v12 : Ljava/lang/StringBuilder;
+	const-string	v13,"Error writing historical recrod file: "
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	iget-object	v13,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	invoke-static	{v13},android/support/v7/internal/widget/ActivityChooserModel/access$400	; access$400(Landroid/support/v7/internal/widget/ActivityChooserModel;)Ljava/lang/String;
+; v13 : Landroid/support/v7/internal/widget/ActivityChooserModel;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	invoke-virtual	{v12,v13},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v12 : Ljava/lang/StringBuilder; , v13 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v12},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v12 : Ljava/lang/StringBuilder;
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+	invoke-static	{v11,v12,v6},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v11 : Ljava/lang/String; , v12 : Ljava/lang/String; , v6 : java/io/IOException
+l96a2e:
+.line 1100
+	iget-object	v11,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	const/4	v12,1
+; v12 : single-length
+	invoke-static	{v11,v12},android/support/v7/internal/widget/ActivityChooserModel/access$502	; access$502(Landroid/support/v7/internal/widget/ActivityChooserModel;Z)Z
+; v11 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v12 : single-length
+.line 1101
+	if-eqz	v1,l9692c
+; v1 : Ljava/io/FileOutputStream;
+l96a3e:
+.line 1103
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+l96a44:
+	goto/16	l9692c
+l96a48:
+.line 1104
+	move-exception	v11
+; v11 : java/io/IOException
+	goto/16	l9692c
+l96a4e:
+.line 1100
+	move-exception	v11
+; v11 : java/lang/Exception
+	iget-object	v12,v15,android/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask.this$0 Landroid/support/v7/internal/widget/ActivityChooserModel;
+; v12 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v15 : Landroid/support/v7/internal/widget/ActivityChooserModel$PersistHistoryAsyncTask;
+	const/4	v13,1
+; v13 : single-length
+	invoke-static	{v12,v13},android/support/v7/internal/widget/ActivityChooserModel/access$502	; access$502(Landroid/support/v7/internal/widget/ActivityChooserModel;Z)Z
+; v12 : Landroid/support/v7/internal/widget/ActivityChooserModel; , v13 : single-length
+.line 1101
+	if-eqz	v1,l96a66
+; v1 : Ljava/io/FileOutputStream;
+l96a60:
+.line 1103
+	invoke-virtual	{v1},java/io/FileOutputStream/close	; close()V
+; v1 : Ljava/io/FileOutputStream;
+l96a66:
+.line 1106
+	throw	v11
+; v11 : java/lang/Exception
+l96a68:
+.line 1104
+	move-exception	v11
+; v11 : java/io/IOException
+	goto/16	l9692c
+l96a6e:
+	move-exception	v12
+; v12 : java/io/IOException
+	goto	l96a66
+.end method
+
+

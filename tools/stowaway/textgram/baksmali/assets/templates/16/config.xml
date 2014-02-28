@@ -1,0 +1,13 @@
+<template>
+<title>Leather B</title>
+<textcolor>#6d4e24</textcolor>
+<textsize>40</textsize>
+<text_shadow>#FFFFFF</text_shadow>
+<padding_top>100</padding_top>
+<padding_bottom>100</padding_bottom>
+<padding_right>60</padding_right>
+<padding_left>60</padding_left>
+<background>[assets]/backgrounds/16.jpg</background>
+<font>[assets]/fonts/black_jack.ttf</font>
+<author></author>
+</template>

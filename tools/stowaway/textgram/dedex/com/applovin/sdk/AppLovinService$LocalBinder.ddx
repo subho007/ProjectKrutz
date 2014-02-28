@@ -1,0 +1,13 @@
+.class public com/applovin/sdk/AppLovinService$LocalBinder
+.super android/os/Binder
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/applovin/sdk/AppLovinService$LocalBinder;)
+	invoke-direct	{v0},android/os/Binder/<init>	; <init>()V
+; v0 : Lcom/applovin/sdk/AppLovinService$LocalBinder;
+	return-void	
+.end method
+
+

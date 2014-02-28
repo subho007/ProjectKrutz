@@ -1,0 +1,266 @@
+.class public com/google/ads/util/a
+.super java/lang/Object
+.source SourceFile
+
+.inner class a inner com/google/ads/util/a$a outer com/google/ads/util/a
+.field private static a Z
+
+.method static <clinit>()V
+.limit registers 2
+.line 33
+	const-string	v0,"GoogleAdsAssertion"
+; v0 : Ljava/lang/String;
+	const/4	v1,3
+; v1 : single-length
+	invoke-static	{v0,v1},android/util/Log/isLoggable	; isLoggable(Ljava/lang/String;I)Z
+; v0 : Ljava/lang/String; , v1 : single-length
+	move-result	v0
+; v0 : single-length
+	sput-boolean	v0,com/google/ads/util/a.a Z
+; v0 : Z
+	return-void	
+.end method
+
+.method public static a(Ljava/lang/Object;)V
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 53
+	if-nez	v2,lc3522
+; v2 : Ljava/lang/Object;
+	const/4	v0,1
+; v0 : single-length
+lc3516:
+	const-string	v1,"Assertion that an object is null failed."
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 55
+	return-void	
+lc3522:
+.line 53
+	const/4	v0,0
+; v0 : single-length
+	goto	lc3516
+.end method
+
+.method public static a(Ljava/lang/Object;Ljava/lang/Object;)V
+.limit registers 5
+; parameter[0] : v3 (Ljava/lang/Object;)
+; parameter[1] : v4 (Ljava/lang/Object;)
+.line 71
+	if-ne	v3,v4,lc3580
+; v3 : Ljava/lang/Object; , v4 : Ljava/lang/Object;
+	const/4	v0,1
+; v0 : single-length
+lc353e:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Assertion that 'a' and 'b' refer to the same object failed.a: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v3},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,", b: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 74
+	return-void	
+lc3580:
+.line 71
+	const/4	v0,0
+; v0 : single-length
+	goto	lc353e
+.end method
+
+.method public static a(Ljava/lang/String;)V
+.limit registers 4
+; parameter[0] : v3 (Ljava/lang/String;)
+.line 91
+	invoke-static	{v3},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lc35d0
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+lc35a2:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Expected a non empty string, got: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 93
+	return-void	
+lc35d0:
+.line 91
+	const/4	v0,0
+; v0 : single-length
+	goto	lc35a2
+.end method
+
+.method public static a(Z)V
+.limit registers 2
+; parameter[0] : v1 (Z)
+.line 37
+	const-string	v0,"Assertion failed."
+; v0 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v1 : single-length , v0 : Ljava/lang/String;
+.line 38
+	return-void	
+.end method
+
+.method public static a(ZLjava/lang/String;)V
+.limit registers 2
+; parameter[0] : v0 (Z)
+; parameter[1] : v1 (Ljava/lang/String;)
+.line 41
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 42
+	return-void	
+.end method
+
+.method public static b(Ljava/lang/Object;)V
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 62
+	if-eqz	v2,lc362a
+; v2 : Ljava/lang/Object;
+	const/4	v0,1
+; v0 : single-length
+lc361e:
+	const-string	v1,"Assertion that an object is not null failed."
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 64
+	return-void	
+lc362a:
+.line 62
+	const/4	v0,0
+; v0 : single-length
+	goto	lc361e
+.end method
+
+.method public static b(Z)V
+.limit registers 3
+; parameter[0] : v2 (Z)
+.line 45
+	if-nez	v2,lc3652
+; v2 : single-length
+	const/4	v0,1
+; v0 : single-length
+lc3646:
+	const-string	v1,"Assertion failed."
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v1 : Ljava/lang/String;
+.line 46
+	return-void	
+lc3652:
+.line 45
+	const/4	v0,0
+; v0 : single-length
+	goto	lc3646
+.end method
+
+.method public static b(ZLjava/lang/String;)V
+.limit registers 3
+; parameter[0] : v1 (Z)
+; parameter[1] : v2 (Ljava/lang/String;)
+.line 49
+	if-nez	v1,lc3676
+; v1 : single-length
+	const/4	v0,1
+; v0 : single-length
+lc366e:
+	invoke-static	{v0,v2},com/google/ads/util/a/c	; c(ZLjava/lang/String;)V
+; v0 : single-length , v2 : Ljava/lang/String;
+.line 50
+	return-void	
+lc3676:
+.line 49
+	const/4	v0,0
+; v0 : single-length
+	goto	lc366e
+.end method
+
+.method private static c(ZLjava/lang/String;)V
+.limit registers 4
+; parameter[0] : v2 (Z)
+; parameter[1] : v3 (Ljava/lang/String;)
+.line 107
+	const-string	v0,"GoogleAdsAssertion"
+; v0 : Ljava/lang/String;
+	const/4	v1,3
+; v1 : single-length
+	invoke-static	{v0,v1},android/util/Log/isLoggable	; isLoggable(Ljava/lang/String;I)Z
+; v0 : Ljava/lang/String; , v1 : single-length
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lc36a8
+; v0 : single-length
+	sget-boolean	v0,com/google/ads/util/a.a Z
+; v0 : single-length
+	if-nez	v0,lc36a8
+; v0 : single-length
+lc36a6:
+.line 116
+	return-void	
+lc36a8:
+.line 111
+	if-nez	v2,lc36a6
+; v2 : single-length
+.line 112
+	new-instance	v0,com/google/ads/util/a$a
+; v0 : Lcom/google/ads/util/a$a;
+	invoke-direct	{v0,v3},com/google/ads/util/a$a/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/google/ads/util/a$a; , v3 : Ljava/lang/String;
+.line 113
+	const-string	v1,"GoogleAdsAssertion"
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v3,v0},android/util/Log/d	; d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v1 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : Lcom/google/ads/util/a$a;
+.line 114
+	throw	v0
+; v0 : Lcom/google/ads/util/a$a;
+.end method
+
+

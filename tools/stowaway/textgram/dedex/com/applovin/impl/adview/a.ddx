@@ -1,0 +1,44 @@
+.class com/applovin/impl/adview/a
+.super java/lang/Object
+.implements java/lang/Runnable
+
+.field final a Ljava/lang/String;
+.field final b Ljava/util/Map;
+.field final c Lcom/applovin/impl/adview/AdViewControllerImpl;
+
+.method <init>(Lcom/applovin/impl/adview/AdViewControllerImpl;Ljava/lang/String;Ljava/util/Map;)V
+.limit registers 4
+; this: v0 (Lcom/applovin/impl/adview/a;)
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerImpl;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (Ljava/util/Map;)
+	iput-object	v1,v0,com/applovin/impl/adview/a.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v1 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v0 : Lcom/applovin/impl/adview/a;
+	iput-object	v2,v0,com/applovin/impl/adview/a.a Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcom/applovin/impl/adview/a;
+	iput-object	v3,v0,com/applovin/impl/adview/a.b Ljava/util/Map;
+; v3 : Ljava/util/Map; , v0 : Lcom/applovin/impl/adview/a;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/adview/a;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcom/applovin/impl/adview/a;)
+	iget-object	v0,v3,com/applovin/impl/adview/a.c Lcom/applovin/impl/adview/AdViewControllerImpl;
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v3 : Lcom/applovin/impl/adview/a;
+	invoke-static	{v0},com/applovin/impl/adview/AdViewControllerImpl/a	; a(Lcom/applovin/impl/adview/AdViewControllerImpl;)Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v1,v3,com/applovin/impl/adview/a.a Ljava/lang/String;
+; v1 : Ljava/lang/String; , v3 : Lcom/applovin/impl/adview/a;
+	iget-object	v2,v3,com/applovin/impl/adview/a.b Ljava/util/Map;
+; v2 : Ljava/util/Map; , v3 : Lcom/applovin/impl/adview/a;
+	invoke-virtual	{v0,v1,v2},com/applovin/impl/adview/AdViewControllerJsInterface/handleCommandInvocation	; handleCommandInvocation(Ljava/lang/String;Ljava/util/Map;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v1 : Ljava/lang/String; , v2 : Ljava/util/Map;
+	return-void	
+.end method
+
+

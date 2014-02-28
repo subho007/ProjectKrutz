@@ -1,0 +1,104 @@
+.class android/support/v4/media/TransportMediator$2
+.super java/lang/Object
+.source TransportMediator.java
+.implements android/view/KeyEvent$Callback
+
+.inner class 2 inner android/support/v4/media/TransportMediator$2 outer android/support/v4/media/TransportMediator
+.field final this$0 Landroid/support/v4/media/TransportMediator;
+
+.method <init>(Landroid/support/v4/media/TransportMediator;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/media/TransportMediator$2;)
+; parameter[0] : v1 (Landroid/support/v4/media/TransportMediator;)
+.line 130
+	iput-object	v1,v0,android/support/v4/media/TransportMediator$2.this$0 Landroid/support/v4/media/TransportMediator;
+; v1 : Landroid/support/v4/media/TransportMediator; , v0 : Landroid/support/v4/media/TransportMediator$2;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/media/TransportMediator$2;
+	return-void	
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v4/media/TransportMediator$2;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (Landroid/view/KeyEvent;)
+.line 133
+	invoke-static	{v2},android/support/v4/media/TransportMediator/isMediaKey	; isMediaKey(I)Z
+; v2 : single-length
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l7c2e6
+; v0 : single-length
+	iget-object	v0,v1,android/support/v4/media/TransportMediator$2.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v1 : Landroid/support/v4/media/TransportMediator$2;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mCallbacks Landroid/support/v4/media/TransportPerformer;
+; v0 : Landroid/support/v4/media/TransportPerformer; , v0 : Landroid/support/v4/media/TransportPerformer;
+	invoke-virtual	{v0,v2,v3},android/support/v4/media/TransportPerformer/onMediaButtonDown	; onMediaButtonDown(ILandroid/view/KeyEvent;)Z
+; v0 : Landroid/support/v4/media/TransportPerformer; , v2 : single-length , v3 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+l7c2e4:
+	return	v0
+; v0 : single-length
+l7c2e6:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7c2e4
+.end method
+
+.method public onKeyLongPress(ILandroid/view/KeyEvent;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v4/media/TransportMediator$2;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (Landroid/view/KeyEvent;)
+.line 137
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onKeyMultiple(IILandroid/view/KeyEvent;)Z
+.limit registers 5
+; this: v1 (Landroid/support/v4/media/TransportMediator$2;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (Landroid/view/KeyEvent;)
+.line 147
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onKeyUp(ILandroid/view/KeyEvent;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v4/media/TransportMediator$2;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (Landroid/view/KeyEvent;)
+.line 142
+	invoke-static	{v2},android/support/v4/media/TransportMediator/isMediaKey	; isMediaKey(I)Z
+; v2 : single-length
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l7c342
+; v0 : single-length
+	iget-object	v0,v1,android/support/v4/media/TransportMediator$2.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v1 : Landroid/support/v4/media/TransportMediator$2;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mCallbacks Landroid/support/v4/media/TransportPerformer;
+; v0 : Landroid/support/v4/media/TransportPerformer; , v0 : Landroid/support/v4/media/TransportPerformer;
+	invoke-virtual	{v0,v2,v3},android/support/v4/media/TransportPerformer/onMediaButtonUp	; onMediaButtonUp(ILandroid/view/KeyEvent;)Z
+; v0 : Landroid/support/v4/media/TransportPerformer; , v2 : single-length , v3 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+l7c340:
+	return	v0
+; v0 : single-length
+l7c342:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7c340
+.end method
+
+

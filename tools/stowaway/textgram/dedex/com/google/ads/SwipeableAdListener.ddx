@@ -1,0 +1,12 @@
+.interface public abstract com/google/ads/SwipeableAdListener
+.super java/lang/Object
+.source SourceFile
+
+
+.method public abstract onAdActivated(Lcom/google/ads/Ad;)V
+.end method
+
+.method public abstract onAdDeactivated(Lcom/google/ads/Ad;)V
+.end method
+
+

@@ -1,0 +1,227 @@
+.class android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver
+.super android/database/DataSetObserver
+.source AdapterViewICS.java
+
+.inner class AdapterDataSetObserver inner android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver outer android/support/v7/internal/widget/AdapterViewICS
+.field private mInstanceState Landroid/os/Parcelable;
+.field final this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+
+.method <init>(Landroid/support/v7/internal/widget/AdapterViewICS;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;)
+; parameter[0] : v2 (Landroid/support/v7/internal/widget/AdapterViewICS;)
+.line 796
+	iput-object	v2,v1,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v2 : Landroid/support/v7/internal/widget/AdapterViewICS; , v1 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-direct	{v1},android/database/DataSetObserver/<init>	; <init>()V
+; v1 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+.line 798
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	return-void	
+.end method
+
+.method public clearSavedState()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;)
+.line 843
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+.line 844
+	return-void	
+.end method
+
+.method public onChanged()V
+.limit registers 3
+; this: v2 (Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;)
+.line 802
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	const/4	v1,1
+; v1 : single-length
+	iput-boolean	v1,v0,android/support/v7/internal/widget/AdapterViewICS.mDataChanged Z
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 803
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget-object	v1,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v1 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget	v1,v1,android/support/v7/internal/widget/AdapterViewICS.mItemCount I
+; v1 : single-length , v1 : single-length
+	iput	v1,v0,android/support/v7/internal/widget/AdapterViewICS.mOldItemCount I
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 804
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget-object	v1,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v1 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v1},android/support/v7/internal/widget/AdapterViewICS/getAdapter	; getAdapter()Landroid/widget/Adapter;
+; v1 : Landroid/support/v7/internal/widget/AdapterViewICS;
+	move-result-object	v1
+; v1 : Landroid/widget/Adapter;
+	invoke-interface	{v1},android/widget/Adapter/getCount	; getCount()I
+; v1 : Landroid/widget/Adapter;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v0,android/support/v7/internal/widget/AdapterViewICS.mItemCount I
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 808
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/getAdapter	; getAdapter()Landroid/widget/Adapter;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+	move-result-object	v0
+; v0 : Landroid/widget/Adapter;
+	invoke-interface	{v0},android/widget/Adapter/hasStableIds	; hasStableIds()Z
+; v0 : Landroid/widget/Adapter;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l98048
+; v0 : single-length
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v0 : Landroid/os/Parcelable; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	if-eqz	v0,l98048
+; v0 : Landroid/os/Parcelable;
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget	v0,v0,android/support/v7/internal/widget/AdapterViewICS.mOldItemCount I
+; v0 : single-length , v0 : single-length
+	if-nez	v0,l98048
+; v0 : single-length
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget	v0,v0,android/support/v7/internal/widget/AdapterViewICS.mItemCount I
+; v0 : single-length , v0 : single-length
+	if-lez	v0,l98048
+; v0 : single-length
+.line 810
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget-object	v1,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v1 : Landroid/os/Parcelable; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-static	{v0,v1},android/support/v7/internal/widget/AdapterViewICS/access$000	; access$000(Landroid/support/v7/internal/widget/AdapterViewICS;Landroid/os/Parcelable;)V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v1 : Landroid/os/Parcelable;
+.line 811
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v0 : single-length , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+l98032:
+.line 815
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/checkFocus	; checkFocus()V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 816
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/requestLayout	; requestLayout()V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 817
+	return-void	
+l98048:
+.line 813
+	iget-object	v0,v2,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v2 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/rememberSyncState	; rememberSyncState()V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+	goto	l98032
+.end method
+
+.method public onInvalidated()V
+.limit registers 7
+; this: v6 (Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;)
+	const-wide/high16	v4,32768
+; v4 : double-length
+	const/4	v3,0
+; v3 : single-length
+	const/4	v2,15
+; v2 : single-length
+.line 821
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	const/4	v1,1
+; v1 : single-length
+	iput-boolean	v1,v0,android/support/v7/internal/widget/AdapterViewICS.mDataChanged Z
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 823
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/getAdapter	; getAdapter()Landroid/widget/Adapter;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+	move-result-object	v0
+; v0 : Landroid/widget/Adapter;
+	invoke-interface	{v0},android/widget/Adapter/hasStableIds	; hasStableIds()Z
+; v0 : Landroid/widget/Adapter;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l9809e
+; v0 : single-length
+.line 826
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-static	{v0},android/support/v7/internal/widget/AdapterViewICS/access$100	; access$100(Landroid/support/v7/internal/widget/AdapterViewICS;)Landroid/os/Parcelable;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+	move-result-object	v0
+; v0 : Landroid/os/Parcelable;
+	iput-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.mInstanceState Landroid/os/Parcelable;
+; v0 : Landroid/os/Parcelable; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+l9809e:
+.line 830
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget-object	v1,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v1 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iget	v1,v1,android/support/v7/internal/widget/AdapterViewICS.mItemCount I
+; v1 : single-length , v1 : single-length
+	iput	v1,v0,android/support/v7/internal/widget/AdapterViewICS.mOldItemCount I
+; v1 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 831
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput	v3,v0,android/support/v7/internal/widget/AdapterViewICS.mItemCount I
+; v3 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 832
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput	v2,v0,android/support/v7/internal/widget/AdapterViewICS.mSelectedPosition I
+; v2 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 833
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput-wide	v4,v0,android/support/v7/internal/widget/AdapterViewICS.mSelectedRowId J
+; v4 : double-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 834
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput	v2,v0,android/support/v7/internal/widget/AdapterViewICS.mNextSelectedPosition I
+; v2 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 835
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput-wide	v4,v0,android/support/v7/internal/widget/AdapterViewICS.mNextSelectedRowId J
+; v4 : double-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 836
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	iput-boolean	v3,v0,android/support/v7/internal/widget/AdapterViewICS.mNeedSync Z
+; v3 : single-length , v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 838
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/checkFocus	; checkFocus()V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 839
+	iget-object	v0,v6,android/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver.this$0 Landroid/support/v7/internal/widget/AdapterViewICS;
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS; , v6 : Landroid/support/v7/internal/widget/AdapterViewICS$AdapterDataSetObserver;
+	invoke-virtual	{v0},android/support/v7/internal/widget/AdapterViewICS/requestLayout	; requestLayout()V
+; v0 : Landroid/support/v7/internal/widget/AdapterViewICS;
+.line 840
+	return-void	
+.end method
+
+

@@ -1,0 +1,12 @@
+<template>
+<title>Air Mail</title>
+<textcolor>#393939</textcolor>
+<textsize>40</textsize>
+<padding_top>40</padding_top>
+<padding_bottom>40</padding_bottom>
+<padding_right>40</padding_right>
+<padding_left>40</padding_left>
+<background>[assets]/backgrounds/28.jpg</background>
+<font>[assets]/fonts/1942report.ttf</font>
+<author></author>
+</template>

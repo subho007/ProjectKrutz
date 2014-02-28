@@ -1,0 +1,350 @@
+.class public android/support/v7/widget/SearchView$SearchAutoComplete
+.super android/widget/AutoCompleteTextView
+.source SearchView.java
+
+.inner class SearchAutoComplete inner android/support/v7/widget/SearchView$SearchAutoComplete outer android/support/v7/widget/SearchView
+.field private mSearchView Landroid/support/v7/widget/SearchView;
+.field private mThreshold I
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 1595
+	invoke-direct	{v1,v2},android/widget/AutoCompleteTextView/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v2 : Landroid/content/Context;
+.line 1596
+	invoke-virtual	{v1},android/support/v7/widget/SearchView$SearchAutoComplete/getThreshold	; getThreshold()I
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,android/support/v7/widget/SearchView$SearchAutoComplete.mThreshold I
+; v0 : single-length , v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+.line 1597
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+.line 1600
+	invoke-direct	{v1,v2,v3},android/widget/AutoCompleteTextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet;
+.line 1601
+	invoke-virtual	{v1},android/support/v7/widget/SearchView$SearchAutoComplete/getThreshold	; getThreshold()I
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,android/support/v7/widget/SearchView$SearchAutoComplete.mThreshold I
+; v0 : single-length , v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+.line 1602
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 5
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+; parameter[2] : v4 (I)
+.line 1605
+	invoke-direct	{v1,v2,v3,v4},android/widget/AutoCompleteTextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v4 : single-length
+.line 1606
+	invoke-virtual	{v1},android/support/v7/widget/SearchView$SearchAutoComplete/getThreshold	; getThreshold()I
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,android/support/v7/widget/SearchView$SearchAutoComplete.mThreshold I
+; v0 : single-length , v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+.line 1607
+	return-void	
+.end method
+
+.method static access$1600(Landroid/support/v7/widget/SearchView$SearchAutoComplete;)Z
+.limit registers 2
+; parameter[0] : v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+.line 1589
+	invoke-direct	{v1},android/support/v7/widget/SearchView$SearchAutoComplete/isEmpty	; isEmpty()Z
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private isEmpty()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+.line 1623
+	invoke-virtual	{v1},android/support/v7/widget/SearchView$SearchAutoComplete/getText	; getText()Landroid/text/Editable;
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result-object	v0
+; v0 : Landroid/text/Editable;
+	invoke-static	{v0},android/text/TextUtils/getTrimmedLength	; getTrimmedLength(Ljava/lang/CharSequence;)I
+; v0 : Landroid/text/Editable;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l9cb90
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l9cb8e:
+	return	v0
+; v0 : single-length
+l9cb90:
+	const/4	v0,0
+; v0 : single-length
+	goto	l9cb8e
+.end method
+
+.method public enoughToFilter()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+.line 1676
+	iget	v0,v1,android/support/v7/widget/SearchView$SearchAutoComplete.mThreshold I
+; v0 : single-length , v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	if-lez	v0,l9cbb8
+; v0 : single-length
+	invoke-super	{v1},android/widget/AutoCompleteTextView/enoughToFilter	; enoughToFilter()Z
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l9cbbc
+; v0 : single-length
+l9cbb8:
+	const/4	v0,1
+; v0 : single-length
+l9cbba:
+	return	v0
+; v0 : single-length
+l9cbbc:
+	const/4	v0,0
+; v0 : single-length
+	goto	l9cbba
+.end method
+
+.method protected onFocusChanged(ZILandroid/graphics/Rect;)V
+.limit registers 5
+; this: v1 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v2 (Z)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (Landroid/graphics/Rect;)
+.line 1666
+	invoke-super	{v1,v2,v3,v4},android/widget/AutoCompleteTextView/onFocusChanged	; onFocusChanged(ZILandroid/graphics/Rect;)V
+; v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v2 : single-length , v3 : single-length , v4 : Landroid/graphics/Rect;
+.line 1667
+	iget-object	v0,v1,android/support/v7/widget/SearchView$SearchAutoComplete.mSearchView Landroid/support/v7/widget/SearchView;
+; v0 : Landroid/support/v7/widget/SearchView; , v1 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	invoke-virtual	{v0},android/support/v7/widget/SearchView/onTextFocusChanged	; onTextFocusChanged()V
+; v0 : Landroid/support/v7/widget/SearchView;
+.line 1668
+	return-void	
+.end method
+
+.method public onKeyPreIme(ILandroid/view/KeyEvent;)Z
+.limit registers 7
+; this: v4 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v5 (I)
+; parameter[1] : v6 (Landroid/view/KeyEvent;)
+.var 0 is state Landroid/view/KeyEvent$DispatcherState; from l9cc1c to l9cc26
+.var 0 is state Landroid/view/KeyEvent$DispatcherState; from l9cc3c to l9cc76
+	const/4	v1,1
+; v1 : single-length
+.line 1681
+	const/4	v2,4
+; v2 : single-length
+	if-ne	v5,v2,l9cc76
+; v5 : single-length , v2 : single-length
+.line 1684
+	invoke-virtual	{v6},android/view/KeyEvent/getAction	; getAction()I
+; v6 : Landroid/view/KeyEvent;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l9cc28
+; v2 : single-length
+	invoke-virtual	{v6},android/view/KeyEvent/getRepeatCount	; getRepeatCount()I
+; v6 : Landroid/view/KeyEvent;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l9cc28
+; v2 : single-length
+.line 1685
+	invoke-virtual	{v4},android/support/v7/widget/SearchView$SearchAutoComplete/getKeyDispatcherState	; getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+; v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result-object	v0
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+.line 1686
+	if-eqz	v0,l9cc26
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+.line 1687
+	invoke-virtual	{v0,v6,v4},android/view/KeyEvent$DispatcherState/startTracking	; startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
+; v0 : Landroid/view/KeyEvent$DispatcherState; , v6 : Landroid/view/KeyEvent; , v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+l9cc26:
+.line 1702
+	return	v1
+; v1 : single-length
+l9cc28:
+.line 1690
+	invoke-virtual	{v6},android/view/KeyEvent/getAction	; getAction()I
+; v6 : Landroid/view/KeyEvent;
+	move-result	v2
+; v2 : single-length
+	if-ne	v2,v1,l9cc76
+; v2 : single-length , v1 : single-length
+.line 1691
+	invoke-virtual	{v4},android/support/v7/widget/SearchView$SearchAutoComplete/getKeyDispatcherState	; getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+; v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result-object	v0
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+.line 1692
+	if-eqz	v0,l9cc46
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+.line 1693
+	invoke-virtual	{v0,v6},android/view/KeyEvent$DispatcherState/handleUpEvent	; handleUpEvent(Landroid/view/KeyEvent;)V
+; v0 : Landroid/view/KeyEvent$DispatcherState; , v6 : Landroid/view/KeyEvent;
+l9cc46:
+.line 1695
+	invoke-virtual	{v6},android/view/KeyEvent/isTracking	; isTracking()Z
+; v6 : Landroid/view/KeyEvent;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l9cc76
+; v2 : single-length
+	invoke-virtual	{v6},android/view/KeyEvent/isCanceled	; isCanceled()Z
+; v6 : Landroid/view/KeyEvent;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l9cc76
+; v2 : single-length
+.line 1696
+	iget-object	v2,v4,android/support/v7/widget/SearchView$SearchAutoComplete.mSearchView Landroid/support/v7/widget/SearchView;
+; v2 : Landroid/support/v7/widget/SearchView; , v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	invoke-virtual	{v2},android/support/v7/widget/SearchView/clearFocus	; clearFocus()V
+; v2 : Landroid/support/v7/widget/SearchView;
+.line 1697
+	iget-object	v2,v4,android/support/v7/widget/SearchView$SearchAutoComplete.mSearchView Landroid/support/v7/widget/SearchView;
+; v2 : Landroid/support/v7/widget/SearchView; , v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	const/4	v3,0
+; v3 : single-length
+	invoke-static	{v2,v3},android/support/v7/widget/SearchView/access$2100	; access$2100(Landroid/support/v7/widget/SearchView;Z)V
+; v2 : Landroid/support/v7/widget/SearchView; , v3 : single-length
+	goto	l9cc26
+l9cc76:
+.line 1702
+	invoke-super	{v4,v5,v6},android/widget/AutoCompleteTextView/onKeyPreIme	; onKeyPreIme(ILandroid/view/KeyEvent;)Z
+; v4 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v5 : single-length , v6 : Landroid/view/KeyEvent;
+	move-result	v1
+; v1 : single-length
+	goto	l9cc26
+.end method
+
+.method public onWindowFocusChanged(Z)V
+.limit registers 5
+; this: v3 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v4 (Z)
+.var 0 is inputManager Landroid/view/inputmethod/InputMethodManager; from l9ccce to l9ccf6
+.line 1650
+	invoke-super	{v3,v4},android/widget/AutoCompleteTextView/onWindowFocusChanged	; onWindowFocusChanged(Z)V
+; v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v4 : single-length
+.line 1652
+	if-eqz	v4,l9ccf6
+; v4 : single-length
+	iget-object	v1,v3,android/support/v7/widget/SearchView$SearchAutoComplete.mSearchView Landroid/support/v7/widget/SearchView;
+; v1 : Landroid/support/v7/widget/SearchView; , v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	invoke-virtual	{v1},android/support/v7/widget/SearchView/hasFocus	; hasFocus()Z
+; v1 : Landroid/support/v7/widget/SearchView;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l9ccf6
+; v1 : single-length
+	invoke-virtual	{v3},android/support/v7/widget/SearchView$SearchAutoComplete/getVisibility	; getVisibility()I
+; v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l9ccf6
+; v1 : single-length
+.line 1653
+	invoke-virtual	{v3},android/support/v7/widget/SearchView$SearchAutoComplete/getContext	; getContext()Landroid/content/Context;
+; v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	const-string	v2,"input_method"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v1 : Landroid/content/Context; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/inputmethod/InputMethodManager
+; v0 : Landroid/view/inputmethod/InputMethodManager;
+.line 1655
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v3,v1},android/view/inputmethod/InputMethodManager/showSoftInput	; showSoftInput(Landroid/view/View;I)Z
+; v0 : Landroid/view/inputmethod/InputMethodManager; , v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v1 : single-length
+.line 1658
+	invoke-virtual	{v3},android/support/v7/widget/SearchView$SearchAutoComplete/getContext	; getContext()Landroid/content/Context;
+; v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-static	{v1},android/support/v7/widget/SearchView/isLandscapeMode	; isLandscapeMode(Landroid/content/Context;)Z
+; v1 : Landroid/content/Context;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l9ccf6
+; v1 : single-length
+.line 1659
+	sget-object	v1,android/support/v7/widget/SearchView.HIDDEN_METHOD_INVOKER Landroid/support/v7/widget/SearchView$AutoCompleteTextViewReflector;
+; v1 : Landroid/support/v7/widget/SearchView$AutoCompleteTextViewReflector;
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v1,v3,v2},android/support/v7/widget/SearchView$AutoCompleteTextViewReflector/ensureImeVisible	; ensureImeVisible(Landroid/widget/AutoCompleteTextView;Z)V
+; v1 : Landroid/support/v7/widget/SearchView$AutoCompleteTextViewReflector; , v3 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v2 : single-length
+l9ccf6:
+.line 1662
+	return-void	
+.end method
+
+.method public performCompletion()V
+.limit registers 1
+; this: v0 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+.line 1642
+	return-void	
+.end method
+
+.method protected replaceText(Ljava/lang/CharSequence;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+.line 1632
+	return-void	
+.end method
+
+.method setSearchView(Landroid/support/v7/widget/SearchView;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v1 (Landroid/support/v7/widget/SearchView;)
+.line 1610
+	iput-object	v1,v0,android/support/v7/widget/SearchView$SearchAutoComplete.mSearchView Landroid/support/v7/widget/SearchView;
+; v1 : Landroid/support/v7/widget/SearchView; , v0 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+.line 1611
+	return-void	
+.end method
+
+.method public setThreshold(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$SearchAutoComplete;)
+; parameter[0] : v1 (I)
+.line 1615
+	invoke-super	{v0,v1},android/widget/AutoCompleteTextView/setThreshold	; setThreshold(I)V
+; v0 : Landroid/support/v7/widget/SearchView$SearchAutoComplete; , v1 : single-length
+.line 1616
+	iput	v1,v0,android/support/v7/widget/SearchView$SearchAutoComplete.mThreshold I
+; v1 : single-length , v0 : Landroid/support/v7/widget/SearchView$SearchAutoComplete;
+.line 1617
+	return-void	
+.end method
+
+

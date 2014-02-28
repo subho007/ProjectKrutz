@@ -1,0 +1,519 @@
+.class public android/support/v4/content/CursorLoader
+.super android/support/v4/content/AsyncTaskLoader
+.source CursorLoader.java
+
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Landroid/support/v4/content/AsyncTaskLoader" , "<" , "Landroid/database/Cursor;" , ">;" }
+.end annotation
+
+.field mCursor Landroid/database/Cursor;
+.field final mObserver Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/support/v4/content/Loader" , "<" , "Landroid/database/Cursor;" , ">.Force" , "LoadContentObserver;" }
+  .end annotation
+.end field
+.field mProjection [Ljava/lang/String;
+.field mSelection Ljava/lang/String;
+.field mSelectionArgs [Ljava/lang/String;
+.field mSortOrder Ljava/lang/String;
+.field mUri Landroid/net/Uri;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 87
+	invoke-direct	{v1,v2},android/support/v4/content/AsyncTaskLoader/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/support/v4/content/CursorLoader; , v2 : Landroid/content/Context;
+.line 88
+	new-instance	v0,android/support/v4/content/Loader$ForceLoadContentObserver
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+	invoke-direct	{v0,v1},android/support/v4/content/Loader$ForceLoadContentObserver/<init>	; <init>(Landroid/support/v4/content/Loader;)V
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver; , v1 : Landroid/support/v4/content/CursorLoader;
+	iput-object	v0,v1,android/support/v4/content/CursorLoader.mObserver Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 89
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 8
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/net/Uri;)
+; parameter[2] : v4 ([Ljava/lang/String;)
+; parameter[3] : v5 (Ljava/lang/String;)
+; parameter[4] : v6 ([Ljava/lang/String;)
+; parameter[5] : v7 (Ljava/lang/String;)
+.line 99
+	invoke-direct	{v1,v2},android/support/v4/content/AsyncTaskLoader/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/support/v4/content/CursorLoader; , v2 : Landroid/content/Context;
+.line 100
+	new-instance	v0,android/support/v4/content/Loader$ForceLoadContentObserver
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+	invoke-direct	{v0,v1},android/support/v4/content/Loader$ForceLoadContentObserver/<init>	; <init>(Landroid/support/v4/content/Loader;)V
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver; , v1 : Landroid/support/v4/content/CursorLoader;
+	iput-object	v0,v1,android/support/v4/content/CursorLoader.mObserver Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 101
+	iput-object	v3,v1,android/support/v4/content/CursorLoader.mUri Landroid/net/Uri;
+; v3 : Landroid/net/Uri; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 102
+	iput-object	v4,v1,android/support/v4/content/CursorLoader.mProjection [Ljava/lang/String;
+; v4 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 103
+	iput-object	v5,v1,android/support/v4/content/CursorLoader.mSelection Ljava/lang/String;
+; v5 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 104
+	iput-object	v6,v1,android/support/v4/content/CursorLoader.mSelectionArgs [Ljava/lang/String;
+; v6 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 105
+	iput-object	v7,v1,android/support/v4/content/CursorLoader.mSortOrder Ljava/lang/String;
+; v7 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+.line 106
+	return-void	
+.end method
+
+.method public deliverResult(Landroid/database/Cursor;)V
+.limit registers 4
+; this: v2 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v3 (Landroid/database/Cursor;)
+.line 62
+	invoke-virtual	{v2},android/support/v4/content/CursorLoader/isReset	; isReset()Z
+; v2 : Landroid/support/v4/content/CursorLoader;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l155db0
+; v1 : single-length
+.line 64
+	if-eqz	v3,l155dae
+; v3 : Landroid/database/Cursor;
+.line 65
+	invoke-interface	{v3},android/database/Cursor/close	; close()V
+; v3 : Landroid/database/Cursor;
+l155dae:
+.line 79
+	return-void	
+l155db0:
+.line 69
+	iget-object	v0,v2,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v2 : Landroid/support/v4/content/CursorLoader;
+.line 70
+	iput-object	v3,v2,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v3 : Landroid/database/Cursor; , v2 : Landroid/support/v4/content/CursorLoader;
+.line 72
+	invoke-virtual	{v2},android/support/v4/content/CursorLoader/isStarted	; isStarted()Z
+; v2 : Landroid/support/v4/content/CursorLoader;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l155dca
+; v1 : single-length
+.line 73
+	invoke-super	{v2,v3},android/support/v4/content/AsyncTaskLoader/deliverResult	; deliverResult(Ljava/lang/Object;)V
+; v2 : Landroid/support/v4/content/CursorLoader; , v3 : Landroid/database/Cursor;
+l155dca:
+.line 76
+	if-eqz	v0,l155dae
+; v0 : Landroid/database/Cursor;
+	if-eq	v0,v3,l155dae
+; v0 : Landroid/database/Cursor; , v3 : Landroid/database/Cursor;
+	invoke-interface	{v0},android/database/Cursor/isClosed	; isClosed()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l155dae
+; v1 : single-length
+.line 77
+	invoke-interface	{v0},android/database/Cursor/close	; close()V
+; v0 : Landroid/database/Cursor;
+	goto	l155dae
+.end method
+
+.method public deliverResult(Ljava/lang/Object;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 35
+	check-cast	v1,android/database/Cursor
+; v1 : Landroid/database/Cursor;
+	invoke-virtual	{v0,v1},android/support/v4/content/CursorLoader/deliverResult	; deliverResult(Landroid/database/Cursor;)V
+; v0 : Landroid/support/v4/content/CursorLoader; , v1 : Landroid/database/Cursor;
+	return-void	
+.end method
+
+.method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.limit registers 6
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/io/FileDescriptor;)
+; parameter[2] : v4 (Ljava/io/PrintWriter;)
+; parameter[3] : v5 ([Ljava/lang/String;)
+.line 196
+	invoke-super	{v1,v2,v3,v4,v5},android/support/v4/content/AsyncTaskLoader/dump	; dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+; v1 : Landroid/support/v4/content/CursorLoader; , v2 : Ljava/lang/String; , v3 : Ljava/io/FileDescriptor; , v4 : Ljava/io/PrintWriter; , v5 : [Ljava/lang/String;
+.line 197
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mUri="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mUri Landroid/net/Uri;
+; v0 : Landroid/net/Uri; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/Object;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Landroid/net/Uri;
+.line 198
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mProjection="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 199
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mProjection [Ljava/lang/String;
+; v0 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-static	{v0},java/util/Arrays/toString	; toString([Ljava/lang/Object;)Ljava/lang/String;
+; v0 : [Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 200
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mSelection="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSelection Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 201
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mSelectionArgs="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 202
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSelectionArgs [Ljava/lang/String;
+; v0 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-static	{v0},java/util/Arrays/toString	; toString([Ljava/lang/Object;)Ljava/lang/String;
+; v0 : [Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 203
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mSortOrder="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSortOrder Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+.line 204
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mCursor="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Ljava/lang/Object;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Landroid/database/Cursor;
+.line 205
+	invoke-virtual	{v4,v2},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v2 : Ljava/lang/String;
+	const-string	v0,"mContentChanged="
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v4 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+	iget-boolean	v0,v1,android/support/v4/content/CursorLoader.mContentChanged Z
+; v0 : single-length , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v4,v0},java/io/PrintWriter/println	; println(Z)V
+; v4 : Ljava/io/PrintWriter; , v0 : single-length
+.line 206
+	return-void	
+.end method
+
+.method public getProjection()[Ljava/lang/String;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 163
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mProjection [Ljava/lang/String;
+; v0 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	return-object	v0
+; v0 : [Ljava/lang/String;
+.end method
+
+.method public getSelection()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 171
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSelection Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getSelectionArgs()[Ljava/lang/String;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 179
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSelectionArgs [Ljava/lang/String;
+; v0 : [Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	return-object	v0
+; v0 : [Ljava/lang/String;
+.end method
+
+.method public getSortOrder()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 187
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mSortOrder Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Landroid/support/v4/content/CursorLoader;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public getUri()Landroid/net/Uri;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 155
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mUri Landroid/net/Uri;
+; v0 : Landroid/net/Uri; , v1 : Landroid/support/v4/content/CursorLoader;
+	return-object	v0
+; v0 : Landroid/net/Uri;
+.end method
+
+.method public loadInBackground()Landroid/database/Cursor;
+.limit registers 8
+; this: v7 (Landroid/support/v4/content/CursorLoader;)
+.line 49
+	invoke-virtual	{v7},android/support/v4/content/CursorLoader/getContext	; getContext()Landroid/content/Context;
+; v7 : Landroid/support/v4/content/CursorLoader;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-virtual	{v0},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/ContentResolver;
+	iget-object	v1,v7,android/support/v4/content/CursorLoader.mUri Landroid/net/Uri;
+; v1 : Landroid/net/Uri; , v7 : Landroid/support/v4/content/CursorLoader;
+	iget-object	v2,v7,android/support/v4/content/CursorLoader.mProjection [Ljava/lang/String;
+; v2 : [Ljava/lang/String; , v7 : Landroid/support/v4/content/CursorLoader;
+	iget-object	v3,v7,android/support/v4/content/CursorLoader.mSelection Ljava/lang/String;
+; v3 : Ljava/lang/String; , v7 : Landroid/support/v4/content/CursorLoader;
+	iget-object	v4,v7,android/support/v4/content/CursorLoader.mSelectionArgs [Ljava/lang/String;
+; v4 : [Ljava/lang/String; , v7 : Landroid/support/v4/content/CursorLoader;
+	iget-object	v5,v7,android/support/v4/content/CursorLoader.mSortOrder Ljava/lang/String;
+; v5 : Ljava/lang/String; , v7 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual/range	{v0..v5},android/content/ContentResolver/query;	query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/content/ContentResolver; , v1 : Landroid/net/Uri; , v2 : [Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v5 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Landroid/database/Cursor;
+.line 51
+	if-eqz	v6,l155fac
+; v6 : Landroid/database/Cursor;
+.line 53
+	invoke-interface	{v6},android/database/Cursor/getCount	; getCount()I
+; v6 : Landroid/database/Cursor;
+.line 54
+	iget-object	v0,v7,android/support/v4/content/CursorLoader.mObserver Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+; v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver; , v7 : Landroid/support/v4/content/CursorLoader;
+	invoke-interface	{v6,v0},android/database/Cursor/registerContentObserver	; registerContentObserver(Landroid/database/ContentObserver;)V
+; v6 : Landroid/database/Cursor; , v0 : Landroid/support/v4/content/Loader$ForceLoadContentObserver;
+l155fac:
+.line 56
+	return-object	v6
+; v6 : Landroid/database/Cursor;
+.end method
+
+.method public loadInBackground()Ljava/lang/Object;
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 35
+	invoke-virtual	{v1},android/support/v4/content/CursorLoader/loadInBackground	; loadInBackground()Landroid/database/Cursor;
+; v1 : Landroid/support/v4/content/CursorLoader;
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+	return-object	v0
+; v0 : Landroid/database/Cursor;
+.end method
+
+.method public onCanceled(Landroid/database/Cursor;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v2 (Landroid/database/Cursor;)
+.line 136
+	if-eqz	v2,l155ff2
+; v2 : Landroid/database/Cursor;
+	invoke-interface	{v2},android/database/Cursor/isClosed	; isClosed()Z
+; v2 : Landroid/database/Cursor;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l155ff2
+; v0 : single-length
+.line 137
+	invoke-interface	{v2},android/database/Cursor/close	; close()V
+; v2 : Landroid/database/Cursor;
+l155ff2:
+.line 139
+	return-void	
+.end method
+
+.method public onCanceled(Ljava/lang/Object;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 35
+	check-cast	v1,android/database/Cursor
+; v1 : Landroid/database/Cursor;
+	invoke-virtual	{v0,v1},android/support/v4/content/CursorLoader/onCanceled	; onCanceled(Landroid/database/Cursor;)V
+; v0 : Landroid/support/v4/content/CursorLoader; , v1 : Landroid/database/Cursor;
+	return-void	
+.end method
+
+.method protected onReset()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 143
+	invoke-super	{v1},android/support/v4/content/AsyncTaskLoader/onReset	; onReset()V
+; v1 : Landroid/support/v4/content/CursorLoader;
+.line 146
+	invoke-virtual	{v1},android/support/v4/content/CursorLoader/onStopLoading	; onStopLoading()V
+; v1 : Landroid/support/v4/content/CursorLoader;
+.line 148
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	if-eqz	v0,l15604e
+; v0 : Landroid/database/Cursor;
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-interface	{v0},android/database/Cursor/isClosed	; isClosed()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l15604e
+; v0 : single-length
+.line 149
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-interface	{v0},android/database/Cursor/close	; close()V
+; v0 : Landroid/database/Cursor;
+l15604e:
+.line 151
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : single-length , v1 : Landroid/support/v4/content/CursorLoader;
+.line 152
+	return-void	
+.end method
+
+.method protected onStartLoading()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/content/CursorLoader;)
+.line 117
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	if-eqz	v0,l15607a
+; v0 : Landroid/database/Cursor;
+.line 118
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	invoke-virtual	{v1,v0},android/support/v4/content/CursorLoader/deliverResult	; deliverResult(Landroid/database/Cursor;)V
+; v1 : Landroid/support/v4/content/CursorLoader; , v0 : Landroid/database/Cursor;
+l15607a:
+.line 120
+	invoke-virtual	{v1},android/support/v4/content/CursorLoader/takeContentChanged	; takeContentChanged()Z
+; v1 : Landroid/support/v4/content/CursorLoader;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l15608e
+; v0 : single-length
+	iget-object	v0,v1,android/support/v4/content/CursorLoader.mCursor Landroid/database/Cursor;
+; v0 : Landroid/database/Cursor; , v1 : Landroid/support/v4/content/CursorLoader;
+	if-nez	v0,l156094
+; v0 : Landroid/database/Cursor;
+l15608e:
+.line 121
+	invoke-virtual	{v1},android/support/v4/content/CursorLoader/forceLoad	; forceLoad()V
+; v1 : Landroid/support/v4/content/CursorLoader;
+l156094:
+.line 123
+	return-void	
+.end method
+
+.method protected onStopLoading()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+.line 131
+	invoke-virtual	{v0},android/support/v4/content/CursorLoader/cancelLoad	; cancelLoad()Z
+; v0 : Landroid/support/v4/content/CursorLoader;
+.line 132
+	return-void	
+.end method
+
+.method public setProjection([Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 ([Ljava/lang/String;)
+.line 167
+	iput-object	v1,v0,android/support/v4/content/CursorLoader.mProjection [Ljava/lang/String;
+; v1 : [Ljava/lang/String; , v0 : Landroid/support/v4/content/CursorLoader;
+.line 168
+	return-void	
+.end method
+
+.method public setSelection(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 175
+	iput-object	v1,v0,android/support/v4/content/CursorLoader.mSelection Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Landroid/support/v4/content/CursorLoader;
+.line 176
+	return-void	
+.end method
+
+.method public setSelectionArgs([Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 ([Ljava/lang/String;)
+.line 183
+	iput-object	v1,v0,android/support/v4/content/CursorLoader.mSelectionArgs [Ljava/lang/String;
+; v1 : [Ljava/lang/String; , v0 : Landroid/support/v4/content/CursorLoader;
+.line 184
+	return-void	
+.end method
+
+.method public setSortOrder(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 191
+	iput-object	v1,v0,android/support/v4/content/CursorLoader.mSortOrder Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Landroid/support/v4/content/CursorLoader;
+.line 192
+	return-void	
+.end method
+
+.method public setUri(Landroid/net/Uri;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/content/CursorLoader;)
+; parameter[0] : v1 (Landroid/net/Uri;)
+.line 159
+	iput-object	v1,v0,android/support/v4/content/CursorLoader.mUri Landroid/net/Uri;
+; v1 : Landroid/net/Uri; , v0 : Landroid/support/v4/content/CursorLoader;
+.line 160
+	return-void	
+.end method
+
+

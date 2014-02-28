@@ -1,0 +1,604 @@
+.class public final android/support/v4/text/BidiFormatter
+.super java/lang/Object
+.source BidiFormatter.java
+
+.inner class 1 inner android/support/v4/text/BidiFormatter$1 outer android/support/v4/text/BidiFormatter
+.inner class DirectionalityEstimator inner android/support/v4/text/BidiFormatter$DirectionalityEstimator outer android/support/v4/text/BidiFormatter
+.inner class Builder inner android/support/v4/text/BidiFormatter$Builder outer android/support/v4/text/BidiFormatter
+.field private static final DEFAULT_FLAGS I = 2	; 0x2
+.field private static final DEFAULT_LTR_INSTANCE Landroid/support/v4/text/BidiFormatter; = null
+.field private static final DEFAULT_RTL_INSTANCE Landroid/support/v4/text/BidiFormatter; = null
+.field private static DEFAULT_TEXT_DIRECTION_HEURISTIC Landroid/support/v4/text/TextDirectionHeuristicCompat; = null
+.field private static final DIR_LTR I = -1	; 0xffffffff
+.field private static final DIR_RTL I = 1	; 0x1
+.field private static final DIR_UNKNOWN I = 0	; 0x0
+.field private static final EMPTY_STRING Ljava/lang/String; = ""
+.field private static final FLAG_STEREO_RESET I = 2	; 0x2
+.field private static final LRE C = '‪'
+.field private static final LRM C = '‎'
+.field private static final LRM_STRING Ljava/lang/String; = null
+.field private static final PDF C = '‬'
+.field private static final RLE C = '‫'
+.field private static final RLM C = '‏'
+.field private static final RLM_STRING Ljava/lang/String;
+.field private final mDefaultTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field private final mFlags I
+.field private final mIsRtlContext Z
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,2
+; v3 : single-length
+.line 83
+	sget-object	v0,android/support/v4/text/TextDirectionHeuristicsCompat.FIRSTSTRONG_LTR Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	sput-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_TEXT_DIRECTION_HEURISTIC Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.line 113
+	const/16	v0,8206
+; v0 : single-length
+	invoke-static	{v0},java/lang/Character/toString	; toString(C)Ljava/lang/String;
+; v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,android/support/v4/text/BidiFormatter.LRM_STRING Ljava/lang/String;
+; v0 : Ljava/lang/String;
+.line 118
+	const/16	v0,8207
+; v0 : single-length
+	invoke-static	{v0},java/lang/Character/toString	; toString(C)Ljava/lang/String;
+; v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,android/support/v4/text/BidiFormatter.RLM_STRING Ljava/lang/String;
+; v0 : Ljava/lang/String;
+.line 215
+	new-instance	v0,android/support/v4/text/BidiFormatter
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	const/4	v1,0
+; v1 : single-length
+	sget-object	v2,android/support/v4/text/BidiFormatter.DEFAULT_TEXT_DIRECTION_HEURISTIC Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	invoke-direct	{v0,v1,v3,v2},android/support/v4/text/BidiFormatter/<init>	; <init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;)V
+; v0 : Landroid/support/v4/text/BidiFormatter; , v1 : single-length , v3 : single-length , v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	sput-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_LTR_INSTANCE Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.line 220
+	new-instance	v0,android/support/v4/text/BidiFormatter
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	const/4	v1,1
+; v1 : single-length
+	sget-object	v2,android/support/v4/text/BidiFormatter.DEFAULT_TEXT_DIRECTION_HEURISTIC Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	invoke-direct	{v0,v1,v3,v2},android/support/v4/text/BidiFormatter/<init>	; <init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;)V
+; v0 : Landroid/support/v4/text/BidiFormatter; , v1 : single-length , v3 : single-length , v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	sput-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_RTL_INSTANCE Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-void	
+.end method
+
+.method private <init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v1 (Z)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+.line 260
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.line 261
+	iput-boolean	v1,v0,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v1 : single-length , v0 : Landroid/support/v4/text/BidiFormatter;
+.line 262
+	iput	v2,v0,android/support/v4/text/BidiFormatter.mFlags I
+; v2 : single-length , v0 : Landroid/support/v4/text/BidiFormatter;
+.line 263
+	iput-object	v3,v0,android/support/v4/text/BidiFormatter.mDefaultTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v3 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v0 : Landroid/support/v4/text/BidiFormatter;
+.line 264
+	return-void	
+.end method
+
+.method <init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;Landroid/support/v4/text/BidiFormatter$1;)V
+.limit registers 5
+; this: v0 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v1 (Z)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+; parameter[3] : v4 (Landroid/support/v4/text/BidiFormatter$1;)
+.line 78
+	invoke-direct	{v0,v1,v2,v3},android/support/v4/text/BidiFormatter/<init>	; <init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;)V
+; v0 : Landroid/support/v4/text/BidiFormatter; , v1 : single-length , v2 : single-length , v3 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	return-void	
+.end method
+
+.method static access$000(Ljava/util/Locale;)Z
+.limit registers 2
+; parameter[0] : v1 (Ljava/util/Locale;)
+.line 78
+	invoke-static	{v1},android/support/v4/text/BidiFormatter/isRtlLocale	; isRtlLocale(Ljava/util/Locale;)Z
+; v1 : Ljava/util/Locale;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$100()Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.limit registers 1
+.line 78
+	sget-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_TEXT_DIRECTION_HEURISTIC Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	return-object	v0
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.end method
+
+.method static access$200()Landroid/support/v4/text/BidiFormatter;
+.limit registers 1
+.line 78
+	sget-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_RTL_INSTANCE Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.end method
+
+.method static access$300()Landroid/support/v4/text/BidiFormatter;
+.limit registers 1
+.line 78
+	sget-object	v0,android/support/v4/text/BidiFormatter.DEFAULT_LTR_INSTANCE Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.end method
+
+.method private static getEntryDir(Ljava/lang/String;)I
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 479
+	new-instance	v0,android/support/v4/text/BidiFormatter$DirectionalityEstimator
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v0,v2,v1},android/support/v4/text/BidiFormatter$DirectionalityEstimator/<init>	; <init>(Ljava/lang/String;Z)V
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator; , v2 : Ljava/lang/String; , v1 : single-length
+	invoke-virtual	{v0},android/support/v4/text/BidiFormatter$DirectionalityEstimator/getEntryDir	; getEntryDir()I
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private static getExitDir(Ljava/lang/String;)I
+.limit registers 3
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 462
+	new-instance	v0,android/support/v4/text/BidiFormatter$DirectionalityEstimator
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v0,v2,v1},android/support/v4/text/BidiFormatter$DirectionalityEstimator/<init>	; <init>(Ljava/lang/String;Z)V
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator; , v2 : Ljava/lang/String; , v1 : single-length
+	invoke-virtual	{v0},android/support/v4/text/BidiFormatter$DirectionalityEstimator/getExitDir	; getExitDir()I
+; v0 : Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static getInstance()Landroid/support/v4/text/BidiFormatter;
+.limit registers 1
+.line 234
+	new-instance	v0,android/support/v4/text/BidiFormatter$Builder
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	invoke-direct	{v0},android/support/v4/text/BidiFormatter$Builder/<init>	; <init>()V
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	invoke-virtual	{v0},android/support/v4/text/BidiFormatter$Builder/build	; build()Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	move-result-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.end method
+
+.method public static getInstance(Ljava/util/Locale;)Landroid/support/v4/text/BidiFormatter;
+.limit registers 2
+; parameter[0] : v1 (Ljava/util/Locale;)
+.line 252
+	new-instance	v0,android/support/v4/text/BidiFormatter$Builder
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	invoke-direct	{v0,v1},android/support/v4/text/BidiFormatter$Builder/<init>	; <init>(Ljava/util/Locale;)V
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder; , v1 : Ljava/util/Locale;
+	invoke-virtual	{v0},android/support/v4/text/BidiFormatter$Builder/build	; build()Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	move-result-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.end method
+
+.method public static getInstance(Z)Landroid/support/v4/text/BidiFormatter;
+.limit registers 2
+; parameter[0] : v1 (Z)
+.line 243
+	new-instance	v0,android/support/v4/text/BidiFormatter$Builder
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	invoke-direct	{v0,v1},android/support/v4/text/BidiFormatter$Builder/<init>	; <init>(Z)V
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder; , v1 : single-length
+	invoke-virtual	{v0},android/support/v4/text/BidiFormatter$Builder/build	; build()Landroid/support/v4/text/BidiFormatter;
+; v0 : Landroid/support/v4/text/BidiFormatter$Builder;
+	move-result-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+	return-object	v0
+; v0 : Landroid/support/v4/text/BidiFormatter;
+.end method
+
+.method private static isRtlLocale(Ljava/util/Locale;)Z
+.limit registers 3
+; parameter[0] : v2 (Ljava/util/Locale;)
+	const/4	v0,1
+; v0 : single-length
+.line 437
+	invoke-static	{v2},android/support/v4/text/TextUtilsCompat/getLayoutDirectionFromLocale	; getLayoutDirectionFromLocale(Ljava/util/Locale;)I
+; v2 : Ljava/util/Locale;
+	move-result	v1
+; v1 : single-length
+	if-ne	v1,v0,l7e008
+; v1 : single-length , v0 : single-length
+l7e006:
+	return	v0
+; v0 : single-length
+l7e008:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7e006
+.end method
+
+.method private markAfter(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
+.limit registers 6
+; this: v3 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+.line 297
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	invoke-interface	{v5,v4,v1,v2},android/support/v4/text/TextDirectionHeuristicCompat/isRtl	; isRtl(Ljava/lang/CharSequence;II)Z
+; v5 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v4 : Ljava/lang/String; , v1 : single-length , v2 : single-length
+	move-result	v0
+; v0 : single-length
+.line 299
+	iget-boolean	v1,v3,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v1 : single-length , v3 : Landroid/support/v4/text/BidiFormatter;
+	if-nez	v1,l7e04e
+; v1 : single-length
+	if-nez	v0,l7e048
+; v0 : single-length
+	invoke-static	{v4},android/support/v4/text/BidiFormatter/getExitDir	; getExitDir(Ljava/lang/String;)I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	if-ne	v1,v2,l7e04e
+; v1 : single-length , v2 : single-length
+l7e048:
+.line 300
+	sget-object	v1,android/support/v4/text/BidiFormatter.LRM_STRING Ljava/lang/String;
+; v1 : Ljava/lang/String;
+l7e04c:
+.line 305
+	return-object	v1
+; v1 : Ljava/lang/String;
+l7e04e:
+.line 302
+	iget-boolean	v1,v3,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v1 : single-length , v3 : Landroid/support/v4/text/BidiFormatter;
+	if-eqz	v1,l7e06e
+; v1 : single-length
+	if-eqz	v0,l7e068
+; v0 : single-length
+	invoke-static	{v4},android/support/v4/text/BidiFormatter/getExitDir	; getExitDir(Ljava/lang/String;)I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,15
+; v2 : single-length
+	if-ne	v1,v2,l7e06e
+; v1 : single-length , v2 : single-length
+l7e068:
+.line 303
+	sget-object	v1,android/support/v4/text/BidiFormatter.RLM_STRING Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	goto	l7e04c
+l7e06e:
+.line 305
+	const-string	v1,""
+; v1 : Ljava/lang/String;
+	goto	l7e04c
+.end method
+
+.method private markBefore(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
+.limit registers 6
+; this: v3 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+.line 324
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	invoke-interface	{v5,v4,v1,v2},android/support/v4/text/TextDirectionHeuristicCompat/isRtl	; isRtl(Ljava/lang/CharSequence;II)Z
+; v5 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v4 : Ljava/lang/String; , v1 : single-length , v2 : single-length
+	move-result	v0
+; v0 : single-length
+.line 326
+	iget-boolean	v1,v3,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v1 : single-length , v3 : Landroid/support/v4/text/BidiFormatter;
+	if-nez	v1,l7e0b6
+; v1 : single-length
+	if-nez	v0,l7e0b0
+; v0 : single-length
+	invoke-static	{v4},android/support/v4/text/BidiFormatter/getEntryDir	; getEntryDir(Ljava/lang/String;)I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	if-ne	v1,v2,l7e0b6
+; v1 : single-length , v2 : single-length
+l7e0b0:
+.line 327
+	sget-object	v1,android/support/v4/text/BidiFormatter.LRM_STRING Ljava/lang/String;
+; v1 : Ljava/lang/String;
+l7e0b4:
+.line 332
+	return-object	v1
+; v1 : Ljava/lang/String;
+l7e0b6:
+.line 329
+	iget-boolean	v1,v3,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v1 : single-length , v3 : Landroid/support/v4/text/BidiFormatter;
+	if-eqz	v1,l7e0d6
+; v1 : single-length
+	if-eqz	v0,l7e0d0
+; v0 : single-length
+	invoke-static	{v4},android/support/v4/text/BidiFormatter/getEntryDir	; getEntryDir(Ljava/lang/String;)I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,15
+; v2 : single-length
+	if-ne	v1,v2,l7e0d6
+; v1 : single-length , v2 : single-length
+l7e0d0:
+.line 330
+	sget-object	v1,android/support/v4/text/BidiFormatter.RLM_STRING Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	goto	l7e0b4
+l7e0d6:
+.line 332
+	const-string	v1,""
+; v1 : Ljava/lang/String;
+	goto	l7e0b4
+.end method
+
+.method public getStereoReset()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/text/BidiFormatter;)
+.line 278
+	iget	v0,v1,android/support/v4/text/BidiFormatter.mFlags I
+; v0 : single-length , v1 : Landroid/support/v4/text/BidiFormatter;
+	and-int/lit8	v0,v0,2
+; v0 : single-length , v0 : single-length
+	if-eqz	v0,l7e0fc
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l7e0fa:
+	return	v0
+; v0 : single-length
+l7e0fc:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7e0fa
+.end method
+
+.method public isRtl(Ljava/lang/String;)Z
+.limit registers 5
+; this: v3 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v4 (Ljava/lang/String;)
+.line 343
+	iget-object	v0,v3,android/support/v4/text/BidiFormatter.mDefaultTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v3 : Landroid/support/v4/text/BidiFormatter;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	invoke-interface	{v0,v4,v1,v2},android/support/v4/text/TextDirectionHeuristicCompat/isRtl	; isRtl(Ljava/lang/CharSequence;II)Z
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v4 : Ljava/lang/String; , v1 : single-length , v2 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isRtlContext()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/text/BidiFormatter;)
+.line 270
+	iget-boolean	v0,v1,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v0 : single-length , v1 : Landroid/support/v4/text/BidiFormatter;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public unicodeWrap(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 4
+; this: v2 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.line 427
+	iget-object	v0,v2,android/support/v4/text/BidiFormatter.mDefaultTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v2 : Landroid/support/v4/text/BidiFormatter;
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v2,v3,v0,v1},android/support/v4/text/BidiFormatter/unicodeWrap	; unicodeWrap(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;Z)Ljava/lang/String;
+; v2 : Landroid/support/v4/text/BidiFormatter; , v3 : Ljava/lang/String; , v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public unicodeWrap(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
+.limit registers 4
+; this: v1 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+.line 403
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v1,v2,v3,v0},android/support/v4/text/BidiFormatter/unicodeWrap	; unicodeWrap(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;Z)Ljava/lang/String;
+; v1 : Landroid/support/v4/text/BidiFormatter; , v2 : Ljava/lang/String; , v3 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public unicodeWrap(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;Z)Ljava/lang/String;
+.limit registers 8
+; this: v4 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (Landroid/support/v4/text/TextDirectionHeuristicCompat;)
+; parameter[2] : v7 (Z)
+.line 374
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v5},java/lang/String/length	; length()I
+; v5 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	invoke-interface	{v6,v5,v2,v3},android/support/v4/text/TextDirectionHeuristicCompat/isRtl	; isRtl(Ljava/lang/CharSequence;II)Z
+; v6 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v5 : Ljava/lang/String; , v2 : single-length , v3 : single-length
+	move-result	v0
+; v0 : single-length
+.line 375
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+.line 376
+	invoke-virtual	{v4},android/support/v4/text/BidiFormatter/getStereoReset	; getStereoReset()Z
+; v4 : Landroid/support/v4/text/BidiFormatter;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l7e1ce
+; v2 : single-length
+	if-eqz	v7,l7e1ce
+; v7 : single-length
+.line 377
+	if-eqz	v0,l7e218
+; v0 : single-length
+	sget-object	v2,android/support/v4/text/TextDirectionHeuristicsCompat.RTL Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+l7e1c0:
+	invoke-direct	{v4,v5,v2},android/support/v4/text/BidiFormatter/markBefore	; markBefore(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
+; v4 : Landroid/support/v4/text/BidiFormatter; , v5 : Ljava/lang/String; , v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l7e1ce:
+.line 380
+	iget-boolean	v2,v4,android/support/v4/text/BidiFormatter.mIsRtlContext Z
+; v2 : single-length , v4 : Landroid/support/v4/text/BidiFormatter;
+	if-eq	v0,v2,l7e224
+; v0 : single-length , v2 : single-length
+.line 381
+	if-eqz	v0,l7e21e
+; v0 : single-length
+	const/16	v2,8235
+; v2 : single-length
+l7e1de:
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(C)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : single-length
+.line 382
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+.line 383
+	const/16	v2,8236
+; v2 : single-length
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(C)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : single-length
+l7e1f4:
+.line 387
+	if-eqz	v7,l7e20e
+; v7 : single-length
+.line 388
+	if-eqz	v0,l7e22c
+; v0 : single-length
+	sget-object	v2,android/support/v4/text/TextDirectionHeuristicsCompat.RTL Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+l7e200:
+	invoke-direct	{v4,v5,v2},android/support/v4/text/BidiFormatter/markAfter	; markAfter(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String;
+; v4 : Landroid/support/v4/text/BidiFormatter; , v5 : Ljava/lang/String; , v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l7e20e:
+.line 391
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	return-object	v2
+; v2 : Ljava/lang/String;
+l7e218:
+.line 377
+	sget-object	v2,android/support/v4/text/TextDirectionHeuristicsCompat.LTR Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	goto	l7e1c0
+l7e21e:
+.line 381
+	const/16	v2,8234
+; v2 : single-length
+	goto	l7e1de
+l7e224:
+.line 385
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	goto	l7e1f4
+l7e22c:
+.line 388
+	sget-object	v2,android/support/v4/text/TextDirectionHeuristicsCompat.LTR Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v2 : Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	goto	l7e200
+.end method
+
+.method public unicodeWrap(Ljava/lang/String;Z)Ljava/lang/String;
+.limit registers 4
+; this: v1 (Landroid/support/v4/text/BidiFormatter;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Z)
+.line 416
+	iget-object	v0,v1,android/support/v4/text/BidiFormatter.mDefaultTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v1 : Landroid/support/v4/text/BidiFormatter;
+	invoke-virtual	{v1,v2,v0,v3},android/support/v4/text/BidiFormatter/unicodeWrap	; unicodeWrap(Ljava/lang/String;Landroid/support/v4/text/TextDirectionHeuristicCompat;Z)Ljava/lang/String;
+; v1 : Landroid/support/v4/text/BidiFormatter; , v2 : Ljava/lang/String; , v0 : Landroid/support/v4/text/TextDirectionHeuristicCompat; , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

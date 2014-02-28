@@ -1,0 +1,196 @@
+.class eu/janmuller/android/simplecropimage/CropImage$1$1
+.super java/lang/Object
+.source CropImage.java
+.implements java/lang/Runnable
+
+.enclosing method eu/run()V
+.field final this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+
+.method <init>(Leu/janmuller/android/simplecropimage/CropImage$1;)V
+.limit registers 2
+; this: v0 (Leu/janmuller/android/simplecropimage/CropImage$1$1;)
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/CropImage$1;)
+.line 1
+	iput-object	v1,v0,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v0 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+.line 595
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 6
+; this: v5 (Leu/janmuller/android/simplecropimage/CropImage$1$1;)
+.var 0 is i I from lcd9fc to lcda08
+.var 0 is i I from lcdac0 to lcdadc
+	const/4	v3,0
+; v3 : single-length
+	const/4	v2,1
+; v2 : single-length
+.line 598
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v4
+; v4 : Leu/janmuller/android/simplecropimage/CropImage;
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget	v1,v1,eu/janmuller/android/simplecropimage/CropImage$1.mNumFaces I
+; v1 : single-length , v1 : single-length
+	if-le	v1,v2,lcdabc
+; v1 : single-length , v2 : single-length
+	move	v1,v2
+; v1 : single-length , v2 : single-length
+lcd9ea:
+	iput-boolean	v1,v4,eu/janmuller/android/simplecropimage/CropImage.mWaitingToPick Z
+; v1 : single-length , v4 : Leu/janmuller/android/simplecropimage/CropImage;
+.line 599
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget	v1,v1,eu/janmuller/android/simplecropimage/CropImage$1.mNumFaces I
+; v1 : single-length , v1 : single-length
+	if-lez	v1,lcdadc
+; v1 : single-length
+.line 600
+	const/4	v0,0
+; v0 : single-length
+lcd9fc:
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget	v1,v1,eu/janmuller/android/simplecropimage/CropImage$1.mNumFaces I
+; v1 : single-length , v1 : single-length
+	if-lt	v0,v1,lcdac0
+; v0 : single-length , v1 : single-length
+lcda08:
+.line 606
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage/access$0	; access$0(Leu/janmuller/android/simplecropimage/CropImage;)Leu/janmuller/android/simplecropimage/CropImageView;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImageView;
+	invoke-virtual	{v1},eu/janmuller/android/simplecropimage/CropImageView/invalidate	; invalidate()V
+; v1 : Leu/janmuller/android/simplecropimage/CropImageView;
+.line 607
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage/access$0	; access$0(Leu/janmuller/android/simplecropimage/CropImage;)Leu/janmuller/android/simplecropimage/CropImageView;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImageView;
+	iget-object	v1,v1,eu/janmuller/android/simplecropimage/CropImageView.mHighlightViews Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v1 : Ljava/util/ArrayList;
+	invoke-virtual	{v1},java/util/ArrayList/size	; size()I
+; v1 : Ljava/util/ArrayList;
+	move-result	v1
+; v1 : single-length
+	if-ne	v1,v2,lcda90
+; v1 : single-length , v2 : single-length
+.line 608
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v4
+; v4 : Leu/janmuller/android/simplecropimage/CropImage;
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage/access$0	; access$0(Leu/janmuller/android/simplecropimage/CropImage;)Leu/janmuller/android/simplecropimage/CropImageView;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImageView;
+	iget-object	v1,v1,eu/janmuller/android/simplecropimage/CropImageView.mHighlightViews Ljava/util/ArrayList;
+; v1 : Ljava/util/ArrayList; , v1 : Ljava/util/ArrayList;
+	invoke-virtual	{v1,v3},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v1 : Ljava/util/ArrayList; , v3 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,eu/janmuller/android/simplecropimage/HighlightView
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView;
+	iput-object	v1,v4,eu/janmuller/android/simplecropimage/CropImage.mCrop Leu/janmuller/android/simplecropimage/HighlightView;
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView; , v4 : Leu/janmuller/android/simplecropimage/CropImage;
+.line 609
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+	iget-object	v1,v1,eu/janmuller/android/simplecropimage/CropImage.mCrop Leu/janmuller/android/simplecropimage/HighlightView;
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView; , v1 : Leu/janmuller/android/simplecropimage/HighlightView;
+	invoke-virtual	{v1,v2},eu/janmuller/android/simplecropimage/HighlightView/setFocus	; setFocus(Z)V
+; v1 : Leu/janmuller/android/simplecropimage/HighlightView; , v2 : single-length
+lcda90:
+.line 612
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget	v1,v1,eu/janmuller/android/simplecropimage/CropImage$1.mNumFaces I
+; v1 : single-length , v1 : single-length
+	if-le	v1,v2,lcdaba
+; v1 : single-length , v2 : single-length
+.line 613
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$2	; access$2(Leu/janmuller/android/simplecropimage/CropImage$1;)Leu/janmuller/android/simplecropimage/CropImage;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	move-result-object	v1
+; v1 : Leu/janmuller/android/simplecropimage/CropImage;
+.line 614
+	const-string	v2,"Multi face crop help"
+; v2 : Ljava/lang/String;
+.line 613
+	invoke-static	{v1,v2,v3},android/widget/Toast/makeText	; makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage; , v2 : Ljava/lang/String; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/widget/Toast;
+.line 615
+	invoke-virtual	{v1},android/widget/Toast/show	; show()V
+; v1 : Landroid/widget/Toast;
+lcdaba:
+.line 617
+	return-void	
+lcdabc:
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 598
+	goto	lcd9ea
+lcdac0:
+.line 601
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget-object	v4,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v4 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	iget-object	v4,v4,eu/janmuller/android/simplecropimage/CropImage$1.mFaces [Landroid/media/FaceDetector$Face;
+; v4 : [Landroid/media/FaceDetector$Face; , v4 : [Landroid/media/FaceDetector$Face;
+	aget-object	v4,v4,v0
+; v4 : Landroid/media/FaceDetector$Face; , v4 : Landroid/media/FaceDetector$Face; , v0 : single-length
+	invoke-static	{v1,v4},eu/janmuller/android/simplecropimage/CropImage$1/access$0	; access$0(Leu/janmuller/android/simplecropimage/CropImage$1;Landroid/media/FaceDetector$Face;)V
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v4 : Landroid/media/FaceDetector$Face;
+.line 600
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lcd9fc
+lcdadc:
+.line 604
+	iget-object	v1,v5,eu/janmuller/android/simplecropimage/CropImage$1$1.this$1 Leu/janmuller/android/simplecropimage/CropImage$1;
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1; , v5 : Leu/janmuller/android/simplecropimage/CropImage$1$1;
+	invoke-static	{v1},eu/janmuller/android/simplecropimage/CropImage$1/access$1	; access$1(Leu/janmuller/android/simplecropimage/CropImage$1;)V
+; v1 : Leu/janmuller/android/simplecropimage/CropImage$1;
+	goto	lcda08
+.end method
+
+

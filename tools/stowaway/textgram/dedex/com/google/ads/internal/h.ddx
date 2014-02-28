@@ -1,0 +1,135 @@
+.class public com/google/ads/internal/h
+.super java/lang/Object
+.source SourceFile
+
+.field public static final a Lcom/google/ads/internal/h;
+.field private b Lcom/google/ads/AdSize;
+.field private c Z
+.field private final d Z
+
+.method static <clinit>()V
+.limit registers 3
+.line 26
+	new-instance	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	const/4	v1,0
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	invoke-direct	{v0,v1,v2},com/google/ads/internal/h/<init>	; <init>(Lcom/google/ads/AdSize;Z)V
+; v0 : Lcom/google/ads/internal/h; , v1 : single-length , v2 : single-length
+	sput-object	v0,com/google/ads/internal/h.a Lcom/google/ads/internal/h;
+; v0 : Lcom/google/ads/internal/h;
+	return-void	
+.end method
+
+.method private <init>(Lcom/google/ads/AdSize;Z)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/internal/h;)
+; parameter[0] : v1 (Lcom/google/ads/AdSize;)
+; parameter[1] : v2 (Z)
+.line 28
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/internal/h;
+.line 29
+	iput-object	v1,v0,com/google/ads/internal/h.b Lcom/google/ads/AdSize;
+; v1 : Lcom/google/ads/AdSize; , v0 : Lcom/google/ads/internal/h;
+.line 30
+	iput-boolean	v2,v0,com/google/ads/internal/h.d Z
+; v2 : single-length , v0 : Lcom/google/ads/internal/h;
+.line 31
+	return-void	
+.end method
+
+.method public static a(Lcom/google/ads/AdSize;)Lcom/google/ads/internal/h;
+.limit registers 2
+; parameter[0] : v1 (Lcom/google/ads/AdSize;)
+.line 56
+	const/4	v0,0
+; v0 : single-length
+	invoke-static	{v1,v0},com/google/ads/internal/h/a	; a(Lcom/google/ads/AdSize;Landroid/content/Context;)Lcom/google/ads/internal/h;
+; v1 : Lcom/google/ads/AdSize; , v0 : single-length
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/h;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/h;
+.end method
+
+.method public static a(Lcom/google/ads/AdSize;Landroid/content/Context;)Lcom/google/ads/internal/h;
+.limit registers 5
+; parameter[0] : v3 (Lcom/google/ads/AdSize;)
+; parameter[1] : v4 (Landroid/content/Context;)
+.line 43
+	new-instance	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	invoke-static	{v3,v4},com/google/ads/AdSize/createAdSize	; createAdSize(Lcom/google/ads/AdSize;Landroid/content/Context;)Lcom/google/ads/AdSize;
+; v3 : Lcom/google/ads/AdSize; , v4 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdSize;
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v0,v1,v2},com/google/ads/internal/h/<init>	; <init>(Lcom/google/ads/AdSize;Z)V
+; v0 : Lcom/google/ads/internal/h; , v1 : Lcom/google/ads/AdSize; , v2 : single-length
+	return-object	v0
+; v0 : Lcom/google/ads/internal/h;
+.end method
+
+.method public a(Z)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/internal/h;)
+; parameter[0] : v1 (Z)
+.line 85
+	iput-boolean	v1,v0,com/google/ads/internal/h.c Z
+; v1 : single-length , v0 : Lcom/google/ads/internal/h;
+.line 86
+	return-void	
+.end method
+
+.method public a()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/h;)
+.line 60
+	iget-boolean	v0,v1,com/google/ads/internal/h.d Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/h;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public b(Lcom/google/ads/AdSize;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/h;)
+; parameter[0] : v2 (Lcom/google/ads/AdSize;)
+.line 79
+	iget-boolean	v0,v1,com/google/ads/internal/h.d Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/h;
+	if-nez	v0,lc13e4
+; v0 : single-length
+.line 80
+	iput-object	v2,v1,com/google/ads/internal/h.b Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize; , v1 : Lcom/google/ads/internal/h;
+lc13e4:
+.line 82
+	return-void	
+.end method
+
+.method public b()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/h;)
+.line 64
+	iget-boolean	v0,v1,com/google/ads/internal/h.c Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/h;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public c()Lcom/google/ads/AdSize;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/h;)
+.line 72
+	iget-object	v0,v1,com/google/ads/internal/h.b Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize; , v1 : Lcom/google/ads/internal/h;
+	return-object	v0
+; v0 : Lcom/google/ads/AdSize;
+.end method
+
+

@@ -1,0 +1,818 @@
+.class public android/support/v4/util/TimeUtils
+.super java/lang/Object
+.source TimeUtils.java
+
+.field public static final HUNDRED_DAY_FIELD_LEN I = 19	; 0x13
+.field private static final SECONDS_PER_DAY I = 86400	; 0x15180
+.field private static final SECONDS_PER_HOUR I = 3600	; 0xe10
+.field private static final SECONDS_PER_MINUTE I = 60	; 0x3c
+.field private static sFormatStr [C
+.field private static final sFormatSync Ljava/lang/Object;
+
+.method static <clinit>()V
+.limit registers 1
+.line 35
+	new-instance	v0,java/lang/Object
+; v0 : Ljava/lang/Object;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ljava/lang/Object;
+	sput-object	v0,android/support/v4/util/TimeUtils.sFormatSync Ljava/lang/Object;
+; v0 : Ljava/lang/Object;
+.line 36
+	const/16	v0,24
+; v0 : single-length
+	new-array	v0,v0,[C
+; v0 : [C , v0 : [C
+	sput-object	v0,android/support/v4/util/TimeUtils.sFormatStr [C
+; v0 : [C
+	return-void	
+.end method
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/util/TimeUtils;)
+.line 27
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/util/TimeUtils;
+	return-void	
+.end method
+
+.method private static accumField(IIZI)I
+.limit registers 5
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Z)
+; parameter[3] : v4 (I)
+.line 39
+	const/16	v0,99
+; v0 : single-length
+	if-gt	v1,v0,l81afe
+; v1 : single-length , v0 : single-length
+	if-eqz	v3,l81b04
+; v3 : single-length
+	const/4	v0,3
+; v0 : single-length
+	if-lt	v4,v0,l81b04
+; v4 : single-length , v0 : single-length
+l81afe:
+.line 40
+	add-int/lit8	v0,v2,3
+; v0 : single-length , v2 : single-length
+l81b02:
+.line 48
+	return	v0
+; v0 : single-length
+l81b04:
+.line 42
+	const/16	v0,9
+; v0 : single-length
+	if-gt	v1,v0,l81b16
+; v1 : single-length , v0 : single-length
+	if-eqz	v3,l81b1c
+; v3 : single-length
+	const/4	v0,2
+; v0 : single-length
+	if-lt	v4,v0,l81b1c
+; v4 : single-length , v0 : single-length
+l81b16:
+.line 43
+	add-int/lit8	v0,v2,2
+; v0 : single-length , v2 : single-length
+	goto	l81b02
+l81b1c:
+.line 45
+	if-nez	v3,l81b24
+; v3 : single-length
+	if-lez	v1,l81b2a
+; v1 : single-length
+l81b24:
+.line 46
+	add-int/lit8	v0,v2,1
+; v0 : single-length , v2 : single-length
+	goto	l81b02
+l81b2a:
+.line 48
+	const/4	v0,0
+; v0 : single-length
+	goto	l81b02
+.end method
+
+.method public static formatDuration(JJLjava/io/PrintWriter;)V
+.limit registers 8
+; parameter[0] : v3 (J)
+; parameter[1] : v5 (J)
+; parameter[2] : v7 (Ljava/io/PrintWriter;)
+.line 169
+	const-wide/16	v0,0
+; v0 : double-length
+	cmp-long	v0,v3,v0
+; v0 : single-length , v3 : double-length , v0 : single-length
+	if-nez	v0,l81b58
+; v0 : single-length
+.line 170
+	const-string	v0,"--"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v7,v0},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v7 : Ljava/io/PrintWriter; , v0 : Ljava/lang/String;
+l81b56:
+.line 174
+	return-void	
+l81b58:
+.line 173
+	sub-long	v0,v3,v5
+; v0 : double-length , v3 : double-length , v5 : double-length
+	const/4	v2,0
+; v2 : single-length
+	invoke-static	{v0,v1,v7,v2},android/support/v4/util/TimeUtils/formatDuration	; formatDuration(JLjava/io/PrintWriter;I)V
+; v0 : double-length , v7 : Ljava/io/PrintWriter; , v2 : single-length
+	goto	l81b56
+.end method
+
+.method public static formatDuration(JLjava/io/PrintWriter;)V
+.limit registers 4
+; parameter[0] : v1 (J)
+; parameter[1] : v3 (Ljava/io/PrintWriter;)
+.line 164
+	const/4	v0,0
+; v0 : single-length
+	invoke-static	{v1,v2,v3,v0},android/support/v4/util/TimeUtils/formatDuration	; formatDuration(JLjava/io/PrintWriter;I)V
+; v1 : double-length , v3 : Ljava/io/PrintWriter; , v0 : single-length
+.line 165
+	return-void	
+.end method
+
+.method public static formatDuration(JLjava/io/PrintWriter;I)V
+.limit registers 9
+; parameter[0] : v5 (J)
+; parameter[1] : v7 (Ljava/io/PrintWriter;)
+; parameter[2] : v8 (I)
+.catch java/lang/Exception from l81b9a to l81bc0 using l81bbc
+.var 0 is len I from l81ba2 to l81bbc
+.line 156
+	sget-object	v2,android/support/v4/util/TimeUtils.sFormatSync Ljava/lang/Object;
+; v2 : Ljava/lang/Object;
+	monitor-enter	v2
+; v2 : Ljava/lang/Object;
+l81b9a:
+.line 157
+	invoke-static	{v5,v6,v8},android/support/v4/util/TimeUtils/formatDurationLocked	; formatDurationLocked(JI)I
+; v5 : double-length , v8 : single-length
+	move-result	v0
+; v0 : single-length
+.line 158
+	new-instance	v1,java/lang/String
+; v1 : Ljava/lang/String;
+	sget-object	v3,android/support/v4/util/TimeUtils.sFormatStr [C
+; v3 : [C
+	const/4	v4,0
+; v4 : single-length
+	invoke-direct	{v1,v3,v4,v0},java/lang/String/<init>	; <init>([CII)V
+; v1 : Ljava/lang/String; , v3 : [C , v4 : single-length , v0 : single-length
+	invoke-virtual	{v7,v1},java/io/PrintWriter/print	; print(Ljava/lang/String;)V
+; v7 : Ljava/io/PrintWriter; , v1 : Ljava/lang/String;
+.line 159
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+.line 160
+	return-void	
+l81bbc:
+.line 159
+	move-exception	v1
+; v1 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+l81bc0:
+	throw	v1
+; v1 : java/lang/Exception
+.end method
+
+.method public static formatDuration(JLjava/lang/StringBuilder;)V
+.limit registers 7
+; parameter[0] : v4 (J)
+; parameter[1] : v6 (Ljava/lang/StringBuilder;)
+.catch java/lang/Exception from l81be8 to l81c04 using l81c00
+.var 0 is len I from l81bf0 to l81c00
+.line 148
+	sget-object	v2,android/support/v4/util/TimeUtils.sFormatSync Ljava/lang/Object;
+; v2 : Ljava/lang/Object;
+	monitor-enter	v2
+; v2 : Ljava/lang/Object;
+.line 149
+	const/4	v1,0
+; v1 : single-length
+l81be8:
+	invoke-static	{v4,v5,v1},android/support/v4/util/TimeUtils/formatDurationLocked	; formatDurationLocked(JI)I
+; v4 : double-length , v1 : single-length
+	move-result	v0
+; v0 : single-length
+.line 150
+	sget-object	v1,android/support/v4/util/TimeUtils.sFormatStr [C
+; v1 : [C
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v6,v1,v3,v0},java/lang/StringBuilder/append	; append([CII)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v1 : [C , v3 : single-length , v0 : single-length
+.line 151
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+.line 152
+	return-void	
+l81c00:
+.line 151
+	move-exception	v1
+; v1 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+l81c04:
+	throw	v1
+; v1 : java/lang/Exception
+.end method
+
+.method private static formatDurationLocked(JI)I
+.limit registers 23
+; parameter[0] : v20 (J)
+; parameter[1] : v22 (I)
+.var 5 is pos I from l81c50 to l81c72
+.var 3 is days I from l81ca6 to l81d88
+.var 5 is pos I from l81d04 to l81d88
+.var 12 is hours I from l81ca8 to l81d88
+.var 13 is millis I from l81c8c to l81d88
+.var 14 is minutes I from l81caa to l81d88
+.var 15 is myLen I from l81d16 to l81d88
+.var 16 is prefix C from l81c82 to l81d88
+.var 17 is seconds I from l81ca4 to l81d88
+.var 15 is myLen I from l81d9a to l81daa
+.var 19 is zeropad Z from l81dbe to l81e68
+.line 76
+	sget-object	v4,android/support/v4/util/TimeUtils.sFormatStr [C
+; v4 : [C
+	array-length	v4,v4
+; v4 : single-length , v4 : single-length
+	move/from16	v0,v22
+; v0 : single-length , v22 : single-length
+	if-ge	v4,v0,l81c3e
+; v4 : single-length , v0 : single-length
+.line 77
+	move/from16	v0,v22
+; v0 : single-length , v22 : single-length
+	new-array	v4,v0,[C
+; v4 : [C , v0 : single-length
+	sput-object	v4,android/support/v4/util/TimeUtils.sFormatStr [C
+; v4 : [C
+l81c3e:
+.line 80
+	sget-object	v2,android/support/v4/util/TimeUtils.sFormatStr [C
+; v2 : [C
+.line 82
+	const-wide/16	v6,0
+; v6 : double-length
+	cmp-long	v4,v20,v6
+; v4 : single-length , v20 : double-length , v6 : double-length
+	if-nez	v4,l81c72
+; v4 : single-length
+.line 83
+	const/4	v5,0
+; v5 : single-length
+.line 84
+	add-int/lit8	v22,v22,255
+; v22 : single-length , v22 : single-length
+l81c54:
+.line 85
+	move/from16	v0,v22
+; v0 : single-length , v22 : single-length
+	if-ge	v5,v0,l81c66
+; v5 : single-length , v0 : single-length
+.line 86
+	const/16	v4,32
+; v4 : single-length
+	aput-char	v4,v2,v5
+; v4 : single-length , v2 : [C , v5 : single-length
+	goto	l81c54
+l81c66:
+.line 88
+	const/16	v4,48
+; v4 : single-length
+	aput-char	v4,v2,v5
+; v4 : single-length , v2 : [C , v5 : single-length
+.line 89
+	const/4	v4,1
+; v4 : single-length
+l81c70:
+.line 143
+	return	v4
+; v4 : single-length
+l81c72:
+.line 93
+	const-wide/16	v6,0
+; v6 : double-length
+	cmp-long	v4,v20,v6
+; v4 : single-length , v20 : double-length , v6 : double-length
+	if-lez	v4,l81d88
+; v4 : single-length
+.line 94
+	const/16	v16,43
+; v16 : single-length
+l81c82:
+.line 100
+	const-wide/16	v6,1000
+; v6 : double-length
+	rem-long	v6,v20,v6
+; v6 : double-length , v20 : double-length , v6 : double-length
+	long-to-int	v13,v6
+; v13 : single-length , v6 : double-length
+.line 101
+	const-wide/16	v6,1000
+; v6 : double-length
+	div-long	v6,v20,v6
+; v6 : double-length , v20 : double-length , v6 : double-length
+	long-to-double	v6,v6
+; v6 : double-length , v6 : double-length
+	invoke-static	{v6,v7},java/lang/Math/floor	; floor(D)D
+; v6 : double-length
+	move-result-wide	v6
+; v6 : double-length
+	double-to-int	v0,v6
+; v0 : single-length , v6 : double-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+.line 102
+	const/4	v3,0
+; v3 : single-length
+l81ca6:
+	const/4	v12,0
+; v12 : single-length
+l81ca8:
+	const/4	v14,0
+; v14 : single-length
+.line 104
+	const	v4,86400	; 0x15180
+; v4 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-le	v0,v4,l81cce
+; v0 : single-length , v4 : single-length
+.line 105
+	const	v4,86400	; 0x15180
+; v4 : single-length
+	div-int	v3,v17,v4
+; v3 : single-length , v17 : single-length , v4 : single-length
+.line 106
+	const	v4,86400	; 0x15180
+; v4 : single-length
+	mul-int/2addr	v4,v3
+; v4 : single-length , v3 : single-length
+	sub-int	v17,v17,v4
+; v17 : single-length , v17 : single-length , v4 : single-length
+l81cce:
+.line 108
+	const/16	v4,3600
+; v4 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-le	v0,v4,l81cea
+; v0 : single-length , v4 : single-length
+.line 109
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	div-int/lit16	v12,v0,3600
+; v12 : single-length , v0 : single-length
+.line 110
+	mul-int/lit16	v4,v12,3600
+; v4 : single-length , v12 : single-length
+	sub-int	v17,v17,v4
+; v17 : single-length , v17 : single-length , v4 : single-length
+l81cea:
+.line 112
+	const/16	v4,60
+; v4 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-le	v0,v4,l81d02
+; v0 : single-length , v4 : single-length
+.line 113
+	div-int/lit8	v14,v17,60
+; v14 : single-length , v17 : single-length
+.line 114
+	mul-int/lit-8	v4,v14,60
+; v4 : single-length , v14 : single-length
+	sub-int	v17,v17,v4
+; v17 : single-length , v17 : single-length , v4 : single-length
+l81d02:
+.line 117
+	const/4	v5,0
+; v5 : single-length
+.line 119
+	if-eqz	v22,l81daa
+; v22 : single-length
+.line 120
+	const/4	v4,1
+; v4 : single-length
+	const/4	v6,0
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+	invoke-static	{v3,v4,v6,v7},android/support/v4/util/TimeUtils/accumField	; accumField(IIZI)I
+; v3 : single-length , v4 : single-length , v6 : single-length , v7 : single-length
+	move-result	v15
+; v15 : single-length
+.line 121
+	const/4	v6,1
+; v6 : single-length
+	if-lez	v15,l81d9a
+; v15 : single-length
+	const/4	v4,1
+; v4 : single-length
+l81d1e:
+	const/4	v7,2
+; v7 : single-length
+	invoke-static	{v12,v6,v4,v7},android/support/v4/util/TimeUtils/accumField	; accumField(IIZI)I
+; v12 : single-length , v6 : single-length , v4 : single-length , v7 : single-length
+	move-result	v4
+; v4 : single-length
+	add-int/2addr	v15,v4
+; v15 : single-length , v4 : single-length
+.line 122
+	const/4	v6,1
+; v6 : single-length
+	if-lez	v15,l81d9e
+; v15 : single-length
+	const/4	v4,1
+; v4 : single-length
+l81d32:
+	const/4	v7,2
+; v7 : single-length
+	invoke-static	{v14,v6,v4,v7},android/support/v4/util/TimeUtils/accumField	; accumField(IIZI)I
+; v14 : single-length , v6 : single-length , v4 : single-length , v7 : single-length
+	move-result	v4
+; v4 : single-length
+	add-int/2addr	v15,v4
+; v15 : single-length , v4 : single-length
+.line 123
+	const/4	v6,1
+; v6 : single-length
+	if-lez	v15,l81da2
+; v15 : single-length
+	const/4	v4,1
+; v4 : single-length
+l81d46:
+	const/4	v7,2
+; v7 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	invoke-static	{v0,v6,v4,v7},android/support/v4/util/TimeUtils/accumField	; accumField(IIZI)I
+; v0 : single-length , v6 : single-length , v4 : single-length , v7 : single-length
+	move-result	v4
+; v4 : single-length
+	add-int/2addr	v15,v4
+; v15 : single-length , v4 : single-length
+.line 124
+	const/4	v6,2
+; v6 : single-length
+	const/4	v7,1
+; v7 : single-length
+	if-lez	v15,l81da6
+; v15 : single-length
+	const/4	v4,3
+; v4 : single-length
+l81d60:
+	invoke-static	{v13,v6,v7,v4},android/support/v4/util/TimeUtils/accumField	; accumField(IIZI)I
+; v13 : single-length , v6 : single-length , v7 : single-length , v4 : single-length
+	move-result	v4
+; v4 : single-length
+	add-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	add-int/2addr	v15,v4
+; v15 : single-length , v4 : single-length
+l81d6e:
+.line 125
+	move/from16	v0,v22
+; v0 : single-length , v22 : single-length
+	if-ge	v15,v0,l81daa
+; v15 : single-length , v0 : single-length
+.line 126
+	const/16	v4,32
+; v4 : single-length
+	aput-char	v4,v2,v5
+; v4 : single-length , v2 : [C , v5 : single-length
+.line 127
+	add-int/lit8	v5,v5,1
+; v5 : single-length , v5 : single-length
+.line 128
+	add-int/lit8	v15,v15,1
+; v15 : single-length , v15 : single-length
+	goto	l81d6e
+l81d88:
+.line 96
+	const/16	v16,45
+; v16 : single-length
+.line 97
+	move-wide/from16	v0,v20
+; v0 : double-length , v20 : double-length
+	neg-long	v0,v0
+; v0 : double-length , v0 : double-length
+	move-wide/from16	v20,v0
+; v20 : double-length , v0 : double-length
+	goto/16	l81c82
+l81d9a:
+.line 121
+	const/4	v4,0
+; v4 : single-length
+	goto	l81d1e
+l81d9e:
+.line 122
+	const/4	v4,0
+; v4 : single-length
+	goto	l81d32
+l81da2:
+.line 123
+	const/4	v4,0
+; v4 : single-length
+	goto	l81d46
+l81da6:
+.line 124
+	const/4	v4,0
+; v4 : single-length
+	goto	l81d60
+l81daa:
+.line 132
+	aput-char	v16,v2,v5
+; v16 : single-length , v2 : [C , v5 : single-length
+.line 133
+	add-int/lit8	v5,v5,1
+; v5 : single-length , v5 : single-length
+.line 135
+	move/from16	v18,v5
+; v18 : single-length , v5 : single-length
+.line 136
+	if-eqz	v22,l81e68
+; v22 : single-length
+	const/16	v19,1
+; v19 : single-length
+l81dbe:
+.line 137
+	const/16	v4,100
+; v4 : single-length
+	const/4	v6,0
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+	invoke-static/range	{v2..v7},android/support/v4/util/TimeUtils/printField;	printField([CICIZI)I
+; v2 : [C , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length
+	move-result	v5
+; v5 : single-length
+.line 138
+	const/16	v8,104
+; v8 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	if-eq	v5,v0,l81e6e
+; v5 : single-length , v0 : single-length
+	const/4	v10,1
+; v10 : single-length
+l81ddc:
+	if-eqz	v19,l81e72
+; v19 : single-length
+	const/4	v11,2
+; v11 : single-length
+l81de2:
+	move-object	v6,v2
+; v6 : [C , v2 : [C
+	move	v7,v12
+; v7 : single-length , v12 : single-length
+	move	v9,v5
+; v9 : single-length , v5 : single-length
+	invoke-static/range	{v6..v11},android/support/v4/util/TimeUtils/printField;	printField([CICIZI)I
+; v6 : [C , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+	move-result	v5
+; v5 : single-length
+.line 139
+	const/16	v8,109
+; v8 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	if-eq	v5,v0,l81e76
+; v5 : single-length , v0 : single-length
+	const/4	v10,1
+; v10 : single-length
+l81dfe:
+	if-eqz	v19,l81e7a
+; v19 : single-length
+	const/4	v11,2
+; v11 : single-length
+l81e04:
+	move-object	v6,v2
+; v6 : [C , v2 : [C
+	move	v7,v14
+; v7 : single-length , v14 : single-length
+	move	v9,v5
+; v9 : single-length , v5 : single-length
+	invoke-static/range	{v6..v11},android/support/v4/util/TimeUtils/printField;	printField([CICIZI)I
+; v6 : [C , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+	move-result	v5
+; v5 : single-length
+.line 140
+	const/16	v8,115
+; v8 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	if-eq	v5,v0,l81e7e
+; v5 : single-length , v0 : single-length
+	const/4	v10,1
+; v10 : single-length
+l81e20:
+	if-eqz	v19,l81e82
+; v19 : single-length
+	const/4	v11,2
+; v11 : single-length
+l81e26:
+	move-object	v6,v2
+; v6 : [C , v2 : [C
+	move/from16	v7,v17
+; v7 : single-length , v17 : single-length
+	move	v9,v5
+; v9 : single-length , v5 : single-length
+	invoke-static/range	{v6..v11},android/support/v4/util/TimeUtils/printField;	printField([CICIZI)I
+; v6 : [C , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+	move-result	v5
+; v5 : single-length
+.line 141
+	const/16	v8,109
+; v8 : single-length
+	const/4	v10,1
+; v10 : single-length
+	if-eqz	v19,l81e86
+; v19 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	if-eq	v5,v0,l81e86
+; v5 : single-length , v0 : single-length
+	const/4	v11,3
+; v11 : single-length
+l81e4a:
+	move-object	v6,v2
+; v6 : [C , v2 : [C
+	move	v7,v13
+; v7 : single-length , v13 : single-length
+	move	v9,v5
+; v9 : single-length , v5 : single-length
+	invoke-static/range	{v6..v11},android/support/v4/util/TimeUtils/printField;	printField([CICIZI)I
+; v6 : [C , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+	move-result	v5
+; v5 : single-length
+.line 142
+	const/16	v4,115
+; v4 : single-length
+	aput-char	v4,v2,v5
+; v4 : single-length , v2 : [C , v5 : single-length
+.line 143
+	add-int/lit8	v4,v5,1
+; v4 : single-length , v5 : single-length
+	goto/16	l81c70
+l81e68:
+.line 136
+	const/16	v19,0
+; v19 : single-length
+	goto	l81dbe
+l81e6e:
+.line 138
+	const/4	v10,0
+; v10 : single-length
+	goto	l81ddc
+l81e72:
+	const/4	v11,0
+; v11 : single-length
+	goto	l81de2
+l81e76:
+.line 139
+	const/4	v10,0
+; v10 : single-length
+	goto	l81dfe
+l81e7a:
+	const/4	v11,0
+; v11 : single-length
+	goto	l81e04
+l81e7e:
+.line 140
+	const/4	v10,0
+; v10 : single-length
+	goto	l81e20
+l81e82:
+	const/4	v11,0
+; v11 : single-length
+	goto	l81e26
+l81e86:
+.line 141
+	const/4	v11,0
+; v11 : single-length
+	goto	l81e4a
+.end method
+
+.method private static printField([CICIZI)I
+.limit registers 9
+; parameter[0] : v3 ([C)
+; parameter[1] : v4 (I)
+; parameter[2] : v5 (C)
+; parameter[3] : v6 (I)
+; parameter[4] : v7 (Z)
+; parameter[5] : v8 (I)
+.var 0 is dig I from l81ebc to l81ed0
+.var 0 is dig I from l81eea to l81efe
+.var 1 is startPos I from l81ea6 to l81f14
+.line 53
+	if-nez	v7,l81ea4
+; v7 : single-length
+	if-lez	v4,l81f14
+; v4 : single-length
+l81ea4:
+.line 54
+	move	v1,v6
+; v1 : single-length , v6 : single-length
+.line 55
+	if-eqz	v7,l81eb0
+; v7 : single-length
+	const/4	v2,3
+; v2 : single-length
+	if-ge	v8,v2,l81eb8
+; v8 : single-length , v2 : single-length
+l81eb0:
+	const/16	v2,99
+; v2 : single-length
+	if-le	v4,v2,l81ed0
+; v4 : single-length , v2 : single-length
+l81eb8:
+.line 56
+	div-int/lit8	v0,v4,100
+; v0 : single-length , v4 : single-length
+.line 57
+	add-int/lit8	v2,v0,48
+; v2 : single-length , v0 : single-length
+	int-to-char	v2,v2
+; v2 : single-length , v2 : single-length
+	aput-char	v2,v3,v6
+; v2 : single-length , v3 : [C , v6 : single-length
+.line 58
+	add-int/lit8	v6,v6,1
+; v6 : single-length , v6 : single-length
+.line 59
+	mul-int/lit-8	v2,v0,100
+; v2 : single-length , v0 : single-length
+	sub-int/2addr	v4,v2
+; v4 : single-length , v2 : single-length
+l81ed0:
+.line 61
+	if-eqz	v7,l81eda
+; v7 : single-length
+	const/4	v2,2
+; v2 : single-length
+	if-ge	v8,v2,l81ee6
+; v8 : single-length , v2 : single-length
+l81eda:
+	const/16	v2,9
+; v2 : single-length
+	if-gt	v4,v2,l81ee6
+; v4 : single-length , v2 : single-length
+	if-eq	v1,v6,l81efe
+; v1 : single-length , v6 : single-length
+l81ee6:
+.line 62
+	div-int/lit8	v0,v4,10
+; v0 : single-length , v4 : single-length
+.line 63
+	add-int/lit8	v2,v0,48
+; v2 : single-length , v0 : single-length
+	int-to-char	v2,v2
+; v2 : single-length , v2 : single-length
+	aput-char	v2,v3,v6
+; v2 : single-length , v3 : [C , v6 : single-length
+.line 64
+	add-int/lit8	v6,v6,1
+; v6 : single-length , v6 : single-length
+.line 65
+	mul-int/lit-8	v2,v0,10
+; v2 : single-length , v0 : single-length
+	sub-int/2addr	v4,v2
+; v4 : single-length , v2 : single-length
+l81efe:
+.line 67
+	add-int/lit8	v2,v4,48
+; v2 : single-length , v4 : single-length
+	int-to-char	v2,v2
+; v2 : single-length , v2 : single-length
+	aput-char	v2,v3,v6
+; v2 : single-length , v3 : [C , v6 : single-length
+.line 68
+	add-int/lit8	v6,v6,1
+; v6 : single-length , v6 : single-length
+.line 69
+	aput-char	v5,v3,v6
+; v5 : single-length , v3 : [C , v6 : single-length
+.line 70
+	add-int/lit8	v6,v6,1
+; v6 : single-length , v6 : single-length
+l81f14:
+.line 72
+	return	v6
+; v6 : single-length
+.end method
+
+

@@ -1,0 +1,382 @@
+.class public android/support/v4/print/PrintHelperKitkat
+.super java/lang/Object
+.source PrintHelperKitkat.java
+
+.field public static final COLOR_MODE_COLOR I = 2	; 0x2
+.field public static final COLOR_MODE_MONOCHROME I = 1	; 0x1
+.field private static final LOG_TAG Ljava/lang/String; = "PrintHelperKitkat"
+.field private static final MAX_PRINT_SIZE I = 3500	; 0xdac
+.field public static final SCALE_MODE_FILL I = 2	; 0x2
+.field public static final SCALE_MODE_FIT I = 1	; 0x1
+.field mColorMode I
+.field final mContext Landroid/content/Context;
+.field mScaleMode I
+
+.method <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v2 (Landroid/content/Context;)
+	const/4	v0,2
+; v0 : single-length
+.line 73
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 69
+	iput	v0,v1,android/support/v4/print/PrintHelperKitkat.mScaleMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 71
+	iput	v0,v1,android/support/v4/print/PrintHelperKitkat.mColorMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 74
+	iput-object	v2,v1,android/support/v4/print/PrintHelperKitkat.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v1 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 75
+	return-void	
+.end method
+
+.method private loadBitmap(Landroid/net/Uri;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+.throws Ljava/io/FileNotFoundException;
+.limit registers 8
+; this: v5 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v6 (Landroid/net/Uri;)
+; parameter[1] : v7 (Landroid/graphics/BitmapFactory$Options;)
+.catch java/io/IOException from l7d4e8 to l7d4ee using l7d4f0
+.catch java/io/IOException from l7d4c8 to l7d4ce using l7d4d0
+.catch java/lang/Exception from l7d4a6 to l7d4c2 using l7d4e2
+.var 1 is t Ljava/io/IOException; from l7d4d2 to l7d4e2
+.line 288
+	if-eqz	v6,l7d494
+; v6 : Landroid/net/Uri;
+	iget-object	v2,v5,android/support/v4/print/PrintHelperKitkat.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v5 : Landroid/support/v4/print/PrintHelperKitkat;
+	if-nez	v2,l7d4a4
+; v2 : Landroid/content/Context;
+l7d494:
+.line 289
+	new-instance	v2,java/lang/IllegalArgumentException
+; v2 : Ljava/lang/IllegalArgumentException;
+	const-string	v3,"bad argument to loadBitmap"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/IllegalArgumentException; , v3 : Ljava/lang/String;
+	throw	v2
+; v2 : Ljava/lang/IllegalArgumentException;
+l7d4a4:
+.line 291
+	const/4	v0,0
+; v0 : single-length
+l7d4a6:
+.line 293
+	iget-object	v2,v5,android/support/v4/print/PrintHelperKitkat.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v5 : Landroid/support/v4/print/PrintHelperKitkat;
+	invoke-virtual	{v2},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v2 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/content/ContentResolver;
+	invoke-virtual	{v2,v6},android/content/ContentResolver/openInputStream	; openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+; v2 : Landroid/content/ContentResolver; , v6 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/io/InputStream;
+.line 294
+	const/4	v2,0
+; v2 : single-length
+	invoke-static	{v0,v2,v7},android/graphics/BitmapFactory/decodeStream	; decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+; v0 : Ljava/io/InputStream; , v2 : single-length , v7 : Landroid/graphics/BitmapFactory$Options;
+l7d4c2:
+	move-result-object	v2
+; v2 : Landroid/graphics/Bitmap;
+.line 296
+	if-eqz	v0,l7d4ce
+; v0 : Ljava/io/InputStream;
+l7d4c8:
+.line 298
+	invoke-virtual	{v0},java/io/InputStream/close	; close()V
+; v0 : Ljava/io/InputStream;
+l7d4ce:
+.line 301
+	return-object	v2
+; v2 : Landroid/graphics/Bitmap;
+l7d4d0:
+.line 299
+	move-exception	v1
+; v1 : java/io/IOException
+.line 300
+	const-string	v3,"PrintHelperKitkat"
+; v3 : Ljava/lang/String;
+	const-string	v4,"close fail "
+; v4 : Ljava/lang/String;
+	invoke-static	{v3,v4,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v1 : java/io/IOException
+	goto	l7d4ce
+l7d4e2:
+.line 296
+	move-exception	v2
+; v2 : java/lang/Exception
+	if-eqz	v0,l7d4ee
+; v0 : Ljava/io/InputStream;
+l7d4e8:
+.line 298
+	invoke-virtual	{v0},java/io/InputStream/close	; close()V
+; v0 : Ljava/io/InputStream;
+l7d4ee:
+.line 301
+	throw	v2
+; v2 : java/lang/Exception
+l7d4f0:
+.line 299
+	move-exception	v1
+; v1 : java/io/IOException
+.line 300
+	const-string	v3,"PrintHelperKitkat"
+; v3 : Ljava/lang/String;
+	const-string	v4,"close fail "
+; v4 : Ljava/lang/String;
+	invoke-static	{v3,v4,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v1 : java/io/IOException
+	goto	l7d4ee
+.end method
+
+.method private loadConstrainedBitmap(Landroid/net/Uri;I)Landroid/graphics/Bitmap;
+.throws Ljava/io/FileNotFoundException;
+.limit registers 12
+; this: v9 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v10 (Landroid/net/Uri;)
+; parameter[1] : v11 (I)
+	const/4	v6,0
+; v6 : single-length
+	const/4	v8,1
+; v8 : single-length
+.line 248
+	if-lez	v11,l7d54c
+; v11 : single-length
+	if-eqz	v10,l7d54c
+; v10 : Landroid/net/Uri;
+	iget-object	v7,v9,android/support/v4/print/PrintHelperKitkat.mContext Landroid/content/Context;
+; v7 : Landroid/content/Context; , v9 : Landroid/support/v4/print/PrintHelperKitkat;
+	if-nez	v7,l7d55c
+; v7 : Landroid/content/Context;
+l7d54c:
+.line 249
+	new-instance	v6,java/lang/IllegalArgumentException
+; v6 : Ljava/lang/IllegalArgumentException;
+	const-string	v7,"bad argument to getScaledBitmap"
+; v7 : Ljava/lang/String;
+	invoke-direct	{v6,v7},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v6 : Ljava/lang/IllegalArgumentException; , v7 : Ljava/lang/String;
+	throw	v6
+; v6 : Ljava/lang/IllegalArgumentException;
+l7d55c:
+.line 252
+	new-instance	v2,android/graphics/BitmapFactory$Options
+; v2 : Landroid/graphics/BitmapFactory$Options;
+	invoke-direct	{v2},android/graphics/BitmapFactory$Options/<init>	; <init>()V
+; v2 : Landroid/graphics/BitmapFactory$Options;
+.line 253
+	iput-boolean	v8,v2,android/graphics/BitmapFactory$Options.inJustDecodeBounds Z
+; v8 : single-length , v2 : Landroid/graphics/BitmapFactory$Options;
+.line 254
+	invoke-direct	{v9,v10,v2},android/support/v4/print/PrintHelperKitkat/loadBitmap	; loadBitmap(Landroid/net/Uri;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+; v9 : Landroid/support/v4/print/PrintHelperKitkat; , v10 : Landroid/net/Uri; , v2 : Landroid/graphics/BitmapFactory$Options;
+.line 256
+	iget	v5,v2,android/graphics/BitmapFactory$Options.outWidth I
+; v5 : single-length , v2 : Landroid/graphics/BitmapFactory$Options;
+.line 257
+	iget	v0,v2,android/graphics/BitmapFactory$Options.outHeight I
+; v0 : single-length , v2 : Landroid/graphics/BitmapFactory$Options;
+.line 260
+	if-lez	v5,l7d580
+; v5 : single-length
+	if-gtz	v0,l7d582
+; v0 : single-length
+l7d580:
+.line 280
+	return-object	v6
+; v6 : Landroid/graphics/Bitmap;
+l7d582:
+.line 265
+	invoke-static	{v5,v0},java/lang/Math/max	; max(II)I
+; v5 : single-length , v0 : single-length
+	move-result	v1
+; v1 : single-length
+.line 267
+	const/4	v4,1
+; v4 : single-length
+l7d58c:
+.line 268
+	if-le	v1,v11,l7d59a
+; v1 : single-length , v11 : single-length
+.line 269
+	ushr-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+.line 270
+	shl-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	goto	l7d58c
+l7d59a:
+.line 274
+	if-lez	v4,l7d580
+; v4 : single-length
+	invoke-static	{v5,v0},java/lang/Math/min	; min(II)I
+; v5 : single-length , v0 : single-length
+	move-result	v7
+; v7 : single-length
+	div-int/2addr	v7,v4
+; v7 : single-length , v4 : single-length
+	if-lez	v7,l7d580
+; v7 : single-length
+.line 277
+	new-instance	v3,android/graphics/BitmapFactory$Options
+; v3 : Landroid/graphics/BitmapFactory$Options;
+	invoke-direct	{v3},android/graphics/BitmapFactory$Options/<init>	; <init>()V
+; v3 : Landroid/graphics/BitmapFactory$Options;
+.line 278
+	iput-boolean	v8,v3,android/graphics/BitmapFactory$Options.inMutable Z
+; v8 : single-length , v3 : Landroid/graphics/BitmapFactory$Options;
+.line 279
+	iput	v4,v3,android/graphics/BitmapFactory$Options.inSampleSize I
+; v4 : single-length , v3 : Landroid/graphics/BitmapFactory$Options;
+.line 280
+	invoke-direct	{v9,v10,v3},android/support/v4/print/PrintHelperKitkat/loadBitmap	; loadBitmap(Landroid/net/Uri;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+; v9 : Landroid/support/v4/print/PrintHelperKitkat; , v10 : Landroid/net/Uri; , v3 : Landroid/graphics/BitmapFactory$Options;
+	move-result-object	v6
+; v6 : Landroid/graphics/Bitmap;
+	goto	l7d580
+.end method
+
+.method public getColorMode()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/print/PrintHelperKitkat;)
+.line 119
+	iget	v0,v1,android/support/v4/print/PrintHelperKitkat.mColorMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelperKitkat;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getScaleMode()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/print/PrintHelperKitkat;)
+.line 97
+	iget	v0,v1,android/support/v4/print/PrintHelperKitkat.mScaleMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelperKitkat;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public printBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.throws Ljava/io/FileNotFoundException;
+.limit registers 9
+; this: v6 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v7 (Ljava/lang/String;)
+; parameter[1] : v8 (Landroid/graphics/Bitmap;)
+.line 129
+	if-nez	v8,l7d60e
+; v8 : Landroid/graphics/Bitmap;
+l7d60c:
+.line 224
+	return-void	
+l7d60e:
+.line 132
+	iget	v1,v6,android/support/v4/print/PrintHelperKitkat.mScaleMode I
+; v1 : single-length , v6 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 133
+	iget-object	v4,v6,android/support/v4/print/PrintHelperKitkat.mContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v6 : Landroid/support/v4/print/PrintHelperKitkat;
+	const-string	v5,"print"
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v4 : Landroid/content/Context; , v5 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,android/print/PrintManager
+; v3 : Landroid/print/PrintManager;
+.line 134
+	sget-object	v2,android/print/PrintAttributes$MediaSize.UNKNOWN_PORTRAIT Landroid/print/PrintAttributes$MediaSize;
+; v2 : Landroid/print/PrintAttributes$MediaSize;
+.line 135
+	invoke-virtual	{v8},android/graphics/Bitmap/getWidth	; getWidth()I
+; v8 : Landroid/graphics/Bitmap;
+	move-result	v4
+; v4 : single-length
+	invoke-virtual	{v8},android/graphics/Bitmap/getHeight	; getHeight()I
+; v8 : Landroid/graphics/Bitmap;
+	move-result	v5
+; v5 : single-length
+	if-le	v4,v5,l7d642
+; v4 : single-length , v5 : single-length
+.line 136
+	sget-object	v2,android/print/PrintAttributes$MediaSize.UNKNOWN_LANDSCAPE Landroid/print/PrintAttributes$MediaSize;
+; v2 : Landroid/print/PrintAttributes$MediaSize;
+l7d642:
+.line 138
+	new-instance	v4,android/print/PrintAttributes$Builder
+; v4 : Landroid/print/PrintAttributes$Builder;
+	invoke-direct	{v4},android/print/PrintAttributes$Builder/<init>	; <init>()V
+; v4 : Landroid/print/PrintAttributes$Builder;
+	invoke-virtual	{v4,v2},android/print/PrintAttributes$Builder/setMediaSize	; setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+; v4 : Landroid/print/PrintAttributes$Builder; , v2 : Landroid/print/PrintAttributes$MediaSize;
+	move-result-object	v4
+; v4 : Landroid/print/PrintAttributes$Builder;
+	iget	v5,v6,android/support/v4/print/PrintHelperKitkat.mColorMode I
+; v5 : single-length , v6 : Landroid/support/v4/print/PrintHelperKitkat;
+	invoke-virtual	{v4,v5},android/print/PrintAttributes$Builder/setColorMode	; setColorMode(I)Landroid/print/PrintAttributes$Builder;
+; v4 : Landroid/print/PrintAttributes$Builder; , v5 : single-length
+	move-result-object	v4
+; v4 : Landroid/print/PrintAttributes$Builder;
+	invoke-virtual	{v4},android/print/PrintAttributes$Builder/build	; build()Landroid/print/PrintAttributes;
+; v4 : Landroid/print/PrintAttributes$Builder;
+	move-result-object	v0
+; v0 : Landroid/print/PrintAttributes;
+.line 143
+	new-instance	v4,android/support/v4/print/PrintHelperKitkat$1
+; v4 : Landroid/support/v4/print/PrintHelperKitkat$1;
+	invoke-direct	{v4,v6,v7,v8,v1},android/support/v4/print/PrintHelperKitkat$1/<init>	; <init>(Landroid/support/v4/print/PrintHelperKitkat;Ljava/lang/String;Landroid/graphics/Bitmap;I)V
+; v4 : Landroid/support/v4/print/PrintHelperKitkat$1; , v6 : Landroid/support/v4/print/PrintHelperKitkat; , v7 : Ljava/lang/String; , v8 : Landroid/graphics/Bitmap; , v1 : single-length
+	invoke-virtual	{v3,v7,v4,v0},android/print/PrintManager/print	; print(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
+; v3 : Landroid/print/PrintManager; , v7 : Ljava/lang/String; , v4 : Landroid/support/v4/print/PrintHelperKitkat$1; , v0 : Landroid/print/PrintAttributes;
+	goto	l7d60c
+.end method
+
+.method public printBitmap(Ljava/lang/String;Landroid/net/Uri;)V
+.throws Ljava/io/FileNotFoundException;
+.limit registers 5
+; this: v2 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Landroid/net/Uri;)
+.line 235
+	const/16	v1,3500
+; v1 : single-length
+	invoke-direct	{v2,v4,v1},android/support/v4/print/PrintHelperKitkat/loadConstrainedBitmap	; loadConstrainedBitmap(Landroid/net/Uri;I)Landroid/graphics/Bitmap;
+; v2 : Landroid/support/v4/print/PrintHelperKitkat; , v4 : Landroid/net/Uri; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/graphics/Bitmap;
+.line 236
+	invoke-virtual	{v2,v3,v0},android/support/v4/print/PrintHelperKitkat/printBitmap	; printBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+; v2 : Landroid/support/v4/print/PrintHelperKitkat; , v3 : Ljava/lang/String; , v0 : Landroid/graphics/Bitmap;
+.line 237
+	return-void	
+.end method
+
+.method public setColorMode(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v1 (I)
+.line 109
+	iput	v1,v0,android/support/v4/print/PrintHelperKitkat.mColorMode I
+; v1 : single-length , v0 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 110
+	return-void	
+.end method
+
+.method public setScaleMode(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/print/PrintHelperKitkat;)
+; parameter[0] : v1 (I)
+.line 87
+	iput	v1,v0,android/support/v4/print/PrintHelperKitkat.mScaleMode I
+; v1 : single-length , v0 : Landroid/support/v4/print/PrintHelperKitkat;
+.line 88
+	return-void	
+.end method
+
+

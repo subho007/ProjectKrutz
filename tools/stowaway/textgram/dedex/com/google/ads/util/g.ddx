@@ -1,0 +1,154 @@
+.class public com/google/ads/util/g
+.super java/lang/Object
+.source SourceFile
+
+.annotation buildVisibility Landroid/annotation/TargetApi;
+  value I = 11
+.end annotation
+
+.inner class 1 inner com/google/ads/util/g$1 outer com/google/ads/util/g
+.inner class a inner com/google/ads/util/g$a outer com/google/ads/util/g
+.inner class b inner com/google/ads/util/g$b outer com/google/ads/util/g
+
+.method public static a(Landroid/view/View;)V
+.limit registers 3
+; parameter[0] : v2 (Landroid/view/View;)
+.line 458
+	const/4	v0,1
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v2,v0,v1},android/view/View/setLayerType	; setLayerType(ILandroid/graphics/Paint;)V
+; v2 : Landroid/view/View; , v0 : single-length , v1 : single-length
+.line 459
+	return-void	
+.end method
+
+.method public static a(Landroid/view/Window;)V
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/Window;)
+	const/high16	v0,256
+; v0 : single-length
+.line 472
+	invoke-virtual	{v1,v0,v0},android/view/Window/setFlags	; setFlags(II)V
+; v1 : Landroid/view/Window; , v0 : single-length , v0 : single-length
+.line 474
+	return-void	
+.end method
+
+.method public static a(Landroid/webkit/WebSettings;Lcom/google/ads/n;)V
+.limit registers 7
+; parameter[0] : v5 (Landroid/webkit/WebSettings;)
+; parameter[1] : v6 (Lcom/google/ads/n;)
+	const/4	v4,1
+; v4 : single-length
+.line 432
+	iget-object	v0,v6,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v6 : Lcom/google/ads/n;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+.line 433
+	iget-object	v1,v6,com/google/ads/n.d Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v6 : Lcom/google/ads/n;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/m
+; v1 : Lcom/google/ads/m;
+	iget-object	v1,v1,com/google/ads/m.b Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/m$a
+; v1 : Lcom/google/ads/m$a;
+.line 436
+	invoke-virtual	{v5,v4},android/webkit/WebSettings/setAppCacheEnabled	; setAppCacheEnabled(Z)V
+; v5 : Landroid/webkit/WebSettings; , v4 : single-length
+.line 437
+	iget-object	v1,v1,com/google/ads/m$a.i Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v1 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Long
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v1},java/lang/Long/longValue	; longValue()J
+; v1 : Ljava/lang/Long;
+	move-result-wide	v1
+; v1 : double-length
+	invoke-virtual	{v5,v1,v2},android/webkit/WebSettings/setAppCacheMaxSize	; setAppCacheMaxSize(J)V
+; v5 : Landroid/webkit/WebSettings; , v1 : double-length
+.line 438
+	new-instance	v1,java/io/File
+; v1 : Ljava/io/File;
+	invoke-virtual	{v0},android/content/Context/getCacheDir	; getCacheDir()Ljava/io/File;
+; v0 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/io/File;
+	const-string	v3,"admob"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v1,v2,v3},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v1 : Ljava/io/File; , v2 : Ljava/io/File; , v3 : Ljava/lang/String;
+	invoke-virtual	{v1},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v1 : Ljava/io/File;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v5,v1},android/webkit/WebSettings/setAppCachePath	; setAppCachePath(Ljava/lang/String;)V
+; v5 : Landroid/webkit/WebSettings; , v1 : Ljava/lang/String;
+.line 441
+	invoke-virtual	{v5,v4},android/webkit/WebSettings/setDatabaseEnabled	; setDatabaseEnabled(Z)V
+; v5 : Landroid/webkit/WebSettings; , v4 : single-length
+.line 442
+	const-string	v1,"admob"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Context/getDatabasePath	; getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+; v0 : Landroid/content/Context; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/io/File;
+	invoke-virtual	{v0},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v0 : Ljava/io/File;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v5,v0},android/webkit/WebSettings/setDatabasePath	; setDatabasePath(Ljava/lang/String;)V
+; v5 : Landroid/webkit/WebSettings; , v0 : Ljava/lang/String;
+.line 445
+	invoke-virtual	{v5,v4},android/webkit/WebSettings/setDomStorageEnabled	; setDomStorageEnabled(Z)V
+; v5 : Landroid/webkit/WebSettings; , v4 : single-length
+.line 449
+	invoke-virtual	{v5,v4},android/webkit/WebSettings/setSupportZoom	; setSupportZoom(Z)V
+; v5 : Landroid/webkit/WebSettings; , v4 : single-length
+.line 450
+	invoke-virtual	{v5,v4},android/webkit/WebSettings/setBuiltInZoomControls	; setBuiltInZoomControls(Z)V
+; v5 : Landroid/webkit/WebSettings; , v4 : single-length
+.line 451
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v5,v0},android/webkit/WebSettings/setDisplayZoomControls	; setDisplayZoomControls(Z)V
+; v5 : Landroid/webkit/WebSettings; , v0 : single-length
+.line 452
+	return-void	
+.end method
+
+.method public static b(Landroid/view/View;)V
+.limit registers 3
+; parameter[0] : v2 (Landroid/view/View;)
+.line 465
+	const/4	v0,0
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v2,v0,v1},android/view/View/setLayerType	; setLayerType(ILandroid/graphics/Paint;)V
+; v2 : Landroid/view/View; , v0 : single-length , v1 : single-length
+.line 466
+	return-void	
+.end method
+
+

@@ -1,0 +1,45 @@
+.class android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal
+.super android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl
+.source TextDirectionHeuristicsCompat.java
+
+.inner class TextDirectionHeuristicInternal inner android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal outer android/support/v4/text/TextDirectionHeuristicsCompat
+.field private final mDefaultIsRtl Z
+
+.method private <init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;Z)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;)
+; parameter[0] : v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)
+; parameter[1] : v2 (Z)
+.line 156
+	invoke-direct	{v0,v1},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl/<init>	; <init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal; , v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+.line 157
+	iput-boolean	v2,v0,android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal.mDefaultIsRtl Z
+; v2 : single-length , v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
+.line 158
+	return-void	
+.end method
+
+.method <init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;)
+; parameter[0] : v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)
+; parameter[1] : v2 (Z)
+; parameter[2] : v3 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$1;)
+.line 151
+	invoke-direct	{v0,v1,v2},android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal/<init>	; <init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;Z)V
+; v0 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal; , v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm; , v2 : single-length
+	return-void	
+.end method
+
+.method protected defaultIsRtl()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;)
+.line 162
+	iget-boolean	v0,v1,android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal.mDefaultIsRtl Z
+; v0 : single-length , v1 : Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
+	return	v0
+; v0 : single-length
+.end method
+
+

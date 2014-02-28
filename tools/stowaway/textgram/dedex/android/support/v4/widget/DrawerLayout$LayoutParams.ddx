@@ -1,0 +1,134 @@
+.class public android/support/v4/widget/DrawerLayout$LayoutParams
+.super android/view/ViewGroup$MarginLayoutParams
+.source DrawerLayout.java
+
+.inner class LayoutParams inner android/support/v4/widget/DrawerLayout$LayoutParams outer android/support/v4/widget/DrawerLayout
+.field public gravity I
+.field isPeeking Z
+.field knownOpen Z
+.field onScreen F
+
+.method public <init>(II)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (I)
+.line 1505
+	invoke-direct	{v1,v2,v3},android/view/ViewGroup$MarginLayoutParams/<init>	; <init>(II)V
+; v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v2 : single-length , v3 : single-length
+.line 1491
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1506
+	return-void	
+.end method
+
+.method public <init>(III)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+.line 1509
+	invoke-direct	{v0,v1,v2},android/support/v4/widget/DrawerLayout$LayoutParams/<init>	; <init>(II)V
+; v0 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v1 : single-length , v2 : single-length
+.line 1510
+	iput	v3,v0,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v3 : single-length , v0 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1511
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 6
+; this: v3 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Landroid/util/AttributeSet;)
+	const/4	v2,0
+; v2 : single-length
+.line 1497
+	invoke-direct	{v3,v4,v5},android/view/ViewGroup$MarginLayoutParams/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v3 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v4 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet;
+.line 1491
+	iput	v2,v3,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v2 : single-length , v3 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1499
+	invoke-static	{},android/support/v4/widget/DrawerLayout/access$100	; access$100()[I
+; 
+	nop	
+	move-result-object	v1
+; v1 : [I
+	invoke-virtual	{v4,v5,v1},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+; v4 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet; , v1 : [I
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 1500
+	invoke-virtual	{v0,v2,v2},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v2 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v1 : single-length , v3 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1501
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 1502
+	return-void	
+.end method
+
+.method public <init>(Landroid/support/v4/widget/DrawerLayout$LayoutParams;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v2 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+.line 1514
+	invoke-direct	{v1,v2},android/view/ViewGroup$MarginLayoutParams/<init>	; <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+; v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v2 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1491
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1515
+	iget	v0,v2,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v2 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	iput	v0,v1,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1516
+	return-void	
+.end method
+
+.method public <init>(Landroid/view/ViewGroup$LayoutParams;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v2 (Landroid/view/ViewGroup$LayoutParams;)
+.line 1519
+	invoke-direct	{v1,v2},android/view/ViewGroup$MarginLayoutParams/<init>	; <init>(Landroid/view/ViewGroup$LayoutParams;)V
+; v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v2 : Landroid/view/ViewGroup$LayoutParams;
+.line 1491
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1520
+	return-void	
+.end method
+
+.method public <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/DrawerLayout$LayoutParams;)
+; parameter[0] : v2 (Landroid/view/ViewGroup$MarginLayoutParams;)
+.line 1523
+	invoke-direct	{v1,v2},android/view/ViewGroup$MarginLayoutParams/<init>	; <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+; v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams; , v2 : Landroid/view/ViewGroup$MarginLayoutParams;
+.line 1491
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/widget/DrawerLayout$LayoutParams.gravity I
+; v0 : single-length , v1 : Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+.line 1524
+	return-void	
+.end method
+
+

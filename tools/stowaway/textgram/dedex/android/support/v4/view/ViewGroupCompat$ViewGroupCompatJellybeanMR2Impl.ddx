@@ -1,0 +1,41 @@
+.class android/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl
+.super android/support/v4/view/ViewGroupCompat$ViewGroupCompatIcsImpl
+.source ViewGroupCompat.java
+
+.inner class ViewGroupCompatJellybeanMR2Impl inner android/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl outer android/support/v4/view/ViewGroupCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl;)
+.line 91
+	invoke-direct	{v0},android/support/v4/view/ViewGroupCompat$ViewGroupCompatIcsImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl;
+	return-void	
+.end method
+
+.method public getLayoutMode(Landroid/view/ViewGroup;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl;)
+; parameter[0] : v2 (Landroid/view/ViewGroup;)
+.line 94
+	invoke-static	{v2},android/support/v4/view/ViewGroupCompatJellybeanMR2/getLayoutMode	; getLayoutMode(Landroid/view/ViewGroup;)I
+; v2 : Landroid/view/ViewGroup;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setLayoutMode(Landroid/view/ViewGroup;I)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatJellybeanMR2Impl;)
+; parameter[0] : v1 (Landroid/view/ViewGroup;)
+; parameter[1] : v2 (I)
+.line 99
+	invoke-static	{v1,v2},android/support/v4/view/ViewGroupCompatJellybeanMR2/setLayoutMode	; setLayoutMode(Landroid/view/ViewGroup;I)V
+; v1 : Landroid/view/ViewGroup; , v2 : single-length
+.line 100
+	return-void	
+.end method
+
+

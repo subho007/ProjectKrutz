@@ -1,0 +1,16 @@
+.interface public abstract android/support/v4/widget/SlidingPaneLayout$PanelSlideListener
+.super java/lang/Object
+.source SlidingPaneLayout.java
+
+.inner class PanelSlideListener inner android/support/v4/widget/SlidingPaneLayout$PanelSlideListener outer android/support/v4/widget/SlidingPaneLayout
+
+.method public abstract onPanelClosed(Landroid/view/View;)V
+.end method
+
+.method public abstract onPanelOpened(Landroid/view/View;)V
+.end method
+
+.method public abstract onPanelSlide(Landroid/view/View;F)V
+.end method
+
+

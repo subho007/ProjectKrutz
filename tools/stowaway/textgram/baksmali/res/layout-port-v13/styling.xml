@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <codeadore.textgram.SuperSurface android:id="@id/mySuperSurface" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/styling_footer_ll" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/styling_footer_ll" android:background="@drawable/drawer_port_bg" android:layout_width="wrap_content" android:layout_height="175.0dip" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <codeadore.textgram.custom_widgets.el7rTabPageIndicator android:id="@id/styling_tabs" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_alignParentBottom="true" />
+            <LinearLayout android:id="@id/styling_fragment_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/styling_tabs" />
+            <android.support.v4.view.ViewPager android:id="@id/styling_viewpager" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/styling_tabs" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <codeadore.textgram.custom_widgets.el7rTextView android:gravity="top" android:id="@id/todraw_tv" android:layout_width="612.0px" android:layout_height="612.0px" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+.interface public abstract android/support/v7/internal/view/menu/MenuBuilder$ItemInvoker
+.super java/lang/Object
+.source MenuBuilder.java
+
+.inner class ItemInvoker inner android/support/v7/internal/view/menu/MenuBuilder$ItemInvoker outer android/support/v7/internal/view/menu/MenuBuilder
+
+.method public abstract invokeItem(Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
+.end method
+
+

@@ -1,0 +1,101 @@
+.class public final com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+.super java/lang/Enum
+
+.field public static final ACTIVITY_LANDSCAPE Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.field public static final ACTIVITY_PORTRAIT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.field public static final DEFAULT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.field private static final a [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+
+.method static <clinit>()V
+.limit registers 5
+	const/4	v4,2
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	const-string	v1,"DEFAULT"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},com/applovin/impl/sdk/AppLovinAdInternal$AdTarget/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Ljava/lang/String; , v2 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.DEFAULT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	const-string	v1,"ACTIVITY_PORTRAIT"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3},com/applovin/impl/sdk/AppLovinAdInternal$AdTarget/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Ljava/lang/String; , v3 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.ACTIVITY_PORTRAIT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	const-string	v1,"ACTIVITY_LANDSCAPE"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v4},com/applovin/impl/sdk/AppLovinAdInternal$AdTarget/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Ljava/lang/String; , v4 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.ACTIVITY_LANDSCAPE Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	const/4	v0,3
+; v0 : single-length
+	new-array	v0,v0,[Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.DEFAULT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	aput-object	v1,v0,v2
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v2 : single-length
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.ACTIVITY_PORTRAIT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	aput-object	v1,v0,v3
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v3 : single-length
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.ACTIVITY_LANDSCAPE Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	aput-object	v1,v0,v4
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v4 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.a [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;I)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v1 : Ljava/lang/String; , v2 : single-length
+	return-void	
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+	const-class	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Enum;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	return-object	v0
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.end method
+
+.method public static values()[Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+.limit registers 1
+	sget-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.a [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	invoke-virtual	{v0},[Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget/clone	; clone()Ljava/lang/Object;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,[Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+	return-object	v0
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget
+.end method
+
+

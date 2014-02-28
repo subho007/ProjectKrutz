@@ -1,0 +1,33 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl
+.super android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl
+.source AccessibilityNodeProviderCompat.java
+
+.inner class AccessibilityNodeProviderKitKatImpl inner android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl outer android/support/v4/view/accessibility/AccessibilityNodeProviderCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;)
+.line 84
+	invoke-direct	{v0},android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;
+	return-void	
+.end method
+
+.method public newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;)
+; parameter[0] : v2 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)
+.line 88
+	new-instance	v0,android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;
+	invoke-direct	{v0,v1,v2},android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1/<init>	; <init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1; , v1 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl; , v2 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+	invoke-static	{v0},android/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat/newAccessibilityNodeProviderBridge	; newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+

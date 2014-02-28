@@ -1,0 +1,1267 @@
+.class abstract eu/janmuller/android/simplecropimage/ImageViewTouchBase
+.super android/widget/ImageView
+.source ImageViewTouchBase.java
+
+.inner class Recycler inner eu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler outer eu/janmuller/android/simplecropimage/ImageViewTouchBase
+.field static final SCALE_RATE F = 1.25
+.field private static final TAG Ljava/lang/String; = "ImageViewTouchBase"
+.field protected mBaseMatrix Landroid/graphics/Matrix;
+.field protected final mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+.field mBottom I
+.field private final mDisplayMatrix Landroid/graphics/Matrix;
+.field protected mHandler Landroid/os/Handler;
+.field mLeft I
+.field private final mMatrixValues [F
+.field mMaxZoom F
+.field private mOnLayoutRunnable Ljava/lang/Runnable;
+.field private mRecycler Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;
+.field mRight I
+.field protected mSuppMatrix Landroid/graphics/Matrix;
+.field mThisHeight I
+.field mThisWidth I
+.field mTop I
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 5
+; this: v3 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v4 (Landroid/content/Context;)
+	const/4	v2,0
+; v2 : single-length
+	const/4	v1,15
+; v1 : single-length
+.line 242
+	invoke-direct	{v3,v4},android/widget/ImageView/<init>	; <init>(Landroid/content/Context;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : Landroid/content/Context;
+.line 41
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 48
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 52
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mDisplayMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 55
+	const/16	v0,9
+; v0 : single-length
+	new-array	v0,v0,[F
+; v0 : [F , v0 : [F
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMatrixValues [F
+; v0 : [F , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 58
+	new-instance	v0,eu/janmuller/android/simplecropimage/RotateBitmap
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	invoke-direct	{v0,v2},eu/janmuller/android/simplecropimage/RotateBitmap/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v2 : single-length
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 60
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisWidth I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisHeight I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 120
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-direct	{v0},android/os/Handler/<init>	; <init>()V
+; v0 : Landroid/os/Handler;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 150
+	iput-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mOnLayoutRunnable Ljava/lang/Runnable;
+; v2 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 243
+	invoke-direct	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/init	; init()V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 244
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 6
+; this: v3 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Landroid/util/AttributeSet;)
+	const/4	v2,0
+; v2 : single-length
+	const/4	v1,15
+; v1 : single-length
+.line 248
+	invoke-direct	{v3,v4,v5},android/widget/ImageView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet;
+.line 41
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 48
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 52
+	new-instance	v0,android/graphics/Matrix
+; v0 : Landroid/graphics/Matrix;
+	invoke-direct	{v0},android/graphics/Matrix/<init>	; <init>()V
+; v0 : Landroid/graphics/Matrix;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mDisplayMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 55
+	const/16	v0,9
+; v0 : single-length
+	new-array	v0,v0,[F
+; v0 : [F , v0 : [F
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMatrixValues [F
+; v0 : [F , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 58
+	new-instance	v0,eu/janmuller/android/simplecropimage/RotateBitmap
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	invoke-direct	{v0,v2},eu/janmuller/android/simplecropimage/RotateBitmap/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v2 : single-length
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 60
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisWidth I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisHeight I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 120
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-direct	{v0},android/os/Handler/<init>	; <init>()V
+; v0 : Landroid/os/Handler;
+	iput-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 150
+	iput-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mOnLayoutRunnable Ljava/lang/Runnable;
+; v2 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 249
+	invoke-direct	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/init	; init()V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 250
+	return-void	
+.end method
+
+.method private getProperBaseMatrix(Leu/janmuller/android/simplecropimage/RotateBitmap;Landroid/graphics/Matrix;)V
+.limit registers 14
+; this: v11 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v12 (Leu/janmuller/android/simplecropimage/RotateBitmap;)
+; parameter[1] : v13 (Landroid/graphics/Matrix;)
+	const/high16	v10,16384
+; v10 : single-length
+.line 277
+	invoke-virtual	{v11},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v11 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v5,v8
+; v5 : single-length , v8 : single-length
+.line 278
+	invoke-virtual	{v11},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v11 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v4,v8
+; v4 : single-length , v8 : single-length
+.line 280
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/RotateBitmap/getWidth	; getWidth()I
+; v12 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v6,v8
+; v6 : single-length , v8 : single-length
+.line 281
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/RotateBitmap/getHeight	; getHeight()I
+; v12 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v0,v8
+; v0 : single-length , v8 : single-length
+.line 282
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/RotateBitmap/getRotation	; getRotation()I
+; v12 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v2
+; v2 : single-length
+.line 283
+	invoke-virtual	{v13},android/graphics/Matrix/reset	; reset()V
+; v13 : Landroid/graphics/Matrix;
+.line 287
+	div-float	v8,v5,v6
+; v8 : single-length , v5 : single-length , v6 : single-length
+	invoke-static	{v8,v10},java/lang/Math/min	; min(FF)F
+; v8 : single-length , v10 : single-length
+	move-result	v7
+; v7 : single-length
+.line 288
+	div-float	v8,v4,v0
+; v8 : single-length , v4 : single-length , v0 : single-length
+	invoke-static	{v8,v10},java/lang/Math/min	; min(FF)F
+; v8 : single-length , v10 : single-length
+	move-result	v1
+; v1 : single-length
+.line 289
+	invoke-static	{v7,v1},java/lang/Math/min	; min(FF)F
+; v7 : single-length , v1 : single-length
+	move-result	v3
+; v3 : single-length
+.line 291
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/RotateBitmap/getRotateMatrix	; getRotateMatrix()Landroid/graphics/Matrix;
+; v12 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v8
+; v8 : Landroid/graphics/Matrix;
+	invoke-virtual	{v13,v8},android/graphics/Matrix/postConcat	; postConcat(Landroid/graphics/Matrix;)Z
+; v13 : Landroid/graphics/Matrix; , v8 : Landroid/graphics/Matrix;
+.line 292
+	invoke-virtual	{v13,v3,v3},android/graphics/Matrix/postScale	; postScale(FF)Z
+; v13 : Landroid/graphics/Matrix; , v3 : single-length , v3 : single-length
+.line 295
+	mul-float	v8,v6,v3
+; v8 : single-length , v6 : single-length , v3 : single-length
+	sub-float	v8,v5,v8
+; v8 : single-length , v5 : single-length , v8 : single-length
+	div-float/2addr	v8,v10
+; v8 : single-length , v10 : single-length
+.line 296
+	mul-float	v9,v0,v3
+; v9 : single-length , v0 : single-length , v3 : single-length
+	sub-float	v9,v4,v9
+; v9 : single-length , v4 : single-length , v9 : single-length
+	div-float/2addr	v9,v10
+; v9 : single-length , v10 : single-length
+.line 294
+	invoke-virtual	{v13,v8,v9},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v13 : Landroid/graphics/Matrix; , v8 : single-length , v9 : single-length
+.line 297
+	return-void	
+.end method
+
+.method private init()V
+.limit registers 2
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 254
+	sget-object	v0,android/widget/ImageView$ScaleType.MATRIX Landroid/widget/ImageView$ScaleType;
+; v0 : Landroid/widget/ImageView$ScaleType;
+	invoke-virtual	{v1,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setScaleType	; setScaleType(Landroid/widget/ImageView$ScaleType;)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : Landroid/widget/ImageView$ScaleType;
+.line 255
+	return-void	
+.end method
+
+.method private setImageBitmap(Landroid/graphics/Bitmap;I)V
+.limit registers 6
+; this: v3 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v4 (Landroid/graphics/Bitmap;)
+; parameter[1] : v5 (I)
+.line 130
+	invoke-super	{v3,v4},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : Landroid/graphics/Bitmap;
+.line 131
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getDrawable	; getDrawable()Landroid/graphics/drawable/Drawable;
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 132
+	if-eqz	v0,lcf816
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 133
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v0,v2},android/graphics/drawable/Drawable/setDither	; setDither(Z)V
+; v0 : Landroid/graphics/drawable/Drawable; , v2 : single-length
+lcf816:
+.line 136
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+.line 137
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2,v4},eu/janmuller/android/simplecropimage/RotateBitmap/setBitmap	; setBitmap(Landroid/graphics/Bitmap;)V
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v4 : Landroid/graphics/Bitmap;
+.line 138
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2,v5},eu/janmuller/android/simplecropimage/RotateBitmap/setRotation	; setRotation(I)V
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : single-length
+.line 140
+	if-eqz	v1,lcf850
+; v1 : Landroid/graphics/Bitmap;
+	if-eq	v1,v4,lcf850
+; v1 : Landroid/graphics/Bitmap; , v4 : Landroid/graphics/Bitmap;
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mRecycler Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	if-eqz	v2,lcf850
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;
+.line 141
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mRecycler Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-interface	{v2,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler/recycle	; recycle(Landroid/graphics/Bitmap;)V
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler; , v1 : Landroid/graphics/Bitmap;
+lcf850:
+.line 143
+	return-void	
+.end method
+
+.method protected center(ZZ)V
+.limit registers 15
+; this: v12 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v13 (Z)
+; parameter[1] : v14 (Z)
+.var 5 is viewHeight I from lcf8e0 to lcf8f8
+.var 6 is viewWidth I from lcf904 to lcf91c
+.var 5 is viewHeight I from lcf932 to lcf968
+	const/high16	v11,16384
+; v11 : single-length
+	const/4	v10,0
+; v10 : single-length
+.line 197
+	iget-object	v8,v12,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v8 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v8},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v8 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v8
+; v8 : Landroid/graphics/Bitmap;
+	if-nez	v8,lcf87c
+; v8 : Landroid/graphics/Bitmap;
+lcf87a:
+.line 238
+	return-void	
+lcf87c:
+.line 201
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v3
+; v3 : Landroid/graphics/Matrix;
+.line 203
+	new-instance	v4,android/graphics/RectF
+; v4 : Landroid/graphics/RectF;
+.line 204
+	iget-object	v8,v12,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v8 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v8},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v8 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v8
+; v8 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v8},android/graphics/Bitmap/getWidth	; getWidth()I
+; v8 : Landroid/graphics/Bitmap;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v8,v8
+; v8 : single-length , v8 : single-length
+.line 205
+	iget-object	v9,v12,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v9 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v9},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v9 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v9
+; v9 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v9},android/graphics/Bitmap/getHeight	; getHeight()I
+; v9 : Landroid/graphics/Bitmap;
+	move-result	v9
+; v9 : single-length
+	int-to-float	v9,v9
+; v9 : single-length , v9 : single-length
+.line 203
+	invoke-direct	{v4,v10,v10,v8,v9},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v4 : Landroid/graphics/RectF; , v10 : single-length , v10 : single-length , v8 : single-length , v9 : single-length
+.line 207
+	invoke-virtual	{v3,v4},android/graphics/Matrix/mapRect	; mapRect(Landroid/graphics/RectF;)Z
+; v3 : Landroid/graphics/Matrix; , v4 : Landroid/graphics/RectF;
+.line 209
+	invoke-virtual	{v4},android/graphics/RectF/height	; height()F
+; v4 : Landroid/graphics/RectF;
+	move-result	v2
+; v2 : single-length
+.line 210
+	invoke-virtual	{v4},android/graphics/RectF/width	; width()F
+; v4 : Landroid/graphics/RectF;
+	move-result	v7
+; v7 : single-length
+.line 212
+	const/4	v0,0
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 214
+	if-eqz	v14,lcf8f8
+; v14 : single-length
+.line 215
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v5
+; v5 : single-length
+.line 216
+	int-to-float	v8,v5
+; v8 : single-length , v5 : single-length
+	cmpg-float	v8,v2,v8
+; v8 : single-length , v2 : single-length , v8 : single-length
+	if-gez	v8,lcf932
+; v8 : single-length
+.line 217
+	int-to-float	v8,v5
+; v8 : single-length , v5 : single-length
+	sub-float/2addr	v8,v2
+; v8 : single-length , v2 : single-length
+	div-float/2addr	v8,v11
+; v8 : single-length , v11 : single-length
+	iget	v9,v4,android/graphics/RectF.top F
+; v9 : single-length , v4 : Landroid/graphics/RectF;
+	sub-float	v1,v8,v9
+; v1 : single-length , v8 : single-length , v9 : single-length
+lcf8f8:
+.line 225
+	if-eqz	v13,lcf91c
+; v13 : single-length
+.line 226
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v6
+; v6 : single-length
+.line 227
+	int-to-float	v8,v6
+; v8 : single-length , v6 : single-length
+	cmpg-float	v8,v7,v8
+; v8 : single-length , v7 : single-length , v8 : single-length
+	if-gez	v8,lcf968
+; v8 : single-length
+.line 228
+	int-to-float	v8,v6
+; v8 : single-length , v6 : single-length
+	sub-float/2addr	v8,v7
+; v8 : single-length , v7 : single-length
+	div-float/2addr	v8,v11
+; v8 : single-length , v11 : single-length
+	iget	v9,v4,android/graphics/RectF.left F
+; v9 : single-length , v4 : Landroid/graphics/RectF;
+	sub-float	v0,v8,v9
+; v0 : single-length , v8 : single-length , v9 : single-length
+lcf91c:
+.line 236
+	invoke-virtual	{v12,v0,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/postTranslate	; postTranslate(FF)V
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : single-length , v1 : single-length
+.line 237
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v8
+; v8 : Landroid/graphics/Matrix;
+	invoke-virtual	{v12,v8},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v8 : Landroid/graphics/Matrix;
+	goto	lcf87a
+lcf932:
+.line 218
+	iget	v8,v4,android/graphics/RectF.top F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	cmpl-float	v8,v8,v10
+; v8 : single-length , v8 : single-length , v10 : single-length
+	if-lez	v8,lcf946
+; v8 : single-length
+.line 219
+	iget	v8,v4,android/graphics/RectF.top F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	neg-float	v1,v8
+; v1 : single-length , v8 : single-length
+.line 220
+	goto	lcf8f8
+lcf946:
+	iget	v8,v4,android/graphics/RectF.bottom F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	int-to-float	v9,v5
+; v9 : single-length , v5 : single-length
+	cmpg-float	v8,v8,v9
+; v8 : single-length , v8 : single-length , v9 : single-length
+	if-gez	v8,lcf8f8
+; v8 : single-length
+.line 221
+	invoke-virtual	{v12},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v12 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v8
+; v8 : single-length
+	int-to-float	v8,v8
+; v8 : single-length , v8 : single-length
+	iget	v9,v4,android/graphics/RectF.bottom F
+; v9 : single-length , v4 : Landroid/graphics/RectF;
+	sub-float	v1,v8,v9
+; v1 : single-length , v8 : single-length , v9 : single-length
+	goto	lcf8f8
+lcf968:
+.line 229
+	iget	v8,v4,android/graphics/RectF.left F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	cmpl-float	v8,v8,v10
+; v8 : single-length , v8 : single-length , v10 : single-length
+	if-lez	v8,lcf97c
+; v8 : single-length
+.line 230
+	iget	v8,v4,android/graphics/RectF.left F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	neg-float	v0,v8
+; v0 : single-length , v8 : single-length
+.line 231
+	goto	lcf91c
+lcf97c:
+	iget	v8,v4,android/graphics/RectF.right F
+; v8 : single-length , v4 : Landroid/graphics/RectF;
+	int-to-float	v9,v6
+; v9 : single-length , v6 : single-length
+	cmpg-float	v8,v8,v9
+; v8 : single-length , v8 : single-length , v9 : single-length
+	if-gez	v8,lcf91c
+; v8 : single-length
+.line 232
+	int-to-float	v8,v6
+; v8 : single-length , v6 : single-length
+	iget	v9,v4,android/graphics/RectF.right F
+; v9 : single-length , v4 : Landroid/graphics/RectF;
+	sub-float	v0,v8,v9
+; v0 : single-length , v8 : single-length , v9 : single-length
+	goto	lcf91c
+.end method
+
+.method public clear()V
+.limit registers 3
+; this: v2 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 147
+	const/4	v0,0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v2,v0,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageBitmapResetBase	; setImageBitmapResetBase(Landroid/graphics/Bitmap;Z)V
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : single-length , v1 : single-length
+.line 148
+	return-void	
+.end method
+
+.method protected getImageViewMatrix()Landroid/graphics/Matrix;
+.limit registers 3
+; this: v2 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 303
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mDisplayMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	iget-object	v1,v2,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v1 : Landroid/graphics/Matrix; , v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v0,v1},android/graphics/Matrix/set	; set(Landroid/graphics/Matrix;)V
+; v0 : Landroid/graphics/Matrix; , v1 : Landroid/graphics/Matrix;
+.line 304
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mDisplayMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	iget-object	v1,v2,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v1 : Landroid/graphics/Matrix; , v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v0,v1},android/graphics/Matrix/postConcat	; postConcat(Landroid/graphics/Matrix;)Z
+; v0 : Landroid/graphics/Matrix; , v1 : Landroid/graphics/Matrix;
+.line 305
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mDisplayMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	return-object	v0
+; v0 : Landroid/graphics/Matrix;
+.end method
+
+.method protected getScale()F
+.limit registers 2
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 271
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v1,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale(Landroid/graphics/Matrix;)F
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : Landroid/graphics/Matrix;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected getScale(Landroid/graphics/Matrix;)F
+.limit registers 3
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (Landroid/graphics/Matrix;)
+.line 266
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v2,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getValue	; getValue(Landroid/graphics/Matrix;I)F
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : Landroid/graphics/Matrix; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected getValue(Landroid/graphics/Matrix;I)F
+.limit registers 4
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (Landroid/graphics/Matrix;)
+; parameter[1] : v3 (I)
+.line 259
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMatrixValues [F
+; v0 : [F , v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2,v0},android/graphics/Matrix/getValues	; getValues([F)V
+; v2 : Landroid/graphics/Matrix; , v0 : [F
+.line 260
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMatrixValues [F
+; v0 : [F , v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	aget	v0,v0,v3
+; v0 : single-length , v0 : single-length , v3 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected maxZoom()F
+.limit registers 6
+; this: v5 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 316
+	iget-object	v3,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v3
+; v3 : Landroid/graphics/Bitmap;
+	if-nez	v3,lcfa6e
+; v3 : Landroid/graphics/Bitmap;
+.line 317
+	const/high16	v2,16256
+; v2 : single-length
+lcfa6c:
+.line 323
+	return	v2
+; v2 : single-length
+lcfa6e:
+.line 320
+	iget-object	v3,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/RotateBitmap/getWidth	; getWidth()I
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	iget	v4,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisWidth I
+; v4 : single-length , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	div-float	v1,v3,v4
+; v1 : single-length , v3 : single-length , v4 : single-length
+.line 321
+	iget-object	v3,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/RotateBitmap/getHeight	; getHeight()I
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	iget	v4,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisHeight I
+; v4 : single-length , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	div-float	v0,v3,v4
+; v0 : single-length , v3 : single-length , v4 : single-length
+.line 322
+	invoke-static	{v1,v0},java/lang/Math/max	; max(FF)F
+; v1 : single-length , v0 : single-length
+	move-result	v3
+; v3 : single-length
+	const/high16	v4,16512
+; v4 : single-length
+	mul-float	v2,v3,v4
+; v2 : single-length , v3 : single-length , v4 : single-length
+.line 323
+	goto	lcfa6c
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+.limit registers 5
+; this: v2 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (Landroid/view/KeyEvent;)
+	const/high16	v1,16256
+; v1 : single-length
+.line 111
+	const/4	v0,4
+; v0 : single-length
+	if-ne	v3,v0,lcfae4
+; v3 : single-length , v0 : single-length
+	invoke-virtual	{v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale()F
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v0
+; v0 : single-length
+	cmpl-float	v0,v0,v1
+; v0 : single-length , v0 : single-length , v1 : single-length
+	if-lez	v0,lcfae4
+; v0 : single-length
+.line 114
+	invoke-virtual	{v2,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/zoomTo	; zoomTo(F)V
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : single-length
+.line 115
+	const/4	v0,1
+; v0 : single-length
+lcfae2:
+.line 117
+	return	v0
+; v0 : single-length
+lcfae4:
+	invoke-super	{v2,v3,v4},android/widget/ImageView/onKeyDown	; onKeyDown(ILandroid/view/KeyEvent;)Z
+; v2 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v3 : single-length , v4 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+	goto	lcfae2
+.end method
+
+.method protected onLayout(ZIIII)V
+.limit registers 9
+; this: v3 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v4 (Z)
+; parameter[1] : v5 (I)
+; parameter[2] : v6 (I)
+; parameter[3] : v7 (I)
+; parameter[4] : v8 (I)
+.line 90
+	invoke-super/range	{v3..v8},android/widget/ImageView/onLayout;	onLayout(ZIIII)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length
+.line 91
+	iput	v5,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mLeft I
+; v5 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 92
+	iput	v7,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mRight I
+; v7 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 93
+	iput	v6,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mTop I
+; v6 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 94
+	iput	v8,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBottom I
+; v8 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 95
+	sub-int	v1,v7,v5
+; v1 : single-length , v7 : single-length , v5 : single-length
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisWidth I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 96
+	sub-int	v1,v8,v6
+; v1 : single-length , v8 : single-length , v6 : single-length
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mThisHeight I
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 97
+	iget-object	v0,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mOnLayoutRunnable Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 98
+	if-eqz	v0,lcfb3a
+; v0 : Ljava/lang/Runnable;
+.line 99
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mOnLayoutRunnable Ljava/lang/Runnable;
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 100
+	invoke-interface	{v0},java/lang/Runnable/run	; run()V
+; v0 : Ljava/lang/Runnable;
+lcfb3a:
+.line 102
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v1 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v1},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v1 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	if-eqz	v1,lcfb66
+; v1 : Landroid/graphics/Bitmap;
+.line 103
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v1 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v2 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-direct	{v3,v1,v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getProperBaseMatrix	; getProperBaseMatrix(Leu/janmuller/android/simplecropimage/RotateBitmap;Landroid/graphics/Matrix;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v2 : Landroid/graphics/Matrix;
+.line 104
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v1
+; v1 : Landroid/graphics/Matrix;
+	invoke-virtual	{v3,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : Landroid/graphics/Matrix;
+lcfb66:
+.line 106
+	return-void	
+.end method
+
+.method protected panBy(FF)V
+.limit registers 4
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (F)
+; parameter[1] : v3 (F)
+.line 425
+	invoke-virtual	{v1,v2,v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/postTranslate	; postTranslate(FF)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : single-length , v3 : single-length
+.line 426
+	invoke-virtual	{v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v0
+; v0 : Landroid/graphics/Matrix;
+	invoke-virtual	{v1,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : Landroid/graphics/Matrix;
+.line 427
+	return-void	
+.end method
+
+.method protected postTranslate(FF)V
+.limit registers 4
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (F)
+; parameter[1] : v3 (F)
+.line 420
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v0 : Landroid/graphics/Matrix; , v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v0,v2,v3},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v0 : Landroid/graphics/Matrix; , v2 : single-length , v3 : single-length
+.line 421
+	return-void	
+.end method
+
+.method public setImageBitmap(Landroid/graphics/Bitmap;)V
+.limit registers 3
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (Landroid/graphics/Bitmap;)
+.line 125
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;I)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : Landroid/graphics/Bitmap; , v0 : single-length
+.line 126
+	return-void	
+.end method
+
+.method public setImageBitmapResetBase(Landroid/graphics/Bitmap;Z)V
+.limit registers 4
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v2 (Landroid/graphics/Bitmap;)
+; parameter[1] : v3 (Z)
+.line 157
+	new-instance	v0,eu/janmuller/android/simplecropimage/RotateBitmap
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	invoke-direct	{v0,v2},eu/janmuller/android/simplecropimage/RotateBitmap/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v2 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v1,v0,v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageRotateBitmapResetBase	; setImageRotateBitmapResetBase(Leu/janmuller/android/simplecropimage/RotateBitmap;Z)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v3 : single-length
+.line 158
+	return-void	
+.end method
+
+.method public setImageRotateBitmapResetBase(Leu/janmuller/android/simplecropimage/RotateBitmap;Z)V
+.limit registers 6
+; this: v3 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v4 (Leu/janmuller/android/simplecropimage/RotateBitmap;)
+; parameter[1] : v5 (Z)
+.line 163
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v0
+; v0 : single-length
+.line 165
+	if-gtz	v0,lcfc18
+; v0 : single-length
+.line 166
+	new-instance	v1,eu/janmuller/android/simplecropimage/ImageViewTouchBase$1
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$1;
+	invoke-direct	{v1,v3,v4,v5},eu/janmuller/android/simplecropimage/ImageViewTouchBase$1/<init>	; <init>(Leu/janmuller/android/simplecropimage/ImageViewTouchBase;Leu/janmuller/android/simplecropimage/RotateBitmap;Z)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$1; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : single-length
+	iput-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mOnLayoutRunnable Ljava/lang/Runnable;
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$1; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+lcfc16:
+.line 188
+	return-void	
+lcfc18:
+.line 175
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v4 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	if-eqz	v1,lcfc6e
+; v1 : Landroid/graphics/Bitmap;
+.line 176
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v1 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-direct	{v3,v4,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getProperBaseMatrix	; getProperBaseMatrix(Leu/janmuller/android/simplecropimage/RotateBitmap;Landroid/graphics/Matrix;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v4 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v1 : Landroid/graphics/Matrix;
+.line 177
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v4 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/RotateBitmap/getRotation	; getRotation()I
+; v4 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result	v2
+; v2 : single-length
+	invoke-direct	{v3,v1,v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;I)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : Landroid/graphics/Bitmap; , v2 : single-length
+lcfc44:
+.line 183
+	if-eqz	v5,lcfc52
+; v5 : single-length
+.line 184
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v1 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v1},android/graphics/Matrix/reset	; reset()V
+; v1 : Landroid/graphics/Matrix;
+lcfc52:
+.line 186
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v1
+; v1 : Landroid/graphics/Matrix;
+	invoke-virtual	{v3,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : Landroid/graphics/Matrix;
+.line 187
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/maxZoom	; maxZoom()F
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMaxZoom F
+; v1 : single-length , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	goto	lcfc16
+lcfc6e:
+.line 179
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBaseMatrix Landroid/graphics/Matrix;
+; v1 : Landroid/graphics/Matrix; , v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v1},android/graphics/Matrix/reset	; reset()V
+; v1 : Landroid/graphics/Matrix;
+.line 180
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v3,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v3 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v1 : single-length
+	goto	lcfc44
+.end method
+
+.method public setRecycler(Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;)V
+.limit registers 2
+; this: v0 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;)
+.line 81
+	iput-object	v1,v0,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mRecycler Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler;
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$Recycler; , v0 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+.line 82
+	return-void	
+.end method
+
+.method protected zoomIn()V
+.limit registers 2
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 372
+	const/high16	v0,16288
+; v0 : single-length
+	invoke-virtual	{v1,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/zoomIn	; zoomIn(F)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : single-length
+.line 373
+	return-void	
+.end method
+
+.method protected zoomIn(F)V
+.limit registers 7
+; this: v5 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v6 (F)
+	const/high16	v4,16384
+; v4 : single-length
+.line 382
+	invoke-virtual	{v5},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale()F
+; v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v2
+; v2 : single-length
+	iget	v3,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMaxZoom F
+; v3 : single-length , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	cmpl-float	v2,v2,v3
+; v2 : single-length , v2 : single-length , v3 : single-length
+	if-ltz	v2,lcfce2
+; v2 : single-length
+lcfce0:
+.line 394
+	return-void	
+lcfce2:
+.line 385
+	iget-object	v2,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v2 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v2
+; v2 : Landroid/graphics/Bitmap;
+	if-eqz	v2,lcfce0
+; v2 : Landroid/graphics/Bitmap;
+.line 389
+	invoke-virtual	{v5},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	div-float	v0,v2,v4
+; v0 : single-length , v2 : single-length , v4 : single-length
+.line 390
+	invoke-virtual	{v5},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	div-float	v1,v2,v4
+; v1 : single-length , v2 : single-length , v4 : single-length
+.line 392
+	iget-object	v2,v5,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v2 : Landroid/graphics/Matrix; , v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2,v6,v6,v0,v1},android/graphics/Matrix/postScale	; postScale(FFFF)Z
+; v2 : Landroid/graphics/Matrix; , v6 : single-length , v6 : single-length , v0 : single-length , v1 : single-length
+.line 393
+	invoke-virtual	{v5},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v2
+; v2 : Landroid/graphics/Matrix;
+	invoke-virtual	{v5,v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v5 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : Landroid/graphics/Matrix;
+	goto	lcfce0
+.end method
+
+.method protected zoomOut()V
+.limit registers 2
+; this: v1 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+.line 377
+	const/high16	v0,16288
+; v0 : single-length
+	invoke-virtual	{v1,v0},eu/janmuller/android/simplecropimage/ImageViewTouchBase/zoomOut	; zoomOut(F)V
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v0 : single-length
+.line 378
+	return-void	
+.end method
+
+.method protected zoomOut(F)V
+.limit registers 9
+; this: v7 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v8 (F)
+	const/4	v6,1
+; v6 : single-length
+	const/high16	v4,16384
+; v4 : single-length
+	const/high16	v5,16256
+; v5 : single-length
+.line 398
+	iget-object	v3,v7,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mBitmapDisplayed Leu/janmuller/android/simplecropimage/RotateBitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap; , v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v3},eu/janmuller/android/simplecropimage/RotateBitmap/getBitmap	; getBitmap()Landroid/graphics/Bitmap;
+; v3 : Leu/janmuller/android/simplecropimage/RotateBitmap;
+	move-result-object	v3
+; v3 : Landroid/graphics/Bitmap;
+	if-nez	v3,lcfd70
+; v3 : Landroid/graphics/Bitmap;
+lcfd6e:
+.line 416
+	return-void	
+lcfd70:
+.line 402
+	invoke-virtual	{v7},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	div-float	v0,v3,v4
+; v0 : single-length , v3 : single-length , v4 : single-length
+.line 403
+	invoke-virtual	{v7},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	div-float	v1,v3,v4
+; v1 : single-length , v3 : single-length , v4 : single-length
+.line 406
+	new-instance	v2,android/graphics/Matrix
+; v2 : Landroid/graphics/Matrix;
+	iget-object	v3,v7,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v3 : Landroid/graphics/Matrix; , v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-direct	{v2,v3},android/graphics/Matrix/<init>	; <init>(Landroid/graphics/Matrix;)V
+; v2 : Landroid/graphics/Matrix; , v3 : Landroid/graphics/Matrix;
+.line 407
+	div-float	v3,v5,v8
+; v3 : single-length , v5 : single-length , v8 : single-length
+	div-float	v4,v5,v8
+; v4 : single-length , v5 : single-length , v8 : single-length
+	invoke-virtual	{v2,v3,v4,v0,v1},android/graphics/Matrix/postScale	; postScale(FFFF)Z
+; v2 : Landroid/graphics/Matrix; , v3 : single-length , v4 : single-length , v0 : single-length , v1 : single-length
+.line 409
+	invoke-virtual	{v7,v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale(Landroid/graphics/Matrix;)F
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : Landroid/graphics/Matrix;
+	move-result	v3
+; v3 : single-length
+	cmpg-float	v3,v3,v5
+; v3 : single-length , v3 : single-length , v5 : single-length
+	if-gez	v3,lcfdd8
+; v3 : single-length
+.line 410
+	iget-object	v3,v7,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v3 : Landroid/graphics/Matrix; , v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v3,v5,v5,v0,v1},android/graphics/Matrix/setScale	; setScale(FFFF)V
+; v3 : Landroid/graphics/Matrix; , v5 : single-length , v5 : single-length , v0 : single-length , v1 : single-length
+lcfdc2:
+.line 414
+	invoke-virtual	{v7},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v3
+; v3 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7,v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v3 : Landroid/graphics/Matrix;
+.line 415
+	invoke-virtual	{v7,v6,v6},eu/janmuller/android/simplecropimage/ImageViewTouchBase/center	; center(ZZ)V
+; v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v6 : single-length , v6 : single-length
+	goto	lcfd6e
+lcfdd8:
+.line 412
+	iget-object	v3,v7,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v3 : Landroid/graphics/Matrix; , v7 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	div-float	v4,v5,v8
+; v4 : single-length , v5 : single-length , v8 : single-length
+	div-float/2addr	v5,v8
+; v5 : single-length , v8 : single-length
+	invoke-virtual	{v3,v4,v5,v0,v1},android/graphics/Matrix/postScale	; postScale(FFFF)Z
+; v3 : Landroid/graphics/Matrix; , v4 : single-length , v5 : single-length , v0 : single-length , v1 : single-length
+	goto	lcfdc2
+.end method
+
+.method protected zoomTo(F)V
+.limit registers 6
+; this: v4 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v5 (F)
+	const/high16	v3,16384
+; v3 : single-length
+.line 364
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getWidth	; getWidth()I
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	div-float	v0,v2,v3
+; v0 : single-length , v2 : single-length , v3 : single-length
+.line 365
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getHeight	; getHeight()I
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	div-float	v1,v2,v3
+; v1 : single-length , v2 : single-length , v3 : single-length
+.line 367
+	invoke-virtual	{v4,v5,v0,v1},eu/janmuller/android/simplecropimage/ImageViewTouchBase/zoomTo	; zoomTo(FFF)V
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v5 : single-length , v0 : single-length , v1 : single-length
+.line 368
+	return-void	
+.end method
+
+.method protected zoomTo(FFF)V
+.limit registers 8
+; this: v4 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v5 (F)
+; parameter[1] : v6 (F)
+; parameter[2] : v7 (F)
+	const/4	v3,1
+; v3 : single-length
+.line 328
+	iget	v2,v4,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMaxZoom F
+; v2 : single-length , v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	cmpl-float	v2,v5,v2
+; v2 : single-length , v5 : single-length , v2 : single-length
+	if-lez	v2,lcfe46
+; v2 : single-length
+.line 329
+	iget	v5,v4,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mMaxZoom F
+; v5 : single-length , v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+lcfe46:
+.line 332
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale()F
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v1
+; v1 : single-length
+.line 333
+	div-float	v0,v5,v1
+; v0 : single-length , v5 : single-length , v1 : single-length
+.line 335
+	iget-object	v2,v4,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mSuppMatrix Landroid/graphics/Matrix;
+; v2 : Landroid/graphics/Matrix; , v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	invoke-virtual	{v2,v0,v0,v6,v7},android/graphics/Matrix/postScale	; postScale(FFFF)Z
+; v2 : Landroid/graphics/Matrix; , v0 : single-length , v0 : single-length , v6 : single-length , v7 : single-length
+.line 336
+	invoke-virtual	{v4},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getImageViewMatrix	; getImageViewMatrix()Landroid/graphics/Matrix;
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result-object	v2
+; v2 : Landroid/graphics/Matrix;
+	invoke-virtual	{v4,v2},eu/janmuller/android/simplecropimage/ImageViewTouchBase/setImageMatrix	; setImageMatrix(Landroid/graphics/Matrix;)V
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : Landroid/graphics/Matrix;
+.line 337
+	invoke-virtual	{v4,v3,v3},eu/janmuller/android/simplecropimage/ImageViewTouchBase/center	; center(ZZ)V
+; v4 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v3 : single-length , v3 : single-length
+.line 338
+	return-void	
+.end method
+
+.method protected zoomTo(FFFF)V
+.limit registers 15
+; this: v10 (Leu/janmuller/android/simplecropimage/ImageViewTouchBase;)
+; parameter[0] : v11 (F)
+; parameter[1] : v12 (F)
+; parameter[2] : v13 (F)
+; parameter[3] : v14 (F)
+.line 343
+	invoke-virtual	{v10},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale()F
+; v10 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v0
+; v0 : single-length
+	sub-float	v0,v11,v0
+; v0 : single-length , v11 : single-length , v0 : single-length
+	div-float	v6,v0,v14
+; v6 : single-length , v0 : single-length , v14 : single-length
+.line 344
+	invoke-virtual	{v10},eu/janmuller/android/simplecropimage/ImageViewTouchBase/getScale	; getScale()F
+; v10 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move-result	v5
+; v5 : single-length
+.line 345
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v3
+; v3 : double-length
+.line 347
+	iget-object	v9,v10,eu/janmuller/android/simplecropimage/ImageViewTouchBase.mHandler Landroid/os/Handler;
+; v9 : Landroid/os/Handler; , v10 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	new-instance	v0,eu/janmuller/android/simplecropimage/ImageViewTouchBase$2
+; v0 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$2;
+	move-object	v1,v10
+; v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v10 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase;
+	move	v2,v14
+; v2 : single-length , v14 : single-length
+	move	v7,v12
+; v7 : single-length , v12 : single-length
+	move	v8,v13
+; v8 : single-length , v13 : single-length
+	invoke-direct/range	{v0..v8},eu/janmuller/android/simplecropimage/ImageViewTouchBase$2/<init>;	<init>(Leu/janmuller/android/simplecropimage/ImageViewTouchBase;FJFFFF)V
+; v0 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$2; , v1 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase; , v2 : single-length , v3 : double-length , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length
+	invoke-virtual	{v9,v0},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v9 : Landroid/os/Handler; , v0 : Leu/janmuller/android/simplecropimage/ImageViewTouchBase$2;
+.line 360
+	return-void	
+.end method
+
+

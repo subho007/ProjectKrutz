@@ -1,0 +1,661 @@
+.class com/applovin/impl/sdk/s
+.super java/lang/Object
+
+.field private final a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private final b Lcom/applovin/sdk/AppLovinLogger;
+.field private final c Ljava/lang/Object;
+.field private final d Ljava/util/Collection;
+.field private e Ljava/lang/String;
+.field private f J
+
+.method <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/sdk/s;)
+; parameter[0] : v4 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	invoke-direct	{v3},java/lang/Object/<init>	; <init>()V
+; v3 : Lcom/applovin/impl/sdk/s;
+	new-instance	v0,java/lang/Object
+; v0 : Ljava/lang/Object;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ljava/lang/Object;
+	iput-object	v0,v3,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v3 : Lcom/applovin/impl/sdk/s;
+	new-instance	v0,java/util/HashSet
+; v0 : Ljava/util/HashSet;
+	invoke-direct	{v0},java/util/HashSet/<init>	; <init>()V
+; v0 : Ljava/util/HashSet;
+	iput-object	v0,v3,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v0 : Ljava/util/HashSet; , v3 : Lcom/applovin/impl/sdk/s;
+	const-wide/16	v0,0
+; v0 : double-length
+	iput-wide	v0,v3,com/applovin/impl/sdk/s.f J
+; v0 : double-length , v3 : Lcom/applovin/impl/sdk/s;
+	iput-object	v4,v3,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v4 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/s;
+	invoke-virtual	{v4},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v4 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	iput-object	v0,v3,com/applovin/impl/sdk/s.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/sdk/s;
+	invoke-direct	{v3},com/applovin/impl/sdk/s/f	; f()Landroid/content/SharedPreferences;
+; v3 : Lcom/applovin/impl/sdk/s;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	const-string	v1,"SessionLinkIdentifier"
+; v1 : Ljava/lang/String;
+	const-string	v2,"NO_LINK_ID_SET"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences/getString	; getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Landroid/content/SharedPreferences; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iput-object	v0,v3,com/applovin/impl/sdk/s.e Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Lcom/applovin/impl/sdk/s;
+	return-void	
+.end method
+
+.method private a(Ljava/lang/String;)Ljava/util/HashSet;
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/s;)
+; parameter[0] : v5 (Ljava/lang/String;)
+	new-instance	v1,org/json/JSONArray
+; v1 : Lorg/json/JSONArray;
+	invoke-direct	{v1,v5},org/json/JSONArray/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Lorg/json/JSONArray; , v5 : Ljava/lang/String;
+	new-instance	v2,java/util/HashSet
+; v2 : Ljava/util/HashSet;
+	invoke-direct	{v2},java/util/HashSet/<init>	; <init>()V
+; v2 : Ljava/util/HashSet;
+	const/4	v0,0
+; v0 : single-length
+lb3512:
+	invoke-virtual	{v1},org/json/JSONArray/length	; length()I
+; v1 : Lorg/json/JSONArray;
+	move-result	v3
+; v3 : single-length
+	if-ge	v0,v3,lb353a
+; v0 : single-length , v3 : single-length
+	invoke-virtual	{v1,v0},org/json/JSONArray/getJSONObject	; getJSONObject(I)Lorg/json/JSONObject;
+; v1 : Lorg/json/JSONArray; , v0 : single-length
+	move-result-object	v3
+; v3 : Lorg/json/JSONObject;
+	invoke-static	{v3},com/applovin/impl/sdk/AppLovinEvent/a	; a(Lorg/json/JSONObject;)Lcom/applovin/impl/sdk/AppLovinEvent;
+; v3 : Lorg/json/JSONObject;
+	move-result-object	v3
+; v3 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	invoke-virtual	{v2,v3},java/util/HashSet/add	; add(Ljava/lang/Object;)Z
+; v2 : Ljava/util/HashSet; , v3 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lb3512
+lb353a:
+	return-object	v2
+; v2 : Ljava/util/HashSet;
+.end method
+
+.method protected static a(Ljava/util/Collection;)Lorg/json/JSONArray;
+.limit registers 4
+; parameter[0] : v3 (Ljava/util/Collection;)
+.catch java/lang/Exception from lb358e to lb3590 using lb3588
+.catch java/lang/Exception from lb354e to lb358c using lb3588
+	monitor-enter	v3
+; v3 : Ljava/util/Collection;
+lb354e:
+	new-instance	v1,org/json/JSONArray
+; v1 : Lorg/json/JSONArray;
+	invoke-direct	{v1},org/json/JSONArray/<init>	; <init>()V
+; v1 : Lorg/json/JSONArray;
+	invoke-interface	{v3},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v3 : Ljava/util/Collection;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lb3560:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb358e
+; v0 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinEvent
+; v0 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinEvent/toJson	; toJson()Lorg/json/JSONObject;
+; v0 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	move-result-object	v0
+; v0 : Lorg/json/JSONObject;
+	invoke-virtual	{v1,v0},org/json/JSONArray/put	; put(Ljava/lang/Object;)Lorg/json/JSONArray;
+; v1 : Lorg/json/JSONArray; , v0 : Lorg/json/JSONObject;
+	goto	lb3560
+lb3588:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Ljava/util/Collection;
+lb358c:
+	throw	v0
+; v0 : java/lang/Exception
+lb358e:
+	monitor-exit	v3
+; v3 : Ljava/util/Collection;
+lb3590:
+	return-object	v1
+; v1 : Lorg/json/JSONArray;
+.end method
+
+.method private f()Landroid/content/SharedPreferences;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/s;)
+	iget-object	v0,v1,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/s;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getSettingsManager	; getSettingsManager()Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ac;
+	invoke-virtual	{v0},com/applovin/impl/sdk/ac/a	; a()Landroid/content/SharedPreferences;
+; v0 : Lcom/applovin/impl/sdk/ac;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	return-object	v0
+; v0 : Landroid/content/SharedPreferences;
+.end method
+
+.method private g()V
+.limit registers 8
+; this: v7 (Lcom/applovin/impl/sdk/s;)
+	iget-wide	v1,v7,com/applovin/impl/sdk/s.f J
+; v1 : double-length , v7 : Lcom/applovin/impl/sdk/s;
+	iget-object	v0,v7,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v7 : Lcom/applovin/impl/sdk/s;
+	sget-object	v3,com/applovin/impl/sdk/z.P Lcom/applovin/impl/sdk/ab;
+; v3 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v3},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	const-wide/16	v5,1000
+; v5 : double-length
+	mul-long/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	add-long	v0,v1,v3
+; v0 : double-length , v1 : double-length , v3 : double-length
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v2
+; v2 : double-length
+	cmp-long	v0,v2,v0
+; v0 : single-length , v2 : double-length , v0 : single-length
+	if-lez	v0,lb3654
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+lb361c:
+	if-eqz	v0,lb3652
+; v0 : single-length
+	iget-object	v0,v7,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v7 : Lcom/applovin/impl/sdk/s;
+	sget-object	v1,com/applovin/impl/sdk/z.O Lcom/applovin/impl/sdk/ab;
+; v1 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lb3652
+; v0 : single-length
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v7,com/applovin/impl/sdk/s.f J
+; v0 : double-length , v7 : Lcom/applovin/impl/sdk/s;
+	invoke-virtual	{v7},com/applovin/impl/sdk/s/c	; c()V
+; v7 : Lcom/applovin/impl/sdk/s;
+lb3652:
+	return-void	
+lb3654:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb361c
+.end method
+
+.method private h()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/s;)
+.catch java/lang/Exception from lb36a2 to lb36bc using lb36b8
+.catch org/json/JSONException from lb366e to lb36a2 using lb36a6
+.catch java/lang/Exception from lb366e to lb36a2 using lb36b8
+	iget-object	v1,v4,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb366e:
+	invoke-direct	{v4},com/applovin/impl/sdk/s/f	; f()Landroid/content/SharedPreferences;
+; v4 : Lcom/applovin/impl/sdk/s;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	invoke-interface	{v0},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	const-string	v2,"ALQueuedEvents"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v4,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v3 : Ljava/util/Collection; , v4 : Lcom/applovin/impl/sdk/s;
+	invoke-static	{v3},com/applovin/impl/sdk/s/a	; a(Ljava/util/Collection;)Lorg/json/JSONArray;
+; v3 : Ljava/util/Collection;
+	move-result-object	v3
+; v3 : Lorg/json/JSONArray;
+	invoke-virtual	{v3},org/json/JSONArray/toString	; toString()Ljava/lang/String;
+; v3 : Lorg/json/JSONArray;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},android/content/SharedPreferences$Editor/putString	; putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+lb36a2:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lb36a6:
+	move-exception	v0
+; v0 : org/json/JSONException
+	const-string	v2,"EventManager"
+; v2 : Ljava/lang/String;
+	const-string	v3,"Generated invalid JSON while trying to save events."
+; v3 : Ljava/lang/String;
+	invoke-static	{v2,v3,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : org/json/JSONException
+	goto	lb36a2
+lb36b8:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb36bc:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a()Ljava/util/Collection;
+.limit registers 4
+; this: v3 (Lcom/applovin/impl/sdk/s;)
+.catch java/lang/Exception from lb36ee to lb3704 using lb3700
+	iget-object	v1,v3,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v3 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb36ee:
+	new-instance	v0,java/util/ArrayList
+; v0 : Ljava/util/ArrayList;
+	iget-object	v2,v3,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v2 : Ljava/util/Collection; , v3 : Lcom/applovin/impl/sdk/s;
+	invoke-direct	{v0,v2},java/util/ArrayList/<init>	; <init>(Ljava/util/Collection;)V
+; v0 : Ljava/util/ArrayList; , v2 : Ljava/util/Collection;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/util/ArrayList;
+lb3700:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb3704:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a(Lcom/applovin/impl/sdk/AppLovinEvent;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/sdk/s;)
+; parameter[0] : v2 (Lcom/applovin/impl/sdk/AppLovinEvent;)
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v1,v2,v0},com/applovin/impl/sdk/s/a	; a(Lcom/applovin/impl/sdk/AppLovinEvent;Z)V
+; v1 : Lcom/applovin/impl/sdk/s; , v2 : Lcom/applovin/impl/sdk/AppLovinEvent; , v0 : single-length
+	return-void	
+.end method
+
+.method public a(Lcom/applovin/impl/sdk/AppLovinEvent;Z)V
+.limit registers 8
+; this: v5 (Lcom/applovin/impl/sdk/s;)
+; parameter[0] : v6 (Lcom/applovin/impl/sdk/AppLovinEvent;)
+; parameter[1] : v7 (Z)
+.catch java/lang/Exception from lb3806 to lb381a using lb3816
+.catch java/lang/Exception from lb374a to lb37c6 using lb3816
+	if-eqz	v6,lb381c
+; v6 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	iget-object	v1,v5,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v5 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb374a:
+	iget-object	v0,v5,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v0 : Ljava/util/Collection; , v5 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v0},java/util/Collection/size	; size()I
+; v0 : Ljava/util/Collection;
+	move-result	v2
+; v2 : single-length
+	iget-object	v0,v5,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/s;
+	sget-object	v3,com/applovin/impl/sdk/z.R Lcom/applovin/impl/sdk/ab;
+; v3 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v3},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Integer
+; v0 : Ljava/lang/Integer;
+	invoke-virtual	{v0},java/lang/Integer/intValue	; intValue()I
+; v0 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	if-ge	v2,v0,lb3806
+; v2 : single-length , v0 : single-length
+	iget-object	v0,v5,com/applovin/impl/sdk/s.e Ljava/lang/String;
+; v0 : Ljava/lang/String; , v5 : Lcom/applovin/impl/sdk/s;
+	invoke-virtual	{v6,v0},com/applovin/impl/sdk/AppLovinEvent/setSessionLinkIdentifier	; setSessionLinkIdentifier(Ljava/lang/String;)V
+; v6 : Lcom/applovin/impl/sdk/AppLovinEvent; , v0 : Ljava/lang/String;
+	iget-object	v0,v5,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v0 : Ljava/util/Collection; , v5 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v0,v6},java/util/Collection/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/Collection; , v6 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	invoke-direct	{v5},com/applovin/impl/sdk/s/h	; h()V
+; v5 : Lcom/applovin/impl/sdk/s;
+	iget-object	v0,v5,com/applovin/impl/sdk/s.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/sdk/s;
+	const-string	v2,"EventManager"
+; v2 : Ljava/lang/String;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Now tracking event: "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v6 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+lb37c4:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb37c6:
+	iget-object	v0,v5,com/applovin/impl/sdk/s.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/sdk/s;
+	const-string	v1,"EventManager"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Tracked: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v6 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	if-eqz	v7,lb3804
+; v7 : single-length
+	invoke-direct	{v5},com/applovin/impl/sdk/s/g	; g()V
+; v5 : Lcom/applovin/impl/sdk/s;
+lb3804:
+	return-void	
+lb3806:
+	const-string	v0,"EventManager"
+; v0 : Ljava/lang/String;
+	const-string	v2,"Could not track event: maximum cache size exceeded."
+; v2 : Ljava/lang/String;
+	invoke-static	{v0,v2},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	lb37c4
+lb3816:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb381a:
+	throw	v0
+; v0 : java/lang/Exception
+lb381c:
+	iget-object	v0,v5,com/applovin/impl/sdk/s.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/sdk/s;
+	const-string	v1,"EventManager"
+; v1 : Ljava/lang/String;
+	const-string	v2,"Disregarded tracking of null event."
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	lb3804
+.end method
+
+.method protected b()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/s;)
+.catch java/lang/Exception from lb3884 to lb38a4 using lb38a0
+.catch org/json/JSONException from lb385a to lb3884 using lb3888
+.catch java/lang/Exception from lb385a to lb3884 using lb38a0
+	iget-object	v1,v4,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb385a:
+	invoke-direct	{v4},com/applovin/impl/sdk/s/f	; f()Landroid/content/SharedPreferences;
+; v4 : Lcom/applovin/impl/sdk/s;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	const-string	v2,"ALQueuedEvents"
+; v2 : Ljava/lang/String;
+	const-string	v3,""
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},android/content/SharedPreferences/getString	; getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Landroid/content/SharedPreferences; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-direct	{v4,v0},com/applovin/impl/sdk/s/a	; a(Ljava/lang/String;)Ljava/util/HashSet;
+; v4 : Lcom/applovin/impl/sdk/s; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/util/HashSet;
+	iget-object	v2,v4,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v2 : Ljava/util/Collection; , v4 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v2,v0},java/util/Collection/addAll	; addAll(Ljava/util/Collection;)Z
+; v2 : Ljava/util/Collection; , v0 : Ljava/util/HashSet;
+lb3884:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lb3888:
+	move-exception	v0
+; v0 : org/json/JSONException
+	const-string	v2,"EventManager"
+; v2 : Ljava/lang/String;
+	const-string	v3,"Loaded invalid JSON from SharedPreferences. Clearing event cache."
+; v3 : Ljava/lang/String;
+	invoke-static	{v2,v3,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : org/json/JSONException
+	invoke-virtual	{v4},com/applovin/impl/sdk/s/d	; d()V
+; v4 : Lcom/applovin/impl/sdk/s;
+	goto	lb3884
+lb38a0:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb38a4:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public b(Ljava/util/Collection;)V
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/s;)
+; parameter[0] : v3 (Ljava/util/Collection;)
+.catch java/lang/Exception from lb38d6 to lb38ee using lb38ea
+	iget-object	v1,v2,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v2 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb38d6:
+	iget-object	v0,v2,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v0 : Ljava/util/Collection; , v2 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v0,v3},java/util/Collection/removeAll	; removeAll(Ljava/util/Collection;)Z
+; v0 : Ljava/util/Collection; , v3 : Ljava/util/Collection;
+	invoke-direct	{v2},com/applovin/impl/sdk/s/h	; h()V
+; v2 : Lcom/applovin/impl/sdk/s;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lb38ea:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb38ee:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected c()V
+.limit registers 6
+; this: v5 (Lcom/applovin/impl/sdk/s;)
+	new-instance	v0,com/applovin/impl/sdk/af
+; v0 : Lcom/applovin/impl/sdk/af;
+	iget-object	v1,v5,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/s;
+	invoke-direct	{v0,v1},com/applovin/impl/sdk/af/<init>	; <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+; v0 : Lcom/applovin/impl/sdk/af; , v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	iget-object	v1,v5,com/applovin/impl/sdk/s.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/s;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a()Lcom/applovin/impl/sdk/ap;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Lcom/applovin/impl/sdk/ap;
+	sget-object	v2,com/applovin/impl/sdk/aq.b Lcom/applovin/impl/sdk/aq;
+; v2 : Lcom/applovin/impl/sdk/aq;
+	const-wide/16	v3,0
+; v3 : double-length
+	invoke-virtual	{v1,v0,v2,v3,v4},com/applovin/impl/sdk/ap/a	; a(Lcom/applovin/impl/sdk/ar;Lcom/applovin/impl/sdk/aq;J)V
+; v1 : Lcom/applovin/impl/sdk/ap; , v0 : Lcom/applovin/impl/sdk/af; , v2 : Lcom/applovin/impl/sdk/aq; , v3 : double-length
+	return-void	
+.end method
+
+.method protected d()V
+.limit registers 3
+; this: v2 (Lcom/applovin/impl/sdk/s;)
+.catch java/lang/Exception from lb394e to lb3966 using lb3962
+	iget-object	v1,v2,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v2 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb394e:
+	iget-object	v0,v2,com/applovin/impl/sdk/s.d Ljava/util/Collection;
+; v0 : Ljava/util/Collection; , v2 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v0},java/util/Collection/clear	; clear()V
+; v0 : Ljava/util/Collection;
+	invoke-direct	{v2},com/applovin/impl/sdk/s/h	; h()V
+; v2 : Lcom/applovin/impl/sdk/s;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lb3962:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb3966:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected e()Ljava/lang/String;
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/s;)
+.catch java/lang/Exception from lb398a to lb39d0 using lb39cc
+	iget-object	v1,v4,com/applovin/impl/sdk/s.c Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/sdk/s;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lb398a:
+	invoke-static	{},java/util/UUID/randomUUID	; randomUUID()Ljava/util/UUID;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/UUID;
+	invoke-virtual	{v0},java/util/UUID/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/util/UUID;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iput-object	v0,v4,com/applovin/impl/sdk/s.e Ljava/lang/String;
+; v0 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/s;
+	invoke-direct	{v4},com/applovin/impl/sdk/s/f	; f()Landroid/content/SharedPreferences;
+; v4 : Lcom/applovin/impl/sdk/s;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+	invoke-interface	{v0},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	const-string	v2,"SessionLinkIdentifier"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v4,com/applovin/impl/sdk/s.e Ljava/lang/String;
+; v3 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/s;
+	invoke-interface	{v0,v2,v3},android/content/SharedPreferences$Editor/putString	; putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+	iget-object	v0,v4,com/applovin/impl/sdk/s.e Ljava/lang/String;
+; v0 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/s;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/String;
+lb39cc:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lb39d0:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+

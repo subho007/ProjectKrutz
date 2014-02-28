@@ -1,0 +1,92 @@
+.class public com/google/ads/internal/k
+.super java/lang/Object
+.source SourceFile
+
+.annotation buildVisibility Landroid/annotation/TargetApi;
+  value I = 4
+.end annotation
+
+.inner class a inner com/google/ads/internal/k$a outer com/google/ads/internal/k
+.field protected static final a [B
+
+.method static <clinit>()V
+.limit registers 1
+.line 131
+	const-string	v0,"AAEAAAABAAVkZWJ1ZwAAAAoAAAE1wPSQXAAAAAEAAAAvQuetoEOYTfAAAAAAEnhYdUMHz7ZDmE3wAAAAABJ4WI5DKMP/Q5jN1wAAAAASeFibQ1S0X0OZTb0AAAAAEnhYp0"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/c/a	; a(Ljava/lang/String;)[B
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : [B
+	sput-object	v0,com/google/ads/internal/k.a [B
+; v0 : [B
+	return-void	
+.end method
+
+.method public static a(Landroid/app/Activity;Lcom/google/ads/internal/d;)Landroid/view/ViewGroup;
+.limit registers 5
+; parameter[0] : v3 (Landroid/app/Activity;)
+; parameter[1] : v4 (Lcom/google/ads/internal/d;)
+.catch java/io/IOException from lc1cdc to lc1d2c using lc1d2e
+lc1cdc:
+.line 41
+	new-instance	v1,android/gesture/GestureStore
+; v1 : Landroid/gesture/GestureStore;
+	invoke-direct	{v1},android/gesture/GestureStore/<init>	; <init>()V
+; v1 : Landroid/gesture/GestureStore;
+.line 42
+	new-instance	v0,java/io/ByteArrayInputStream
+; v0 : Ljava/io/ByteArrayInputStream;
+	sget-object	v2,com/google/ads/internal/k.a [B
+; v2 : [B
+	invoke-direct	{v0,v2},java/io/ByteArrayInputStream/<init>	; <init>([B)V
+; v0 : Ljava/io/ByteArrayInputStream; , v2 : [B
+	invoke-virtual	{v1,v0},android/gesture/GestureStore/load	; load(Ljava/io/InputStream;)V
+; v1 : Landroid/gesture/GestureStore; , v0 : Ljava/io/ByteArrayInputStream;
+.line 44
+	new-instance	v0,android/gesture/GestureOverlayView
+; v0 : Landroid/gesture/GestureOverlayView;
+	invoke-direct	{v0,v3},android/gesture/GestureOverlayView/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/gesture/GestureOverlayView; , v3 : Landroid/app/Activity;
+.line 46
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v2},android/gesture/GestureOverlayView/setGestureStrokeType	; setGestureStrokeType(I)V
+; v0 : Landroid/gesture/GestureOverlayView; , v2 : single-length
+.line 47
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v2},android/gesture/GestureOverlayView/setEventsInterceptionEnabled	; setEventsInterceptionEnabled(Z)V
+; v0 : Landroid/gesture/GestureOverlayView; , v2 : single-length
+.line 48
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v2},android/gesture/GestureOverlayView/setGestureVisible	; setGestureVisible(Z)V
+; v0 : Landroid/gesture/GestureOverlayView; , v2 : single-length
+.line 49
+	new-instance	v2,com/google/ads/internal/k$a
+; v2 : Lcom/google/ads/internal/k$a;
+	invoke-direct	{v2,v3,v4,v1},com/google/ads/internal/k$a/<init>	; <init>(Landroid/app/Activity;Lcom/google/ads/internal/d;Landroid/gesture/GestureStore;)V
+; v2 : Lcom/google/ads/internal/k$a; , v3 : Landroid/app/Activity; , v4 : Lcom/google/ads/internal/d; , v1 : Landroid/gesture/GestureStore;
+	invoke-virtual	{v0,v2},android/gesture/GestureOverlayView/addOnGesturePerformedListener	; addOnGesturePerformedListener(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V
+; v0 : Landroid/gesture/GestureOverlayView; , v2 : Lcom/google/ads/internal/k$a;
+lc1d2c:
+.line 55
+	return-object	v0
+; v0 : single-length
+lc1d2e:
+.line 53
+	move-exception	v0
+; v0 : java/io/IOException
+.line 54
+	const-string	v1,"Gestures disabled: Error loading gesture data."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/a	; a(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/io/IOException
+.line 55
+	const/4	v0,0
+; v0 : single-length
+	goto	lc1d2c
+.end method
+
+

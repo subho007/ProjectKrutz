@@ -1,0 +1,193 @@
+.class public com/google/ads/ar
+.super java/lang/Object
+.source SourceFile
+
+.field private final a [B
+.field private b I
+.field private c I
+
+.method public <init>([B)V
+.limit registers 9
+; this: v7 (Lcom/google/ads/ar;)
+; parameter[0] : v8 ([B)
+	const/16	v6,256
+; v6 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 12
+	invoke-direct	{v7},java/lang/Object/<init>	; <init>()V
+; v7 : Lcom/google/ads/ar;
+.line 8
+	new-array	v0,v6,[B
+; v0 : [B , v6 : single-length
+	iput-object	v0,v7,com/google/ads/ar.a [B
+; v0 : [B , v7 : Lcom/google/ads/ar;
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+lb7fea:
+.line 13
+	if-ge	v0,v6,lb7ffe
+; v0 : single-length , v6 : single-length
+.line 14
+	iget-object	v2,v7,com/google/ads/ar.a [B
+; v2 : [B , v7 : Lcom/google/ads/ar;
+	int-to-byte	v3,v0
+; v3 : single-length , v0 : single-length
+	aput-byte	v3,v2,v0
+; v3 : single-length , v2 : [B , v0 : single-length
+.line 13
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lb7fea
+lb7ffe:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	move	v2,v1
+; v2 : single-length , v1 : single-length
+lb8002:
+.line 16
+	if-ge	v2,v6,lb8046
+; v2 : single-length , v6 : single-length
+.line 17
+	iget-object	v3,v7,com/google/ads/ar.a [B
+; v3 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v3,v3,v2
+; v3 : single-length , v3 : single-length , v2 : single-length
+	add-int/2addr	v0,v3
+; v0 : single-length , v3 : single-length
+	array-length	v3,v8
+; v3 : single-length , v8 : [B
+	rem-int	v3,v2,v3
+; v3 : single-length , v2 : single-length , v3 : single-length
+	aget-byte	v3,v8,v3
+; v3 : single-length , v8 : [B , v3 : single-length
+	add-int/2addr	v0,v3
+; v0 : single-length , v3 : single-length
+	and-int/lit16	v0,v0,255
+; v0 : single-length , v0 : single-length
+.line 19
+	iget-object	v3,v7,com/google/ads/ar.a [B
+; v3 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v3,v3,v2
+; v3 : single-length , v3 : single-length , v2 : single-length
+.line 20
+	iget-object	v4,v7,com/google/ads/ar.a [B
+; v4 : [B , v7 : Lcom/google/ads/ar;
+	iget-object	v5,v7,com/google/ads/ar.a [B
+; v5 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v5,v5,v0
+; v5 : single-length , v5 : single-length , v0 : single-length
+	aput-byte	v5,v4,v2
+; v5 : single-length , v4 : [B , v2 : single-length
+.line 21
+	iget-object	v4,v7,com/google/ads/ar.a [B
+; v4 : [B , v7 : Lcom/google/ads/ar;
+	aput-byte	v3,v4,v0
+; v3 : single-length , v4 : [B , v0 : single-length
+.line 16
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	lb8002
+lb8046:
+.line 23
+	iput	v1,v7,com/google/ads/ar.b I
+; v1 : single-length , v7 : Lcom/google/ads/ar;
+.line 24
+	iput	v1,v7,com/google/ads/ar.c I
+; v1 : single-length , v7 : Lcom/google/ads/ar;
+.line 25
+	return-void	
+.end method
+
+.method public a([B)V
+.limit registers 9
+; this: v7 (Lcom/google/ads/ar;)
+; parameter[0] : v8 ([B)
+.line 28
+	iget	v2,v7,com/google/ads/ar.b I
+; v2 : single-length , v7 : Lcom/google/ads/ar;
+.line 29
+	iget	v1,v7,com/google/ads/ar.c I
+; v1 : single-length , v7 : Lcom/google/ads/ar;
+.line 30
+	const/4	v0,0
+; v0 : single-length
+lb806a:
+	array-length	v3,v8
+; v3 : single-length , v8 : [B
+	if-ge	v0,v3,lb80d6
+; v0 : single-length , v3 : single-length
+.line 31
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	and-int/lit16	v2,v2,255
+; v2 : single-length , v2 : single-length
+.line 32
+	iget-object	v3,v7,com/google/ads/ar.a [B
+; v3 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v3,v3,v2
+; v3 : single-length , v3 : single-length , v2 : single-length
+	add-int/2addr	v1,v3
+; v1 : single-length , v3 : single-length
+	and-int/lit16	v1,v1,255
+; v1 : single-length , v1 : single-length
+.line 34
+	iget-object	v3,v7,com/google/ads/ar.a [B
+; v3 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v3,v3,v2
+; v3 : single-length , v3 : single-length , v2 : single-length
+.line 35
+	iget-object	v4,v7,com/google/ads/ar.a [B
+; v4 : [B , v7 : Lcom/google/ads/ar;
+	iget-object	v5,v7,com/google/ads/ar.a [B
+; v5 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v5,v5,v1
+; v5 : single-length , v5 : single-length , v1 : single-length
+	aput-byte	v5,v4,v2
+; v5 : single-length , v4 : [B , v2 : single-length
+.line 36
+	iget-object	v4,v7,com/google/ads/ar.a [B
+; v4 : [B , v7 : Lcom/google/ads/ar;
+	aput-byte	v3,v4,v1
+; v3 : single-length , v4 : [B , v1 : single-length
+.line 38
+	aget-byte	v3,v8,v0
+; v3 : single-length , v8 : [B , v0 : single-length
+	iget-object	v4,v7,com/google/ads/ar.a [B
+; v4 : [B , v7 : Lcom/google/ads/ar;
+	iget-object	v5,v7,com/google/ads/ar.a [B
+; v5 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v5,v5,v2
+; v5 : single-length , v5 : single-length , v2 : single-length
+	iget-object	v6,v7,com/google/ads/ar.a [B
+; v6 : [B , v7 : Lcom/google/ads/ar;
+	aget-byte	v6,v6,v1
+; v6 : single-length , v6 : single-length , v1 : single-length
+	add-int/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	and-int/lit16	v5,v5,255
+; v5 : single-length , v5 : single-length
+	aget-byte	v4,v4,v5
+; v4 : single-length , v4 : single-length , v5 : single-length
+	xor-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	int-to-byte	v3,v3
+; v3 : single-length , v3 : single-length
+	aput-byte	v3,v8,v0
+; v3 : single-length , v8 : [B , v0 : single-length
+.line 30
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lb806a
+lb80d6:
+.line 40
+	iput	v2,v7,com/google/ads/ar.b I
+; v2 : single-length , v7 : Lcom/google/ads/ar;
+.line 41
+	iput	v1,v7,com/google/ads/ar.c I
+; v1 : single-length , v7 : Lcom/google/ads/ar;
+.line 42
+	return-void	
+.end method
+
+

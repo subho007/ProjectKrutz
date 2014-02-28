@@ -1,0 +1,93 @@
+.class public android/support/v4/app/NotificationCompat$InboxStyle
+.super android/support/v4/app/NotificationCompat$Style
+.source NotificationCompat.java
+
+.inner class InboxStyle inner android/support/v4/app/NotificationCompat$InboxStyle outer android/support/v4/app/NotificationCompat
+.field mTexts Ljava/util/ArrayList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/ArrayList" , "<" , "Ljava/lang/CharSequence;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/app/NotificationCompat$InboxStyle;)
+.line 785
+	invoke-direct	{v1},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 783
+	new-instance	v0,java/util/ArrayList
+; v0 : Ljava/util/ArrayList;
+	invoke-direct	{v0},java/util/ArrayList/<init>	; <init>()V
+; v0 : Ljava/util/ArrayList;
+	iput-object	v0,v1,android/support/v4/app/NotificationCompat$InboxStyle.mTexts Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 786
+	return-void	
+.end method
+
+.method public <init>(Landroid/support/v4/app/NotificationCompat$Builder;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$InboxStyle;)
+; parameter[0] : v2 (Landroid/support/v4/app/NotificationCompat$Builder;)
+.line 788
+	invoke-direct	{v1},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 783
+	new-instance	v0,java/util/ArrayList
+; v0 : Ljava/util/ArrayList;
+	invoke-direct	{v0},java/util/ArrayList/<init>	; <init>()V
+; v0 : Ljava/util/ArrayList;
+	iput-object	v0,v1,android/support/v4/app/NotificationCompat$InboxStyle.mTexts Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 789
+	invoke-virtual	{v1,v2},android/support/v4/app/NotificationCompat$InboxStyle/setBuilder	; setBuilder(Landroid/support/v4/app/NotificationCompat$Builder;)V
+; v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle; , v2 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 790
+	return-void	
+.end method
+
+.method public addLine(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$InboxStyle;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 814
+	iget-object	v0,v1,android/support/v4/app/NotificationCompat$InboxStyle.mTexts Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+	invoke-virtual	{v0,v2},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/ArrayList; , v2 : Ljava/lang/CharSequence;
+.line 815
+	return-object	v1
+; v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.end method
+
+.method public setBigContentTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$InboxStyle;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+.line 797
+	iput-object	v1,v0,android/support/v4/app/NotificationCompat$InboxStyle.mBigContentTitle Ljava/lang/CharSequence;
+; v1 : Ljava/lang/CharSequence; , v0 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 798
+	return-object	v0
+; v0 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.end method
+
+.method public setSummaryText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$InboxStyle;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 805
+	iput-object	v2,v1,android/support/v4/app/NotificationCompat$InboxStyle.mSummaryText Ljava/lang/CharSequence;
+; v2 : Ljava/lang/CharSequence; , v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 806
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/app/NotificationCompat$InboxStyle.mSummaryTextSet Z
+; v0 : single-length , v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.line 807
+	return-object	v1
+; v1 : Landroid/support/v4/app/NotificationCompat$InboxStyle;
+.end method
+
+

@@ -1,0 +1,13 @@
+.interface abstract android/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorImpl
+.super java/lang/Object
+.source ScaleGestureDetectorCompat.java
+
+.inner class ScaleGestureDetectorImpl inner android/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorImpl outer android/support/v4/view/ScaleGestureDetectorCompat
+
+.method public abstract isQuickScaleEnabled(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract setQuickScaleEnabled(Ljava/lang/Object;Z)V
+.end method
+
+

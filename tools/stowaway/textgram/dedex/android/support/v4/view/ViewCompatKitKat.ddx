@@ -1,0 +1,38 @@
+.class public android/support/v4/view/ViewCompatKitKat
+.super java/lang/Object
+.source ViewCompatKitKat.java
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/ViewCompatKitKat;)
+.line 24
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/ViewCompatKitKat;
+	return-void	
+.end method
+
+.method public static getAccessibilityLiveRegion(Landroid/view/View;)I
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 26
+	invoke-virtual	{v1},android/view/View/getAccessibilityLiveRegion	; getAccessibilityLiveRegion()I
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static setAccessibilityLiveRegion(Landroid/view/View;I)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (I)
+.line 30
+	invoke-virtual	{v0,v1},android/view/View/setAccessibilityLiveRegion	; setAccessibilityLiveRegion(I)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 31
+	return-void	
+.end method
+
+

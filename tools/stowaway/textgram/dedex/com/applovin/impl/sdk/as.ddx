@@ -1,0 +1,90 @@
+.class com/applovin/impl/sdk/as
+.super java/lang/Object
+.implements java/util/concurrent/ThreadFactory
+
+.field final a Lcom/applovin/impl/sdk/ap;
+.field private final b Ljava/lang/String;
+
+.method public <init>(Lcom/applovin/impl/sdk/ap;Ljava/lang/String;)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/sdk/as;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/ap;)
+; parameter[1] : v2 (Ljava/lang/String;)
+	iput-object	v1,v0,com/applovin/impl/sdk/as.a Lcom/applovin/impl/sdk/ap;
+; v1 : Lcom/applovin/impl/sdk/ap; , v0 : Lcom/applovin/impl/sdk/as;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/sdk/as;
+	iput-object	v2,v0,com/applovin/impl/sdk/as.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcom/applovin/impl/sdk/as;
+	return-void	
+.end method
+
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/as;)
+; parameter[0] : v3 (Ljava/lang/Runnable;)
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"AppLovinSdk:"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-object	v1,v2,com/applovin/impl/sdk/as.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Lcom/applovin/impl/sdk/as;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,":"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-object	v1,v2,com/applovin/impl/sdk/as.a Lcom/applovin/impl/sdk/ap;
+; v1 : Lcom/applovin/impl/sdk/ap; , v2 : Lcom/applovin/impl/sdk/as;
+	iget-object	v1,v1,com/applovin/impl/sdk/ap.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/getSdkKey	; getSdkKey()Ljava/lang/String;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;)Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/Thread
+; v1 : Ljava/lang/Thread;
+	invoke-direct	{v1,v3,v0},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+; v1 : Ljava/lang/Thread; , v3 : Ljava/lang/Runnable; , v0 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v1,v0},java/lang/Thread/setDaemon	; setDaemon(Z)V
+; v1 : Ljava/lang/Thread; , v0 : single-length
+	const/16	v0,10
+; v0 : single-length
+	invoke-virtual	{v1,v0},java/lang/Thread/setPriority	; setPriority(I)V
+; v1 : Ljava/lang/Thread; , v0 : single-length
+	new-instance	v0,com/applovin/impl/sdk/at
+; v0 : Lcom/applovin/impl/sdk/at;
+	invoke-direct	{v0,v2},com/applovin/impl/sdk/at/<init>	; <init>(Lcom/applovin/impl/sdk/as;)V
+; v0 : Lcom/applovin/impl/sdk/at; , v2 : Lcom/applovin/impl/sdk/as;
+	invoke-virtual	{v1,v0},java/lang/Thread/setUncaughtExceptionHandler	; setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+; v1 : Ljava/lang/Thread; , v0 : Lcom/applovin/impl/sdk/at;
+	return-object	v1
+; v1 : Ljava/lang/Thread;
+.end method
+
+

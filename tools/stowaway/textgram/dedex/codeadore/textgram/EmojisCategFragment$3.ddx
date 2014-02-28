@@ -1,0 +1,42 @@
+.class codeadore/textgram/EmojisCategFragment$3
+.super java/lang/Object
+.source EmojisCategFragment.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/onActivityCreated(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/EmojisCategFragment;
+.field private final val$emojisRunnable Ljava/lang/Runnable;
+
+.method <init>(Lcodeadore/textgram/EmojisCategFragment;Ljava/lang/Runnable;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/EmojisCategFragment$3;)
+; parameter[0] : v1 (Lcodeadore/textgram/EmojisCategFragment;)
+; parameter[1] : v2 (Ljava/lang/Runnable;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/EmojisCategFragment$3.this$0 Lcodeadore/textgram/EmojisCategFragment;
+; v1 : Lcodeadore/textgram/EmojisCategFragment; , v0 : Lcodeadore/textgram/EmojisCategFragment$3;
+	iput-object	v2,v0,codeadore/textgram/EmojisCategFragment$3.val$emojisRunnable Ljava/lang/Runnable;
+; v2 : Ljava/lang/Runnable; , v0 : Lcodeadore/textgram/EmojisCategFragment$3;
+.line 128
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/EmojisCategFragment$3;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 3
+; this: v2 (Lcodeadore/textgram/EmojisCategFragment$3;)
+.line 132
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	iget-object	v1,v2,codeadore/textgram/EmojisCategFragment$3.val$emojisRunnable Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Lcodeadore/textgram/EmojisCategFragment$3;
+	invoke-direct	{v0,v1},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v0 : Ljava/lang/Thread; , v1 : Ljava/lang/Runnable;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+.line 133
+	return-void	
+.end method
+
+

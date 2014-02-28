@@ -1,0 +1,100 @@
+.class eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus
+.super java/lang/Object
+.source BitmapManager.java
+
+.inner class ThreadStatus inner eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus outer eu/janmuller/android/simplecropimage/BitmapManager
+.field public mOptions Landroid/graphics/BitmapFactory$Options;
+.field public mState Leu/janmuller/android/simplecropimage/BitmapManager$State;
+
+.method private <init>()V
+.limit registers 2
+; this: v1 (Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;)
+.line 48
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+.line 50
+	sget-object	v0,eu/janmuller/android/simplecropimage/BitmapManager$State.ALLOW Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v0 : Leu/janmuller/android/simplecropimage/BitmapManager$State;
+	iput-object	v0,v1,eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus.mState Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v0 : Leu/janmuller/android/simplecropimage/BitmapManager$State; , v1 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+.line 48
+	return-void	
+.end method
+
+.method <init>(Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;)V
+.limit registers 2
+; this: v0 (Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;)
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;)
+.line 48
+	invoke-direct	{v0},eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus/<init>	; <init>()V
+; v0 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+	return-void	
+.end method
+
+.method public toString()Ljava/lang/String;
+.limit registers 4
+; this: v3 (Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;)
+.var 0 is s Ljava/lang/String; from lcd510 to lcd548
+.var 0 is s Ljava/lang/String; from lcd558 to lcd55a
+.line 57
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus.mState Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v1 : Leu/janmuller/android/simplecropimage/BitmapManager$State; , v3 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+	sget-object	v2,eu/janmuller/android/simplecropimage/BitmapManager$State.CANCEL Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v2 : Leu/janmuller/android/simplecropimage/BitmapManager$State;
+	if-ne	v1,v2,lcd548
+; v1 : Leu/janmuller/android/simplecropimage/BitmapManager$State; , v2 : Leu/janmuller/android/simplecropimage/BitmapManager$State;
+.line 58
+	const-string	v0,"Cancel"
+; v0 : Ljava/lang/String;
+lcd510:
+.line 64
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"thread state = "
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,", options = "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus.mOptions Landroid/graphics/BitmapFactory$Options;
+; v2 : Landroid/graphics/BitmapFactory$Options; , v3 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Landroid/graphics/BitmapFactory$Options;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 65
+	return-object	v0
+; v0 : Ljava/lang/String;
+lcd548:
+.line 59
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus.mState Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v1 : Leu/janmuller/android/simplecropimage/BitmapManager$State; , v3 : Leu/janmuller/android/simplecropimage/BitmapManager$ThreadStatus;
+	sget-object	v2,eu/janmuller/android/simplecropimage/BitmapManager$State.ALLOW Leu/janmuller/android/simplecropimage/BitmapManager$State;
+; v2 : Leu/janmuller/android/simplecropimage/BitmapManager$State;
+	if-ne	v1,v2,lcd55a
+; v1 : Leu/janmuller/android/simplecropimage/BitmapManager$State; , v2 : Leu/janmuller/android/simplecropimage/BitmapManager$State;
+.line 60
+	const-string	v0,"Allow"
+; v0 : Ljava/lang/String;
+.line 61
+	goto	lcd510
+lcd55a:
+.line 62
+	const-string	v0,"?"
+; v0 : Ljava/lang/String;
+	goto	lcd510
+.end method
+
+

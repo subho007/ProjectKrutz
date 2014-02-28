@@ -1,0 +1,71 @@
+.class com/applovin/impl/sdk/o
+.super java/lang/Object
+.implements java/util/Comparator
+
+.field final a Lcom/applovin/impl/sdk/n;
+
+.method <init>(Lcom/applovin/impl/sdk/n;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/sdk/o;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/n;)
+	iput-object	v1,v0,com/applovin/impl/sdk/o.a Lcom/applovin/impl/sdk/n;
+; v1 : Lcom/applovin/impl/sdk/n; , v0 : Lcom/applovin/impl/sdk/o;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/sdk/o;
+	return-void	
+.end method
+
+.method public a(Lcom/applovin/impl/sdk/q;Lcom/applovin/impl/sdk/q;)I
+.limit registers 7
+; this: v4 (Lcom/applovin/impl/sdk/o;)
+; parameter[0] : v5 (Lcom/applovin/impl/sdk/q;)
+; parameter[1] : v6 (Lcom/applovin/impl/sdk/q;)
+	iget-wide	v0,v5,com/applovin/impl/sdk/q.d J
+; v0 : double-length , v5 : Lcom/applovin/impl/sdk/q;
+	iget-wide	v2,v6,com/applovin/impl/sdk/q.d J
+; v2 : double-length , v6 : Lcom/applovin/impl/sdk/q;
+	cmp-long	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : double-length
+	if-lez	v0,lb32f8
+; v0 : single-length
+	const/4	v0,15
+; v0 : single-length
+lb32f6:
+	return	v0
+; v0 : single-length
+lb32f8:
+	iget-wide	v0,v5,com/applovin/impl/sdk/q.d J
+; v0 : double-length , v5 : Lcom/applovin/impl/sdk/q;
+	iget-wide	v2,v6,com/applovin/impl/sdk/q.d J
+; v2 : double-length , v6 : Lcom/applovin/impl/sdk/q;
+	cmp-long	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : double-length
+	if-gez	v0,lb330c
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+	goto	lb32f6
+lb330c:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb32f6
+.end method
+
+.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/sdk/o;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+	check-cast	v2,com/applovin/impl/sdk/q
+; v2 : Lcom/applovin/impl/sdk/q;
+	check-cast	v3,com/applovin/impl/sdk/q
+; v3 : Lcom/applovin/impl/sdk/q;
+	invoke-virtual	{v1,v2,v3},com/applovin/impl/sdk/o/a	; a(Lcom/applovin/impl/sdk/q;Lcom/applovin/impl/sdk/q;)I
+; v1 : Lcom/applovin/impl/sdk/o; , v2 : Lcom/applovin/impl/sdk/q; , v3 : Lcom/applovin/impl/sdk/q;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

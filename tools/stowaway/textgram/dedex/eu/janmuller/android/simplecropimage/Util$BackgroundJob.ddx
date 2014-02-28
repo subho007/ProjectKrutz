@@ -1,0 +1,153 @@
+.class eu/janmuller/android/simplecropimage/Util$BackgroundJob
+.super eu/janmuller/android/simplecropimage/MonitoredActivity$LifeCycleAdapter
+.source Util.java
+.implements java/lang/Runnable
+
+.inner class BackgroundJob inner eu/janmuller/android/simplecropimage/Util$BackgroundJob outer eu/janmuller/android/simplecropimage/Util
+.field private final mActivity Leu/janmuller/android/simplecropimage/MonitoredActivity;
+.field private final mCleanupRunner Ljava/lang/Runnable;
+.field private final mDialog Landroid/app/ProgressDialog;
+.field private final mHandler Landroid/os/Handler;
+.field private final mJob Ljava/lang/Runnable;
+
+.method public <init>(Leu/janmuller/android/simplecropimage/MonitoredActivity;Ljava/lang/Runnable;Landroid/app/ProgressDialog;Landroid/os/Handler;)V
+.limit registers 6
+; this: v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+; parameter[0] : v2 (Leu/janmuller/android/simplecropimage/MonitoredActivity;)
+; parameter[1] : v3 (Ljava/lang/Runnable;)
+; parameter[2] : v4 (Landroid/app/ProgressDialog;)
+; parameter[3] : v5 (Landroid/os/Handler;)
+.line 163
+	invoke-direct	{v1},eu/janmuller/android/simplecropimage/MonitoredActivity$LifeCycleAdapter/<init>	; <init>()V
+; v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 155
+	new-instance	v0,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	invoke-direct	{v0,v1},eu/janmuller/android/simplecropimage/Util$BackgroundJob$1/<init>	; <init>(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)V
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	iput-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mCleanupRunner Ljava/lang/Runnable;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 166
+	iput-object	v2,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mActivity Leu/janmuller/android/simplecropimage/MonitoredActivity;
+; v2 : Leu/janmuller/android/simplecropimage/MonitoredActivity; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 167
+	iput-object	v4,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mDialog Landroid/app/ProgressDialog;
+; v4 : Landroid/app/ProgressDialog; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 168
+	iput-object	v3,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mJob Ljava/lang/Runnable;
+; v3 : Ljava/lang/Runnable; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 169
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mActivity Leu/janmuller/android/simplecropimage/MonitoredActivity;
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v0,v1},eu/janmuller/android/simplecropimage/MonitoredActivity/addLifeCycleListener	; addLifeCycleListener(Leu/janmuller/android/simplecropimage/MonitoredActivity$LifeCycleListener;)V
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 170
+	iput-object	v5,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mHandler Landroid/os/Handler;
+; v5 : Landroid/os/Handler; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 171
+	return-void	
+.end method
+
+.method static access$0(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)Leu/janmuller/android/simplecropimage/MonitoredActivity;
+.limit registers 2
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+.line 151
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mActivity Leu/janmuller/android/simplecropimage/MonitoredActivity;
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	return-object	v0
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity;
+.end method
+
+.method static access$1(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)Landroid/app/ProgressDialog;
+.limit registers 2
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+.line 152
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mDialog Landroid/app/ProgressDialog;
+; v0 : Landroid/app/ProgressDialog; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	return-object	v0
+; v0 : Landroid/app/ProgressDialog;
+.end method
+
+.method public onActivityDestroyed(Leu/janmuller/android/simplecropimage/MonitoredActivity;)V
+.limit registers 4
+; this: v2 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+; parameter[0] : v3 (Leu/janmuller/android/simplecropimage/MonitoredActivity;)
+.line 187
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mCleanupRunner Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-interface	{v0},java/lang/Runnable/run	; run()V
+; v0 : Ljava/lang/Runnable;
+.line 188
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	iget-object	v1,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mCleanupRunner Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v0,v1},android/os/Handler/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)V
+; v0 : Landroid/os/Handler; , v1 : Ljava/lang/Runnable;
+.line 189
+	return-void	
+.end method
+
+.method public onActivityStarted(Leu/janmuller/android/simplecropimage/MonitoredActivity;)V
+.limit registers 3
+; this: v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+; parameter[0] : v2 (Leu/janmuller/android/simplecropimage/MonitoredActivity;)
+.line 200
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mDialog Landroid/app/ProgressDialog;
+; v0 : Landroid/app/ProgressDialog; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v0},android/app/ProgressDialog/show	; show()V
+; v0 : Landroid/app/ProgressDialog;
+.line 201
+	return-void	
+.end method
+
+.method public onActivityStopped(Leu/janmuller/android/simplecropimage/MonitoredActivity;)V
+.limit registers 3
+; this: v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+; parameter[0] : v2 (Leu/janmuller/android/simplecropimage/MonitoredActivity;)
+.line 194
+	iget-object	v0,v1,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mDialog Landroid/app/ProgressDialog;
+; v0 : Landroid/app/ProgressDialog; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v0},android/app/ProgressDialog/hide	; hide()V
+; v0 : Landroid/app/ProgressDialog;
+.line 195
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+.catch java/lang/Exception from l1621b4 to l1621be using l1621ce
+l1621b4:
+.line 176
+	iget-object	v0,v3,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mJob Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v3 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-interface	{v0},java/lang/Runnable/run	; run()V
+; v0 : Ljava/lang/Runnable;
+l1621be:
+.line 178
+	iget-object	v0,v3,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v3 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mCleanupRunner Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v3 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v0,v1},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v0 : Landroid/os/Handler; , v1 : Ljava/lang/Runnable;
+.line 180
+	return-void	
+l1621ce:
+.line 177
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 178
+	iget-object	v1,v3,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mHandler Landroid/os/Handler;
+; v1 : Landroid/os/Handler; , v3 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	iget-object	v2,v3,eu/janmuller/android/simplecropimage/Util$BackgroundJob.mCleanupRunner Ljava/lang/Runnable;
+; v2 : Ljava/lang/Runnable; , v3 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	invoke-virtual	{v1,v2},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v1 : Landroid/os/Handler; , v2 : Ljava/lang/Runnable;
+.line 179
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+

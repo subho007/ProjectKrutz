@@ -1,0 +1,10 @@
+.interface abstract android/support/v4/view/PagerTitleStrip$PagerTitleStripImpl
+.super java/lang/Object
+.source PagerTitleStrip.java
+
+.inner class PagerTitleStripImpl inner android/support/v4/view/PagerTitleStrip$PagerTitleStripImpl outer android/support/v4/view/PagerTitleStrip
+
+.method public abstract setSingleLineAllCaps(Landroid/widget/TextView;)V
+.end method
+
+

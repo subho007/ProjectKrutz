@@ -1,0 +1,347 @@
+.class com/applovin/impl/sdk/y
+.super java/lang/Object
+.implements com/applovin/sdk/AppLovinAdLoadListener
+
+.field private final a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private final b Lcom/applovin/sdk/AppLovinLogger;
+.field private final c Ljava/lang/String;
+.field private final d Ljava/util/Map;
+.field private final e Ljava/lang/Object;
+
+.method <init>(Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v5 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	invoke-direct	{v4},java/lang/Object/<init>	; <init>()V
+; v4 : Lcom/applovin/impl/sdk/y;
+	const-string	v0,"PreloadManager"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v4,com/applovin/impl/sdk/y.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/y;
+	iput-object	v5,v4,com/applovin/impl/sdk/y.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v5 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v4 : Lcom/applovin/impl/sdk/y;
+	invoke-virtual	{v5},com/applovin/impl/sdk/AppLovinSdkImpl/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v5 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	iput-object	v0,v4,com/applovin/impl/sdk/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/y;
+	new-instance	v0,java/lang/Object
+; v0 : Ljava/lang/Object;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ljava/lang/Object;
+	iput-object	v0,v4,com/applovin/impl/sdk/y.e Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/sdk/y;
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v4,com/applovin/impl/sdk/y.d Ljava/util/Map;
+; v0 : Ljava/util/HashMap; , v4 : Lcom/applovin/impl/sdk/y;
+	invoke-static	{},com/applovin/sdk/AppLovinAdType/allTypes	; allTypes()Ljava/util/Set;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	invoke-interface	{v0},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v0 : Ljava/util/Set;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+lfc46a:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfc498
+; v0 : single-length
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/sdk/AppLovinAdType
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	iget-object	v2,v4,com/applovin/impl/sdk/y.d Ljava/util/Map;
+; v2 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/y;
+	new-instance	v3,java/util/HashMap
+; v3 : Ljava/util/HashMap;
+	invoke-direct	{v3},java/util/HashMap/<init>	; <init>()V
+; v3 : Ljava/util/HashMap;
+	invoke-interface	{v2,v0,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/Map; , v0 : Lcom/applovin/sdk/AppLovinAdType; , v3 : Ljava/util/HashMap;
+	goto	lfc46a
+lfc498:
+	return-void	
+.end method
+
+.method public a(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)V
+.limit registers 8
+; this: v5 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v6 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[1] : v7 (Lcom/applovin/sdk/AppLovinAdType;)
+	iget-object	v0,v5,com/applovin/impl/sdk/y.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/y;
+	sget-object	v1,com/applovin/impl/sdk/z.K Lcom/applovin/impl/sdk/ab;
+; v1 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v1 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfc548
+; v0 : single-length
+	invoke-virtual	{v5,v6,v7},com/applovin/impl/sdk/y/b	; b(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)Z
+; v5 : Lcom/applovin/impl/sdk/y; , v6 : Lcom/applovin/sdk/AppLovinAdSize; , v7 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lfc548
+; v0 : single-length
+	iget-object	v0,v5,com/applovin/impl/sdk/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/sdk/y;
+	const-string	v1,"PreloadManager"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Preloading ad for size "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v6 : Lcom/applovin/sdk/AppLovinAdSize;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"..."
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	new-instance	v0,com/applovin/impl/sdk/ai
+; v0 : Lcom/applovin/impl/sdk/ai;
+	iget-object	v1,v5,com/applovin/impl/sdk/y.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/y;
+	invoke-direct	{v0,v6,v7,v5,v1},com/applovin/impl/sdk/ai/<init>	; <init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Lcom/applovin/sdk/AppLovinAdLoadListener;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+; v0 : Lcom/applovin/impl/sdk/ai; , v6 : Lcom/applovin/sdk/AppLovinAdSize; , v7 : Lcom/applovin/sdk/AppLovinAdType; , v5 : Lcom/applovin/impl/sdk/y; , v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/ai/a	; a(Z)V
+; v0 : Lcom/applovin/impl/sdk/ai; , v1 : single-length
+	iget-object	v1,v5,com/applovin/impl/sdk/y.a Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/y;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a()Lcom/applovin/impl/sdk/ap;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Lcom/applovin/impl/sdk/ap;
+	sget-object	v2,com/applovin/impl/sdk/aq.b Lcom/applovin/impl/sdk/aq;
+; v2 : Lcom/applovin/impl/sdk/aq;
+	const-wide/16	v3,500
+; v3 : double-length
+	invoke-virtual	{v1,v0,v2,v3,v4},com/applovin/impl/sdk/ap/a	; a(Lcom/applovin/impl/sdk/ar;Lcom/applovin/impl/sdk/aq;J)V
+; v1 : Lcom/applovin/impl/sdk/ap; , v0 : Lcom/applovin/impl/sdk/ai; , v2 : Lcom/applovin/impl/sdk/aq; , v3 : double-length
+lfc548:
+	return-void	
+.end method
+
+.method public adReceived(Lcom/applovin/sdk/AppLovinAd;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v5 (Lcom/applovin/sdk/AppLovinAd;)
+.catch java/lang/Exception from lfc5c8 to lfc5ca using lfc5c6
+.catch java/lang/Exception from lfc568 to lfc590 using lfc5c6
+	move-object	v0,v5
+; v0 : Lcom/applovin/sdk/AppLovinAd; , v5 : Lcom/applovin/sdk/AppLovinAd;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinAdInternal
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	iget-object	v1,v4,com/applovin/impl/sdk/y.e Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/sdk/y;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lfc568:
+	iget-object	v2,v4,com/applovin/impl/sdk/y.d Ljava/util/Map;
+; v2 : Ljava/util/Map; , v4 : Lcom/applovin/impl/sdk/y;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinAdInternal/getType	; getType()Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdType;
+	invoke-interface	{v2,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/Map; , v0 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map
+; v0 : Ljava/util/Map;
+	invoke-virtual	{v5},com/applovin/sdk/AppLovinAd/getSize	; getSize()Lcom/applovin/sdk/AppLovinAdSize;
+; v5 : Lcom/applovin/sdk/AppLovinAd;
+	move-result-object	v2
+; v2 : Lcom/applovin/sdk/AppLovinAdSize;
+	invoke-interface	{v0,v2,v5},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v2 : Lcom/applovin/sdk/AppLovinAdSize; , v5 : Lcom/applovin/sdk/AppLovinAd;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lfc590:
+	iget-object	v0,v4,com/applovin/impl/sdk/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/y;
+	const-string	v1,"PreloadManager"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Pulled ad from network and saved to preload cache: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v5},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v5 : Lcom/applovin/sdk/AppLovinAd;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	return-void	
+lfc5c6:
+	move-exception	v0
+; v0 : java/lang/Exception
+lfc5c8:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lfc5ca:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public b(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)Z
+.limit registers 5
+; this: v2 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v3 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[1] : v4 (Lcom/applovin/sdk/AppLovinAdType;)
+.catch java/lang/Exception from lfc5f6 to lfc620 using lfc61c
+	iget-object	v1,v2,com/applovin/impl/sdk/y.e Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v2 : Lcom/applovin/impl/sdk/y;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lfc5f6:
+	iget-object	v0,v2,com/applovin/impl/sdk/y.d Ljava/util/Map;
+; v0 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/y;
+	invoke-interface	{v0,v4},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map
+; v0 : Ljava/util/Map;
+	invoke-interface	{v0,v3},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v3 : Lcom/applovin/sdk/AppLovinAdSize;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	if-eqz	v0,lfc618
+; v0 : Ljava/lang/Object;
+	const/4	v0,1
+; v0 : single-length
+lfc614:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return	v0
+; v0 : single-length
+lfc618:
+	const/4	v0,0
+; v0 : single-length
+	goto	lfc614
+lfc61c:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lfc620:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public c(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;)Lcom/applovin/sdk/AppLovinAd;
+.limit registers 5
+; this: v2 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v3 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[1] : v4 (Lcom/applovin/sdk/AppLovinAdType;)
+.catch java/lang/Exception from lfc646 to lfc66a using lfc666
+	iget-object	v1,v2,com/applovin/impl/sdk/y.e Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v2 : Lcom/applovin/impl/sdk/y;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lfc646:
+	iget-object	v0,v2,com/applovin/impl/sdk/y.d Ljava/util/Map;
+; v0 : Ljava/util/Map; , v2 : Lcom/applovin/impl/sdk/y;
+	invoke-interface	{v0,v4},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/sdk/AppLovinAdType;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map
+; v0 : Ljava/util/Map;
+	invoke-interface	{v0,v3},java/util/Map/remove	; remove(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v3 : Lcom/applovin/sdk/AppLovinAdSize;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/sdk/AppLovinAd
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+lfc666:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lfc66a:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public failedToReceiveAd(I)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/y;)
+; parameter[0] : v5 (I)
+	iget-object	v0,v4,com/applovin/impl/sdk/y.b Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/y;
+	const-string	v1,"PreloadManager"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Failed to pre-load an ad, error code "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v5},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v5 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+

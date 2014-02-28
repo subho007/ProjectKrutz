@@ -1,0 +1,74 @@
+.class com/viewpagerindicator/TitlePageIndicator$SavedState$1
+.super java/lang/Object
+.source TitlePageIndicator.java
+.implements android/os/Parcelable$Creator
+
+.inner class 1 inner com/viewpagerindicator/TitlePageIndicator$SavedState$1 outer com/viewpagerindicator/TitlePageIndicator$SavedState
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Object;" , "Landroid/os/Parcelable$Creator" , "<" , "Lcom/viewpagerindicator/TitlePageIndicator$SavedState;" , ">;" }
+.end annotation
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;)
+.line 850
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;
+.line 1
+	return-void	
+.end method
+
+.method public createFromParcel(Landroid/os/Parcel;)Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;)
+; parameter[0] : v3 (Landroid/os/Parcel;)
+.line 853
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$SavedState
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v0,v3,v1},com/viewpagerindicator/TitlePageIndicator$SavedState/<init>	; <init>(Landroid/os/Parcel;Lcom/viewpagerindicator/TitlePageIndicator$SavedState;)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState; , v3 : Landroid/os/Parcel; , v1 : single-length
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.end method
+
+.method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+.line 1
+	invoke-virtual	{v1,v2},com/viewpagerindicator/TitlePageIndicator$SavedState$1/createFromParcel	; createFromParcel(Landroid/os/Parcel;)Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1; , v2 : Landroid/os/Parcel;
+	move-result-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.end method
+
+.method public newArray(I)[Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;)
+; parameter[0] : v2 (I)
+.line 858
+	new-array	v0,v2,[Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$SavedState; , v2 : single-length
+	return-object	v0
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.end method
+
+.method public newArray(I)[Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1;)
+; parameter[0] : v2 (I)
+.line 1
+	invoke-virtual	{v1,v2},com/viewpagerindicator/TitlePageIndicator$SavedState$1/newArray	; newArray(I)[Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState$1; , v2 : single-length
+	move-result-object	v0
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	return-object	v0
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.end method
+
+

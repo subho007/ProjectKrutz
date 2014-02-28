@@ -1,0 +1,528 @@
+.class public codeadore/textgram/ResultActivity
+.super codeadore/textgram/el7rActivity
+.source ResultActivity.java
+
+.field public static UIHandler Landroid/os/Handler;
+.field public static c Lcodeadore/textgram/el7rActivity;
+.field static loadingDialog Landroid/app/ProgressDialog;
+.field public static resultBitmap Landroid/graphics/Bitmap;
+.field doneCaching Z
+.field resultIv Landroid/widget/ImageView;
+.field settings Landroid/content/SharedPreferences;
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/ResultActivity;)
+.line 33
+	invoke-direct	{v1},codeadore/textgram/el7rActivity/<init>	; <init>()V
+; v1 : Lcodeadore/textgram/ResultActivity;
+.line 40
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,codeadore/textgram/ResultActivity.doneCaching Z
+; v0 : single-length , v1 : Lcodeadore/textgram/ResultActivity;
+.line 33
+	return-void	
+.end method
+
+.method protected onCreate(Landroid/os/Bundle;)V
+.limit registers 13
+; this: v11 (Lcodeadore/textgram/ResultActivity;)
+; parameter[0] : v12 (Landroid/os/Bundle;)
+.catch java/lang/Exception from l16560c to l16561c using l1656fc
+.catch org/json/JSONException from l1655b2 to l1655da using l1656f0
+.var 2 is facebookBtn Landroid/widget/Button; from l1656c4 to l1656f0
+.var 3 is instagramBtn Landroid/widget/Button; from l165688 to l1656f0
+.var 4 is saveBtn Landroid/widget/Button; from l165666 to l1656f0
+.var 6 is shareBtn Landroid/widget/Button; from l165644 to l1656f0
+.var 1 is e Lorg/json/JSONException; from l1656f2 to l1656fc
+	const/4	v10,1
+; v10 : single-length
+	const/4	v9,0
+; v9 : single-length
+.line 45
+	const-string	v7,"ResultActivity"
+; v7 : Ljava/lang/String;
+	iput-object	v7,v11,codeadore/textgram/ResultActivity.thisActityName Ljava/lang/String;
+; v7 : Ljava/lang/String; , v11 : Lcodeadore/textgram/ResultActivity;
+.line 47
+	invoke-super	{v11,v12},codeadore/textgram/el7rActivity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v11 : Lcodeadore/textgram/ResultActivity; , v12 : Landroid/os/Bundle;
+.line 48
+	const	v7,2130903072	; 0x7f030020
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/setContentView	; setContentView(I)V
+; v11 : Lcodeadore/textgram/ResultActivity; , v7 : single-length
+.line 50
+	invoke-static	{},java/lang/System/gc	; gc()V
+; 
+	nop	
+.line 52
+	sput-object	v11,codeadore/textgram/ResultActivity.c Lcodeadore/textgram/el7rActivity;
+; v11 : Lcodeadore/textgram/el7rActivity;
+.line 53
+	iput-boolean	v9,v11,codeadore/textgram/ResultActivity.doneCaching Z
+; v9 : single-length , v11 : Lcodeadore/textgram/el7rActivity;
+.line 55
+	new-instance	v7,android/app/ProgressDialog
+; v7 : Landroid/app/ProgressDialog;
+	iget-object	v8,v11,codeadore/textgram/ResultActivity.thisActivity Lcodeadore/textgram/el7rActivity;
+; v8 : Lcodeadore/textgram/el7rActivity; , v11 : Lcodeadore/textgram/el7rActivity;
+	invoke-direct	{v7,v8},android/app/ProgressDialog/<init>	; <init>(Landroid/content/Context;)V
+; v7 : Landroid/app/ProgressDialog; , v8 : Lcodeadore/textgram/el7rActivity;
+	sput-object	v7,codeadore/textgram/ResultActivity.loadingDialog Landroid/app/ProgressDialog;
+; v7 : Landroid/app/ProgressDialog;
+.line 56
+	sget-object	v7,codeadore/textgram/ResultActivity.loadingDialog Landroid/app/ProgressDialog;
+; v7 : Landroid/app/ProgressDialog;
+	const	v8,2131427379	; 0x7f0b0033
+; v8 : single-length
+	invoke-virtual	{v11,v8},codeadore/textgram/ResultActivity/getString	; getString(I)Ljava/lang/String;
+; v11 : Lcodeadore/textgram/el7rActivity; , v8 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},android/app/ProgressDialog/setTitle	; setTitle(Ljava/lang/CharSequence;)V
+; v7 : Landroid/app/ProgressDialog; , v8 : Ljava/lang/String;
+.line 57
+	sget-object	v7,codeadore/textgram/ResultActivity.loadingDialog Landroid/app/ProgressDialog;
+; v7 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v7,v10},android/app/ProgressDialog/setIndeterminate	; setIndeterminate(Z)V
+; v7 : Landroid/app/ProgressDialog; , v10 : single-length
+.line 59
+	new-instance	v7,android/os/Handler
+; v7 : Landroid/os/Handler;
+	invoke-direct	{v7},android/os/Handler/<init>	; <init>()V
+; v7 : Landroid/os/Handler;
+	sput-object	v7,codeadore/textgram/ResultActivity.UIHandler Landroid/os/Handler;
+; v7 : Landroid/os/Handler;
+.line 61
+	invoke-virtual	{v11},codeadore/textgram/ResultActivity/getSupportActionBar	; getSupportActionBar()Landroid/support/v7/app/ActionBar;
+; v11 : Lcodeadore/textgram/el7rActivity;
+	move-result-object	v0
+; v0 : Landroid/support/v7/app/ActionBar;
+.line 63
+	const-string	v7,"TextgramSettings"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v11,v7,v9},codeadore/textgram/ResultActivity/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v11 : Lcodeadore/textgram/el7rActivity; , v7 : Ljava/lang/String; , v9 : single-length
+	move-result-object	v7
+; v7 : Landroid/content/SharedPreferences;
+	iput-object	v7,v11,codeadore/textgram/ResultActivity.settings Landroid/content/SharedPreferences;
+; v7 : Landroid/content/SharedPreferences; , v11 : Lcodeadore/textgram/el7rActivity;
+.line 64
+	iget-object	v7,v11,codeadore/textgram/ResultActivity.settings Landroid/content/SharedPreferences;
+; v7 : Landroid/content/SharedPreferences; , v11 : Lcodeadore/textgram/el7rActivity;
+	invoke-interface	{v7},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v7 : Landroid/content/SharedPreferences;
+	move-result-object	v5
+; v5 : Landroid/content/SharedPreferences$Editor;
+.line 67
+	const	v7,2131099751	; 0x7f060067
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Lcodeadore/textgram/el7rActivity; , v7 : single-length
+	move-result-object	v7
+; v7 : Landroid/view/View;
+	invoke-static	{v11,v7},codeadore/textgram/AdUtilities/installAd	; installAd(Landroid/app/Activity;Landroid/view/View;)V
+; v11 : Lcodeadore/textgram/el7rActivity; , v7 : Landroid/view/View;
+.line 68
+	sget-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+	if-eqz	v7,l1655da
+; v7 : Lorg/json/JSONObject;
+.line 69
+	sget-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+	const-string	v8,"show_ads_results_fs"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v7 : Lorg/json/JSONObject; , v8 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l1655da
+; v7 : single-length
+l1655b2:
+.line 71
+	sget-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+	const-string	v8,"show_ads_results_fs"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},org/json/JSONObject/getBoolean	; getBoolean(Ljava/lang/String;)Z
+; v7 : Lorg/json/JSONObject; , v8 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l1655da
+; v7 : single-length
+.line 73
+	const	v7,2131099752	; 0x7f060068
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Lcodeadore/textgram/el7rActivity; , v7 : single-length
+	move-result-object	v7
+; v7 : Landroid/view/View;
+.line 72
+	invoke-static	{v11,v7},codeadore/textgram/AdUtilities/installFullScreenAd	; installFullScreenAd(Landroid/app/Activity;Landroid/view/View;)V
+; v11 : Lcodeadore/textgram/el7rActivity; , v7 : Landroid/view/View;
+l1655da:
+.line 82
+	iget-object	v7,v11,codeadore/textgram/ResultActivity.tracker Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v7 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v11 : Ljava/lang/Object;
+	const-string	v8,"/ResultActivity"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},com/google/android/apps/analytics/GoogleAnalyticsTracker/trackPageView	; trackPageView(Ljava/lang/String;)V
+; v7 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v8 : Ljava/lang/String;
+.line 84
+	invoke-virtual	{v0,v10},android/support/v7/app/ActionBar/setDisplayHomeAsUpEnabled	; setDisplayHomeAsUpEnabled(Z)V
+; v0 : Landroid/support/v7/app/ActionBar; , v10 : single-length
+.line 86
+	const	v7,2131099753	; 0x7f060069
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Ljava/lang/Object; , v7 : single-length
+	move-result-object	v7
+; v7 : Landroid/view/View;
+	check-cast	v7,android/widget/ImageView
+; v7 : Landroid/widget/ImageView;
+	iput-object	v7,v11,codeadore/textgram/ResultActivity.resultIv Landroid/widget/ImageView;
+; v7 : Landroid/widget/ImageView; , v11 : Ljava/lang/Object;
+.line 88
+	sget-object	v7,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v7 : Landroid/graphics/Bitmap;
+	if-nez	v7,l16561c
+; v7 : Landroid/graphics/Bitmap;
+l16560c:
+.line 90
+	sget-object	v7,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v7 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v7},codeadore/textgram/SuperSurface/export	; export()Landroid/graphics/Bitmap;
+; v7 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v7
+; v7 : Landroid/graphics/Bitmap;
+	sput-object	v7,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v7 : Landroid/graphics/Bitmap;
+l16561c:
+.line 95
+	sget-object	v7,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v7 : Landroid/graphics/Bitmap;
+	if-eqz	v7,l165632
+; v7 : Landroid/graphics/Bitmap;
+.line 96
+	iget-object	v7,v11,codeadore/textgram/ResultActivity.resultIv Landroid/widget/ImageView;
+; v7 : Landroid/widget/ImageView; , v11 : Ljava/lang/Object;
+	sget-object	v8,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v8 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v7,v8},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v7 : Landroid/widget/ImageView; , v8 : Landroid/graphics/Bitmap;
+l165632:
+.line 100
+	const	v7,2131099755	; 0x7f06006b
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Ljava/lang/Object; , v7 : single-length
+	move-result-object	v6
+; v6 : Landroid/view/View;
+	check-cast	v6,android/widget/Button
+; v6 : Landroid/widget/Button;
+.line 102
+	new-instance	v7,codeadore/textgram/ResultActivity$1
+; v7 : Lcodeadore/textgram/ResultActivity$1;
+	invoke-direct	{v7,v11},codeadore/textgram/ResultActivity$1/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v7 : Lcodeadore/textgram/ResultActivity$1; , v11 : Ljava/lang/Object;
+	invoke-virtual	{v6,v7},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v6 : Landroid/widget/Button; , v7 : Lcodeadore/textgram/ResultActivity$1;
+.line 129
+	const	v7,2131099754	; 0x7f06006a
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Ljava/lang/Object; , v7 : single-length
+	move-result-object	v4
+; v4 : Landroid/view/View;
+	check-cast	v4,android/widget/Button
+; v4 : Landroid/widget/Button;
+.line 131
+	new-instance	v7,codeadore/textgram/ResultActivity$2
+; v7 : Lcodeadore/textgram/ResultActivity$2;
+	invoke-direct	{v7,v11},codeadore/textgram/ResultActivity$2/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v7 : Lcodeadore/textgram/ResultActivity$2; , v11 : Ljava/lang/Object;
+	invoke-virtual	{v4,v7},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v4 : Landroid/widget/Button; , v7 : Lcodeadore/textgram/ResultActivity$2;
+.line 160
+	const	v7,2131099756	; 0x7f06006c
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Ljava/lang/Object; , v7 : single-length
+	move-result-object	v3
+; v3 : Landroid/view/View;
+	check-cast	v3,android/widget/Button
+; v3 : Landroid/widget/Button;
+.line 161
+	sget-object	v7,codeadore/textgram/ResultActivity.c Lcodeadore/textgram/el7rActivity;
+; v7 : Lcodeadore/textgram/el7rActivity;
+	const-string	v8,"com.instagram.android"
+; v8 : Ljava/lang/String;
+	invoke-static	{v7,v8},codeadore/textgram/el7rUtilities/isAppInstalled	; isAppInstalled(Landroid/content/Context;Ljava/lang/String;)Z
+; v7 : Lcodeadore/textgram/el7rActivity; , v8 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l1656b2
+; v7 : single-length
+.line 162
+	invoke-virtual	{v3,v9},android/widget/Button/setVisibility	; setVisibility(I)V
+; v3 : Landroid/widget/Button; , v9 : single-length
+.line 163
+	new-instance	v7,codeadore/textgram/ResultActivity$3
+; v7 : Lcodeadore/textgram/ResultActivity$3;
+	invoke-direct	{v7,v11},codeadore/textgram/ResultActivity$3/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v7 : Lcodeadore/textgram/ResultActivity$3; , v11 : Ljava/lang/Object;
+	invoke-virtual	{v3,v7},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v3 : Landroid/widget/Button; , v7 : Lcodeadore/textgram/ResultActivity$3;
+l1656b2:
+.line 222
+	const	v7,2131099757	; 0x7f06006d
+; v7 : single-length
+	invoke-virtual	{v11,v7},codeadore/textgram/ResultActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v11 : Ljava/lang/Object; , v7 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/Button
+; v2 : Landroid/widget/Button;
+.line 223
+	sget-object	v7,codeadore/textgram/ResultActivity.c Lcodeadore/textgram/el7rActivity;
+; v7 : Lcodeadore/textgram/el7rActivity;
+	const-string	v8,"com.facebook.katana"
+; v8 : Ljava/lang/String;
+	invoke-static	{v7,v8},codeadore/textgram/el7rUtilities/isAppInstalled	; isAppInstalled(Landroid/content/Context;Ljava/lang/String;)Z
+; v7 : Lcodeadore/textgram/el7rActivity; , v8 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l1656ee
+; v7 : single-length
+.line 224
+	invoke-virtual	{v2,v9},android/widget/Button/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/Button; , v9 : single-length
+.line 225
+	new-instance	v7,codeadore/textgram/ResultActivity$4
+; v7 : Lcodeadore/textgram/ResultActivity$4;
+	invoke-direct	{v7,v11},codeadore/textgram/ResultActivity$4/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v7 : Lcodeadore/textgram/ResultActivity$4; , v11 : Ljava/lang/Object;
+	invoke-virtual	{v2,v7},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/Button; , v7 : Lcodeadore/textgram/ResultActivity$4;
+l1656ee:
+.line 280
+	return-void	
+l1656f0:
+.line 75
+	move-exception	v1
+; v1 : org/json/JSONException
+.line 76
+	invoke-virtual	{v1},org/json/JSONException/printStackTrace	; printStackTrace()V
+; v1 : org/json/JSONException
+	goto/16	l1655da
+l1656fc:
+.line 91
+	move-exception	v7
+; v7 : java/lang/Exception
+	goto	l16561c
+.end method
+
+.method public onCreateOptionsMenu(Landroid/view/Menu;)Z
+.limit registers 9
+; this: v7 (Lcodeadore/textgram/ResultActivity;)
+; parameter[0] : v8 (Landroid/view/Menu;)
+.line 326
+	invoke-virtual	{v7},codeadore/textgram/ResultActivity/getMenuInflater	; getMenuInflater()Landroid/view/MenuInflater;
+; v7 : Lcodeadore/textgram/ResultActivity;
+	move-result-object	v5
+; v5 : Landroid/view/MenuInflater;
+	const/high16	v6,32525
+; v6 : single-length
+	invoke-virtual	{v5,v6,v8},android/view/MenuInflater/inflate	; inflate(ILandroid/view/Menu;)V
+; v5 : Landroid/view/MenuInflater; , v6 : single-length , v8 : Landroid/view/Menu;
+.line 328
+	iput-object	v8,v7,codeadore/textgram/ResultActivity.theMenu Landroid/view/Menu;
+; v8 : Landroid/view/Menu; , v7 : Lcodeadore/textgram/ResultActivity;
+.line 330
+	const	v5,2131099872	; 0x7f0600e0
+; v5 : single-length
+	invoke-interface	{v8,v5},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v8 : Landroid/view/Menu; , v5 : single-length
+	move-result-object	v4
+; v4 : Landroid/view/MenuItem;
+.line 331
+	const/4	v5,0
+; v5 : single-length
+	invoke-interface	{v4,v5},android/view/MenuItem/setVisible	; setVisible(Z)Landroid/view/MenuItem;
+; v4 : Landroid/view/MenuItem; , v5 : single-length
+.line 333
+	invoke-virtual	{v7},codeadore/textgram/ResultActivity/getBaseContext	; getBaseContext()Landroid/content/Context;
+; v7 : Lcodeadore/textgram/ResultActivity;
+	move-result-object	v5
+; v5 : Landroid/content/Context;
+.line 334
+	const-string	v6,"layout_inflater"
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v5 : Landroid/content/Context; , v6 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+.line 333
+	check-cast	v3,android/view/LayoutInflater
+; v3 : Landroid/view/LayoutInflater;
+.line 337
+	const/high16	v5,32515
+; v5 : single-length
+	const/4	v6,0
+; v6 : single-length
+	invoke-virtual	{v3,v5,v6},android/view/LayoutInflater/inflate	; inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+; v3 : Landroid/view/LayoutInflater; , v5 : single-length , v6 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 339
+	const	v5,2131099676	; 0x7f06001c
+; v5 : single-length
+	invoke-virtual	{v1,v5},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v5 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/Button
+; v0 : Landroid/widget/Button;
+.line 340
+	const	v5,2131427350	; 0x7f0b0016
+; v5 : single-length
+	invoke-virtual	{v7,v5},codeadore/textgram/ResultActivity/getString	; getString(I)Ljava/lang/String;
+; v7 : Lcodeadore/textgram/ResultActivity; , v5 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v0,v5},android/widget/Button/setText	; setText(Ljava/lang/CharSequence;)V
+; v0 : Landroid/widget/Button; , v5 : Ljava/lang/String;
+.line 341
+	const	v5,2130837628	; 0x7f02007c
+; v5 : single-length
+	invoke-virtual	{v0,v5},android/widget/Button/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/Button; , v5 : single-length
+.line 342
+	new-instance	v5,codeadore/textgram/ResultActivity$6
+; v5 : Lcodeadore/textgram/ResultActivity$6;
+	invoke-direct	{v5,v7},codeadore/textgram/ResultActivity$6/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v5 : Lcodeadore/textgram/ResultActivity$6; , v7 : Lcodeadore/textgram/ResultActivity;
+	invoke-virtual	{v0,v5},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v0 : Landroid/widget/Button; , v5 : Lcodeadore/textgram/ResultActivity$6;
+.line 352
+	const	v5,2131099877	; 0x7f0600e5
+; v5 : single-length
+	invoke-interface	{v8,v5},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v8 : Landroid/view/Menu; , v5 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/MenuItem;
+.line 354
+	const/4	v5,2
+; v5 : single-length
+.line 353
+	invoke-static	{v2,v5},android/support/v4/view/MenuItemCompat/setShowAsAction	; setShowAsAction(Landroid/view/MenuItem;I)V
+; v2 : Landroid/view/MenuItem; , v5 : single-length
+.line 356
+	invoke-static	{v2,v1},android/support/v4/view/MenuItemCompat/setActionView	; setActionView(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
+; v2 : Landroid/view/MenuItem; , v1 : Landroid/view/View;
+.line 358
+	const/4	v5,1
+; v5 : single-length
+	return	v5
+; v5 : single-length
+.end method
+
+.method protected onDestroy()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/ResultActivity;)
+.line 363
+	sget-object	v0,codeadore/textgram/ResultActivity.loadingDialog Landroid/app/ProgressDialog;
+; v0 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v0},android/app/ProgressDialog/cancel	; cancel()V
+; v0 : Landroid/app/ProgressDialog;
+.line 364
+	sget-object	v0,codeadore/textgram/ResultActivity.loadingDialog Landroid/app/ProgressDialog;
+; v0 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v0},android/app/ProgressDialog/dismiss	; dismiss()V
+; v0 : Landroid/app/ProgressDialog;
+.line 365
+	invoke-super	{v1},codeadore/textgram/el7rActivity/onDestroy	; onDestroy()V
+; v1 : Lcodeadore/textgram/ResultActivity;
+.line 366
+	return-void	
+.end method
+
+.method protected onRestoreInstanceState(Landroid/os/Bundle;)V
+.limit registers 6
+; this: v4 (Lcodeadore/textgram/ResultActivity;)
+; parameter[0] : v5 (Landroid/os/Bundle;)
+.catch java/lang/Exception from l16582a to l165856 using l165858
+.var 1 is fis Ljava/io/FileInputStream; from l165836 to l165856
+.line 284
+	invoke-super	{v4,v5},codeadore/textgram/el7rActivity/onRestoreInstanceState	; onRestoreInstanceState(Landroid/os/Bundle;)V
+; v4 : Lcodeadore/textgram/ResultActivity; , v5 : Landroid/os/Bundle;
+.line 286
+	sget-object	v2,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap;
+	if-nez	v2,l165856
+; v2 : Landroid/graphics/Bitmap;
+l16582a:
+.line 289
+	const-string	v2,"CACHE_BITMAP"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v4,v2},codeadore/textgram/ResultActivity/openFileInput	; openFileInput(Ljava/lang/String;)Ljava/io/FileInputStream;
+; v4 : Lcodeadore/textgram/ResultActivity; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/io/FileInputStream;
+.line 290
+	invoke-static	{v1},android/graphics/BitmapFactory/decodeStream	; decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+; v1 : Ljava/io/FileInputStream;
+	move-result-object	v2
+; v2 : Landroid/graphics/Bitmap;
+	sput-object	v2,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap;
+.line 291
+	iget-object	v2,v4,codeadore/textgram/ResultActivity.resultIv Landroid/widget/ImageView;
+; v2 : Landroid/widget/ImageView; , v4 : Lcodeadore/textgram/ResultActivity;
+	sget-object	v3,codeadore/textgram/ResultActivity.resultBitmap Landroid/graphics/Bitmap;
+; v3 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v2,v3},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v2 : Landroid/widget/ImageView; , v3 : Landroid/graphics/Bitmap;
+.line 292
+	invoke-virtual	{v1},java/io/FileInputStream/close	; close()V
+; v1 : Ljava/io/FileInputStream;
+l165856:
+.line 298
+	return-void	
+l165858:
+.line 293
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 294
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	l165856
+.end method
+
+.method protected onSaveInstanceState(Landroid/os/Bundle;)V
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/ResultActivity;)
+; parameter[0] : v3 (Landroid/os/Bundle;)
+.line 302
+	invoke-super	{v2,v3},codeadore/textgram/el7rActivity/onSaveInstanceState	; onSaveInstanceState(Landroid/os/Bundle;)V
+; v2 : Lcodeadore/textgram/ResultActivity; , v3 : Landroid/os/Bundle;
+.line 304
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	new-instance	v1,codeadore/textgram/ResultActivity$5
+; v1 : Lcodeadore/textgram/ResultActivity$5;
+	invoke-direct	{v1,v2},codeadore/textgram/ResultActivity$5/<init>	; <init>(Lcodeadore/textgram/ResultActivity;)V
+; v1 : Lcodeadore/textgram/ResultActivity$5; , v2 : Lcodeadore/textgram/ResultActivity;
+	invoke-direct	{v0,v1},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v0 : Ljava/lang/Thread; , v1 : Lcodeadore/textgram/ResultActivity$5;
+.line 320
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+.line 322
+	return-void	
+.end method
+
+

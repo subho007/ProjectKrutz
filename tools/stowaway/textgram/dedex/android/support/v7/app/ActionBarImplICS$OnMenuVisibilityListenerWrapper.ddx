@@ -1,0 +1,36 @@
+.class android/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper
+.super java/lang/Object
+.source ActionBarImplICS.java
+.implements android/app/ActionBar$OnMenuVisibilityListener
+
+.inner class OnMenuVisibilityListenerWrapper inner android/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper outer android/support/v7/app/ActionBarImplICS
+.field final mWrappedListener Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;
+
+.method public <init>(Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper;)
+; parameter[0] : v1 (Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;)
+.line 332
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper;
+.line 333
+	iput-object	v1,v0,android/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper.mWrappedListener Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;
+; v1 : Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener; , v0 : Landroid/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper;
+.line 334
+	return-void	
+.end method
+
+.method public onMenuVisibilityChanged(Z)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper;)
+; parameter[0] : v2 (Z)
+.line 338
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper.mWrappedListener Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;
+; v0 : Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener; , v1 : Landroid/support/v7/app/ActionBarImplICS$OnMenuVisibilityListenerWrapper;
+	invoke-interface	{v0,v2},android/support/v7/app/ActionBar$OnMenuVisibilityListener/onMenuVisibilityChanged	; onMenuVisibilityChanged(Z)V
+; v0 : Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener; , v2 : single-length
+.line 339
+	return-void	
+.end method
+
+

@@ -1,0 +1,762 @@
+.class public final com/nineoldandroids/view/ViewHelper
+.super java/lang/Object
+.source ViewHelper.java
+
+.inner class Honeycomb inner com/nineoldandroids/view/ViewHelper$Honeycomb outer com/nineoldandroids/view/ViewHelper
+
+.method private <init>()V
+.limit registers 1
+; this: v0 (Lcom/nineoldandroids/view/ViewHelper;)
+.line 9
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/nineoldandroids/view/ViewHelper;
+	return-void	
+.end method
+
+.method public static getAlpha(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 12
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb236
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getAlpha	; getAlpha()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb234:
+	return	v0
+; v0 : single-length
+lcb236:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getAlpha	; getAlpha(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb234
+.end method
+
+.method public static getPivotX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 24
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb26a
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getPivotX	; getPivotX()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb268:
+	return	v0
+; v0 : single-length
+lcb26a:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getPivotX	; getPivotX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb268
+.end method
+
+.method public static getPivotY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 36
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb29e
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getPivotY	; getPivotY()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb29c:
+	return	v0
+; v0 : single-length
+lcb29e:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getPivotY	; getPivotY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb29c
+.end method
+
+.method public static getRotation(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 48
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb2d2
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getRotation	; getRotation()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb2d0:
+	return	v0
+; v0 : single-length
+lcb2d2:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getRotation	; getRotation(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb2d0
+.end method
+
+.method public static getRotationX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 60
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb306
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getRotationX	; getRotationX()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb304:
+	return	v0
+; v0 : single-length
+lcb306:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getRotationX	; getRotationX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb304
+.end method
+
+.method public static getRotationY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 72
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb33a
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getRotationY	; getRotationY()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb338:
+	return	v0
+; v0 : single-length
+lcb33a:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getRotationY	; getRotationY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb338
+.end method
+
+.method public static getScaleX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 84
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb36e
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getScaleX	; getScaleX()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb36c:
+	return	v0
+; v0 : single-length
+lcb36e:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getScaleX	; getScaleX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb36c
+.end method
+
+.method public static getScaleY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 96
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb3a2
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getScaleY	; getScaleY()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb3a0:
+	return	v0
+; v0 : single-length
+lcb3a2:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getScaleY	; getScaleY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb3a0
+.end method
+
+.method public static getScrollX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 108
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb3d8
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getScrollX	; getScrollX()I
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+lcb3d6:
+	return	v0
+; v0 : single-length
+lcb3d8:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getScrollX	; getScrollX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb3d6
+.end method
+
+.method public static getScrollY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 120
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb410
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getScrollY	; getScrollY()I
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+lcb40e:
+	return	v0
+; v0 : single-length
+lcb410:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getScrollY	; getScrollY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb40e
+.end method
+
+.method public static getTranslationX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 132
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb446
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getTranslationX	; getTranslationX()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb444:
+	return	v0
+; v0 : single-length
+lcb446:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getTranslationX	; getTranslationX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb444
+.end method
+
+.method public static getTranslationY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 144
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb47a
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getTranslationY	; getTranslationY()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb478:
+	return	v0
+; v0 : single-length
+lcb47a:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getTranslationY	; getTranslationY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb478
+.end method
+
+.method public static getX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 156
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb4ae
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getX	; getX()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb4ac:
+	return	v0
+; v0 : single-length
+lcb4ae:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getX	; getX(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb4ac
+.end method
+
+.method public static getY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 168
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb4e2
+; v0 : single-length
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0},com/nineoldandroids/view/animation/AnimatorProxy/getY	; getY()F
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	move-result	v0
+; v0 : single-length
+lcb4e0:
+	return	v0
+; v0 : single-length
+lcb4e2:
+	invoke-static	{v1},com/nineoldandroids/view/ViewHelper$Honeycomb/getY	; getY(Landroid/view/View;)F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	lcb4e0
+.end method
+
+.method public static setAlpha(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 16
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb514
+; v0 : single-length
+.line 17
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setAlpha	; setAlpha(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb512:
+.line 21
+	return-void	
+lcb514:
+.line 19
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setAlpha	; setAlpha(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb512
+.end method
+
+.method public static setPivotX(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 28
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb544
+; v0 : single-length
+.line 29
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setPivotX	; setPivotX(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb542:
+.line 33
+	return-void	
+lcb544:
+.line 31
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setPivotX	; setPivotX(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb542
+.end method
+
+.method public static setPivotY(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 40
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb574
+; v0 : single-length
+.line 41
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setPivotY	; setPivotY(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb572:
+.line 45
+	return-void	
+lcb574:
+.line 43
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setPivotY	; setPivotY(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb572
+.end method
+
+.method public static setRotation(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 52
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb5a4
+; v0 : single-length
+.line 53
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setRotation	; setRotation(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb5a2:
+.line 57
+	return-void	
+lcb5a4:
+.line 55
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setRotation	; setRotation(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb5a2
+.end method
+
+.method public static setRotationX(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 64
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb5d4
+; v0 : single-length
+.line 65
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setRotationX	; setRotationX(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb5d2:
+.line 69
+	return-void	
+lcb5d4:
+.line 67
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setRotationX	; setRotationX(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb5d2
+.end method
+
+.method public static setRotationY(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 76
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb604
+; v0 : single-length
+.line 77
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setRotationY	; setRotationY(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb602:
+.line 81
+	return-void	
+lcb604:
+.line 79
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setRotationY	; setRotationY(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb602
+.end method
+
+.method public static setScaleX(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 88
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb634
+; v0 : single-length
+.line 89
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setScaleX	; setScaleX(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb632:
+.line 93
+	return-void	
+lcb634:
+.line 91
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setScaleX	; setScaleX(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb632
+.end method
+
+.method public static setScaleY(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 100
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb664
+; v0 : single-length
+.line 101
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setScaleY	; setScaleY(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb662:
+.line 105
+	return-void	
+lcb664:
+.line 103
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setScaleY	; setScaleY(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb662
+.end method
+
+.method public static setScrollX(Landroid/view/View;I)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (I)
+.line 112
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb694
+; v0 : single-length
+.line 113
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setScrollX	; setScrollX(I)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb692:
+.line 117
+	return-void	
+lcb694:
+.line 115
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setScrollX	; setScrollX(Landroid/view/View;I)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb692
+.end method
+
+.method public static setScrollY(Landroid/view/View;I)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (I)
+.line 124
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb6c4
+; v0 : single-length
+.line 125
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setScrollY	; setScrollY(I)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb6c2:
+.line 129
+	return-void	
+lcb6c4:
+.line 127
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setScrollY	; setScrollY(Landroid/view/View;I)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb6c2
+.end method
+
+.method public static setTranslationX(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 136
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb6f4
+; v0 : single-length
+.line 137
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setTranslationX	; setTranslationX(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb6f2:
+.line 141
+	return-void	
+lcb6f4:
+.line 139
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setTranslationX	; setTranslationX(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb6f2
+.end method
+
+.method public static setTranslationY(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 148
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb724
+; v0 : single-length
+.line 149
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setTranslationY	; setTranslationY(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb722:
+.line 153
+	return-void	
+lcb724:
+.line 151
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setTranslationY	; setTranslationY(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb722
+.end method
+
+.method public static setX(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 160
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb754
+; v0 : single-length
+.line 161
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setX	; setX(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb752:
+.line 165
+	return-void	
+lcb754:
+.line 163
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setX	; setX(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb752
+.end method
+
+.method public static setY(Landroid/view/View;F)V
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (F)
+.line 172
+	sget-boolean	v0,com/nineoldandroids/view/animation/AnimatorProxy.NEEDS_PROXY Z
+; v0 : single-length
+	if-eqz	v0,lcb784
+; v0 : single-length
+.line 173
+	invoke-static	{v1},com/nineoldandroids/view/animation/AnimatorProxy/wrap	; wrap(Landroid/view/View;)Lcom/nineoldandroids/view/animation/AnimatorProxy;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy;
+	invoke-virtual	{v0,v2},com/nineoldandroids/view/animation/AnimatorProxy/setY	; setY(F)V
+; v0 : Lcom/nineoldandroids/view/animation/AnimatorProxy; , v2 : single-length
+lcb782:
+.line 177
+	return-void	
+lcb784:
+.line 175
+	invoke-static	{v1,v2},com/nineoldandroids/view/ViewHelper$Honeycomb/setY	; setY(Landroid/view/View;F)V
+; v1 : Landroid/view/View; , v2 : single-length
+	goto	lcb782
+.end method
+
+

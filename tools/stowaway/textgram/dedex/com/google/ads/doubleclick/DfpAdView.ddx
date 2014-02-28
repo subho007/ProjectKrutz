@@ -1,0 +1,148 @@
+.class public com/google/ads/doubleclick/DfpAdView
+.super com/google/ads/AdView
+.source SourceFile
+
+
+.method public <init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 (Landroid/app/Activity;)
+; parameter[1] : v2 (Lcom/google/ads/AdSize;)
+; parameter[2] : v3 (Ljava/lang/String;)
+.line 27
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdView/<init>	; <init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : Landroid/app/Activity; , v2 : Lcom/google/ads/AdSize; , v3 : Ljava/lang/String;
+.line 28
+	return-void	
+.end method
+
+.method public <init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 (Landroid/app/Activity;)
+; parameter[1] : v2 ([Lcom/google/ads/AdSize;)
+; parameter[2] : v3 (Ljava/lang/String;)
+.line 38
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdView/<init>	; <init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : Landroid/app/Activity; , v2 : [Lcom/google/ads/AdSize; , v3 : Ljava/lang/String;
+.line 39
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/util/AttributeSet;)
+.line 48
+	invoke-direct	{v0,v1,v2},com/google/ads/AdView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : Landroid/content/Context; , v2 : Landroid/util/AttributeSet;
+.line 49
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/util/AttributeSet;)
+; parameter[2] : v3 (I)
+.line 59
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : Landroid/content/Context; , v2 : Landroid/util/AttributeSet; , v3 : single-length
+.line 60
+	return-void	
+.end method
+
+.method public enableManualImpressions(Z)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v3 (Z)
+.line 85
+	iget-object	v0,v2,com/google/ads/doubleclick/DfpAdView.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v2 : Lcom/google/ads/doubleclick/DfpAdView;
+	invoke-virtual	{v0},com/google/ads/internal/d/i	; i()Lcom/google/ads/n;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/n;
+	iget-object	v0,v0,com/google/ads/n.t Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-static	{v3},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v3 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Boolean;
+	invoke-virtual	{v0,v1},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v1 : Ljava/lang/Boolean;
+.line 86
+	return-void	
+.end method
+
+.method public recordImpression()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/doubleclick/DfpAdView;)
+.line 92
+	iget-object	v0,v1,com/google/ads/doubleclick/DfpAdView.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/doubleclick/DfpAdView;
+	invoke-virtual	{v0},com/google/ads/internal/d/z	; z()V
+; v0 : Lcom/google/ads/internal/d;
+.line 93
+	return-void	
+.end method
+
+.method public resize(Lcom/google/ads/AdSize;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v2 (Lcom/google/ads/AdSize;)
+.line 101
+	iget-object	v0,v1,com/google/ads/doubleclick/DfpAdView.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/doubleclick/DfpAdView;
+	invoke-virtual	{v0},com/google/ads/internal/d/l	; l()Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/AdWebView;
+	invoke-virtual	{v0,v2},com/google/ads/internal/AdWebView/setAdSize	; setAdSize(Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/AdSize;
+.line 102
+	iget-object	v0,v1,com/google/ads/doubleclick/DfpAdView.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/doubleclick/DfpAdView;
+	invoke-virtual	{v0},com/google/ads/internal/d/i	; i()Lcom/google/ads/n;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/n;
+	iget-object	v0,v0,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v0,v2},com/google/ads/internal/h/b	; b(Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/internal/h; , v2 : Lcom/google/ads/AdSize;
+.line 103
+	return-void	
+.end method
+
+.method public setAppEventListener(Lcom/google/ads/AppEventListener;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 (Lcom/google/ads/AppEventListener;)
+.line 67
+	invoke-super	{v0,v1},com/google/ads/AdView/setAppEventListener	; setAppEventListener(Lcom/google/ads/AppEventListener;)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : Lcom/google/ads/AppEventListener;
+.line 68
+	return-void	
+.end method
+
+.method public setSupportedAdSizes([Lcom/google/ads/AdSize;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpAdView;)
+; parameter[0] : v1 ([Lcom/google/ads/AdSize;)
+.line 76
+	invoke-super	{v0,v1},com/google/ads/AdView/setSupportedAdSizes	; setSupportedAdSizes([Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/doubleclick/DfpAdView; , v1 : [Lcom/google/ads/AdSize;
+.line 77
+	return-void	
+.end method
+
+

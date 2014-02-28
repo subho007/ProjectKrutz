@@ -1,0 +1,139 @@
+.class android/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo
+.super java/lang/Object
+.source ActionBarDrawerToggleHoneycomb.java
+
+.inner class SetIndicatorInfo inner android/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo outer android/support/v4/app/ActionBarDrawerToggleHoneycomb
+.field public setHomeActionContentDescription Ljava/lang/reflect/Method;
+.field public setHomeAsUpIndicator Ljava/lang/reflect/Method;
+.field public upIndicatorView Landroid/widget/ImageView;
+
+.method <init>(Landroid/app/Activity;)V
+.limit registers 16
+; this: v14 (Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;)
+; parameter[0] : v15 (Landroid/app/Activity;)
+.catch java/lang/NoSuchMethodException from l7366c to l736b4 using l736b6
+.var 5 is up Landroid/view/View; from l736fc to l73708
+	const	v13,16908332	; 0x102002c
+; v13 : single-length
+	const/4	v12,1
+; v12 : single-length
+	const/4	v11,0
+; v11 : single-length
+.line 97
+	invoke-direct	{v14},java/lang/Object/<init>	; <init>()V
+; v14 : Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+l7366c:
+.line 99
+	const-class	v6,android/app/ActionBar
+; v6 : Ljava/lang/Class;
+	const-string	v7,"setHomeAsUpIndicator"
+; v7 : Ljava/lang/String;
+	const/4	v8,1
+; v8 : single-length
+	new-array	v8,v8,[Ljava/lang/Class;
+; v8 : [Ljava/lang/Class; , v8 : [Ljava/lang/Class;
+	const/4	v9,0
+; v9 : single-length
+	const-class	v10,android/graphics/drawable/Drawable
+; v10 : Ljava/lang/Class;
+	aput-object	v10,v8,v9
+; v10 : Ljava/lang/Class; , v8 : [Ljava/lang/Class; , v9 : single-length
+	invoke-virtual	{v6,v7,v8},java/lang/Class/getDeclaredMethod	; getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+; v6 : Ljava/lang/Class; , v7 : Ljava/lang/String; , v8 : [Ljava/lang/Class;
+	move-result-object	v6
+; v6 : Ljava/lang/reflect/Method;
+	iput-object	v6,v14,android/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo.setHomeAsUpIndicator Ljava/lang/reflect/Method;
+; v6 : Ljava/lang/reflect/Method; , v14 : Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+.line 101
+	const-class	v6,android/app/ActionBar
+; v6 : Ljava/lang/Class;
+	const-string	v7,"setHomeActionContentDescription"
+; v7 : Ljava/lang/String;
+	const/4	v8,1
+; v8 : single-length
+	new-array	v8,v8,[Ljava/lang/Class;
+; v8 : [Ljava/lang/Class; , v8 : [Ljava/lang/Class;
+	const/4	v9,0
+; v9 : single-length
+	sget-object	v10,java/lang/Integer.TYPE Ljava/lang/Class;
+; v10 : Ljava/lang/Class;
+	aput-object	v10,v8,v9
+; v10 : Ljava/lang/Class; , v8 : [Ljava/lang/Class; , v9 : single-length
+	invoke-virtual	{v6,v7,v8},java/lang/Class/getDeclaredMethod	; getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+; v6 : Ljava/lang/Class; , v7 : Ljava/lang/String; , v8 : [Ljava/lang/Class;
+	move-result-object	v6
+; v6 : Ljava/lang/reflect/Method;
+	iput-object	v6,v14,android/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo.setHomeActionContentDescription Ljava/lang/reflect/Method;
+; v6 : Ljava/lang/reflect/Method; , v14 : Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+l736b4:
+.line 131
+	return-void	
+l736b6:
+.line 106
+	move-exception	v6
+; v6 : java/lang/NoSuchMethodException
+.line 110
+	invoke-virtual	{v15,v13},android/app/Activity/findViewById	; findViewById(I)Landroid/view/View;
+; v15 : Landroid/app/Activity; , v13 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+.line 111
+	if-eqz	v2,l736b4
+; v2 : Landroid/view/View;
+.line 116
+	invoke-virtual	{v2},android/view/View/getParent	; getParent()Landroid/view/ViewParent;
+; v2 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Landroid/view/ViewParent;
+	check-cast	v3,android/view/ViewGroup
+; v3 : Landroid/view/ViewGroup;
+.line 117
+	invoke-virtual	{v3},android/view/ViewGroup/getChildCount	; getChildCount()I
+; v3 : Landroid/view/ViewGroup;
+	move-result	v0
+; v0 : single-length
+.line 118
+	const/4	v6,2
+; v6 : single-length
+	if-ne	v0,v6,l736b4
+; v0 : single-length , v6 : single-length
+.line 123
+	invoke-virtual	{v3,v11},android/view/ViewGroup/getChildAt	; getChildAt(I)Landroid/view/View;
+; v3 : Landroid/view/ViewGroup; , v11 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 124
+	invoke-virtual	{v3,v12},android/view/ViewGroup/getChildAt	; getChildAt(I)Landroid/view/View;
+; v3 : Landroid/view/ViewGroup; , v12 : single-length
+	move-result-object	v4
+; v4 : Landroid/view/View;
+.line 125
+	invoke-virtual	{v1},android/view/View/getId	; getId()I
+; v1 : Landroid/view/View;
+	move-result	v6
+; v6 : single-length
+	if-ne	v6,v13,l7370e
+; v6 : single-length , v13 : single-length
+	move-object	v5,v4
+; v5 : Landroid/view/View; , v4 : Landroid/view/View;
+l736fc:
+.line 127
+	instance-of	v6,v5,android/widget/ImageView
+; v6 : single-length , v5 : Landroid/view/View;
+	if-eqz	v6,l736b4
+; v6 : single-length
+.line 129
+	check-cast	v5,android/widget/ImageView
+; v5 : Landroid/widget/ImageView;
+l73708:
+	iput-object	v5,v14,android/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo.upIndicatorView Landroid/widget/ImageView;
+; v5 : Landroid/widget/ImageView; , v14 : Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
+	goto	l736b4
+l7370e:
+	move-object	v5,v1
+; v5 : Landroid/view/View; , v1 : Landroid/view/View;
+.line 125
+	goto	l736fc
+.end method
+
+

@@ -1,0 +1,2200 @@
+.class android/support/v7/widget/SuggestionsAdapter
+.super android/support/v4/widget/ResourceCursorAdapter
+.source SuggestionsAdapter.java
+.implements android/view/View$OnClickListener
+
+.inner class ChildViewCache inner android/support/v7/widget/SuggestionsAdapter$ChildViewCache outer android/support/v7/widget/SuggestionsAdapter
+.field private static final DBG Z = false
+.field static final INVALID_INDEX I = -1	; 0xffffffff
+.field private static final LOG_TAG Ljava/lang/String; = "SuggestionsAdapter"
+.field private static final QUERY_LIMIT I = 50	; 0x32
+.field static final REFINE_ALL I = 2	; 0x2
+.field static final REFINE_BY_ENTRY I = 1	; 0x1
+.field static final REFINE_NONE I
+.field private mClosed Z
+.field private mFlagsCol I
+.field private mIconName1Col I
+.field private mIconName2Col I
+.field private mOutsideDrawablesCache Ljava/util/WeakHashMap;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/WeakHashMap" , "<" , "Ljava/lang/String;" , "Landroid/graphics/drawable/Drawable$ConstantState;" , ">;" }
+  .end annotation
+.end field
+.field private mProviderContext Landroid/content/Context;
+.field private mQueryRefinement I
+.field private mSearchManager Landroid/app/SearchManager;
+.field private mSearchView Landroid/support/v7/widget/SearchView;
+.field private mSearchable Landroid/app/SearchableInfo;
+.field private mText1Col I
+.field private mText2Col I
+.field private mText2UrlCol I
+.field private mUrlColor Landroid/content/res/ColorStateList;
+
+.method public <init>(Landroid/content/Context;Landroid/support/v7/widget/SearchView;Landroid/app/SearchableInfo;Ljava/util/WeakHashMap;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/content/Context;" , "Landroid/support/v7/widget/SearchView;" , "Landroid/app/SearchableInfo;" , "Ljava/util/WeakHashMap" , "<" , "Ljava/lang/String;" , "Landroid/graphics/drawable/Drawable$ConstantState;" , ">;)V" }
+.end annotation
+.limit registers 9
+; this: v4 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/support/v7/widget/SearchView;)
+; parameter[2] : v7 (Landroid/app/SearchableInfo;)
+; parameter[3] : v8 (Ljava/util/WeakHashMap;)
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,15
+; v2 : single-length
+.line 94
+	sget	v0,android/support/v7/appcompat/R$layout.abc_search_dropdown_item_icons_2line I
+; v0 : single-length
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v4,v5,v0,v1,v3},android/support/v4/widget/ResourceCursorAdapter/<init>	; <init>(Landroid/content/Context;ILandroid/database/Cursor;Z)V
+; v4 : Landroid/support/v7/widget/SuggestionsAdapter; , v5 : Landroid/content/Context; , v0 : single-length , v1 : single-length , v3 : single-length
+.line 72
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v4,android/support/v7/widget/SuggestionsAdapter.mClosed Z
+; v0 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 73
+	iput	v3,v4,android/support/v7/widget/SuggestionsAdapter.mQueryRefinement I
+; v3 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 81
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mText1Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 82
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mText2Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 83
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mText2UrlCol I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 84
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mIconName1Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 85
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mIconName2Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 86
+	iput	v2,v4,android/support/v7/widget/SuggestionsAdapter.mFlagsCol I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 97
+	iget-object	v0,v4,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+	const-string	v1,"search"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v0 : Landroid/content/Context; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/SearchManager
+; v0 : Landroid/app/SearchManager;
+	iput-object	v0,v4,android/support/v7/widget/SuggestionsAdapter.mSearchManager Landroid/app/SearchManager;
+; v0 : Landroid/app/SearchManager; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 98
+	iput-object	v6,v4,android/support/v7/widget/SuggestionsAdapter.mSearchView Landroid/support/v7/widget/SearchView;
+; v6 : Landroid/support/v7/widget/SearchView; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 99
+	iput-object	v7,v4,android/support/v7/widget/SuggestionsAdapter.mSearchable Landroid/app/SearchableInfo;
+; v7 : Landroid/app/SearchableInfo; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 101
+	iput-object	v5,v4,android/support/v7/widget/SuggestionsAdapter.mProviderContext Landroid/content/Context;
+; v5 : Landroid/content/Context; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 103
+	iput-object	v8,v4,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v8 : Ljava/util/WeakHashMap; , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 104
+	return-void	
+.end method
+
+.method private checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+.limit registers 4
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.line 553
+	iget-object	v1,v2,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v1 : Ljava/util/WeakHashMap; , v2 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v1,v3},java/util/WeakHashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/WeakHashMap; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/graphics/drawable/Drawable$ConstantState
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState;
+.line 554
+	if-nez	v0,l162c0c
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState;
+.line 555
+	const/4	v1,0
+; v1 : single-length
+l162c0a:
+.line 558
+	return-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+l162c0c:
+	invoke-virtual	{v0},android/graphics/drawable/Drawable$ConstantState/newDrawable	; newDrawable()Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState;
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+	goto	l162c0a
+.end method
+
+.method private formatUrl(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+.limit registers 10
+; this: v8 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v9 (Ljava/lang/CharSequence;)
+.var 6 is colorValue Landroid/util/TypedValue; from l162c3e to l162c72
+	const/4	v1,0
+; v1 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 329
+	iget-object	v0,v8,android/support/v7/widget/SuggestionsAdapter.mUrlColor Landroid/content/res/ColorStateList;
+; v0 : Landroid/content/res/ColorStateList; , v8 : Landroid/support/v7/widget/SuggestionsAdapter;
+	if-nez	v0,l162c72
+; v0 : Landroid/content/res/ColorStateList;
+.line 331
+	new-instance	v6,android/util/TypedValue
+; v6 : Landroid/util/TypedValue;
+	invoke-direct	{v6},android/util/TypedValue/<init>	; <init>()V
+; v6 : Landroid/util/TypedValue;
+.line 332
+	iget-object	v0,v8,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v8 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v0},android/content/Context/getTheme	; getTheme()Landroid/content/res/Resources$Theme;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/res/Resources$Theme;
+	sget	v3,android/support/v7/appcompat/R$attr.textColorSearchUrl I
+; v3 : single-length
+	const/4	v4,1
+; v4 : single-length
+	invoke-virtual	{v0,v3,v6,v4},android/content/res/Resources$Theme/resolveAttribute	; resolveAttribute(ILandroid/util/TypedValue;Z)Z
+; v0 : Landroid/content/res/Resources$Theme; , v3 : single-length , v6 : Landroid/util/TypedValue; , v4 : single-length
+.line 333
+	iget-object	v0,v8,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v8 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v0},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/res/Resources;
+	iget	v3,v6,android/util/TypedValue.resourceId I
+; v3 : single-length , v6 : Landroid/util/TypedValue;
+	invoke-virtual	{v0,v3},android/content/res/Resources/getColorStateList	; getColorStateList(I)Landroid/content/res/ColorStateList;
+; v0 : Landroid/content/res/Resources; , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/content/res/ColorStateList;
+	iput-object	v0,v8,android/support/v7/widget/SuggestionsAdapter.mUrlColor Landroid/content/res/ColorStateList;
+; v0 : Landroid/content/res/ColorStateList; , v8 : Landroid/support/v7/widget/SuggestionsAdapter;
+l162c72:
+.line 336
+	new-instance	v7,android/text/SpannableString
+; v7 : Landroid/text/SpannableString;
+	invoke-direct	{v7,v9},android/text/SpannableString/<init>	; <init>(Ljava/lang/CharSequence;)V
+; v7 : Landroid/text/SpannableString; , v9 : Ljava/lang/CharSequence;
+.line 337
+	new-instance	v0,android/text/style/TextAppearanceSpan
+; v0 : Landroid/text/style/TextAppearanceSpan;
+	iget-object	v4,v8,android/support/v7/widget/SuggestionsAdapter.mUrlColor Landroid/content/res/ColorStateList;
+; v4 : Landroid/content/res/ColorStateList; , v8 : Landroid/support/v7/widget/SuggestionsAdapter;
+	move	v3,v2
+; v3 : single-length , v2 : single-length
+	move-object	v5,v1
+; v5 : single-length , v1 : single-length
+	invoke-direct/range	{v0..v5},android/text/style/TextAppearanceSpan/<init>;	<init>(Ljava/lang/String;IILandroid/content/res/ColorStateList;Landroid/content/res/ColorStateList;)V
+; v0 : Landroid/text/style/TextAppearanceSpan; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : Landroid/content/res/ColorStateList; , v5 : single-length
+	invoke-interface	{v9},java/lang/CharSequence/length	; length()I
+; v9 : Ljava/lang/CharSequence;
+	move-result	v1
+; v1 : single-length
+	const/16	v3,33
+; v3 : single-length
+	invoke-virtual	{v7,v0,v2,v1,v3},android/text/SpannableString/setSpan	; setSpan(Ljava/lang/Object;III)V
+; v7 : Landroid/text/SpannableString; , v0 : Landroid/text/style/TextAppearanceSpan; , v2 : single-length , v1 : single-length , v3 : single-length
+.line 340
+	return-object	v7
+; v7 : Landroid/text/SpannableString;
+.end method
+
+.method private getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
+.limit registers 12
+; this: v10 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v11 (Landroid/content/ComponentName;)
+.catch android/content/pm/PackageManager$NameNotFoundException from l162cc6 to l162ccc using l162cde
+.var 0 is activityInfo Landroid/content/pm/ActivityInfo; from l162cce to l162cdc
+.var 3 is iconId I from l162cd6 to l162cdc
+.var 2 is ex Landroid/content/pm/PackageManager$NameNotFoundException; from l162ce0 to l162cf6
+	const/4	v6,0
+; v6 : single-length
+.line 617
+	iget-object	v7,v10,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v7 : Landroid/content/Context; , v10 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v7},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v7 : Landroid/content/Context;
+	move-result-object	v5
+; v5 : Landroid/content/pm/PackageManager;
+.line 620
+	const/16	v7,128
+; v7 : single-length
+l162cc6:
+	invoke-virtual	{v5,v11,v7},android/content/pm/PackageManager/getActivityInfo	; getActivityInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
+; v5 : Landroid/content/pm/PackageManager; , v11 : Landroid/content/ComponentName; , v7 : single-length
+l162ccc:
+	move-result-object	v0
+; v0 : Landroid/content/pm/ActivityInfo;
+.line 625
+	invoke-virtual	{v0},android/content/pm/ActivityInfo/getIconResource	; getIconResource()I
+; v0 : Landroid/content/pm/ActivityInfo;
+	move-result	v3
+; v3 : single-length
+.line 626
+	if-nez	v3,l162cf6
+; v3 : single-length
+	move-object	v1,v6
+; v1 : single-length , v6 : single-length
+l162cdc:
+.line 634
+	return-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+l162cde:
+.line 621
+	move-exception	v2
+; v2 : android/content/pm/PackageManager$NameNotFoundException
+.line 622
+	const-string	v7,"SuggestionsAdapter"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v2},android/content/pm/PackageManager$NameNotFoundException/toString	; toString()Ljava/lang/String;
+; v2 : android/content/pm/PackageManager$NameNotFoundException
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-static	{v7,v8},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v7 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	move-object	v1,v6
+; v1 : single-length , v6 : single-length
+.line 623
+	goto	l162cdc
+l162cf6:
+.line 627
+	invoke-virtual	{v11},android/content/ComponentName/getPackageName	; getPackageName()Ljava/lang/String;
+; v11 : Landroid/content/ComponentName;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+.line 628
+	iget-object	v7,v0,android/content/pm/ActivityInfo.applicationInfo Landroid/content/pm/ApplicationInfo;
+; v7 : Landroid/content/pm/ApplicationInfo; , v0 : Landroid/content/pm/ActivityInfo;
+	invoke-virtual	{v5,v4,v3,v7},android/content/pm/PackageManager/getDrawable	; getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+; v5 : Landroid/content/pm/PackageManager; , v4 : Ljava/lang/String; , v3 : single-length , v7 : Landroid/content/pm/ApplicationInfo;
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 629
+	if-nez	v1,l162cdc
+; v1 : Landroid/graphics/drawable/Drawable;
+.line 630
+	const-string	v7,"SuggestionsAdapter"
+; v7 : Ljava/lang/String;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"Invalid icon resource "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9," for "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v11},android/content/ComponentName/flattenToShortString	; flattenToShortString()Ljava/lang/String;
+; v11 : Landroid/content/ComponentName;
+	move-result-object	v9
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-static	{v7,v8},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v7 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	move-object	v1,v6
+; v1 : single-length , v6 : single-length
+.line 632
+	goto	l162cdc
+.end method
+
+.method private getActivityIconWithCache(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
+.limit registers 8
+; this: v6 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v7 (Landroid/content/ComponentName;)
+.var 0 is cached Landroid/graphics/drawable/Drawable$ConstantState; from l162da6 to l162daa
+.var 0 is cached Landroid/graphics/drawable/Drawable$ConstantState; from l162dac to l162dc2
+.var 3 is toCache Landroid/graphics/drawable/Drawable$ConstantState; from l162dd0 to l162dde
+	const/4	v4,0
+; v4 : single-length
+.line 595
+	invoke-virtual	{v7},android/content/ComponentName/flattenToShortString	; flattenToShortString()Ljava/lang/String;
+; v7 : Landroid/content/ComponentName;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 597
+	iget-object	v5,v6,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v5 : Ljava/util/WeakHashMap; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v5,v1},java/util/WeakHashMap/containsKey	; containsKey(Ljava/lang/Object;)Z
+; v5 : Ljava/util/WeakHashMap; , v1 : Ljava/lang/String;
+	move-result	v5
+; v5 : single-length
+	if-eqz	v5,l162dc2
+; v5 : single-length
+.line 598
+	iget-object	v5,v6,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v5 : Ljava/util/WeakHashMap; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v5,v1},java/util/WeakHashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v5 : Ljava/util/WeakHashMap; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/graphics/drawable/Drawable$ConstantState
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState;
+.line 599
+	if-nez	v0,l162dac
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState;
+l162daa:
+.line 606
+	return-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+l162dac:
+.line 599
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mProviderContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v4 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	invoke-virtual	{v0,v4},android/graphics/drawable/Drawable$ConstantState/newDrawable	; newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable$ConstantState; , v4 : Landroid/content/res/Resources;
+	move-result-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+	goto	l162daa
+l162dc2:
+.line 602
+	invoke-direct	{v6,v7},android/support/v7/widget/SuggestionsAdapter/getActivityIcon	; getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
+; v6 : Landroid/support/v7/widget/SuggestionsAdapter; , v7 : Landroid/content/ComponentName;
+	move-result-object	v2
+; v2 : Landroid/graphics/drawable/Drawable;
+.line 604
+	if-nez	v2,l162dde
+; v2 : Landroid/graphics/drawable/Drawable;
+	move-object	v3,v4
+; v3 : single-length , v4 : single-length
+l162dd0:
+.line 605
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v4 : Ljava/util/WeakHashMap; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4,v1,v3},java/util/WeakHashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v4 : Ljava/util/WeakHashMap; , v1 : Ljava/lang/String; , v3 : Landroid/graphics/drawable/Drawable$ConstantState;
+	move-object	v4,v2
+; v4 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/graphics/drawable/Drawable;
+.line 606
+	goto	l162daa
+l162dde:
+.line 604
+	invoke-virtual	{v2},android/graphics/drawable/Drawable/getConstantState	; getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+; v2 : Landroid/graphics/drawable/Drawable;
+	move-result-object	v3
+; v3 : Landroid/graphics/drawable/Drawable$ConstantState;
+	goto	l162dd0
+.end method
+
+.method public static getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
+.limit registers 4
+; parameter[0] : v2 (Landroid/database/Cursor;)
+; parameter[1] : v3 (Ljava/lang/String;)
+.line 646
+	invoke-interface	{v2,v3},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v2 : Landroid/database/Cursor; , v3 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+.line 647
+	invoke-static	{v2,v0},android/support/v7/widget/SuggestionsAdapter/getStringOrNull	; getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
+; v2 : Landroid/database/Cursor; , v0 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	return-object	v1
+; v1 : Ljava/lang/String;
+.end method
+
+.method private getDefaultIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+.limit registers 4
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Landroid/database/Cursor;)
+.var 0 is drawable Landroid/graphics/drawable/Drawable; from l162e30 to l162e34
+.line 576
+	iget-object	v1,v2,android/support/v7/widget/SuggestionsAdapter.mSearchable Landroid/app/SearchableInfo;
+; v1 : Landroid/app/SearchableInfo; , v2 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v1},android/app/SearchableInfo/getSearchActivity	; getSearchActivity()Landroid/content/ComponentName;
+; v1 : Landroid/app/SearchableInfo;
+	move-result-object	v1
+; v1 : Landroid/content/ComponentName;
+	invoke-direct	{v2,v1},android/support/v7/widget/SuggestionsAdapter/getActivityIconWithCache	; getActivityIconWithCache(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/support/v7/widget/SuggestionsAdapter; , v1 : Landroid/content/ComponentName;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 577
+	if-eqz	v0,l162e36
+; v0 : Landroid/graphics/drawable/Drawable;
+l162e34:
+.line 582
+	return-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+l162e36:
+	iget-object	v1,v2,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v1 : Landroid/content/Context; , v2 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v1},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v1 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Landroid/content/pm/PackageManager;
+	invoke-virtual	{v1},android/content/pm/PackageManager/getDefaultActivityIcon	; getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
+; v1 : Landroid/content/pm/PackageManager;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+	goto	l162e34
+.end method
+
+.method private getDrawable(Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
+.limit registers 11
+; this: v9 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v10 (Landroid/net/Uri;)
+.catch java/io/FileNotFoundException from l162fa0 to l162fd4 using l162eb4
+.catch java/io/IOException from l162f9a to l162fa0 using l162fa2
+.catch java/io/FileNotFoundException from l162f9a to l162fa0 using l162eb4
+.catch java/io/FileNotFoundException from l162f64 to l162f94 using l162eb4
+.catch java/io/IOException from l162f5a to l162f60 using l162f62
+.catch java/io/FileNotFoundException from l162f5a to l162f60 using l162eb4
+.catch java/lang/Exception from l162f52 to l162f58 using l162f98
+.catch java/io/FileNotFoundException from l162f06 to l162f50 using l162eb4
+.catch java/io/FileNotFoundException from l162e82 to l162eb4 using l162eb4
+.catch android/content/res/Resources$NotFoundException from l162e76 to l162e7c using l162e80
+.catch java/io/FileNotFoundException from l162e76 to l162e7c using l162eb4
+.catch java/io/FileNotFoundException from l162e5e to l162e70 using l162eb4
+.var 2 is scheme Ljava/lang/String; from l162e66 to l162e7e
+.var 0 is ex Landroid/content/res/Resources$NotFoundException; from l162e82 to l162eb4
+.var 2 is scheme Ljava/lang/String; from l162e80 to l162eb4
+.var 1 is fnfe Ljava/io/FileNotFoundException; from l162eb6 to l162f06
+.var 0 is ex Ljava/io/IOException; from l162f64 to l162f98
+	const/4	v5,0
+; v5 : single-length
+l162e5e:
+.line 520
+	invoke-virtual	{v10},android/net/Uri/getScheme	; getScheme()Ljava/lang/String;
+; v10 : Landroid/net/Uri;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 521
+	const-string	v4,"android.resource"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v4,v2},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v4 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l162e70:
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l162f06
+; v4 : single-length
+l162e76:
+.line 524
+	invoke-virtual	{v9,v10},android/support/v7/widget/SuggestionsAdapter/getDrawableFromResourceUri	; getDrawableFromResourceUri(Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v10 : Landroid/net/Uri;
+l162e7c:
+	move-result-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+l162e7e:
+.line 546
+	return-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+l162e80:
+.line 525
+	move-exception	v0
+; v0 : android/content/res/Resources$NotFoundException
+l162e82:
+.line 526
+	new-instance	v4,java/io/FileNotFoundException
+; v4 : Ljava/io/FileNotFoundException;
+	new-instance	v6,java/lang/StringBuilder
+; v6 : Ljava/lang/StringBuilder;
+	invoke-direct	{v6},java/lang/StringBuilder/<init>	; <init>()V
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"Resource does not exist: "
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v10 : Landroid/net/Uri;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v6 : Ljava/lang/StringBuilder;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-direct	{v4,v6},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/io/FileNotFoundException; , v6 : Ljava/lang/String;
+	throw	v4
+; v4 : Ljava/io/FileNotFoundException;
+l162eb4:
+.line 544
+	move-exception	v1
+; v1 : java/io/FileNotFoundException
+.line 545
+	const-string	v4,"SuggestionsAdapter"
+; v4 : Ljava/lang/String;
+	new-instance	v6,java/lang/StringBuilder
+; v6 : Ljava/lang/StringBuilder;
+	invoke-direct	{v6},java/lang/StringBuilder/<init>	; <init>()V
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"Icon not found: "
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v10 : Landroid/net/Uri;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,", "
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/io/FileNotFoundException/getMessage	; getMessage()Ljava/lang/String;
+; v1 : java/io/FileNotFoundException
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v6 : Ljava/lang/StringBuilder;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-static	{v4,v6},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v4 : Ljava/lang/String; , v6 : Ljava/lang/String;
+	move-object	v4,v5
+; v4 : single-length , v5 : single-length
+.line 546
+	goto	l162e7e
+l162f06:
+.line 530
+	iget-object	v4,v9,android/support/v7/widget/SuggestionsAdapter.mProviderContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v9 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v4 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/ContentResolver;
+	invoke-virtual	{v4,v10},android/content/ContentResolver/openInputStream	; openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+; v4 : Landroid/content/ContentResolver; , v10 : Landroid/net/Uri;
+	move-result-object	v3
+; v3 : Ljava/io/InputStream;
+.line 531
+	if-nez	v3,l162f50
+; v3 : Ljava/io/InputStream;
+.line 532
+	new-instance	v4,java/io/FileNotFoundException
+; v4 : Ljava/io/FileNotFoundException;
+	new-instance	v6,java/lang/StringBuilder
+; v6 : Ljava/lang/StringBuilder;
+	invoke-direct	{v6},java/lang/StringBuilder/<init>	; <init>()V
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"Failed to open "
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v10 : Landroid/net/Uri;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v6 : Ljava/lang/StringBuilder;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-direct	{v4,v6},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/io/FileNotFoundException; , v6 : Ljava/lang/String;
+	throw	v4
+; v4 : Ljava/io/FileNotFoundException;
+l162f50:
+.line 535
+	const/4	v4,0
+; v4 : single-length
+l162f52:
+	invoke-static	{v3,v4},android/graphics/drawable/Drawable/createFromStream	; createFromStream(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v3 : Ljava/io/InputStream; , v4 : single-length
+l162f58:
+	move-result-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+l162f5a:
+.line 538
+	invoke-virtual	{v3},java/io/InputStream/close	; close()V
+; v3 : Ljava/io/InputStream;
+l162f60:
+	goto	l162e7e
+l162f62:
+.line 539
+	move-exception	v0
+; v0 : java/io/IOException
+l162f64:
+.line 540
+	const-string	v6,"SuggestionsAdapter"
+; v6 : Ljava/lang/String;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Error closing icon stream for "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v10 : Landroid/net/Uri;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-static	{v6,v7,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v6 : Ljava/lang/String; , v7 : Ljava/lang/String; , v0 : java/io/IOException
+l162f94:
+	goto/16	l162e7e
+l162f98:
+.line 537
+	move-exception	v4
+; v4 : java/lang/Exception
+l162f9a:
+.line 538
+	invoke-virtual	{v3},java/io/InputStream/close	; close()V
+; v3 : Ljava/io/InputStream;
+l162fa0:
+.line 541
+	throw	v4
+; v4 : java/lang/Exception
+l162fa2:
+.line 539
+	move-exception	v0
+; v0 : java/io/IOException
+.line 540
+	const-string	v6,"SuggestionsAdapter"
+; v6 : Ljava/lang/String;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Error closing icon stream for "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v10 : Landroid/net/Uri;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-static	{v6,v7,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v6 : Ljava/lang/String; , v7 : Ljava/lang/String; , v0 : java/io/IOException
+l162fd4:
+	goto	l162fa0
+.end method
+
+.method private getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+.limit registers 11
+; this: v9 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v10 (Ljava/lang/String;)
+.catch java/lang/NumberFormatException from l163076 to l1630ea using l1630ec
+.catch android/content/res/Resources$NotFoundException from l163076 to l1630ea using l163112
+.var 0 is drawable Landroid/graphics/drawable/Drawable; from l1630cc to l1630ec
+.var 1 is drawableUri Ljava/lang/String; from l1630c4 to l1630ec
+.var 3 is resourceId I from l16307e to l1630ec
+.var 0 is drawable Landroid/graphics/drawable/Drawable; from l1630f6 to l163112
+.var 2 is nfe Ljava/lang/NumberFormatException; from l1630ee to l163112
+.var 4 is uri Landroid/net/Uri; from l163102 to l163112
+	const/4	v5,0
+; v5 : single-length
+.line 477
+	if-eqz	v10,l163072
+; v10 : Ljava/lang/String;
+	invoke-virtual	{v10},java/lang/String/length	; length()I
+; v10 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,l163072
+; v6 : single-length
+	const-string	v6,"0"
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v6,v10},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v6 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,l163076
+; v6 : single-length
+l163072:
+	move-object	v0,v5
+; v0 : single-length , v5 : single-length
+l163074:
+.line 509
+	return-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+l163076:
+.line 482
+	invoke-static	{v10},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v10 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+.line 484
+	new-instance	v6,java/lang/StringBuilder
+; v6 : Ljava/lang/StringBuilder;
+	invoke-direct	{v6},java/lang/StringBuilder/<init>	; <init>()V
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"android.resource://"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	iget-object	v7,v9,android/support/v7/widget/SuggestionsAdapter.mProviderContext Landroid/content/Context;
+; v7 : Landroid/content/Context; , v9 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v7},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v7 : Landroid/content/Context;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"/"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v6 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 487
+	invoke-direct	{v9,v1},android/support/v7/widget/SuggestionsAdapter/checkIconCache	; checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 488
+	if-nez	v0,l163074
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 492
+	iget-object	v6,v9,android/support/v7/widget/SuggestionsAdapter.mProviderContext Landroid/content/Context;
+; v6 : Landroid/content/Context; , v9 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v6},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v6 : Landroid/content/Context;
+	move-result-object	v6
+; v6 : Landroid/content/res/Resources;
+	invoke-virtual	{v6,v3},android/content/res/Resources/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v6 : Landroid/content/res/Resources; , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 494
+	invoke-direct	{v9,v1,v0},android/support/v7/widget/SuggestionsAdapter/storeInIconCache	; storeInIconCache(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v1 : Ljava/lang/String; , v0 : Landroid/graphics/drawable/Drawable;
+l1630ea:
+	goto	l163074
+l1630ec:
+.line 496
+	move-exception	v2
+; v2 : java/lang/NumberFormatException
+.line 498
+	invoke-direct	{v9,v10},android/support/v7/widget/SuggestionsAdapter/checkIconCache	; checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v10 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 499
+	if-nez	v0,l163074
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 502
+	invoke-static	{v10},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v10 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Landroid/net/Uri;
+.line 503
+	invoke-direct	{v9,v4},android/support/v7/widget/SuggestionsAdapter/getDrawable	; getDrawable(Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 504
+	invoke-direct	{v9,v10,v0},android/support/v7/widget/SuggestionsAdapter/storeInIconCache	; storeInIconCache(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
+; v9 : Landroid/support/v7/widget/SuggestionsAdapter; , v10 : Ljava/lang/String; , v0 : Landroid/graphics/drawable/Drawable;
+	goto	l163074
+l163112:
+.line 506
+	move-exception	v2
+; v2 : android/content/res/Resources$NotFoundException
+.line 508
+	const-string	v6,"SuggestionsAdapter"
+; v6 : Ljava/lang/String;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Icon resource not found: "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v10},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-static	{v6,v7},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-object	v0,v5
+; v0 : single-length , v5 : single-length
+.line 509
+	goto	l163074
+.end method
+
+.method private getIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+.limit registers 6
+; this: v4 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v5 (Landroid/database/Cursor;)
+.line 355
+	iget	v2,v4,android/support/v7/widget/SuggestionsAdapter.mIconName1Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+	const/4	v3,15
+; v3 : single-length
+	if-ne	v2,v3,l163176
+; v2 : single-length , v3 : single-length
+.line 356
+	const/4	v0,0
+; v0 : single-length
+l163174:
+.line 363
+	return-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+l163176:
+.line 358
+	iget	v2,v4,android/support/v7/widget/SuggestionsAdapter.mIconName1Col I
+; v2 : single-length , v4 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-interface	{v5,v2},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v5 : Landroid/database/Cursor; , v2 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 359
+	invoke-direct	{v4,v1},android/support/v7/widget/SuggestionsAdapter/getDrawableFromResourceValue	; getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v4 : Landroid/support/v7/widget/SuggestionsAdapter; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 360
+	if-nez	v0,l163174
+; v0 : Landroid/graphics/drawable/Drawable;
+.line 363
+	invoke-direct	{v4,v5},android/support/v7/widget/SuggestionsAdapter/getDefaultIcon1	; getDefaultIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+; v4 : Landroid/support/v7/widget/SuggestionsAdapter; , v5 : Landroid/database/Cursor;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+	goto	l163174
+.end method
+
+.method private getIcon2(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+.limit registers 5
+; this: v3 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v4 (Landroid/database/Cursor;)
+.line 367
+	iget	v1,v3,android/support/v7/widget/SuggestionsAdapter.mIconName2Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+	const/4	v2,15
+; v2 : single-length
+	if-ne	v1,v2,l1631b6
+; v1 : single-length , v2 : single-length
+.line 368
+	const/4	v1,0
+; v1 : single-length
+l1631b4:
+.line 371
+	return-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+l1631b6:
+.line 370
+	iget	v1,v3,android/support/v7/widget/SuggestionsAdapter.mIconName2Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-interface	{v4,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v4 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 371
+	invoke-direct	{v3,v0},android/support/v7/widget/SuggestionsAdapter/getDrawableFromResourceValue	; getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/support/v7/widget/SuggestionsAdapter; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable;
+	goto	l1631b4
+.end method
+
+.method private static getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
+.limit registers 6
+; parameter[0] : v4 (Landroid/database/Cursor;)
+; parameter[1] : v5 (I)
+.catch java/lang/Exception from l1631e6 to l1631ec using l1631f0
+	const/4	v1,0
+; v1 : single-length
+.line 651
+	const/4	v2,15
+; v2 : single-length
+	if-ne	v5,v2,l1631e6
+; v5 : single-length , v2 : single-length
+l1631e4:
+.line 660
+	return-object	v1
+; v1 : Ljava/lang/String;
+l1631e6:
+.line 655
+	invoke-interface	{v4,v5},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v4 : Landroid/database/Cursor; , v5 : single-length
+l1631ec:
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	goto	l1631e4
+l1631f0:
+.line 656
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 657
+	const-string	v2,"SuggestionsAdapter"
+; v2 : Ljava/lang/String;
+	const-string	v3,"unexpected error retrieving valid column from cursor, did the remote process die?"
+; v3 : Ljava/lang/String;
+	invoke-static	{v2,v3,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	l1631e4
+.end method
+
+.method private setViewDrawable(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;I)V
+.limit registers 6
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Landroid/widget/ImageView;)
+; parameter[1] : v4 (Landroid/graphics/drawable/Drawable;)
+; parameter[2] : v5 (I)
+	const/4	v1,0
+; v1 : single-length
+.line 381
+	invoke-virtual	{v3,v4},android/widget/ImageView/setImageDrawable	; setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+; v3 : Landroid/widget/ImageView; , v4 : Landroid/graphics/drawable/Drawable;
+.line 383
+	if-nez	v4,l163238
+; v4 : Landroid/graphics/drawable/Drawable;
+.line 384
+	invoke-virtual	{v3,v5},android/widget/ImageView/setVisibility	; setVisibility(I)V
+; v3 : Landroid/widget/ImageView; , v5 : single-length
+l163236:
+.line 396
+	return-void	
+l163238:
+.line 386
+	invoke-virtual	{v3,v1},android/widget/ImageView/setVisibility	; setVisibility(I)V
+; v3 : Landroid/widget/ImageView; , v1 : single-length
+.line 393
+	invoke-virtual	{v4,v1,v1},android/graphics/drawable/Drawable/setVisible	; setVisible(ZZ)Z
+; v4 : Landroid/graphics/drawable/Drawable; , v1 : single-length , v1 : single-length
+.line 394
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v4,v0,v1},android/graphics/drawable/Drawable/setVisible	; setVisible(ZZ)Z
+; v4 : Landroid/graphics/drawable/Drawable; , v0 : single-length , v1 : single-length
+	goto	l163236
+.end method
+
+.method private setViewText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v2 (Landroid/widget/TextView;)
+; parameter[1] : v3 (Ljava/lang/CharSequence;)
+.line 345
+	invoke-virtual	{v2,v3},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v2 : Landroid/widget/TextView; , v3 : Ljava/lang/CharSequence;
+.line 347
+	invoke-static	{v3},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/CharSequence;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l16327e
+; v0 : single-length
+.line 348
+	const/16	v0,8
+; v0 : single-length
+	invoke-virtual	{v2,v0},android/widget/TextView/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/TextView; , v0 : single-length
+l16327c:
+.line 352
+	return-void	
+l16327e:
+.line 350
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v2,v0},android/widget/TextView/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/TextView; , v0 : single-length
+	goto	l16327c
+.end method
+
+.method private storeInIconCache(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
+.limit registers 5
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Landroid/graphics/drawable/Drawable;)
+.line 562
+	if-eqz	v4,l1632ae
+; v4 : Landroid/graphics/drawable/Drawable;
+.line 563
+	iget-object	v0,v2,android/support/v7/widget/SuggestionsAdapter.mOutsideDrawablesCache Ljava/util/WeakHashMap;
+; v0 : Ljava/util/WeakHashMap; , v2 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/graphics/drawable/Drawable/getConstantState	; getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+; v4 : Landroid/graphics/drawable/Drawable;
+	move-result-object	v1
+; v1 : Landroid/graphics/drawable/Drawable$ConstantState;
+	invoke-virtual	{v0,v3,v1},java/util/WeakHashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/WeakHashMap; , v3 : Ljava/lang/String; , v1 : Landroid/graphics/drawable/Drawable$ConstantState;
+l1632ae:
+.line 565
+	return-void	
+.end method
+
+.method private updateSpinnerState(Landroid/database/Cursor;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Landroid/database/Cursor;)
+.var 0 is extras Landroid/os/Bundle; from l1632cc to l1632e2
+.line 193
+	if-eqz	v3,l1632e2
+; v3 : Landroid/database/Cursor;
+	invoke-interface	{v3},android/database/Cursor/getExtras	; getExtras()Landroid/os/Bundle;
+; v3 : Landroid/database/Cursor;
+	move-result-object	v0
+; v0 : Landroid/os/Bundle;
+l1632cc:
+.line 201
+	if-eqz	v0,l1632e0
+; v0 : single-length
+	const-string	v1,"in_progress"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/os/Bundle/getBoolean	; getBoolean(Ljava/lang/String;)Z
+; v0 : single-length , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l1632e0
+; v1 : single-length
+l1632e0:
+.line 206
+	return-void	
+l1632e2:
+.line 193
+	const/4	v0,0
+; v0 : single-length
+	goto	l1632cc
+.end method
+
+.method public bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
+.limit registers 15
+; this: v11 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v12 (Landroid/view/View;)
+; parameter[1] : v13 (Landroid/content/Context;)
+; parameter[2] : v14 (Landroid/database/Cursor;)
+.var 1 is text1 Ljava/lang/String; from l16333a to l163344
+.var 2 is text2 Ljava/lang/CharSequence; from l163358 to l163396
+.var 2 is text2 Ljava/lang/CharSequence; from l163410 to l16343c
+	const/16	v10,8
+; v10 : single-length
+	const/4	v9,2
+; v9 : single-length
+	const/4	v8,0
+; v8 : single-length
+	const/4	v7,1
+; v7 : single-length
+.line 269
+	invoke-virtual	{v12},android/view/View/getTag	; getTag()Ljava/lang/Object;
+; v12 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache
+; v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+.line 271
+	const/4	v0,0
+; v0 : single-length
+.line 272
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mFlagsCol I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	const/4	v5,15
+; v5 : single-length
+	if-eq	v4,v5,l163326
+; v4 : single-length , v5 : single-length
+.line 273
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mFlagsCol I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-interface	{v14,v4},android/database/Cursor/getInt	; getInt(I)I
+; v14 : Landroid/database/Cursor; , v4 : single-length
+	move-result	v0
+; v0 : single-length
+l163326:
+.line 275
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l163344
+; v4 : Landroid/widget/TextView;
+.line 276
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mText1Col I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-static	{v14,v4},android/support/v7/widget/SuggestionsAdapter/getStringOrNull	; getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
+; v14 : Landroid/database/Cursor; , v4 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 277
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-direct	{v11,v4,v1},android/support/v7/widget/SuggestionsAdapter/setViewText	; setViewText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/widget/TextView; , v1 : Ljava/lang/String;
+l163344:
+.line 279
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText2 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l163396
+; v4 : Landroid/widget/TextView;
+.line 281
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mText2UrlCol I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-static	{v14,v4},android/support/v7/widget/SuggestionsAdapter/getStringOrNull	; getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
+; v14 : Landroid/database/Cursor; , v4 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 282
+	if-eqz	v2,l163410
+; v2 : Ljava/lang/String;
+.line 283
+	invoke-direct	{v11,v2},android/support/v7/widget/SuggestionsAdapter/formatUrl	; formatUrl(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/CharSequence;
+l163364:
+.line 290
+	invoke-static	{v2},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v2 : Ljava/lang/Object;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l16341e
+; v4 : single-length
+.line 291
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l16338c
+; v4 : Landroid/widget/TextView;
+.line 292
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v8},android/widget/TextView/setSingleLine	; setSingleLine(Z)V
+; v4 : Landroid/widget/TextView; , v8 : single-length
+.line 293
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v9},android/widget/TextView/setMaxLines	; setMaxLines(I)V
+; v4 : Landroid/widget/TextView; , v9 : single-length
+l16338c:
+.line 301
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText2 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-direct	{v11,v4,v2},android/support/v7/widget/SuggestionsAdapter/setViewText	; setViewText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/widget/TextView; , v2 : Ljava/lang/Object;
+l163396:
+.line 304
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIcon1 Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l1633b2
+; v4 : Landroid/widget/ImageView;
+.line 305
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIcon1 Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-direct	{v11,v14},android/support/v7/widget/SuggestionsAdapter/getIcon1	; getIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v14 : Landroid/database/Cursor;
+	move-result-object	v5
+; v5 : Landroid/graphics/drawable/Drawable;
+	const/4	v6,4
+; v6 : single-length
+	invoke-direct	{v11,v4,v5,v6},android/support/v7/widget/SuggestionsAdapter/setViewDrawable	; setViewDrawable(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;I)V
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/widget/ImageView; , v5 : Landroid/graphics/drawable/Drawable; , v6 : single-length
+l1633b2:
+.line 307
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIcon2 Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l1633cc
+; v4 : Landroid/widget/ImageView;
+.line 308
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIcon2 Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-direct	{v11,v14},android/support/v7/widget/SuggestionsAdapter/getIcon2	; getIcon2(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v14 : Landroid/database/Cursor;
+	move-result-object	v5
+; v5 : Landroid/graphics/drawable/Drawable;
+	invoke-direct	{v11,v4,v5,v10},android/support/v7/widget/SuggestionsAdapter/setViewDrawable	; setViewDrawable(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;I)V
+; v11 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/widget/ImageView; , v5 : Landroid/graphics/drawable/Drawable; , v10 : single-length
+l1633cc:
+.line 310
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mQueryRefinement I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	if-eq	v4,v9,l1633e4
+; v4 : single-length , v9 : single-length
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mQueryRefinement I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	if-ne	v4,v7,l16343c
+; v4 : single-length , v7 : single-length
+	and-int/lit8	v4,v0,1
+; v4 : single-length , v0 : single-length
+	if-eqz	v4,l16343c
+; v4 : single-length
+l1633e4:
+.line 313
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIconRefine Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v8},android/widget/ImageView/setVisibility	; setVisibility(I)V
+; v4 : Landroid/widget/ImageView; , v8 : single-length
+.line 314
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIconRefine Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	iget-object	v5,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v5 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v5},android/widget/TextView/getText	; getText()Ljava/lang/CharSequence;
+; v5 : Landroid/widget/TextView;
+	move-result-object	v5
+; v5 : Ljava/lang/CharSequence;
+	invoke-virtual	{v4,v5},android/widget/ImageView/setTag	; setTag(Ljava/lang/Object;)V
+; v4 : Landroid/widget/ImageView; , v5 : Ljava/lang/CharSequence;
+.line 315
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIconRefine Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v11},android/widget/ImageView/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v4 : Landroid/widget/ImageView; , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+l16340e:
+.line 319
+	return-void	
+l163410:
+.line 285
+	iget	v4,v11,android/support/v7/widget/SuggestionsAdapter.mText2Col I
+; v4 : single-length , v11 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-static	{v14,v4},android/support/v7/widget/SuggestionsAdapter/getStringOrNull	; getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
+; v14 : Landroid/database/Cursor; , v4 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	goto	l163364
+l16341e:
+.line 296
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	if-eqz	v4,l16338c
+; v4 : Landroid/widget/TextView;
+.line 297
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v7},android/widget/TextView/setSingleLine	; setSingleLine(Z)V
+; v4 : Landroid/widget/TextView; , v7 : single-length
+.line 298
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v4 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v7},android/widget/TextView/setMaxLines	; setMaxLines(I)V
+; v4 : Landroid/widget/TextView; , v7 : single-length
+	goto	l16338c
+l16343c:
+.line 317
+	iget-object	v4,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mIconRefine Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-virtual	{v4,v10},android/widget/ImageView/setVisibility	; setVisibility(I)V
+; v4 : Landroid/widget/ImageView; , v10 : single-length
+	goto	l16340e
+.end method
+
+.method public changeCursor(Landroid/database/Cursor;)V
+.limit registers 5
+; this: v3 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v4 (Landroid/database/Cursor;)
+.catch java/lang/Exception from l16347a to l1634e4 using l1634e6
+.line 215
+	iget-boolean	v1,v3,android/support/v7/widget/SuggestionsAdapter.mClosed Z
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+	if-eqz	v1,l16347a
+; v1 : single-length
+.line 216
+	const-string	v1,"SuggestionsAdapter"
+; v1 : Ljava/lang/String;
+	const-string	v2,"Tried to change cursor after adapter was closed."
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 217
+	if-eqz	v4,l163478
+; v4 : Landroid/database/Cursor;
+	invoke-interface	{v4},android/database/Cursor/close	; close()V
+; v4 : Landroid/database/Cursor;
+l163478:
+.line 235
+	return-void	
+l16347a:
+.line 222
+	invoke-super	{v3,v4},android/support/v4/widget/ResourceCursorAdapter/changeCursor	; changeCursor(Landroid/database/Cursor;)V
+; v3 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/database/Cursor;
+.line 224
+	if-eqz	v4,l163478
+; v4 : Landroid/database/Cursor;
+.line 225
+	const-string	v1,"suggest_text_1"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mText1Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 226
+	const-string	v1,"suggest_text_2"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mText2Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 227
+	const-string	v1,"suggest_text_2_url"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mText2UrlCol I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 228
+	const-string	v1,"suggest_icon_1"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mIconName1Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 229
+	const-string	v1,"suggest_icon_2"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mIconName2Col I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 230
+	const-string	v1,"suggest_flags"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v4 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v3,android/support/v7/widget/SuggestionsAdapter.mFlagsCol I
+; v1 : single-length , v3 : Landroid/support/v7/widget/SuggestionsAdapter;
+l1634e4:
+	goto	l163478
+l1634e6:
+.line 232
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 233
+	const-string	v1,"SuggestionsAdapter"
+; v1 : Ljava/lang/String;
+	const-string	v2,"error changing cursor and caching columns"
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2,v0},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	l163478
+.end method
+
+.method public close()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+.line 172
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/support/v7/widget/SuggestionsAdapter/changeCursor	; changeCursor(Landroid/database/Cursor;)V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter; , v0 : single-length
+.line 173
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v7/widget/SuggestionsAdapter.mClosed Z
+; v0 : single-length , v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 174
+	return-void	
+.end method
+
+.method public convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence;
+.limit registers 7
+; this: v5 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v6 (Landroid/database/Cursor;)
+.var 0 is data Ljava/lang/String; from l16356e to l163576
+.var 2 is text1 Ljava/lang/String; from l163592 to l16359a
+	const/4	v3,0
+; v3 : single-length
+.line 408
+	if-nez	v6,l163542
+; v6 : Landroid/database/Cursor;
+	move-object	v1,v3
+; v1 : single-length , v3 : single-length
+l163540:
+.line 431
+	return-object	v1
+; v1 : Ljava/lang/String;
+l163542:
+.line 412
+	const-string	v4,"suggest_intent_query"
+; v4 : Ljava/lang/String;
+	invoke-static	{v6,v4},android/support/v7/widget/SuggestionsAdapter/getColumnString	; getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
+; v6 : Landroid/database/Cursor; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 413
+	if-nez	v1,l163540
+; v1 : Ljava/lang/String;
+.line 417
+	iget-object	v4,v5,android/support/v7/widget/SuggestionsAdapter.mSearchable Landroid/app/SearchableInfo;
+; v4 : Landroid/app/SearchableInfo; , v5 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/app/SearchableInfo/shouldRewriteQueryFromData	; shouldRewriteQueryFromData()Z
+; v4 : Landroid/app/SearchableInfo;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l163576
+; v4 : single-length
+.line 418
+	const-string	v4,"suggest_intent_data"
+; v4 : Ljava/lang/String;
+	invoke-static	{v6,v4},android/support/v7/widget/SuggestionsAdapter/getColumnString	; getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
+; v6 : Landroid/database/Cursor; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 419
+	if-eqz	v0,l163576
+; v0 : Ljava/lang/String;
+	move-object	v1,v0
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+.line 420
+	goto	l163540
+l163576:
+.line 424
+	iget-object	v4,v5,android/support/v7/widget/SuggestionsAdapter.mSearchable Landroid/app/SearchableInfo;
+; v4 : Landroid/app/SearchableInfo; , v5 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/app/SearchableInfo/shouldRewriteQueryFromText	; shouldRewriteQueryFromText()Z
+; v4 : Landroid/app/SearchableInfo;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l16359a
+; v4 : single-length
+.line 425
+	const-string	v4,"suggest_text_1"
+; v4 : Ljava/lang/String;
+	invoke-static	{v6,v4},android/support/v7/widget/SuggestionsAdapter/getColumnString	; getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
+; v6 : Landroid/database/Cursor; , v4 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 426
+	if-eqz	v2,l16359a
+; v2 : Ljava/lang/String;
+	move-object	v1,v2
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 427
+	goto	l163540
+l16359a:
+	move-object	v1,v3
+; v1 : single-length , v3 : single-length
+.line 431
+	goto	l163540
+.end method
+
+.method getDrawableFromResourceUri(Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
+.throws Ljava/io/FileNotFoundException;
+.limit registers 12
+; this: v10 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v11 (Landroid/net/Uri;)
+.catch java/lang/NumberFormatException from l16368e to l1636a0 using l1636d8
+.catch android/content/pm/PackageManager$NameNotFoundException from l1635fa to l16360c using l16364c
+.var 5 is path Ljava/util/List; from l163616 to l16364c
+.var 6 is r Landroid/content/res/Resources; from l16360e to l16364c
+.var 2 is ex Landroid/content/pm/PackageManager$NameNotFoundException; from l16364e to l163680
+.var 3 is id I from l1636a2 to l1636d8
+.var 1 is e Ljava/lang/NumberFormatException; from l1636da to l16370c
+.var 3 is id I from l163732 to l163734
+	const/4	v9,1
+; v9 : single-length
+	const/4	v8,0
+; v8 : single-length
+.line 669
+	invoke-virtual	{v11},android/net/Uri/getAuthority	; getAuthority()Ljava/lang/String;
+; v11 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 671
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l1635fa
+; v7 : single-length
+.line 672
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"No authority: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l1635fa:
+.line 675
+	iget-object	v7,v10,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v7 : Landroid/content/Context; , v10 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v7},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v7 : Landroid/content/Context;
+	move-result-object	v7
+; v7 : Landroid/content/pm/PackageManager;
+	invoke-virtual	{v7,v0},android/content/pm/PackageManager/getResourcesForApplication	; getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
+; v7 : Landroid/content/pm/PackageManager; , v0 : Ljava/lang/String;
+l16360c:
+	move-result-object	v6
+; v6 : Landroid/content/res/Resources;
+.line 680
+	invoke-virtual	{v11},android/net/Uri/getPathSegments	; getPathSegments()Ljava/util/List;
+; v11 : Landroid/net/Uri;
+	move-result-object	v5
+; v5 : Ljava/util/List;
+.line 681
+	if-nez	v5,l163680
+; v5 : Ljava/util/List;
+.line 682
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"No path: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l16364c:
+.line 676
+	move-exception	v2
+; v2 : android/content/pm/PackageManager$NameNotFoundException
+.line 677
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"No package found for authority: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l163680:
+.line 684
+	invoke-interface	{v5},java/util/List/size	; size()I
+; v5 : Ljava/util/List;
+	move-result	v4
+; v4 : single-length
+.line 686
+	if-ne	v4,v9,l16370c
+; v4 : single-length , v9 : single-length
+.line 688
+	const/4	v7,0
+; v7 : single-length
+l16368e:
+	invoke-interface	{v5,v7},java/util/List/get	; get(I)Ljava/lang/Object;
+; v5 : Ljava/util/List; , v7 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/Object;
+	check-cast	v7,java/lang/String
+; v7 : Ljava/lang/String;
+	invoke-static	{v7},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v7 : Ljava/lang/String;
+l1636a0:
+	move-result	v3
+; v3 : single-length
+l1636a2:
+.line 697
+	if-nez	v3,l163766
+; v3 : single-length
+.line 698
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"No resource found for: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l1636d8:
+.line 689
+	move-exception	v1
+; v1 : java/lang/NumberFormatException
+.line 690
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"Single path segment is not a resource ID: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l16370c:
+.line 692
+	const/4	v7,2
+; v7 : single-length
+	if-ne	v4,v7,l163734
+; v4 : single-length , v7 : single-length
+.line 693
+	invoke-interface	{v5,v9},java/util/List/get	; get(I)Ljava/lang/Object;
+; v5 : Ljava/util/List; , v9 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/Object;
+	check-cast	v7,java/lang/String
+; v7 : Ljava/lang/String;
+	invoke-interface	{v5,v8},java/util/List/get	; get(I)Ljava/lang/Object;
+; v5 : Ljava/util/List; , v8 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/Object;
+	check-cast	v8,java/lang/String
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v6,v7,v8,v0},android/content/res/Resources/getIdentifier	; getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+; v6 : Landroid/content/res/Resources; , v7 : Ljava/lang/String; , v8 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+l163732:
+	goto	l1636a2
+l163734:
+.line 695
+	new-instance	v7,java/io/FileNotFoundException
+; v7 : Ljava/io/FileNotFoundException;
+	new-instance	v8,java/lang/StringBuilder
+; v8 : Ljava/lang/StringBuilder;
+	invoke-direct	{v8},java/lang/StringBuilder/<init>	; <init>()V
+; v8 : Ljava/lang/StringBuilder;
+	const-string	v9,"More than two path segments: "
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v8 : Ljava/lang/StringBuilder; , v11 : Landroid/net/Uri;
+	move-result-object	v8
+; v8 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v8},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v8 : Ljava/lang/StringBuilder;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/io/FileNotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/io/FileNotFoundException; , v8 : Ljava/lang/String;
+	throw	v7
+; v7 : Ljava/io/FileNotFoundException;
+l163766:
+.line 700
+	invoke-virtual	{v6,v3},android/content/res/Resources/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v6 : Landroid/content/res/Resources; , v3 : single-length
+	move-result-object	v7
+; v7 : Landroid/graphics/drawable/Drawable;
+	return-object	v7
+; v7 : Landroid/graphics/drawable/Drawable;
+.end method
+
+.method public getQueryRefinement()I
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+.line 124
+	iget	v0,v1,android/support/v7/widget/SuggestionsAdapter.mQueryRefinement I
+; v0 : single-length , v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+	return	v0
+; v0 : single-length
+.end method
+
+.method getSearchManagerSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;I)Landroid/database/Cursor;
+.limit registers 13
+; this: v9 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v10 (Landroid/app/SearchableInfo;)
+; parameter[1] : v11 (Ljava/lang/String;)
+; parameter[2] : v12 (I)
+.var 4 is selArgs [Ljava/lang/String; from l163824 to l16382e
+.var 1 is uri Landroid/net/Uri; from l163852 to l16386a
+	const/4	v2,0
+; v2 : single-length
+.line 707
+	if-nez	v10,l1637bc
+; v10 : Landroid/app/SearchableInfo;
+l1637ba:
+.line 748
+	return-object	v2
+; v2 : Landroid/database/Cursor;
+l1637bc:
+.line 711
+	invoke-virtual	{v10},android/app/SearchableInfo/getSuggestAuthority	; getSuggestAuthority()Ljava/lang/String;
+; v10 : Landroid/app/SearchableInfo;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+.line 712
+	if-eqz	v6,l1637ba
+; v6 : Ljava/lang/String;
+.line 716
+	new-instance	v0,android/net/Uri$Builder
+; v0 : Landroid/net/Uri$Builder;
+	invoke-direct	{v0},android/net/Uri$Builder/<init>	; <init>()V
+; v0 : Landroid/net/Uri$Builder;
+	const-string	v5,"content"
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v0,v5},android/net/Uri$Builder/scheme	; scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v0 : Landroid/net/Uri$Builder; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/net/Uri$Builder;
+	invoke-virtual	{v0,v6},android/net/Uri$Builder/authority	; authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v0 : Landroid/net/Uri$Builder; , v6 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/net/Uri$Builder;
+	const-string	v5,""
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v0,v5},android/net/Uri$Builder/query	; query(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v0 : Landroid/net/Uri$Builder; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/net/Uri$Builder;
+	const-string	v5,""
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v0,v5},android/net/Uri$Builder/fragment	; fragment(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v0 : Landroid/net/Uri$Builder; , v5 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Landroid/net/Uri$Builder;
+.line 723
+	invoke-virtual	{v10},android/app/SearchableInfo/getSuggestPath	; getSuggestPath()Ljava/lang/String;
+; v10 : Landroid/app/SearchableInfo;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+.line 724
+	if-eqz	v7,l163810
+; v7 : Ljava/lang/String;
+.line 725
+	invoke-virtual	{v8,v7},android/net/Uri$Builder/appendEncodedPath	; appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v8 : Landroid/net/Uri$Builder; , v7 : Ljava/lang/String;
+l163810:
+.line 729
+	const-string	v0,"search_suggest_query"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v8,v0},android/net/Uri$Builder/appendPath	; appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v8 : Landroid/net/Uri$Builder; , v0 : Ljava/lang/String;
+.line 732
+	invoke-virtual	{v10},android/app/SearchableInfo/getSuggestSelection	; getSuggestSelection()Ljava/lang/String;
+; v10 : Landroid/app/SearchableInfo;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 734
+	const/4	v4,0
+; v4 : single-length
+.line 735
+	if-eqz	v3,l16386a
+; v3 : Ljava/lang/String;
+.line 736
+	const/4	v0,1
+; v0 : single-length
+	new-array	v4,v0,[Ljava/lang/String;
+; v4 : [Ljava/lang/String; , v0 : single-length
+l16382e:
+	const/4	v0,0
+; v0 : single-length
+	aput-object	v11,v4,v0
+; v11 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v0 : single-length
+l163834:
+.line 741
+	if-lez	v12,l16384a
+; v12 : single-length
+.line 742
+	const-string	v0,"limit"
+; v0 : Ljava/lang/String;
+	invoke-static	{v12},java/lang/String/valueOf	; valueOf(I)Ljava/lang/String;
+; v12 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v8,v0,v5},android/net/Uri$Builder/appendQueryParameter	; appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v8 : Landroid/net/Uri$Builder; , v0 : Ljava/lang/String; , v5 : Ljava/lang/String;
+l16384a:
+.line 745
+	invoke-virtual	{v8},android/net/Uri$Builder/build	; build()Landroid/net/Uri;
+; v8 : Landroid/net/Uri$Builder;
+	move-result-object	v1
+; v1 : Landroid/net/Uri;
+.line 748
+	iget-object	v0,v9,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v0 : Landroid/content/Context; , v9 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v0},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/ContentResolver;
+	move-object	v5,v2
+; v5 : single-length , v2 : single-length
+	invoke-virtual/range	{v0..v5},android/content/ContentResolver/query;	query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/content/ContentResolver; , v1 : Landroid/net/Uri; , v2 : single-length , v3 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v5 : single-length
+	move-result-object	v2
+; v2 : Landroid/database/Cursor;
+	goto	l1637ba
+l16386a:
+.line 738
+	invoke-virtual	{v8,v11},android/net/Uri$Builder/appendPath	; appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v8 : Landroid/net/Uri$Builder; , v11 : Ljava/lang/String;
+	goto	l163834
+.end method
+
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.limit registers 10
+; this: v6 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v7 (I)
+; parameter[1] : v8 (Landroid/view/View;)
+; parameter[2] : v9 (Landroid/view/ViewGroup;)
+.catch java/lang/RuntimeException from l163884 to l16388a using l16388e
+l163884:
+.line 443
+	invoke-super	{v6,v7,v8,v9},android/support/v4/widget/ResourceCursorAdapter/getView	; getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+; v6 : Landroid/support/v7/widget/SuggestionsAdapter; , v7 : single-length , v8 : Landroid/view/View; , v9 : Landroid/view/ViewGroup;
+l16388a:
+	move-result-object	v2
+; v2 : Landroid/view/View;
+l16388c:
+.line 453
+	return-object	v2
+; v2 : Landroid/view/View;
+l16388e:
+.line 444
+	move-exception	v0
+; v0 : java/lang/RuntimeException
+.line 445
+	const-string	v4,"SuggestionsAdapter"
+; v4 : Ljava/lang/String;
+	const-string	v5,"Search suggestions cursor threw exception."
+; v5 : Ljava/lang/String;
+	invoke-static	{v4,v5,v0},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v0 : java/lang/RuntimeException
+.line 447
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	iget-object	v5,v6,android/support/v7/widget/SuggestionsAdapter.mCursor Landroid/database/Cursor;
+; v5 : Landroid/database/Cursor; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v6,v4,v5,v9},android/support/v7/widget/SuggestionsAdapter/newView	; newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+; v6 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/content/Context; , v5 : Landroid/database/Cursor; , v9 : Landroid/view/ViewGroup;
+	move-result-object	v2
+; v2 : Landroid/view/View;
+.line 448
+	if-eqz	v2,l16388c
+; v2 : Landroid/view/View;
+.line 449
+	invoke-virtual	{v2},android/view/View/getTag	; getTag()Ljava/lang/Object;
+; v2 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache
+; v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+.line 450
+	iget-object	v1,v3,android/support/v7/widget/SuggestionsAdapter$ChildViewCache.mText1 Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView; , v3 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+.line 451
+	invoke-virtual	{v0},java/lang/RuntimeException/toString	; toString()Ljava/lang/String;
+; v0 : java/lang/RuntimeException
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v1,v4},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v4 : Ljava/lang/String;
+	goto	l16388c
+.end method
+
+.method public hasStableIds()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+.line 133
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+.limit registers 6
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Landroid/content/Context;)
+; parameter[1] : v4 (Landroid/database/Cursor;)
+; parameter[2] : v5 (Landroid/view/ViewGroup;)
+.line 242
+	invoke-super	{v2,v3,v4,v5},android/support/v4/widget/ResourceCursorAdapter/newView	; newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
+; v2 : Landroid/support/v7/widget/SuggestionsAdapter; , v3 : Landroid/content/Context; , v4 : Landroid/database/Cursor; , v5 : Landroid/view/ViewGroup;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 243
+	new-instance	v1,android/support/v7/widget/SuggestionsAdapter$ChildViewCache
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+	invoke-direct	{v1,v0},android/support/v7/widget/SuggestionsAdapter$ChildViewCache/<init>	; <init>(Landroid/view/View;)V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache; , v0 : Landroid/view/View;
+	invoke-virtual	{v0,v1},android/view/View/setTag	; setTag(Ljava/lang/Object;)V
+; v0 : Landroid/view/View; , v1 : Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;
+.line 244
+	return-object	v0
+; v0 : Landroid/view/View;
+.end method
+
+.method public notifyDataSetChanged()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+.line 179
+	invoke-super	{v1},android/support/v4/widget/ResourceCursorAdapter/notifyDataSetChanged	; notifyDataSetChanged()V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 181
+	invoke-virtual	{v1},android/support/v7/widget/SuggestionsAdapter/getCursor	; getCursor()Landroid/database/Cursor;
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+	invoke-direct	{v1,v0},android/support/v7/widget/SuggestionsAdapter/updateSpinnerState	; updateSpinnerState(Landroid/database/Cursor;)V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter; , v0 : Landroid/database/Cursor;
+.line 182
+	return-void	
+.end method
+
+.method public notifyDataSetInvalidated()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SuggestionsAdapter;)
+.line 187
+	invoke-super	{v1},android/support/v4/widget/ResourceCursorAdapter/notifyDataSetInvalidated	; notifyDataSetInvalidated()V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 189
+	invoke-virtual	{v1},android/support/v7/widget/SuggestionsAdapter/getCursor	; getCursor()Landroid/database/Cursor;
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter;
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+	invoke-direct	{v1,v0},android/support/v7/widget/SuggestionsAdapter/updateSpinnerState	; updateSpinnerState(Landroid/database/Cursor;)V
+; v1 : Landroid/support/v7/widget/SuggestionsAdapter; , v0 : Landroid/database/Cursor;
+.line 190
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v3 (Landroid/view/View;)
+.var 0 is tag Ljava/lang/Object; from l16398c to l16399c
+.line 322
+	invoke-virtual	{v3},android/view/View/getTag	; getTag()Ljava/lang/Object;
+; v3 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+.line 323
+	instance-of	v1,v0,java/lang/CharSequence
+; v1 : single-length , v0 : Ljava/lang/Object;
+	if-eqz	v1,l1639a2
+; v1 : single-length
+.line 324
+	iget-object	v1,v2,android/support/v7/widget/SuggestionsAdapter.mSearchView Landroid/support/v7/widget/SearchView;
+; v1 : Landroid/support/v7/widget/SearchView; , v2 : Landroid/support/v7/widget/SuggestionsAdapter;
+	check-cast	v0,java/lang/CharSequence
+; v0 : Ljava/lang/CharSequence;
+l16399c:
+	invoke-virtual	{v1,v0},android/support/v7/widget/SearchView/onQueryRefine	; onQueryRefine(Ljava/lang/CharSequence;)V
+; v1 : Landroid/support/v7/widget/SearchView; , v0 : Ljava/lang/CharSequence;
+l1639a2:
+.line 326
+	return-void	
+.end method
+
+.method public runQueryOnBackgroundThread(Ljava/lang/CharSequence;)Landroid/database/Cursor;
+.limit registers 8
+; this: v6 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v7 (Ljava/lang/CharSequence;)
+.catch java/lang/RuntimeException from l1639ec to l163a06 using l163a0a
+.var 0 is cursor Landroid/database/Cursor; from l1639c0 to l1639e2
+.var 2 is query Ljava/lang/String; from l1639be to l1639e2
+	const/4	v3,0
+; v3 : single-length
+.line 144
+	if-nez	v7,l1639e2
+; v7 : Ljava/lang/CharSequence;
+	const-string	v2,""
+; v2 : Ljava/lang/String;
+l1639be:
+.line 149
+	const/4	v0,0
+; v0 : single-length
+.line 150
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mSearchView Landroid/support/v7/widget/SearchView;
+; v4 : Landroid/support/v7/widget/SearchView; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/support/v7/widget/SearchView/getVisibility	; getVisibility()I
+; v4 : Landroid/support/v7/widget/SearchView;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,l1639e0
+; v4 : single-length
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mSearchView Landroid/support/v7/widget/SearchView;
+; v4 : Landroid/support/v7/widget/SearchView; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	invoke-virtual	{v4},android/support/v7/widget/SearchView/getWindowVisibility	; getWindowVisibility()I
+; v4 : Landroid/support/v7/widget/SearchView;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l1639ec
+; v4 : single-length
+l1639e0:
+.line 167
+	return-object	v3
+; v3 : Landroid/database/Cursor;
+l1639e2:
+.line 144
+	invoke-virtual	{v7},java/lang/Object/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/CharSequence;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	goto	l1639be
+l1639ec:
+.line 155
+	iget-object	v4,v6,android/support/v7/widget/SuggestionsAdapter.mSearchable Landroid/app/SearchableInfo;
+; v4 : Landroid/app/SearchableInfo; , v6 : Landroid/support/v7/widget/SuggestionsAdapter;
+	const/16	v5,50
+; v5 : single-length
+	invoke-virtual	{v6,v4,v2,v5},android/support/v7/widget/SuggestionsAdapter/getSearchManagerSuggestions	; getSearchManagerSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;I)Landroid/database/Cursor;
+; v6 : Landroid/support/v7/widget/SuggestionsAdapter; , v4 : Landroid/app/SearchableInfo; , v2 : Ljava/lang/String; , v5 : single-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 158
+	if-eqz	v0,l1639e0
+; v0 : Landroid/database/Cursor;
+.line 159
+	invoke-interface	{v0},android/database/Cursor/getCount	; getCount()I
+; v0 : Landroid/database/Cursor;
+l163a06:
+	move-object	v3,v0
+; v3 : Landroid/database/Cursor; , v0 : Landroid/database/Cursor;
+.line 160
+	goto	l1639e0
+l163a0a:
+.line 162
+	move-exception	v1
+; v1 : java/lang/RuntimeException
+.line 163
+	const-string	v4,"SuggestionsAdapter"
+; v4 : Ljava/lang/String;
+	const-string	v5,"Search suggestions query threw an exception."
+; v5 : Ljava/lang/String;
+	invoke-static	{v4,v5,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v1 : java/lang/RuntimeException
+	goto	l1639e0
+.end method
+
+.method public setQueryRefinement(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SuggestionsAdapter;)
+; parameter[0] : v1 (I)
+.line 116
+	iput	v1,v0,android/support/v7/widget/SuggestionsAdapter.mQueryRefinement I
+; v1 : single-length , v0 : Landroid/support/v7/widget/SuggestionsAdapter;
+.line 117
+	return-void	
+.end method
+
+

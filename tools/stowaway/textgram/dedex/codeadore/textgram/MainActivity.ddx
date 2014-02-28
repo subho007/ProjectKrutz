@@ -1,0 +1,893 @@
+.class public codeadore/textgram/MainActivity
+.super codeadore/textgram/el7rFragmentActivity
+.source MainActivity.java
+
+.field public static c Landroid/app/Activity;
+.field public static editText Landroid/widget/EditText;
+.field TAG Ljava/lang/String;
+.field UIHandler Landroid/os/Handler;
+.field handler Landroid/os/Handler;
+.field layout Ljava/lang/String;
+.field settings Landroid/content/SharedPreferences;
+.field smileysBtn Landroid/widget/ImageButton;
+.field smileysLL Landroid/widget/LinearLayout;
+.field smileysLoaded Z
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/MainActivity;)
+.line 37
+	invoke-direct	{v1},codeadore/textgram/el7rFragmentActivity/<init>	; <init>()V
+; v1 : Lcodeadore/textgram/MainActivity;
+.line 51
+	const-string	v0,"MainActivity"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.TAG Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcodeadore/textgram/MainActivity;
+.line 55
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,codeadore/textgram/MainActivity.smileysLoaded Z
+; v0 : single-length , v1 : Lcodeadore/textgram/MainActivity;
+.line 57
+	const-string	v0,"phone"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.layout Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcodeadore/textgram/MainActivity;
+.line 59
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-direct	{v0},android/os/Handler/<init>	; <init>()V
+; v0 : Landroid/os/Handler;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v1 : Lcodeadore/textgram/MainActivity;
+.line 37
+	return-void	
+.end method
+
+.method public static goNext()V
+.limit registers 3
+.line 475
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	sget-object	v1,codeadore/textgram/MainActivity.c Landroid/app/Activity;
+; v1 : Landroid/app/Activity;
+	const-class	v2,codeadore/textgram/StylingActivity
+; v2 : Ljava/lang/Class;
+	invoke-direct	{v0,v1,v2},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v0 : Landroid/content/Intent; , v1 : Landroid/app/Activity; , v2 : Ljava/lang/Class;
+.line 477
+	sget-object	v1,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v1 : Landroid/widget/EditText;
+	invoke-virtual	{v1},android/widget/EditText/getText	; getText()Landroid/text/Editable;
+; v1 : Landroid/widget/EditText;
+	move-result-object	v1
+; v1 : Landroid/text/Editable;
+	sput-object	v1,codeadore/textgram/StylingActivity.theText Landroid/text/Editable;
+; v1 : Landroid/text/Editable;
+.line 479
+	sget-object	v1,codeadore/textgram/MainActivity.c Landroid/app/Activity;
+; v1 : Landroid/app/Activity;
+	invoke-virtual	{v1,v0},android/app/Activity/startActivity	; startActivity(Landroid/content/Intent;)V
+; v1 : Landroid/app/Activity; , v0 : Landroid/content/Intent;
+.line 480
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 24
+; this: v22 (Lcodeadore/textgram/MainActivity;)
+; parameter[0] : v23 (Landroid/os/Bundle;)
+.catch java/lang/Exception from l1641d8 to l164200 using l164364
+.catch java/lang/Exception from l164148 to l164168 using l164358
+.catch java/lang/Exception from l1640b0 to l1640d2 using l164378
+.catch org/json/JSONException from l164046 to l164070 using l16434c
+.var 17 is theText Ljava/lang/String; from l1640c0 to l1640d2
+.var 12 is i Landroid/content/Intent; from l16415e to l164168
+.var 8 is editor Landroid/content/SharedPreferences$Editor; from l164170 to l16418c
+.var 8 is editor Landroid/content/SharedPreferences$Editor; from l1642b0 to l1642cc
+.var 3 is action Ljava/lang/String; from l164088 to l16434c
+.var 5 is clearBtn Landroid/widget/ImageButton; from l16421a to l16434c
+.var 9 is extras Landroid/os/Bundle; from l164080 to l16434c
+.var 10 is firstTime Z from l164144 to l16434c
+.var 11 is firstTime2 Z from l1642a4 to l16434c
+.var 13 is intent Landroid/content/Intent; from l164078 to l16434c
+.var 14 is settingsTemp Landroid/content/SharedPreferences; from l16412c to l16434c
+.var 15 is settingsTemp2 Landroid/content/SharedPreferences; from l16428c to l16434c
+.var 16 is storeBtn Landroid/widget/Button; from l164250 to l16434c
+.var 7 is e1 Lorg/json/JSONException; from l16434e to l164358
+.var 6 is e Ljava/lang/Exception; from l16435a to l164364
+.var 6 is e Ljava/lang/Exception; from l164366 to l164370
+.var 5 is clearBtn Landroid/widget/ImageButton; from l164370 to l164378
+.var 10 is firstTime Z from l164358 to l164378
+.var 11 is firstTime2 Z from l164370 to l164378
+.var 14 is settingsTemp Landroid/content/SharedPreferences; from l164358 to l164378
+.var 15 is settingsTemp2 Landroid/content/SharedPreferences; from l164370 to l164378
+.var 16 is storeBtn Landroid/widget/Button; from l164370 to l164378
+.line 63
+	invoke-super/range	{v22..v23},codeadore/textgram/el7rFragmentActivity/onCreate;	onCreate(Landroid/os/Bundle;)V
+; v22 : Lcodeadore/textgram/MainActivity; , v23 : Landroid/os/Bundle;
+.line 64
+	const	v18,2130903069	; 0x7f03001d
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/setContentView	; setContentView(I)V
+; v0 : Lcodeadore/textgram/MainActivity; , v1 : single-length
+.line 67
+	new-instance	v18,android/os/Handler
+; v18 : Landroid/os/Handler;
+	invoke-direct/range	{v18},android/os/Handler/<init>;	<init>()V
+; v18 : Landroid/os/Handler;
+	move-object/from16	v0,v18
+; v0 : Landroid/os/Handler; , v18 : Landroid/os/Handler;
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.UIHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v1 : Lcodeadore/textgram/MainActivity;
+.line 68
+	sput-object	v22,codeadore/textgram/MainActivity.c Landroid/app/Activity;
+; v22 : Landroid/app/Activity;
+.line 69
+	const	v18,2131099739	; 0x7f06005b
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Landroid/app/Activity; , v1 : single-length
+	move-result-object	v18
+; v18 : Landroid/view/View;
+	check-cast	v18,android/widget/LinearLayout
+; v18 : Landroid/widget/LinearLayout;
+	move-object/from16	v0,v18
+; v0 : Landroid/widget/LinearLayout; , v18 : Landroid/widget/LinearLayout;
+	move-object/from16	v1,v22
+; v1 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v0 : Landroid/widget/LinearLayout; , v1 : Landroid/app/Activity;
+.line 72
+	const	v18,2131099734	; 0x7f060056
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Landroid/app/Activity; , v1 : single-length
+	move-result-object	v18
+; v18 : Landroid/view/View;
+	check-cast	v18,android/widget/EditText
+; v18 : Landroid/widget/EditText;
+	sput-object	v18,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v18 : Landroid/widget/EditText;
+.line 73
+	const	v18,2131099733	; 0x7f060055
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Landroid/app/Activity; , v1 : single-length
+	move-result-object	v4
+; v4 : Landroid/view/View;
+	check-cast	v4,android/widget/TextView
+; v4 : Landroid/widget/TextView;
+.line 74
+	const-string	v18,"TextgramSettings"
+; v18 : Ljava/lang/String;
+	const/16	v19,0
+; v19 : single-length
+	move-object/from16	v0,v22
+; v0 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	move-object/from16	v1,v18
+; v1 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	invoke-virtual	{v0,v1,v2},codeadore/textgram/MainActivity/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v0 : Landroid/app/Activity; , v1 : Ljava/lang/String; , v2 : single-length
+	move-result-object	v18
+; v18 : Landroid/content/SharedPreferences;
+	move-object/from16	v0,v18
+; v0 : Landroid/content/SharedPreferences; , v18 : Landroid/content/SharedPreferences;
+	move-object/from16	v1,v22
+; v1 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.settings Landroid/content/SharedPreferences;
+; v0 : Landroid/content/SharedPreferences; , v1 : Landroid/app/Activity;
+l164046:
+.line 78
+	new-instance	v18,org/json/JSONObject
+; v18 : Lorg/json/JSONObject;
+.line 79
+	move-object/from16	v0,v22
+; v0 : Landroid/app/Activity; , v22 : Landroid/app/Activity;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.settings Landroid/content/SharedPreferences;
+; v0 : Landroid/content/SharedPreferences; , v0 : Landroid/content/SharedPreferences;
+	move-object/from16	v19,v0
+; v19 : Landroid/content/SharedPreferences; , v0 : Landroid/content/SharedPreferences;
+.line 80
+	const-string	v20,"settingsJSON"
+; v20 : Ljava/lang/String;
+.line 81
+	const-string	v21,"{ "adnetwork":"admob", "interstitials":"applovin", "message_id":"none", "message_html":"" }"
+; v21 : Ljava/lang/String;
+.line 79
+	invoke-interface/range	{v19..v21},android/content/SharedPreferences/getString;	getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v19 : Landroid/content/SharedPreferences; , v20 : Ljava/lang/String; , v21 : Ljava/lang/String;
+	move-result-object	v19
+; v19 : Ljava/lang/String;
+.line 78
+	invoke-direct/range	{v18..v19},org/json/JSONObject/<init>;	<init>(Ljava/lang/String;)V
+; v18 : Lorg/json/JSONObject; , v19 : Ljava/lang/String;
+	sput-object	v18,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v18 : Lorg/json/JSONObject;
+l164070:
+.line 88
+	invoke-virtual/range	{v22},codeadore/textgram/MainActivity/getIntent;	getIntent()Landroid/content/Intent;
+; v22 : Lcodeadore/textgram/MainActivity;
+	move-result-object	v13
+; v13 : Landroid/content/Intent;
+.line 89
+	invoke-virtual	{v13},android/content/Intent/getExtras	; getExtras()Landroid/os/Bundle;
+; v13 : Landroid/content/Intent;
+	move-result-object	v9
+; v9 : Landroid/os/Bundle;
+.line 90
+	invoke-virtual	{v13},android/content/Intent/getAction	; getAction()Ljava/lang/String;
+; v13 : Landroid/content/Intent;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 92
+	const-string	v18,"android.intent.action.SEND"
+; v18 : Ljava/lang/String;
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v18
+; v18 : single-length
+	if-eqz	v18,l1640d2
+; v18 : single-length
+.line 93
+	const-string	v18,"android.intent.extra.TEXT"
+; v18 : Ljava/lang/String;
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},android/os/Bundle/containsKey	; containsKey(Ljava/lang/String;)Z
+; v9 : Landroid/os/Bundle; , v0 : Ljava/lang/String;
+	move-result	v18
+; v18 : single-length
+	if-eqz	v18,l1640d2
+; v18 : single-length
+l1640b0:
+.line 95
+	const-string	v18,"android.intent.extra.TEXT"
+; v18 : Ljava/lang/String;
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},android/os/Bundle/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Landroid/os/Bundle; , v0 : Ljava/lang/String;
+	move-result-object	v17
+; v17 : Ljava/lang/String;
+.line 96
+	sget-object	v18,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v18 : Landroid/widget/EditText;
+	move-object/from16	v0,v18
+; v0 : Landroid/widget/EditText; , v18 : Landroid/widget/EditText;
+	move-object/from16	v1,v17
+; v1 : Ljava/lang/String; , v17 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/widget/EditText/setText	; setText(Ljava/lang/CharSequence;)V
+; v0 : Landroid/widget/EditText; , v1 : Ljava/lang/String;
+l1640d2:
+.line 103
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v0 : Landroid/os/Handler;
+	move-object/from16	v18,v0
+; v18 : Landroid/os/Handler; , v0 : Landroid/os/Handler;
+	new-instance	v19,codeadore/textgram/MainActivity$1
+; v19 : Lcodeadore/textgram/MainActivity$1;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/MainActivity$1; , v19 : Lcodeadore/textgram/MainActivity$1;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	invoke-direct	{v0,v1},codeadore/textgram/MainActivity$1/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v0 : Lcodeadore/textgram/MainActivity$1; , v1 : Ljava/lang/Object;
+.line 111
+	const-wide/16	v20,300
+; v20 : double-length
+.line 103
+	invoke-virtual/range	{v18..v21},android/os/Handler/postDelayed;	postDelayed(Ljava/lang/Runnable;J)Z
+; v18 : Landroid/os/Handler; , v19 : Lcodeadore/textgram/MainActivity$1; , v20 : double-length
+.line 114
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.tracker Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object/from16	v18,v0
+; v18 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	const-string	v19,"/MainActivity"
+; v19 : Ljava/lang/String;
+	invoke-virtual/range	{v18..v19},com/google/android/apps/analytics/GoogleAnalyticsTracker/trackPageView;	trackPageView(Ljava/lang/String;)V
+; v18 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v19 : Ljava/lang/String;
+.line 117
+	const-string	v18,"MyPrefs"
+; v18 : Ljava/lang/String;
+	const/16	v19,0
+; v19 : single-length
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	move-object/from16	v1,v18
+; v1 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	invoke-virtual	{v0,v1,v2},codeadore/textgram/MainActivity/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v0 : Ljava/lang/Object; , v1 : Ljava/lang/String; , v2 : single-length
+	move-result-object	v14
+; v14 : Landroid/content/SharedPreferences;
+.line 118
+	const-string	v18,"FirstRun2"
+; v18 : Ljava/lang/String;
+	const/16	v19,1
+; v19 : single-length
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v1,v19
+; v1 : single-length , v19 : single-length
+	invoke-interface	{v14,v0,v1},android/content/SharedPreferences/getBoolean	; getBoolean(Ljava/lang/String;Z)Z
+; v14 : Landroid/content/SharedPreferences; , v0 : Ljava/lang/String; , v1 : single-length
+	move-result	v10
+; v10 : single-length
+.line 120
+	if-eqz	v10,l16418c
+; v10 : single-length
+l164148:
+.line 123
+	new-instance	v12,android/content/Intent
+; v12 : Landroid/content/Intent;
+.line 124
+	const-class	v18,codeadore/textgram/FirstTimeActivity
+; v18 : Ljava/lang/Class;
+.line 123
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	move-object/from16	v1,v18
+; v1 : Ljava/lang/Class; , v18 : Ljava/lang/Class;
+	invoke-direct	{v12,v0,v1},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v12 : Landroid/content/Intent; , v0 : Ljava/lang/Object; , v1 : Ljava/lang/Class;
+.line 125
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	invoke-virtual	{v0,v12},codeadore/textgram/MainActivity/startActivity	; startActivity(Landroid/content/Intent;)V
+; v0 : Ljava/lang/Object; , v12 : Landroid/content/Intent;
+l164168:
+.line 130
+	invoke-interface	{v14},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v14 : Landroid/content/SharedPreferences;
+	move-result-object	v8
+; v8 : Landroid/content/SharedPreferences$Editor;
+.line 131
+	const-string	v18,"FirstRun2"
+; v18 : Ljava/lang/String;
+	const/16	v19,0
+; v19 : single-length
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v1,v19
+; v1 : single-length , v19 : single-length
+	invoke-interface	{v8,v0,v1},android/content/SharedPreferences$Editor/putBoolean	; putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+; v8 : Landroid/content/SharedPreferences$Editor; , v0 : Ljava/lang/String; , v1 : single-length
+.line 132
+	invoke-interface	{v8},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v8 : Landroid/content/SharedPreferences$Editor;
+l16418c:
+.line 141
+	const	v18,2131099736	; 0x7f060058
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Ljava/lang/Object; , v1 : single-length
+	move-result-object	v18
+; v18 : Landroid/view/View;
+	check-cast	v18,android/widget/ImageButton
+; v18 : Landroid/widget/ImageButton;
+	move-object/from16	v0,v18
+; v0 : Landroid/widget/ImageButton; , v18 : Landroid/widget/ImageButton;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.smileysBtn Landroid/widget/ImageButton;
+; v0 : Landroid/widget/ImageButton; , v1 : Ljava/lang/Object;
+.line 142
+	const	v18,2131099739	; 0x7f06005b
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Ljava/lang/Object; , v1 : single-length
+	move-result-object	v18
+; v18 : Landroid/view/View;
+	check-cast	v18,android/widget/LinearLayout
+; v18 : Landroid/widget/LinearLayout;
+	move-object/from16	v0,v18
+; v0 : Landroid/widget/LinearLayout; , v18 : Landroid/widget/LinearLayout;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v0 : Landroid/widget/LinearLayout; , v1 : Ljava/lang/Object;
+l1641d8:
+.line 146
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v0 : Landroid/widget/LinearLayout; , v0 : Landroid/widget/LinearLayout;
+	move-object/from16	v18,v0
+; v18 : Landroid/widget/LinearLayout; , v0 : Landroid/widget/LinearLayout;
+	invoke-virtual/range	{v18},android/widget/LinearLayout/getVisibility;	getVisibility()I
+; v18 : Landroid/widget/LinearLayout;
+	move-result	v18
+; v18 : single-length
+	if-nez	v18,l164200
+; v18 : single-length
+.line 147
+	const-string	v18,"tablet"
+; v18 : Ljava/lang/String;
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iput-object	v0,v1,codeadore/textgram/MainActivity.layout Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/Object;
+l164200:
+.line 154
+	const	v18,2131099737	; 0x7f060059
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Lcodeadore/textgram/MainActivity; , v1 : single-length
+	move-result-object	v5
+; v5 : Landroid/view/View;
+	check-cast	v5,android/widget/ImageButton
+; v5 : Landroid/widget/ImageButton;
+.line 155
+	new-instance	v18,codeadore/textgram/MainActivity$2
+; v18 : Lcodeadore/textgram/MainActivity$2;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/MainActivity$2; , v18 : Lcodeadore/textgram/MainActivity$2;
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	invoke-direct	{v0,v1},codeadore/textgram/MainActivity$2/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v0 : Lcodeadore/textgram/MainActivity$2; , v1 : Lcodeadore/textgram/MainActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/MainActivity$2; , v18 : Lcodeadore/textgram/MainActivity$2;
+	invoke-virtual	{v5,v0},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v5 : Landroid/widget/ImageButton; , v0 : Lcodeadore/textgram/MainActivity$2;
+.line 181
+	const	v18,2131099738	; 0x7f06005a
+; v18 : single-length
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v0 : Lcodeadore/textgram/MainActivity; , v1 : single-length
+	move-result-object	v16
+; v16 : Landroid/view/View;
+	check-cast	v16,android/widget/Button
+; v16 : Landroid/widget/Button;
+.line 182
+	new-instance	v18,codeadore/textgram/MainActivity$3
+; v18 : Lcodeadore/textgram/MainActivity$3;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/MainActivity$3; , v18 : Lcodeadore/textgram/MainActivity$3;
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	invoke-direct	{v0,v1},codeadore/textgram/MainActivity$3/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v0 : Lcodeadore/textgram/MainActivity$3; , v1 : Lcodeadore/textgram/MainActivity;
+	move-object/from16	v0,v16
+; v0 : Landroid/widget/Button; , v16 : Landroid/widget/Button;
+	move-object/from16	v1,v18
+; v1 : Lcodeadore/textgram/MainActivity$3; , v18 : Lcodeadore/textgram/MainActivity$3;
+	invoke-virtual	{v0,v1},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v0 : Landroid/widget/Button; , v1 : Lcodeadore/textgram/MainActivity$3;
+.line 193
+	const-string	v18,"MyPrefs"
+; v18 : Ljava/lang/String;
+	const/16	v19,0
+; v19 : single-length
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/MainActivity; , v22 : Lcodeadore/textgram/MainActivity;
+	move-object/from16	v1,v18
+; v1 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	invoke-virtual	{v0,v1,v2},codeadore/textgram/MainActivity/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v0 : Lcodeadore/textgram/MainActivity; , v1 : Ljava/lang/String; , v2 : single-length
+	move-result-object	v15
+; v15 : Landroid/content/SharedPreferences;
+.line 194
+	const-string	v18,"FirstTimeTooltipStore"
+; v18 : Ljava/lang/String;
+.line 195
+	const/16	v19,1
+; v19 : single-length
+.line 194
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v1,v19
+; v1 : single-length , v19 : single-length
+	invoke-interface	{v14,v0,v1},android/content/SharedPreferences/getBoolean	; getBoolean(Ljava/lang/String;Z)Z
+; v14 : Landroid/content/SharedPreferences; , v0 : Ljava/lang/String; , v1 : single-length
+	move-result	v11
+; v11 : single-length
+.line 197
+	if-eqz	v11,l1642cc
+; v11 : single-length
+.line 203
+	invoke-interface	{v15},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v15 : Landroid/content/SharedPreferences;
+	move-result-object	v8
+; v8 : Landroid/content/SharedPreferences$Editor;
+.line 204
+	const-string	v18,"FirstTimeTooltipStore"
+; v18 : Ljava/lang/String;
+	const/16	v19,0
+; v19 : single-length
+	move-object/from16	v0,v18
+; v0 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move/from16	v1,v19
+; v1 : single-length , v19 : single-length
+	invoke-interface	{v8,v0,v1},android/content/SharedPreferences$Editor/putBoolean	; putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+; v8 : Landroid/content/SharedPreferences$Editor; , v0 : Ljava/lang/String; , v1 : single-length
+.line 205
+	invoke-interface	{v8},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v8 : Landroid/content/SharedPreferences$Editor;
+l1642cc:
+.line 217
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.smileysBtn Landroid/widget/ImageButton;
+; v0 : Landroid/widget/ImageButton; , v0 : Landroid/widget/ImageButton;
+	move-object/from16	v18,v0
+; v18 : Landroid/widget/ImageButton; , v0 : Landroid/widget/ImageButton;
+	if-eqz	v18,l164370
+; v18 : Landroid/widget/ImageButton;
+.line 219
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.smileysBtn Landroid/widget/ImageButton;
+; v0 : Landroid/widget/ImageButton; , v0 : Landroid/widget/ImageButton;
+	move-object/from16	v18,v0
+; v18 : Landroid/widget/ImageButton; , v0 : Landroid/widget/ImageButton;
+	new-instance	v19,codeadore/textgram/MainActivity$4
+; v19 : Lcodeadore/textgram/MainActivity$4;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/MainActivity$4; , v19 : Lcodeadore/textgram/MainActivity$4;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	invoke-direct	{v0,v1},codeadore/textgram/MainActivity$4/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v0 : Lcodeadore/textgram/MainActivity$4; , v1 : Ljava/lang/Object;
+	invoke-virtual/range	{v18..v19},android/widget/ImageButton/setOnClickListener;	setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v18 : Landroid/widget/ImageButton; , v19 : Lcodeadore/textgram/MainActivity$4;
+l164300:
+.line 244
+	invoke-virtual/range	{v22},codeadore/textgram/MainActivity/setupSmileys;	setupSmileys()V
+; v22 : Ljava/lang/Object;
+.line 248
+	sget-object	v18,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v18 : Landroid/widget/EditText;
+	new-instance	v19,codeadore/textgram/MainActivity$5
+; v19 : Lcodeadore/textgram/MainActivity$5;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/MainActivity$5; , v19 : Lcodeadore/textgram/MainActivity$5;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	invoke-direct	{v0,v1,v4},codeadore/textgram/MainActivity$5/<init>	; <init>(Lcodeadore/textgram/MainActivity;Landroid/widget/TextView;)V
+; v0 : Lcodeadore/textgram/MainActivity$5; , v1 : Ljava/lang/Object; , v4 : Landroid/widget/TextView;
+	invoke-virtual/range	{v18..v19},android/widget/EditText/addTextChangedListener;	addTextChangedListener(Landroid/text/TextWatcher;)V
+; v18 : Landroid/widget/EditText; , v19 : Lcodeadore/textgram/MainActivity$5;
+.line 281
+	move-object/from16	v0,v22
+; v0 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	iget-object	v0,v0,codeadore/textgram/MainActivity.UIHandler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v0 : Landroid/os/Handler;
+	move-object/from16	v18,v0
+; v18 : Landroid/os/Handler; , v0 : Landroid/os/Handler;
+	new-instance	v19,codeadore/textgram/MainActivity$6
+; v19 : Lcodeadore/textgram/MainActivity$6;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/MainActivity$6; , v19 : Lcodeadore/textgram/MainActivity$6;
+	move-object/from16	v1,v22
+; v1 : Ljava/lang/Object; , v22 : Ljava/lang/Object;
+	invoke-direct	{v0,v1},codeadore/textgram/MainActivity$6/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v0 : Lcodeadore/textgram/MainActivity$6; , v1 : Ljava/lang/Object;
+.line 361
+	const-wide/16	v20,300
+; v20 : double-length
+.line 281
+	invoke-virtual/range	{v18..v21},android/os/Handler/postDelayed;	postDelayed(Ljava/lang/Runnable;J)Z
+; v18 : Landroid/os/Handler; , v19 : Lcodeadore/textgram/MainActivity$6; , v20 : double-length
+.line 366
+	return-void	
+l16434c:
+.line 82
+	move-exception	v7
+; v7 : org/json/JSONException
+.line 83
+	invoke-virtual	{v7},org/json/JSONException/printStackTrace	; printStackTrace()V
+; v7 : org/json/JSONException
+	goto/16	l164070
+l164358:
+.line 126
+	move-exception	v6
+; v6 : java/lang/Exception
+.line 127
+	invoke-virtual	{v6},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v6 : java/lang/Exception
+	goto/16	l164168
+l164364:
+.line 149
+	move-exception	v6
+; v6 : java/lang/Exception
+.line 150
+	invoke-virtual	{v6},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v6 : java/lang/Exception
+	goto/16	l164200
+l164370:
+.line 241
+	invoke-virtual/range	{v22},codeadore/textgram/MainActivity/setupSmileys;	setupSmileys()V
+; v22 : Ljava/lang/Object;
+	goto	l164300
+l164378:
+.line 97
+	move-exception	v18
+; v18 : java/lang/Exception
+	goto/16	l1640d2
+.end method
+
+.method public onCreateOptionsMenu(Landroid/view/Menu;)Z
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/MainActivity;)
+; parameter[0] : v4 (Landroid/view/Menu;)
+	const/4	v2,1
+; v2 : single-length
+.line 465
+	invoke-super	{v3,v4},codeadore/textgram/el7rFragmentActivity/onCreateOptionsMenu	; onCreateOptionsMenu(Landroid/view/Menu;)Z
+; v3 : Lcodeadore/textgram/MainActivity; , v4 : Landroid/view/Menu;
+.line 467
+	const	v1,2131099872	; 0x7f0600e0
+; v1 : single-length
+	invoke-interface	{v4,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v4 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/MenuItem;
+.line 468
+	invoke-interface	{v0,v2},android/view/MenuItem/setVisible	; setVisible(Z)Landroid/view/MenuItem;
+; v0 : Landroid/view/MenuItem; , v2 : single-length
+.line 470
+	return	v2
+; v2 : single-length
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+.limit registers 6
+; this: v3 (Lcodeadore/textgram/MainActivity;)
+; parameter[0] : v4 (I)
+; parameter[1] : v5 (Landroid/view/KeyEvent;)
+	const/4	v0,0
+; v0 : single-length
+.line 449
+	iget-object	v1,v3,codeadore/textgram/MainActivity.layout Ljava/lang/String;
+; v1 : Ljava/lang/String; , v3 : Lcodeadore/textgram/MainActivity;
+	const-string	v2,"phone"
+; v2 : Ljava/lang/String;
+	if-ne	v1,v2,l164424
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 450
+	const/4	v1,4
+; v1 : single-length
+	if-ne	v4,v1,l164424
+; v4 : single-length , v1 : single-length
+.line 452
+	iget-object	v1,v3,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v1 : Landroid/widget/LinearLayout; , v3 : Lcodeadore/textgram/MainActivity;
+	invoke-virtual	{v1},android/widget/LinearLayout/getVisibility	; getVisibility()I
+; v1 : Landroid/widget/LinearLayout;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l164424
+; v1 : single-length
+.line 453
+	invoke-virtual	{v3,v0},codeadore/textgram/MainActivity/toggleEmojis	; toggleEmojis(Z)V
+; v3 : Lcodeadore/textgram/MainActivity; , v0 : single-length
+l164422:
+.line 459
+	return	v0
+; v0 : single-length
+l164424:
+	invoke-super	{v3,v4,v5},codeadore/textgram/el7rFragmentActivity/onKeyDown	; onKeyDown(ILandroid/view/KeyEvent;)Z
+; v3 : Lcodeadore/textgram/MainActivity; , v4 : single-length , v5 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+	goto	l164422
+.end method
+
+.method protected onResume()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/MainActivity;)
+.line 41
+	invoke-super	{v1},codeadore/textgram/el7rFragmentActivity/onResume	; onResume()V
+; v1 : Lcodeadore/textgram/MainActivity;
+.line 43
+	const-string	v0,"MainActivity"
+; v0 : Ljava/lang/String;
+	sput-object	v0,codeadore/textgram/Settings.currentEmojisActivity Ljava/lang/String;
+; v0 : Ljava/lang/String;
+.line 45
+	return-void	
+.end method
+
+.method public setupSmileys()V
+.limit registers 6
+; this: v5 (Lcodeadore/textgram/MainActivity;)
+.line 411
+	const-string	v4,"MainActivity"
+; v4 : Ljava/lang/String;
+	sput-object	v4,codeadore/textgram/Settings.currentEmojisActivity Ljava/lang/String;
+; v4 : Ljava/lang/String;
+.line 413
+	const	v4,2131099742	; 0x7f06005e
+; v4 : single-length
+	invoke-virtual	{v5,v4},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/MainActivity; , v4 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/support/v4/view/ViewPager
+; v2 : Landroid/support/v4/view/ViewPager;
+.line 415
+	new-instance	v0,codeadore/textgram/EmojisPagerAdapter
+; v0 : Lcodeadore/textgram/EmojisPagerAdapter;
+.line 416
+	invoke-virtual	{v5},codeadore/textgram/MainActivity/getSupportFragmentManager	; getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
+; v5 : Lcodeadore/textgram/MainActivity;
+	move-result-object	v4
+; v4 : Landroid/support/v4/app/FragmentManager;
+.line 415
+	invoke-direct	{v0,v4},codeadore/textgram/EmojisPagerAdapter/<init>	; <init>(Landroid/support/v4/app/FragmentManager;)V
+; v0 : Lcodeadore/textgram/EmojisPagerAdapter; , v4 : Landroid/support/v4/app/FragmentManager;
+.line 417
+	invoke-virtual	{v2,v0},android/support/v4/view/ViewPager/setAdapter	; setAdapter(Landroid/support/v4/view/PagerAdapter;)V
+; v2 : Landroid/support/v4/view/ViewPager; , v0 : Lcodeadore/textgram/EmojisPagerAdapter;
+.line 419
+	const	v4,2131099740	; 0x7f06005c
+; v4 : single-length
+	invoke-virtual	{v5,v4},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/MainActivity; , v4 : single-length
+	move-result-object	v3
+; v3 : Landroid/view/View;
+	check-cast	v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator
+; v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 420
+	invoke-virtual	{v3,v2},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setViewPager	; setViewPager(Landroid/support/v4/view/ViewPager;)V
+; v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v2 : Landroid/support/v4/view/ViewPager;
+.line 422
+	const	v4,2131099741	; 0x7f06005d
+; v4 : single-length
+	invoke-virtual	{v5,v4},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/MainActivity; , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+	check-cast	v1,android/widget/ImageButton
+; v1 : Landroid/widget/ImageButton;
+.line 423
+	new-instance	v4,codeadore/textgram/MainActivity$7
+; v4 : Lcodeadore/textgram/MainActivity$7;
+	invoke-direct	{v4,v5},codeadore/textgram/MainActivity$7/<init>	; <init>(Lcodeadore/textgram/MainActivity;)V
+; v4 : Lcodeadore/textgram/MainActivity$7; , v5 : Lcodeadore/textgram/MainActivity;
+	invoke-virtual	{v1,v4},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v1 : Landroid/widget/ImageButton; , v4 : Lcodeadore/textgram/MainActivity$7;
+.line 444
+	return-void	
+.end method
+
+.method protected toggleEmojis(Z)V
+.limit registers 7
+; this: v5 (Lcodeadore/textgram/MainActivity;)
+; parameter[0] : v6 (Z)
+.var 1 is imm Landroid/view/inputmethod/InputMethodManager; from l164528 to l16453a
+.var 0 is animation Landroid/view/animation/Animation; from l16450e to l16453c
+	const/4	v4,0
+; v4 : single-length
+.line 387
+	if-eqz	v6,l16453c
+; v6 : single-length
+.line 388
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysBtn Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v5 : Lcodeadore/textgram/MainActivity;
+	const	v3,2130837614	; 0x7f02006e
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setBackgroundResource	; setBackgroundResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 389
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v2 : Landroid/widget/LinearLayout; , v5 : Lcodeadore/textgram/MainActivity;
+	invoke-virtual	{v2,v4},android/widget/LinearLayout/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/LinearLayout; , v4 : single-length
+.line 392
+	const	v2,2130968588	; 0x7f04000c
+; v2 : single-length
+.line 391
+	invoke-static	{v5,v2},android/view/animation/AnimationUtils/loadAnimation	; loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+; v5 : Lcodeadore/textgram/MainActivity; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/animation/Animation;
+.line 393
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v2 : Landroid/widget/LinearLayout; , v5 : Lcodeadore/textgram/MainActivity;
+	invoke-virtual	{v2,v0},android/widget/LinearLayout/startAnimation	; startAnimation(Landroid/view/animation/Animation;)V
+; v2 : Landroid/widget/LinearLayout; , v0 : Landroid/view/animation/Animation;
+.line 395
+	const-string	v2,"input_method"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v2},codeadore/textgram/MainActivity/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v5 : Lcodeadore/textgram/MainActivity; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/view/inputmethod/InputMethodManager
+; v1 : Landroid/view/inputmethod/InputMethodManager;
+.line 396
+	sget-object	v2,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v2 : Landroid/widget/EditText;
+	invoke-virtual	{v2},android/widget/EditText/getWindowToken	; getWindowToken()Landroid/os/IBinder;
+; v2 : Landroid/widget/EditText;
+	move-result-object	v2
+; v2 : Landroid/os/IBinder;
+	invoke-virtual	{v1,v2,v4},android/view/inputmethod/InputMethodManager/hideSoftInputFromWindow	; hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+; v1 : Landroid/view/inputmethod/InputMethodManager; , v2 : Landroid/os/IBinder; , v4 : single-length
+l16453a:
+.line 406
+	return-void	
+l16453c:
+.line 398
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysBtn Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v5 : Lcodeadore/textgram/MainActivity;
+	const	v3,2130837613	; 0x7f02006d
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setBackgroundResource	; setBackgroundResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 400
+	const	v2,2130968583	; 0x7f040007
+; v2 : single-length
+.line 399
+	invoke-static	{v5,v2},android/view/animation/AnimationUtils/loadAnimation	; loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+; v5 : Lcodeadore/textgram/MainActivity; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/animation/Animation;
+.line 401
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v2 : Landroid/widget/LinearLayout; , v5 : Lcodeadore/textgram/MainActivity;
+	invoke-virtual	{v2,v0},android/widget/LinearLayout/startAnimation	; startAnimation(Landroid/view/animation/Animation;)V
+; v2 : Landroid/widget/LinearLayout; , v0 : Landroid/view/animation/Animation;
+.line 403
+	iget-object	v2,v5,codeadore/textgram/MainActivity.smileysLL Landroid/widget/LinearLayout;
+; v2 : Landroid/widget/LinearLayout; , v5 : Lcodeadore/textgram/MainActivity;
+	const/16	v3,8
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/LinearLayout/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/LinearLayout; , v3 : single-length
+	goto	l16453a
+.end method
+
+

@@ -1,0 +1,132 @@
+.class com/google/ads/h$1
+.super java/lang/Object
+.source SourceFile
+.implements java/lang/Runnable
+
+.enclosing method com/b()V
+.field final a Lcom/google/ads/h;
+
+.method <init>(Lcom/google/ads/h;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/h$1;)
+; parameter[0] : v1 (Lcom/google/ads/h;)
+.line 149
+	iput-object	v1,v0,com/google/ads/h$1.a Lcom/google/ads/h;
+; v1 : Lcom/google/ads/h; , v0 : Lcom/google/ads/h$1;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/h$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcom/google/ads/h$1;)
+.catch java/lang/Throwable from lb9fb6 to lb9fc8 using lba012
+.line 154
+	iget-object	v0,v3,com/google/ads/h$1.a Lcom/google/ads/h;
+; v0 : Lcom/google/ads/h; , v3 : Lcom/google/ads/h$1;
+	invoke-virtual	{v0},com/google/ads/h/l	; l()Z
+; v0 : Lcom/google/ads/h;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lba010
+; v0 : single-length
+.line 155
+	iget-object	v0,v3,com/google/ads/h$1.a Lcom/google/ads/h;
+; v0 : Lcom/google/ads/h; , v3 : Lcom/google/ads/h$1;
+	invoke-static	{v0},com/google/ads/h/a	; a(Lcom/google/ads/h;)Lcom/google/ads/mediation/MediationAdapter;
+; v0 : Lcom/google/ads/h;
+	move-result-object	v0
+; v0 : Lcom/google/ads/mediation/MediationAdapter;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/mediation/MediationAdapter;
+lb9fb6:
+.line 157
+	iget-object	v0,v3,com/google/ads/h$1.a Lcom/google/ads/h;
+; v0 : Lcom/google/ads/h; , v3 : Lcom/google/ads/h$1;
+	invoke-static	{v0},com/google/ads/h/a	; a(Lcom/google/ads/h;)Lcom/google/ads/mediation/MediationAdapter;
+; v0 : Lcom/google/ads/h;
+	move-result-object	v0
+; v0 : Lcom/google/ads/mediation/MediationAdapter;
+	invoke-interface	{v0},com/google/ads/mediation/MediationAdapter/destroy	; destroy()V
+; v0 : Lcom/google/ads/mediation/MediationAdapter;
+lb9fc8:
+.line 166
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Called destroy() for adapter with class: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-object	v1,v3,com/google/ads/h$1.a Lcom/google/ads/h;
+; v1 : Lcom/google/ads/h; , v3 : Lcom/google/ads/h$1;
+	invoke-static	{v1},com/google/ads/h/a	; a(Lcom/google/ads/h;)Lcom/google/ads/mediation/MediationAdapter;
+; v1 : Lcom/google/ads/h;
+	move-result-object	v1
+; v1 : Lcom/google/ads/mediation/MediationAdapter;
+	invoke-virtual	{v1},java/lang/Object/getClass	; getClass()Ljava/lang/Class;
+; v1 : Lcom/google/ads/mediation/MediationAdapter;
+	move-result-object	v1
+; v1 : Ljava/lang/Class;
+	invoke-virtual	{v1},java/lang/Class/getName	; getName()Ljava/lang/String;
+; v1 : Ljava/lang/Class;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lba010:
+.line 169
+	return-void	
+lba012:
+.line 158
+	move-exception	v0
+; v0 : java/lang/Throwable
+.line 161
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Error while destroying adapter ("
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	iget-object	v2,v3,com/google/ads/h$1.a Lcom/google/ads/h;
+; v2 : Lcom/google/ads/h; , v3 : Lcom/google/ads/h$1;
+	invoke-virtual	{v2},com/google/ads/h/h	; h()Ljava/lang/String;
+; v2 : Lcom/google/ads/h;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"):"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Throwable
+	goto	lba010
+.end method
+
+

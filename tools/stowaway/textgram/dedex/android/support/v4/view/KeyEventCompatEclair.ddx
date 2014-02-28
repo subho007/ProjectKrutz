@@ -1,0 +1,66 @@
+.class android/support/v4/view/KeyEventCompatEclair
+.super java/lang/Object
+.source KeyEventCompatEclair.java
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/KeyEventCompatEclair;)
+.line 23
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/KeyEventCompatEclair;
+	return-void	
+.end method
+
+.method public static dispatch(Landroid/view/KeyEvent;Landroid/view/KeyEvent$Callback;Ljava/lang/Object;Ljava/lang/Object;)Z
+.limit registers 5
+; parameter[0] : v1 (Landroid/view/KeyEvent;)
+; parameter[1] : v2 (Landroid/view/KeyEvent$Callback;)
+; parameter[2] : v3 (Ljava/lang/Object;)
+; parameter[3] : v4 (Ljava/lang/Object;)
+.line 30
+	check-cast	v3,android/view/KeyEvent$DispatcherState
+; v3 : Landroid/view/KeyEvent$DispatcherState;
+	invoke-virtual	{v1,v2,v3,v4},android/view/KeyEvent/dispatch	; dispatch(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z
+; v1 : Landroid/view/KeyEvent; , v2 : Landroid/view/KeyEvent$Callback; , v3 : Landroid/view/KeyEvent$DispatcherState; , v4 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static getKeyDispatcherState(Landroid/view/View;)Ljava/lang/Object;
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 25
+	invoke-virtual	{v1},android/view/View/getKeyDispatcherState	; getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+; v1 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+	return-object	v0
+; v0 : Landroid/view/KeyEvent$DispatcherState;
+.end method
+
+.method public static isTracking(Landroid/view/KeyEvent;)Z
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/KeyEvent;)
+.line 38
+	invoke-virtual	{v1},android/view/KeyEvent/isTracking	; isTracking()Z
+; v1 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static startTracking(Landroid/view/KeyEvent;)V
+.limit registers 1
+; parameter[0] : v0 (Landroid/view/KeyEvent;)
+.line 34
+	invoke-virtual	{v0},android/view/KeyEvent/startTracking	; startTracking()V
+; v0 : Landroid/view/KeyEvent;
+.line 35
+	return-void	
+.end method
+
+

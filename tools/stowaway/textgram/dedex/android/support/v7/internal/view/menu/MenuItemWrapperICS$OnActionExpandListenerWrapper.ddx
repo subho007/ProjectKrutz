@@ -1,0 +1,74 @@
+.class android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper
+.super android/support/v7/internal/view/menu/BaseWrapper
+.source MenuItemWrapperICS.java
+.implements android/view/MenuItem$OnActionExpandListener
+
+.inner class OnActionExpandListenerWrapper inner android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper outer android/support/v7/internal/view/menu/MenuItemWrapperICS
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Landroid/support/v7/internal/view/menu/BaseWrapper" , "<" , "Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;" , ">;" , "Landroid/view/MenuItem$OnActionExpandListener;" }
+.end annotation
+
+.field final this$0 Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;
+
+.method <init>(Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;)
+; parameter[1] : v2 (Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)
+.line 354
+	iput-object	v1,v0,android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper.this$0 Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS; , v0 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+.line 355
+	invoke-direct	{v0,v2},android/support/v7/internal/view/menu/BaseWrapper/<init>	; <init>(Ljava/lang/Object;)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper; , v2 : Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
+.line 356
+	return-void	
+.end method
+
+.method public onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;)
+; parameter[0] : v3 (Landroid/view/MenuItem;)
+.line 365
+	iget-object	v0,v2,android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper.mWrappedObject Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v2 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+	check-cast	v0,android/support/v4/view/MenuItemCompat$OnActionExpandListener
+; v0 : Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
+	iget-object	v1,v2,android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper.this$0 Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS; , v2 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+	invoke-virtual	{v1,v3},android/support/v7/internal/view/menu/MenuItemWrapperICS/getMenuItemWrapper	; getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/support/v4/internal/view/SupportMenuItem;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS; , v3 : Landroid/view/MenuItem;
+	move-result-object	v1
+; v1 : Landroid/support/v4/internal/view/SupportMenuItem;
+	invoke-interface	{v0,v1},android/support/v4/view/MenuItemCompat$OnActionExpandListener/onMenuItemActionCollapse	; onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
+; v0 : Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener; , v1 : Landroid/support/v4/internal/view/SupportMenuItem;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onMenuItemActionExpand(Landroid/view/MenuItem;)Z
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;)
+; parameter[0] : v3 (Landroid/view/MenuItem;)
+.line 360
+	iget-object	v0,v2,android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper.mWrappedObject Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v2 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+	check-cast	v0,android/support/v4/view/MenuItemCompat$OnActionExpandListener
+; v0 : Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
+	iget-object	v1,v2,android/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper.this$0 Landroid/support/v7/internal/view/menu/MenuItemWrapperICS;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS; , v2 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS$OnActionExpandListenerWrapper;
+	invoke-virtual	{v1,v3},android/support/v7/internal/view/menu/MenuItemWrapperICS/getMenuItemWrapper	; getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/support/v4/internal/view/SupportMenuItem;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemWrapperICS; , v3 : Landroid/view/MenuItem;
+	move-result-object	v1
+; v1 : Landroid/support/v4/internal/view/SupportMenuItem;
+	invoke-interface	{v0,v1},android/support/v4/view/MenuItemCompat$OnActionExpandListener/onMenuItemActionExpand	; onMenuItemActionExpand(Landroid/view/MenuItem;)Z
+; v0 : Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener; , v1 : Landroid/support/v4/internal/view/SupportMenuItem;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

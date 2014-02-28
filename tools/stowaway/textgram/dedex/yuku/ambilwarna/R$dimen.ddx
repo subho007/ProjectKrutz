@@ -1,0 +1,20 @@
+.class public final yuku/ambilwarna/R$dimen
+.super java/lang/Object
+.source R.java
+
+.inner class dimen inner yuku/ambilwarna/R$dimen outer yuku/ambilwarna/R
+.field public static final ambilwarna_hsvHeight I = 2131296272	; 0x7f090010
+.field public static final ambilwarna_hsvWidth I = 2131296273	; 0x7f090011
+.field public static final ambilwarna_hueWidth I = 2131296274	; 0x7f090012
+.field public static final ambilwarna_spacer I = 2131296275	; 0x7f090013
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lyuku/ambilwarna/R$dimen;)
+.line 10
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lyuku/ambilwarna/R$dimen;
+	return-void	
+.end method
+
+

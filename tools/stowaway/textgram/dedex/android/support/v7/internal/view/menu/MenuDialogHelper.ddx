@@ -1,0 +1,432 @@
+.class public android/support/v7/internal/view/menu/MenuDialogHelper
+.super java/lang/Object
+.source MenuDialogHelper.java
+.implements android/content/DialogInterface$OnKeyListener
+.implements android/content/DialogInterface$OnClickListener
+.implements android/content/DialogInterface$OnDismissListener
+.implements android/support/v7/internal/view/menu/MenuPresenter$Callback
+
+.field private mDialog Landroid/app/AlertDialog;
+.field private mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+.field mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+.field private mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+
+.method public <init>(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+.line 43
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 44
+	iput-object	v1,v0,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v0 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 45
+	return-void	
+.end method
+
+.method public dismiss()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+.line 141
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	if-eqz	v0,le894a
+; v0 : Landroid/app/AlertDialog;
+.line 142
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v0},android/app/AlertDialog/dismiss	; dismiss()V
+; v0 : Landroid/app/AlertDialog;
+le894a:
+.line 144
+	return-void	
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+.limit registers 6
+; this: v3 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v4 (Landroid/content/DialogInterface;)
+; parameter[1] : v5 (I)
+.line 170
+	iget-object	v1,v3,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	iget-object	v0,v3,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v0 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v3 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v0},android/support/v7/internal/view/menu/ListMenuPresenter/getAdapter	; getAdapter()Landroid/widget/ListAdapter;
+; v0 : Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+	move-result-object	v0
+; v0 : Landroid/widget/ListAdapter;
+	invoke-interface	{v0,v5},android/widget/ListAdapter/getItem	; getItem(I)Ljava/lang/Object;
+; v0 : Landroid/widget/ListAdapter; , v5 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/support/v7/internal/view/menu/MenuItemImpl
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v1,v0,v2},android/support/v7/internal/view/menu/MenuBuilder/performItemAction	; performItemAction(Landroid/view/MenuItem;I)Z
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v2 : single-length
+.line 171
+	return-void	
+.end method
+
+.method public onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+; parameter[1] : v3 (Z)
+.line 153
+	if-nez	v3,le89a0
+; v3 : single-length
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	if-ne	v2,v0,le89a6
+; v2 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v0 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+le89a0:
+.line 154
+	invoke-virtual	{v1},android/support/v7/internal/view/menu/MenuDialogHelper/dismiss	; dismiss()V
+; v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+le89a6:
+.line 156
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	if-eqz	v0,le89b8
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+.line 157
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-interface	{v0,v2,v3},android/support/v7/internal/view/menu/MenuPresenter$Callback/onCloseMenu	; onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v2 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : single-length
+le89b8:
+.line 159
+	return-void	
+.end method
+
+.method public onDismiss(Landroid/content/DialogInterface;)V
+.limit registers 5
+; this: v3 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v4 (Landroid/content/DialogInterface;)
+.line 148
+	iget-object	v0,v3,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v0 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v3 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	iget-object	v1,v3,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},android/support/v7/internal/view/menu/ListMenuPresenter/onCloseMenu	; onCloseMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;Z)V
+; v0 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v1 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v2 : single-length
+.line 149
+	return-void	
+.end method
+
+.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
+.limit registers 9
+; this: v5 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v6 (Landroid/content/DialogInterface;)
+; parameter[1] : v7 (I)
+; parameter[2] : v8 (Landroid/view/KeyEvent;)
+.var 0 is decor Landroid/view/View; from le8a30 to le8a46
+.var 1 is ds Landroid/view/KeyEvent$DispatcherState; from le8a3c to le8a46
+.var 2 is win Landroid/view/Window; from le8a24 to le8a46
+.var 0 is decor Landroid/view/View; from le8a78 to le8aa6
+.var 1 is ds Landroid/view/KeyEvent$DispatcherState; from le8a84 to le8aa6
+.var 2 is win Landroid/view/Window; from le8a6c to le8aa6
+	const/4	v3,1
+; v3 : single-length
+.line 96
+	const/16	v4,82
+; v4 : single-length
+	if-eq	v7,v4,le8a00
+; v7 : single-length , v4 : single-length
+	const/4	v4,4
+; v4 : single-length
+	if-ne	v7,v4,le8aa6
+; v7 : single-length , v4 : single-length
+le8a00:
+.line 97
+	invoke-virtual	{v8},android/view/KeyEvent/getAction	; getAction()I
+; v8 : Landroid/view/KeyEvent;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,le8a48
+; v4 : single-length
+	invoke-virtual	{v8},android/view/KeyEvent/getRepeatCount	; getRepeatCount()I
+; v8 : Landroid/view/KeyEvent;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,le8a48
+; v4 : single-length
+.line 99
+	iget-object	v4,v5,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v5 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4},android/app/AlertDialog/getWindow	; getWindow()Landroid/view/Window;
+; v4 : Landroid/app/AlertDialog;
+	move-result-object	v2
+; v2 : Landroid/view/Window;
+.line 100
+	if-eqz	v2,le8aa6
+; v2 : Landroid/view/Window;
+.line 101
+	invoke-virtual	{v2},android/view/Window/getDecorView	; getDecorView()Landroid/view/View;
+; v2 : Landroid/view/Window;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 102
+	if-eqz	v0,le8aa6
+; v0 : Landroid/view/View;
+.line 103
+	invoke-virtual	{v0},android/view/View/getKeyDispatcherState	; getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+; v0 : Landroid/view/View;
+	move-result-object	v1
+; v1 : Landroid/view/KeyEvent$DispatcherState;
+.line 104
+	if-eqz	v1,le8aa6
+; v1 : Landroid/view/KeyEvent$DispatcherState;
+.line 105
+	invoke-virtual	{v1,v8,v5},android/view/KeyEvent$DispatcherState/startTracking	; startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
+; v1 : Landroid/view/KeyEvent$DispatcherState; , v8 : Landroid/view/KeyEvent; , v5 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+le8a46:
+.line 127
+	return	v3
+; v3 : single-length
+le8a48:
+.line 110
+	invoke-virtual	{v8},android/view/KeyEvent/getAction	; getAction()I
+; v8 : Landroid/view/KeyEvent;
+	move-result	v4
+; v4 : single-length
+	if-ne	v4,v3,le8aa6
+; v4 : single-length , v3 : single-length
+	invoke-virtual	{v8},android/view/KeyEvent/isCanceled	; isCanceled()Z
+; v8 : Landroid/view/KeyEvent;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,le8aa6
+; v4 : single-length
+.line 111
+	iget-object	v4,v5,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v5 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4},android/app/AlertDialog/getWindow	; getWindow()Landroid/view/Window;
+; v4 : Landroid/app/AlertDialog;
+	move-result-object	v2
+; v2 : Landroid/view/Window;
+.line 112
+	if-eqz	v2,le8aa6
+; v2 : Landroid/view/Window;
+.line 113
+	invoke-virtual	{v2},android/view/Window/getDecorView	; getDecorView()Landroid/view/View;
+; v2 : Landroid/view/Window;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 114
+	if-eqz	v0,le8aa6
+; v0 : Landroid/view/View;
+.line 115
+	invoke-virtual	{v0},android/view/View/getKeyDispatcherState	; getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+; v0 : Landroid/view/View;
+	move-result-object	v1
+; v1 : Landroid/view/KeyEvent$DispatcherState;
+.line 116
+	if-eqz	v1,le8aa6
+; v1 : Landroid/view/KeyEvent$DispatcherState;
+	invoke-virtual	{v1,v8},android/view/KeyEvent$DispatcherState/isTracking	; isTracking(Landroid/view/KeyEvent;)Z
+; v1 : Landroid/view/KeyEvent$DispatcherState; , v8 : Landroid/view/KeyEvent;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,le8aa6
+; v4 : single-length
+.line 117
+	iget-object	v4,v5,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v4 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v5 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4,v3},android/support/v7/internal/view/menu/MenuBuilder/close	; close(Z)V
+; v4 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v3 : single-length
+.line 118
+	invoke-interface	{v6},android/content/DialogInterface/dismiss	; dismiss()V
+; v6 : Landroid/content/DialogInterface;
+	goto	le8a46
+le8aa6:
+.line 127
+	iget-object	v3,v5,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v5 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v3,v7,v8,v4},android/support/v7/internal/view/menu/MenuBuilder/performShortcut	; performShortcut(ILandroid/view/KeyEvent;I)Z
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v7 : single-length , v8 : Landroid/view/KeyEvent; , v4 : single-length
+	move-result	v3
+; v3 : single-length
+	goto	le8a46
+.end method
+
+.method public onOpenSubMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/MenuBuilder;)
+.line 163
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	if-eqz	v0,le8ade
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+.line 164
+	iget-object	v0,v1,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v1 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-interface	{v0,v2},android/support/v7/internal/view/menu/MenuPresenter$Callback/onOpenSubMenu	; onOpenSubMenu(Landroid/support/v7/internal/view/menu/MenuBuilder;)Z
+; v0 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v2 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result	v0
+; v0 : single-length
+le8adc:
+.line 166
+	return	v0
+; v0 : single-length
+le8ade:
+	const/4	v0,0
+; v0 : single-length
+	goto	le8adc
+.end method
+
+.method public setPresenterCallback(Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;)
+.line 132
+	iput-object	v1,v0,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenterCallback Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;
+; v1 : Landroid/support/v7/internal/view/menu/MenuPresenter$Callback; , v0 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 133
+	return-void	
+.end method
+
+.method public show(Landroid/os/IBinder;)V
+.limit registers 9
+; this: v7 (Landroid/support/v7/internal/view/menu/MenuDialogHelper;)
+; parameter[0] : v8 (Landroid/os/IBinder;)
+.var 2 is lp Landroid/view/WindowManager$LayoutParams; from le8ba4 to le8bce
+.line 54
+	iget-object	v3,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 57
+	new-instance	v0,android/app/AlertDialog$Builder
+; v0 : Landroid/app/AlertDialog$Builder;
+	invoke-virtual	{v3},android/support/v7/internal/view/menu/MenuBuilder/getContext	; getContext()Landroid/content/Context;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result-object	v4
+; v4 : Landroid/content/Context;
+	invoke-direct	{v0,v4},android/app/AlertDialog$Builder/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/app/AlertDialog$Builder; , v4 : Landroid/content/Context;
+.line 61
+	new-instance	v4,android/support/v7/internal/view/menu/ListMenuPresenter
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+	sget	v5,android/support/v7/appcompat/R$layout.abc_list_menu_item_layout I
+; v5 : single-length
+	sget	v6,android/support/v7/appcompat/R$style.Theme_AppCompat_CompactMenu_Dialog I
+; v6 : single-length
+	invoke-direct	{v4,v5,v6},android/support/v7/internal/view/menu/ListMenuPresenter/<init>	; <init>(II)V
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v5 : single-length , v6 : single-length
+	iput-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 64
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4,v7},android/support/v7/internal/view/menu/ListMenuPresenter/setCallback	; setCallback(Landroid/support/v7/internal/view/menu/MenuPresenter$Callback;)V
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 65
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mMenu Landroid/support/v7/internal/view/menu/MenuBuilder;
+; v4 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	iget-object	v5,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v5 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4,v5},android/support/v7/internal/view/menu/MenuBuilder/addMenuPresenter	; addMenuPresenter(Landroid/support/v7/internal/view/menu/MenuPresenter;)V
+; v4 : Landroid/support/v7/internal/view/menu/MenuBuilder; , v5 : Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+.line 66
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mPresenter Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4},android/support/v7/internal/view/menu/ListMenuPresenter/getAdapter	; getAdapter()Landroid/widget/ListAdapter;
+; v4 : Landroid/support/v7/internal/view/menu/ListMenuPresenter;
+	move-result-object	v4
+; v4 : Landroid/widget/ListAdapter;
+	invoke-virtual	{v0,v4,v7},android/app/AlertDialog$Builder/setAdapter	; setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v4 : Landroid/widget/ListAdapter; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 69
+	invoke-virtual	{v3},android/support/v7/internal/view/menu/MenuBuilder/getHeaderView	; getHeaderView()Landroid/view/View;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 70
+	if-eqz	v1,le8bce
+; v1 : Landroid/view/View;
+.line 72
+	invoke-virtual	{v0,v1},android/app/AlertDialog$Builder/setCustomTitle	; setCustomTitle(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : Landroid/view/View;
+le8b74:
+.line 79
+	invoke-virtual	{v0,v7},android/app/AlertDialog$Builder/setOnKeyListener	; setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 82
+	invoke-virtual	{v0},android/app/AlertDialog$Builder/create	; create()Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog$Builder;
+	move-result-object	v4
+; v4 : Landroid/app/AlertDialog;
+	iput-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 83
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4,v7},android/app/AlertDialog/setOnDismissListener	; setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+; v4 : Landroid/app/AlertDialog; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+.line 85
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4},android/app/AlertDialog/getWindow	; getWindow()Landroid/view/Window;
+; v4 : Landroid/app/AlertDialog;
+	move-result-object	v4
+; v4 : Landroid/view/Window;
+	invoke-virtual	{v4},android/view/Window/getAttributes	; getAttributes()Landroid/view/WindowManager$LayoutParams;
+; v4 : Landroid/view/Window;
+	move-result-object	v2
+; v2 : Landroid/view/WindowManager$LayoutParams;
+.line 86
+	const/16	v4,1003
+; v4 : single-length
+	iput	v4,v2,android/view/WindowManager$LayoutParams.type I
+; v4 : single-length , v2 : Landroid/view/WindowManager$LayoutParams;
+.line 87
+	if-eqz	v8,le8bb4
+; v8 : Landroid/os/IBinder;
+.line 88
+	iput-object	v8,v2,android/view/WindowManager$LayoutParams.token Landroid/os/IBinder;
+; v8 : Landroid/os/IBinder; , v2 : Landroid/view/WindowManager$LayoutParams;
+le8bb4:
+.line 90
+	iget	v4,v2,android/view/WindowManager$LayoutParams.flags I
+; v4 : single-length , v2 : Landroid/view/WindowManager$LayoutParams;
+	const/high16	v5,2
+; v5 : single-length
+	or-int/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	iput	v4,v2,android/view/WindowManager$LayoutParams.flags I
+; v4 : single-length , v2 : Landroid/view/WindowManager$LayoutParams;
+.line 92
+	iget-object	v4,v7,android/support/v7/internal/view/menu/MenuDialogHelper.mDialog Landroid/app/AlertDialog;
+; v4 : Landroid/app/AlertDialog; , v7 : Landroid/support/v7/internal/view/menu/MenuDialogHelper;
+	invoke-virtual	{v4},android/app/AlertDialog/show	; show()V
+; v4 : Landroid/app/AlertDialog;
+.line 93
+	return-void	
+le8bce:
+.line 75
+	invoke-virtual	{v3},android/support/v7/internal/view/menu/MenuBuilder/getHeaderIcon	; getHeaderIcon()Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result-object	v4
+; v4 : Landroid/graphics/drawable/Drawable;
+	invoke-virtual	{v0,v4},android/app/AlertDialog$Builder/setIcon	; setIcon(Landroid/graphics/drawable/Drawable;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v4 : Landroid/graphics/drawable/Drawable;
+	move-result-object	v4
+; v4 : Landroid/app/AlertDialog$Builder;
+	invoke-virtual	{v3},android/support/v7/internal/view/menu/MenuBuilder/getHeaderTitle	; getHeaderTitle()Ljava/lang/CharSequence;
+; v3 : Landroid/support/v7/internal/view/menu/MenuBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/CharSequence;
+	invoke-virtual	{v4,v5},android/app/AlertDialog$Builder/setTitle	; setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+; v4 : Landroid/app/AlertDialog$Builder; , v5 : Ljava/lang/CharSequence;
+	goto	le8b74
+.end method
+
+

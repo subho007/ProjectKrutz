@@ -1,0 +1,10 @@
+.interface public abstract android/support/v4/app/TaskStackBuilder$SupportParentable
+.super java/lang/Object
+.source TaskStackBuilder.java
+
+.inner class SupportParentable inner android/support/v4/app/TaskStackBuilder$SupportParentable outer android/support/v4/app/TaskStackBuilder
+
+.method public abstract getSupportParentActivityIntent()Landroid/content/Intent;
+.end method
+
+

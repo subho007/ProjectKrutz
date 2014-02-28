@@ -1,0 +1,29 @@
+.class android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2
+.super android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl
+.source AccessibilityServiceInfoCompat.java
+
+.inner class AccessibilityServiceInfoJellyBeanMr2 inner android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2 outer android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2;)
+.line 103
+	invoke-direct	{v0},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2;
+	return-void	
+.end method
+
+.method public getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2;)
+; parameter[0] : v2 (Landroid/accessibilityservice/AccessibilityServiceInfo;)
+.line 106
+	invoke-static	{v2},android/support/v4/accessibilityservice/AccessibilityServiceInfoCompatJellyBeanMr2/getCapabilities	; getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
+; v2 : Landroid/accessibilityservice/AccessibilityServiceInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,39 @@
+.class com/applovin/impl/sdk/x
+.super com/applovin/sdk/AppLovinSdkSettings
+
+.field private a Ljava/util/Map;
+.field private b Lcom/applovin/impl/sdk/h;
+
+.method <init>()V
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/x;)
+	invoke-direct	{v1},com/applovin/sdk/AppLovinSdkSettings/<init>	; <init>()V
+; v1 : Lcom/applovin/impl/sdk/x;
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v1,com/applovin/impl/sdk/x.a Ljava/util/Map;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/applovin/impl/sdk/x;
+	return-void	
+.end method
+
+.method a()Lcom/applovin/impl/sdk/h;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/x;)
+	iget-object	v0,v1,com/applovin/impl/sdk/x.b Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v1 : Lcom/applovin/impl/sdk/x;
+	return-object	v0
+; v0 : Lcom/applovin/impl/sdk/h;
+.end method
+
+.method b()Ljava/util/Map;
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/sdk/x;)
+	iget-object	v0,v1,com/applovin/impl/sdk/x.a Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/applovin/impl/sdk/x;
+	return-object	v0
+; v0 : Ljava/util/Map;
+.end method
+
+

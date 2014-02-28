@@ -1,0 +1,63 @@
+.class com/applovin/impl/sdk/al
+.super com/applovin/impl/sdk/ai
+
+.field final a Ljava/util/List;
+.field final b Lcom/applovin/impl/sdk/ak;
+
+.method <init>(Lcom/applovin/impl/sdk/ak;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdLoadListener;Lcom/applovin/impl/sdk/AppLovinSdkImpl;Ljava/util/List;)V
+.limit registers 6
+; this: v0 (Lcom/applovin/impl/sdk/al;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/ak;)
+; parameter[1] : v2 (Lcom/applovin/sdk/AppLovinAdSize;)
+; parameter[2] : v3 (Lcom/applovin/sdk/AppLovinAdLoadListener;)
+; parameter[3] : v4 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+; parameter[4] : v5 (Ljava/util/List;)
+	iput-object	v1,v0,com/applovin/impl/sdk/al.b Lcom/applovin/impl/sdk/ak;
+; v1 : Lcom/applovin/impl/sdk/ak; , v0 : Lcom/applovin/impl/sdk/al;
+	iput-object	v5,v0,com/applovin/impl/sdk/al.a Ljava/util/List;
+; v5 : Ljava/util/List; , v0 : Lcom/applovin/impl/sdk/al;
+	invoke-direct	{v0,v2,v3,v4},com/applovin/impl/sdk/ai/<init>	; <init>(Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdLoadListener;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+; v0 : Lcom/applovin/impl/sdk/al; , v2 : Lcom/applovin/sdk/AppLovinAdSize; , v3 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v4 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	return-void	
+.end method
+
+.method protected a(Ljava/util/Map;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/sdk/al;)
+; parameter[0] : v4 (Ljava/util/Map;)
+	invoke-super	{v3,v4},com/applovin/impl/sdk/ai/a	; a(Ljava/util/Map;)V
+; v3 : Lcom/applovin/impl/sdk/al; , v4 : Ljava/util/Map;
+	const-string	v0,"p"
+; v0 : Ljava/lang/String;
+	const-string	v1,"p"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,com/applovin/impl/sdk/al.a Ljava/util/List;
+; v2 : Ljava/util/List; , v3 : Lcom/applovin/impl/sdk/al;
+	invoke-static	{v1,v2},com/applovin/impl/sdk/ak/a	; a(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Ljava/util/List;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v0,v1},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v4 : Ljava/util/Map; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	const-string	v0,"app_id"
+; v0 : Ljava/lang/String;
+	const-string	v1,"app_id"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,com/applovin/impl/sdk/al.a Ljava/util/List;
+; v2 : Ljava/util/List; , v3 : Lcom/applovin/impl/sdk/al;
+	invoke-static	{v1,v2},com/applovin/impl/sdk/ak/a	; a(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Ljava/util/List;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v0,v1},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v4 : Ljava/util/Map; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	const-string	v0,"api_key"
+; v0 : Ljava/lang/String;
+	const-string	v1,""
+; v1 : Ljava/lang/String;
+	invoke-interface	{v4,v0,v1},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v4 : Ljava/util/Map; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	return-void	
+.end method
+
+

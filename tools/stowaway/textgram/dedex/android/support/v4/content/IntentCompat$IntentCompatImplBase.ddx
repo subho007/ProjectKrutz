@@ -1,0 +1,78 @@
+.class android/support/v4/content/IntentCompat$IntentCompatImplBase
+.super java/lang/Object
+.source IntentCompat.java
+.implements android/support/v4/content/IntentCompat$IntentCompatImpl
+
+.inner class IntentCompatImplBase inner android/support/v4/content/IntentCompat$IntentCompatImplBase outer android/support/v4/content/IntentCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;)
+.line 36
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;
+	return-void	
+.end method
+
+.method public makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+.limit registers 4
+; this: v2 (Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;)
+; parameter[0] : v3 (Landroid/content/ComponentName;)
+.line 39
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-string	v1,"android.intent.action.MAIN"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+.line 40
+	invoke-virtual	{v0,v3},android/content/Intent/setComponent	; setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v3 : Landroid/content/ComponentName;
+.line 41
+	const-string	v1,"android.intent.category.LAUNCHER"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Intent/addCategory	; addCategory(Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+.line 42
+	return-object	v0
+; v0 : Landroid/content/Intent;
+.end method
+
+.method public makeMainSelectorActivity(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+.limit registers 4
+; this: v1 (Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/String;)
+.line 51
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	invoke-direct	{v0,v2},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Landroid/content/Intent; , v2 : Ljava/lang/String;
+.line 52
+	invoke-virtual	{v0,v3},android/content/Intent/addCategory	; addCategory(Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v3 : Ljava/lang/String;
+.line 53
+	return-object	v0
+; v0 : Landroid/content/Intent;
+.end method
+
+.method public makeRestartActivityTask(Landroid/content/ComponentName;)Landroid/content/Intent;
+.limit registers 4
+; this: v2 (Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;)
+; parameter[0] : v3 (Landroid/content/ComponentName;)
+.line 58
+	invoke-virtual	{v2,v3},android/support/v4/content/IntentCompat$IntentCompatImplBase/makeMainActivity	; makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v2 : Landroid/support/v4/content/IntentCompat$IntentCompatImplBase; , v3 : Landroid/content/ComponentName;
+	move-result-object	v0
+; v0 : Landroid/content/Intent;
+.line 59
+	const	v1,268468224	; 0x10008000
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/content/Intent/addFlags	; addFlags(I)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : single-length
+.line 61
+	return-object	v0
+; v0 : Landroid/content/Intent;
+.end method
+
+

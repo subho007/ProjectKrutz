@@ -1,0 +1,29 @@
+.class android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl
+.super android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl
+.source AccessibilityRecordCompat.java
+
+.inner class AccessibilityRecordJellyBeanImpl inner android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl outer android/support/v4/view/accessibility/AccessibilityRecordCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl;)
+.line 498
+	invoke-direct	{v0},android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl;
+	return-void	
+.end method
+
+.method public setSource(Ljava/lang/Object;Landroid/view/View;I)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (Landroid/view/View;)
+; parameter[2] : v3 (I)
+.line 501
+	invoke-static	{v1,v2,v3},android/support/v4/view/accessibility/AccessibilityRecordCompatJellyBean/setSource	; setSource(Ljava/lang/Object;Landroid/view/View;I)V
+; v1 : Ljava/lang/Object; , v2 : Landroid/view/View; , v3 : single-length
+.line 502
+	return-void	
+.end method
+
+

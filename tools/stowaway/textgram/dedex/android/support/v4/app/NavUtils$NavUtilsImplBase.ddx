@@ -1,0 +1,234 @@
+.class android/support/v4/app/NavUtils$NavUtilsImplBase
+.super java/lang/Object
+.source NavUtils.java
+.implements android/support/v4/app/NavUtils$NavUtilsImpl
+
+.inner class NavUtilsImplBase inner android/support/v4/app/NavUtils$NavUtilsImplBase outer android/support/v4/app/NavUtils
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/app/NavUtils$NavUtilsImplBase;)
+.line 48
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/NavUtils$NavUtilsImplBase;
+	return-void	
+.end method
+
+.method public getParentActivityIntent(Landroid/app/Activity;)Landroid/content/Intent;
+.limit registers 10
+; this: v8 (Landroid/support/v4/app/NavUtils$NavUtilsImplBase;)
+; parameter[0] : v9 (Landroid/app/Activity;)
+.catch android/content/pm/PackageManager$NameNotFoundException from ld8bc6 to ld8bec using ld8bf0
+.var 2 is parentIntent Landroid/content/Intent; from ld8bda to ld8bdc
+.var 1 is grandparent Ljava/lang/String; from ld8bce to ld8bf0
+	const/4	v2,0
+; v2 : single-length
+.line 52
+	invoke-static	{v9},android/support/v4/app/NavUtils/getParentActivityName	; getParentActivityName(Landroid/app/Activity;)Ljava/lang/String;
+; v9 : Landroid/app/Activity;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 53
+	if-nez	v3,ld8bbc
+; v3 : Ljava/lang/String;
+ld8bba:
+.line 66
+	return-object	v2
+; v2 : Landroid/content/Intent;
+ld8bbc:
+.line 56
+	new-instance	v4,android/content/ComponentName
+; v4 : Landroid/content/ComponentName;
+	invoke-direct	{v4,v9,v3},android/content/ComponentName/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;)V
+; v4 : Landroid/content/ComponentName; , v9 : Landroid/app/Activity; , v3 : Ljava/lang/String;
+ld8bc6:
+.line 58
+	invoke-static	{v9,v4},android/support/v4/app/NavUtils/getParentActivityName	; getParentActivityName(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
+; v9 : Landroid/app/Activity; , v4 : Landroid/content/ComponentName;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 59
+	if-nez	v1,ld8bdc
+; v1 : Ljava/lang/String;
+	invoke-static	{v4},android/support/v4/content/IntentCompat/makeMainActivity	; makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v4 : Landroid/content/ComponentName;
+	move-result-object	v2
+; v2 : Landroid/content/Intent;
+ld8bda:
+.line 62
+	goto	ld8bba
+ld8bdc:
+.line 59
+	new-instance	v5,android/content/Intent
+; v5 : Landroid/content/Intent;
+	invoke-direct	{v5},android/content/Intent/<init>	; <init>()V
+; v5 : Landroid/content/Intent;
+	invoke-virtual	{v5,v4},android/content/Intent/setComponent	; setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v5 : Landroid/content/Intent; , v4 : Landroid/content/ComponentName;
+ld8bec:
+	move-result-object	v2
+; v2 : Landroid/content/Intent;
+	goto	ld8bda
+ld8bf0:
+.line 63
+	move-exception	v0
+; v0 : android/content/pm/PackageManager$NameNotFoundException
+.line 64
+	const-string	v5,"NavUtils"
+; v5 : Ljava/lang/String;
+	new-instance	v6,java/lang/StringBuilder
+; v6 : Ljava/lang/StringBuilder;
+	invoke-direct	{v6},java/lang/StringBuilder/<init>	; <init>()V
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"getParentActivityIntent: bad parentActivityName '"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	const-string	v7,"' in manifest"
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v6,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v6 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v6 : Ljava/lang/StringBuilder;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-static	{v5,v6},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v5 : Ljava/lang/String; , v6 : Ljava/lang/String;
+	goto	ld8bba
+.end method
+
+.method public getParentActivityName(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
+.limit registers 7
+; this: v4 (Landroid/support/v4/app/NavUtils$NavUtilsImplBase;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/content/pm/ActivityInfo;)
+	const/4	v1,0
+; v1 : single-length
+.line 85
+	iget-object	v2,v6,android/content/pm/ActivityInfo.metaData Landroid/os/Bundle;
+; v2 : Landroid/os/Bundle; , v6 : Landroid/content/pm/ActivityInfo;
+	if-nez	v2,ld8c5a
+; v2 : Landroid/os/Bundle;
+	move-object	v0,v1
+; v0 : single-length , v1 : single-length
+ld8c58:
+.line 91
+	return-object	v0
+; v0 : Ljava/lang/String;
+ld8c5a:
+.line 86
+	iget-object	v2,v6,android/content/pm/ActivityInfo.metaData Landroid/os/Bundle;
+; v2 : Landroid/os/Bundle; , v6 : Landroid/content/pm/ActivityInfo;
+	const-string	v3,"android.support.PARENT_ACTIVITY"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},android/os/Bundle/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v2 : Landroid/os/Bundle; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 87
+	if-nez	v0,ld8c72
+; v0 : Ljava/lang/String;
+	move-object	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	ld8c58
+ld8c72:
+.line 88
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/lang/String/charAt	; charAt(I)C
+; v0 : Ljava/lang/String; , v1 : single-length
+	move-result	v1
+; v1 : single-length
+	const/16	v2,46
+; v2 : single-length
+	if-ne	v1,v2,ld8c58
+; v1 : single-length , v2 : single-length
+.line 89
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v5 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	ld8c58
+.end method
+
+.method public navigateUpTo(Landroid/app/Activity;Landroid/content/Intent;)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/app/NavUtils$NavUtilsImplBase;)
+; parameter[0] : v2 (Landroid/app/Activity;)
+; parameter[1] : v3 (Landroid/content/Intent;)
+.line 78
+	const/high16	v0,1024
+; v0 : single-length
+	invoke-virtual	{v3,v0},android/content/Intent/addFlags	; addFlags(I)Landroid/content/Intent;
+; v3 : Landroid/content/Intent; , v0 : single-length
+.line 79
+	invoke-virtual	{v2,v3},android/app/Activity/startActivity	; startActivity(Landroid/content/Intent;)V
+; v2 : Landroid/app/Activity; , v3 : Landroid/content/Intent;
+.line 80
+	invoke-virtual	{v2},android/app/Activity/finish	; finish()V
+; v2 : Landroid/app/Activity;
+.line 81
+	return-void	
+.end method
+
+.method public shouldUpRecreateTask(Landroid/app/Activity;Landroid/content/Intent;)Z
+.limit registers 5
+; this: v2 (Landroid/support/v4/app/NavUtils$NavUtilsImplBase;)
+; parameter[0] : v3 (Landroid/app/Activity;)
+; parameter[1] : v4 (Landroid/content/Intent;)
+.line 72
+	invoke-virtual	{v3},android/app/Activity/getIntent	; getIntent()Landroid/content/Intent;
+; v3 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/content/Intent;
+	invoke-virtual	{v1},android/content/Intent/getAction	; getAction()Ljava/lang/String;
+; v1 : Landroid/content/Intent;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 73
+	if-eqz	v0,ld8d10
+; v0 : Ljava/lang/String;
+	const-string	v1,"android.intent.action.MAIN"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,ld8d10
+; v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+ld8d0e:
+	return	v1
+; v1 : single-length
+ld8d10:
+	const/4	v1,0
+; v1 : single-length
+	goto	ld8d0e
+.end method
+
+

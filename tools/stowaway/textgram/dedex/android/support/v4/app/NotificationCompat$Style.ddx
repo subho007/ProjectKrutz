@@ -1,0 +1,76 @@
+.class public abstract android/support/v4/app/NotificationCompat$Style
+.super java/lang/Object
+.source NotificationCompat.java
+
+.inner class Style inner android/support/v4/app/NotificationCompat$Style outer android/support/v4/app/NotificationCompat
+.field mBigContentTitle Ljava/lang/CharSequence;
+.field mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+.field mSummaryText Ljava/lang/CharSequence;
+.field mSummaryTextSet Z
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/app/NotificationCompat$Style;)
+.line 606
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v4/app/NotificationCompat$Style;
+.line 611
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/app/NotificationCompat$Style.mSummaryTextSet Z
+; v0 : single-length , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+	return-void	
+.end method
+
+.method public build()Landroid/app/Notification;
+.limit registers 3
+; this: v2 (Landroid/support/v4/app/NotificationCompat$Style;)
+.line 623
+	const/4	v0,0
+; v0 : single-length
+.line 624
+	iget-object	v1,v2,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v1 : Landroid/support/v4/app/NotificationCompat$Builder; , v2 : Landroid/support/v4/app/NotificationCompat$Style;
+	if-eqz	v1,l7877a
+; v1 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 625
+	iget-object	v1,v2,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v1 : Landroid/support/v4/app/NotificationCompat$Builder; , v2 : Landroid/support/v4/app/NotificationCompat$Style;
+	invoke-virtual	{v1},android/support/v4/app/NotificationCompat$Builder/build	; build()Landroid/app/Notification;
+; v1 : Landroid/support/v4/app/NotificationCompat$Builder;
+	move-result-object	v0
+; v0 : Landroid/app/Notification;
+l7877a:
+.line 627
+	return-object	v0
+; v0 : single-length
+.end method
+
+.method public setBuilder(Landroid/support/v4/app/NotificationCompat$Builder;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$Style;)
+; parameter[0] : v2 (Landroid/support/v4/app/NotificationCompat$Builder;)
+.line 614
+	iget-object	v0,v1,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder; , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+	if-eq	v0,v2,l787aa
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder; , v2 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 615
+	iput-object	v2,v1,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v2 : Landroid/support/v4/app/NotificationCompat$Builder; , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+.line 616
+	iget-object	v0,v1,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder; , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+	if-eqz	v0,l787aa
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 617
+	iget-object	v0,v1,android/support/v4/app/NotificationCompat$Style.mBuilder Landroid/support/v4/app/NotificationCompat$Builder;
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder; , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+	invoke-virtual	{v0,v1},android/support/v4/app/NotificationCompat$Builder/setStyle	; setStyle(Landroid/support/v4/app/NotificationCompat$Style;)Landroid/support/v4/app/NotificationCompat$Builder;
+; v0 : Landroid/support/v4/app/NotificationCompat$Builder; , v1 : Landroid/support/v4/app/NotificationCompat$Style;
+l787aa:
+.line 620
+	return-void	
+.end method
+
+

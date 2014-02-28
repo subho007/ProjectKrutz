@@ -1,0 +1,10 @@
+.interface public abstract android/support/v7/internal/widget/ActivityChooserModel$OnChooseActivityListener
+.super java/lang/Object
+.source ActivityChooserModel.java
+
+.inner class OnChooseActivityListener inner android/support/v7/internal/widget/ActivityChooserModel$OnChooseActivityListener outer android/support/v7/internal/widget/ActivityChooserModel
+
+.method public abstract onChooseActivity(Landroid/support/v7/internal/widget/ActivityChooserModel;Landroid/content/Intent;)Z
+.end method
+
+

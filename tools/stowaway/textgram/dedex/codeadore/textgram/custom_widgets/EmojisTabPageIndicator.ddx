@@ -1,0 +1,704 @@
+.class public codeadore/textgram/custom_widgets/EmojisTabPageIndicator
+.super android/widget/HorizontalScrollView
+.source EmojisTabPageIndicator.java
+.implements com/viewpagerindicator/PageIndicator
+
+.inner class OnTabReselectedListener inner codeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener outer codeadore/textgram/custom_widgets/EmojisTabPageIndicator
+.inner class TabView inner codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView outer codeadore/textgram/custom_widgets/EmojisTabPageIndicator
+.field private static final EMPTY_TITLE Ljava/lang/CharSequence;
+.field private mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.field private mMaxTabWidth I
+.field private mSelectedTabIndex I
+.field private final mTabClickListener Landroid/view/View$OnClickListener;
+.field private final mTabLayout Landroid/widget/LinearLayout;
+.field private mTabReselectedListener Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;
+.field private mTabSelector Ljava/lang/Runnable;
+.field private mViewPager Landroid/support/v4/view/ViewPager;
+
+.method static <clinit>()V
+.limit registers 1
+.line 30
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	sput-object	v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.EMPTY_TITLE Ljava/lang/CharSequence;
+; v0 : Ljava/lang/CharSequence;
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 68
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v2 : Landroid/content/Context; , v0 : single-length
+.line 69
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 7
+; this: v4 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/util/AttributeSet;)
+.line 72
+	invoke-direct	{v4,v5,v6},android/widget/HorizontalScrollView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet;
+.line 46
+	new-instance	v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator$1
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$1;
+	invoke-direct	{v0,v4},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$1/<init>	; <init>(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$1; , v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	iput-object	v0,v4,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabClickListener Landroid/view/View$OnClickListener;
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$1; , v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 73
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v4,v0},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setHorizontalScrollBarEnabled	; setHorizontalScrollBarEnabled(Z)V
+; v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v0 : single-length
+.line 75
+	new-instance	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	invoke-virtual	{v4},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/getContext	; getContext()Landroid/content/Context;
+; v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-direct	{v0,v1},android/widget/LinearLayout/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/widget/LinearLayout; , v1 : Landroid/content/Context;
+	iput-object	v0,v4,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v0 : Landroid/widget/LinearLayout; , v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 76
+	iget-object	v0,v4,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v0 : Landroid/widget/LinearLayout; , v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	new-instance	v1,android/view/ViewGroup$LayoutParams
+; v1 : Landroid/view/ViewGroup$LayoutParams;
+	const/4	v2,14
+; v2 : single-length
+	const/4	v3,15
+; v3 : single-length
+	invoke-direct	{v1,v2,v3},android/view/ViewGroup$LayoutParams/<init>	; <init>(II)V
+; v1 : Landroid/view/ViewGroup$LayoutParams; , v2 : single-length , v3 : single-length
+	invoke-virtual	{v4,v0,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/addView	; addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+; v4 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v0 : Landroid/widget/LinearLayout; , v1 : Landroid/view/ViewGroup$LayoutParams;
+.line 77
+	return-void	
+.end method
+
+.method static access$0(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)Landroid/support/v4/view/ViewPager;
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 59
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	return-object	v0
+; v0 : Landroid/support/v4/view/ViewPager;
+.end method
+
+.method static access$1(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 65
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabReselectedListener Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	return-object	v0
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;
+.end method
+
+.method static access$2(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)I
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 62
+	iget	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mMaxTabWidth I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$3(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;Ljava/lang/Runnable;)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[1] : v1 (Ljava/lang/Runnable;)
+.line 44
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	return-void	
+.end method
+
+.method private addTab(Ljava/lang/CharSequence;I)V
+.limit registers 9
+; this: v6 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v7 (Ljava/lang/CharSequence;)
+; parameter[1] : v8 (I)
+.line 143
+	new-instance	v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView;
+	invoke-virtual	{v6},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/getContext	; getContext()Landroid/content/Context;
+; v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-direct	{v0,v6,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView/<init>	; <init>(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;Landroid/content/Context;)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v1 : Landroid/content/Context;
+.line 144
+	invoke-static	{v0,v8},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView/access$0	; access$0(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView;I)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v8 : single-length
+.line 145
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView/setFocusable	; setFocusable(Z)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v1 : single-length
+.line 146
+	iget-object	v1,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabClickListener Landroid/view/View$OnClickListener;
+; v1 : Landroid/view/View$OnClickListener; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v0,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v1 : Landroid/view/View$OnClickListener;
+.line 147
+	invoke-virtual	{v6},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/getContext	; getContext()Landroid/content/Context;
+; v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"emojis/categs/"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v7},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/CharSequence;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,".png"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2},codeadore/textgram/el7rUtilities/getBitmapFromAsset	; getBitmapFromAsset(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v1 : Landroid/content/Context; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v0,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v1 : Landroid/graphics/Bitmap;
+.line 149
+	iget-object	v1,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v1 : Landroid/widget/LinearLayout; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	new-instance	v2,android/widget/LinearLayout$LayoutParams
+; v2 : Landroid/widget/LinearLayout$LayoutParams;
+	const/4	v3,0
+; v3 : single-length
+	const/4	v4,15
+; v4 : single-length
+	const/high16	v5,16256
+; v5 : single-length
+	invoke-direct	{v2,v3,v4,v5},android/widget/LinearLayout$LayoutParams/<init>	; <init>(IIF)V
+; v2 : Landroid/widget/LinearLayout$LayoutParams; , v3 : single-length , v4 : single-length , v5 : single-length
+	invoke-virtual	{v1,v0,v2},android/widget/LinearLayout/addView	; addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+; v1 : Landroid/widget/LinearLayout; , v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$TabView; , v2 : Landroid/widget/LinearLayout$LayoutParams;
+.line 150
+	return-void	
+.end method
+
+.method private animateToTab(I)V
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v3 (I)
+.line 111
+	iget-object	v1,v2,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v1 : Landroid/widget/LinearLayout; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v1,v3},android/widget/LinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v1 : Landroid/widget/LinearLayout; , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 112
+	iget-object	v1,v2,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v1,l15a4ee
+; v1 : Ljava/lang/Runnable;
+.line 113
+	iget-object	v1,v2,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v2,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)Z
+; v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v1 : Ljava/lang/Runnable;
+l15a4ee:
+.line 115
+	new-instance	v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator$2
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$2;
+	invoke-direct	{v1,v2,v0},codeadore/textgram/custom_widgets/EmojisTabPageIndicator$2/<init>	; <init>(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;Landroid/view/View;)V
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$2; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v0 : Landroid/view/View;
+	iput-object	v1,v2,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$2; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 122
+	iget-object	v1,v2,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v2,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/post	; post(Ljava/lang/Runnable;)Z
+; v2 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v1 : Ljava/lang/Runnable;
+.line 123
+	return-void	
+.end method
+
+.method public notifyDataSetChanged()V
+.limit registers 6
+; this: v5 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 192
+	iget-object	v4,v5,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v4 : Landroid/widget/LinearLayout; , v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v4},android/widget/LinearLayout/removeAllViews	; removeAllViews()V
+; v4 : Landroid/widget/LinearLayout;
+.line 193
+	iget-object	v4,v5,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v4},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v4 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/PagerAdapter;
+.line 194
+	invoke-virtual	{v0},android/support/v4/view/PagerAdapter/getCount	; getCount()I
+; v0 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v1
+; v1 : single-length
+.line 195
+	const/4	v2,0
+; v2 : single-length
+l15a538:
+	if-lt	v2,v1,l15a55e
+; v2 : single-length , v1 : single-length
+.line 202
+	iget	v4,v5,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mSelectedTabIndex I
+; v4 : single-length , v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-le	v4,v1,l15a54c
+; v4 : single-length , v1 : single-length
+.line 203
+	add-int/lit8	v4,v1,255
+; v4 : single-length , v1 : single-length
+	iput	v4,v5,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mSelectedTabIndex I
+; v4 : single-length , v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+l15a54c:
+.line 205
+	iget	v4,v5,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mSelectedTabIndex I
+; v4 : single-length , v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v5,v4},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v4 : single-length
+.line 206
+	invoke-virtual	{v5},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/requestLayout	; requestLayout()V
+; v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 207
+	return-void	
+l15a55e:
+.line 196
+	invoke-virtual	{v0,v2},android/support/v4/view/PagerAdapter/getPageTitle	; getPageTitle(I)Ljava/lang/CharSequence;
+; v0 : Landroid/support/v4/view/PagerAdapter; , v2 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/CharSequence;
+.line 197
+	if-nez	v3,l15a56e
+; v3 : Ljava/lang/CharSequence;
+.line 198
+	sget-object	v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.EMPTY_TITLE Ljava/lang/CharSequence;
+; v3 : Ljava/lang/CharSequence;
+l15a56e:
+.line 200
+	invoke-direct	{v5,v3,v2},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/addTab	; addTab(Ljava/lang/CharSequence;I)V
+; v5 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v3 : Ljava/lang/CharSequence; , v2 : single-length
+.line 195
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	l15a538
+.end method
+
+.method public onAttachedToWindow()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 127
+	invoke-super	{v1},android/widget/HorizontalScrollView/onAttachedToWindow	; onAttachedToWindow()V
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 128
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v0,l15a5a4
+; v0 : Ljava/lang/Runnable;
+.line 130
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v1,v0},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/post	; post(Ljava/lang/Runnable;)Z
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v0 : Ljava/lang/Runnable;
+l15a5a4:
+.line 132
+	return-void	
+.end method
+
+.method public onDetachedFromWindow()V
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+.line 136
+	invoke-super	{v1},android/widget/HorizontalScrollView/onDetachedFromWindow	; onDetachedFromWindow()V
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 137
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v0,l15a5d0
+; v0 : Ljava/lang/Runnable;
+.line 138
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabSelector Ljava/lang/Runnable;
+; v0 : Ljava/lang/Runnable; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v1,v0},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)Z
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v0 : Ljava/lang/Runnable;
+l15a5d0:
+.line 140
+	return-void	
+.end method
+
+.method public onMeasure(II)V
+.limit registers 11
+; this: v8 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v9 (I)
+; parameter[1] : v10 (I)
+.var 0 is childCount I from l15a60a to l15a662
+.var 1 is lockedExpanded Z from l15a5f8 to l15a662
+.var 2 is newWidth I from l15a64e to l15a662
+.var 3 is oldWidth I from l15a640 to l15a662
+	const/high16	v7,16384
+; v7 : single-length
+	const/4	v5,1
+; v5 : single-length
+.line 85
+	invoke-static	{v9},android/view/View$MeasureSpec/getMode	; getMode(I)I
+; v9 : single-length
+	move-result	v4
+; v4 : single-length
+.line 86
+	if-ne	v4,v7,l15a662
+; v4 : single-length , v7 : single-length
+	move	v1,v5
+; v1 : single-length , v5 : single-length
+l15a5f8:
+.line 87
+	invoke-virtual	{v8,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setFillViewport	; setFillViewport(Z)V
+; v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v1 : single-length
+.line 89
+	iget-object	v6,v8,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v6 : Landroid/widget/LinearLayout; , v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v6},android/widget/LinearLayout/getChildCount	; getChildCount()I
+; v6 : Landroid/widget/LinearLayout;
+	move-result	v0
+; v0 : single-length
+.line 90
+	if-le	v0,v5,l15a678
+; v0 : single-length , v5 : single-length
+	if-eq	v4,v7,l15a61a
+; v4 : single-length , v7 : single-length
+	const/high16	v5,32768
+; v5 : single-length
+	if-ne	v4,v5,l15a678
+; v4 : single-length , v5 : single-length
+l15a61a:
+.line 91
+	const/4	v5,2
+; v5 : single-length
+	if-le	v0,v5,l15a666
+; v0 : single-length , v5 : single-length
+.line 92
+	invoke-static	{v9},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v9 : single-length
+	move-result	v5
+; v5 : single-length
+	int-to-float	v5,v5
+; v5 : single-length , v5 : single-length
+	const	v6,1053609165	; 0x3ecccccd
+; v6 : single-length
+	mul-float/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	float-to-int	v5,v5
+; v5 : single-length , v5 : single-length
+	iput	v5,v8,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mMaxTabWidth I
+; v5 : single-length , v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+l15a638:
+.line 100
+	invoke-virtual	{v8},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/getMeasuredWidth	; getMeasuredWidth()I
+; v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	move-result	v3
+; v3 : single-length
+.line 101
+	invoke-super	{v8,v9,v10},android/widget/HorizontalScrollView/onMeasure	; onMeasure(II)V
+; v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v9 : single-length , v10 : single-length
+.line 102
+	invoke-virtual	{v8},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/getMeasuredWidth	; getMeasuredWidth()I
+; v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	move-result	v2
+; v2 : single-length
+.line 104
+	if-eqz	v1,l15a660
+; v1 : single-length
+	if-eq	v3,v2,l15a660
+; v3 : single-length , v2 : single-length
+.line 106
+	iget	v5,v8,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mSelectedTabIndex I
+; v5 : single-length , v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v8,v5},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v5 : single-length
+l15a660:
+.line 108
+	return-void	
+l15a662:
+.line 86
+	const/4	v1,0
+; v1 : single-length
+	goto	l15a5f8
+l15a666:
+.line 94
+	invoke-static	{v9},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v9 : single-length
+	move-result	v5
+; v5 : single-length
+	div-int/lit8	v5,v5,2
+; v5 : single-length , v5 : single-length
+	iput	v5,v8,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mMaxTabWidth I
+; v5 : single-length , v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	goto	l15a638
+l15a678:
+.line 97
+	const/4	v5,15
+; v5 : single-length
+	iput	v5,v8,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mMaxTabWidth I
+; v5 : single-length , v8 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	goto	l15a638
+.end method
+
+.method public onPageScrollStateChanged(I)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v2 (I)
+.line 154
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v0,l15a6a2
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 155
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-interface	{v0,v2},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrollStateChanged	; onPageScrollStateChanged(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length
+l15a6a2:
+.line 157
+	return-void	
+.end method
+
+.method public onPageScrolled(IFI)V
+.limit registers 5
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (F)
+; parameter[2] : v4 (I)
+.line 161
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v0,l15a6c6
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 162
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-interface	{v0,v2,v3,v4},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrolled	; onPageScrolled(IFI)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length , v3 : single-length , v4 : single-length
+l15a6c6:
+.line 164
+	return-void	
+.end method
+
+.method public onPageSelected(I)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v2 (I)
+.line 168
+	invoke-virtual	{v1,v2},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v2 : single-length
+.line 169
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v0,l15a6f0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 170
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-interface	{v0,v2},android/support/v4/view/ViewPager$OnPageChangeListener/onPageSelected	; onPageSelected(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length
+l15a6f0:
+.line 172
+	return-void	
+.end method
+
+.method public setCurrentItem(I)V
+.limit registers 8
+; this: v6 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v7 (I)
+.var 2 is isSelected Z from l15a750 to l15a766
+.line 217
+	iget-object	v4,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-nez	v4,l15a71c
+; v4 : Landroid/support/v4/view/ViewPager;
+.line 218
+	new-instance	v4,java/lang/IllegalStateException
+; v4 : Ljava/lang/IllegalStateException;
+	const-string	v5,"ViewPager has not been bound."
+; v5 : Ljava/lang/String;
+	invoke-direct	{v4,v5},java/lang/IllegalStateException/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/IllegalStateException; , v5 : Ljava/lang/String;
+	throw	v4
+; v4 : Ljava/lang/IllegalStateException;
+l15a71c:
+.line 220
+	iput	v7,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mSelectedTabIndex I
+; v7 : single-length , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 221
+	iget-object	v4,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v4,v7},android/support/v4/view/ViewPager/setCurrentItem	; setCurrentItem(I)V
+; v4 : Landroid/support/v4/view/ViewPager; , v7 : single-length
+.line 223
+	iget-object	v4,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v4 : Landroid/widget/LinearLayout; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v4},android/widget/LinearLayout/getChildCount	; getChildCount()I
+; v4 : Landroid/widget/LinearLayout;
+	move-result	v3
+; v3 : single-length
+.line 224
+	const/4	v1,0
+; v1 : single-length
+l15a738:
+	if-lt	v1,v3,l15a73e
+; v1 : single-length , v3 : single-length
+.line 232
+	return-void	
+l15a73e:
+.line 225
+	iget-object	v4,v6,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabLayout Landroid/widget/LinearLayout;
+; v4 : Landroid/widget/LinearLayout; , v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	invoke-virtual	{v4,v1},android/widget/LinearLayout/getChildAt	; getChildAt(I)Landroid/view/View;
+; v4 : Landroid/widget/LinearLayout; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 226
+	if-ne	v1,v7,l15a766
+; v1 : single-length , v7 : single-length
+	const/4	v2,1
+; v2 : single-length
+l15a750:
+.line 227
+	invoke-virtual	{v0,v2},android/view/View/setSelected	; setSelected(Z)V
+; v0 : Landroid/view/View; , v2 : single-length
+.line 228
+	if-eqz	v2,l15a760
+; v2 : single-length
+.line 229
+	invoke-direct	{v6,v7},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/animateToTab	; animateToTab(I)V
+; v6 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v7 : single-length
+l15a760:
+.line 224
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	l15a738
+l15a766:
+.line 226
+	const/4	v2,0
+; v2 : single-length
+	goto	l15a750
+.end method
+
+.method public setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v1 (Landroid/support/v4/view/ViewPager$OnPageChangeListener;)
+.line 236
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v1 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 237
+	return-void	
+.end method
+
+.method public setOnTabReselectedListener(Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;)
+.line 80
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mTabReselectedListener Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener;
+; v1 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator$OnTabReselectedListener; , v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 81
+	return-void	
+.end method
+
+.method public setViewPager(Landroid/support/v4/view/ViewPager;)V
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v4 (Landroid/support/v4/view/ViewPager;)
+.line 176
+	iget-object	v1,v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v1 : Landroid/support/v4/view/ViewPager; , v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-ne	v1,v4,l15a7b6
+; v1 : Landroid/support/v4/view/ViewPager; , v4 : Landroid/support/v4/view/ViewPager;
+l15a7b4:
+.line 189
+	return-void	
+l15a7b6:
+.line 179
+	iget-object	v1,v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v1 : Landroid/support/v4/view/ViewPager; , v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	if-eqz	v1,l15a7ca
+; v1 : Landroid/support/v4/view/ViewPager;
+.line 180
+	iget-object	v1,v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v1 : Landroid/support/v4/view/ViewPager; , v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/support/v4/view/ViewPager/setOnPageChangeListener	; setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+; v1 : Landroid/support/v4/view/ViewPager; , v2 : single-length
+l15a7ca:
+.line 182
+	invoke-virtual	{v4},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v4 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/PagerAdapter;
+.line 183
+	if-nez	v0,l15a7e6
+; v0 : Landroid/support/v4/view/PagerAdapter;
+.line 184
+	new-instance	v1,java/lang/IllegalStateException
+; v1 : Ljava/lang/IllegalStateException;
+	const-string	v2,"ViewPager does not have adapter instance."
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2},java/lang/IllegalStateException/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Ljava/lang/IllegalStateException; , v2 : Ljava/lang/String;
+	throw	v1
+; v1 : Ljava/lang/IllegalStateException;
+l15a7e6:
+.line 186
+	iput-object	v4,v3,codeadore/textgram/custom_widgets/EmojisTabPageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 187
+	invoke-virtual	{v4,v3},android/support/v4/view/ViewPager/setOnPageChangeListener	; setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+; v4 : Landroid/support/v4/view/ViewPager; , v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+.line 188
+	invoke-virtual	{v3},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/notifyDataSetChanged	; notifyDataSetChanged()V
+; v3 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;
+	goto	l15a7b4
+.end method
+
+.method public setViewPager(Landroid/support/v4/view/ViewPager;I)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator;)
+; parameter[0] : v1 (Landroid/support/v4/view/ViewPager;)
+; parameter[1] : v2 (I)
+.line 211
+	invoke-virtual	{v0,v1},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setViewPager	; setViewPager(Landroid/support/v4/view/ViewPager;)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v1 : Landroid/support/v4/view/ViewPager;
+.line 212
+	invoke-virtual	{v0,v2},codeadore/textgram/custom_widgets/EmojisTabPageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v0 : Lcodeadore/textgram/custom_widgets/EmojisTabPageIndicator; , v2 : single-length
+.line 213
+	return-void	
+.end method
+
+

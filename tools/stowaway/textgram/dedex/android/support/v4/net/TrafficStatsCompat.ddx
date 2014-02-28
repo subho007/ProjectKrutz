@@ -1,0 +1,138 @@
+.class public android/support/v4/net/TrafficStatsCompat
+.super java/lang/Object
+.source TrafficStatsCompat.java
+
+.inner class 1 inner android/support/v4/net/TrafficStatsCompat$1 outer android/support/v4/net/TrafficStatsCompat
+.inner class IcsTrafficStatsCompatImpl inner android/support/v4/net/TrafficStatsCompat$IcsTrafficStatsCompatImpl outer android/support/v4/net/TrafficStatsCompat
+.inner class BaseTrafficStatsCompatImpl inner android/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl outer android/support/v4/net/TrafficStatsCompat
+.inner class TrafficStatsCompatImpl inner android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl outer android/support/v4/net/TrafficStatsCompat
+.field private static final IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+
+.method static <clinit>()V
+.limit registers 2
+.line 124
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v1,14
+; v1 : single-length
+	if-lt	v0,v1,l7ccec
+; v0 : single-length , v1 : single-length
+.line 125
+	new-instance	v0,android/support/v4/net/TrafficStatsCompat$IcsTrafficStatsCompatImpl
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$IcsTrafficStatsCompatImpl;
+	invoke-direct	{v0},android/support/v4/net/TrafficStatsCompat$IcsTrafficStatsCompatImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$IcsTrafficStatsCompatImpl;
+	sput-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+l7ccea:
+.line 129
+	return-void	
+l7ccec:
+.line 127
+	new-instance	v0,android/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl;
+	invoke-direct	{v0},android/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl;
+	sput-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	goto	l7ccea
+.end method
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/net/TrafficStatsCompat;)
+.line 28
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat;
+.line 84
+	return-void	
+.end method
+
+.method public static clearThreadStatsTag()V
+.limit registers 1
+.line 136
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/clearThreadStatsTag	; clearThreadStatsTag()V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+.line 137
+	return-void	
+.end method
+
+.method public static getThreadStatsTag()I
+.limit registers 1
+.line 145
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/getThreadStatsTag	; getThreadStatsTag()I
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static incrementOperationCount(I)V
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 156
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0,v1},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/incrementOperationCount	; incrementOperationCount(I)V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl; , v1 : single-length
+.line 157
+	return-void	
+.end method
+
+.method public static incrementOperationCount(II)V
+.limit registers 3
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+.line 167
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0,v1,v2},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/incrementOperationCount	; incrementOperationCount(II)V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl; , v1 : single-length , v2 : single-length
+.line 168
+	return-void	
+.end method
+
+.method public static setThreadStatsTag(I)V
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 182
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0,v1},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/setThreadStatsTag	; setThreadStatsTag(I)V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl; , v1 : single-length
+.line 183
+	return-void	
+.end method
+
+.method public static tagSocket(Ljava/net/Socket;)V
+.throws Ljava/net/SocketException;
+.limit registers 2
+; parameter[0] : v1 (Ljava/net/Socket;)
+.line 194
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0,v1},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/tagSocket	; tagSocket(Ljava/net/Socket;)V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl; , v1 : Ljava/net/Socket;
+.line 195
+	return-void	
+.end method
+
+.method public static untagSocket(Ljava/net/Socket;)V
+.throws Ljava/net/SocketException;
+.limit registers 2
+; parameter[0] : v1 (Ljava/net/Socket;)
+.line 201
+	sget-object	v0,android/support/v4/net/TrafficStatsCompat.IMPL Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl;
+	invoke-interface	{v0,v1},android/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl/untagSocket	; untagSocket(Ljava/net/Socket;)V
+; v0 : Landroid/support/v4/net/TrafficStatsCompat$TrafficStatsCompatImpl; , v1 : Ljava/net/Socket;
+.line 202
+	return-void	
+.end method
+
+

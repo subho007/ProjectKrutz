@@ -1,0 +1,258 @@
+.class public android/support/v7/internal/view/ActionModeWrapper
+.super android/support/v7/view/ActionMode
+.source ActionModeWrapper.java
+
+.inner class CallbackWrapper inner android/support/v7/internal/view/ActionModeWrapper$CallbackWrapper outer android/support/v7/internal/view/ActionModeWrapper
+.field final mInflater Landroid/view/MenuInflater;
+.field final mWrappedObject Landroid/view/ActionMode;
+
+.method public <init>(Landroid/content/Context;Landroid/view/ActionMode;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/view/ActionMode;)
+.line 34
+	invoke-direct	{v1},android/support/v7/view/ActionMode/<init>	; <init>()V
+; v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+.line 35
+	iput-object	v3,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v3 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+.line 36
+	new-instance	v0,android/support/v7/internal/view/SupportMenuInflater
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater;
+	invoke-direct	{v0,v2},android/support/v7/internal/view/SupportMenuInflater/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater; , v2 : Landroid/content/Context;
+	iput-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mInflater Landroid/view/MenuInflater;
+; v0 : Landroid/support/v7/internal/view/SupportMenuInflater; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+.line 37
+	return-void	
+.end method
+
+.method public finish()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 81
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/finish	; finish()V
+; v0 : Landroid/view/ActionMode;
+.line 82
+	return-void	
+.end method
+
+.method public getCustomView()Landroid/view/View;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 111
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getCustomView	; getCustomView()Landroid/view/View;
+; v0 : Landroid/view/ActionMode;
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	return-object	v0
+; v0 : Landroid/view/View;
+.end method
+
+.method public getMenu()Landroid/view/Menu;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 86
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getMenu	; getMenu()Landroid/view/Menu;
+; v0 : Landroid/view/ActionMode;
+	move-result-object	v0
+; v0 : Landroid/view/Menu;
+	invoke-static	{v0},android/support/v7/internal/view/menu/MenuWrapperFactory/createMenuWrapper	; createMenuWrapper(Landroid/view/Menu;)Landroid/view/Menu;
+; v0 : Landroid/view/Menu;
+	move-result-object	v0
+; v0 : Landroid/view/Menu;
+	return-object	v0
+; v0 : Landroid/view/Menu;
+.end method
+
+.method public getMenuInflater()Landroid/view/MenuInflater;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 121
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mInflater Landroid/view/MenuInflater;
+; v0 : Landroid/view/MenuInflater; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	return-object	v0
+; v0 : Landroid/view/MenuInflater;
+.end method
+
+.method public getSubtitle()Ljava/lang/CharSequence;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 101
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getSubtitle	; getSubtitle()Ljava/lang/CharSequence;
+; v0 : Landroid/view/ActionMode;
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+	return-object	v0
+; v0 : Ljava/lang/CharSequence;
+.end method
+
+.method public getTag()Ljava/lang/Object;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 41
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getTag	; getTag()Ljava/lang/Object;
+; v0 : Landroid/view/ActionMode;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public getTitle()Ljava/lang/CharSequence;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 91
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getTitle	; getTitle()Ljava/lang/CharSequence;
+; v0 : Landroid/view/ActionMode;
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+	return-object	v0
+; v0 : Ljava/lang/CharSequence;
+.end method
+
+.method public getTitleOptionalHint()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 51
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/getTitleOptionalHint	; getTitleOptionalHint()Z
+; v0 : Landroid/view/ActionMode;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public invalidate()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 76
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/invalidate	; invalidate()V
+; v0 : Landroid/view/ActionMode;
+.line 77
+	return-void	
+.end method
+
+.method public isTitleOptional()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+.line 61
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0},android/view/ActionMode/isTitleOptional	; isTitleOptional()Z
+; v0 : Landroid/view/ActionMode;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setCustomView(Landroid/view/View;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 116
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setCustomView	; setCustomView(Landroid/view/View;)V
+; v0 : Landroid/view/ActionMode; , v2 : Landroid/view/View;
+.line 117
+	return-void	
+.end method
+
+.method public setSubtitle(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (I)
+.line 106
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setSubtitle	; setSubtitle(I)V
+; v0 : Landroid/view/ActionMode; , v2 : single-length
+.line 107
+	return-void	
+.end method
+
+.method public setSubtitle(Ljava/lang/CharSequence;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 71
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setSubtitle	; setSubtitle(Ljava/lang/CharSequence;)V
+; v0 : Landroid/view/ActionMode; , v2 : Ljava/lang/CharSequence;
+.line 72
+	return-void	
+.end method
+
+.method public setTag(Ljava/lang/Object;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 46
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setTag	; setTag(Ljava/lang/Object;)V
+; v0 : Landroid/view/ActionMode; , v2 : Ljava/lang/Object;
+.line 47
+	return-void	
+.end method
+
+.method public setTitle(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (I)
+.line 96
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setTitle	; setTitle(I)V
+; v0 : Landroid/view/ActionMode; , v2 : single-length
+.line 97
+	return-void	
+.end method
+
+.method public setTitle(Ljava/lang/CharSequence;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 66
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setTitle	; setTitle(Ljava/lang/CharSequence;)V
+; v0 : Landroid/view/ActionMode; , v2 : Ljava/lang/CharSequence;
+.line 67
+	return-void	
+.end method
+
+.method public setTitleOptionalHint(Z)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/ActionModeWrapper;)
+; parameter[0] : v2 (Z)
+.line 56
+	iget-object	v0,v1,android/support/v7/internal/view/ActionModeWrapper.mWrappedObject Landroid/view/ActionMode;
+; v0 : Landroid/view/ActionMode; , v1 : Landroid/support/v7/internal/view/ActionModeWrapper;
+	invoke-virtual	{v0,v2},android/view/ActionMode/setTitleOptionalHint	; setTitleOptionalHint(Z)V
+; v0 : Landroid/view/ActionMode; , v2 : single-length
+.line 57
+	return-void	
+.end method
+
+

@@ -1,0 +1,13 @@
+.interface public abstract com/applovin/sdk/AppLovinAdLoadListener
+.super java/lang/Object
+
+.field public static final EC_UNABLE_TO_RENDER_AD I = -6	; 0xfffffffa
+.field public static final EC_UNKNOWN_ERROR I = -1	; 0xffffffff
+
+.method public abstract adReceived(Lcom/applovin/sdk/AppLovinAd;)V
+.end method
+
+.method public abstract failedToReceiveAd(I)V
+.end method
+
+

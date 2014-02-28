@@ -1,0 +1,10 @@
+.interface abstract android/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge
+.super java/lang/Object
+.source SearchViewCompatHoneycomb.java
+
+.inner class OnCloseListenerCompatBridge inner android/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge outer android/support/v4/widget/SearchViewCompatHoneycomb
+
+.method public abstract onClose()Z
+.end method
+
+

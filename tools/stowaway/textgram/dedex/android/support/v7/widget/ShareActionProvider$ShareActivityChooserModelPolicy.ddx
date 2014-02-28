@@ -1,0 +1,65 @@
+.class android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy
+.super java/lang/Object
+.source ShareActionProvider.java
+.implements android/support/v7/internal/widget/ActivityChooserModel$OnChooseActivityListener
+
+.inner class ShareActivityChooserModelPolicy inner android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy outer android/support/v7/widget/ShareActionProvider
+.field final this$0 Landroid/support/v7/widget/ShareActionProvider;
+
+.method private <init>(Landroid/support/v7/widget/ShareActionProvider;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;)
+; parameter[0] : v1 (Landroid/support/v7/widget/ShareActionProvider;)
+.line 341
+	iput-object	v1,v0,android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy.this$0 Landroid/support/v7/widget/ShareActionProvider;
+; v1 : Landroid/support/v7/widget/ShareActionProvider; , v0 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	return-void	
+.end method
+
+.method <init>(Landroid/support/v7/widget/ShareActionProvider;Landroid/support/v7/widget/ShareActionProvider$1;)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;)
+; parameter[0] : v1 (Landroid/support/v7/widget/ShareActionProvider;)
+; parameter[1] : v2 (Landroid/support/v7/widget/ShareActionProvider$1;)
+.line 341
+	invoke-direct	{v0,v1},android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy/<init>	; <init>(Landroid/support/v7/widget/ShareActionProvider;)V
+; v0 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy; , v1 : Landroid/support/v7/widget/ShareActionProvider;
+	return-void	
+.end method
+
+.method public onChooseActivity(Landroid/support/v7/internal/widget/ActivityChooserModel;Landroid/content/Intent;)Z
+.limit registers 5
+; this: v2 (Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;)
+; parameter[0] : v3 (Landroid/support/v7/internal/widget/ActivityChooserModel;)
+; parameter[1] : v4 (Landroid/content/Intent;)
+.line 344
+	iget-object	v0,v2,android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy.this$0 Landroid/support/v7/widget/ShareActionProvider;
+; v0 : Landroid/support/v7/widget/ShareActionProvider; , v2 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	invoke-static	{v0},android/support/v7/widget/ShareActionProvider/access$400	; access$400(Landroid/support/v7/widget/ShareActionProvider;)Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
+; v0 : Landroid/support/v7/widget/ShareActionProvider;
+	move-result-object	v0
+; v0 : Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
+	if-eqz	v0,lf144a
+; v0 : Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
+.line 345
+	iget-object	v0,v2,android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy.this$0 Landroid/support/v7/widget/ShareActionProvider;
+; v0 : Landroid/support/v7/widget/ShareActionProvider; , v2 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	invoke-static	{v0},android/support/v7/widget/ShareActionProvider/access$400	; access$400(Landroid/support/v7/widget/ShareActionProvider;)Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
+; v0 : Landroid/support/v7/widget/ShareActionProvider;
+	move-result-object	v0
+; v0 : Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
+	iget-object	v1,v2,android/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy.this$0 Landroid/support/v7/widget/ShareActionProvider;
+; v1 : Landroid/support/v7/widget/ShareActionProvider; , v2 : Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;
+	invoke-interface	{v0,v1,v4},android/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener/onShareTargetSelected	; onShareTargetSelected(Landroid/support/v7/widget/ShareActionProvider;Landroid/content/Intent;)Z
+; v0 : Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener; , v1 : Landroid/support/v7/widget/ShareActionProvider; , v4 : Landroid/content/Intent;
+lf144a:
+.line 348
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

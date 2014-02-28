@@ -1,0 +1,36 @@
+.class android/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1
+.super android/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplBase
+.source SlidingPaneLayout.java
+
+.inner class SlidingPanelLayoutImplJBMR1 inner android/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1 outer android/support/v4/widget/SlidingPaneLayout
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1;)
+.line 1388
+	invoke-direct	{v0},android/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplBase/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1;
+	return-void	
+.end method
+
+.method public invalidateChildRegion(Landroid/support/v4/widget/SlidingPaneLayout;Landroid/view/View;)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1;)
+; parameter[0] : v2 (Landroid/support/v4/widget/SlidingPaneLayout;)
+; parameter[1] : v3 (Landroid/view/View;)
+.line 1391
+	invoke-virtual	{v3},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v3 : Landroid/view/View;
+	move-result-object	v0
+; v0 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v0,android/support/v4/widget/SlidingPaneLayout$LayoutParams
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
+	iget-object	v0,v0,android/support/v4/widget/SlidingPaneLayout$LayoutParams.dimPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	invoke-static	{v3,v0},android/support/v4/view/ViewCompat/setLayerPaint	; setLayerPaint(Landroid/view/View;Landroid/graphics/Paint;)V
+; v3 : Landroid/view/View; , v0 : Landroid/graphics/Paint;
+.line 1392
+	return-void	
+.end method
+
+

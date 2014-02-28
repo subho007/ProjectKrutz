@@ -1,0 +1,121 @@
+.class android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin
+.super java/lang/Object
+.source AbsSpinnerICS.java
+
+.inner class RecycleBin inner android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin outer android/support/v7/internal/widget/AbsSpinnerICS
+.field private final mScrapHeap Landroid/util/SparseArray;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/util/SparseArray" , "<" , "Landroid/view/View;" , ">;" }
+  .end annotation
+.end field
+.field final this$0 Landroid/support/v7/internal/widget/AbsSpinnerICS;
+
+.method <init>(Landroid/support/v7/internal/widget/AbsSpinnerICS;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;)
+; parameter[0] : v2 (Landroid/support/v7/internal/widget/AbsSpinnerICS;)
+.line 422
+	iput-object	v2,v1,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.this$0 Landroid/support/v7/internal/widget/AbsSpinnerICS;
+; v2 : Landroid/support/v7/internal/widget/AbsSpinnerICS; , v1 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+.line 423
+	new-instance	v0,android/util/SparseArray
+; v0 : Landroid/util/SparseArray;
+	invoke-direct	{v0},android/util/SparseArray/<init>	; <init>()V
+; v0 : Landroid/util/SparseArray;
+	iput-object	v0,v1,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.mScrapHeap Landroid/util/SparseArray;
+; v0 : Landroid/util/SparseArray; , v1 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	return-void	
+.end method
+
+.method clear()V
+.limit registers 7
+; this: v6 (Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;)
+.var 3 is view Landroid/view/View; from l95272 to l95288
+.line 442
+	iget-object	v2,v6,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.mScrapHeap Landroid/util/SparseArray;
+; v2 : Landroid/util/SparseArray; , v6 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+.line 443
+	invoke-virtual	{v2},android/util/SparseArray/size	; size()I
+; v2 : Landroid/util/SparseArray;
+	move-result	v0
+; v0 : single-length
+.line 444
+	const/4	v1,0
+; v1 : single-length
+l95262:
+	if-ge	v1,v0,l95288
+; v1 : single-length , v0 : single-length
+.line 445
+	invoke-virtual	{v2,v1},android/util/SparseArray/valueAt	; valueAt(I)Ljava/lang/Object;
+; v2 : Landroid/util/SparseArray; , v1 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,android/view/View
+; v3 : Landroid/view/View;
+.line 446
+	if-eqz	v3,l95282
+; v3 : Landroid/view/View;
+.line 447
+	iget-object	v4,v6,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.this$0 Landroid/support/v7/internal/widget/AbsSpinnerICS;
+; v4 : Landroid/support/v7/internal/widget/AbsSpinnerICS; , v6 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	const/4	v5,1
+; v5 : single-length
+	invoke-static	{v4,v3,v5},android/support/v7/internal/widget/AbsSpinnerICS/access$100	; access$100(Landroid/support/v7/internal/widget/AbsSpinnerICS;Landroid/view/View;Z)V
+; v4 : Landroid/support/v7/internal/widget/AbsSpinnerICS; , v3 : Landroid/view/View; , v5 : single-length
+l95282:
+.line 444
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	l95262
+l95288:
+.line 450
+	invoke-virtual	{v2},android/util/SparseArray/clear	; clear()V
+; v2 : Landroid/util/SparseArray;
+.line 451
+	return-void	
+.end method
+
+.method get(I)Landroid/view/View;
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;)
+; parameter[0] : v3 (I)
+.line 431
+	iget-object	v1,v2,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.mScrapHeap Landroid/util/SparseArray;
+; v1 : Landroid/util/SparseArray; , v2 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	invoke-virtual	{v1,v3},android/util/SparseArray/get	; get(I)Ljava/lang/Object;
+; v1 : Landroid/util/SparseArray; , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/View
+; v0 : Landroid/view/View;
+.line 432
+	if-eqz	v0,l952be
+; v0 : Landroid/view/View;
+.line 434
+	iget-object	v1,v2,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.mScrapHeap Landroid/util/SparseArray;
+; v1 : Landroid/util/SparseArray; , v2 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	invoke-virtual	{v1,v3},android/util/SparseArray/delete	; delete(I)V
+; v1 : Landroid/util/SparseArray; , v3 : single-length
+l952be:
+.line 438
+	return-object	v0
+; v0 : Landroid/view/View;
+.end method
+
+.method public put(ILandroid/view/View;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (Landroid/view/View;)
+.line 426
+	iget-object	v0,v1,android/support/v7/internal/widget/AbsSpinnerICS$RecycleBin.mScrapHeap Landroid/util/SparseArray;
+; v0 : Landroid/util/SparseArray; , v1 : Landroid/support/v7/internal/widget/AbsSpinnerICS$RecycleBin;
+	invoke-virtual	{v0,v2,v3},android/util/SparseArray/put	; put(ILjava/lang/Object;)V
+; v0 : Landroid/util/SparseArray; , v2 : single-length , v3 : Landroid/view/View;
+.line 427
+	return-void	
+.end method
+
+

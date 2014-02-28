@@ -1,0 +1,75 @@
+.class codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer
+.super java/lang/Object
+.source ImageLoader.java
+.implements java/lang/Runnable
+
+.inner class BitmapDisplayer inner codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer outer codeadore/textgram/lazylist/ImageLoader
+.field bitmap Landroid/graphics/Bitmap;
+.field photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+.field final this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+
+.method public <init>(Lcodeadore/textgram/lazylist/ImageLoader;Landroid/graphics/Bitmap;Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)V
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;)
+; parameter[0] : v1 (Lcodeadore/textgram/lazylist/ImageLoader;)
+; parameter[1] : v2 (Landroid/graphics/Bitmap;)
+; parameter[2] : v3 (Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)
+.line 173
+	iput-object	v1,v0,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v1 : Lcodeadore/textgram/lazylist/ImageLoader; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iput-object	v2,v0,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.bitmap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iput-object	v3,v0,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 3
+; this: v2 (Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;)
+.line 176
+	iget-object	v0,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iget-object	v1,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v1 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	invoke-virtual	{v0,v1},codeadore/textgram/lazylist/ImageLoader/imageViewReused	; imageViewReused(Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)Z
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader; , v1 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,la8822
+; v0 : single-length
+la8820:
+.line 182
+	return-void	
+la8822:
+.line 178
+	iget-object	v0,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.bitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	if-eqz	v0,la883e
+; v0 : Landroid/graphics/Bitmap;
+.line 179
+	iget-object	v0,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iget-object	v0,v0,codeadore/textgram/lazylist/ImageLoader$PhotoToLoad.imageView Landroid/widget/ImageView;
+; v0 : Landroid/widget/ImageView; , v0 : Landroid/widget/ImageView;
+	iget-object	v1,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.bitmap Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	invoke-virtual	{v0,v1},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v0 : Landroid/widget/ImageView; , v1 : Landroid/graphics/Bitmap;
+	goto	la8820
+la883e:
+.line 181
+	iget-object	v0,v2,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v2 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iget-object	v0,v0,codeadore/textgram/lazylist/ImageLoader$PhotoToLoad.imageView Landroid/widget/ImageView;
+; v0 : Landroid/widget/ImageView; , v0 : Landroid/widget/ImageView;
+	const	v1,2130837657	; 0x7f020099
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/ImageView/setImageResource	; setImageResource(I)V
+; v0 : Landroid/widget/ImageView; , v1 : single-length
+	goto	la8820
+.end method
+
+

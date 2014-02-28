@@ -1,0 +1,33 @@
+.class android/support/v7/widget/SearchView$6
+.super java/lang/Object
+.source SearchView.java
+.implements android/view/ViewTreeObserver$OnGlobalLayoutListener
+
+.enclosing method android/addOnLayoutChangeListenerToDropDownAnchorBase()V
+.field final this$0 Landroid/support/v7/widget/SearchView;
+
+.method <init>(Landroid/support/v7/widget/SearchView;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$6;)
+; parameter[0] : v1 (Landroid/support/v7/widget/SearchView;)
+.line 359
+	iput-object	v1,v0,android/support/v7/widget/SearchView$6.this$0 Landroid/support/v7/widget/SearchView;
+; v1 : Landroid/support/v7/widget/SearchView; , v0 : Landroid/support/v7/widget/SearchView$6;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/widget/SearchView$6;
+	return-void	
+.end method
+
+.method public onGlobalLayout()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/widget/SearchView$6;)
+.line 362
+	iget-object	v0,v1,android/support/v7/widget/SearchView$6.this$0 Landroid/support/v7/widget/SearchView;
+; v0 : Landroid/support/v7/widget/SearchView; , v1 : Landroid/support/v7/widget/SearchView$6;
+	invoke-static	{v0},android/support/v7/widget/SearchView/access$300	; access$300(Landroid/support/v7/widget/SearchView;)V
+; v0 : Landroid/support/v7/widget/SearchView;
+.line 363
+	return-void	
+.end method
+
+

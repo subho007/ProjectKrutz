@@ -1,0 +1,89 @@
+.class public android/support/v7/internal/view/menu/ActionMenuView$LayoutParams
+.super android/widget/LinearLayout$LayoutParams
+.source ActionMenuView.java
+
+.inner class LayoutParams inner android/support/v7/internal/view/menu/ActionMenuView$LayoutParams outer android/support/v7/internal/view/menu/ActionMenuView
+.field public cellsUsed I
+  .annotation runtimeVisibility Landroid/view/ViewDebug$ExportedProperty;
+  .end annotation
+.end field
+.field public expandable Z
+  .annotation runtimeVisibility Landroid/view/ViewDebug$ExportedProperty;
+  .end annotation
+.end field
+.field public expanded Z
+.field public extraPixels I
+  .annotation runtimeVisibility Landroid/view/ViewDebug$ExportedProperty;
+  .end annotation
+.end field
+.field public isOverflowButton Z
+  .annotation runtimeVisibility Landroid/view/ViewDebug$ExportedProperty;
+  .end annotation
+.end field
+.field public preventEdgeOffset Z
+  .annotation runtimeVisibility Landroid/view/ViewDebug$ExportedProperty;
+  .end annotation
+.end field
+
+.method public <init>(II)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (I)
+.line 608
+	invoke-direct	{v1,v2,v3},android/widget/LinearLayout$LayoutParams/<init>	; <init>(II)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams; , v2 : single-length , v3 : single-length
+.line 609
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v7/internal/view/menu/ActionMenuView$LayoutParams.isOverflowButton Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;
+.line 610
+	return-void	
+.end method
+
+.method public <init>(IIZ)V
+.limit registers 4
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Z)
+.line 613
+	invoke-direct	{v0,v1,v2},android/widget/LinearLayout$LayoutParams/<init>	; <init>(II)V
+; v0 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams; , v1 : single-length , v2 : single-length
+.line 614
+	iput-boolean	v3,v0,android/support/v7/internal/view/menu/ActionMenuView$LayoutParams.isOverflowButton Z
+; v3 : single-length , v0 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;
+.line 615
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/util/AttributeSet;)
+.line 599
+	invoke-direct	{v0,v1,v2},android/widget/LinearLayout$LayoutParams/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v0 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams; , v1 : Landroid/content/Context; , v2 : Landroid/util/AttributeSet;
+.line 600
+	return-void	
+.end method
+
+.method public <init>(Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;)
+.line 603
+	invoke-direct	{v1,v2},android/widget/LinearLayout$LayoutParams/<init>	; <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams; , v2 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;
+.line 604
+	iget-boolean	v0,v2,android/support/v7/internal/view/menu/ActionMenuView$LayoutParams.isOverflowButton Z
+; v0 : single-length , v2 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;
+	iput-boolean	v0,v1,android/support/v7/internal/view/menu/ActionMenuView$LayoutParams.isOverflowButton Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/view/menu/ActionMenuView$LayoutParams;
+.line 605
+	return-void	
+.end method
+
+

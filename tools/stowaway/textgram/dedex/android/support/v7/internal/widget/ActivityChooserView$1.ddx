@@ -1,0 +1,58 @@
+.class android/support/v7/internal/widget/ActivityChooserView$1
+.super android/database/DataSetObserver
+.source ActivityChooserView.java
+
+.inner class 1 inner android/support/v7/internal/widget/ActivityChooserView$1 outer android/support/v7/internal/widget/ActivityChooserView
+.field final this$0 Landroid/support/v7/internal/widget/ActivityChooserView;
+
+.method <init>(Landroid/support/v7/internal/widget/ActivityChooserView;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/widget/ActivityChooserView$1;)
+; parameter[0] : v1 (Landroid/support/v7/internal/widget/ActivityChooserView;)
+.line 122
+	iput-object	v1,v0,android/support/v7/internal/widget/ActivityChooserView$1.this$0 Landroid/support/v7/internal/widget/ActivityChooserView;
+; v1 : Landroid/support/v7/internal/widget/ActivityChooserView; , v0 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+	invoke-direct	{v0},android/database/DataSetObserver/<init>	; <init>()V
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+	return-void	
+.end method
+
+.method public onChanged()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ActivityChooserView$1;)
+.line 126
+	invoke-super	{v1},android/database/DataSetObserver/onChanged	; onChanged()V
+; v1 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+.line 127
+	iget-object	v0,v1,android/support/v7/internal/widget/ActivityChooserView$1.this$0 Landroid/support/v7/internal/widget/ActivityChooserView;
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView; , v1 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+	invoke-static	{v0},android/support/v7/internal/widget/ActivityChooserView/access$000	; access$000(Landroid/support/v7/internal/widget/ActivityChooserView;)Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView;
+	move-result-object	v0
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	invoke-virtual	{v0},android/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter/notifyDataSetChanged	; notifyDataSetChanged()V
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+.line 128
+	return-void	
+.end method
+
+.method public onInvalidated()V
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/ActivityChooserView$1;)
+.line 131
+	invoke-super	{v1},android/database/DataSetObserver/onInvalidated	; onInvalidated()V
+; v1 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+.line 132
+	iget-object	v0,v1,android/support/v7/internal/widget/ActivityChooserView$1.this$0 Landroid/support/v7/internal/widget/ActivityChooserView;
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView; , v1 : Landroid/support/v7/internal/widget/ActivityChooserView$1;
+	invoke-static	{v0},android/support/v7/internal/widget/ActivityChooserView/access$000	; access$000(Landroid/support/v7/internal/widget/ActivityChooserView;)Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView;
+	move-result-object	v0
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+	invoke-virtual	{v0},android/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter/notifyDataSetInvalidated	; notifyDataSetInvalidated()V
+; v0 : Landroid/support/v7/internal/widget/ActivityChooserView$ActivityChooserViewAdapter;
+.line 133
+	return-void	
+.end method
+
+

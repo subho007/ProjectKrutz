@@ -1,0 +1,317 @@
+.class codeadore/textgram/Utilities$3
+.super java/lang/Object
+.source Utilities.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/shareBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;Landroid/app/ProgressDialog;)V
+.field private final val$bitMap Landroid/graphics/Bitmap;
+.field private final val$c Landroid/content/Context;
+.field private final val$loadingDialog Landroid/app/ProgressDialog;
+
+.method <init>(Landroid/content/Context;Landroid/graphics/Bitmap;Landroid/app/ProgressDialog;)V
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/Utilities$3;)
+; parameter[0] : v1 (Landroid/content/Context;)
+; parameter[1] : v2 (Landroid/graphics/Bitmap;)
+; parameter[2] : v3 (Landroid/app/ProgressDialog;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/Utilities$3.val$c Landroid/content/Context;
+; v1 : Landroid/content/Context; , v0 : Lcodeadore/textgram/Utilities$3;
+	iput-object	v2,v0,codeadore/textgram/Utilities$3.val$bitMap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap; , v0 : Lcodeadore/textgram/Utilities$3;
+	iput-object	v3,v0,codeadore/textgram/Utilities$3.val$loadingDialog Landroid/app/ProgressDialog;
+; v3 : Landroid/app/ProgressDialog; , v0 : Lcodeadore/textgram/Utilities$3;
+.line 731
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/Utilities$3;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 14
+; this: v13 (Lcodeadore/textgram/Utilities$3;)
+.catch java/lang/Exception from la52c4 to la52ca using la529e
+.catch java/lang/Exception from la52a0 to la52be using la52cc
+.catch java/lang/Exception from la5296 to la529c using la529e
+.catch java/lang/Exception from la527a to la5292 using la52d6
+.catch java/lang/Exception from la51e8 to la522e using la529e
+.catch java/io/FileNotFoundException from la51aa to la51e6 using la52c2
+.catch java/lang/Exception from la51aa to la51e6 using la529e
+.catch java/io/IOException from la5176 to la51aa using la5294
+.catch java/lang/Exception from la5176 to la51aa using la529e
+.catch java/lang/Exception from la5146 to la5174 using la529e
+.var 4 is out Ljava/io/FileOutputStream; from la5176 to la51e6
+.var 5 is out Ljava/io/FileOutputStream; from la51e6 to la51e8
+.var 3 is final_file Ljava/io/File; from la5174 to la5230
+.var 4 is out Ljava/io/FileOutputStream; from la51e8 to la5230
+.var 6 is save_dir Ljava/io/File; from la5160 to la5230
+.var 8 is sharingIntent Landroid/content/Intent; from la523e to la5294
+.var 1 is e1 Ljava/io/IOException; from la5296 to la529e
+.var 3 is final_file Ljava/io/File; from la5294 to la529e
+.var 4 is out Ljava/io/FileOutputStream; from la5294 to la529e
+.var 6 is save_dir Ljava/io/File; from la5294 to la529e
+.var 0 is e Ljava/lang/Exception; from la52a0 to la52c2
+.var 1 is e1 Ljava/io/FileNotFoundException; from la52c4 to la52cc
+.var 3 is final_file Ljava/io/File; from la52c2 to la52cc
+.var 4 is out Ljava/io/FileOutputStream; from la52c2 to la52cc
+.var 6 is save_dir Ljava/io/File; from la52c2 to la52cc
+.var 0 is e Ljava/lang/Exception; from la52cc to la52d6
+.var 2 is e2 Ljava/lang/Exception; from la52ce to la52d6
+.line 735
+	const/4	v7,0
+; v7 : single-length
+la5146:
+.line 739
+	sget-object	v9,codeadore/textgram/Utilities.TAG Ljava/lang/String;
+; v9 : Ljava/lang/String;
+.line 740
+	const-string	v10,"in shareBitmap() -> no sd card fround, falling back to the old method"
+; v10 : Ljava/lang/String;
+.line 739
+	invoke-static	{v9,v10},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v9 : Ljava/lang/String; , v10 : Ljava/lang/String;
+.line 741
+	iget-object	v9,v13,codeadore/textgram/Utilities$3.val$c Landroid/content/Context;
+; v9 : Landroid/content/Context; , v13 : Lcodeadore/textgram/Utilities$3;
+	invoke-virtual	{v9},android/content/Context/getCacheDir	; getCacheDir()Ljava/io/File;
+; v9 : Landroid/content/Context;
+	move-result-object	v6
+; v6 : Ljava/io/File;
+.line 742
+	invoke-virtual	{v6},java/io/File/mkdirs	; mkdirs()Z
+; v6 : Ljava/io/File;
+.line 743
+	new-instance	v3,java/io/File
+; v3 : Ljava/io/File;
+	const-string	v9,"textgram.png"
+; v9 : Ljava/lang/String;
+	invoke-direct	{v3,v6,v9},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v3 : Ljava/io/File; , v6 : Ljava/io/File; , v9 : Ljava/lang/String;
+la5174:
+.line 744
+	const/4	v4,0
+; v4 : single-length
+la5176:
+.line 747
+	invoke-static	{},java/lang/Runtime/getRuntime	; getRuntime()Ljava/lang/Runtime;
+; 
+	nop	
+	move-result-object	v9
+; v9 : Ljava/lang/Runtime;
+.line 748
+	new-instance	v10,java/lang/StringBuilder
+; v10 : Ljava/lang/StringBuilder;
+	const-string	v11,"chmod 777 "
+; v11 : Ljava/lang/String;
+	invoke-direct	{v10,v11},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v10 : Ljava/lang/StringBuilder; , v11 : Ljava/lang/String;
+	invoke-virtual	{v3},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v3 : Ljava/io/File;
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	invoke-virtual	{v10,v11},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v10 : Ljava/lang/StringBuilder; , v11 : Ljava/lang/String;
+	move-result-object	v10
+; v10 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v10},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v10 : Ljava/lang/StringBuilder;
+	move-result-object	v10
+; v10 : Ljava/lang/String;
+.line 747
+	invoke-virtual	{v9,v10},java/lang/Runtime/exec	; exec(Ljava/lang/String;)Ljava/lang/Process;
+; v9 : Ljava/lang/Runtime; , v10 : Ljava/lang/String;
+la51aa:
+.line 753
+	new-instance	v5,java/io/FileOutputStream
+; v5 : Ljava/io/FileOutputStream;
+	new-instance	v9,java/lang/StringBuilder
+; v9 : Ljava/lang/StringBuilder;
+	invoke-direct	{v9},java/lang/StringBuilder/<init>	; <init>()V
+; v9 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v9,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+	sget-object	v10,java/io/File.separator Ljava/lang/String;
+; v10 : Ljava/lang/String;
+	invoke-virtual	{v9,v10},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+.line 754
+	const-string	v10,"textgram.png"
+; v10 : Ljava/lang/String;
+	invoke-virtual	{v9,v10},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v9},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v9 : Ljava/lang/StringBuilder;
+	move-result-object	v9
+; v9 : Ljava/lang/String;
+.line 753
+	invoke-direct	{v5,v9},java/io/FileOutputStream/<init>	; <init>(Ljava/lang/String;)V
+; v5 : Ljava/io/FileOutputStream; , v9 : Ljava/lang/String;
+la51e6:
+	move-object	v4,v5
+; v4 : Ljava/io/FileOutputStream; , v5 : Ljava/io/FileOutputStream;
+la51e8:
+.line 758
+	iget-object	v9,v13,codeadore/textgram/Utilities$3.val$bitMap Landroid/graphics/Bitmap;
+; v9 : Landroid/graphics/Bitmap; , v13 : Lcodeadore/textgram/Utilities$3;
+	sget-object	v10,android/graphics/Bitmap$CompressFormat.PNG Landroid/graphics/Bitmap$CompressFormat;
+; v10 : Landroid/graphics/Bitmap$CompressFormat;
+	const/16	v11,100
+; v11 : single-length
+	invoke-virtual	{v9,v10,v11,v4},android/graphics/Bitmap/compress	; compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+; v9 : Landroid/graphics/Bitmap; , v10 : Landroid/graphics/Bitmap$CompressFormat; , v11 : single-length , v4 : single-length
+.line 759
+	new-instance	v9,java/lang/StringBuilder
+; v9 : Ljava/lang/StringBuilder;
+	const-string	v10,"file://"
+; v10 : Ljava/lang/String;
+	invoke-direct	{v9,v10},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v9 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	invoke-virtual	{v9,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+	sget-object	v10,java/io/File.separator Ljava/lang/String;
+; v10 : Ljava/lang/String;
+	invoke-virtual	{v9,v10},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+.line 760
+	const-string	v10,"textgram.png"
+; v10 : Ljava/lang/String;
+	invoke-virtual	{v9,v10},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v9 : Ljava/lang/StringBuilder; , v10 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/lang/StringBuilder;
+.line 759
+	invoke-virtual	{v9},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v9 : Ljava/lang/StringBuilder;
+la522e:
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+la5230:
+.line 772
+	new-instance	v8,android/content/Intent
+; v8 : Landroid/content/Intent;
+	const-string	v9,"android.intent.action.SEND"
+; v9 : Ljava/lang/String;
+	invoke-direct	{v8,v9},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v8 : Landroid/content/Intent; , v9 : Ljava/lang/String;
+.line 773
+	const-string	v9,"image/*"
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},android/content/Intent/setType	; setType(Ljava/lang/String;)Landroid/content/Intent;
+; v8 : Landroid/content/Intent; , v9 : Ljava/lang/String;
+.line 775
+	const/high16	v9,8
+; v9 : single-length
+	invoke-virtual	{v8,v9},android/content/Intent/addFlags	; addFlags(I)Landroid/content/Intent;
+; v8 : Landroid/content/Intent; , v9 : single-length
+.line 776
+	const-string	v9,"android.intent.extra.STREAM"
+; v9 : Ljava/lang/String;
+	invoke-static	{v7},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v7 : Ljava/lang/String;
+	move-result-object	v10
+; v10 : Landroid/net/Uri;
+	invoke-virtual	{v8,v9,v10},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+; v8 : Landroid/content/Intent; , v9 : Ljava/lang/String; , v10 : Landroid/net/Uri;
+.line 777
+	iget-object	v9,v13,codeadore/textgram/Utilities$3.val$c Landroid/content/Context;
+; v9 : Landroid/content/Context; , v13 : Lcodeadore/textgram/Utilities$3;
+.line 778
+	const-string	v10,"Share Image"
+; v10 : Ljava/lang/String;
+.line 777
+	invoke-static	{v8,v10},android/content/Intent/createChooser	; createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+; v8 : Landroid/content/Intent; , v10 : Ljava/lang/String;
+	move-result-object	v10
+; v10 : Landroid/content/Intent;
+	invoke-virtual	{v9,v10},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v9 : Landroid/content/Context; , v10 : Landroid/content/Intent;
+la527a:
+.line 781
+	sget-object	v9,codeadore/textgram/ResultActivity.UIHandler Landroid/os/Handler;
+; v9 : Landroid/os/Handler;
+	new-instance	v10,codeadore/textgram/Utilities$3$1
+; v10 : Lcodeadore/textgram/Utilities$3$1;
+	iget-object	v11,v13,codeadore/textgram/Utilities$3.val$loadingDialog Landroid/app/ProgressDialog;
+; v11 : Landroid/app/ProgressDialog; , v13 : Lcodeadore/textgram/Utilities$3;
+	invoke-direct	{v10,v13,v11},codeadore/textgram/Utilities$3$1/<init>	; <init>(Lcodeadore/textgram/Utilities$3;Landroid/app/ProgressDialog;)V
+; v10 : Lcodeadore/textgram/Utilities$3$1; , v13 : Lcodeadore/textgram/Utilities$3; , v11 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v9,v10},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v9 : Landroid/os/Handler; , v10 : Lcodeadore/textgram/Utilities$3$1;
+la5292:
+.line 792
+	return-void	
+la5294:
+.line 749
+	move-exception	v1
+; v1 : java/io/IOException
+la5296:
+.line 750
+	invoke-virtual	{v1},java/io/IOException/printStackTrace	; printStackTrace()V
+; v1 : java/io/IOException
+la529c:
+	goto	la51aa
+la529e:
+.line 761
+	move-exception	v0
+; v0 : java/lang/Exception
+la52a0:
+.line 765
+	iget-object	v9,v13,codeadore/textgram/Utilities$3.val$c Landroid/content/Context;
+; v9 : Landroid/content/Context; , v13 : Lcodeadore/textgram/Utilities$3;
+	invoke-virtual	{v9},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v9 : Landroid/content/Context;
+	move-result-object	v9
+; v9 : Landroid/content/ContentResolver;
+	iget-object	v10,v13,codeadore/textgram/Utilities$3.val$bitMap Landroid/graphics/Bitmap;
+; v10 : Landroid/graphics/Bitmap; , v13 : Lcodeadore/textgram/Utilities$3;
+	const-string	v11,"Textgram"
+; v11 : Ljava/lang/String;
+.line 766
+	const-string	v12,"Textgram photo"
+; v12 : Ljava/lang/String;
+.line 764
+	invoke-static	{v9,v10,v11,v12},android/provider/MediaStore$Images$Media/insertImage	; insertImage(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v9 : Landroid/content/ContentResolver; , v10 : Landroid/graphics/Bitmap; , v11 : Ljava/lang/String; , v12 : Ljava/lang/String;
+la52be:
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	goto	la5230
+la52c2:
+.line 755
+	move-exception	v1
+; v1 : java/io/FileNotFoundException
+la52c4:
+.line 756
+	invoke-virtual	{v1},java/io/FileNotFoundException/printStackTrace	; printStackTrace()V
+; v1 : java/io/FileNotFoundException
+la52ca:
+	goto	la51e8
+la52cc:
+.line 767
+	move-exception	v2
+; v2 : java/lang/Exception
+.line 768
+	invoke-virtual	{v2},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v2 : java/lang/Exception
+	goto	la5230
+la52d6:
+.line 789
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 790
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	la5292
+.end method
+
+

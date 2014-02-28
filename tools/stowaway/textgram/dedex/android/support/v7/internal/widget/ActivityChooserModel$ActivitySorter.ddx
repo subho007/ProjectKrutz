@@ -1,0 +1,13 @@
+.interface public abstract android/support/v7/internal/widget/ActivityChooserModel$ActivitySorter
+.super java/lang/Object
+.source ActivityChooserModel.java
+
+.inner class ActivitySorter inner android/support/v7/internal/widget/ActivityChooserModel$ActivitySorter outer android/support/v7/internal/widget/ActivityChooserModel
+
+.method public abstract sort(Landroid/content/Intent;Ljava/util/List;Ljava/util/List;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/content/Intent;" , "Ljava/util/List" , "<" , "Landroid/support/v7/internal/widget/ActivityChooserModel$ActivityResolveInfo;" , ">;" , "Ljava/util/List" , "<" , "Landroid/support/v7/internal/widget/ActivityChooserModel$HistoricalRecord;" , ">;)V" }
+.end annotation
+.end method
+
+

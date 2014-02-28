@@ -1,0 +1,97 @@
+.class final android/support/v4/print/PrintHelper$PrintHelperStubImpl
+.super java/lang/Object
+.source PrintHelper.java
+.implements android/support/v4/print/PrintHelper$PrintHelperVersionImpl
+
+.inner class PrintHelperStubImpl inner android/support/v4/print/PrintHelper$PrintHelperStubImpl outer android/support/v4/print/PrintHelper
+.field mColorMode I
+.field mScaleMode I
+
+.method private <init>()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+	const/4	v0,2
+; v0 : single-length
+.line 87
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+.line 88
+	iput	v0,v1,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mScaleMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+.line 89
+	iput	v0,v1,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mColorMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+	return-void	
+.end method
+
+.method <init>(Landroid/support/v4/print/PrintHelper$1;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+; parameter[0] : v1 (Landroid/support/v4/print/PrintHelper$1;)
+.line 87
+	invoke-direct	{v0},android/support/v4/print/PrintHelper$PrintHelperStubImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+	return-void	
+.end method
+
+.method public getColorMode()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+.line 98
+	iget	v0,v1,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mColorMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getScaleMode()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+.line 108
+	iget	v0,v1,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mScaleMode I
+; v0 : single-length , v1 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public printBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Landroid/graphics/Bitmap;)
+.line 113
+	return-void	
+.end method
+
+.method public printBitmap(Ljava/lang/String;Landroid/net/Uri;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Landroid/net/Uri;)
+.line 117
+	return-void	
+.end method
+
+.method public setColorMode(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+; parameter[0] : v1 (I)
+.line 103
+	iput	v1,v0,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mColorMode I
+; v1 : single-length , v0 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+.line 104
+	return-void	
+.end method
+
+.method public setScaleMode(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;)
+; parameter[0] : v1 (I)
+.line 93
+	iput	v1,v0,android/support/v4/print/PrintHelper$PrintHelperStubImpl.mScaleMode I
+; v1 : single-length , v0 : Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+.line 94
+	return-void	
+.end method
+
+

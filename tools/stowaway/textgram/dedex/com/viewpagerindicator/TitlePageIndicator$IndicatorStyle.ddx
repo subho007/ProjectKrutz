@@ -1,0 +1,157 @@
+.class public final com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+.super java/lang/Enum
+.source TitlePageIndicator.java
+
+.inner class IndicatorStyle inner com/viewpagerindicator/TitlePageIndicator$IndicatorStyle outer com/viewpagerindicator/TitlePageIndicator
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Enum" , "<" , "Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;" , ">;" }
+.end annotation
+
+.field private static final ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.field public static final None Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.field public static final Triangle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.field public static final Underline Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.field public final value I
+
+.method static <clinit>()V
+.limit registers 5
+	const/4	v4,2
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 80
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	const-string	v1,"None"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v2},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/<init>	; <init>(Ljava/lang/String;II)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Ljava/lang/String; , v2 : single-length , v2 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.None Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	const-string	v1,"Triangle"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3,v3},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/<init>	; <init>(Ljava/lang/String;II)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Ljava/lang/String; , v3 : single-length , v3 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Triangle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	const-string	v1,"Underline"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v4,v4},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/<init>	; <init>(Ljava/lang/String;II)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Ljava/lang/String; , v4 : single-length , v4 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Underline Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.line 79
+	const/4	v0,3
+; v0 : single-length
+	new-array	v0,v0,[Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.None Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	aput-object	v1,v0,v2
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v2 : single-length
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Triangle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	aput-object	v1,v0,v3
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v3 : single-length
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Underline Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	aput-object	v1,v0,v4
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v4 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;II)V
+.limit registers 4
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+.line 84
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Ljava/lang/String; , v2 : single-length
+.line 85
+	iput	v3,v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.value I
+; v3 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.line 86
+	return-void	
+.end method
+
+.method public static fromValue(I)Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.limit registers 6
+; parameter[0] : v5 (I)
+.line 89
+	invoke-static	{},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/values	; values()[Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; 
+	nop	
+	move-result-object	v2
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	array-length	v3,v2
+; v3 : single-length , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	const/4	v1,0
+; v1 : single-length
+lccef4:
+	if-lt	v1,v3,lccefc
+; v1 : single-length , v3 : single-length
+.line 94
+	const/4	v0,0
+; v0 : single-length
+lccefa:
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+lccefc:
+.line 89
+	aget-object	v0,v2,v1
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : single-length
+.line 90
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.value I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	if-eq	v4,v5,lccefa
+; v4 : single-length , v5 : single-length
+.line 89
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	lccef4
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 1
+	const-class	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Enum;
+	check-cast	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.end method
+
+.method public static values()[Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.limit registers 4
+	const/4	v3,0
+; v3 : single-length
+.line 1
+	sget-object	v0,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	array-length	v1,v0
+; v1 : single-length , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	new-array	v2,v1,[Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : single-length
+	invoke-static	{v0,v3,v2,v3,v1},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v3 : single-length , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v3 : single-length , v1 : single-length
+	return-object	v2
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.end method
+
+

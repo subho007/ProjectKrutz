@@ -1,0 +1,29 @@
+.class android/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl
+.super android/support/v4/view/ViewCompat$BaseViewCompatImpl
+.source ViewCompat.java
+
+.inner class EclairMr1ViewCompatImpl inner android/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl outer android/support/v4/view/ViewCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl;)
+.line 366
+	invoke-direct	{v0},android/support/v4/view/ViewCompat$BaseViewCompatImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl;
+	return-void	
+.end method
+
+.method public isOpaque(Landroid/view/View;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/ViewCompat$EclairMr1ViewCompatImpl;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 369
+	invoke-static	{v2},android/support/v4/view/ViewCompatEclairMr1/isOpaque	; isOpaque(Landroid/view/View;)Z
+; v2 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

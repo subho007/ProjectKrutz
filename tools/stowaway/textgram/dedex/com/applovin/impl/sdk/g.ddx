@@ -1,0 +1,622 @@
+.class com/applovin/impl/sdk/g
+.super java/lang/Object
+.implements com/applovin/sdk/AppLovinLogger
+
+.field private a Lcom/applovin/impl/sdk/s;
+.field private b Lcom/applovin/impl/sdk/ac;
+.field private c Lcom/applovin/impl/sdk/h;
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Lcom/applovin/impl/sdk/g;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/sdk/g;
+	return-void	
+.end method
+
+.method a(Lcom/applovin/impl/sdk/ac;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/ac;)
+	iput-object	v1,v0,com/applovin/impl/sdk/g.b Lcom/applovin/impl/sdk/ac;
+; v1 : Lcom/applovin/impl/sdk/ac; , v0 : Lcom/applovin/impl/sdk/g;
+	return-void	
+.end method
+
+.method a(Lcom/applovin/impl/sdk/h;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/h;)
+	iput-object	v1,v0,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v1 : Lcom/applovin/impl/sdk/h; , v0 : Lcom/applovin/impl/sdk/g;
+	return-void	
+.end method
+
+.method a(Lcom/applovin/impl/sdk/s;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/s;)
+	iput-object	v1,v0,com/applovin/impl/sdk/g.a Lcom/applovin/impl/sdk/s;
+; v1 : Lcom/applovin/impl/sdk/s; , v0 : Lcom/applovin/impl/sdk/g;
+	return-void	
+.end method
+
+.method protected a()Z
+.limit registers 3
+; this: v2 (Lcom/applovin/impl/sdk/g;)
+	iget-object	v0,v2,com/applovin/impl/sdk/g.b Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/ac; , v2 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfb9be
+; v0 : Lcom/applovin/impl/sdk/ac;
+	iget-object	v0,v2,com/applovin/impl/sdk/g.b Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/ac; , v2 : Lcom/applovin/impl/sdk/g;
+	sget-object	v1,com/applovin/impl/sdk/z.l Lcom/applovin/impl/sdk/ab;
+; v1 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/ac/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/ac; , v1 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+lfb9bc:
+	return	v0
+; v0 : single-length
+lfb9be:
+	const/4	v0,0
+; v0 : single-length
+	goto	lfb9bc
+.end method
+
+.method public d(Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 6
+; this: v3 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Ljava/lang/String;)
+	invoke-virtual	{v3},com/applovin/impl/sdk/g/a	; a()Z
+; v3 : Lcom/applovin/impl/sdk/g;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfba24
+; v0 : single-length
+	const-string	v0,"AppLovinSdk"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/util/Log/d	; d(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+lfba24:
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfba70
+; v0 : Lcom/applovin/impl/sdk/h;
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"DEBUG  ["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1},com/applovin/impl/sdk/h/a	; a(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/h; , v1 : Ljava/lang/String;
+lfba70:
+	return-void	
+.end method
+
+.method public e(Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v2,v3,v0},com/applovin/impl/sdk/g/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/impl/sdk/g; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : single-length
+	return-void	
+.end method
+
+.method public e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.limit registers 8
+; this: v4 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (Ljava/lang/String;)
+; parameter[2] : v7 (Ljava/lang/Throwable;)
+	invoke-virtual	{v4},com/applovin/impl/sdk/g/a	; a()Z
+; v4 : Lcom/applovin/impl/sdk/g;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfbaf0
+; v0 : single-length
+	const-string	v0,"AppLovinSdk"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1,v7},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v7 : Ljava/lang/Throwable;
+lfbaf0:
+	iget-object	v0,v4,com/applovin/impl/sdk/g.a Lcom/applovin/impl/sdk/s;
+; v0 : Lcom/applovin/impl/sdk/s; , v4 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbb0c
+; v0 : Lcom/applovin/impl/sdk/s;
+	iget-object	v0,v4,com/applovin/impl/sdk/g.a Lcom/applovin/impl/sdk/s;
+; v0 : Lcom/applovin/impl/sdk/s; , v4 : Lcom/applovin/impl/sdk/g;
+	invoke-static	{v5,v6,v7},com/applovin/impl/sdk/AppLovinEvent/a	; a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Lcom/applovin/impl/sdk/AppLovinEvent;
+; v5 : Ljava/lang/String; , v6 : Ljava/lang/String; , v7 : Ljava/lang/Throwable;
+	move-result-object	v1
+; v1 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},com/applovin/impl/sdk/s/a	; a(Lcom/applovin/impl/sdk/AppLovinEvent;Z)V
+; v0 : Lcom/applovin/impl/sdk/s; , v1 : Lcom/applovin/impl/sdk/AppLovinEvent; , v2 : single-length
+lfbb0c:
+	iget-object	v0,v4,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v4 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbb92
+; v0 : Lcom/applovin/impl/sdk/h;
+	iget-object	v1,v4,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v1 : Lcom/applovin/impl/sdk/h; , v4 : Lcom/applovin/impl/sdk/g;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"ERROR  ["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	if-eqz	v7,lfbb94
+; v7 : Ljava/lang/Throwable;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v3,": "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/Throwable/getMessage	; getMessage()Ljava/lang/String;
+; v7 : Ljava/lang/Throwable;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lfbb7c:
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v0},com/applovin/impl/sdk/h/a	; a(Ljava/lang/String;)V
+; v1 : Lcom/applovin/impl/sdk/h; , v0 : Ljava/lang/String;
+lfbb92:
+	return-void	
+lfbb94:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	goto	lfbb7c
+.end method
+
+.method public i(Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 6
+; this: v3 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Ljava/lang/String;)
+	invoke-virtual	{v3},com/applovin/impl/sdk/g/a	; a()Z
+; v3 : Lcom/applovin/impl/sdk/g;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfbbfc
+; v0 : single-length
+	const-string	v0,"AppLovinSdk"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/util/Log/i	; i(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+lfbbfc:
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbc48
+; v0 : Lcom/applovin/impl/sdk/h;
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"INFO  ["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1},com/applovin/impl/sdk/h/a	; a(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/h; , v1 : Ljava/lang/String;
+lfbc48:
+	return-void	
+.end method
+
+.method public userError(Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v2,v3,v0},com/applovin/impl/sdk/g/userError	; userError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/impl/sdk/g; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : single-length
+	return-void	
+.end method
+
+.method public userError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.limit registers 8
+; this: v4 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (Ljava/lang/String;)
+; parameter[2] : v7 (Ljava/lang/Throwable;)
+	const-string	v0,"AppLovinSdk"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1,v7},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v7 : Ljava/lang/Throwable;
+	iget-object	v0,v4,com/applovin/impl/sdk/g.a Lcom/applovin/impl/sdk/s;
+; v0 : Lcom/applovin/impl/sdk/s; , v4 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbcd8
+; v0 : Lcom/applovin/impl/sdk/s;
+	iget-object	v0,v4,com/applovin/impl/sdk/g.a Lcom/applovin/impl/sdk/s;
+; v0 : Lcom/applovin/impl/sdk/s; , v4 : Lcom/applovin/impl/sdk/g;
+	invoke-static	{v5,v6,v7},com/applovin/impl/sdk/AppLovinEvent/b	; b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Lcom/applovin/impl/sdk/AppLovinEvent;
+; v5 : Ljava/lang/String; , v6 : Ljava/lang/String; , v7 : Ljava/lang/Throwable;
+	move-result-object	v1
+; v1 : Lcom/applovin/impl/sdk/AppLovinEvent;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},com/applovin/impl/sdk/s/a	; a(Lcom/applovin/impl/sdk/AppLovinEvent;Z)V
+; v0 : Lcom/applovin/impl/sdk/s; , v1 : Lcom/applovin/impl/sdk/AppLovinEvent; , v2 : single-length
+lfbcd8:
+	iget-object	v0,v4,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v4 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbd5e
+; v0 : Lcom/applovin/impl/sdk/h;
+	iget-object	v1,v4,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v1 : Lcom/applovin/impl/sdk/h; , v4 : Lcom/applovin/impl/sdk/g;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"USER  ["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	if-eqz	v7,lfbd60
+; v7 : Ljava/lang/Throwable;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v3,": "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/Throwable/getMessage	; getMessage()Ljava/lang/String;
+; v7 : Ljava/lang/Throwable;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lfbd48:
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v0},com/applovin/impl/sdk/h/a	; a(Ljava/lang/String;)V
+; v1 : Lcom/applovin/impl/sdk/h; , v0 : Ljava/lang/String;
+lfbd5e:
+	return-void	
+lfbd60:
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	goto	lfbd48
+.end method
+
+.method public w(Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v2,v3,v0},com/applovin/impl/sdk/g/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/impl/sdk/g; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : single-length
+	return-void	
+.end method
+
+.method public w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.limit registers 7
+; this: v3 (Lcom/applovin/impl/sdk/g;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Ljava/lang/String;)
+; parameter[2] : v6 (Ljava/lang/Throwable;)
+	invoke-virtual	{v3},com/applovin/impl/sdk/g/a	; a()Z
+; v3 : Lcom/applovin/impl/sdk/g;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfbde4
+; v0 : single-length
+	const-string	v0,"AppLovinSdk"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1,v6},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v6 : Ljava/lang/Throwable;
+lfbde4:
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	if-eqz	v0,lfbe30
+; v0 : Lcom/applovin/impl/sdk/h;
+	iget-object	v0,v3,com/applovin/impl/sdk/g.c Lcom/applovin/impl/sdk/h;
+; v0 : Lcom/applovin/impl/sdk/h; , v3 : Lcom/applovin/impl/sdk/g;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"WARN  ["
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"] "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1},com/applovin/impl/sdk/h/a	; a(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/h; , v1 : Ljava/lang/String;
+lfbe30:
+	return-void	
+.end method
+
+

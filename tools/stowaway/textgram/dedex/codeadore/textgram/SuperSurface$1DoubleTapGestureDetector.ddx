@@ -1,0 +1,78 @@
+.class codeadore/textgram/SuperSurface$1DoubleTapGestureDetector
+.super android/view/GestureDetector$SimpleOnGestureListener
+.source SuperSurface.java
+
+.enclosing method codeadore/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.field final this$0 Lcodeadore/textgram/SuperSurface;
+
+.method <init>(Lcodeadore/textgram/SuperSurface;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;)
+; parameter[0] : v1 (Lcodeadore/textgram/SuperSurface;)
+.line 182
+	iput-object	v1,v0,codeadore/textgram/SuperSurface$1DoubleTapGestureDetector.this$0 Lcodeadore/textgram/SuperSurface;
+; v1 : Lcodeadore/textgram/SuperSurface; , v0 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+	invoke-direct	{v0},android/view/GestureDetector$SimpleOnGestureListener/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+	return-void	
+.end method
+
+.method public onDoubleTap(Landroid/view/MotionEvent;)Z
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;)
+; parameter[0] : v4 (Landroid/view/MotionEvent;)
+.var 0 is editTextIntent Landroid/content/Intent; from la12ba to la12c4
+.line 193
+	iget-object	v1,v3,codeadore/textgram/SuperSurface$1DoubleTapGestureDetector.this$0 Lcodeadore/textgram/SuperSurface;
+; v1 : Lcodeadore/textgram/SuperSurface; , v3 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+	iget-object	v1,v1,codeadore/textgram/SuperSurface.lastSelectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurfaceItem; , v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-eqz	v1,la12c4
+; v1 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 194
+	iget-object	v1,v3,codeadore/textgram/SuperSurface$1DoubleTapGestureDetector.this$0 Lcodeadore/textgram/SuperSurface;
+; v1 : Lcodeadore/textgram/SuperSurface; , v3 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;
+	iget-object	v1,v1,codeadore/textgram/SuperSurface.lastSelectedItem Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurfaceItem; , v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	iget-object	v1,v1,codeadore/textgram/SuperSurfaceItem.type Ljava/lang/String;
+; v1 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	const-string	v2,"text"
+; v2 : Ljava/lang/String;
+	if-ne	v1,v2,la12c4
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 195
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	sget-object	v1,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v1 : Landroid/content/Context;
+.line 196
+	const-class	v2,codeadore/textgram/EditTextActivity
+; v2 : Ljava/lang/Class;
+.line 195
+	invoke-direct	{v0,v1,v2},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v0 : Landroid/content/Intent; , v1 : Landroid/content/Context; , v2 : Ljava/lang/Class;
+.line 197
+	sget-object	v1,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v1 : Landroid/content/Context;
+	invoke-virtual	{v1,v0},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;)V
+; v1 : Landroid/content/Context; , v0 : Landroid/content/Intent;
+la12c4:
+.line 200
+	const/4	v1,1
+; v1 : single-length
+	return	v1
+; v1 : single-length
+.end method
+
+.method public onLongPress(Landroid/view/MotionEvent;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector;)
+; parameter[0] : v1 (Landroid/view/MotionEvent;)
+.line 188
+	invoke-super	{v0,v1},android/view/GestureDetector$SimpleOnGestureListener/onLongPress	; onLongPress(Landroid/view/MotionEvent;)V
+; v0 : Lcodeadore/textgram/SuperSurface$1DoubleTapGestureDetector; , v1 : Landroid/view/MotionEvent;
+.line 189
+	return-void	
+.end method
+
+

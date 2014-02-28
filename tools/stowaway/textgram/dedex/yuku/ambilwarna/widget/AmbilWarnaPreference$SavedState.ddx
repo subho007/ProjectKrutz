@@ -1,0 +1,72 @@
+.class yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState
+.super android/preference/Preference$BaseSavedState
+.source AmbilWarnaPreference.java
+
+.inner class SavedState inner yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState outer yuku/ambilwarna/widget/AmbilWarnaPreference
+.field public static final CREATOR Landroid/os/Parcelable$Creator;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/os/Parcelable$Creator" , "<" , "Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;" , ">;" }
+  .end annotation
+.end field
+.field value I
+
+.method static <clinit>()V
+.limit registers 1
+.line 119
+	new-instance	v0,yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState$1
+; v0 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState$1;
+	invoke-direct	{v0},yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState$1/<init>	; <init>()V
+; v0 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState$1;
+	sput-object	v0,yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState.CREATOR Landroid/os/Parcelable$Creator;
+; v0 : Landroid/os/Parcelable$Creator;
+.line 127
+	return-void	
+.end method
+
+.method public <init>(Landroid/os/Parcel;)V
+.limit registers 3
+; this: v1 (Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+.line 106
+	invoke-direct	{v1,v2},android/preference/Preference$BaseSavedState/<init>	; <init>(Landroid/os/Parcel;)V
+; v1 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState; , v2 : Landroid/os/Parcel;
+.line 107
+	invoke-virtual	{v2},android/os/Parcel/readInt	; readInt()I
+; v2 : Landroid/os/Parcel;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState.value I
+; v0 : single-length , v1 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;
+.line 108
+	return-void	
+.end method
+
+.method public <init>(Landroid/os/Parcelable;)V
+.limit registers 2
+; this: v0 (Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;)
+; parameter[0] : v1 (Landroid/os/Parcelable;)
+.line 116
+	invoke-direct	{v0,v1},android/preference/Preference$BaseSavedState/<init>	; <init>(Landroid/os/Parcelable;)V
+; v0 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState; , v1 : Landroid/os/Parcelable;
+.line 117
+	return-void	
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.limit registers 4
+; this: v1 (Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+; parameter[1] : v3 (I)
+.line 111
+	invoke-super	{v1,v2,v3},android/preference/Preference$BaseSavedState/writeToParcel	; writeToParcel(Landroid/os/Parcel;I)V
+; v1 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState; , v2 : Landroid/os/Parcel; , v3 : single-length
+.line 112
+	iget	v0,v1,yuku/ambilwarna/widget/AmbilWarnaPreference$SavedState.value I
+; v0 : single-length , v1 : Lyuku/ambilwarna/widget/AmbilWarnaPreference$SavedState;
+	invoke-virtual	{v2,v0},android/os/Parcel/writeInt	; writeInt(I)V
+; v2 : Landroid/os/Parcel; , v0 : single-length
+.line 113
+	return-void	
+.end method
+
+

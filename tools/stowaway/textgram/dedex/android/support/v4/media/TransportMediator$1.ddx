@@ -1,0 +1,82 @@
+.class android/support/v4/media/TransportMediator$1
+.super java/lang/Object
+.source TransportMediator.java
+.implements android/support/v4/media/TransportMediatorCallback
+
+.inner class 1 inner android/support/v4/media/TransportMediator$1 outer android/support/v4/media/TransportMediator
+.field final this$0 Landroid/support/v4/media/TransportMediator;
+
+.method <init>(Landroid/support/v4/media/TransportMediator;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/media/TransportMediator$1;)
+; parameter[0] : v1 (Landroid/support/v4/media/TransportMediator;)
+.line 58
+	iput-object	v1,v0,android/support/v4/media/TransportMediator$1.this$0 Landroid/support/v4/media/TransportMediator;
+; v1 : Landroid/support/v4/media/TransportMediator; , v0 : Landroid/support/v4/media/TransportMediator$1;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/media/TransportMediator$1;
+	return-void	
+.end method
+
+.method public getPlaybackPosition()J
+.limit registers 3
+; this: v2 (Landroid/support/v4/media/TransportMediator$1;)
+.line 70
+	iget-object	v0,v2,android/support/v4/media/TransportMediator$1.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v2 : Landroid/support/v4/media/TransportMediator$1;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mCallbacks Landroid/support/v4/media/TransportPerformer;
+; v0 : Landroid/support/v4/media/TransportPerformer; , v0 : Landroid/support/v4/media/TransportPerformer;
+	invoke-virtual	{v0},android/support/v4/media/TransportPerformer/onGetCurrentPosition	; onGetCurrentPosition()J
+; v0 : Landroid/support/v4/media/TransportPerformer;
+	move-result-wide	v0
+; v0 : double-length
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method public handleAudioFocusChange(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/media/TransportMediator$1;)
+; parameter[0] : v2 (I)
+.line 65
+	iget-object	v0,v1,android/support/v4/media/TransportMediator$1.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v1 : Landroid/support/v4/media/TransportMediator$1;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mCallbacks Landroid/support/v4/media/TransportPerformer;
+; v0 : Landroid/support/v4/media/TransportPerformer; , v0 : Landroid/support/v4/media/TransportPerformer;
+	invoke-virtual	{v0,v2},android/support/v4/media/TransportPerformer/onAudioFocusChange	; onAudioFocusChange(I)V
+; v0 : Landroid/support/v4/media/TransportPerformer; , v2 : single-length
+.line 66
+	return-void	
+.end method
+
+.method public handleKey(Landroid/view/KeyEvent;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/media/TransportMediator$1;)
+; parameter[0] : v2 (Landroid/view/KeyEvent;)
+.line 61
+	iget-object	v0,v1,android/support/v4/media/TransportMediator$1.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v1 : Landroid/support/v4/media/TransportMediator$1;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mKeyEventCallback Landroid/view/KeyEvent$Callback;
+; v0 : Landroid/view/KeyEvent$Callback; , v0 : Landroid/view/KeyEvent$Callback;
+	invoke-virtual	{v2,v0},android/view/KeyEvent/dispatch	; dispatch(Landroid/view/KeyEvent$Callback;)Z
+; v2 : Landroid/view/KeyEvent; , v0 : Landroid/view/KeyEvent$Callback;
+.line 62
+	return-void	
+.end method
+
+.method public playbackPositionUpdate(J)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/media/TransportMediator$1;)
+; parameter[0] : v2 (J)
+.line 75
+	iget-object	v0,v1,android/support/v4/media/TransportMediator$1.this$0 Landroid/support/v4/media/TransportMediator;
+; v0 : Landroid/support/v4/media/TransportMediator; , v1 : Landroid/support/v4/media/TransportMediator$1;
+	iget-object	v0,v0,android/support/v4/media/TransportMediator.mCallbacks Landroid/support/v4/media/TransportPerformer;
+; v0 : Landroid/support/v4/media/TransportPerformer; , v0 : Landroid/support/v4/media/TransportPerformer;
+	invoke-virtual	{v0,v2,v3},android/support/v4/media/TransportPerformer/onSeekTo	; onSeekTo(J)V
+; v0 : Landroid/support/v4/media/TransportPerformer; , v2 : double-length
+.line 76
+	return-void	
+.end method
+
+

@@ -1,0 +1,23 @@
+.class public final com/viewpagerindicator/R$drawable
+.super java/lang/Object
+.source R.java
+
+.inner class drawable inner com/viewpagerindicator/R$drawable outer com/viewpagerindicator/R
+.field public static final vpi__tab_indicator I = 2130837702	; 0x7f0200c6
+.field public static final vpi__tab_selected_focused_holo I = 2130837703	; 0x7f0200c7
+.field public static final vpi__tab_selected_holo I = 2130837704	; 0x7f0200c8
+.field public static final vpi__tab_selected_pressed_holo I = 2130837705	; 0x7f0200c9
+.field public static final vpi__tab_unselected_focused_holo I = 2130837706	; 0x7f0200ca
+.field public static final vpi__tab_unselected_holo I = 2130837707	; 0x7f0200cb
+.field public static final vpi__tab_unselected_pressed_holo I = 2130837708	; 0x7f0200cc
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/viewpagerindicator/R$drawable;)
+.line 86
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/R$drawable;
+	return-void	
+.end method
+
+

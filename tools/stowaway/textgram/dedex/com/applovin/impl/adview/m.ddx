@@ -1,0 +1,183 @@
+.class com/applovin/impl/adview/m
+.super java/lang/Object
+.implements com/applovin/sdk/AppLovinAdLoadListener
+.implements com/applovin/sdk/AppLovinAdUpdateListener
+
+.field private final a Ljava/lang/ref/WeakReference;
+.field private final b Lcom/applovin/sdk/AppLovinAdService;
+.field private final c Lcom/applovin/sdk/AppLovinLogger;
+
+.method <init>(Lcom/applovin/impl/adview/AdViewControllerImpl;Lcom/applovin/sdk/AppLovinSdk;)V
+.limit registers 5
+; this: v2 (Lcom/applovin/impl/adview/m;)
+; parameter[0] : v3 (Lcom/applovin/impl/adview/AdViewControllerImpl;)
+; parameter[1] : v4 (Lcom/applovin/sdk/AppLovinSdk;)
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Lcom/applovin/impl/adview/m;
+	if-nez	v3,lf6f12
+; v3 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No view specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lf6f12:
+	if-nez	v4,lf6f26
+; v4 : Lcom/applovin/sdk/AppLovinSdk;
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"No sdk specified"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+lf6f26:
+	new-instance	v0,java/lang/ref/WeakReference
+; v0 : Ljava/lang/ref/WeakReference;
+	invoke-direct	{v0,v3},java/lang/ref/WeakReference/<init>	; <init>(Ljava/lang/Object;)V
+; v0 : Ljava/lang/ref/WeakReference; , v3 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	iput-object	v0,v2,com/applovin/impl/adview/m.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v2 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v4},com/applovin/sdk/AppLovinSdk/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v4 : Lcom/applovin/sdk/AppLovinSdk;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	iput-object	v0,v2,com/applovin/impl/adview/m.c Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v4},com/applovin/sdk/AppLovinSdk/getAdService	; getAdService()Lcom/applovin/sdk/AppLovinAdService;
+; v4 : Lcom/applovin/sdk/AppLovinSdk;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdService;
+	iput-object	v0,v2,com/applovin/impl/adview/m.b Lcom/applovin/sdk/AppLovinAdService;
+; v0 : Lcom/applovin/sdk/AppLovinAdService; , v2 : Lcom/applovin/impl/adview/m;
+	return-void	
+.end method
+
+.method public adReceived(Lcom/applovin/sdk/AppLovinAd;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/adview/m;)
+; parameter[0] : v4 (Lcom/applovin/sdk/AppLovinAd;)
+	iget-object	v0,v3,com/applovin/impl/adview/m.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v3 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v0},java/lang/ref/WeakReference/get	; get()Ljava/lang/Object;
+; v0 : Ljava/lang/ref/WeakReference;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/impl/adview/AdViewControllerImpl
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	if-eqz	v0,lf6f7c
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	invoke-virtual	{v0,v4},com/applovin/impl/adview/AdViewControllerImpl/onAdReceived	; onAdReceived(Lcom/applovin/sdk/AppLovinAd;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v4 : Lcom/applovin/sdk/AppLovinAd;
+lf6f7a:
+	return-void	
+lf6f7c:
+	iget-object	v0,v3,com/applovin/impl/adview/m.c Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/m;
+	const-string	v1,"AppLovinAdView"
+; v1 : Ljava/lang/String;
+	const-string	v2,"Ad view has been garbage collected by the time an ad was recieved"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/userError	; userError(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	lf6f7a
+.end method
+
+.method public adUpdated(Lcom/applovin/sdk/AppLovinAd;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/adview/m;)
+; parameter[0] : v4 (Lcom/applovin/sdk/AppLovinAd;)
+	iget-object	v0,v3,com/applovin/impl/adview/m.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v3 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v0},java/lang/ref/WeakReference/get	; get()Ljava/lang/Object;
+; v0 : Ljava/lang/ref/WeakReference;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/impl/adview/AdViewControllerImpl
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	if-eqz	v0,lf6fbc
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	invoke-virtual	{v0,v4},com/applovin/impl/adview/AdViewControllerImpl/onAdReceived	; onAdReceived(Lcom/applovin/sdk/AppLovinAd;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v4 : Lcom/applovin/sdk/AppLovinAd;
+lf6fba:
+	return-void	
+lf6fbc:
+	iget-object	v0,v3,com/applovin/impl/adview/m.b Lcom/applovin/sdk/AppLovinAdService;
+; v0 : Lcom/applovin/sdk/AppLovinAdService; , v3 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v4},com/applovin/sdk/AppLovinAd/getSize	; getSize()Lcom/applovin/sdk/AppLovinAdSize;
+; v4 : Lcom/applovin/sdk/AppLovinAd;
+	move-result-object	v1
+; v1 : Lcom/applovin/sdk/AppLovinAdSize;
+	invoke-interface	{v0,v3,v1},com/applovin/sdk/AppLovinAdService/removeAdUpdateListener	; removeAdUpdateListener(Lcom/applovin/sdk/AppLovinAdUpdateListener;Lcom/applovin/sdk/AppLovinAdSize;)V
+; v0 : Lcom/applovin/sdk/AppLovinAdService; , v3 : Lcom/applovin/impl/adview/m; , v1 : Lcom/applovin/sdk/AppLovinAdSize;
+	iget-object	v0,v3,com/applovin/impl/adview/m.c Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/m;
+	const-string	v1,"AppLovinAdView"
+; v1 : Ljava/lang/String;
+	const-string	v2,"Ad view has been garbage collected by the time an ad was updated"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/userError	; userError(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	lf6fba
+.end method
+
+.method public failedToReceiveAd(I)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/m;)
+; parameter[0] : v2 (I)
+	iget-object	v0,v1,com/applovin/impl/adview/m.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v1 : Lcom/applovin/impl/adview/m;
+	invoke-virtual	{v0},java/lang/ref/WeakReference/get	; get()Ljava/lang/Object;
+; v0 : Ljava/lang/ref/WeakReference;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/applovin/impl/adview/AdViewControllerImpl
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	if-eqz	v0,lf700e
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl;
+	invoke-virtual	{v0,v2},com/applovin/impl/adview/AdViewControllerImpl/onFailedToReceiveAd	; onFailedToReceiveAd(I)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerImpl; , v2 : single-length
+lf700e:
+	return-void	
+.end method
+
+.method public toString()Ljava/lang/String;
+.limit registers 3
+; this: v2 (Lcom/applovin/impl/adview/m;)
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"[AdViewController listener: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/Object/hashCode	; hashCode()I
+; v2 : Lcom/applovin/impl/adview/m;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"]"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

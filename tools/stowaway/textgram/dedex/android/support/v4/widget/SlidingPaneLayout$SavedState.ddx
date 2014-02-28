@@ -1,0 +1,102 @@
+.class android/support/v4/widget/SlidingPaneLayout$SavedState
+.super android/view/View$BaseSavedState
+.source SlidingPaneLayout.java
+
+.inner class SavedState inner android/support/v4/widget/SlidingPaneLayout$SavedState outer android/support/v4/widget/SlidingPaneLayout
+.field public static final CREATOR Landroid/os/Parcelable$Creator;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/os/Parcelable$Creator" , "<" , "Landroid/support/v4/widget/SlidingPaneLayout$SavedState;" , ">;" }
+  .end annotation
+.end field
+.field isOpen Z
+
+.method static <clinit>()V
+.limit registers 1
+.line 1321
+	new-instance	v0,android/support/v4/widget/SlidingPaneLayout$SavedState$1
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState$1;
+	invoke-direct	{v0},android/support/v4/widget/SlidingPaneLayout$SavedState$1/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState$1;
+	sput-object	v0,android/support/v4/widget/SlidingPaneLayout$SavedState.CREATOR Landroid/os/Parcelable$Creator;
+; v0 : Landroid/os/Parcelable$Creator;
+	return-void	
+.end method
+
+.method private <init>(Landroid/os/Parcel;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/SlidingPaneLayout$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+.line 1311
+	invoke-direct	{v1,v2},android/view/View$BaseSavedState/<init>	; <init>(Landroid/os/Parcel;)V
+; v1 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState; , v2 : Landroid/os/Parcel;
+.line 1312
+	invoke-virtual	{v2},android/os/Parcel/readInt	; readInt()I
+; v2 : Landroid/os/Parcel;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8f55a
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l8f554:
+	iput-boolean	v0,v1,android/support/v4/widget/SlidingPaneLayout$SavedState.isOpen Z
+; v0 : single-length , v1 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState;
+.line 1313
+	return-void	
+l8f55a:
+.line 1312
+	const/4	v0,0
+; v0 : single-length
+	goto	l8f554
+.end method
+
+.method <init>(Landroid/os/Parcel;Landroid/support/v4/widget/SlidingPaneLayout$1;)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/SlidingPaneLayout$SavedState;)
+; parameter[0] : v1 (Landroid/os/Parcel;)
+; parameter[1] : v2 (Landroid/support/v4/widget/SlidingPaneLayout$1;)
+.line 1303
+	invoke-direct	{v0,v1},android/support/v4/widget/SlidingPaneLayout$SavedState/<init>	; <init>(Landroid/os/Parcel;)V
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState; , v1 : Landroid/os/Parcel;
+	return-void	
+.end method
+
+.method <init>(Landroid/os/Parcelable;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/widget/SlidingPaneLayout$SavedState;)
+; parameter[0] : v1 (Landroid/os/Parcelable;)
+.line 1307
+	invoke-direct	{v0,v1},android/view/View$BaseSavedState/<init>	; <init>(Landroid/os/Parcelable;)V
+; v0 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState; , v1 : Landroid/os/Parcelable;
+.line 1308
+	return-void	
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/widget/SlidingPaneLayout$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+; parameter[1] : v3 (I)
+.line 1317
+	invoke-super	{v1,v2,v3},android/view/View$BaseSavedState/writeToParcel	; writeToParcel(Landroid/os/Parcel;I)V
+; v1 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState; , v2 : Landroid/os/Parcel; , v3 : single-length
+.line 1318
+	iget-boolean	v0,v1,android/support/v4/widget/SlidingPaneLayout$SavedState.isOpen Z
+; v0 : single-length , v1 : Landroid/support/v4/widget/SlidingPaneLayout$SavedState;
+	if-eqz	v0,l8f5b8
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l8f5b0:
+	invoke-virtual	{v2,v0},android/os/Parcel/writeInt	; writeInt(I)V
+; v2 : Landroid/os/Parcel; , v0 : single-length
+.line 1319
+	return-void	
+l8f5b8:
+.line 1318
+	const/4	v0,0
+; v0 : single-length
+	goto	l8f5b0
+.end method
+
+

@@ -1,0 +1,175 @@
+.class android/support/v4/util/ArrayMap$1
+.super android/support/v4/util/MapCollections
+.source ArrayMap.java
+
+.enclosing method android/getCollection()Landroid/support/v4/util/MapCollections;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Landroid/support/v4/util/MapCollections" , "<TK;TV;>;" }
+.end annotation
+
+.field final this$0 Landroid/support/v4/util/ArrayMap;
+
+.method <init>(Landroid/support/v4/util/ArrayMap;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v1 (Landroid/support/v4/util/ArrayMap;)
+.line 73
+	iput-object	v1,v0,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v1 : Landroid/support/v4/util/ArrayMap; , v0 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-direct	{v0},android/support/v4/util/MapCollections/<init>	; <init>()V
+; v0 : Landroid/support/v4/util/ArrayMap$1;
+	return-void	
+.end method
+
+.method protected colClear()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+.line 116
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0},android/support/v4/util/ArrayMap/clear	; clear()V
+; v0 : Landroid/support/v4/util/ArrayMap;
+.line 117
+	return-void	
+.end method
+
+.method protected colGetEntry(II)Ljava/lang/Object;
+.limit registers 5
+; this: v2 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (I)
+.line 81
+	iget-object	v0,v2,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : Landroid/support/v4/util/ArrayMap$1;
+	iget-object	v0,v0,android/support/v4/util/ArrayMap.mArray [Ljava/lang/Object;
+; v0 : [Ljava/lang/Object; , v0 : [Ljava/lang/Object;
+	shl-int/lit8	v1,v3,1
+; v1 : single-length , v3 : single-length
+	add-int/2addr	v1,v4
+; v1 : single-length , v4 : single-length
+	aget-object	v0,v0,v1
+; v0 : Ljava/lang/Object; , v0 : Ljava/lang/Object; , v1 : single-length
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method protected colGetMap()Ljava/util/Map;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Map" , "<TK;TV;>;" }
+.end annotation
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+.line 96
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	return-object	v0
+; v0 : Landroid/support/v4/util/ArrayMap;
+.end method
+
+.method protected colGetSize()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+.line 76
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	iget	v0,v0,android/support/v4/util/ArrayMap.mSize I
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected colIndexOfKey(Ljava/lang/Object;)I
+.limit registers 4
+; this: v2 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v3 (Ljava/lang/Object;)
+.line 86
+	if-nez	v3,ldac3a
+; v3 : Ljava/lang/Object;
+	iget-object	v0,v2,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0},android/support/v4/util/ArrayMap/indexOfNull	; indexOfNull()I
+; v0 : Landroid/support/v4/util/ArrayMap;
+	move-result	v0
+; v0 : single-length
+ldac38:
+	return	v0
+; v0 : single-length
+ldac3a:
+	iget-object	v0,v2,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v3},java/lang/Object/hashCode	; hashCode()I
+; v3 : Ljava/lang/Object;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v3,v1},android/support/v4/util/ArrayMap/indexOf	; indexOf(Ljava/lang/Object;I)I
+; v0 : Landroid/support/v4/util/ArrayMap; , v3 : Ljava/lang/Object; , v1 : single-length
+	move-result	v0
+; v0 : single-length
+	goto	ldac38
+.end method
+
+.method protected colIndexOfValue(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 91
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0,v2},android/support/v4/util/ArrayMap/indexOfValue	; indexOfValue(Ljava/lang/Object;)I
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected colPut(Ljava/lang/Object;Ljava/lang/Object;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(TK;TV;)V" }
+.end annotation
+.limit registers 4
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+.line 101
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0,v2,v3},android/support/v4/util/ArrayMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : Ljava/lang/Object; , v3 : Ljava/lang/Object;
+.line 102
+	return-void	
+.end method
+
+.method protected colRemoveAt(I)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v2 (I)
+.line 111
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0,v2},android/support/v4/util/ArrayMap/removeAt	; removeAt(I)Ljava/lang/Object;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : single-length
+.line 112
+	return-void	
+.end method
+
+.method protected colSetValue(ILjava/lang/Object;)Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(ITV;)TV;" }
+.end annotation
+.limit registers 4
+; this: v1 (Landroid/support/v4/util/ArrayMap$1;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (Ljava/lang/Object;)
+.line 106
+	iget-object	v0,v1,android/support/v4/util/ArrayMap$1.this$0 Landroid/support/v4/util/ArrayMap;
+; v0 : Landroid/support/v4/util/ArrayMap; , v1 : Landroid/support/v4/util/ArrayMap$1;
+	invoke-virtual	{v0,v2,v3},android/support/v4/util/ArrayMap/setValueAt	; setValueAt(ILjava/lang/Object;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/util/ArrayMap; , v2 : single-length , v3 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+

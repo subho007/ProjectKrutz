@@ -1,0 +1,44 @@
+.class public com/applovin/impl/sdk/ad
+.super java/lang/Object
+
+.field private a Lcom/applovin/impl/sdk/ac;
+
+.method public <init>(Lcom/applovin/sdk/AppLovinSdk;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/sdk/ad;)
+; parameter[0] : v2 (Lcom/applovin/sdk/AppLovinSdk;)
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/applovin/impl/sdk/ad;
+	move-object	v0,v2
+; v0 : Lcom/applovin/sdk/AppLovinSdk; , v2 : Lcom/applovin/sdk/AppLovinSdk;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinSdkImpl
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	check-cast	v2,com/applovin/impl/sdk/AppLovinSdkImpl
+; v2 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	invoke-virtual	{v2},com/applovin/impl/sdk/AppLovinSdkImpl/getSettingsManager	; getSettingsManager()Lcom/applovin/impl/sdk/ac;
+; v2 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ac;
+	iput-object	v0,v1,com/applovin/impl/sdk/ad.a Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/ac; , v1 : Lcom/applovin/impl/sdk/ad;
+	return-void	
+.end method
+
+.method public a()Ljava/lang/Boolean;
+.limit registers 3
+; this: v2 (Lcom/applovin/impl/sdk/ad;)
+	iget-object	v0,v2,com/applovin/impl/sdk/ad.a Lcom/applovin/impl/sdk/ac;
+; v0 : Lcom/applovin/impl/sdk/ac; , v2 : Lcom/applovin/impl/sdk/ad;
+	sget-object	v1,com/applovin/impl/sdk/z.V Lcom/applovin/impl/sdk/ab;
+; v1 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/ac/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/ac; , v1 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	return-object	v0
+; v0 : Ljava/lang/Boolean;
+.end method
+
+

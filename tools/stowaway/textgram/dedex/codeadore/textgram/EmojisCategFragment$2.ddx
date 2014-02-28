@@ -1,0 +1,248 @@
+.class codeadore/textgram/EmojisCategFragment$2
+.super java/lang/Object
+.source EmojisCategFragment.java
+.implements android/widget/AdapterView$OnItemClickListener
+
+.enclosing method codeadore/onActivityCreated(Landroid/os/Bundle;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Object;" , "Landroid/widget/AdapterView$OnItemClickListener;" }
+.end annotation
+
+.field final this$0 Lcodeadore/textgram/EmojisCategFragment;
+.field private final val$activity Landroid/app/Activity;
+.field private final val$category Ljava/lang/String;
+
+.method <init>(Lcodeadore/textgram/EmojisCategFragment;Landroid/app/Activity;Ljava/lang/String;)V
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/EmojisCategFragment$2;)
+; parameter[0] : v1 (Lcodeadore/textgram/EmojisCategFragment;)
+; parameter[1] : v2 (Landroid/app/Activity;)
+; parameter[2] : v3 (Ljava/lang/String;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/EmojisCategFragment$2.this$0 Lcodeadore/textgram/EmojisCategFragment;
+; v1 : Lcodeadore/textgram/EmojisCategFragment; , v0 : Lcodeadore/textgram/EmojisCategFragment$2;
+	iput-object	v2,v0,codeadore/textgram/EmojisCategFragment$2.val$activity Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v0 : Lcodeadore/textgram/EmojisCategFragment$2;
+	iput-object	v3,v0,codeadore/textgram/EmojisCategFragment$2.val$category Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/EmojisCategFragment$2;
+.line 77
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/EmojisCategFragment$2;
+	return-void	
+.end method
+
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/widget/AdapterView" , "<*>;" , "Landroid/view/View;" , "IJ)V" }
+.end annotation
+.limit registers 21
+; this: v15 (Lcodeadore/textgram/EmojisCategFragment$2;)
+; parameter[0] : v16 (Landroid/widget/AdapterView;)
+; parameter[1] : v17 (Landroid/view/View;)
+; parameter[2] : v18 (I)
+; parameter[3] : v19 (J)
+.catch java/io/IOException from l9dba6 to l9dc04 using l9dc92
+.var 4 is cs Landroid/text/Spanned; from l9dc46 to l9dc92
+.var 8 is editText Landroid/widget/EditText; from l9dc48 to l9dc92
+.var 9 is end I from l9dc68 to l9dc92
+.var 12 is final_face_drawable Landroid/graphics/drawable/Drawable; from l9dc08 to l9dc92
+.var 13 is imageGetter Landroid/text/Html$ImageGetter; from l9dc12 to l9dc92
+.var 14 is start I from l9dc60 to l9dc92
+.var 7 is e Ljava/io/IOException; from l9dc94 to l9dc9c
+.line 83
+	const/4	v10,0
+; v10 : single-length
+.line 85
+	iget-object	v1,v15,codeadore/textgram/EmojisCategFragment$2.this$0 Lcodeadore/textgram/EmojisCategFragment;
+; v1 : Lcodeadore/textgram/EmojisCategFragment; , v15 : Lcodeadore/textgram/EmojisCategFragment$2;
+	iget-object	v1,v1,codeadore/textgram/EmojisCategFragment.emojisAdapter Lcodeadore/textgram/adapters/EmojisGridAdapter;
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter; , v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter;
+.line 86
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	invoke-virtual	{v1,v0},codeadore/textgram/adapters/EmojisGridAdapter/getFaceItem	; getFaceItem(I)Ljava/lang/String;
+; v1 : Lcodeadore/textgram/adapters/EmojisGridAdapter; , v0 : single-length
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+l9dba6:
+.line 90
+	iget-object	v1,v15,codeadore/textgram/EmojisCategFragment$2.val$activity Landroid/app/Activity;
+; v1 : Landroid/app/Activity; , v15 : Lcodeadore/textgram/EmojisCategFragment$2;
+	invoke-virtual	{v1},android/app/Activity/getAssets	; getAssets()Landroid/content/res/AssetManager;
+; v1 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/content/res/AssetManager;
+.line 91
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"emojis"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	sget-object	v3,java/io/File.separator Ljava/lang/String;
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	iget-object	v3,v15,codeadore/textgram/EmojisCategFragment$2.val$category Ljava/lang/String;
+; v3 : Ljava/lang/String; , v15 : Lcodeadore/textgram/EmojisCategFragment$2;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+.line 92
+	sget-object	v3,java/io/File.separator Ljava/lang/String;
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+.line 93
+	invoke-virtual	{v2,v11},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v11 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+.line 91
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 90
+	invoke-virtual	{v1,v2},android/content/res/AssetManager/open	; open(Ljava/lang/String;)Ljava/io/InputStream;
+; v1 : Landroid/content/res/AssetManager; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/io/InputStream;
+.line 93
+	const/4	v2,0
+; v2 : single-length
+.line 89
+	invoke-static	{v1,v2},android/graphics/drawable/Drawable/createFromStream	; createFromStream(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+; v1 : Ljava/io/InputStream; , v2 : single-length
+l9dc04:
+	move-result-object	v10
+; v10 : Landroid/graphics/drawable/Drawable;
+l9dc06:
+.line 98
+	move-object	v12,v10
+; v12 : single-length , v10 : single-length
+.line 100
+	new-instance	v13,codeadore/textgram/EmojisCategFragment$2$1
+; v13 : Lcodeadore/textgram/EmojisCategFragment$2$1;
+	invoke-direct	{v13,v15,v12},codeadore/textgram/EmojisCategFragment$2$1/<init>	; <init>(Lcodeadore/textgram/EmojisCategFragment$2;Landroid/graphics/drawable/Drawable;)V
+; v13 : Lcodeadore/textgram/EmojisCategFragment$2$1; , v15 : Lcodeadore/textgram/EmojisCategFragment$2; , v12 : single-length
+.line 108
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"<img src='"
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v10},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v10 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+.line 109
+	const-string	v2,"' />"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+.line 108
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 109
+	const/4	v2,0
+; v2 : single-length
+.line 108
+	invoke-static	{v1,v13,v2},android/text/Html/fromHtml	; fromHtml(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
+; v1 : Ljava/lang/String; , v13 : Lcodeadore/textgram/EmojisCategFragment$2$1; , v2 : single-length
+	move-result-object	v4
+; v4 : Landroid/text/Spanned;
+.line 111
+	const/4	v8,0
+; v8 : single-length
+.line 112
+	sget-object	v1,codeadore/textgram/Settings.currentEmojisActivity Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"MainActivity"
+; v2 : Ljava/lang/String;
+	if-ne	v1,v2,l9dc9c
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 113
+	sget-object	v8,codeadore/textgram/MainActivity.editText Landroid/widget/EditText;
+; v8 : Landroid/widget/EditText;
+l9dc58:
+.line 119
+	invoke-virtual	{v8},android/widget/EditText/getSelectionStart	; getSelectionStart()I
+; v8 : Landroid/widget/EditText;
+	move-result	v14
+; v14 : single-length
+.line 120
+	invoke-virtual	{v8},android/widget/EditText/getSelectionEnd	; getSelectionEnd()I
+; v8 : Landroid/widget/EditText;
+	move-result	v9
+; v9 : single-length
+.line 122
+	invoke-virtual	{v8},android/widget/EditText/getText	; getText()Landroid/text/Editable;
+; v8 : Landroid/widget/EditText;
+	move-result-object	v1
+; v1 : Landroid/text/Editable;
+	invoke-static	{v14,v9},java/lang/Math/min	; min(II)I
+; v14 : single-length , v9 : single-length
+	move-result	v2
+; v2 : single-length
+.line 123
+	invoke-static	{v14,v9},java/lang/Math/max	; max(II)I
+; v14 : single-length , v9 : single-length
+	move-result	v3
+; v3 : single-length
+	const/4	v5,0
+; v5 : single-length
+	invoke-interface	{v4},android/text/Spanned/length	; length()I
+; v4 : Landroid/text/Spanned;
+	move-result	v6
+; v6 : single-length
+.line 122
+	invoke-interface/range	{v1..v6},android/text/Editable/replace;	replace(IILjava/lang/CharSequence;II)Landroid/text/Editable;
+; v1 : Landroid/text/Editable; , v2 : single-length , v3 : single-length , v4 : Landroid/text/Spanned; , v5 : single-length , v6 : single-length
+.line 124
+	return-void	
+l9dc92:
+.line 94
+	move-exception	v7
+; v7 : java/io/IOException
+.line 95
+	invoke-virtual	{v7},java/io/IOException/printStackTrace	; printStackTrace()V
+; v7 : java/io/IOException
+	goto	l9dc06
+l9dc9c:
+.line 114
+	sget-object	v1,codeadore/textgram/Settings.currentEmojisActivity Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"EditTextActivity"
+; v2 : Ljava/lang/String;
+	if-ne	v1,v2,l9dcae
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 115
+	sget-object	v8,codeadore/textgram/EditTextActivity.et Landroid/widget/EditText;
+; v8 : Landroid/widget/EditText;
+.line 116
+	goto	l9dc58
+l9dcae:
+	sget-object	v1,codeadore/textgram/Settings.currentEmojisActivity Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"CreateTextboxActivity"
+; v2 : Ljava/lang/String;
+	if-ne	v1,v2,l9dc58
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 117
+	sget-object	v8,codeadore/textgram/CreateTextboxActivity.et Landroid/widget/EditText;
+; v8 : Landroid/widget/EditText;
+	goto	l9dc58
+.end method
+
+

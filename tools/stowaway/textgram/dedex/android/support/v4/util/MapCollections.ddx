@@ -1,0 +1,501 @@
+.class abstract android/support/v4/util/MapCollections
+.super java/lang/Object
+.source MapCollections.java
+
+.inner class ValuesCollection inner android/support/v4/util/MapCollections$ValuesCollection outer android/support/v4/util/MapCollections
+.inner class KeySet inner android/support/v4/util/MapCollections$KeySet outer android/support/v4/util/MapCollections
+.inner class EntrySet inner android/support/v4/util/MapCollections$EntrySet outer android/support/v4/util/MapCollections
+.inner class MapIterator inner android/support/v4/util/MapCollections$MapIterator outer android/support/v4/util/MapCollections
+.inner class ArrayIterator inner android/support/v4/util/MapCollections$ArrayIterator outer android/support/v4/util/MapCollections
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "<K:" , "Ljava/lang/Object;" , "V:" , "Ljava/lang/Object;" , ">" , "Ljava/lang/Object;" }
+.end annotation
+
+.field mEntrySet Landroid/support/v4/util/MapCollections$EntrySet;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/support/v4/util/MapCollections" , "<TK;TV;>.EntrySet;" }
+  .end annotation
+.end field
+.field mKeySet Landroid/support/v4/util/MapCollections$KeySet;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/support/v4/util/MapCollections" , "<TK;TV;>.KeySet;" }
+  .end annotation
+.end field
+.field mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/support/v4/util/MapCollections" , "<TK;TV;>.ValuesCollection;" }
+  .end annotation
+.end field
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/util/MapCollections;)
+.line 30
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/util/MapCollections;
+	return-void	
+.end method
+
+.method public static containsAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<K:" , "Ljava/lang/Object;" , "V:" , "Ljava/lang/Object;" , ">(" , "Ljava/util/Map" , "<TK;TV;>;" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Ljava/util/Map;)
+; parameter[1] : v3 (Ljava/util/Collection;)
+.line 455
+	invoke-interface	{v3},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v3 : Ljava/util/Collection;
+	move-result-object	v0
+; v0 : Ljava/util/Iterator;
+l80658:
+.line 456
+	invoke-interface	{v0},java/util/Iterator/hasNext	; hasNext()Z
+; v0 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l8067c
+; v1 : single-length
+.line 457
+	invoke-interface	{v0},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v0 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	invoke-interface	{v2,v1},java/util/Map/containsKey	; containsKey(Ljava/lang/Object;)Z
+; v2 : Ljava/util/Map; , v1 : Ljava/lang/Object;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l80658
+; v1 : single-length
+.line 458
+	const/4	v1,0
+; v1 : single-length
+l8067a:
+.line 461
+	return	v1
+; v1 : single-length
+l8067c:
+	const/4	v1,1
+; v1 : single-length
+	goto	l8067a
+.end method
+
+.method public static equalsSetHelper(Ljava/util/Set;Ljava/lang/Object;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">(" , "Ljava/util/Set" , "<TT;>;" , "Ljava/lang/Object;" , ")Z" }
+.end annotation
+.limit registers 8
+; parameter[0] : v6 (Ljava/util/Set;)
+; parameter[1] : v7 (Ljava/lang/Object;)
+.catch java/lang/NullPointerException from l806aa to l806c4 using l806d2
+.catch java/lang/ClassCastException from l806aa to l806c4 using l806d6
+.var 0 is ignored Ljava/lang/NullPointerException; from l806d4 to l806d6
+	const/4	v2,1
+; v2 : single-length
+	const/4	v3,0
+; v3 : single-length
+.line 511
+	if-ne	v6,v7,l8069c
+; v6 : Ljava/util/Set; , v7 : Ljava/lang/Object;
+	move	v3,v2
+; v3 : single-length , v2 : single-length
+l8069a:
+.line 525
+	return	v3
+; v3 : single-length
+l8069c:
+.line 514
+	instance-of	v4,v7,java/util/Set
+; v4 : single-length , v7 : Ljava/lang/Object;
+	if-eqz	v4,l8069a
+; v4 : single-length
+	move-object	v1,v7
+; v1 : Ljava/lang/Object; , v7 : Ljava/lang/Object;
+.line 515
+	check-cast	v1,java/util/Set
+; v1 : Ljava/util/Set;
+l806aa:
+.line 518
+	invoke-interface	{v6},java/util/Set/size	; size()I
+; v6 : Ljava/util/Set;
+	move-result	v4
+; v4 : single-length
+	invoke-interface	{v1},java/util/Set/size	; size()I
+; v1 : Ljava/util/Set;
+	move-result	v5
+; v5 : single-length
+	if-ne	v4,v5,l806ce
+; v4 : single-length , v5 : single-length
+	invoke-interface	{v6,v1},java/util/Set/containsAll	; containsAll(Ljava/util/Collection;)Z
+; v6 : Ljava/util/Set; , v1 : Ljava/util/Set;
+l806c4:
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l806ce
+; v4 : single-length
+l806ca:
+	move	v3,v2
+; v3 : single-length , v2 : single-length
+	goto	l8069a
+l806ce:
+	move	v2,v3
+; v2 : single-length , v3 : single-length
+	goto	l806ca
+l806d2:
+.line 519
+	move-exception	v0
+; v0 : java/lang/NullPointerException
+.line 520
+	goto	l8069a
+l806d6:
+.line 521
+	move-exception	v0
+; v0 : java/lang/ClassCastException
+.line 522
+	goto	l8069a
+.end method
+
+.method public static removeAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<K:" , "Ljava/lang/Object;" , "V:" , "Ljava/lang/Object;" , ">(" , "Ljava/util/Map" , "<TK;TV;>;" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 5
+; parameter[0] : v3 (Ljava/util/Map;)
+; parameter[1] : v4 (Ljava/util/Collection;)
+.line 465
+	invoke-interface	{v3},java/util/Map/size	; size()I
+; v3 : Ljava/util/Map;
+	move-result	v1
+; v1 : single-length
+.line 466
+	invoke-interface	{v4},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v4 : Ljava/util/Collection;
+	move-result-object	v0
+; v0 : Ljava/util/Iterator;
+l8070c:
+.line 467
+	invoke-interface	{v0},java/util/Iterator/hasNext	; hasNext()Z
+; v0 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l80728
+; v2 : single-length
+.line 468
+	invoke-interface	{v0},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v0 : Ljava/util/Iterator;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	invoke-interface	{v3,v2},java/util/Map/remove	; remove(Ljava/lang/Object;)Ljava/lang/Object;
+; v3 : Ljava/util/Map; , v2 : Ljava/lang/Object;
+	goto	l8070c
+l80728:
+.line 470
+	invoke-interface	{v3},java/util/Map/size	; size()I
+; v3 : Ljava/util/Map;
+	move-result	v2
+; v2 : single-length
+	if-eq	v1,v2,l80738
+; v1 : single-length , v2 : single-length
+	const/4	v2,1
+; v2 : single-length
+l80736:
+	return	v2
+; v2 : single-length
+l80738:
+	const/4	v2,0
+; v2 : single-length
+	goto	l80736
+.end method
+
+.method public static retainAllHelper(Ljava/util/Map;Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<K:" , "Ljava/lang/Object;" , "V:" , "Ljava/lang/Object;" , ">(" , "Ljava/util/Map" , "<TK;TV;>;" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 5
+; parameter[0] : v3 (Ljava/util/Map;)
+; parameter[1] : v4 (Ljava/util/Collection;)
+.line 474
+	invoke-interface	{v3},java/util/Map/size	; size()I
+; v3 : Ljava/util/Map;
+	move-result	v1
+; v1 : single-length
+.line 475
+	invoke-interface	{v3},java/util/Map/keySet	; keySet()Ljava/util/Set;
+; v3 : Ljava/util/Map;
+	move-result-object	v2
+; v2 : Ljava/util/Set;
+	invoke-interface	{v2},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v2 : Ljava/util/Set;
+	move-result-object	v0
+; v0 : Ljava/util/Iterator;
+l80764:
+.line 476
+	invoke-interface	{v0},java/util/Iterator/hasNext	; hasNext()Z
+; v0 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l8078c
+; v2 : single-length
+.line 477
+	invoke-interface	{v0},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v0 : Ljava/util/Iterator;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	invoke-interface	{v4,v2},java/util/Collection/contains	; contains(Ljava/lang/Object;)Z
+; v4 : Ljava/util/Collection; , v2 : Ljava/lang/Object;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l80764
+; v2 : single-length
+.line 478
+	invoke-interface	{v0},java/util/Iterator/remove	; remove()V
+; v0 : Ljava/util/Iterator;
+	goto	l80764
+l8078c:
+.line 481
+	invoke-interface	{v3},java/util/Map/size	; size()I
+; v3 : Ljava/util/Map;
+	move-result	v2
+; v2 : single-length
+	if-eq	v1,v2,l8079c
+; v1 : single-length , v2 : single-length
+	const/4	v2,1
+; v2 : single-length
+l8079a:
+	return	v2
+; v2 : single-length
+l8079c:
+	const/4	v2,0
+; v2 : single-length
+	goto	l8079a
+.end method
+
+.method protected abstract colClear()V
+.end method
+
+.method protected abstract colGetEntry(II)Ljava/lang/Object;
+.end method
+
+.method protected abstract colGetMap()Ljava/util/Map;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Map" , "<TK;TV;>;" }
+.end annotation
+.end method
+
+.method protected abstract colGetSize()I
+.end method
+
+.method protected abstract colIndexOfKey(Ljava/lang/Object;)I
+.end method
+
+.method protected abstract colIndexOfValue(Ljava/lang/Object;)I
+.end method
+
+.method protected abstract colPut(Ljava/lang/Object;Ljava/lang/Object;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(TK;TV;)V" }
+.end annotation
+.end method
+
+.method protected abstract colRemoveAt(I)V
+.end method
+
+.method protected abstract colSetValue(ILjava/lang/Object;)Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(ITV;)TV;" }
+.end annotation
+.end method
+
+.method public getEntrySet()Ljava/util/Set;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Set" , "<" , "Ljava/util/Map$Entry" , "<TK;TV;>;>;" }
+.end annotation
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections;)
+.line 529
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mEntrySet Landroid/support/v4/util/MapCollections$EntrySet;
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet; , v1 : Landroid/support/v4/util/MapCollections;
+	if-nez	v0,l807c6
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet;
+.line 530
+	new-instance	v0,android/support/v4/util/MapCollections$EntrySet
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-direct	{v0,v1},android/support/v4/util/MapCollections$EntrySet/<init>	; <init>(Landroid/support/v4/util/MapCollections;)V
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet; , v1 : Landroid/support/v4/util/MapCollections;
+	iput-object	v0,v1,android/support/v4/util/MapCollections.mEntrySet Landroid/support/v4/util/MapCollections$EntrySet;
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet; , v1 : Landroid/support/v4/util/MapCollections;
+l807c6:
+.line 532
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mEntrySet Landroid/support/v4/util/MapCollections$EntrySet;
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet; , v1 : Landroid/support/v4/util/MapCollections;
+	return-object	v0
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet;
+.end method
+
+.method public getKeySet()Ljava/util/Set;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Set" , "<TK;>;" }
+.end annotation
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections;)
+.line 536
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mKeySet Landroid/support/v4/util/MapCollections$KeySet;
+; v0 : Landroid/support/v4/util/MapCollections$KeySet; , v1 : Landroid/support/v4/util/MapCollections;
+	if-nez	v0,l807f2
+; v0 : Landroid/support/v4/util/MapCollections$KeySet;
+.line 537
+	new-instance	v0,android/support/v4/util/MapCollections$KeySet
+; v0 : Landroid/support/v4/util/MapCollections$KeySet;
+	invoke-direct	{v0,v1},android/support/v4/util/MapCollections$KeySet/<init>	; <init>(Landroid/support/v4/util/MapCollections;)V
+; v0 : Landroid/support/v4/util/MapCollections$KeySet; , v1 : Landroid/support/v4/util/MapCollections;
+	iput-object	v0,v1,android/support/v4/util/MapCollections.mKeySet Landroid/support/v4/util/MapCollections$KeySet;
+; v0 : Landroid/support/v4/util/MapCollections$KeySet; , v1 : Landroid/support/v4/util/MapCollections;
+l807f2:
+.line 539
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mKeySet Landroid/support/v4/util/MapCollections$KeySet;
+; v0 : Landroid/support/v4/util/MapCollections$KeySet; , v1 : Landroid/support/v4/util/MapCollections;
+	return-object	v0
+; v0 : Landroid/support/v4/util/MapCollections$KeySet;
+.end method
+
+.method public getValues()Ljava/util/Collection;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Collection" , "<TV;>;" }
+.end annotation
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections;)
+.line 543
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection; , v1 : Landroid/support/v4/util/MapCollections;
+	if-nez	v0,l8081e
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection;
+.line 544
+	new-instance	v0,android/support/v4/util/MapCollections$ValuesCollection
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection;
+	invoke-direct	{v0,v1},android/support/v4/util/MapCollections$ValuesCollection/<init>	; <init>(Landroid/support/v4/util/MapCollections;)V
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection; , v1 : Landroid/support/v4/util/MapCollections;
+	iput-object	v0,v1,android/support/v4/util/MapCollections.mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection; , v1 : Landroid/support/v4/util/MapCollections;
+l8081e:
+.line 546
+	iget-object	v0,v1,android/support/v4/util/MapCollections.mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection; , v1 : Landroid/support/v4/util/MapCollections;
+	return-object	v0
+; v0 : Landroid/support/v4/util/MapCollections$ValuesCollection;
+.end method
+
+.method public toArrayHelper(I)[Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">([TT;I)[TT;" }
+.end annotation
+.limit registers 6
+; this: v4 (Landroid/support/v4/util/MapCollections;)
+; parameter[0] : v5 (I)
+.line 486
+	invoke-virtual	{v4},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v4 : Landroid/support/v4/util/MapCollections;
+	move-result	v0
+; v0 : single-length
+.line 487
+	new-array	v2,v0,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v0 : single-length
+.line 488
+	const/4	v1,0
+; v1 : single-length
+l80842:
+	if-ge	v1,v0,l80858
+; v1 : single-length , v0 : single-length
+.line 489
+	invoke-virtual	{v4,v1,v5},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v4 : Landroid/support/v4/util/MapCollections; , v1 : single-length , v5 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	aput-object	v3,v2,v1
+; v3 : Ljava/lang/Object; , v2 : [Ljava/lang/Object; , v1 : single-length
+.line 488
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	l80842
+l80858:
+.line 491
+	return-object	v2
+; v2 : [Ljava/lang/Object;
+.end method
+
+.method public toArrayHelper([Ljava/lang/Object;I)[Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">([TT;I)[TT;" }
+.end annotation
+.limit registers 7
+; this: v4 (Landroid/support/v4/util/MapCollections;)
+; parameter[0] : v5 ([Ljava/lang/Object;)
+; parameter[1] : v6 (I)
+.var 2 is newArray [Ljava/lang/Object; from l8089c to l8089e
+.line 495
+	invoke-virtual	{v4},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v4 : Landroid/support/v4/util/MapCollections;
+	move-result	v0
+; v0 : single-length
+.line 496
+	array-length	v3,v5
+; v3 : single-length , v5 : [Ljava/lang/Object;
+	if-ge	v3,v0,l8089e
+; v3 : single-length , v0 : single-length
+.line 497
+	invoke-virtual	{v5},java/lang/Object/getClass	; getClass()Ljava/lang/Class;
+; v5 : [Ljava/lang/Object;
+	move-result-object	v3
+; v3 : Ljava/lang/Class;
+	invoke-virtual	{v3},java/lang/Class/getComponentType	; getComponentType()Ljava/lang/Class;
+; v3 : Ljava/lang/Class;
+	move-result-object	v3
+; v3 : Ljava/lang/Class;
+	invoke-static	{v3,v0},java/lang/reflect/Array/newInstance	; newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+; v3 : Ljava/lang/Class; , v0 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,[Ljava/lang/Object
+; v3 : [Ljava/lang/Object
+	move-object	v2,v3
+; v2 : [Ljava/lang/Object , v3 : [Ljava/lang/Object
+	check-cast	v2,[Ljava/lang/Object
+; v2 : [Ljava/lang/Object
+.line 499
+	move-object	v5,v2
+; v5 : [Ljava/lang/Object , v2 : [Ljava/lang/Object
+l8089e:
+.line 501
+	const/4	v1,0
+; v1 : single-length
+l808a0:
+	if-ge	v1,v0,l808b6
+; v1 : single-length , v0 : single-length
+.line 502
+	invoke-virtual	{v4,v1,v6},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v4 : Landroid/support/v4/util/MapCollections; , v1 : single-length , v6 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	aput-object	v3,v5,v1
+; v3 : Ljava/lang/Object; , v5 : [Ljava/lang/Object , v1 : single-length
+.line 501
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	l808a0
+l808b6:
+.line 504
+	array-length	v3,v5
+; v3 : single-length , v5 : [Ljava/lang/Object
+	if-le	v3,v0,l808c2
+; v3 : single-length , v0 : single-length
+.line 505
+	const/4	v3,0
+; v3 : single-length
+	aput-object	v3,v5,v0
+; v3 : single-length , v5 : [Ljava/lang/Object , v0 : single-length
+l808c2:
+.line 507
+	return-object	v5
+; v5 : [Ljava/lang/Object
+.end method
+
+

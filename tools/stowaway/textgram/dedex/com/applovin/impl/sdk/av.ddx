@@ -1,0 +1,1769 @@
+.class com/applovin/impl/sdk/av
+.super com/applovin/impl/sdk/ar
+
+.field private static final a Ljava/util/Collection;
+.field private static volatile b I
+.field private final c Lorg/json/JSONObject;
+.field private final h Lcom/applovin/sdk/AppLovinAdLoadListener;
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,0
+; v3 : single-length
+	const/4	v0,5
+; v0 : single-length
+	new-array	v0,v0,[Ljava/lang/Character;
+; v0 : [Ljava/lang/Character; , v0 : [Ljava/lang/Character;
+	const/16	v1,41
+; v1 : single-length
+	invoke-static	{v1},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Character;
+	aput-object	v1,v0,v3
+; v1 : Ljava/lang/Character; , v0 : [Ljava/lang/Character; , v3 : single-length
+	const/4	v1,1
+; v1 : single-length
+	const/16	v2,93
+; v2 : single-length
+	invoke-static	{v2},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Character;
+	aput-object	v2,v0,v1
+; v2 : Ljava/lang/Character; , v0 : [Ljava/lang/Character; , v1 : single-length
+	const/4	v1,2
+; v1 : single-length
+	const/16	v2,34
+; v2 : single-length
+	invoke-static	{v2},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Character;
+	aput-object	v2,v0,v1
+; v2 : Ljava/lang/Character; , v0 : [Ljava/lang/Character; , v1 : single-length
+	const/4	v1,3
+; v1 : single-length
+	const/16	v2,39
+; v2 : single-length
+	invoke-static	{v2},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Character;
+	aput-object	v2,v0,v1
+; v2 : Ljava/lang/Character; , v0 : [Ljava/lang/Character; , v1 : single-length
+	const/4	v1,4
+; v1 : single-length
+	const/16	v2,32
+; v2 : single-length
+	invoke-static	{v2},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Character;
+	aput-object	v2,v0,v1
+; v2 : Ljava/lang/Character; , v0 : [Ljava/lang/Character; , v1 : single-length
+	invoke-static	{v0},java/util/Arrays/asList	; asList([Ljava/lang/Object;)Ljava/util/List;
+; v0 : [Ljava/lang/Character;
+	move-result-object	v0
+; v0 : Ljava/util/List;
+	sput-object	v0,com/applovin/impl/sdk/av.a Ljava/util/Collection;
+; v0 : Ljava/util/Collection;
+	sput	v3,com/applovin/impl/sdk/av.b I
+; v3 : I
+	return-void	
+.end method
+
+.method <init>(Lorg/json/JSONObject;Lcom/applovin/sdk/AppLovinAdLoadListener;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+.limit registers 5
+; this: v1 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v2 (Lorg/json/JSONObject;)
+; parameter[1] : v3 (Lcom/applovin/sdk/AppLovinAdLoadListener;)
+; parameter[2] : v4 (Lcom/applovin/impl/sdk/AppLovinSdkImpl;)
+	const-string	v0,"RenderAd"
+; v0 : Ljava/lang/String;
+	invoke-direct	{v1,v0,v4},com/applovin/impl/sdk/ar/<init>	; <init>(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)V
+; v1 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	iput-object	v2,v1,com/applovin/impl/sdk/av.c Lorg/json/JSONObject;
+; v2 : Lorg/json/JSONObject; , v1 : Lcom/applovin/impl/sdk/av;
+	iput-object	v3,v1,com/applovin/impl/sdk/av.h Lcom/applovin/sdk/AppLovinAdLoadListener;
+; v3 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v1 : Lcom/applovin/impl/sdk/av;
+	return-void	
+.end method
+
+.method private a(I)Ljava/lang/String;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v3 (I)
+	if-nez	v3,lf93a2
+; v3 : single-length
+	const-string	v0,"click"
+; v0 : Ljava/lang/String;
+lf93a0:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lf93a2:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"click"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lf93a0
+.end method
+
+.method private a(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 6
+; this: v3 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Landroid/content/Context;)
+	new-instance	v0,com/applovin/impl/sdk/be
+; v0 : Lcom/applovin/impl/sdk/be;
+	iget-object	v1,v3,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/sdk/av;
+	invoke-direct	{v0,v4,v1},com/applovin/impl/sdk/be/<init>	; <init>(Ljava/lang/CharSequence;Lcom/applovin/sdk/AppLovinLogger;)V
+; v0 : Lcom/applovin/impl/sdk/be; , v4 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v1,"click"
+; v1 : Ljava/lang/String;
+	const-string	v2,"applovin://com.applovin.sdk/adservice/track_click"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},com/applovin/impl/sdk/be/a	; a(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/be; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	const-string	v1,"click.javascript"
+; v1 : Ljava/lang/String;
+	const-string	v2,"javascript:window.applovin_sdk.execute('track_click')"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},com/applovin/impl/sdk/be/a	; a(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/be; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v0},com/applovin/impl/sdk/be/a	; a()Ljava/lang/String;
+; v0 : Lcom/applovin/impl/sdk/be;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	iget-object	v0,v3,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/av;
+	sget-object	v2,com/applovin/impl/sdk/z.L Lcom/applovin/impl/sdk/ab;
+; v2 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v2},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v2 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9438
+; v0 : single-length
+	invoke-direct	{v3,v1},com/applovin/impl/sdk/av/d	; d(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Lcom/applovin/impl/sdk/av; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lf9436:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lf9438:
+	move-object	v0,v1
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	goto	lf9436
+.end method
+
+.method private a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 8
+; this: v5 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v6 (Ljava/lang/String;)
+; parameter[1] : v7 (Ljava/lang/String;)
+	iget-object	v0,v5,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v5 : Lcom/applovin/impl/sdk/av;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-static	{v7,v0},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
+; v7 : Ljava/lang/String; , v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/io/File;
+	invoke-virtual	{v0},java/io/File/exists	; exists()Z
+; v0 : Ljava/io/File;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lf94ec
+; v1 : single-length
+	iget-object	v1,v5,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/sdk/av;
+	iget-object	v2,v5,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v2 : Ljava/lang/String; , v5 : Lcom/applovin/impl/sdk/av;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Loaded "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4," from cache: file://"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v0 : Ljava/io/File;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"file://"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v0 : Ljava/io/File;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lf94ea:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lf94ec:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v7},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v7 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-direct	{v5,v0,v1},com/applovin/impl/sdk/av/a	; a(Ljava/io/File;Ljava/lang/String;)Z
+; v5 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/io/File; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lf954a
+; v1 : single-length
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"file://"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v0 : Ljava/io/File;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lf94ea
+lf954a:
+	const/4	v0,0
+; v0 : single-length
+	goto	lf94ea
+.end method
+
+.method private a(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 6
+; this: v3 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v4 (Ljava/lang/String;)
+; parameter[1] : v5 (Ljava/util/Map;)
+	new-instance	v0,com/applovin/impl/sdk/be
+; v0 : Lcom/applovin/impl/sdk/be;
+	iget-object	v1,v3,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/sdk/av;
+	invoke-direct	{v0,v4,v1},com/applovin/impl/sdk/be/<init>	; <init>(Ljava/lang/CharSequence;Lcom/applovin/sdk/AppLovinLogger;)V
+; v0 : Lcom/applovin/impl/sdk/be; , v4 : Ljava/lang/String; , v1 : Lcom/applovin/sdk/AppLovinLogger;
+	invoke-virtual	{v0,v5},com/applovin/impl/sdk/be/a	; a(Ljava/util/Map;)V
+; v0 : Lcom/applovin/impl/sdk/be; , v5 : Ljava/util/Map;
+	invoke-virtual	{v0},com/applovin/impl/sdk/be/a	; a()Ljava/lang/String;
+; v0 : Lcom/applovin/impl/sdk/be;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	iget-object	v0,v3,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/av;
+	sget-object	v2,com/applovin/impl/sdk/z.L Lcom/applovin/impl/sdk/ab;
+; v2 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v2},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v2 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Boolean
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf95a6
+; v0 : single-length
+	invoke-direct	{v3,v1},com/applovin/impl/sdk/av/d	; d(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Lcom/applovin/impl/sdk/av; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+lf95a4:
+	return-object	v0
+; v0 : Ljava/lang/String;
+lf95a6:
+	move-object	v0,v1
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	goto	lf95a4
+.end method
+
+.method private a(Ljava/lang/String;)Ljava/util/List;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	new-instance	v0,java/util/ArrayList
+; v0 : Ljava/util/ArrayList;
+	const/4	v1,1
+; v1 : single-length
+	invoke-direct	{v0,v1},java/util/ArrayList/<init>	; <init>(I)V
+; v0 : Ljava/util/ArrayList; , v1 : single-length
+	invoke-interface	{v0,v3},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/ArrayList; , v3 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/util/ArrayList;
+.end method
+
+.method private a(Lorg/json/JSONArray;)Ljava/util/List;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v4 (Lorg/json/JSONArray;)
+	new-instance	v1,java/util/ArrayList
+; v1 : Ljava/util/ArrayList;
+	invoke-virtual	{v4},org/json/JSONArray/length	; length()I
+; v4 : Lorg/json/JSONArray;
+	move-result	v0
+; v0 : single-length
+	invoke-direct	{v1,v0},java/util/ArrayList/<init>	; <init>(I)V
+; v1 : Ljava/util/ArrayList; , v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+lf95f4:
+	invoke-virtual	{v4},org/json/JSONArray/length	; length()I
+; v4 : Lorg/json/JSONArray;
+	move-result	v2
+; v2 : single-length
+	if-ge	v0,v2,lf9614
+; v0 : single-length , v2 : single-length
+	invoke-virtual	{v4,v0},org/json/JSONArray/getString	; getString(I)Ljava/lang/String;
+; v4 : Lorg/json/JSONArray; , v0 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v2},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v2 : Ljava/lang/String;
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lf95f4
+lf9614:
+	return-object	v1
+; v1 : Ljava/util/ArrayList;
+.end method
+
+.method private a(Ljava/util/List;)Ljava/util/Map;
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v5 (Ljava/util/List;)
+	new-instance	v1,java/util/HashMap
+; v1 : Ljava/util/HashMap;
+	invoke-interface	{v5},java/util/List/size	; size()I
+; v5 : Ljava/util/List;
+	move-result	v0
+; v0 : single-length
+	invoke-direct	{v1,v0},java/util/HashMap/<init>	; <init>(I)V
+; v1 : Ljava/util/HashMap; , v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+lf963c:
+	invoke-interface	{v5},java/util/List/size	; size()I
+; v5 : Ljava/util/List;
+	move-result	v2
+; v2 : single-length
+	if-ge	v0,v2,lf9664
+; v0 : single-length , v2 : single-length
+	invoke-direct	{v4,v0},com/applovin/impl/sdk/av/a	; a(I)Ljava/lang/String;
+; v4 : Lcom/applovin/impl/sdk/av; , v0 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v5,v0},java/util/List/get	; get(I)Ljava/lang/Object;
+; v5 : Ljava/util/List; , v0 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/HashMap; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Object;
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lf963c
+lf9664:
+	return-object	v1
+; v1 : Ljava/util/HashMap;
+.end method
+
+.method private a(Lorg/json/JSONObject;)V
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 10
+; this: v8 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v9 (Lorg/json/JSONObject;)
+	const-string	v0,"html"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	const-string	v0,"size"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf97ba
+; v0 : single-length
+	const-string	v0,"size"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/sdk/AppLovinAdSize/fromString	; fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdSize;
+; v0 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Lcom/applovin/sdk/AppLovinAdSize;
+lf96a8:
+	const/4	v5,0
+; v5 : single-length
+	if-eqz	v1,lf97e8
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1},java/lang/String/length	; length()I
+; v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,lf97e8
+; v0 : single-length
+	const-string	v0,"redirect_urls"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf97c2
+; v0 : single-length
+	const-string	v0,"redirect_urls"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/get	; get(Ljava/lang/String;)Ljava/lang/Object;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,org/json/JSONArray
+; v0 : Lorg/json/JSONArray;
+	invoke-direct	{v8,v0},com/applovin/impl/sdk/av/a	; a(Lorg/json/JSONArray;)Ljava/util/List;
+; v8 : Lcom/applovin/impl/sdk/av; , v0 : Lorg/json/JSONArray;
+	move-result-object	v4
+; v4 : Ljava/util/List;
+	const-string	v0,"video"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9716
+; v0 : single-length
+	const-string	v0,"video"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,lf9716
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/isEmpty	; isEmpty()Z
+; v0 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,lf9716
+; v3 : single-length
+	invoke-direct	{v8,v0},com/applovin/impl/sdk/av/e	; e(Ljava/lang/String;)Ljava/lang/String;
+; v8 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+lf9716:
+	invoke-direct	{v8,v4},com/applovin/impl/sdk/av/a	; a(Ljava/util/List;)Ljava/util/Map;
+; v8 : Lcom/applovin/impl/sdk/av; , v4 : Ljava/util/List;
+	move-result-object	v0
+; v0 : Ljava/util/Map;
+	invoke-direct	{v8,v1,v0},com/applovin/impl/sdk/av/a	; a(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+; v8 : Lcom/applovin/impl/sdk/av; , v1 : Ljava/lang/String; , v0 : Ljava/util/Map;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	const-string	v0,"ad_target"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf97dc
+; v0 : single-length
+	const-string	v0,"ad_target"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/impl/sdk/AppLovinAdInternal$AdTarget/valueOf	; valueOf(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+lf9752:
+	const-string	v0,"ad_type"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf97e2
+; v0 : single-length
+	const-string	v0,"ad_type"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/sdk/AppLovinAdType/fromString	; fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Lcom/applovin/sdk/AppLovinAdType;
+lf977e:
+	const-string	v7,"-1"
+; v7 : Ljava/lang/String;
+	const-string	v0,"ad_id"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf979e
+; v0 : single-length
+	const-string	v0,"ad_id"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+lf979e:
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	invoke-direct/range	{v0..v7},com/applovin/impl/sdk/AppLovinAdInternal/<init>;	<init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/util/List;Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v1 : Ljava/lang/String; , v2 : Lcom/applovin/sdk/AppLovinAdSize; , v3 : Lcom/applovin/sdk/AppLovinAdType; , v4 : Ljava/util/List; , v5 : Ljava/lang/String; , v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v7 : Ljava/lang/String;
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi20 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/AppLovinAdInternal/setCompatibilityLevel	; setCompatibilityLevel(Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	invoke-virtual	{v8,v0},com/applovin/impl/sdk/av/a	; a(Lcom/applovin/sdk/AppLovinAd;)V
+; v8 : Lcom/applovin/impl/sdk/av; , v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+lf97b8:
+	return-void	
+lf97ba:
+	sget-object	v2,com/applovin/sdk/AppLovinAdSize.BANNER Lcom/applovin/sdk/AppLovinAdSize;
+; v2 : Lcom/applovin/sdk/AppLovinAdSize;
+	goto/16	lf96a8
+lf97c2:
+	iget-object	v0,v8,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v8 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v8,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v8 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"Ad server has not returned a redirect URL"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v8},com/applovin/impl/sdk/av/b	; b()V
+; v8 : Lcom/applovin/impl/sdk/av;
+	goto	lf97b8
+lf97dc:
+	sget-object	v6,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.DEFAULT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	goto	lf9752
+lf97e2:
+	sget-object	v3,com/applovin/sdk/AppLovinAdType.REGULAR Lcom/applovin/sdk/AppLovinAdType;
+; v3 : Lcom/applovin/sdk/AppLovinAdType;
+	goto	lf977e
+lf97e8:
+	iget-object	v0,v8,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v8 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v8,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v8 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"No HTML received for requested ad"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v8},com/applovin/impl/sdk/av/b	; b()V
+; v8 : Lcom/applovin/impl/sdk/av;
+	goto	lf97b8
+.end method
+
+.method private a(Ljava/io/File;Ljava/lang/String;)Z
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 13
+; this: v10 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v11 (Ljava/io/File;)
+; parameter[1] : v12 (Ljava/lang/String;)
+.catch java/lang/Exception from lf9a1a to lf9a20 using lf9a42
+.catch java/lang/Exception from lf9a10 to lf9a16 using lf9a3e
+.catch java/lang/Exception from lf9a06 to lf9a0c using lf9a3a
+.catch java/lang/Exception from lf99f2 to lf99f8 using lf9a2a
+.catch java/lang/Exception from lf99e8 to lf99ee using lf9a26
+.catch java/lang/Exception from lf99de to lf99e4 using lf9a22
+.catch java/io/IOException from lf99a0 to lf99da using lf9918
+.catch java/lang/Exception from lf99a0 to lf99da using lf9a4c
+.catch java/lang/Exception from lf9996 to lf999c using lf9a36
+.catch java/lang/Exception from lf998c to lf9992 using lf9a32
+.catch java/lang/Exception from lf9982 to lf9988 using lf9a2e
+.catch java/lang/Exception from lf9922 to lf997e using lf9a56
+.catch java/io/IOException from lf988a to lf9916 using lf9918
+.catch java/lang/Exception from lf988a to lf9916 using lf9a4c
+.catch java/io/IOException from lf9874 to lf988a using lf9a66
+.catch java/lang/Exception from lf9874 to lf988a using lf9a46
+.catch java/io/IOException from lf986a to lf9874 using lf9a5c
+.catch java/lang/Exception from lf986a to lf9874 using lf99fc
+	const/4	v4,0
+; v4 : single-length
+	const/4	v2,1
+; v2 : single-length
+	const/4	v3,0
+; v3 : single-length
+	iget-object	v0,v10,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v10 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v10,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v10 : Lcom/applovin/impl/sdk/av;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	invoke-direct	{v5},java/lang/StringBuilder/<init>	; <init>()V
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6,"Starting caching of "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5,v12},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v12 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6," into "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v11},java/io/File/getAbsoluteFile	; getAbsoluteFile()Ljava/io/File;
+; v11 : Ljava/io/File;
+	move-result-object	v6
+; v6 : Ljava/io/File;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v5},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v5 : Ljava/lang/String;
+lf986a:
+	new-instance	v5,java/io/FileOutputStream
+; v5 : Ljava/io/FileOutputStream;
+	invoke-direct	{v5,v11},java/io/FileOutputStream/<init>	; <init>(Ljava/io/File;)V
+; v5 : Ljava/io/FileOutputStream; , v11 : Ljava/io/File;
+lf9874:
+	new-instance	v0,java/net/URL
+; v0 : Ljava/net/URL;
+	invoke-direct	{v0,v12},java/net/URL/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/net/URL; , v12 : Ljava/lang/String;
+	invoke-virtual	{v0},java/net/URL/openConnection	; openConnection()Ljava/net/URLConnection;
+; v0 : Ljava/net/URL;
+	move-result-object	v0
+; v0 : Ljava/net/URLConnection;
+	check-cast	v0,java/net/HttpURLConnection
+; v0 : Ljava/net/HttpURLConnection;
+lf988a:
+	iget-object	v1,v10,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v10 : Lcom/applovin/impl/sdk/av;
+	sget-object	v6,com/applovin/impl/sdk/z.v Lcom/applovin/impl/sdk/ab;
+; v6 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v1,v6},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v6 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Integer
+; v1 : Ljava/lang/Integer;
+	invoke-virtual	{v1},java/lang/Integer/intValue	; intValue()I
+; v1 : Ljava/lang/Integer;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setConnectTimeout	; setConnectTimeout(I)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	iget-object	v1,v10,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v10 : Lcom/applovin/impl/sdk/av;
+	sget-object	v6,com/applovin/impl/sdk/z.w Lcom/applovin/impl/sdk/ab;
+; v6 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v1,v6},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v6 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/Integer
+; v1 : Ljava/lang/Integer;
+	invoke-virtual	{v1},java/lang/Integer/intValue	; intValue()I
+; v1 : Ljava/lang/Integer;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setReadTimeout	; setReadTimeout(I)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setDefaultUseCaches	; setDefaultUseCaches(Z)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setUseCaches	; setUseCaches(Z)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setAllowUserInteraction	; setAllowUserInteraction(Z)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setInstanceFollowRedirects	; setInstanceFollowRedirects(Z)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	invoke-virtual	{v0},java/net/HttpURLConnection/getInputStream	; getInputStream()Ljava/io/InputStream;
+; v0 : Ljava/net/HttpURLConnection;
+	move-result-object	v4
+; v4 : Ljava/io/InputStream;
+	const/16	v1,1024
+; v1 : single-length
+	new-array	v1,v1,[B
+; v1 : [B , v1 : [B
+lf98fe:
+	const/4	v6,0
+; v6 : single-length
+	array-length	v7,v1
+; v7 : single-length , v1 : [B
+	invoke-virtual	{v4,v1,v6,v7},java/io/InputStream/read	; read([BII)I
+; v4 : Ljava/io/InputStream; , v1 : [B , v6 : single-length , v7 : single-length
+	move-result	v6
+; v6 : single-length
+	if-ltz	v6,lf99a0
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+	invoke-virtual	{v5,v1,v7,v6},java/io/OutputStream/write	; write([BII)V
+; v5 : Ljava/io/FileOutputStream; , v1 : [B , v7 : single-length , v6 : single-length
+lf9916:
+	goto	lf98fe
+lf9918:
+	move-exception	v1
+; v1 : java/io/IOException
+	move-object	v2,v5
+; v2 : Ljava/io/FileOutputStream; , v5 : Ljava/io/FileOutputStream;
+	move-object	v9,v0
+; v9 : Ljava/net/HttpURLConnection; , v0 : Ljava/net/HttpURLConnection;
+	move-object	v0,v1
+; v0 : java/io/IOException , v1 : java/io/IOException
+	move-object	v1,v9
+; v1 : Ljava/net/HttpURLConnection; , v9 : Ljava/net/HttpURLConnection;
+lf9922:
+	iget-object	v5,v10,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v5 : Lcom/applovin/sdk/AppLovinLogger; , v10 : Lcom/applovin/impl/sdk/av;
+	iget-object	v6,v10,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v6 : Ljava/lang/String; , v10 : Lcom/applovin/impl/sdk/av;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Failed to cache ""
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v12},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v12 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"" into ""
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v11},java/io/File/getAbsolutePath	; getAbsolutePath()Ljava/lang/String;
+; v11 : Ljava/io/File;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"""
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-interface	{v5,v6,v7,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v5 : Lcom/applovin/sdk/AppLovinLogger; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String; , v0 : java/io/IOException
+lf997e:
+	if-eqz	v4,lf9988
+; v4 : Ljava/io/InputStream;
+lf9982:
+	invoke-virtual	{v4},java/io/InputStream/close	; close()V
+; v4 : Ljava/io/InputStream;
+lf9988:
+	if-eqz	v2,lf9992
+; v2 : Ljava/io/FileOutputStream;
+lf998c:
+	invoke-virtual	{v2},java/io/OutputStream/close	; close()V
+; v2 : Ljava/io/FileOutputStream;
+lf9992:
+	if-eqz	v1,lf999c
+; v1 : Ljava/net/HttpURLConnection;
+lf9996:
+	invoke-virtual	{v1},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v1 : Ljava/net/HttpURLConnection;
+lf999c:
+	move	v0,v3
+; v0 : single-length , v3 : single-length
+lf999e:
+	return	v0
+; v0 : single-length
+lf99a0:
+	invoke-virtual	{v5},java/io/OutputStream/flush	; flush()V
+; v5 : Ljava/io/FileOutputStream;
+	iget-object	v1,v10,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v10 : Lcom/applovin/impl/sdk/av;
+	iget-object	v6,v10,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v6 : Ljava/lang/String; , v10 : Lcom/applovin/impl/sdk/av;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Caching completed for "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v11},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v11 : Ljava/io/File;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-interface	{v1,v6,v7},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+lf99da:
+	if-eqz	v4,lf99e4
+; v4 : Ljava/io/InputStream;
+lf99de:
+	invoke-virtual	{v4},java/io/InputStream/close	; close()V
+; v4 : Ljava/io/InputStream;
+lf99e4:
+	if-eqz	v5,lf99ee
+; v5 : Ljava/io/FileOutputStream;
+lf99e8:
+	invoke-virtual	{v5},java/io/OutputStream/close	; close()V
+; v5 : Ljava/io/FileOutputStream;
+lf99ee:
+	if-eqz	v0,lf99f8
+; v0 : Ljava/net/HttpURLConnection;
+lf99f2:
+	invoke-virtual	{v0},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v0 : Ljava/net/HttpURLConnection;
+lf99f8:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+	goto	lf999e
+lf99fc:
+	move-exception	v0
+; v0 : java/lang/Exception
+	move-object	v1,v4
+; v1 : single-length , v4 : single-length
+	move-object	v5,v4
+; v5 : single-length , v4 : single-length
+lf9a02:
+	if-eqz	v4,lf9a0c
+; v4 : Ljava/io/InputStream;
+lf9a06:
+	invoke-virtual	{v4},java/io/InputStream/close	; close()V
+; v4 : Ljava/io/InputStream;
+lf9a0c:
+	if-eqz	v5,lf9a16
+; v5 : Ljava/io/FileOutputStream;
+lf9a10:
+	invoke-virtual	{v5},java/io/OutputStream/close	; close()V
+; v5 : Ljava/io/FileOutputStream;
+lf9a16:
+	if-eqz	v1,lf9a20
+; v1 : Ljava/net/HttpURLConnection;
+lf9a1a:
+	invoke-virtual	{v1},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v1 : Ljava/net/HttpURLConnection;
+lf9a20:
+	throw	v0
+; v0 : java/lang/Exception
+lf9a22:
+	move-exception	v1
+; v1 : java/lang/Exception
+	goto	lf99e4
+lf9a26:
+	move-exception	v1
+; v1 : java/lang/Exception
+	goto	lf99ee
+lf9a2a:
+	move-exception	v0
+; v0 : java/lang/Exception
+	goto	lf99f8
+lf9a2e:
+	move-exception	v0
+; v0 : java/lang/Exception
+	goto	lf9988
+lf9a32:
+	move-exception	v0
+; v0 : java/lang/Exception
+	goto	lf9992
+lf9a36:
+	move-exception	v0
+; v0 : java/lang/Exception
+	goto	lf999c
+lf9a3a:
+	move-exception	v2
+; v2 : java/lang/Exception
+	goto	lf9a0c
+lf9a3e:
+	move-exception	v2
+; v2 : java/lang/Exception
+	goto	lf9a16
+lf9a42:
+	move-exception	v1
+; v1 : java/lang/Exception
+	goto	lf9a20
+lf9a46:
+	move-exception	v0
+; v0 : java/lang/Exception
+	move-object	v1,v4
+; v1 : single-length , v4 : single-length
+	goto	lf9a02
+lf9a4c:
+	move-exception	v1
+; v1 : java/lang/Exception
+	move-object	v9,v1
+; v9 : java/lang/Exception , v1 : java/lang/Exception
+	move-object	v1,v0
+; v1 : Ljava/net/HttpURLConnection; , v0 : Ljava/net/HttpURLConnection;
+	move-object	v0,v9
+; v0 : java/lang/Exception , v9 : java/lang/Exception
+	goto	lf9a02
+lf9a56:
+	move-exception	v0
+; v0 : java/lang/Exception
+	move-object	v5,v2
+; v5 : Ljava/io/FileOutputStream; , v2 : Ljava/io/FileOutputStream;
+	goto	lf9a02
+lf9a5c:
+	move-exception	v0
+; v0 : java/io/IOException
+	move-object	v1,v4
+; v1 : single-length , v4 : single-length
+	move-object	v2,v4
+; v2 : single-length , v4 : single-length
+	goto/16	lf9922
+lf9a66:
+	move-exception	v0
+; v0 : java/io/IOException
+	move-object	v1,v4
+; v1 : single-length , v4 : single-length
+	move-object	v2,v5
+; v2 : Ljava/io/FileOutputStream; , v5 : Ljava/io/FileOutputStream;
+	goto/16	lf9922
+.end method
+
+.method private b(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	if-eqz	v3,lf9b8e
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v3},java/lang/String/length	; length()I
+; v3 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,lf9b8e
+; v0 : single-length
+	const-string	v0,"#"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9b5a
+; v0 : single-length
+lf9b58:
+	return-object	v3
+; v3 : Ljava/lang/String;
+lf9b5a:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"#sdk_version_"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"5.2.2-5.2.2"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	goto	lf9b58
+lf9b8e:
+	const-string	v3,""
+; v3 : Ljava/lang/String;
+	goto	lf9b58
+.end method
+
+.method private b(Lorg/json/JSONObject;)V
+.limit registers 11
+; this: v9 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v10 (Lorg/json/JSONObject;)
+	const-string	v0,"html"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	const-string	v0,"size"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d12
+; v0 : single-length
+	const-string	v0,"size"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/sdk/AppLovinAdSize/fromString	; fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdSize;
+; v0 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Lcom/applovin/sdk/AppLovinAdSize;
+lf9bd4:
+	const/4	v5,0
+; v5 : single-length
+	if-eqz	v1,lf9d7c
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1},java/lang/String/length	; length()I
+; v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,lf9d7c
+; v0 : single-length
+	const-string	v0,"clcode"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d1a
+; v0 : single-length
+	const-string	v0,"clcode"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-direct	{v9,v0},com/applovin/impl/sdk/av/c	; c(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	move-object	v8,v0
+; v8 : Ljava/lang/String; , v0 : Ljava/lang/String;
+lf9c0c:
+	const-string	v0,"redirect_url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d56
+; v0 : single-length
+	const-string	v0,"redirect_url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-direct	{v9,v0},com/applovin/impl/sdk/av/b	; b(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	const-string	v0,"video"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9c64
+; v0 : single-length
+	const-string	v0,"video"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,lf9c64
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/isEmpty	; isEmpty()Z
+; v0 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,lf9c64
+; v3 : single-length
+	invoke-direct	{v9,v0},com/applovin/impl/sdk/av/e	; e(Ljava/lang/String;)Ljava/lang/String;
+; v9 : Lcom/applovin/impl/sdk/av; , v0 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+lf9c64:
+	iget-object	v0,v9,com/applovin/impl/sdk/av.g Landroid/content/Context;
+; v0 : Landroid/content/Context; , v9 : Lcom/applovin/impl/sdk/av;
+	invoke-direct	{v9,v1,v0},com/applovin/impl/sdk/av/a	; a(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
+; v9 : Lcom/applovin/impl/sdk/av; , v1 : Ljava/lang/String; , v0 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	const-string	v0,"ad_target"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d70
+; v0 : single-length
+	const-string	v0,"ad_target"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/impl/sdk/AppLovinAdInternal$AdTarget/valueOf	; valueOf(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v0 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+lf9c9c:
+	const-string	v0,"ad_type"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d76
+; v0 : single-length
+	const-string	v0,"ad_type"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/toUpperCase	; toUpperCase()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/applovin/sdk/AppLovinAdType/fromString	; fromString(Ljava/lang/String;)Lcom/applovin/sdk/AppLovinAdType;
+; v0 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Lcom/applovin/sdk/AppLovinAdType;
+lf9cc8:
+	const-string	v7,"-1"
+; v7 : Ljava/lang/String;
+	const-string	v0,"ad_id"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9ce8
+; v0 : single-length
+	const-string	v0,"ad_id"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+lf9ce8:
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+	invoke-direct	{v9,v4},com/applovin/impl/sdk/av/a	; a(Ljava/lang/String;)Ljava/util/List;
+; v9 : Lcom/applovin/impl/sdk/av; , v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/util/List;
+	invoke-direct/range	{v0..v7},com/applovin/impl/sdk/AppLovinAdInternal/<init>;	<init>(Ljava/lang/String;Lcom/applovin/sdk/AppLovinAdSize;Lcom/applovin/sdk/AppLovinAdType;Ljava/util/List;Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v1 : Ljava/lang/String; , v2 : Lcom/applovin/sdk/AppLovinAdSize; , v3 : Lcom/applovin/sdk/AppLovinAdType; , v4 : Ljava/util/List; , v5 : Ljava/lang/String; , v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget; , v7 : Ljava/lang/String;
+	invoke-virtual	{v0,v8},com/applovin/impl/sdk/AppLovinAdInternal/setClickTrackerUrl	; setClickTrackerUrl(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v8 : Ljava/lang/String;
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi10 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/AppLovinAdInternal/setCompatibilityLevel	; setCompatibilityLevel(Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal; , v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	invoke-virtual	{v9,v0},com/applovin/impl/sdk/av/a	; a(Lcom/applovin/sdk/AppLovinAd;)V
+; v9 : Lcom/applovin/impl/sdk/av; , v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal;
+lf9d10:
+	return-void	
+lf9d12:
+	sget-object	v2,com/applovin/sdk/AppLovinAdSize.BANNER Lcom/applovin/sdk/AppLovinAdSize;
+; v2 : Lcom/applovin/sdk/AppLovinAdSize;
+	goto/16	lf9bd4
+lf9d1a:
+	const-string	v0,"click_url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lf9d3c
+; v0 : single-length
+	const-string	v0,"click_url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v10 : Lorg/json/JSONObject; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	move-object	v8,v0
+; v8 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto/16	lf9c0c
+lf9d3c:
+	iget-object	v0,v9,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v9 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v9,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v9 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"Ad server has not returned a clcode or click URL"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v9},com/applovin/impl/sdk/av/b	; b()V
+; v9 : Lcom/applovin/impl/sdk/av;
+	goto	lf9d10
+lf9d56:
+	iget-object	v0,v9,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v9 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v9,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v9 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"Ad server has not returned a redirect URL"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v9},com/applovin/impl/sdk/av/b	; b()V
+; v9 : Lcom/applovin/impl/sdk/av;
+	goto	lf9d10
+lf9d70:
+	sget-object	v6,com/applovin/impl/sdk/AppLovinAdInternal$AdTarget.DEFAULT Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+; v6 : Lcom/applovin/impl/sdk/AppLovinAdInternal$AdTarget;
+	goto	lf9c9c
+lf9d76:
+	sget-object	v3,com/applovin/sdk/AppLovinAdType.REGULAR Lcom/applovin/sdk/AppLovinAdType;
+; v3 : Lcom/applovin/sdk/AppLovinAdType;
+	goto	lf9cc8
+lf9d7c:
+	iget-object	v0,v9,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v9 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v9,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v9 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"No HTML received for requested ad"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-virtual	{v9},com/applovin/impl/sdk/av/b	; b()V
+; v9 : Lcom/applovin/impl/sdk/av;
+	goto	lf9d10
+.end method
+
+.method private c(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v4 (Ljava/lang/String;)
+	new-instance	v0,java/lang/StringBuffer
+; v0 : Ljava/lang/StringBuffer;
+	const-string	v1,"click"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v2 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/av;
+	invoke-static	{v1,v2},com/applovin/impl/sdk/m/b	; b(Ljava/lang/String;Lcom/applovin/impl/sdk/AppLovinSdkImpl;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/StringBuffer/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/StringBuffer; , v1 : Ljava/lang/String;
+	const-string	v1,"?"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v0 : Ljava/lang/StringBuffer; , v1 : Ljava/lang/String;
+	const-string	v1,"clcode="
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v0 : Ljava/lang/StringBuffer; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuffer;
+	invoke-virtual	{v1,v4},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v1 : Ljava/lang/StringBuffer; , v4 : Ljava/lang/String;
+	const-string	v1,"&sdk_version="
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v0 : Ljava/lang/StringBuffer; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuffer;
+	const-string	v2,"5.2.2-5.2.2"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuffer/append	; append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+; v1 : Ljava/lang/StringBuffer; , v2 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/StringBuffer/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuffer;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method private d(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 13
+; this: v11 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v12 (Ljava/lang/String;)
+	const/4	v1,0
+; v1 : single-length
+	new-instance	v4,java/lang/StringBuffer
+; v4 : Ljava/lang/StringBuffer;
+	invoke-direct	{v4,v12},java/lang/StringBuffer/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/StringBuffer; , v12 : Ljava/lang/String;
+	iget-object	v0,v11,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v11 : Lcom/applovin/impl/sdk/av;
+	sget-object	v2,com/applovin/impl/sdk/z.M Lcom/applovin/impl/sdk/ab;
+; v2 : Lcom/applovin/impl/sdk/ab;
+	invoke-virtual	{v0,v2},com/applovin/impl/sdk/AppLovinSdkImpl/a	; a(Lcom/applovin/impl/sdk/ab;)Ljava/lang/Object;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v2 : Lcom/applovin/impl/sdk/ab;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	const-string	v2,","
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/String/split	; split(Ljava/lang/String;)[Ljava/lang/String;
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : [Ljava/lang/String;
+	array-length	v6,v5
+; v6 : single-length , v5 : [Ljava/lang/String;
+	move	v3,v1
+; v3 : single-length , v1 : single-length
+lf9e40:
+	if-ge	v3,v6,lf9ee0
+; v3 : single-length , v6 : single-length
+	aget-object	v7,v5,v3
+; v7 : Ljava/lang/String; , v5 : [Ljava/lang/String; , v3 : single-length
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	move	v2,v1
+; v2 : single-length , v1 : single-length
+lf9e4c:
+	invoke-virtual	{v4},java/lang/StringBuffer/length	; length()I
+; v4 : Ljava/lang/StringBuffer;
+	move-result	v8
+; v8 : single-length
+	if-ge	v2,v8,lf9e66
+; v2 : single-length , v8 : single-length
+	invoke-virtual	{v4,v7,v0},java/lang/StringBuffer/indexOf	; indexOf(Ljava/lang/String;I)I
+; v4 : Ljava/lang/StringBuffer; , v7 : Ljava/lang/String; , v0 : single-length
+	move-result	v2
+; v2 : single-length
+	const/4	v0,15
+; v0 : single-length
+	if-ne	v2,v0,lf9e6e
+; v2 : single-length , v0 : single-length
+lf9e66:
+	add-int/lit8	v0,v3,1
+; v0 : single-length , v3 : single-length
+	move	v3,v0
+; v3 : single-length , v0 : single-length
+	goto	lf9e40
+lf9e6e:
+	invoke-virtual	{v4},java/lang/StringBuffer/length	; length()I
+; v4 : Ljava/lang/StringBuffer;
+	move-result	v8
+; v8 : single-length
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+lf9e78:
+	sget-object	v9,com/applovin/impl/sdk/av.a Ljava/util/Collection;
+; v9 : Ljava/util/Collection;
+	invoke-virtual	{v4,v0},java/lang/StringBuffer/charAt	; charAt(I)C
+; v4 : Ljava/lang/StringBuffer; , v0 : single-length
+	move-result	v10
+; v10 : single-length
+	invoke-static	{v10},java/lang/Character/valueOf	; valueOf(C)Ljava/lang/Character;
+; v10 : single-length
+	move-result-object	v10
+; v10 : Ljava/lang/Character;
+	invoke-interface	{v9,v10},java/util/Collection/contains	; contains(Ljava/lang/Object;)Z
+; v9 : Ljava/util/Collection; , v10 : Ljava/lang/Character;
+	move-result	v9
+; v9 : single-length
+	if-nez	v9,lf9ea2
+; v9 : single-length
+	if-ge	v0,v8,lf9ea2
+; v0 : single-length , v8 : single-length
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	lf9e78
+lf9ea2:
+	if-le	v0,v2,lf9ed0
+; v0 : single-length , v2 : single-length
+	if-eq	v0,v8,lf9ed0
+; v0 : single-length , v8 : single-length
+	invoke-virtual	{v7},java/lang/String/length	; length()I
+; v7 : Ljava/lang/String;
+	move-result	v8
+; v8 : single-length
+	add-int/2addr	v8,v2
+; v8 : single-length , v2 : single-length
+	invoke-virtual	{v4,v8,v0},java/lang/StringBuffer/substring	; substring(II)Ljava/lang/String;
+; v4 : Ljava/lang/StringBuffer; , v8 : single-length , v0 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-direct	{v11,v7,v8},com/applovin/impl/sdk/av/a	; a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v11 : Lcom/applovin/impl/sdk/av; , v7 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	if-eqz	v8,lf9e4c
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v4,v2,v0,v8},java/lang/StringBuffer/replace	; replace(IILjava/lang/String;)Ljava/lang/StringBuffer;
+; v4 : Ljava/lang/StringBuffer; , v2 : single-length , v0 : single-length , v8 : Ljava/lang/String;
+	goto	lf9e4c
+lf9ed0:
+	sget-object	v8,java/lang/System.out Ljava/io/PrintStream;
+; v8 : Ljava/io/PrintStream;
+	const-string	v9,"HTML is bad"
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v8,v9},java/io/PrintStream/println	; println(Ljava/lang/String;)V
+; v8 : Ljava/io/PrintStream; , v9 : Ljava/lang/String;
+	goto	lf9e4c
+lf9ee0:
+	invoke-virtual	{v4},java/lang/StringBuffer/toString	; toString()Ljava/lang/String;
+; v4 : Ljava/lang/StringBuffer;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method private e(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v4 (Ljava/lang/String;)
+	const-string	v0,"."
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/lang/String/lastIndexOf	; lastIndexOf(Ljava/lang/String;)I
+; v4 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v4,v0,v1},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v4 : Ljava/lang/String; , v0 : single-length , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"al_video_"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	sget	v2,com/applovin/impl/sdk/av.b I
+; v2 : single-length
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iget-object	v1,v3,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/sdk/av;
+	invoke-virtual	{v1},com/applovin/impl/sdk/AppLovinSdkImpl/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v1 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-static	{v0,v1},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
+; v0 : Ljava/lang/String; , v1 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/io/File;
+	invoke-virtual	{v1},java/io/File/delete	; delete()Z
+; v1 : Ljava/io/File;
+	invoke-direct	{v3,v1,v4},com/applovin/impl/sdk/av/a	; a(Ljava/io/File;Ljava/lang/String;)Z
+; v3 : Lcom/applovin/impl/sdk/av; , v1 : Ljava/io/File; , v4 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lf9f86
+; v1 : single-length
+	sget	v1,com/applovin/impl/sdk/av.b I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	rem-int/lit8	v1,v1,2
+; v1 : single-length , v1 : single-length
+	sput	v1,com/applovin/impl/sdk/av.b I
+; v1 : I
+lf9f84:
+	return-object	v0
+; v0 : single-length
+lf9f86:
+	const/4	v0,0
+; v0 : single-length
+	goto	lf9f84
+.end method
+
+.method protected a(Lcom/applovin/sdk/AppLovinAd;)V
+.annotation runtimeVisibility Ljava/lang/Deprecated;
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/sdk/av;)
+; parameter[0] : v3 (Lcom/applovin/sdk/AppLovinAd;)
+	iget-object	v0,v2,com/applovin/impl/sdk/av.h Lcom/applovin/sdk/AppLovinAdLoadListener;
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v2 : Lcom/applovin/impl/sdk/av;
+	if-eqz	v0,lf9fae
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener;
+	iget-object	v0,v2,com/applovin/impl/sdk/av.h Lcom/applovin/sdk/AppLovinAdLoadListener;
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v2 : Lcom/applovin/impl/sdk/av;
+	invoke-interface	{v0,v3},com/applovin/sdk/AppLovinAdLoadListener/adReceived	; adReceived(Lcom/applovin/sdk/AppLovinAd;)V
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v3 : Lcom/applovin/sdk/AppLovinAd;
+lf9fae:
+	iget-object	v0,v2,com/applovin/impl/sdk/av.e Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v2 : Lcom/applovin/impl/sdk/av;
+	invoke-virtual	{v0},com/applovin/impl/sdk/AppLovinSdkImpl/b	; b()Lcom/applovin/impl/sdk/ae;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/sdk/ae;
+	const-string	v1,"ad_dsp"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/ae/a	; a(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/ae; , v1 : Ljava/lang/String;
+	const-string	v1,"ad_dsp_session"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},com/applovin/impl/sdk/ae/a	; a(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/ae; , v1 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method protected b()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/av;)
+.catch java/lang/Throwable from lf9fe0 to lf9ff4 using lf9ff6
+lf9fe0:
+	iget-object	v0,v4,com/applovin/impl/sdk/av.h Lcom/applovin/sdk/AppLovinAdLoadListener;
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v4 : Lcom/applovin/impl/sdk/av;
+	if-eqz	v0,lf9ff4
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener;
+	iget-object	v0,v4,com/applovin/impl/sdk/av.h Lcom/applovin/sdk/AppLovinAdLoadListener;
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v4 : Lcom/applovin/impl/sdk/av;
+	const/4	v1,10
+; v1 : single-length
+	invoke-interface	{v0,v1},com/applovin/sdk/AppLovinAdLoadListener/failedToReceiveAd	; failedToReceiveAd(I)V
+; v0 : Lcom/applovin/sdk/AppLovinAdLoadListener; , v1 : single-length
+lf9ff4:
+	return-void	
+lf9ff6:
+	move-exception	v0
+; v0 : java/lang/Throwable
+	iget-object	v1,v4,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/av;
+	iget-object	v2,v4,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/av;
+	const-string	v3,"Unable process a failure to recieve an ad"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Throwable
+	goto	lf9ff4
+.end method
+
+.method public run()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/sdk/av;)
+.catch org/json/JSONException from lfa03e to lfa068 using lfa06a
+.catch java/lang/IllegalArgumentException from lfa03e to lfa068 using lfa086
+	iget-object	v0,v4,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/av;
+	iget-object	v1,v4,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v1 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/av;
+	const-string	v2,"Rendering ad..."
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+lfa03e:
+	iget-object	v0,v4,com/applovin/impl/sdk/av.c Lorg/json/JSONObject;
+; v0 : Lorg/json/JSONObject; , v4 : Lcom/applovin/impl/sdk/av;
+	const-string	v1,"redirect_urls"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},org/json/JSONObject/has	; has(Ljava/lang/String;)Z
+; v0 : Lorg/json/JSONObject; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lfa05e
+; v0 : single-length
+	iget-object	v0,v4,com/applovin/impl/sdk/av.c Lorg/json/JSONObject;
+; v0 : Lorg/json/JSONObject; , v4 : Lcom/applovin/impl/sdk/av;
+	invoke-direct	{v4,v0},com/applovin/impl/sdk/av/a	; a(Lorg/json/JSONObject;)V
+; v4 : Lcom/applovin/impl/sdk/av; , v0 : Lorg/json/JSONObject;
+lfa05c:
+	return-void	
+lfa05e:
+	iget-object	v0,v4,com/applovin/impl/sdk/av.c Lorg/json/JSONObject;
+; v0 : Lorg/json/JSONObject; , v4 : Lcom/applovin/impl/sdk/av;
+	invoke-direct	{v4,v0},com/applovin/impl/sdk/av/b	; b(Lorg/json/JSONObject;)V
+; v4 : Lcom/applovin/impl/sdk/av; , v0 : Lorg/json/JSONObject;
+lfa068:
+	goto	lfa05c
+lfa06a:
+	move-exception	v0
+; v0 : org/json/JSONException
+	iget-object	v1,v4,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/av;
+	iget-object	v2,v4,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/av;
+	const-string	v3,"Unable to parse ad service response"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : org/json/JSONException
+	invoke-virtual	{v4},com/applovin/impl/sdk/av/b	; b()V
+; v4 : Lcom/applovin/impl/sdk/av;
+	goto	lfa05c
+lfa086:
+	move-exception	v0
+; v0 : java/lang/IllegalArgumentException
+	iget-object	v1,v4,com/applovin/impl/sdk/av.f Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/sdk/av;
+	iget-object	v2,v4,com/applovin/impl/sdk/av.d Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lcom/applovin/impl/sdk/av;
+	const-string	v3,"Ad response is not valid"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/IllegalArgumentException
+	invoke-virtual	{v4},com/applovin/impl/sdk/av/b	; b()V
+; v4 : Lcom/applovin/impl/sdk/av;
+	goto	lfa05c
+.end method
+
+

@@ -1,0 +1,35 @@
+.class final android/support/v4/widget/SearchViewCompatHoneycomb$2
+.super java/lang/Object
+.source SearchViewCompatHoneycomb.java
+.implements android/widget/SearchView$OnCloseListener
+
+.enclosing method android/newOnCloseListener(Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;)Ljava/lang/Object;
+.field final val$listener Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;
+
+.method <init>(Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/widget/SearchViewCompatHoneycomb$2;)
+; parameter[0] : v1 (Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;)
+.line 71
+	iput-object	v1,v0,android/support/v4/widget/SearchViewCompatHoneycomb$2.val$listener Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;
+; v1 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge; , v0 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$2;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$2;
+	return-void	
+.end method
+
+.method public onClose()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/widget/SearchViewCompatHoneycomb$2;)
+.line 74
+	iget-object	v0,v1,android/support/v4/widget/SearchViewCompatHoneycomb$2.val$listener Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;
+; v0 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge; , v1 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$2;
+	invoke-interface	{v0},android/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge/onClose	; onClose()Z
+; v0 : Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnCloseListenerCompatBridge;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,72 @@
+.class com/viewpagerindicator/TabPageIndicator$2
+.super java/lang/Object
+.source TabPageIndicator.java
+.implements java/lang/Runnable
+
+.enclosing method com/animateToTab(I)V
+.field final this$0 Lcom/viewpagerindicator/TabPageIndicator;
+.field private final val$tabView Landroid/view/View;
+
+.method <init>(Lcom/viewpagerindicator/TabPageIndicator;Landroid/view/View;)V
+.limit registers 3
+; this: v0 (Lcom/viewpagerindicator/TabPageIndicator$2;)
+; parameter[0] : v1 (Lcom/viewpagerindicator/TabPageIndicator;)
+; parameter[1] : v2 (Landroid/view/View;)
+.line 1
+	iput-object	v1,v0,com/viewpagerindicator/TabPageIndicator$2.this$0 Lcom/viewpagerindicator/TabPageIndicator;
+; v1 : Lcom/viewpagerindicator/TabPageIndicator; , v0 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	iput-object	v2,v0,com/viewpagerindicator/TabPageIndicator$2.val$tabView Landroid/view/View;
+; v2 : Landroid/view/View; , v0 : Lcom/viewpagerindicator/TabPageIndicator$2;
+.line 125
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 5
+; this: v4 (Lcom/viewpagerindicator/TabPageIndicator$2;)
+.line 127
+	iget-object	v1,v4,com/viewpagerindicator/TabPageIndicator$2.val$tabView Landroid/view/View;
+; v1 : Landroid/view/View; , v4 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	invoke-virtual	{v1},android/view/View/getLeft	; getLeft()I
+; v1 : Landroid/view/View;
+	move-result	v1
+; v1 : single-length
+	iget-object	v2,v4,com/viewpagerindicator/TabPageIndicator$2.this$0 Lcom/viewpagerindicator/TabPageIndicator;
+; v2 : Lcom/viewpagerindicator/TabPageIndicator; , v4 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	invoke-virtual	{v2},com/viewpagerindicator/TabPageIndicator/getWidth	; getWidth()I
+; v2 : Lcom/viewpagerindicator/TabPageIndicator;
+	move-result	v2
+; v2 : single-length
+	iget-object	v3,v4,com/viewpagerindicator/TabPageIndicator$2.val$tabView Landroid/view/View;
+; v3 : Landroid/view/View; , v4 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	invoke-virtual	{v3},android/view/View/getWidth	; getWidth()I
+; v3 : Landroid/view/View;
+	move-result	v3
+; v3 : single-length
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	div-int/lit8	v2,v2,2
+; v2 : single-length , v2 : single-length
+	sub-int	v0,v1,v2
+; v0 : single-length , v1 : single-length , v2 : single-length
+.line 128
+	iget-object	v1,v4,com/viewpagerindicator/TabPageIndicator$2.this$0 Lcom/viewpagerindicator/TabPageIndicator;
+; v1 : Lcom/viewpagerindicator/TabPageIndicator; , v4 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v1,v0,v2},com/viewpagerindicator/TabPageIndicator/smoothScrollTo	; smoothScrollTo(II)V
+; v1 : Lcom/viewpagerindicator/TabPageIndicator; , v0 : single-length , v2 : single-length
+.line 129
+	iget-object	v1,v4,com/viewpagerindicator/TabPageIndicator$2.this$0 Lcom/viewpagerindicator/TabPageIndicator;
+; v1 : Lcom/viewpagerindicator/TabPageIndicator; , v4 : Lcom/viewpagerindicator/TabPageIndicator$2;
+	const/4	v2,0
+; v2 : single-length
+	invoke-static	{v1,v2},com/viewpagerindicator/TabPageIndicator/access$3	; access$3(Lcom/viewpagerindicator/TabPageIndicator;Ljava/lang/Runnable;)V
+; v1 : Lcom/viewpagerindicator/TabPageIndicator; , v2 : single-length
+.line 130
+	return-void	
+.end method
+
+

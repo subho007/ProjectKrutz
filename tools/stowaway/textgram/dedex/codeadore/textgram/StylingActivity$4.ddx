@@ -1,0 +1,944 @@
+.class codeadore/textgram/StylingActivity$4
+.super java/lang/Object
+.source StylingActivity.java
+.implements android/view/ViewTreeObserver$OnGlobalLayoutListener
+
+.enclosing method codeadore/onRestoreInstanceState(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/StylingActivity;
+.field private final val$savedInstanceState Landroid/os/Bundle;
+
+.method <init>(Lcodeadore/textgram/StylingActivity;Landroid/os/Bundle;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/StylingActivity$4;)
+; parameter[0] : v1 (Lcodeadore/textgram/StylingActivity;)
+; parameter[1] : v2 (Landroid/os/Bundle;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/StylingActivity$4.this$0 Lcodeadore/textgram/StylingActivity;
+; v1 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity$4;
+	iput-object	v2,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v2 : Landroid/os/Bundle; , v0 : Lcodeadore/textgram/StylingActivity$4;
+.line 493
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/StylingActivity$4;
+	return-void	
+.end method
+
+.method public onGlobalLayout()V
+.limit registers 28
+; this: v27 (Lcodeadore/textgram/StylingActivity$4;)
+.var 2 is backgroundPath Ljava/lang/String; from la0890 to la0b12
+.var 3 is filterPath Ljava/lang/String; from la091c to la0b12
+.var 4 is framePath Ljava/lang/String; from la08de to la0b12
+.var 5 is i I from la0ad8 to la0b12
+.var 6 is itemDeletable Ljava/util/ArrayList; from la0ad6 to la0b12
+.var 7 is itemRotations Ljava/util/ArrayList; from la09e6 to la0b12
+.var 8 is itemTypes Ljava/util/ArrayList; from la0abe to la0b12
+.var 9 is itemsBitmapsPaths Ljava/util/ArrayList; from la096e to la0b12
+.var 10 is itemsHeights Ljava/util/ArrayList; from la09ce to la0b12
+.var 11 is itemsPosXs [F from la0986 to la0b12
+.var 12 is itemsPosYs [F from la099e to la0b12
+.var 13 is itemsWidths Ljava/util/ArrayList; from la09b6 to la0b12
+.var 15 is textColors Ljava/util/ArrayList; from la0a16 to la0b12
+.var 16 is textGravities Ljava/util/ArrayList; from la0a5e to la0b12
+.var 17 is textLineSpacings Ljava/util/ArrayList; from la0a76 to la0b12
+.var 18 is textReflections Ljava/util/ArrayList; from la09fe to la0b12
+.var 19 is textShadowColors Ljava/util/ArrayList; from la0a2e to la0b12
+.var 20 is textSizes Ljava/util/ArrayList; from la0a46 to la0b12
+.var 21 is texts Ljava/util/ArrayList; from la0aa6 to la0b12
+.var 22 is typeFacePaths Ljava/util/ArrayList; from la0a8e to la0b12
+.line 498
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	move-object/from16	v23,v0
+; v23 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/StylingActivity; , v23 : Lcodeadore/textgram/StylingActivity;
+	iget-boolean	v0,v0,codeadore/textgram/StylingActivity.treeObserverActionDone Z
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+	if-nez	v23,la0b12
+; v23 : single-length
+.line 500
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	move-object/from16	v23,v0
+; v23 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	const/16	v24,1
+; v24 : single-length
+	move/from16	v0,v24
+; v0 : single-length , v24 : single-length
+	move-object/from16	v1,v23
+; v1 : Lcodeadore/textgram/StylingActivity; , v23 : Lcodeadore/textgram/StylingActivity;
+	iput-boolean	v0,v1,codeadore/textgram/StylingActivity.treeObserverActionDone Z
+; v0 : single-length , v1 : Lcodeadore/textgram/StylingActivity;
+.line 502
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 503
+	const-string	v24,"backgroundPath"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getString;	getString(Ljava/lang/String;)Ljava/lang/String;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 504
+	if-eqz	v2,la08be
+; v2 : Ljava/lang/String;
+	sget-boolean	v23,codeadore/textgram/StylingActivity.pauseSetBG Z
+; v23 : single-length
+	if-nez	v23,la08be
+; v23 : single-length
+.line 505
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+.line 506
+	sget-object	v24,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v24 : Landroid/content/Context;
+	move-object/from16	v0,v24
+; v0 : Landroid/content/Context; , v24 : Landroid/content/Context;
+	invoke-static	{v0,v2},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v2 : Ljava/lang/String;
+	move-result-object	v24
+; v24 : Landroid/graphics/Bitmap;
+.line 505
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/SuperSurface; , v23 : Lcodeadore/textgram/SuperSurface;
+	move-object/from16	v1,v24
+; v1 : Landroid/graphics/Bitmap; , v24 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v0,v1,v2},codeadore/textgram/SuperSurface/setBackground	; setBackground(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v2 : Ljava/lang/String;
+la08be:
+.line 509
+	const/16	v23,0
+; v23 : single-length
+	sput-boolean	v23,codeadore/textgram/StylingActivity.pauseSetBG Z
+; v23 : Z
+.line 510
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 511
+	const-string	v24,"framePath"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getString;	getString(Ljava/lang/String;)Ljava/lang/String;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+.line 512
+	if-eqz	v4,la0904
+; v4 : Ljava/lang/String;
+.line 514
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+.line 515
+	sget-object	v24,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v24 : Landroid/content/Context;
+	move-object/from16	v0,v24
+; v0 : Landroid/content/Context; , v24 : Landroid/content/Context;
+	invoke-static	{v0,v4},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v4 : Ljava/lang/String;
+	move-result-object	v24
+; v24 : Landroid/graphics/Bitmap;
+.line 514
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/SuperSurface; , v23 : Lcodeadore/textgram/SuperSurface;
+	move-object/from16	v1,v24
+; v1 : Landroid/graphics/Bitmap; , v24 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v0,v1,v4},codeadore/textgram/SuperSurface/setFrame	; setFrame(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v4 : Ljava/lang/String;
+la0904:
+.line 518
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 519
+	const-string	v24,"filterPath"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getString;	getString(Ljava/lang/String;)Ljava/lang/String;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 520
+	if-eqz	v3,la0942
+; v3 : Ljava/lang/String;
+.line 521
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+.line 522
+	sget-object	v24,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v24 : Landroid/content/Context;
+	move-object/from16	v0,v24
+; v0 : Landroid/content/Context; , v24 : Landroid/content/Context;
+	invoke-static	{v0,v3},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v3 : Ljava/lang/String;
+	move-result-object	v24
+; v24 : Landroid/graphics/Bitmap;
+.line 521
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/SuperSurface; , v23 : Lcodeadore/textgram/SuperSurface;
+	move-object/from16	v1,v24
+; v1 : Landroid/graphics/Bitmap; , v24 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v0,v1,v3},codeadore/textgram/SuperSurface/setFilter	; setFilter(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v3 : Ljava/lang/String;
+la0942:
+.line 526
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual/range	{v23},codeadore/textgram/SuperSurface/updateTemps;	updateTemps()V
+; v23 : Lcodeadore/textgram/SuperSurface;
+.line 527
+	sget-object	v23,codeadore/textgram/StylingActivity.mainTextItem Lcodeadore/textgram/SuperSurfaceItem;
+; v23 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-static/range	{v23},codeadore/textgram/StylingActivity/updateTextBitmap;	updateTextBitmap(Lcodeadore/textgram/SuperSurfaceItem;)V
+; v23 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 530
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 531
+	const-string	v24,"itemsBitmapsPaths"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/util/ArrayList;
+.line 532
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 533
+	const-string	v24,"itemsPosXs"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getFloatArray;	getFloatArray(Ljava/lang/String;)[F
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v11
+; v11 : [F
+.line 534
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 535
+	const-string	v24,"itemsPosYs"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getFloatArray;	getFloatArray(Ljava/lang/String;)[F
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v12
+; v12 : [F
+.line 536
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 537
+	const-string	v24,"itemsWidths"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v13
+; v13 : Ljava/util/ArrayList;
+.line 538
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 539
+	const-string	v24,"itemsHeights"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v10
+; v10 : Ljava/util/ArrayList;
+.line 541
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 542
+	const-string	v24,"itemRotations"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/util/ArrayList;
+.line 543
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 544
+	const-string	v24,"textReflections"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v18
+; v18 : Ljava/util/ArrayList;
+.line 545
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 546
+	const-string	v24,"textColors"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v15
+; v15 : Ljava/util/ArrayList;
+.line 547
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 548
+	const-string	v24,"textShadowColors"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v19
+; v19 : Ljava/util/ArrayList;
+.line 549
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 550
+	const-string	v24,"textSizes"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v20
+; v20 : Ljava/util/ArrayList;
+.line 551
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 552
+	const-string	v24,"textGravities"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v16
+; v16 : Ljava/util/ArrayList;
+.line 553
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 554
+	const-string	v24,"textLineSpacings"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getIntegerArrayList;	getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v17
+; v17 : Ljava/util/ArrayList;
+.line 555
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 556
+	const-string	v24,"typeFacePaths"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v22
+; v22 : Ljava/util/ArrayList;
+.line 557
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 558
+	const-string	v24,"texts"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v21
+; v21 : Ljava/util/ArrayList;
+.line 559
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 560
+	const-string	v24,"itemTypes"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/util/ArrayList;
+.line 562
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.val$savedInstanceState Landroid/os/Bundle;
+; v0 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+	move-object/from16	v23,v0
+; v23 : Landroid/os/Bundle; , v0 : Landroid/os/Bundle;
+.line 563
+	const-string	v24,"itemDeletable"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},android/os/Bundle/getStringArrayList;	getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+; v23 : Landroid/os/Bundle; , v24 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/util/ArrayList;
+.line 565
+	const/4	v5,0
+; v5 : single-length
+la0ad8:
+	invoke-virtual	{v8},java/util/ArrayList/size	; size()I
+; v8 : Ljava/util/ArrayList;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	if-lt	v5,v0,la0b14
+; v5 : single-length , v0 : single-length
+.line 639
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual/range	{v23},codeadore/textgram/SuperSurface/requestUpdate;	requestUpdate()V
+; v23 : Lcodeadore/textgram/SuperSurface;
+.line 641
+	sget-object	v23,codeadore/textgram/StylingActivity.UIHandler Landroid/os/Handler;
+; v23 : Landroid/os/Handler;
+	new-instance	v24,codeadore/textgram/StylingActivity$4$1
+; v24 : Lcodeadore/textgram/StylingActivity$4$1;
+	move-object/from16	v0,v24
+; v0 : Lcodeadore/textgram/StylingActivity$4$1; , v24 : Lcodeadore/textgram/StylingActivity$4$1;
+	move-object/from16	v1,v27
+; v1 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	invoke-direct	{v0,v1},codeadore/textgram/StylingActivity$4$1/<init>	; <init>(Lcodeadore/textgram/StylingActivity$4;)V
+; v0 : Lcodeadore/textgram/StylingActivity$4$1; , v1 : Lcodeadore/textgram/StylingActivity$4;
+.line 648
+	const-wide/16	v25,100
+; v25 : double-length
+.line 641
+	invoke-virtual/range	{v23..v26},android/os/Handler/postDelayed;	postDelayed(Ljava/lang/Runnable;J)Z
+; v23 : Landroid/os/Handler; , v24 : Lcodeadore/textgram/StylingActivity$4$1; , v25 : double-length
+la0b12:
+.line 652
+	return-void	
+la0b14:
+.line 567
+	new-instance	v14,codeadore/textgram/SuperSurfaceItem
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+	invoke-direct	{v14},codeadore/textgram/SuperSurfaceItem/<init>	; <init>()V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 569
+	aget	v23,v11,v5
+; v23 : single-length , v11 : [F , v5 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.posX F
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 570
+	aget	v23,v12,v5
+; v23 : single-length , v12 : [F , v5 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.posY F
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 571
+	invoke-virtual	{v13,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v13 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.width F
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 572
+	invoke-virtual	{v10,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v10 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.height F
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 573
+	invoke-virtual	{v7,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v7 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.rotation I
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 575
+	invoke-virtual	{v6,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v6 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+	const-string	v24,"true"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},java/lang/String/contains;	contains(Ljava/lang/CharSequence;)Z
+; v23 : Ljava/lang/String; , v24 : Ljava/lang/String;
+	move-result	v23
+; v23 : single-length
+	if-eqz	v23,la0e24
+; v23 : single-length
+.line 576
+	const/16	v23,1
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput-boolean	v0,v14,codeadore/textgram/SuperSurfaceItem.deletable Z
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+la0bc6:
+.line 581
+	move-object/from16	v0,v21
+; v0 : Ljava/util/ArrayList; , v21 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	if-eqz	v23,la0bf2
+; v23 : Ljava/lang/Object;
+	move-object/from16	v0,v21
+; v0 : Ljava/util/ArrayList; , v21 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	const-string	v24,""
+; v24 : Ljava/lang/String;
+	move-object/from16	v0,v23
+; v0 : Ljava/lang/Object; , v23 : Ljava/lang/Object;
+	move-object/from16	v1,v24
+; v1 : Ljava/lang/String; , v24 : Ljava/lang/String;
+	if-ne	v0,v1,la0c78
+; v0 : Ljava/lang/Object; , v1 : Ljava/lang/String;
+la0bf2:
+.line 582
+	invoke-virtual	{v9,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v9 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	if-eqz	v23,la0c56
+; v23 : Ljava/lang/Object;
+.line 584
+	invoke-virtual	{v9,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v9 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+	const-string	v24,"[URI]"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},java/lang/String/contains;	contains(Ljava/lang/CharSequence;)Z
+; v23 : Ljava/lang/String; , v24 : Ljava/lang/String;
+	move-result	v23
+; v23 : single-length
+	if-eqz	v23,la0e34
+; v23 : single-length
+.line 587
+	sget-object	v24,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v24 : Landroid/content/Context;
+.line 588
+	sget-object	v25,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v25 : Landroid/content/Context;
+.line 590
+	invoke-virtual	{v9,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v9 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+.line 588
+	move-object/from16	v0,v25
+; v0 : Landroid/content/Context; , v25 : Landroid/content/Context;
+	move-object/from16	v1,v23
+; v1 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	invoke-static	{v0,v1},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v1 : Ljava/lang/String;
+	move-result-object	v23
+; v23 : Landroid/graphics/Bitmap;
+.line 587
+	move-object/from16	v0,v24
+; v0 : Landroid/content/Context; , v24 : Landroid/content/Context;
+	move-object/from16	v1,v23
+; v1 : Landroid/graphics/Bitmap; , v23 : Landroid/graphics/Bitmap;
+	invoke-static	{v0,v1},codeadore/textgram/Utilities/decorateBitmap	; decorateBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v1 : Landroid/graphics/Bitmap;
+	move-result-object	v23
+; v23 : Landroid/graphics/Bitmap;
+.line 586
+	move-object/from16	v0,v23
+; v0 : Landroid/graphics/Bitmap; , v23 : Landroid/graphics/Bitmap;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.bitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+la0c56:
+.line 598
+	invoke-virtual	{v9,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v9 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+.line 597
+	move-object/from16	v0,v23
+; v0 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.bitmapPath Ljava/lang/String;
+; v0 : Ljava/lang/String; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 599
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/SuperSurface; , v23 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v14},codeadore/textgram/SuperSurface/addItem	; addItem(Lcodeadore/textgram/SuperSurfaceItem;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+la0c78:
+.line 602
+	invoke-virtual	{v8,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v8 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+	const-string	v24,"text"
+; v24 : Ljava/lang/String;
+	invoke-virtual/range	{v23..v24},java/lang/String/contains;	contains(Ljava/lang/CharSequence;)Z
+; v23 : Ljava/lang/String; , v24 : Ljava/lang/String;
+	move-result	v23
+; v23 : single-length
+	if-eqz	v23,la0e1c
+; v23 : single-length
+.line 604
+	move-object/from16	v0,v18
+; v0 : Ljava/util/ArrayList; , v18 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.reflection I
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 605
+	move-object/from16	v0,v22
+; v0 : Ljava/util/ArrayList; , v22 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+	move-object/from16	v0,v23
+; v0 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.typeFacePath Ljava/lang/String;
+; v0 : Ljava/lang/String; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 606
+	const-string	v23,"text"
+; v23 : Ljava/lang/String;
+	move-object/from16	v0,v23
+; v0 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.type Ljava/lang/String;
+; v0 : Ljava/lang/String; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 607
+	move-object/from16	v0,v27
+; v0 : Lcodeadore/textgram/StylingActivity$4; , v27 : Lcodeadore/textgram/StylingActivity$4;
+	iget-object	v0,v0,codeadore/textgram/StylingActivity$4.this$0 Lcodeadore/textgram/StylingActivity;
+; v0 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	move-object/from16	v23,v0
+; v23 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity;
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/StylingActivity; , v23 : Lcodeadore/textgram/StylingActivity;
+	invoke-virtual	{v14,v0},codeadore/textgram/SuperSurfaceItem/setup	; setup(Lcodeadore/textgram/StylingActivity;)V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem; , v0 : Lcodeadore/textgram/StylingActivity;
+.line 608
+	invoke-virtual	{v14},codeadore/textgram/SuperSurfaceItem/updateTextBitmap	; updateTextBitmap()V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 610
+	new-instance	v24,android/text/SpannableString
+; v24 : Landroid/text/SpannableString;
+.line 611
+	move-object/from16	v0,v21
+; v0 : Ljava/util/ArrayList; , v21 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/CharSequence
+; v23 : Ljava/lang/CharSequence;
+	move-object/from16	v0,v24
+; v0 : Landroid/text/SpannableString; , v24 : Landroid/text/SpannableString;
+	move-object/from16	v1,v23
+; v1 : Ljava/lang/CharSequence; , v23 : Ljava/lang/CharSequence;
+	invoke-direct	{v0,v1},android/text/SpannableString/<init>	; <init>(Ljava/lang/CharSequence;)V
+; v0 : Landroid/text/SpannableString; , v1 : Ljava/lang/CharSequence;
+.line 610
+	move-object/from16	v0,v24
+; v0 : Landroid/text/SpannableString; , v24 : Landroid/text/SpannableString;
+	invoke-virtual	{v14,v0},codeadore/textgram/SuperSurfaceItem/setText	; setText(Landroid/text/SpannableString;)V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem; , v0 : Landroid/text/SpannableString;
+.line 612
+	invoke-virtual	{v15,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v15 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+	move-object/from16	v0,v23
+; v0 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.textColor Ljava/lang/String;
+; v0 : Ljava/lang/String; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 613
+	move-object/from16	v0,v19
+; v0 : Ljava/util/ArrayList; , v19 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	if-eqz	v23,la0d80
+; v23 : single-length
+.line 614
+	move-object/from16	v0,v19
+; v0 : Ljava/util/ArrayList; , v19 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	if-eqz	v23,la0d80
+; v23 : Ljava/lang/Object;
+.line 616
+	move-object/from16	v0,v19
+; v0 : Ljava/util/ArrayList; , v19 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+.line 615
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.textShadowColor I
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+la0d80:
+.line 618
+	move-object/from16	v0,v20
+; v0 : Ljava/util/ArrayList; , v20 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.textSize F
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 620
+	move-object/from16	v0,v16
+; v0 : Ljava/util/ArrayList; , v16 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	invoke-virtual	{v14,v0},codeadore/textgram/SuperSurfaceItem/setTextGravity	; setTextGravity(I)V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem; , v0 : single-length
+.line 622
+	move-object/from16	v0,v17
+; v0 : Ljava/util/ArrayList; , v17 : Ljava/util/ArrayList;
+	invoke-virtual	{v0,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/Integer
+; v23 : Ljava/lang/Integer;
+	invoke-virtual/range	{v23},java/lang/Integer/intValue;	intValue()I
+; v23 : Ljava/lang/Integer;
+	move-result	v23
+; v23 : single-length
+.line 621
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput	v0,v14,codeadore/textgram/SuperSurfaceItem.lineSpacing I
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 624
+	sget-object	v23,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v23 : Lcodeadore/textgram/SuperSurface;
+	move-object/from16	v0,v23
+; v0 : Lcodeadore/textgram/SuperSurface; , v23 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0,v14},codeadore/textgram/SuperSurface/addItem	; addItem(Lcodeadore/textgram/SuperSurfaceItem;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 626
+	invoke-virtual	{v14},codeadore/textgram/SuperSurfaceItem/updateTextBitmap	; updateTextBitmap()V
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 628
+	iget-boolean	v0,v14,codeadore/textgram/SuperSurfaceItem.deletable Z
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+	if-nez	v23,la0e1c
+; v23 : single-length
+.line 629
+	sput-object	v14,codeadore/textgram/StylingActivity.mainTextItem Lcodeadore/textgram/SuperSurfaceItem;
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 630
+	sget-object	v23,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v23 : Lcodeadore/textgram/SuperSurfaceItem;
+	if-nez	v23,la0e1c
+; v23 : Lcodeadore/textgram/SuperSurfaceItem;
+.line 631
+	sput-object	v14,codeadore/textgram/SuperSurface.currentTextItemVar Lcodeadore/textgram/SuperSurfaceItem;
+; v14 : Lcodeadore/textgram/SuperSurfaceItem;
+la0e1c:
+.line 565
+	add-int/lit8	v5,v5,1
+; v5 : single-length , v5 : single-length
+	goto/16	la0ad8
+la0e24:
+.line 578
+	const/16	v23,0
+; v23 : single-length
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	iput-boolean	v0,v14,codeadore/textgram/SuperSurfaceItem.deletable Z
+; v0 : single-length , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto/16	la0bc6
+la0e34:
+.line 593
+	sget-object	v24,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v24 : Landroid/content/Context;
+.line 594
+	invoke-virtual	{v9,v5},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v9 : Ljava/util/ArrayList; , v5 : single-length
+	move-result-object	v23
+; v23 : Ljava/lang/Object;
+	check-cast	v23,java/lang/String
+; v23 : Ljava/lang/String;
+.line 593
+	move-object/from16	v0,v24
+; v0 : Landroid/content/Context; , v24 : Landroid/content/Context;
+	move-object/from16	v1,v23
+; v1 : Ljava/lang/String; , v23 : Ljava/lang/String;
+	invoke-static	{v0,v1},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v0 : Landroid/content/Context; , v1 : Ljava/lang/String;
+	move-result-object	v23
+; v23 : Landroid/graphics/Bitmap;
+.line 592
+	move-object/from16	v0,v23
+; v0 : Landroid/graphics/Bitmap; , v23 : Landroid/graphics/Bitmap;
+	iput-object	v0,v14,codeadore/textgram/SuperSurfaceItem.bitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v14 : Lcodeadore/textgram/SuperSurfaceItem;
+	goto/16	la0c56
+.end method
+
+

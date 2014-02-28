@@ -1,0 +1,86 @@
+.class public final com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+.super java/lang/Enum
+
+.field public static final AdServerApi10 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.field public static final AdServerApi20 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.field private static final a [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	const-string	v1,"AdServerApi10"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v1 : Ljava/lang/String; , v2 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi10 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	new-instance	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	const-string	v1,"AdServerApi20"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3},com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v1 : Ljava/lang/String; , v3 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi20 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	const/4	v0,2
+; v0 : single-length
+	new-array	v0,v0,[Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi10 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	aput-object	v1,v0,v2
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v2 : single-length
+	sget-object	v1,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.AdServerApi20 Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	aput-object	v1,v0,v3
+; v1 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v3 : single-length
+	sput-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.a [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;I)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel; , v1 : Ljava/lang/String; , v2 : single-length
+	return-void	
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+	const-class	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Enum;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	return-object	v0
+; v0 : Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.end method
+
+.method public static values()[Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+.limit registers 1
+	sget-object	v0,com/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel.a [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	invoke-virtual	{v0},[Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel/clone	; clone()Ljava/lang/Object;
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,[Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+	return-object	v0
+; v0 : [Lcom/applovin/impl/sdk/AppLovinAdInternal$ApiCompatibilityLevel
+.end method
+
+

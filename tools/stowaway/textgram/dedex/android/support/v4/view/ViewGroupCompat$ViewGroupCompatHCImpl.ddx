@@ -1,0 +1,28 @@
+.class android/support/v4/view/ViewGroupCompat$ViewGroupCompatHCImpl
+.super android/support/v4/view/ViewGroupCompat$ViewGroupCompatStubImpl
+.source ViewGroupCompat.java
+
+.inner class ViewGroupCompatHCImpl inner android/support/v4/view/ViewGroupCompat$ViewGroupCompatHCImpl outer android/support/v4/view/ViewGroupCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatHCImpl;)
+.line 76
+	invoke-direct	{v0},android/support/v4/view/ViewGroupCompat$ViewGroupCompatStubImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatHCImpl;
+	return-void	
+.end method
+
+.method public setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/view/ViewGroupCompat$ViewGroupCompatHCImpl;)
+; parameter[0] : v1 (Landroid/view/ViewGroup;)
+; parameter[1] : v2 (Z)
+.line 79
+	invoke-static	{v1,v2},android/support/v4/view/ViewGroupCompatHC/setMotionEventSplittingEnabled	; setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
+; v1 : Landroid/view/ViewGroup; , v2 : single-length
+.line 80
+	return-void	
+.end method
+
+

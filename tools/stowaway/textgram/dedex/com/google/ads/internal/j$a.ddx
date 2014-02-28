@@ -1,0 +1,55 @@
+.class public com/google/ads/internal/j$a
+.super java/lang/Object
+.source SourceFile
+
+.inner class a inner com/google/ads/internal/j$a outer com/google/ads/internal/j
+.field private final a Ljava/lang/String;
+
+.method public <init>(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/internal/j$a;)
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 111
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/internal/j$a;
+.line 112
+	iput-object	v1,v0,com/google/ads/internal/j$a.a Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/google/ads/internal/j$a;
+.line 113
+	return-void	
+.end method
+
+.method public a()Lorg/json/JSONObject;
+.limit registers 4
+; this: v3 (Lcom/google/ads/internal/j$a;)
+.catch org/json/JSONException from lc17e6 to lc17f4 using lc17f6
+.line 122
+	new-instance	v1,org/json/JSONObject
+; v1 : Lorg/json/JSONObject;
+	invoke-direct	{v1},org/json/JSONObject/<init>	; <init>()V
+; v1 : Lorg/json/JSONObject;
+lc17e6:
+.line 124
+	const-string	v0,"debugHeader"
+; v0 : Ljava/lang/String;
+	iget-object	v2,v3,com/google/ads/internal/j$a.a Ljava/lang/String;
+; v2 : Ljava/lang/String; , v3 : Lcom/google/ads/internal/j$a;
+	invoke-virtual	{v1,v0,v2},org/json/JSONObject/put	; put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+; v1 : Lorg/json/JSONObject; , v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+lc17f4:
+.line 129
+	return-object	v1
+; v1 : Lorg/json/JSONObject;
+lc17f6:
+.line 125
+	move-exception	v0
+; v0 : org/json/JSONException
+.line 127
+	const-string	v2,"Could not build ReportAdJson from inputs."
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v2 : Ljava/lang/String; , v0 : org/json/JSONException
+	goto	lc17f4
+.end method
+
+

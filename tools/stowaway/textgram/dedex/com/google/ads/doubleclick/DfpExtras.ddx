@@ -1,0 +1,190 @@
+.class public com/google/ads/doubleclick/DfpExtras
+.super com/google/ads/mediation/admob/AdMobAdapterExtras
+.source SourceFile
+
+.field private a Ljava/lang/String;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 16
+	invoke-direct	{v0},com/google/ads/mediation/admob/AdMobAdapterExtras/<init>	; <init>()V
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.line 17
+	return-void	
+.end method
+
+.method public <init>(Lcom/google/ads/doubleclick/DfpExtras;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v2 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 25
+	invoke-direct	{v1,v2},com/google/ads/mediation/admob/AdMobAdapterExtras/<init>	; <init>(Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+; v1 : Lcom/google/ads/doubleclick/DfpExtras; , v2 : Lcom/google/ads/doubleclick/DfpExtras;
+.line 27
+	if-eqz	v2,l15c0a6
+; v2 : Lcom/google/ads/doubleclick/DfpExtras;
+.line 28
+	iget-object	v0,v2,com/google/ads/doubleclick/DfpExtras.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v2 : Lcom/google/ads/doubleclick/DfpExtras;
+	iput-object	v0,v1,com/google/ads/doubleclick/DfpExtras.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/doubleclick/DfpExtras;
+l15c0a6:
+.line 30
+	return-void	
+.end method
+
+.method public addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/doubleclick/DfpExtras;
+.limit registers 3
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Ljava/lang/Object;)
+.line 79
+	invoke-super	{v0,v1,v2},com/google/ads/mediation/admob/AdMobAdapterExtras/addExtra	; addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/doubleclick/DfpExtras; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Object;
+.line 80
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 4
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+.line 12
+	invoke-virtual	{v1,v2,v3},com/google/ads/doubleclick/DfpExtras/addExtra	; addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/doubleclick/DfpExtras;
+; v1 : Lcom/google/ads/doubleclick/DfpExtras; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public clearExtras()Lcom/google/ads/doubleclick/DfpExtras;
+.limit registers 1
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 73
+	invoke-super	{v0},com/google/ads/mediation/admob/AdMobAdapterExtras/clearExtras	; clearExtras()Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.line 74
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public clearExtras()Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 2
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 12
+	invoke-virtual	{v1},com/google/ads/doubleclick/DfpExtras/clearExtras	; clearExtras()Lcom/google/ads/doubleclick/DfpExtras;
+; v1 : Lcom/google/ads/doubleclick/DfpExtras;
+	move-result-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public getPublisherProvidedId()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 37
+	iget-object	v0,v1,com/google/ads/doubleclick/DfpExtras.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public setExtras(Ljava/util/Map;)Lcom/google/ads/doubleclick/DfpExtras;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lcom/google/ads/doubleclick/DfpExtras;" }
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v1 (Ljava/util/Map;)
+.line 67
+	invoke-super	{v0,v1},com/google/ads/mediation/admob/AdMobAdapterExtras/setExtras	; setExtras(Ljava/util/Map;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/doubleclick/DfpExtras; , v1 : Ljava/util/Map;
+.line 68
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setExtras(Ljava/util/Map;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lcom/google/ads/doubleclick/DfpExtras;" }
+.end annotation
+.limit registers 3
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v2 (Ljava/util/Map;)
+.line 12
+	invoke-virtual	{v1,v2},com/google/ads/doubleclick/DfpExtras/setExtras	; setExtras(Ljava/util/Map;)Lcom/google/ads/doubleclick/DfpExtras;
+; v1 : Lcom/google/ads/doubleclick/DfpExtras; , v2 : Ljava/util/Map;
+	move-result-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setPlusOneOptOut(Z)Lcom/google/ads/doubleclick/DfpExtras;
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v1 (Z)
+.line 55
+	invoke-super	{v0,v1},com/google/ads/mediation/admob/AdMobAdapterExtras/setPlusOneOptOut	; setPlusOneOptOut(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/doubleclick/DfpExtras; , v1 : single-length
+.line 56
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setPlusOneOptOut(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 3
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v2 (Z)
+.line 12
+	invoke-virtual	{v1,v2},com/google/ads/doubleclick/DfpExtras/setPlusOneOptOut	; setPlusOneOptOut(Z)Lcom/google/ads/doubleclick/DfpExtras;
+; v1 : Lcom/google/ads/doubleclick/DfpExtras; , v2 : single-length
+	move-result-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setPublisherProvidedId(Ljava/lang/String;)Lcom/google/ads/doubleclick/DfpExtras;
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 46
+	iput-object	v1,v0,com/google/ads/doubleclick/DfpExtras.a Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.line 47
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setUseExactAdSize(Z)Lcom/google/ads/doubleclick/DfpExtras;
+.limit registers 2
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v1 (Z)
+.line 61
+	invoke-super	{v0,v1},com/google/ads/mediation/admob/AdMobAdapterExtras/setUseExactAdSize	; setUseExactAdSize(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/doubleclick/DfpExtras; , v1 : single-length
+.line 62
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+.method public setUseExactAdSize(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 3
+; this: v1 (Lcom/google/ads/doubleclick/DfpExtras;)
+; parameter[0] : v2 (Z)
+.line 12
+	invoke-virtual	{v1,v2},com/google/ads/doubleclick/DfpExtras/setUseExactAdSize	; setUseExactAdSize(Z)Lcom/google/ads/doubleclick/DfpExtras;
+; v1 : Lcom/google/ads/doubleclick/DfpExtras; , v2 : single-length
+	move-result-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-object	v0
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+.end method
+
+

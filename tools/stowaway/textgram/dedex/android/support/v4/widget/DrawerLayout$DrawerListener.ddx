@@ -1,0 +1,19 @@
+.interface public abstract android/support/v4/widget/DrawerLayout$DrawerListener
+.super java/lang/Object
+.source DrawerLayout.java
+
+.inner class DrawerListener inner android/support/v4/widget/DrawerLayout$DrawerListener outer android/support/v4/widget/DrawerLayout
+
+.method public abstract onDrawerClosed(Landroid/view/View;)V
+.end method
+
+.method public abstract onDrawerOpened(Landroid/view/View;)V
+.end method
+
+.method public abstract onDrawerSlide(Landroid/view/View;F)V
+.end method
+
+.method public abstract onDrawerStateChanged(I)V
+.end method
+
+

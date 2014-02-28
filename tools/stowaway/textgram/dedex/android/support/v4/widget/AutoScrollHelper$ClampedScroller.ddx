@@ -1,0 +1,455 @@
+.class android/support/v4/widget/AutoScrollHelper$ClampedScroller
+.super java/lang/Object
+.source AutoScrollHelper.java
+
+.inner class ClampedScroller inner android/support/v4/widget/AutoScrollHelper$ClampedScroller outer android/support/v4/widget/AutoScrollHelper
+.field private mDeltaTime J
+.field private mDeltaX I
+.field private mDeltaY I
+.field private mEffectiveRampDown I
+.field private mRampDownDuration I
+.field private mRampUpDuration I
+.field private mStartTime J
+.field private mStopTime J
+.field private mStopValue F
+.field private mTargetVelocityX F
+.field private mTargetVelocityY F
+
+.method public <init>()V
+.limit registers 4
+; this: v3 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+	const/4	v2,0
+; v2 : single-length
+.line 743
+	invoke-direct	{v3},java/lang/Object/<init>	; <init>()V
+; v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 744
+	const-wide/high16	v0,32768
+; v0 : double-length
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 745
+	const-wide/16	v0,65535
+; v0 : double-length
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 746
+	const-wide/16	v0,0
+; v0 : double-length
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 747
+	iput	v2,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaX I
+; v2 : single-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 748
+	iput	v2,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaY I
+; v2 : single-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 749
+	return-void	
+.end method
+
+.method private getValueAt(J)F
+.limit registers 13
+; this: v10 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+; parameter[0] : v11 (J)
+.var 2 is elapsedSinceStart J from l8b5fc to l8b616
+	const/high16	v9,16256
+; v9 : single-length
+	const/4	v4,0
+; v4 : single-length
+.line 787
+	iget-wide	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v5 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	cmp-long	v5,v11,v5
+; v5 : single-length , v11 : double-length , v5 : single-length
+	if-gez	v5,l8b5d8
+; v5 : single-length
+l8b5d6:
+.line 794
+	return	v4
+; v4 : single-length
+l8b5d8:
+.line 789
+	iget-wide	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v5 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	const-wide/16	v7,0
+; v7 : double-length
+	cmp-long	v5,v5,v7
+; v5 : single-length , v5 : single-length , v7 : double-length
+	if-ltz	v5,l8b5f4
+; v5 : single-length
+	iget-wide	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v5 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	cmp-long	v5,v11,v5
+; v5 : single-length , v11 : double-length , v5 : single-length
+	if-gez	v5,l8b616
+; v5 : single-length
+l8b5f4:
+.line 790
+	iget-wide	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v5 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	sub-long	v2,v11,v5
+; v2 : double-length , v11 : double-length , v5 : double-length
+.line 791
+	const/high16	v5,16128
+; v5 : single-length
+	long-to-float	v6,v2
+; v6 : single-length , v2 : double-length
+	iget	v7,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mRampUpDuration I
+; v7 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	int-to-float	v7,v7
+; v7 : single-length , v7 : single-length
+	div-float/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	invoke-static	{v6,v4,v9},android/support/v4/widget/AutoScrollHelper/access$900	; access$900(FFF)F
+; v6 : single-length , v4 : single-length , v9 : single-length
+	move-result	v4
+; v4 : single-length
+	mul-float/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	goto	l8b5d6
+l8b616:
+.line 793
+	iget-wide	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v5 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	sub-long	v0,v11,v5
+; v0 : double-length , v11 : double-length , v5 : double-length
+.line 794
+	iget	v5,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopValue F
+; v5 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	sub-float	v5,v9,v5
+; v5 : single-length , v9 : single-length , v5 : single-length
+	iget	v6,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopValue F
+; v6 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	long-to-float	v7,v0
+; v7 : single-length , v0 : double-length
+	iget	v8,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mEffectiveRampDown I
+; v8 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	int-to-float	v8,v8
+; v8 : single-length , v8 : single-length
+	div-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	invoke-static	{v7,v4,v9},android/support/v4/widget/AutoScrollHelper/access$900	; access$900(FFF)F
+; v7 : single-length , v4 : single-length , v9 : single-length
+	move-result	v4
+; v4 : single-length
+	mul-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	add-float/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	goto	l8b5d6
+.end method
+
+.method private interpolateValue(F)F
+.limit registers 4
+; this: v2 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+; parameter[0] : v3 (F)
+.line 807
+	const/high16	v0,49280
+; v0 : single-length
+	mul-float/2addr	v0,v3
+; v0 : single-length , v3 : single-length
+	mul-float/2addr	v0,v3
+; v0 : single-length , v3 : single-length
+	const/high16	v1,16512
+; v1 : single-length
+	mul-float/2addr	v1,v3
+; v1 : single-length , v3 : single-length
+	add-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public computeScrollDelta()V
+.limit registers 11
+; this: v10 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 818
+	iget-wide	v6,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaTime J
+; v6 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	const-wide/16	v8,0
+; v8 : double-length
+	cmp-long	v6,v6,v8
+; v6 : single-length , v6 : single-length , v8 : double-length
+	if-nez	v6,l8b698
+; v6 : single-length
+.line 819
+	new-instance	v6,java/lang/RuntimeException
+; v6 : Ljava/lang/RuntimeException;
+	const-string	v7,"Cannot compute scroll delta before calling start()"
+; v7 : Ljava/lang/String;
+	invoke-direct	{v6,v7},java/lang/RuntimeException/<init>	; <init>(Ljava/lang/String;)V
+; v6 : Ljava/lang/RuntimeException; , v7 : Ljava/lang/String;
+	throw	v6
+; v6 : Ljava/lang/RuntimeException;
+l8b698:
+.line 822
+	invoke-static	{},android/view/animation/AnimationUtils/currentAnimationTimeMillis	; currentAnimationTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+.line 823
+	invoke-direct	{v10,v0,v1},android/support/v4/widget/AutoScrollHelper$ClampedScroller/getValueAt	; getValueAt(J)F
+; v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller; , v0 : double-length
+	move-result	v5
+; v5 : single-length
+.line 824
+	invoke-direct	{v10,v5},android/support/v4/widget/AutoScrollHelper$ClampedScroller/interpolateValue	; interpolateValue(F)F
+; v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller; , v5 : single-length
+	move-result	v4
+; v4 : single-length
+.line 825
+	iget-wide	v6,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaTime J
+; v6 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	sub-long	v2,v0,v6
+; v2 : double-length , v0 : double-length , v6 : double-length
+.line 827
+	iput-wide	v0,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaTime J
+; v0 : double-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 828
+	long-to-float	v6,v2
+; v6 : single-length , v2 : double-length
+	mul-float/2addr	v6,v4
+; v6 : single-length , v4 : single-length
+	iget	v7,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityX F
+; v7 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	mul-float/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	iput	v6,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaX I
+; v6 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 829
+	long-to-float	v6,v2
+; v6 : single-length , v2 : double-length
+	mul-float/2addr	v6,v4
+; v6 : single-length , v4 : single-length
+	iget	v7,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityY F
+; v7 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	mul-float/2addr	v6,v7
+; v6 : single-length , v7 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	iput	v6,v10,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaY I
+; v6 : single-length , v10 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 830
+	return-void	
+.end method
+
+.method public getDeltaX()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 856
+	iget	v0,v1,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaX I
+; v0 : single-length , v1 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getDeltaY()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 864
+	iget	v0,v1,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaY I
+; v0 : single-length , v1 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getHorizontalDirection()I
+.limit registers 3
+; this: v2 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 844
+	iget	v0,v2,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityX F
+; v0 : single-length , v2 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	iget	v1,v2,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityX F
+; v1 : single-length , v2 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	invoke-static	{v1},java/lang/Math/abs	; abs(F)F
+; v1 : single-length
+	move-result	v1
+; v1 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getVerticalDirection()I
+.limit registers 3
+; this: v2 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 848
+	iget	v0,v2,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityY F
+; v0 : single-length , v2 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	iget	v1,v2,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityY F
+; v1 : single-length , v2 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	invoke-static	{v1},java/lang/Math/abs	; abs(F)F
+; v1 : single-length
+	move-result	v1
+; v1 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isFinished()Z
+.limit registers 7
+; this: v6 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 782
+	iget-wide	v0,v6,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v0 : double-length , v6 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	const-wide/16	v2,0
+; v2 : double-length
+	cmp-long	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : double-length
+	if-lez	v0,l8b7a0
+; v0 : single-length
+	invoke-static	{},android/view/animation/AnimationUtils/currentAnimationTimeMillis	; currentAnimationTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	iget-wide	v2,v6,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v2 : double-length , v6 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	iget	v4,v6,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mEffectiveRampDown I
+; v4 : single-length , v6 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	int-to-long	v4,v4
+; v4 : double-length , v4 : double-length
+	add-long/2addr	v2,v4
+; v2 : double-length , v4 : double-length
+	cmp-long	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : double-length
+	if-lez	v0,l8b7a0
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l8b79e:
+	return	v0
+; v0 : single-length
+l8b7a0:
+	const/4	v0,0
+; v0 : single-length
+	goto	l8b79e
+.end method
+
+.method public requestStop()V
+.limit registers 6
+; this: v5 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+.line 775
+	invoke-static	{},android/view/animation/AnimationUtils/currentAnimationTimeMillis	; currentAnimationTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+.line 776
+	iget-wide	v2,v5,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v2 : double-length , v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	sub-long	v2,v0,v2
+; v2 : double-length , v0 : double-length , v2 : double-length
+	long-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	const/4	v3,0
+; v3 : single-length
+	iget	v4,v5,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mRampDownDuration I
+; v4 : single-length , v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	invoke-static	{v2,v3,v4},android/support/v4/widget/AutoScrollHelper/access$800	; access$800(III)I
+; v2 : single-length , v3 : single-length , v4 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v5,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mEffectiveRampDown I
+; v2 : single-length , v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 777
+	invoke-direct	{v5,v0,v1},android/support/v4/widget/AutoScrollHelper$ClampedScroller/getValueAt	; getValueAt(J)F
+; v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller; , v0 : double-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v5,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopValue F
+; v2 : single-length , v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 778
+	iput-wide	v0,v5,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v0 : double-length , v5 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 779
+	return-void	
+.end method
+
+.method public setRampDownDuration(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+; parameter[0] : v1 (I)
+.line 756
+	iput	v1,v0,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mRampDownDuration I
+; v1 : single-length , v0 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 757
+	return-void	
+.end method
+
+.method public setRampUpDuration(I)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+; parameter[0] : v1 (I)
+.line 752
+	iput	v1,v0,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mRampUpDuration I
+; v1 : single-length , v0 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 753
+	return-void	
+.end method
+
+.method public setTargetVelocity(FF)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+; parameter[0] : v1 (F)
+; parameter[1] : v2 (F)
+.line 839
+	iput	v1,v0,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityX F
+; v1 : single-length , v0 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 840
+	iput	v2,v0,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mTargetVelocityY F
+; v2 : single-length , v0 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 841
+	return-void	
+.end method
+
+.method public start()V
+.limit registers 4
+; this: v3 (Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;)
+	const/4	v2,0
+; v2 : single-length
+.line 763
+	invoke-static	{},android/view/animation/AnimationUtils/currentAnimationTimeMillis	; currentAnimationTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 764
+	const-wide/16	v0,65535
+; v0 : double-length
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 765
+	iget-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStartTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	iput-wide	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaTime J
+; v0 : double-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 766
+	const/high16	v0,16128
+; v0 : single-length
+	iput	v0,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mStopValue F
+; v0 : single-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 767
+	iput	v2,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaX I
+; v2 : single-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 768
+	iput	v2,v3,android/support/v4/widget/AutoScrollHelper$ClampedScroller.mDeltaY I
+; v2 : single-length , v3 : Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+.line 769
+	return-void	
+.end method
+
+

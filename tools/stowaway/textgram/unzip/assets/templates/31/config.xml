@@ -1,0 +1,13 @@
+<template>
+<title>Wood Sign</title>
+<textcolor>#000000</textcolor>
+<text_shadow>#FFFFFF</text_shadow>
+<textsize>40</textsize>
+<padding_top>260</padding_top>
+<padding_bottom>115</padding_bottom>
+<padding_right>80</padding_right>
+<padding_left>60</padding_left>
+<background>[assets]/backgrounds/31.jpg</background>
+<font>[assets]/fonts/days.ttf</font>
+<author></author>
+</template>

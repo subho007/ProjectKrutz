@@ -1,0 +1,83 @@
+.class com/viewpagerindicator/CirclePageIndicator$SavedState
+.super android/view/View$BaseSavedState
+.source CirclePageIndicator.java
+
+.inner class SavedState inner com/viewpagerindicator/CirclePageIndicator$SavedState outer com/viewpagerindicator/CirclePageIndicator
+.field public static final CREATOR Landroid/os/Parcelable$Creator;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Landroid/os/Parcelable$Creator" , "<" , "Lcom/viewpagerindicator/CirclePageIndicator$SavedState;" , ">;" }
+  .end annotation
+.end field
+.field currentPage I
+
+.method static <clinit>()V
+.limit registers 1
+.line 543
+	new-instance	v0,com/viewpagerindicator/CirclePageIndicator$SavedState$1
+; v0 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState$1;
+	invoke-direct	{v0},com/viewpagerindicator/CirclePageIndicator$SavedState$1/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState$1;
+	sput-object	v0,com/viewpagerindicator/CirclePageIndicator$SavedState.CREATOR Landroid/os/Parcelable$Creator;
+; v0 : Landroid/os/Parcelable$Creator;
+.line 553
+	return-void	
+.end method
+
+.method private <init>(Landroid/os/Parcel;)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+.line 532
+	invoke-direct	{v1,v2},android/view/View$BaseSavedState/<init>	; <init>(Landroid/os/Parcel;)V
+; v1 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState; , v2 : Landroid/os/Parcel;
+.line 533
+	invoke-virtual	{v2},android/os/Parcel/readInt	; readInt()I
+; v2 : Landroid/os/Parcel;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,com/viewpagerindicator/CirclePageIndicator$SavedState.currentPage I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState;
+.line 534
+	return-void	
+.end method
+
+.method <init>(Landroid/os/Parcel;Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)V
+.limit registers 3
+; this: v0 (Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)
+; parameter[0] : v1 (Landroid/os/Parcel;)
+; parameter[1] : v2 (Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)
+.line 531
+	invoke-direct	{v0,v1},com/viewpagerindicator/CirclePageIndicator$SavedState/<init>	; <init>(Landroid/os/Parcel;)V
+; v0 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState; , v1 : Landroid/os/Parcel;
+	return-void	
+.end method
+
+.method public <init>(Landroid/os/Parcelable;)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)
+; parameter[0] : v1 (Landroid/os/Parcelable;)
+.line 528
+	invoke-direct	{v0,v1},android/view/View$BaseSavedState/<init>	; <init>(Landroid/os/Parcelable;)V
+; v0 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState; , v1 : Landroid/os/Parcelable;
+.line 529
+	return-void	
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+.limit registers 4
+; this: v1 (Lcom/viewpagerindicator/CirclePageIndicator$SavedState;)
+; parameter[0] : v2 (Landroid/os/Parcel;)
+; parameter[1] : v3 (I)
+.line 538
+	invoke-super	{v1,v2,v3},android/view/View$BaseSavedState/writeToParcel	; writeToParcel(Landroid/os/Parcel;I)V
+; v1 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState; , v2 : Landroid/os/Parcel; , v3 : single-length
+.line 539
+	iget	v0,v1,com/viewpagerindicator/CirclePageIndicator$SavedState.currentPage I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/CirclePageIndicator$SavedState;
+	invoke-virtual	{v2,v0},android/os/Parcel/writeInt	; writeInt(I)V
+; v2 : Landroid/os/Parcel; , v0 : single-length
+.line 540
+	return-void	
+.end method
+
+

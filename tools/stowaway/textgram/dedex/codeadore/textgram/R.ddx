@@ -1,0 +1,29 @@
+.class public final codeadore/textgram/R
+.super java/lang/Object
+.source R.java
+
+.inner class anim inner codeadore/textgram/R$anim outer codeadore/textgram/R
+.inner class attr inner codeadore/textgram/R$attr outer codeadore/textgram/R
+.inner class bool inner codeadore/textgram/R$bool outer codeadore/textgram/R
+.inner class color inner codeadore/textgram/R$color outer codeadore/textgram/R
+.inner class dimen inner codeadore/textgram/R$dimen outer codeadore/textgram/R
+.inner class drawable inner codeadore/textgram/R$drawable outer codeadore/textgram/R
+.inner class id inner codeadore/textgram/R$id outer codeadore/textgram/R
+.inner class integer inner codeadore/textgram/R$integer outer codeadore/textgram/R
+.inner class layout inner codeadore/textgram/R$layout outer codeadore/textgram/R
+.inner class menu inner codeadore/textgram/R$menu outer codeadore/textgram/R
+.inner class string inner codeadore/textgram/R$string outer codeadore/textgram/R
+.inner class style inner codeadore/textgram/R$style outer codeadore/textgram/R
+.inner class styleable inner codeadore/textgram/R$styleable outer codeadore/textgram/R
+.inner class xml inner codeadore/textgram/R$xml outer codeadore/textgram/R
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcodeadore/textgram/R;)
+.line 10
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/R;
+	return-void	
+.end method
+
+

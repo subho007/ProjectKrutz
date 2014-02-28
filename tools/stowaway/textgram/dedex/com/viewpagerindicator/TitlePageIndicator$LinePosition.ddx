@@ -1,0 +1,142 @@
+.class public final com/viewpagerindicator/TitlePageIndicator$LinePosition
+.super java/lang/Enum
+.source TitlePageIndicator.java
+
+.inner class LinePosition inner com/viewpagerindicator/TitlePageIndicator$LinePosition outer com/viewpagerindicator/TitlePageIndicator
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Enum" , "<" , "Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;" , ">;" }
+.end annotation
+
+.field public static final Bottom Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.field private static final ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.field public static final Top Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.field public final value I
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 99
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	const-string	v1,"Bottom"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v2},com/viewpagerindicator/TitlePageIndicator$LinePosition/<init>	; <init>(Ljava/lang/String;II)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : Ljava/lang/String; , v2 : single-length , v2 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.Bottom Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	const-string	v1,"Top"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3,v3},com/viewpagerindicator/TitlePageIndicator$LinePosition/<init>	; <init>(Ljava/lang/String;II)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : Ljava/lang/String; , v3 : single-length , v3 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.Top Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.line 98
+	const/4	v0,2
+; v0 : single-length
+	new-array	v0,v0,[Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$LinePosition.Bottom Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	aput-object	v1,v0,v2
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v2 : single-length
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$LinePosition.Top Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	aput-object	v1,v0,v3
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v3 : single-length
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;II)V
+.limit registers 4
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+.line 103
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : Ljava/lang/String; , v2 : single-length
+.line 104
+	iput	v3,v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.value I
+; v3 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.line 105
+	return-void	
+.end method
+
+.method public static fromValue(I)Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.limit registers 6
+; parameter[0] : v5 (I)
+.line 108
+	invoke-static	{},com/viewpagerindicator/TitlePageIndicator$LinePosition/values	; values()[Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; 
+	nop	
+	move-result-object	v2
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	array-length	v3,v2
+; v3 : single-length , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	const/4	v1,0
+; v1 : single-length
+lccfe4:
+	if-lt	v1,v3,lccfec
+; v1 : single-length , v3 : single-length
+.line 113
+	const/4	v0,0
+; v0 : single-length
+lccfea:
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+lccfec:
+.line 108
+	aget-object	v0,v2,v1
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : single-length
+.line 109
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.value I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	if-eq	v4,v5,lccfea
+; v4 : single-length , v5 : single-length
+.line 108
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	lccfe4
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 1
+	const-class	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Enum;
+	check-cast	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.end method
+
+.method public static values()[Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.limit registers 4
+	const/4	v3,0
+; v3 : single-length
+.line 1
+	sget-object	v0,com/viewpagerindicator/TitlePageIndicator$LinePosition.ENUM$VALUES [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	array-length	v1,v0
+; v1 : single-length , v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	new-array	v2,v1,[Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : single-length
+	invoke-static	{v0,v3,v2,v3,v1},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v3 : single-length , v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v3 : single-length , v1 : single-length
+	return-object	v2
+; v2 : [Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.end method
+
+

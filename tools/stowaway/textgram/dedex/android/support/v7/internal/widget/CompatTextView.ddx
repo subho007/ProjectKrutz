@@ -1,0 +1,78 @@
+.class public android/support/v7/internal/widget/CompatTextView
+.super android/widget/TextView
+.source CompatTextView.java
+
+.inner class AllCapsTransformationMethod inner android/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod outer android/support/v7/internal/widget/CompatTextView
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/widget/CompatTextView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 36
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},android/support/v7/internal/widget/CompatTextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Landroid/support/v7/internal/widget/CompatTextView; , v2 : Landroid/content/Context; , v0 : single-length
+.line 37
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/widget/CompatTextView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+.line 40
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},android/support/v7/internal/widget/CompatTextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Landroid/support/v7/internal/widget/CompatTextView; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v0 : single-length
+.line 41
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 8
+; this: v4 (Landroid/support/v7/internal/widget/CompatTextView;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/util/AttributeSet;)
+; parameter[2] : v7 (I)
+	const/4	v3,0
+; v3 : single-length
+.line 44
+	invoke-direct	{v4,v5,v6,v7},android/widget/TextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v4 : Landroid/support/v7/internal/widget/CompatTextView; , v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet; , v7 : single-length
+.line 46
+	const/4	v0,0
+; v0 : single-length
+.line 48
+	sget-object	v2,android/support/v7/appcompat/R$styleable.CompatTextView [I
+; v2 : [I
+	invoke-virtual	{v5,v6,v2,v7,v3},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+; v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet; , v2 : [I , v7 : single-length , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/res/TypedArray;
+.line 50
+	invoke-virtual	{v1,v3,v3},android/content/res/TypedArray/getBoolean	; getBoolean(IZ)Z
+; v1 : Landroid/content/res/TypedArray; , v3 : single-length , v3 : single-length
+	move-result	v0
+; v0 : single-length
+.line 51
+	invoke-virtual	{v1},android/content/res/TypedArray/recycle	; recycle()V
+; v1 : Landroid/content/res/TypedArray;
+.line 56
+	if-eqz	v0,l98e94
+; v0 : single-length
+.line 57
+	new-instance	v2,android/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod
+; v2 : Landroid/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod;
+	invoke-direct	{v2,v5},android/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Landroid/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod; , v5 : Landroid/content/Context;
+	invoke-virtual	{v4,v2},android/support/v7/internal/widget/CompatTextView/setTransformationMethod	; setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+; v4 : Landroid/support/v7/internal/widget/CompatTextView; , v2 : Landroid/support/v7/internal/widget/CompatTextView$AllCapsTransformationMethod;
+l98e94:
+.line 59
+	return-void	
+.end method
+
+

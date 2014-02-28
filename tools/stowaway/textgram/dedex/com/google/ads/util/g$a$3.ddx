@@ -1,0 +1,35 @@
+.class final com/google/ads/util/g$a$3
+.super java/lang/Object
+.source SourceFile
+.implements android/content/DialogInterface$OnClickListener
+
+.enclosing method com/a(Landroid/app/AlertDialog$Builder;Ljava/lang/String;Landroid/webkit/JsResult;)V
+.field final a Landroid/webkit/JsResult;
+
+.method <init>(Landroid/webkit/JsResult;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/util/g$a$3;)
+; parameter[0] : v1 (Landroid/webkit/JsResult;)
+.line 365
+	iput-object	v1,v0,com/google/ads/util/g$a$3.a Landroid/webkit/JsResult;
+; v1 : Landroid/webkit/JsResult; , v0 : Lcom/google/ads/util/g$a$3;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/util/g$a$3;
+	return-void	
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+.limit registers 4
+; this: v1 (Lcom/google/ads/util/g$a$3;)
+; parameter[0] : v2 (Landroid/content/DialogInterface;)
+; parameter[1] : v3 (I)
+.line 368
+	iget-object	v0,v1,com/google/ads/util/g$a$3.a Landroid/webkit/JsResult;
+; v0 : Landroid/webkit/JsResult; , v1 : Lcom/google/ads/util/g$a$3;
+	invoke-virtual	{v0},android/webkit/JsResult/confirm	; confirm()V
+; v0 : Landroid/webkit/JsResult;
+.line 369
+	return-void	
+.end method
+
+

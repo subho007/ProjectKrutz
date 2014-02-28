@@ -1,0 +1,132 @@
+.class public codeadore/textgram/lazylist/FileCache
+.super java/lang/Object
+.source FileCache.java
+
+.field private cacheDir Ljava/io/File;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/lazylist/FileCache;)
+; parameter[0] : v4 (Landroid/content/Context;)
+.line 11
+	invoke-direct	{v3},java/lang/Object/<init>	; <init>()V
+; v3 : Lcodeadore/textgram/lazylist/FileCache;
+.line 13
+	invoke-static	{},android/os/Environment/getExternalStorageState	; getExternalStorageState()Ljava/lang/String;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"mounted"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,la875c
+; v0 : single-length
+.line 14
+	new-instance	v0,java/io/File
+; v0 : Ljava/io/File;
+	invoke-static	{},android/os/Environment/getExternalStorageDirectory	; getExternalStorageDirectory()Ljava/io/File;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Ljava/io/File;
+	const-string	v2,"LazyList"
+; v2 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v0 : Ljava/io/File; , v1 : Ljava/io/File; , v2 : Ljava/lang/String;
+	iput-object	v0,v3,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v0 : Ljava/io/File; , v3 : Lcodeadore/textgram/lazylist/FileCache;
+la8740:
+.line 17
+	iget-object	v0,v3,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v0 : Ljava/io/File; , v3 : Lcodeadore/textgram/lazylist/FileCache;
+	invoke-virtual	{v0},java/io/File/exists	; exists()Z
+; v0 : Ljava/io/File;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,la875a
+; v0 : single-length
+.line 18
+	iget-object	v0,v3,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v0 : Ljava/io/File; , v3 : Lcodeadore/textgram/lazylist/FileCache;
+	invoke-virtual	{v0},java/io/File/mkdirs	; mkdirs()Z
+; v0 : Ljava/io/File;
+la875a:
+.line 19
+	return-void	
+la875c:
+.line 16
+	invoke-virtual	{v4},android/content/Context/getCacheDir	; getCacheDir()Ljava/io/File;
+; v4 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/io/File;
+	iput-object	v0,v3,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v0 : Ljava/io/File; , v3 : Lcodeadore/textgram/lazylist/FileCache;
+	goto	la8740
+.end method
+
+.method public clear()V
+.limit registers 5
+; this: v4 (Lcodeadore/textgram/lazylist/FileCache;)
+.line 32
+	iget-object	v2,v4,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v2 : Ljava/io/File; , v4 : Lcodeadore/textgram/lazylist/FileCache;
+	invoke-virtual	{v2},java/io/File/listFiles	; listFiles()[Ljava/io/File;
+; v2 : Ljava/io/File;
+	move-result-object	v1
+; v1 : [Ljava/io/File;
+.line 33
+	if-nez	v1,la878e
+; v1 : [Ljava/io/File;
+la878c:
+.line 37
+	return-void	
+la878e:
+.line 35
+	array-length	v3,v1
+; v3 : single-length , v1 : [Ljava/io/File;
+	const/4	v2,0
+; v2 : single-length
+la8792:
+	if-ge	v2,v3,la878c
+; v2 : single-length , v3 : single-length
+	aget-object	v0,v1,v2
+; v0 : Ljava/io/File; , v1 : [Ljava/io/File; , v2 : single-length
+.line 36
+	invoke-virtual	{v0},java/io/File/delete	; delete()Z
+; v0 : Ljava/io/File;
+.line 35
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	la8792
+.end method
+
+.method public getFile(Ljava/lang/String;)Ljava/io/File;
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/lazylist/FileCache;)
+; parameter[0] : v4 (Ljava/lang/String;)
+.line 23
+	invoke-virtual	{v4},java/lang/String/hashCode	; hashCode()I
+; v4 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	invoke-static	{v2},java/lang/String/valueOf	; valueOf(I)Ljava/lang/String;
+; v2 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 26
+	new-instance	v0,java/io/File
+; v0 : Ljava/io/File;
+	iget-object	v2,v3,codeadore/textgram/lazylist/FileCache.cacheDir Ljava/io/File;
+; v2 : Ljava/io/File; , v3 : Lcodeadore/textgram/lazylist/FileCache;
+	invoke-direct	{v0,v2,v1},java/io/File/<init>	; <init>(Ljava/io/File;Ljava/lang/String;)V
+; v0 : Ljava/io/File; , v2 : Ljava/io/File; , v1 : Ljava/lang/String;
+.line 27
+	return-object	v0
+; v0 : Ljava/io/File;
+.end method
+
+

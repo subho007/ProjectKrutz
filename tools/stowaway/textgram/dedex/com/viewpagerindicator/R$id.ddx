@@ -1,0 +1,21 @@
+.class public final com/viewpagerindicator/R$id
+.super java/lang/Object
+.source R.java
+
+.inner class id inner com/viewpagerindicator/R$id outer com/viewpagerindicator/R
+.field public static final bottom I = 2131099674	; 0x7f06001a
+.field public static final none I = 2131099664	; 0x7f060010
+.field public static final top I = 2131099675	; 0x7f06001b
+.field public static final triangle I = 2131099672	; 0x7f060018
+.field public static final underline I = 2131099673	; 0x7f060019
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/viewpagerindicator/R$id;)
+.line 95
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/viewpagerindicator/R$id;
+	return-void	
+.end method
+
+

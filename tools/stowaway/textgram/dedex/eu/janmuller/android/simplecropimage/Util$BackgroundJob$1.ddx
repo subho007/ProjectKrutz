@@ -1,0 +1,62 @@
+.class eu/janmuller/android/simplecropimage/Util$BackgroundJob$1
+.super java/lang/Object
+.source Util.java
+.implements java/lang/Runnable
+
+.inner class 1 inner eu/janmuller/android/simplecropimage/Util$BackgroundJob$1 outer eu/janmuller/android/simplecropimage/Util$BackgroundJob
+.field final this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+
+.method <init>(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)V
+.limit registers 2
+; this: v0 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;)
+; parameter[0] : v1 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)
+.line 1
+	iput-object	v1,v0,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1.this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+; v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob; , v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+.line 155
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 3
+; this: v2 (Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;)
+.line 158
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1.this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	invoke-static	{v0},eu/janmuller/android/simplecropimage/Util$BackgroundJob/access$0	; access$0(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)Leu/janmuller/android/simplecropimage/MonitoredActivity;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	move-result-object	v0
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity;
+	iget-object	v1,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1.this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+; v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	invoke-virtual	{v0,v1},eu/janmuller/android/simplecropimage/MonitoredActivity/removeLifeCycleListener	; removeLifeCycleListener(Leu/janmuller/android/simplecropimage/MonitoredActivity$LifeCycleListener;)V
+; v0 : Leu/janmuller/android/simplecropimage/MonitoredActivity; , v1 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+.line 159
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1.this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	invoke-static	{v0},eu/janmuller/android/simplecropimage/Util$BackgroundJob/access$1	; access$1(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)Landroid/app/ProgressDialog;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	move-result-object	v0
+; v0 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v0},android/app/ProgressDialog/getWindow	; getWindow()Landroid/view/Window;
+; v0 : Landroid/app/ProgressDialog;
+	move-result-object	v0
+; v0 : Landroid/view/Window;
+	if-eqz	v0,ld02a0
+; v0 : Landroid/view/Window;
+	iget-object	v0,v2,eu/janmuller/android/simplecropimage/Util$BackgroundJob$1.this$1 Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob; , v2 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob$1;
+	invoke-static	{v0},eu/janmuller/android/simplecropimage/Util$BackgroundJob/access$1	; access$1(Leu/janmuller/android/simplecropimage/Util$BackgroundJob;)Landroid/app/ProgressDialog;
+; v0 : Leu/janmuller/android/simplecropimage/Util$BackgroundJob;
+	move-result-object	v0
+; v0 : Landroid/app/ProgressDialog;
+	invoke-virtual	{v0},android/app/ProgressDialog/dismiss	; dismiss()V
+; v0 : Landroid/app/ProgressDialog;
+ld02a0:
+.line 160
+	return-void	
+.end method
+
+

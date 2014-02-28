@@ -1,0 +1,460 @@
+.class final android/support/v4/util/MapCollections$EntrySet
+.super java/lang/Object
+.source MapCollections.java
+.implements java/util/Set
+
+.inner class EntrySet inner android/support/v4/util/MapCollections$EntrySet outer android/support/v4/util/MapCollections
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Object;" , "Ljava/util/Set" , "<" , "Ljava/util/Map$Entry" , "<TK;TV;>;>;" }
+.end annotation
+
+.field final this$0 Landroid/support/v4/util/MapCollections;
+
+.method <init>(Landroid/support/v4/util/MapCollections;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v1 (Landroid/support/v4/util/MapCollections;)
+.line 163
+	iput-object	v1,v0,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v1 : Landroid/support/v4/util/MapCollections; , v0 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/util/MapCollections$EntrySet;
+	return-void	
+.end method
+
+.method public add(Ljava/lang/Object;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map$Entry" , "<TK;TV;>;)Z" }
+.end annotation
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 163
+	check-cast	v2,java/util/Map$Entry
+; v2 : Ljava/util/Map$Entry;
+	invoke-virtual	{v1,v2},android/support/v4/util/MapCollections$EntrySet/add	; add(Ljava/util/Map$Entry;)Z
+; v1 : Landroid/support/v4/util/MapCollections$EntrySet; , v2 : Ljava/util/Map$Entry;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public add(Ljava/util/Map$Entry;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map$Entry" , "<TK;TV;>;)Z" }
+.end annotation
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/util/Map$Entry;)
+.line 166
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+.method public addAll(Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Collection" , "<+" , "Ljava/util/Map$Entry" , "<TK;TV;>;>;)Z" }
+.end annotation
+.limit registers 8
+; this: v6 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v7 (Ljava/util/Collection;)
+.var 0 is entry Ljava/util/Map$Entry; from l7fc00 to l7fc1c
+.line 171
+	iget-object	v3,v6,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v3 : Landroid/support/v4/util/MapCollections; , v6 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v3},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v3 : Landroid/support/v4/util/MapCollections;
+	move-result	v2
+; v2 : single-length
+.line 172
+	invoke-interface	{v7},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v7 : Ljava/util/Collection;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+l7fbe8:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l7fc1c
+; v3 : single-length
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Map$Entry
+; v0 : Ljava/util/Map$Entry;
+.line 173
+	iget-object	v3,v6,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v3 : Landroid/support/v4/util/MapCollections; , v6 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-interface	{v0},java/util/Map$Entry/getKey	; getKey()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v4
+; v4 : Ljava/lang/Object;
+	invoke-interface	{v0},java/util/Map$Entry/getValue	; getValue()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v5
+; v5 : Ljava/lang/Object;
+	invoke-virtual	{v3,v4,v5},android/support/v4/util/MapCollections/colPut	; colPut(Ljava/lang/Object;Ljava/lang/Object;)V
+; v3 : Landroid/support/v4/util/MapCollections; , v4 : Ljava/lang/Object; , v5 : Ljava/lang/Object;
+	goto	l7fbe8
+l7fc1c:
+.line 175
+	iget-object	v3,v6,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v3 : Landroid/support/v4/util/MapCollections; , v6 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v3},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v3 : Landroid/support/v4/util/MapCollections;
+	move-result	v3
+; v3 : single-length
+	if-eq	v2,v3,l7fc30
+; v2 : single-length , v3 : single-length
+	const/4	v3,1
+; v3 : single-length
+l7fc2e:
+	return	v3
+; v3 : single-length
+l7fc30:
+	const/4	v3,0
+; v3 : single-length
+	goto	l7fc2e
+.end method
+
+.method public clear()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.line 180
+	iget-object	v0,v1,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v0 : Landroid/support/v4/util/MapCollections; , v1 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v0},android/support/v4/util/MapCollections/colClear	; colClear()V
+; v0 : Landroid/support/v4/util/MapCollections;
+.line 181
+	return-void	
+.end method
+
+.method public contains(Ljava/lang/Object;)Z
+.limit registers 8
+; this: v6 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v7 (Ljava/lang/Object;)
+	const/4	v3,0
+; v3 : single-length
+.line 185
+	instance-of	v4,v7,java/util/Map$Entry
+; v4 : single-length , v7 : Ljava/lang/Object;
+	if-nez	v4,l7fc6c
+; v4 : single-length
+l7fc6a:
+.line 193
+	return	v3
+; v3 : single-length
+l7fc6c:
+	move-object	v0,v7
+; v0 : Ljava/lang/Object; , v7 : Ljava/lang/Object;
+.line 187
+	check-cast	v0,java/util/Map$Entry
+; v0 : Ljava/util/Map$Entry;
+.line 188
+	iget-object	v4,v6,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v4 : Landroid/support/v4/util/MapCollections; , v6 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-interface	{v0},java/util/Map$Entry/getKey	; getKey()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v5
+; v5 : Ljava/lang/Object;
+	invoke-virtual	{v4,v5},android/support/v4/util/MapCollections/colIndexOfKey	; colIndexOfKey(Ljava/lang/Object;)I
+; v4 : Landroid/support/v4/util/MapCollections; , v5 : Ljava/lang/Object;
+	move-result	v2
+; v2 : single-length
+.line 189
+	if-ltz	v2,l7fc6a
+; v2 : single-length
+.line 192
+	iget-object	v3,v6,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v3 : Landroid/support/v4/util/MapCollections; , v6 : Landroid/support/v4/util/MapCollections$EntrySet;
+	const/4	v4,1
+; v4 : single-length
+	invoke-virtual	{v3,v2,v4},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v3 : Landroid/support/v4/util/MapCollections; , v2 : single-length , v4 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+.line 193
+	invoke-interface	{v0},java/util/Map$Entry/getValue	; getValue()Ljava/lang/Object;
+; v0 : Ljava/util/Map$Entry;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	invoke-static	{v1,v3},android/support/v4/util/ContainerHelpers/equal	; equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+; v1 : Ljava/lang/Object; , v3 : Ljava/lang/Object;
+	move-result	v3
+; v3 : single-length
+	goto	l7fc6a
+.end method
+
+.method public containsAll(Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 4
+; this: v2 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v3 (Ljava/util/Collection;)
+.line 198
+	invoke-interface	{v3},java/util/Collection/iterator	; iterator()Ljava/util/Iterator;
+; v3 : Ljava/util/Collection;
+	move-result-object	v0
+; v0 : Ljava/util/Iterator;
+l7fcc4:
+.line 199
+	invoke-interface	{v0},java/util/Iterator/hasNext	; hasNext()Z
+; v0 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l7fce8
+; v1 : single-length
+.line 200
+	invoke-interface	{v0},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v0 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	invoke-virtual	{v2,v1},android/support/v4/util/MapCollections$EntrySet/contains	; contains(Ljava/lang/Object;)Z
+; v2 : Landroid/support/v4/util/MapCollections$EntrySet; , v1 : Ljava/lang/Object;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l7fcc4
+; v1 : single-length
+.line 201
+	const/4	v1,0
+; v1 : single-length
+l7fce6:
+.line 204
+	return	v1
+; v1 : single-length
+l7fce8:
+	const/4	v1,1
+; v1 : single-length
+	goto	l7fce6
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 249
+	invoke-static	{v1,v2},android/support/v4/util/MapCollections/equalsSetHelper	; equalsSetHelper(Ljava/util/Set;Ljava/lang/Object;)Z
+; v1 : Landroid/support/v4/util/MapCollections$EntrySet; , v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public hashCode()I
+.limit registers 8
+; this: v7 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.var 1 is key Ljava/lang/Object; from l7fd3c to l7fd76
+.var 3 is value Ljava/lang/Object; from l7fd4a to l7fd76
+	const/4	v5,0
+; v5 : single-length
+.line 254
+	const/4	v2,0
+; v2 : single-length
+.line 255
+	iget-object	v4,v7,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v4 : Landroid/support/v4/util/MapCollections; , v7 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v4},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v4 : Landroid/support/v4/util/MapCollections;
+	move-result	v4
+; v4 : single-length
+	add-int/lit8	v0,v4,255
+; v0 : single-length , v4 : single-length
+l7fd2c:
+	if-ltz	v0,l7fd76
+; v0 : single-length
+.line 256
+	iget-object	v4,v7,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v4 : Landroid/support/v4/util/MapCollections; , v7 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v4,v0,v5},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v4 : Landroid/support/v4/util/MapCollections; , v0 : single-length , v5 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+.line 257
+	iget-object	v4,v7,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v4 : Landroid/support/v4/util/MapCollections; , v7 : Landroid/support/v4/util/MapCollections$EntrySet;
+	const/4	v6,1
+; v6 : single-length
+	invoke-virtual	{v4,v0,v6},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v4 : Landroid/support/v4/util/MapCollections; , v0 : single-length , v6 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+.line 258
+	if-nez	v1,l7fd60
+; v1 : Ljava/lang/Object;
+	move	v6,v5
+; v6 : single-length , v5 : single-length
+l7fd50:
+	if-nez	v3,l7fd6c
+; v3 : Ljava/lang/Object;
+	move	v4,v5
+; v4 : single-length , v5 : single-length
+l7fd56:
+	xor-int/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	add-int/2addr	v2,v4
+; v2 : single-length , v4 : single-length
+.line 255
+	add-int/lit8	v0,v0,255
+; v0 : single-length , v0 : single-length
+	goto	l7fd2c
+l7fd60:
+.line 258
+	invoke-virtual	{v1},java/lang/Object/hashCode	; hashCode()I
+; v1 : Ljava/lang/Object;
+	move-result	v4
+; v4 : single-length
+	move	v6,v4
+; v6 : single-length , v4 : single-length
+	goto	l7fd50
+l7fd6c:
+	invoke-virtual	{v3},java/lang/Object/hashCode	; hashCode()I
+; v3 : Ljava/lang/Object;
+	move-result	v4
+; v4 : single-length
+	goto	l7fd56
+l7fd76:
+.line 261
+	return	v2
+; v2 : single-length
+.end method
+
+.method public isEmpty()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.line 209
+	iget-object	v0,v1,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v0 : Landroid/support/v4/util/MapCollections; , v1 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v0},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v0 : Landroid/support/v4/util/MapCollections;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l7fd9c
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l7fd9a:
+	return	v0
+; v0 : single-length
+l7fd9c:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7fd9a
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Iterator" , "<" , "Ljava/util/Map$Entry" , "<TK;TV;>;>;" }
+.end annotation
+.limit registers 3
+; this: v2 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.line 214
+	new-instance	v0,android/support/v4/util/MapCollections$MapIterator
+; v0 : Landroid/support/v4/util/MapCollections$MapIterator;
+	iget-object	v1,v2,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v1 : Landroid/support/v4/util/MapCollections; , v2 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-direct	{v0,v1},android/support/v4/util/MapCollections$MapIterator/<init>	; <init>(Landroid/support/v4/util/MapCollections;)V
+; v0 : Landroid/support/v4/util/MapCollections$MapIterator; , v1 : Landroid/support/v4/util/MapCollections;
+	return-object	v0
+; v0 : Landroid/support/v4/util/MapCollections$MapIterator;
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 219
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/util/Collection;)
+.line 224
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Collection" , "<*>;)Z" }
+.end annotation
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 (Ljava/util/Collection;)
+.line 229
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+.method public size()I
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.line 234
+	iget-object	v0,v1,android/support/v4/util/MapCollections$EntrySet.this$0 Landroid/support/v4/util/MapCollections;
+; v0 : Landroid/support/v4/util/MapCollections; , v1 : Landroid/support/v4/util/MapCollections$EntrySet;
+	invoke-virtual	{v0},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v0 : Landroid/support/v4/util/MapCollections;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public toArray()[Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">([TT;)[TT;" }
+.end annotation
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+.line 239
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+.method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">([TT;)[TT;" }
+.end annotation
+.limit registers 3
+; this: v1 (Landroid/support/v4/util/MapCollections$EntrySet;)
+; parameter[0] : v2 ([Ljava/lang/Object;)
+.line 244
+	new-instance	v0,java/lang/UnsupportedOperationException
+; v0 : Ljava/lang/UnsupportedOperationException;
+	invoke-direct	{v0},java/lang/UnsupportedOperationException/<init>	; <init>()V
+; v0 : Ljava/lang/UnsupportedOperationException;
+	throw	v0
+; v0 : Ljava/lang/UnsupportedOperationException;
+.end method
+
+

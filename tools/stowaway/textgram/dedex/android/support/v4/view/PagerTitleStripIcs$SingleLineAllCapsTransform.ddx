@@ -1,0 +1,65 @@
+.class android/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform
+.super android/text/method/SingleLineTransformationMethod
+.source PagerTitleStripIcs.java
+
+.inner class SingleLineAllCapsTransform inner android/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform outer android/support/v4/view/PagerTitleStripIcs
+.field private static final TAG Ljava/lang/String; = "SingleLineAllCapsTransform"
+.field private mLocale Ljava/util/Locale;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 36
+	invoke-direct	{v1},android/text/method/SingleLineTransformationMethod/<init>	; <init>()V
+; v1 : Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform;
+.line 37
+	invoke-virtual	{v2},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v2 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/res/Resources;
+	invoke-virtual	{v0},android/content/res/Resources/getConfiguration	; getConfiguration()Landroid/content/res/Configuration;
+; v0 : Landroid/content/res/Resources;
+	move-result-object	v0
+; v0 : Landroid/content/res/Configuration;
+	iget-object	v0,v0,android/content/res/Configuration.locale Ljava/util/Locale;
+; v0 : Ljava/util/Locale; , v0 : Ljava/util/Locale;
+	iput-object	v0,v1,android/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform.mLocale Ljava/util/Locale;
+; v0 : Ljava/util/Locale; , v1 : Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform;
+.line 38
+	return-void	
+.end method
+
+.method public getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
+.limit registers 5
+; this: v2 (Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform;)
+; parameter[0] : v3 (Ljava/lang/CharSequence;)
+; parameter[1] : v4 (Landroid/view/View;)
+.line 42
+	invoke-super	{v2,v3,v4},android/text/method/SingleLineTransformationMethod/getTransformation	; getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
+; v2 : Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform; , v3 : Ljava/lang/CharSequence; , v4 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Ljava/lang/CharSequence;
+.line 43
+	if-eqz	v3,l836fe
+; v3 : Ljava/lang/CharSequence;
+	invoke-virtual	{v3},java/lang/Object/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/CharSequence;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iget-object	v1,v2,android/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform.mLocale Ljava/util/Locale;
+; v1 : Ljava/util/Locale; , v2 : Landroid/support/v4/view/PagerTitleStripIcs$SingleLineAllCapsTransform;
+	invoke-virtual	{v0,v1},java/lang/String/toUpperCase	; toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/util/Locale;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l836fc:
+	return-object	v0
+; v0 : single-length
+l836fe:
+	const/4	v0,0
+; v0 : single-length
+	goto	l836fc
+.end method
+
+

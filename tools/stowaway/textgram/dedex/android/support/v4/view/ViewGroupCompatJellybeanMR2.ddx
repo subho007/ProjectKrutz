@@ -1,0 +1,38 @@
+.class android/support/v4/view/ViewGroupCompatJellybeanMR2
+.super java/lang/Object
+.source ViewGroupCompatJellybeanMR2.java
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/ViewGroupCompatJellybeanMR2;)
+.line 22
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/ViewGroupCompatJellybeanMR2;
+	return-void	
+.end method
+
+.method public static getLayoutMode(Landroid/view/ViewGroup;)I
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/ViewGroup;)
+.line 24
+	invoke-virtual	{v1},android/view/ViewGroup/getLayoutMode	; getLayoutMode()I
+; v1 : Landroid/view/ViewGroup;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static setLayoutMode(Landroid/view/ViewGroup;I)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/ViewGroup;)
+; parameter[1] : v1 (I)
+.line 28
+	invoke-virtual	{v0,v1},android/view/ViewGroup/setLayoutMode	; setLayoutMode(I)V
+; v0 : Landroid/view/ViewGroup; , v1 : single-length
+.line 29
+	return-void	
+.end method
+
+

@@ -1,0 +1,12 @@
+<template>
+<title>Black Board</title>
+<textcolor>#FFFFFF</textcolor>
+<textsize>50</textsize>
+<padding_top>40</padding_top>
+<padding_bottom>40</padding_bottom>
+<padding_right>40</padding_right>
+<padding_left>40</padding_left>
+<background>[assets]/backgrounds/21.jpg</background>
+<font>[assets]/fonts/eager.ttf</font>
+<author></author>
+</template>

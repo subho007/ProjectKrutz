@@ -1,0 +1,724 @@
+.class public android/support/v7/internal/view/menu/ActionMenuItemView
+.super android/support/v7/internal/widget/CompatTextView
+.source ActionMenuItemView.java
+.implements android/support/v7/internal/view/menu/MenuView$ItemView
+.implements android/view/View$OnClickListener
+.implements android/view/View$OnLongClickListener
+.implements android/support/v7/internal/view/menu/ActionMenuView$ActionMenuChildView
+
+.inner class AllCapsTransformationMethod inner android/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod outer android/support/v7/internal/view/menu/ActionMenuItemView
+.field private static final TAG Ljava/lang/String; = "ActionMenuItemView"
+.field private mAllowTextWithIcon Z
+.field private mExpandedFormat Z
+.field private mIcon Landroid/graphics/drawable/Drawable;
+.field private mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+.field private mItemInvoker Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;
+.field private mMinWidth I
+.field private mSavedPaddingLeft I
+.field private mTitle Ljava/lang/CharSequence;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 56
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},android/support/v7/internal/view/menu/ActionMenuItemView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v2 : Landroid/content/Context; , v0 : single-length
+.line 57
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+.line 60
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},android/support/v7/internal/view/menu/ActionMenuItemView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v0 : single-length
+.line 61
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 8
+; this: v4 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/util/AttributeSet;)
+; parameter[2] : v7 (I)
+	const/4	v3,0
+; v3 : single-length
+.line 64
+	invoke-direct	{v4,v5,v6,v7},android/support/v7/internal/widget/CompatTextView/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet; , v7 : single-length
+.line 65
+	invoke-virtual	{v5},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v5 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Landroid/content/res/Resources;
+.line 66
+	sget	v2,android/support/v7/appcompat/R$bool.abc_config_allowActionMenuItemTextWithIcon I
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/content/res/Resources/getBoolean	; getBoolean(I)Z
+; v1 : Landroid/content/res/Resources; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	iput-boolean	v2,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mAllowTextWithIcon Z
+; v2 : single-length , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 68
+	sget-object	v2,android/support/v7/appcompat/R$styleable.ActionMenuItemView [I
+; v2 : [I
+	invoke-virtual	{v5,v6,v2,v3,v3},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+; v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet; , v2 : [I , v3 : single-length , v3 : single-length
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 70
+	invoke-virtual	{v0,v3,v3},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v3 : single-length , v3 : single-length
+	move-result	v2
+; v2 : single-length
+	iput	v2,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mMinWidth I
+; v2 : single-length , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 72
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 74
+	invoke-virtual	{v4,v4},android/support/v7/internal/view/menu/ActionMenuItemView/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 75
+	invoke-virtual	{v4,v4},android/support/v7/internal/view/menu/ActionMenuItemView/setOnLongClickListener	; setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+; v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 77
+	new-instance	v2,android/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod
+; v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod;
+	invoke-direct	{v2,v4},android/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod/<init>	; <init>(Landroid/support/v7/internal/view/menu/ActionMenuItemView;)V
+; v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v4,v2},android/support/v7/internal/view/menu/ActionMenuItemView/setTransformationMethod	; setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+; v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView$AllCapsTransformationMethod;
+.line 79
+	const/4	v2,15
+; v2 : single-length
+	iput	v2,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mSavedPaddingLeft I
+; v2 : single-length , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 80
+	return-void	
+.end method
+
+.method private updateTextButtonVisibility()V
+.limit registers 5
+; this: v4 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.var 0 is visible Z from le4d6e to le4daa
+	const/4	v1,1
+; v1 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 135
+	iget-object	v3,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mTitle Ljava/lang/CharSequence;
+; v3 : Ljava/lang/CharSequence; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-static	{v3},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/CharSequence;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,le4daa
+; v3 : single-length
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+le4d6e:
+.line 136
+	iget-object	v3,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mIcon Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eqz	v3,le4d96
+; v3 : Landroid/graphics/drawable/Drawable;
+	iget-object	v3,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v3 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v3},android/support/v7/internal/view/menu/MenuItemImpl/showsTextAsAction	; showsTextAsAction()Z
+; v3 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,le4d98
+; v3 : single-length
+	iget-boolean	v3,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mAllowTextWithIcon Z
+; v3 : single-length , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-nez	v3,le4d96
+; v3 : single-length
+	iget-boolean	v3,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mExpandedFormat Z
+; v3 : single-length , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eqz	v3,le4d98
+; v3 : single-length
+le4d96:
+	move	v2,v1
+; v2 : single-length , v1 : single-length
+le4d98:
+	and-int/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+.line 139
+	if-eqz	v0,le4dae
+; v0 : single-length
+	iget-object	v1,v4,android/support/v7/internal/view/menu/ActionMenuItemView.mTitle Ljava/lang/CharSequence;
+; v1 : Ljava/lang/CharSequence; , v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+le4da2:
+	invoke-virtual	{v4,v1},android/support/v7/internal/view/menu/ActionMenuItemView/setText	; setText(Ljava/lang/CharSequence;)V
+; v4 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v1 : Ljava/lang/CharSequence;
+.line 140
+	return-void	
+le4daa:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+.line 135
+	goto	le4d6e
+le4dae:
+.line 139
+	const/4	v1,0
+; v1 : single-length
+	goto	le4da2
+.end method
+
+.method public getItemData()Landroid/support/v7/internal/view/menu/MenuItemImpl;
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 89
+	iget-object	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	return-object	v0
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+.end method
+
+.method public hasText()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 150
+	invoke-virtual	{v1},android/support/v7/internal/view/menu/ActionMenuItemView/getText	; getText()Ljava/lang/CharSequence;
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/CharSequence;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,le4df4
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+le4df2:
+	return	v0
+; v0 : single-length
+le4df4:
+	const/4	v0,0
+; v0 : single-length
+	goto	le4df2
+.end method
+
+.method public initialize(Landroid/support/v7/internal/view/menu/MenuItemImpl;I)V
+.limit registers 4
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Landroid/support/v7/internal/view/menu/MenuItemImpl;)
+; parameter[1] : v3 (I)
+.line 93
+	iput-object	v2,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 95
+	invoke-virtual	{v2},android/support/v7/internal/view/menu/MenuItemImpl/getIcon	; getIcon()Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setIcon	; setIcon(Landroid/graphics/drawable/Drawable;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : Landroid/graphics/drawable/Drawable;
+.line 96
+	invoke-virtual	{v2,v1},android/support/v7/internal/view/menu/MenuItemImpl/getTitleForItemView	; getTitleForItemView(Landroid/support/v7/internal/view/menu/MenuView$ItemView;)Ljava/lang/CharSequence;
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setTitle	; setTitle(Ljava/lang/CharSequence;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : Ljava/lang/CharSequence;
+.line 97
+	invoke-virtual	{v2},android/support/v7/internal/view/menu/MenuItemImpl/getItemId	; getItemId()I
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setId	; setId(I)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : single-length
+.line 99
+	invoke-virtual	{v2},android/support/v7/internal/view/menu/MenuItemImpl/isVisible	; isVisible()Z
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,le4e5a
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+le4e44:
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setVisibility	; setVisibility(I)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : single-length
+.line 100
+	invoke-virtual	{v2},android/support/v7/internal/view/menu/MenuItemImpl/isEnabled	; isEnabled()Z
+; v2 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : single-length
+.line 101
+	return-void	
+le4e5a:
+.line 99
+	const/16	v0,8
+; v0 : single-length
+	goto	le4e44
+.end method
+
+.method public needsDividerAfter()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 173
+	invoke-virtual	{v1},android/support/v7/internal/view/menu/ActionMenuItemView/hasText	; hasText()Z
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public needsDividerBefore()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 169
+	invoke-virtual	{v1},android/support/v7/internal/view/menu/ActionMenuItemView/hasText	; hasText()Z
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,le4eac
+; v0 : single-length
+	iget-object	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v0},android/support/v7/internal/view/menu/MenuItemImpl/getIcon	; getIcon()Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result-object	v0
+; v0 : Landroid/graphics/drawable/Drawable;
+	if-nez	v0,le4eac
+; v0 : Landroid/graphics/drawable/Drawable;
+	const/4	v0,1
+; v0 : single-length
+le4eaa:
+	return	v0
+; v0 : single-length
+le4eac:
+	const/4	v0,0
+; v0 : single-length
+	goto	le4eaa
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v3 (Landroid/view/View;)
+.line 104
+	iget-object	v0,v2,android/support/v7/internal/view/menu/ActionMenuItemView.mItemInvoker Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker; , v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eqz	v0,le4ed6
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;
+.line 105
+	iget-object	v0,v2,android/support/v7/internal/view/menu/ActionMenuItemView.mItemInvoker Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker; , v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	iget-object	v1,v2,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v1 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v2 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-interface	{v0,v1},android/support/v7/internal/view/menu/MenuBuilder$ItemInvoker/invokeItem	; invokeItem(Landroid/support/v7/internal/view/menu/MenuItemImpl;)Z
+; v0 : Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker; , v1 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+le4ed6:
+.line 107
+	return-void	
+.end method
+
+.method public onLongClick(Landroid/view/View;)Z
+.limit registers 14
+; this: v12 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v13 (Landroid/view/View;)
+	const/4	v9,1
+; v9 : single-length
+	const/4	v8,0
+; v8 : single-length
+.line 178
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/hasText	; hasText()Z
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v10
+; v10 : single-length
+	if-eqz	v10,le4efa
+; v10 : single-length
+le4ef8:
+.line 204
+	return	v8
+; v8 : single-length
+le4efa:
+.line 183
+	const/4	v10,2
+; v10 : single-length
+	new-array	v5,v10,[I
+; v5 : [I , v10 : single-length
+.line 184
+	new-instance	v2,android/graphics/Rect
+; v2 : Landroid/graphics/Rect;
+	invoke-direct	{v2},android/graphics/Rect/<init>	; <init>()V
+; v2 : Landroid/graphics/Rect;
+.line 185
+	invoke-virtual	{v12,v5},android/support/v7/internal/view/menu/ActionMenuItemView/getLocationOnScreen	; getLocationOnScreen([I)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v5 : [I
+.line 186
+	invoke-virtual	{v12,v2},android/support/v7/internal/view/menu/ActionMenuItemView/getWindowVisibleDisplayFrame	; getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v2 : Landroid/graphics/Rect;
+.line 188
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getContext	; getContext()Landroid/content/Context;
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+.line 189
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getWidth	; getWidth()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v7
+; v7 : single-length
+.line 190
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getHeight	; getHeight()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v3
+; v3 : single-length
+.line 191
+	aget	v10,v5,v9
+; v10 : single-length , v5 : [I , v9 : single-length
+	div-int/lit8	v11,v3,2
+; v11 : single-length , v3 : single-length
+	add-int	v4,v10,v11
+; v4 : single-length , v10 : single-length , v11 : single-length
+.line 192
+	invoke-virtual	{v1},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v1 : Landroid/content/Context;
+	move-result-object	v10
+; v10 : Landroid/content/res/Resources;
+	invoke-virtual	{v10},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v10 : Landroid/content/res/Resources;
+	move-result-object	v10
+; v10 : Landroid/util/DisplayMetrics;
+	iget	v6,v10,android/util/DisplayMetrics.widthPixels I
+; v6 : single-length , v10 : Landroid/util/DisplayMetrics;
+.line 194
+	iget-object	v10,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v10 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v10},android/support/v7/internal/view/menu/MenuItemImpl/getTitle	; getTitle()Ljava/lang/CharSequence;
+; v10 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+	move-result-object	v10
+; v10 : Ljava/lang/CharSequence;
+	invoke-static	{v1,v10,v8},android/widget/Toast/makeText	; makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+; v1 : Landroid/content/Context; , v10 : Ljava/lang/CharSequence; , v8 : single-length
+	move-result-object	v0
+; v0 : Landroid/widget/Toast;
+.line 195
+	invoke-virtual	{v2},android/graphics/Rect/height	; height()I
+; v2 : Landroid/graphics/Rect;
+	move-result	v10
+; v10 : single-length
+	if-ge	v4,v10,le4f90
+; v4 : single-length , v10 : single-length
+.line 197
+	const/16	v10,53
+; v10 : single-length
+	aget	v8,v5,v8
+; v8 : single-length , v5 : [I , v8 : single-length
+	sub-int	v8,v6,v8
+; v8 : single-length , v6 : single-length , v8 : single-length
+	div-int/lit8	v11,v7,2
+; v11 : single-length , v7 : single-length
+	sub-int/2addr	v8,v11
+; v8 : single-length , v11 : single-length
+	invoke-virtual	{v0,v10,v8,v3},android/widget/Toast/setGravity	; setGravity(III)V
+; v0 : Landroid/widget/Toast; , v10 : single-length , v8 : single-length , v3 : single-length
+le4f86:
+.line 203
+	invoke-virtual	{v0},android/widget/Toast/show	; show()V
+; v0 : Landroid/widget/Toast;
+	move	v8,v9
+; v8 : single-length , v9 : single-length
+.line 204
+	goto	le4ef8
+le4f90:
+.line 201
+	const/16	v10,81
+; v10 : single-length
+	invoke-virtual	{v0,v10,v8,v3},android/widget/Toast/setGravity	; setGravity(III)V
+; v0 : Landroid/widget/Toast; , v10 : single-length , v8 : single-length , v3 : single-length
+	goto	le4f86
+.end method
+
+.method protected onMeasure(II)V
+.limit registers 15
+; this: v12 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v13 (I)
+; parameter[1] : v14 (I)
+.var 0 is dw I from le5056 to le507c
+.var 4 is w I from le504a to le507c
+.var 2 is targetWidth I from le5018 to le507e
+	const/high16	v11,16384
+; v11 : single-length
+.line 209
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/hasText	; hasText()Z
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v3
+; v3 : single-length
+.line 210
+	if-eqz	v3,le4fe6
+; v3 : single-length
+	iget	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mSavedPaddingLeft I
+; v7 : single-length , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-ltz	v7,le4fe6
+; v7 : single-length
+.line 211
+	iget	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mSavedPaddingLeft I
+; v7 : single-length , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingTop	; getPaddingTop()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v8
+; v8 : single-length
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingRight	; getPaddingRight()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v9
+; v9 : single-length
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingBottom	; getPaddingBottom()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v10
+; v10 : single-length
+	invoke-super	{v12,v7,v8,v9,v10},android/support/v7/internal/widget/CompatTextView/setPadding	; setPadding(IIII)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length
+le4fe6:
+.line 215
+	invoke-super	{v12,v13,v14},android/support/v7/internal/widget/CompatTextView/onMeasure	; onMeasure(II)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v13 : single-length , v14 : single-length
+.line 217
+	invoke-static	{v13},android/view/View$MeasureSpec/getMode	; getMode(I)I
+; v13 : single-length
+	move-result	v5
+; v5 : single-length
+.line 218
+	invoke-static	{v13},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v13 : single-length
+	move-result	v6
+; v6 : single-length
+.line 219
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getMeasuredWidth	; getMeasuredWidth()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v1
+; v1 : single-length
+.line 220
+	const/high16	v7,32768
+; v7 : single-length
+	if-ne	v5,v7,le507e
+; v5 : single-length , v7 : single-length
+	iget	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mMinWidth I
+; v7 : single-length , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-static	{v6,v7},java/lang/Math/min	; min(II)I
+; v6 : single-length , v7 : single-length
+	move-result	v2
+; v2 : single-length
+le5018:
+.line 223
+	if-eq	v5,v11,le5036
+; v5 : single-length , v11 : single-length
+	iget	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mMinWidth I
+; v7 : single-length , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-lez	v7,le5036
+; v7 : single-length
+	if-ge	v1,v2,le5036
+; v1 : single-length , v2 : single-length
+.line 225
+	invoke-static	{v2,v11},android/view/View$MeasureSpec/makeMeasureSpec	; makeMeasureSpec(II)I
+; v2 : single-length , v11 : single-length
+	move-result	v7
+; v7 : single-length
+	invoke-super	{v12,v7,v14},android/support/v7/internal/widget/CompatTextView/onMeasure	; onMeasure(II)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v7 : single-length , v14 : single-length
+le5036:
+.line 229
+	if-nez	v3,le507c
+; v3 : single-length
+	iget-object	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mIcon Landroid/graphics/drawable/Drawable;
+; v7 : Landroid/graphics/drawable/Drawable; , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eqz	v7,le507c
+; v7 : Landroid/graphics/drawable/Drawable;
+.line 232
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getMeasuredWidth	; getMeasuredWidth()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v4
+; v4 : single-length
+.line 233
+	iget-object	v7,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mIcon Landroid/graphics/drawable/Drawable;
+; v7 : Landroid/graphics/drawable/Drawable; , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v7},android/graphics/drawable/Drawable/getIntrinsicWidth	; getIntrinsicWidth()I
+; v7 : Landroid/graphics/drawable/Drawable;
+	move-result	v0
+; v0 : single-length
+.line 234
+	sub-int	v7,v4,v0
+; v7 : single-length , v4 : single-length , v0 : single-length
+	div-int/lit8	v7,v7,2
+; v7 : single-length , v7 : single-length
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingTop	; getPaddingTop()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v8
+; v8 : single-length
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingRight	; getPaddingRight()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v9
+; v9 : single-length
+	invoke-virtual	{v12},android/support/v7/internal/view/menu/ActionMenuItemView/getPaddingBottom	; getPaddingBottom()I
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	move-result	v10
+; v10 : single-length
+	invoke-super	{v12,v7,v8,v9,v10},android/support/v7/internal/widget/CompatTextView/setPadding	; setPadding(IIII)V
+; v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length
+le507c:
+.line 236
+	return-void	
+le507e:
+.line 220
+	iget	v2,v12,android/support/v7/internal/view/menu/ActionMenuItemView.mMinWidth I
+; v2 : single-length , v12 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	goto	le5018
+.end method
+
+.method public prefersCondensedTitle()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 114
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setCheckable(Z)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v1 (Z)
+.line 119
+	return-void	
+.end method
+
+.method public setChecked(Z)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v1 (Z)
+.line 123
+	return-void	
+.end method
+
+.method public setExpandedFormat(Z)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Z)
+.line 126
+	iget-boolean	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mExpandedFormat Z
+; v0 : single-length , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eq	v0,v2,le50ee
+; v0 : single-length , v2 : single-length
+.line 127
+	iput-boolean	v2,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mExpandedFormat Z
+; v2 : single-length , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 128
+	iget-object	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	if-eqz	v0,le50ee
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+.line 129
+	iget-object	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mItemData Landroid/support/v7/internal/view/menu/MenuItemImpl;
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v0},android/support/v7/internal/view/menu/MenuItemImpl/actionFormatChanged	; actionFormatChanged()V
+; v0 : Landroid/support/v7/internal/view/menu/MenuItemImpl;
+le50ee:
+.line 132
+	return-void	
+.end method
+
+.method public setIcon(Landroid/graphics/drawable/Drawable;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Landroid/graphics/drawable/Drawable;)
+	const/4	v0,0
+; v0 : single-length
+.line 143
+	iput-object	v2,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mIcon Landroid/graphics/drawable/Drawable;
+; v2 : Landroid/graphics/drawable/Drawable; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 144
+	invoke-virtual	{v1,v2,v0,v0,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setCompoundDrawablesWithIntrinsicBounds	; setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v2 : Landroid/graphics/drawable/Drawable; , v0 : single-length , v0 : single-length , v0 : single-length
+.line 146
+	invoke-direct	{v1},android/support/v7/internal/view/menu/ActionMenuItemView/updateTextButtonVisibility	; updateTextButtonVisibility()V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 147
+	return-void	
+.end method
+
+.method public setItemInvoker(Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v1 (Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;)
+.line 110
+	iput-object	v1,v0,android/support/v7/internal/view/menu/ActionMenuItemView.mItemInvoker Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker;
+; v1 : Landroid/support/v7/internal/view/menu/MenuBuilder$ItemInvoker; , v0 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 111
+	return-void	
+.end method
+
+.method public setPadding(IIII)V
+.limit registers 5
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+.line 84
+	iput	v1,v0,android/support/v7/internal/view/menu/ActionMenuItemView.mSavedPaddingLeft I
+; v1 : single-length , v0 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 85
+	invoke-super	{v0,v1,v2,v3,v4},android/support/v7/internal/widget/CompatTextView/setPadding	; setPadding(IIII)V
+; v0 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : single-length
+.line 86
+	return-void	
+.end method
+
+.method public setShortcut(ZC)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v1 (Z)
+; parameter[1] : v2 (C)
+.line 155
+	return-void	
+.end method
+
+.method public setTitle(Ljava/lang/CharSequence;)V
+.limit registers 3
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 158
+	iput-object	v2,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mTitle Ljava/lang/CharSequence;
+; v2 : Ljava/lang/CharSequence; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 160
+	iget-object	v0,v1,android/support/v7/internal/view/menu/ActionMenuItemView.mTitle Ljava/lang/CharSequence;
+; v0 : Ljava/lang/CharSequence; , v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+	invoke-virtual	{v1,v0},android/support/v7/internal/view/menu/ActionMenuItemView/setContentDescription	; setContentDescription(Ljava/lang/CharSequence;)V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView; , v0 : Ljava/lang/CharSequence;
+.line 161
+	invoke-direct	{v1},android/support/v7/internal/view/menu/ActionMenuItemView/updateTextButtonVisibility	; updateTextButtonVisibility()V
+; v1 : Landroid/support/v7/internal/view/menu/ActionMenuItemView;
+.line 162
+	return-void	
+.end method
+
+.method public showsIcon()Z
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/view/menu/ActionMenuItemView;)
+.line 165
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

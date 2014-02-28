@@ -1,0 +1,506 @@
+.class public android/support/v4/util/AtomicFile
+.super java/lang/Object
+.source AtomicFile.java
+
+.field private final mBackupName Ljava/io/File;
+.field private final mBaseName Ljava/io/File;
+
+.method public <init>(Ljava/io/File;)V
+.limit registers 5
+; this: v3 (Landroid/support/v4/util/AtomicFile;)
+; parameter[0] : v4 (Ljava/io/File;)
+.line 51
+	invoke-direct	{v3},java/lang/Object/<init>	; <init>()V
+; v3 : Landroid/support/v4/util/AtomicFile;
+.line 52
+	iput-object	v4,v3,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+.line 53
+	new-instance	v0,java/io/File
+; v0 : Ljava/io/File;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},java/io/File/getPath	; getPath()Ljava/lang/String;
+; v4 : Ljava/io/File;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,".bak"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/io/File/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/io/File; , v1 : Ljava/lang/String;
+	iput-object	v0,v3,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v0 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+.line 54
+	return-void	
+.end method
+
+.method static sync(Ljava/io/FileOutputStream;)Z
+.limit registers 2
+; parameter[0] : v1 (Ljava/io/FileOutputStream;)
+.catch java/io/IOException from l7e7d8 to l7e7e6 using l7e7ea
+.line 205
+	if-eqz	v1,l7e7e6
+; v1 : Ljava/io/FileOutputStream;
+l7e7d8:
+.line 206
+	invoke-virtual	{v1},java/io/FileOutputStream/getFD	; getFD()Ljava/io/FileDescriptor;
+; v1 : Ljava/io/FileOutputStream;
+	move-result-object	v0
+; v0 : Ljava/io/FileDescriptor;
+	invoke-virtual	{v0},java/io/FileDescriptor/sync	; sync()V
+; v0 : Ljava/io/FileDescriptor;
+l7e7e6:
+.line 208
+	const/4	v0,1
+; v0 : single-length
+l7e7e8:
+.line 211
+	return	v0
+; v0 : single-length
+l7e7ea:
+.line 209
+	move-exception	v0
+; v0 : java/io/IOException
+.line 211
+	const/4	v0,0
+; v0 : single-length
+	goto	l7e7e8
+.end method
+
+.method public delete()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/AtomicFile;)
+.line 68
+	iget-object	v0,v1,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v0 : Ljava/io/File; , v1 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v0},java/io/File/delete	; delete()Z
+; v0 : Ljava/io/File;
+.line 69
+	iget-object	v0,v1,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v0 : Ljava/io/File; , v1 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v0},java/io/File/delete	; delete()Z
+; v0 : Ljava/io/File;
+.line 70
+	return-void	
+.end method
+
+.method public failWrite(Ljava/io/FileOutputStream;)V
+.limit registers 5
+; this: v3 (Landroid/support/v4/util/AtomicFile;)
+; parameter[0] : v4 (Ljava/io/FileOutputStream;)
+.catch java/io/IOException from l7e842 to l7e860 using l7e862
+.line 139
+	if-eqz	v4,l7e860
+; v4 : Ljava/io/FileOutputStream;
+.line 140
+	invoke-static	{v4},android/support/v4/util/AtomicFile/sync	; sync(Ljava/io/FileOutputStream;)Z
+; v4 : Ljava/io/FileOutputStream;
+l7e842:
+.line 142
+	invoke-virtual	{v4},java/io/FileOutputStream/close	; close()V
+; v4 : Ljava/io/FileOutputStream;
+.line 143
+	iget-object	v1,v3,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v1 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v1},java/io/File/delete	; delete()Z
+; v1 : Ljava/io/File;
+.line 144
+	iget-object	v1,v3,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v1 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+	iget-object	v2,v3,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v2 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v1,v2},java/io/File/renameTo	; renameTo(Ljava/io/File;)Z
+; v1 : Ljava/io/File; , v2 : Ljava/io/File;
+l7e860:
+.line 149
+	return-void	
+l7e862:
+.line 145
+	move-exception	v0
+; v0 : java/io/IOException
+.line 146
+	const-string	v1,"AtomicFile"
+; v1 : Ljava/lang/String;
+	const-string	v2,"failWrite: Got exception:"
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2,v0},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v0 : java/io/IOException
+	goto	l7e860
+.end method
+
+.method public finishWrite(Ljava/io/FileOutputStream;)V
+.limit registers 5
+; this: v3 (Landroid/support/v4/util/AtomicFile;)
+; parameter[0] : v4 (Ljava/io/FileOutputStream;)
+.catch java/io/IOException from l7e89e to l7e8ae using l7e8b0
+.line 122
+	if-eqz	v4,l7e8ae
+; v4 : Ljava/io/FileOutputStream;
+.line 123
+	invoke-static	{v4},android/support/v4/util/AtomicFile/sync	; sync(Ljava/io/FileOutputStream;)Z
+; v4 : Ljava/io/FileOutputStream;
+l7e89e:
+.line 125
+	invoke-virtual	{v4},java/io/FileOutputStream/close	; close()V
+; v4 : Ljava/io/FileOutputStream;
+.line 126
+	iget-object	v1,v3,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v1 : Ljava/io/File; , v3 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v1},java/io/File/delete	; delete()Z
+; v1 : Ljava/io/File;
+l7e8ae:
+.line 131
+	return-void	
+l7e8b0:
+.line 127
+	move-exception	v0
+; v0 : java/io/IOException
+.line 128
+	const-string	v1,"AtomicFile"
+; v1 : Ljava/lang/String;
+	const-string	v2,"finishWrite: Got exception:"
+; v2 : Ljava/lang/String;
+	invoke-static	{v1,v2,v0},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v0 : java/io/IOException
+	goto	l7e8ae
+.end method
+
+.method public getBaseFile()Ljava/io/File;
+.limit registers 2
+; this: v1 (Landroid/support/v4/util/AtomicFile;)
+.line 61
+	iget-object	v0,v1,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v0 : Ljava/io/File; , v1 : Landroid/support/v4/util/AtomicFile;
+	return-object	v0
+; v0 : Ljava/io/File;
+.end method
+
+.method public openRead()Ljava/io/FileInputStream;
+.throws Ljava/io/FileNotFoundException;
+.limit registers 3
+; this: v2 (Landroid/support/v4/util/AtomicFile;)
+.line 164
+	iget-object	v0,v2,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v0 : Ljava/io/File; , v2 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v0},java/io/File/exists	; exists()Z
+; v0 : Ljava/io/File;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l7e924
+; v0 : single-length
+.line 165
+	iget-object	v0,v2,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v0 : Ljava/io/File; , v2 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v0},java/io/File/delete	; delete()Z
+; v0 : Ljava/io/File;
+.line 166
+	iget-object	v0,v2,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v0 : Ljava/io/File; , v2 : Landroid/support/v4/util/AtomicFile;
+	iget-object	v1,v2,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v1 : Ljava/io/File; , v2 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v0,v1},java/io/File/renameTo	; renameTo(Ljava/io/File;)Z
+; v0 : Ljava/io/File; , v1 : Ljava/io/File;
+l7e924:
+.line 168
+	new-instance	v0,java/io/FileInputStream
+; v0 : Ljava/io/FileInputStream;
+	iget-object	v1,v2,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v1 : Ljava/io/File; , v2 : Landroid/support/v4/util/AtomicFile;
+	invoke-direct	{v0,v1},java/io/FileInputStream/<init>	; <init>(Ljava/io/File;)V
+; v0 : Ljava/io/FileInputStream; , v1 : Ljava/io/File;
+	return-object	v0
+; v0 : Ljava/io/FileInputStream;
+.end method
+
+.method public readFully()[B
+.throws Ljava/io/IOException;
+.limit registers 9
+; this: v8 (Landroid/support/v4/util/AtomicFile;)
+.catch java/lang/Exception from l7e974 to l7e996 using l7e99a
+.catch java/lang/Exception from l7e94e to l7e964 using l7e99a
+.var 0 is amt I from l7e966 to l7e99a
+.var 1 is avail I from l7e956 to l7e99a
+.var 2 is data [B from l7e95a to l7e99a
+.var 3 is newData [B from l7e98c to l7e99a
+.line 176
+	invoke-virtual	{v8},android/support/v4/util/AtomicFile/openRead	; openRead()Ljava/io/FileInputStream;
+; v8 : Landroid/support/v4/util/AtomicFile;
+	move-result-object	v5
+; v5 : Ljava/io/FileInputStream;
+.line 178
+	const/4	v4,0
+; v4 : single-length
+l7e94e:
+.line 179
+	invoke-virtual	{v5},java/io/FileInputStream/available	; available()I
+; v5 : Ljava/io/FileInputStream;
+	move-result	v1
+; v1 : single-length
+.line 180
+	new-array	v2,v1,[B
+; v2 : [B , v1 : single-length
+l7e95a:
+.line 182
+	array-length	v6,v2
+; v6 : single-length , v2 : [B
+	sub-int/2addr	v6,v4
+; v6 : single-length , v4 : single-length
+	invoke-virtual	{v5,v2,v4,v6},java/io/FileInputStream/read	; read([BII)I
+; v5 : Ljava/io/FileInputStream; , v2 : [B , v4 : single-length , v6 : single-length
+l7e964:
+	move-result	v0
+; v0 : single-length
+.line 185
+	if-gtz	v0,l7e972
+; v0 : single-length
+.line 199
+	invoke-virtual	{v5},java/io/FileInputStream/close	; close()V
+; v5 : Ljava/io/FileInputStream;
+	return-object	v2
+; v2 : [B
+l7e972:
+.line 190
+	add-int/2addr	v4,v0
+; v4 : single-length , v0 : single-length
+l7e974:
+.line 191
+	invoke-virtual	{v5},java/io/FileInputStream/available	; available()I
+; v5 : Ljava/io/FileInputStream;
+	move-result	v1
+; v1 : single-length
+.line 192
+	array-length	v6,v2
+; v6 : single-length , v2 : [B
+	sub-int/2addr	v6,v4
+; v6 : single-length , v4 : single-length
+	if-le	v1,v6,l7e95a
+; v1 : single-length , v6 : single-length
+.line 193
+	add-int	v6,v4,v1
+; v6 : single-length , v4 : single-length , v1 : single-length
+	new-array	v3,v6,[B
+; v3 : [B , v6 : single-length
+.line 194
+	const/4	v6,0
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+	invoke-static	{v2,v6,v3,v7,v4},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v2 : [B , v6 : single-length , v3 : [B , v7 : single-length , v4 : single-length
+l7e996:
+.line 195
+	move-object	v2,v3
+; v2 : [B , v3 : [B
+	goto	l7e95a
+l7e99a:
+.line 199
+	move-exception	v6
+; v6 : java/lang/Exception
+	invoke-virtual	{v5},java/io/FileInputStream/close	; close()V
+; v5 : Ljava/io/FileInputStream;
+	throw	v6
+; v6 : java/lang/Exception
+.end method
+
+.method public startWrite()Ljava/io/FileOutputStream;
+.throws Ljava/io/IOException;
+.limit registers 8
+; this: v7 (Landroid/support/v4/util/AtomicFile;)
+.catch java/io/FileNotFoundException from l7eab6 to l7eac4 using l7eac6
+.catch java/io/FileNotFoundException from l7ea4a to l7ea58 using l7ea66
+.var 3 is str Ljava/io/FileOutputStream; from l7ea4a to l7ea4e
+.var 3 is str Ljava/io/FileOutputStream; from l7ea58 to l7ea5a
+.var 3 is str Ljava/io/FileOutputStream; from l7eac4 to l7eac6
+.line 88
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v4},java/io/File/exists	; exists()Z
+; v4 : Ljava/io/File;
+	move-result	v4
+; v4 : single-length
+	if-eqz	v4,l7ea48
+; v4 : single-length
+.line 89
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v4},java/io/File/exists	; exists()Z
+; v4 : Ljava/io/File;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,l7ea5a
+; v4 : single-length
+.line 90
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	iget-object	v5,v7,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v5 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v4,v5},java/io/File/renameTo	; renameTo(Ljava/io/File;)Z
+; v4 : Ljava/io/File; , v5 : Ljava/io/File;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,l7ea48
+; v4 : single-length
+.line 91
+	const-string	v4,"AtomicFile"
+; v4 : Ljava/lang/String;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	invoke-direct	{v5},java/lang/StringBuilder/<init>	; <init>()V
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6,"Couldn't rename file "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v6 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6," to backup file "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v7,android/support/v4/util/AtomicFile.mBackupName Ljava/io/File;
+; v6 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-static	{v4,v5},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v4 : Ljava/lang/String; , v5 : Ljava/lang/String;
+l7ea48:
+.line 98
+	const/4	v3,0
+; v3 : single-length
+l7ea4a:
+.line 100
+	new-instance	v3,java/io/FileOutputStream
+; v3 : Ljava/io/FileOutputStream;
+l7ea4e:
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-direct	{v3,v4},java/io/FileOutputStream/<init>	; <init>(Ljava/io/File;)V
+; v3 : Ljava/io/FileOutputStream; , v4 : Ljava/io/File;
+l7ea58:
+.line 112
+	return-object	v3
+; v3 : Ljava/io/FileOutputStream;
+l7ea5a:
+.line 95
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v4},java/io/File/delete	; delete()Z
+; v4 : Ljava/io/File;
+	goto	l7ea48
+l7ea66:
+.line 101
+	move-exception	v0
+; v0 : java/io/FileNotFoundException
+.line 102
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v4},java/io/File/getParentFile	; getParentFile()Ljava/io/File;
+; v4 : Ljava/io/File;
+	move-result-object	v2
+; v2 : Ljava/io/File;
+.line 103
+	invoke-virtual	{v2},java/io/File/mkdir	; mkdir()Z
+; v2 : Ljava/io/File;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,l7eab6
+; v4 : single-length
+.line 104
+	new-instance	v4,java/io/IOException
+; v4 : Ljava/io/IOException;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	invoke-direct	{v5},java/lang/StringBuilder/<init>	; <init>()V
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6,"Couldn't create directory "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v6 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-direct	{v4,v5},java/io/IOException/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/io/IOException; , v5 : Ljava/lang/String;
+	throw	v4
+; v4 : Ljava/io/IOException;
+l7eab6:
+.line 107
+	new-instance	v3,java/io/FileOutputStream
+; v3 : Ljava/io/FileOutputStream;
+	iget-object	v4,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v4 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-direct	{v3,v4},java/io/FileOutputStream/<init>	; <init>(Ljava/io/File;)V
+; v3 : Ljava/io/FileOutputStream; , v4 : Ljava/io/File;
+l7eac4:
+	goto	l7ea58
+l7eac6:
+.line 108
+	move-exception	v1
+; v1 : java/io/FileNotFoundException
+.line 109
+	new-instance	v4,java/io/IOException
+; v4 : Ljava/io/IOException;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	invoke-direct	{v5},java/lang/StringBuilder/<init>	; <init>()V
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6,"Couldn't create "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v7,android/support/v4/util/AtomicFile.mBaseName Ljava/io/File;
+; v6 : Ljava/io/File; , v7 : Landroid/support/v4/util/AtomicFile;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/io/File;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-direct	{v4,v5},java/io/IOException/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/io/IOException; , v5 : Ljava/lang/String;
+	throw	v4
+; v4 : Ljava/io/IOException;
+.end method
+
+

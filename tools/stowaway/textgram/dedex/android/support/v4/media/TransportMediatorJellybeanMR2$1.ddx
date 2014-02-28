@@ -1,0 +1,45 @@
+.class android/support/v4/media/TransportMediatorJellybeanMR2$1
+.super java/lang/Object
+.source TransportMediatorJellybeanMR2.java
+.implements android/view/ViewTreeObserver$OnWindowAttachListener
+
+.inner class 1 inner android/support/v4/media/TransportMediatorJellybeanMR2$1 outer android/support/v4/media/TransportMediatorJellybeanMR2
+.field final this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+
+.method <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;)
+; parameter[0] : v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 42
+	iput-object	v1,v0,android/support/v4/media/TransportMediatorJellybeanMR2$1.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	return-void	
+.end method
+
+.method public onWindowAttached()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;)
+.line 45
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2$1.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	invoke-virtual	{v0},android/support/v4/media/TransportMediatorJellybeanMR2/windowAttached	; windowAttached()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 46
+	return-void	
+.end method
+
+.method public onWindowDetached()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;)
+.line 49
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2$1.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	invoke-virtual	{v0},android/support/v4/media/TransportMediatorJellybeanMR2/windowDetached	; windowDetached()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+.line 50
+	return-void	
+.end method
+
+

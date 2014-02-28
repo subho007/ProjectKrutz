@@ -1,0 +1,28 @@
+.class android/support/v4/widget/PopupMenuCompat$BasePopupMenuImpl
+.super java/lang/Object
+.source PopupMenuCompat.java
+.implements android/support/v4/widget/PopupMenuCompat$PopupMenuImpl
+
+.inner class BasePopupMenuImpl inner android/support/v4/widget/PopupMenuCompat$BasePopupMenuImpl outer android/support/v4/widget/PopupMenuCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/widget/PopupMenuCompat$BasePopupMenuImpl;)
+.line 36
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/PopupMenuCompat$BasePopupMenuImpl;
+	return-void	
+.end method
+
+.method public getDragToOpenListener(Ljava/lang/Object;)Landroid/view/View$OnTouchListener;
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/PopupMenuCompat$BasePopupMenuImpl;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 39
+	const/4	v0,0
+; v0 : single-length
+	return-object	v0
+; v0 : single-length
+.end method
+
+

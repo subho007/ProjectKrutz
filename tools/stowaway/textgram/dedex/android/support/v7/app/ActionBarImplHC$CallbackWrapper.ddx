@@ -1,0 +1,115 @@
+.class android/support/v7/app/ActionBarImplHC$CallbackWrapper
+.super java/lang/Object
+.source ActionBarImplHC.java
+.implements android/view/ActionMode$Callback
+
+.inner class CallbackWrapper inner android/support/v7/app/ActionBarImplHC$CallbackWrapper outer android/support/v7/app/ActionBarImplHC
+.field private final mWrappedCallback Landroid/view/ActionMode$Callback;
+.field final this$0 Landroid/support/v7/app/ActionBarImplHC;
+
+.method <init>(Landroid/support/v7/app/ActionBarImplHC;Landroid/view/ActionMode$Callback;)V
+.limit registers 3
+; this: v0 (Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;)
+; parameter[0] : v1 (Landroid/support/v7/app/ActionBarImplHC;)
+; parameter[1] : v2 (Landroid/view/ActionMode$Callback;)
+.line 75
+	iput-object	v1,v0,android/support/v7/app/ActionBarImplHC$CallbackWrapper.this$0 Landroid/support/v7/app/ActionBarImplHC;
+; v1 : Landroid/support/v7/app/ActionBarImplHC; , v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+.line 76
+	iput-object	v2,v0,android/support/v7/app/ActionBarImplHC$CallbackWrapper.mWrappedCallback Landroid/view/ActionMode$Callback;
+; v2 : Landroid/view/ActionMode$Callback; , v0 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+.line 77
+	return-void	
+.end method
+
+.method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;)
+; parameter[0] : v2 (Landroid/view/ActionMode;)
+; parameter[1] : v3 (Landroid/view/MenuItem;)
+.line 98
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC$CallbackWrapper.mWrappedCallback Landroid/view/ActionMode$Callback;
+; v0 : Landroid/view/ActionMode$Callback; , v1 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-interface	{v0,v2,v3},android/view/ActionMode$Callback/onActionItemClicked	; onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
+; v0 : Landroid/view/ActionMode$Callback; , v2 : Landroid/view/ActionMode; , v3 : Landroid/view/MenuItem;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+.limit registers 5
+; this: v2 (Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;)
+; parameter[0] : v3 (Landroid/view/ActionMode;)
+; parameter[1] : v4 (Landroid/view/Menu;)
+.line 81
+	iget-object	v1,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.mWrappedCallback Landroid/view/ActionMode$Callback;
+; v1 : Landroid/view/ActionMode$Callback; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-interface	{v1,v3,v4},android/view/ActionMode$Callback/onCreateActionMode	; onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+; v1 : Landroid/view/ActionMode$Callback; , v3 : Landroid/view/ActionMode; , v4 : Landroid/view/Menu;
+	move-result	v0
+; v0 : single-length
+.line 82
+	if-eqz	v0,l932e0
+; v0 : single-length
+.line 84
+	iget-object	v1,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.this$0 Landroid/support/v7/app/ActionBarImplHC;
+; v1 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-static	{v1,v3},android/support/v7/app/ActionBarImplHC/access$002	; access$002(Landroid/support/v7/app/ActionBarImplHC;Landroid/view/ActionMode;)Landroid/view/ActionMode;
+; v1 : Landroid/support/v7/app/ActionBarImplHC; , v3 : Landroid/view/ActionMode;
+.line 86
+	iget-object	v1,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.this$0 Landroid/support/v7/app/ActionBarImplHC;
+; v1 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-virtual	{v1},android/support/v7/app/ActionBarImplHC/showForActionMode	; showForActionMode()V
+; v1 : Landroid/support/v7/app/ActionBarImplHC;
+l932e0:
+.line 88
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onDestroyActionMode(Landroid/view/ActionMode;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;)
+; parameter[0] : v3 (Landroid/view/ActionMode;)
+.line 103
+	iget-object	v0,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.mWrappedCallback Landroid/view/ActionMode$Callback;
+; v0 : Landroid/view/ActionMode$Callback; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-interface	{v0,v3},android/view/ActionMode$Callback/onDestroyActionMode	; onDestroyActionMode(Landroid/view/ActionMode;)V
+; v0 : Landroid/view/ActionMode$Callback; , v3 : Landroid/view/ActionMode;
+.line 106
+	iget-object	v0,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.this$0 Landroid/support/v7/app/ActionBarImplHC;
+; v0 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-virtual	{v0},android/support/v7/app/ActionBarImplHC/hideForActionMode	; hideForActionMode()V
+; v0 : Landroid/support/v7/app/ActionBarImplHC;
+.line 108
+	iget-object	v0,v2,android/support/v7/app/ActionBarImplHC$CallbackWrapper.this$0 Landroid/support/v7/app/ActionBarImplHC;
+; v0 : Landroid/support/v7/app/ActionBarImplHC; , v2 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	const/4	v1,0
+; v1 : single-length
+	invoke-static	{v0,v1},android/support/v7/app/ActionBarImplHC/access$002	; access$002(Landroid/support/v7/app/ActionBarImplHC;Landroid/view/ActionMode;)Landroid/view/ActionMode;
+; v0 : Landroid/support/v7/app/ActionBarImplHC; , v1 : single-length
+.line 109
+	return-void	
+.end method
+
+.method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+.limit registers 4
+; this: v1 (Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;)
+; parameter[0] : v2 (Landroid/view/ActionMode;)
+; parameter[1] : v3 (Landroid/view/Menu;)
+.line 93
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplHC$CallbackWrapper.mWrappedCallback Landroid/view/ActionMode$Callback;
+; v0 : Landroid/view/ActionMode$Callback; , v1 : Landroid/support/v7/app/ActionBarImplHC$CallbackWrapper;
+	invoke-interface	{v0,v2,v3},android/view/ActionMode$Callback/onPrepareActionMode	; onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+; v0 : Landroid/view/ActionMode$Callback; , v2 : Landroid/view/ActionMode; , v3 : Landroid/view/Menu;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

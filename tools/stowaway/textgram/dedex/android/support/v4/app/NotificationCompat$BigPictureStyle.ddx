@@ -1,0 +1,92 @@
+.class public android/support/v4/app/NotificationCompat$BigPictureStyle
+.super android/support/v4/app/NotificationCompat$Style
+.source NotificationCompat.java
+
+.inner class BigPictureStyle inner android/support/v4/app/NotificationCompat$BigPictureStyle outer android/support/v4/app/NotificationCompat
+.field mBigLargeIcon Landroid/graphics/Bitmap;
+.field mBigLargeIconSet Z
+.field mPicture Landroid/graphics/Bitmap;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+.line 656
+	invoke-direct	{v0},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 657
+	return-void	
+.end method
+
+.method public <init>(Landroid/support/v4/app/NotificationCompat$Builder;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+; parameter[0] : v1 (Landroid/support/v4/app/NotificationCompat$Builder;)
+.line 659
+	invoke-direct	{v0},android/support/v4/app/NotificationCompat$Style/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 660
+	invoke-virtual	{v0,v1},android/support/v4/app/NotificationCompat$BigPictureStyle/setBuilder	; setBuilder(Landroid/support/v4/app/NotificationCompat$Builder;)V
+; v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle; , v1 : Landroid/support/v4/app/NotificationCompat$Builder;
+.line 661
+	return-void	
+.end method
+
+.method public bigLargeIcon(Landroid/graphics/Bitmap;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+; parameter[0] : v2 (Landroid/graphics/Bitmap;)
+.line 693
+	iput-object	v2,v1,android/support/v4/app/NotificationCompat$BigPictureStyle.mBigLargeIcon Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap; , v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 694
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/app/NotificationCompat$BigPictureStyle.mBigLargeIconSet Z
+; v0 : single-length , v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 695
+	return-object	v1
+; v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.end method
+
+.method public bigPicture(Landroid/graphics/Bitmap;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+; parameter[0] : v1 (Landroid/graphics/Bitmap;)
+.line 685
+	iput-object	v1,v0,android/support/v4/app/NotificationCompat$BigPictureStyle.mPicture Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap; , v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 686
+	return-object	v0
+; v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.end method
+
+.method public setBigContentTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+.line 668
+	iput-object	v1,v0,android/support/v4/app/NotificationCompat$BigPictureStyle.mBigContentTitle Ljava/lang/CharSequence;
+; v1 : Ljava/lang/CharSequence; , v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 669
+	return-object	v0
+; v0 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.end method
+
+.method public setSummaryText(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.limit registers 3
+; this: v1 (Landroid/support/v4/app/NotificationCompat$BigPictureStyle;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+.line 676
+	iput-object	v2,v1,android/support/v4/app/NotificationCompat$BigPictureStyle.mSummaryText Ljava/lang/CharSequence;
+; v2 : Ljava/lang/CharSequence; , v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 677
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/app/NotificationCompat$BigPictureStyle.mSummaryTextSet Z
+; v0 : single-length , v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.line 678
+	return-object	v1
+; v1 : Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+.end method
+
+

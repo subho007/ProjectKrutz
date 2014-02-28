@@ -1,0 +1,147 @@
+.class final android/support/v4/util/MapCollections$ArrayIterator
+.super java/lang/Object
+.source MapCollections.java
+.implements java/util/Iterator
+
+.inner class ArrayIterator inner android/support/v4/util/MapCollections$ArrayIterator outer android/support/v4/util/MapCollections
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "<T:" , "Ljava/lang/Object;" , ">" , "Ljava/lang/Object;" , "Ljava/util/Iterator" , "<TT;>;" }
+.end annotation
+
+.field mCanRemove Z
+.field mIndex I
+.field final mOffset I
+.field mSize I
+.field final this$0 Landroid/support/v4/util/MapCollections;
+
+.method <init>(Landroid/support/v4/util/MapCollections;I)V
+.limit registers 4
+; this: v1 (Landroid/support/v4/util/MapCollections$ArrayIterator;)
+; parameter[0] : v2 (Landroid/support/v4/util/MapCollections;)
+; parameter[1] : v3 (I)
+.line 41
+	iput-object	v2,v1,android/support/v4/util/MapCollections$ArrayIterator.this$0 Landroid/support/v4/util/MapCollections;
+; v2 : Landroid/support/v4/util/MapCollections; , v1 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 39
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,android/support/v4/util/MapCollections$ArrayIterator.mCanRemove Z
+; v0 : single-length , v1 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 42
+	iput	v3,v1,android/support/v4/util/MapCollections$ArrayIterator.mOffset I
+; v3 : single-length , v1 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 43
+	invoke-virtual	{v2},android/support/v4/util/MapCollections/colGetSize	; colGetSize()I
+; v2 : Landroid/support/v4/util/MapCollections;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v1,android/support/v4/util/MapCollections$ArrayIterator.mSize I
+; v0 : single-length , v1 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 44
+	return-void	
+.end method
+
+.method public hasNext()Z
+.limit registers 3
+; this: v2 (Landroid/support/v4/util/MapCollections$ArrayIterator;)
+.line 48
+	iget	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	iget	v1,v2,android/support/v4/util/MapCollections$ArrayIterator.mSize I
+; v1 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	if-ge	v0,v1,l7fadc
+; v0 : single-length , v1 : single-length
+	const/4	v0,1
+; v0 : single-length
+l7fada:
+	return	v0
+; v0 : single-length
+l7fadc:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7fada
+.end method
+
+.method public next()Ljava/lang/Object;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()TT;" }
+.end annotation
+.limit registers 5
+; this: v4 (Landroid/support/v4/util/MapCollections$ArrayIterator;)
+.line 53
+	iget-object	v1,v4,android/support/v4/util/MapCollections$ArrayIterator.this$0 Landroid/support/v4/util/MapCollections;
+; v1 : Landroid/support/v4/util/MapCollections; , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	iget	v2,v4,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v2 : single-length , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	iget	v3,v4,android/support/v4/util/MapCollections$ArrayIterator.mOffset I
+; v3 : single-length , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	invoke-virtual	{v1,v2,v3},android/support/v4/util/MapCollections/colGetEntry	; colGetEntry(II)Ljava/lang/Object;
+; v1 : Landroid/support/v4/util/MapCollections; , v2 : single-length , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+.line 54
+	iget	v1,v4,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v1 : single-length , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	iput	v1,v4,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v1 : single-length , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 55
+	const/4	v1,1
+; v1 : single-length
+	iput-boolean	v1,v4,android/support/v4/util/MapCollections$ArrayIterator.mCanRemove Z
+; v1 : single-length , v4 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 56
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public remove()V
+.limit registers 3
+; this: v2 (Landroid/support/v4/util/MapCollections$ArrayIterator;)
+.line 61
+	iget-boolean	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mCanRemove Z
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	if-nez	v0,l7fb3c
+; v0 : single-length
+.line 62
+	new-instance	v0,java/lang/IllegalStateException
+; v0 : Ljava/lang/IllegalStateException;
+	invoke-direct	{v0},java/lang/IllegalStateException/<init>	; <init>()V
+; v0 : Ljava/lang/IllegalStateException;
+	throw	v0
+; v0 : Ljava/lang/IllegalStateException;
+l7fb3c:
+.line 64
+	iget	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	add-int/lit8	v0,v0,255
+; v0 : single-length , v0 : single-length
+	iput	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 65
+	iget	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mSize I
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	add-int/lit8	v0,v0,255
+; v0 : single-length , v0 : single-length
+	iput	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mSize I
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 66
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.mCanRemove Z
+; v0 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+.line 67
+	iget-object	v0,v2,android/support/v4/util/MapCollections$ArrayIterator.this$0 Landroid/support/v4/util/MapCollections;
+; v0 : Landroid/support/v4/util/MapCollections; , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	iget	v1,v2,android/support/v4/util/MapCollections$ArrayIterator.mIndex I
+; v1 : single-length , v2 : Landroid/support/v4/util/MapCollections$ArrayIterator;
+	invoke-virtual	{v0,v1},android/support/v4/util/MapCollections/colRemoveAt	; colRemoveAt(I)V
+; v0 : Landroid/support/v4/util/MapCollections; , v1 : single-length
+.line 68
+	return-void	
+.end method
+
+

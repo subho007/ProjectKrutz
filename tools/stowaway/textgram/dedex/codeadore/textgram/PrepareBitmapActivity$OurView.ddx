@@ -1,0 +1,1131 @@
+.class public codeadore/textgram/PrepareBitmapActivity$OurView
+.super android/view/SurfaceView
+.source PrepareBitmapActivity.java
+.implements java/lang/Runnable
+
+.inner class OurView inner codeadore/textgram/PrepareBitmapActivity$OurView outer codeadore/textgram/PrepareBitmapActivity
+.field final this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+
+.method public <init>(Lcodeadore/textgram/PrepareBitmapActivity;Landroid/content/Context;)V
+.limit registers 5
+; this: v2 (Lcodeadore/textgram/PrepareBitmapActivity$OurView;)
+; parameter[0] : v3 (Lcodeadore/textgram/PrepareBitmapActivity;)
+; parameter[1] : v4 (Landroid/content/Context;)
+.line 216
+	iput-object	v3,v2,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v3 : Lcodeadore/textgram/PrepareBitmapActivity; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+.line 217
+	invoke-direct	{v2,v4},android/view/SurfaceView/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v4 : Landroid/content/Context;
+.line 218
+	invoke-virtual	{v2},codeadore/textgram/PrepareBitmapActivity$OurView/getHolder	; getHolder()Landroid/view/SurfaceHolder;
+; v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	move-result-object	v1
+; v1 : Landroid/view/SurfaceHolder;
+	iput-object	v1,v3,codeadore/textgram/PrepareBitmapActivity.holder Landroid/view/SurfaceHolder;
+; v1 : Landroid/view/SurfaceHolder; , v3 : Lcodeadore/textgram/PrepareBitmapActivity;
+.line 220
+	invoke-virtual	{v2},codeadore/textgram/PrepareBitmapActivity$OurView/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	move-result-object	v0
+; v0 : Landroid/view/ViewTreeObserver;
+.line 221
+	new-instance	v1,codeadore/textgram/PrepareBitmapActivity$OurView$1
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity$OurView$1;
+	invoke-direct	{v1,v2},codeadore/textgram/PrepareBitmapActivity$OurView$1/<init>	; <init>(Lcodeadore/textgram/PrepareBitmapActivity$OurView;)V
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity$OurView$1; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	invoke-virtual	{v0,v1},android/view/ViewTreeObserver/addOnGlobalLayoutListener	; addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+; v0 : Landroid/view/ViewTreeObserver; , v1 : Lcodeadore/textgram/PrepareBitmapActivity$OurView$1;
+.line 253
+	return-void	
+.end method
+
+.method static access$0(Lcodeadore/textgram/PrepareBitmapActivity$OurView;)Lcodeadore/textgram/PrepareBitmapActivity;
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/PrepareBitmapActivity$OurView;)
+.line 214
+	iget-object	v0,v1,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v1 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	return-object	v0
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+.end method
+
+.method public pause()V
+.limit registers 4
+; this: v3 (Lcodeadore/textgram/PrepareBitmapActivity$OurView;)
+.catch java/lang/InterruptedException from l9eef2 to l9ef00 using l9ef0c
+.line 342
+	iget-object	v1,v3,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity; , v3 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	const/4	v2,0
+; v2 : single-length
+	iput-boolean	v2,v1,codeadore/textgram/PrepareBitmapActivity.isItOK Z
+; v2 : single-length , v1 : Lcodeadore/textgram/PrepareBitmapActivity;
+l9eef2:
+.line 346
+	iget-object	v1,v3,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity; , v3 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v1,v1,codeadore/textgram/PrepareBitmapActivity.t Ljava/lang/Thread;
+; v1 : Ljava/lang/Thread; , v1 : Ljava/lang/Thread;
+	invoke-virtual	{v1},java/lang/Thread/join	; join()V
+; v1 : Ljava/lang/Thread;
+l9ef00:
+.line 353
+	iget-object	v1,v3,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity; , v3 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	const/4	v2,0
+; v2 : single-length
+	iput-object	v2,v1,codeadore/textgram/PrepareBitmapActivity.t Ljava/lang/Thread;
+; v2 : single-length , v1 : Lcodeadore/textgram/PrepareBitmapActivity;
+.line 354
+	return-void	
+l9ef0c:
+.line 347
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+.line 348
+	invoke-virtual	{v0},java/lang/InterruptedException/printStackTrace	; printStackTrace()V
+; v0 : java/lang/InterruptedException
+	goto	l9ef00
+.end method
+
+.method public resume()V
+.limit registers 3
+; this: v2 (Lcodeadore/textgram/PrepareBitmapActivity$OurView;)
+.line 357
+	iget-object	v0,v2,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	const/4	v1,1
+; v1 : single-length
+	iput-boolean	v1,v0,codeadore/textgram/PrepareBitmapActivity.isItOK Z
+; v1 : single-length , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+.line 358
+	iget-object	v0,v2,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	new-instance	v1,java/lang/Thread
+; v1 : Ljava/lang/Thread;
+	invoke-direct	{v1,v2},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v1 : Ljava/lang/Thread; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iput-object	v1,v0,codeadore/textgram/PrepareBitmapActivity.t Ljava/lang/Thread;
+; v1 : Ljava/lang/Thread; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+.line 359
+	iget-object	v0,v2,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v2 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.t Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v0 : Ljava/lang/Thread;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+.line 360
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 22
+; this: v21 (Lcodeadore/textgram/PrepareBitmapActivity$OurView;)
+.var 5 is matrix Landroid/graphics/Matrix; from l9f03e to l9f64a
+.var 6 is pinX I from l9f4b0 to l9f64a
+.var 7 is pinY I from l9f4f0 to l9f64a
+.var 8 is px F from l9f060 to l9f64a
+.var 9 is py F from l9f082 to l9f64a
+.var 10 is rect Landroid/graphics/RectF; from l9f214 to l9f64a
+.var 11 is rect2 Landroid/graphics/RectF; from l9f29e to l9f64a
+.var 12 is rect3 Landroid/graphics/RectF; from l9f322 to l9f64a
+.var 13 is rect4 Landroid/graphics/RectF; from l9f3a6 to l9f64a
+.var 14 is rect5 Landroid/graphics/RectF; from l9f448 to l9f64a
+.var 15 is rectPaint Landroid/graphics/Paint; from l9f13a to l9f64a
+.var 16 is rectPaint2 Landroid/graphics/Paint; from l9f224 to l9f64a
+l9ef74:
+.line 258
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-boolean	v0,v0,codeadore/textgram/PrepareBitmapActivity.isItOK Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-nez	v17,l9ef92
+; v17 : single-length
+.line 339
+	return-void	
+l9ef92:
+.line 259
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.holder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	move-object/from16	v17,v0
+; v17 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	invoke-interface/range	{v17},android/view/SurfaceHolder/getSurface;	getSurface()Landroid/view/Surface;
+; v17 : Landroid/view/SurfaceHolder;
+	move-result-object	v17
+; v17 : Landroid/view/Surface;
+	invoke-virtual/range	{v17},android/view/Surface/isValid;	isValid()Z
+; v17 : Landroid/view/Surface;
+	move-result	v17
+; v17 : single-length
+	if-eqz	v17,l9ef74
+; v17 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-boolean	v0,v0,codeadore/textgram/PrepareBitmapActivity.update Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-eqz	v17,l9ef74
+; v17 : single-length
+.line 263
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.holder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	move-object/from16	v17,v0
+; v17 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	invoke-interface/range	{v17},android/view/SurfaceHolder/lockCanvas;	lockCanvas()Landroid/graphics/Canvas;
+; v17 : Landroid/view/SurfaceHolder;
+	move-result-object	v4
+; v4 : Landroid/graphics/Canvas;
+.line 264
+	const/16	v17,226
+; v17 : single-length
+	const/16	v18,228
+; v18 : single-length
+	const/16	v19,229
+; v19 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	invoke-virtual	{v4,v0,v1,v2},android/graphics/Canvas/drawRGB	; drawRGB(III)V
+; v4 : Landroid/graphics/Canvas; , v0 : single-length , v1 : single-length , v2 : single-length
+.line 265
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.tempBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v17,v0
+; v17 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	if-eqz	v17,l9f64a
+; v17 : Landroid/graphics/Bitmap;
+.line 267
+	new-instance	v5,android/graphics/Matrix
+; v5 : Landroid/graphics/Matrix;
+	invoke-direct	{v5},android/graphics/Matrix/<init>	; <init>()V
+; v5 : Landroid/graphics/Matrix;
+.line 268
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasWidth I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	div-int/lit8	v17,v17,2
+; v17 : single-length , v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v8,v0
+; v8 : single-length , v0 : single-length
+.line 269
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	div-int/lit8	v17,v17,2
+; v17 : single-length , v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v9,v0
+; v9 : single-length , v0 : single-length
+.line 270
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.tempBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v17,v0
+; v17 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v17},android/graphics/Bitmap/getWidth;	getWidth()I
+; v17 : Landroid/graphics/Bitmap;
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	neg-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	div-int/lit8	v17,v17,2
+; v17 : single-length , v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+.line 271
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.tempBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getHeight;	getHeight()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	neg-int	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	div-int/lit8	v18,v18,2
+; v18 : single-length , v18 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+.line 270
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v5,v0,v1},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v5 : Landroid/graphics/Matrix; , v0 : single-length , v1 : single-length
+.line 279
+	invoke-virtual	{v5,v8,v9},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v5 : Landroid/graphics/Matrix; , v8 : single-length , v9 : single-length
+.line 281
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.tempBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v17,v0
+; v17 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	const/16	v18,0
+; v18 : single-length
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Bitmap; , v17 : Landroid/graphics/Bitmap;
+	move-object/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v4,v0,v5,v1},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v0 : Landroid/graphics/Bitmap; , v5 : Landroid/graphics/Matrix; , v1 : single-length
+.line 284
+	new-instance	v15,android/graphics/Paint
+; v15 : Landroid/graphics/Paint;
+	invoke-direct	{v15},android/graphics/Paint/<init>	; <init>()V
+; v15 : Landroid/graphics/Paint;
+.line 285
+	const/16	v17,1
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	invoke-virtual	{v15,v0},android/graphics/Paint/setAntiAlias	; setAntiAlias(Z)V
+; v15 : Landroid/graphics/Paint; , v0 : single-length
+.line 286
+	const/16	v17,65535
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	invoke-virtual	{v15,v0},android/graphics/Paint/setColor	; setColor(I)V
+; v15 : Landroid/graphics/Paint; , v0 : single-length
+.line 287
+	const/high16	v17,16384
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	invoke-virtual	{v15,v0},android/graphics/Paint/setStrokeWidth	; setStrokeWidth(F)V
+; v15 : Landroid/graphics/Paint; , v0 : single-length
+.line 288
+	sget-object	v17,android/graphics/Paint$Style.STROKE Landroid/graphics/Paint$Style;
+; v17 : Landroid/graphics/Paint$Style;
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Paint$Style; , v17 : Landroid/graphics/Paint$Style;
+	invoke-virtual	{v15,v0},android/graphics/Paint/setStyle	; setStyle(Landroid/graphics/Paint$Style;)V
+; v15 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint$Style;
+.line 289
+	new-instance	v10,android/graphics/RectF
+; v10 : Landroid/graphics/RectF;
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSX I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSY I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v19,v0
+; v19 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v19 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEX I
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v20 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEY I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-direct	{v10,v0,v1,v2,v3},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v10 : Landroid/graphics/RectF; , v0 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 290
+	invoke-virtual	{v4,v10,v15},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v10 : Landroid/graphics/RectF; , v15 : Landroid/graphics/Paint;
+.line 293
+	new-instance	v16,android/graphics/Paint
+; v16 : Landroid/graphics/Paint;
+	invoke-direct/range	{v16},android/graphics/Paint/<init>;	<init>()V
+; v16 : Landroid/graphics/Paint;
+.line 294
+	const/16	v17,1
+; v17 : single-length
+	invoke-virtual/range	{v16..v17},android/graphics/Paint/setAntiAlias;	setAntiAlias(Z)V
+; v16 : Landroid/graphics/Paint; , v17 : single-length
+.line 295
+	const/16	v17,150
+; v17 : single-length
+	invoke-virtual/range	{v16..v17},android/graphics/Paint/setAlpha;	setAlpha(I)V
+; v16 : Landroid/graphics/Paint; , v17 : single-length
+.line 298
+	new-instance	v11,android/graphics/RectF
+; v11 : Landroid/graphics/RectF;
+	const/16	v17,0
+; v17 : single-length
+	const/16	v18,0
+; v18 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v19,v0
+; v19 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v19 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSX I
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v20 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.screenHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-direct	{v11,v0,v1,v2,v3},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v11 : Landroid/graphics/RectF; , v0 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 301
+	new-instance	v12,android/graphics/RectF
+; v12 : Landroid/graphics/RectF;
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEX I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	const/16	v18,0
+; v18 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v19,v0
+; v19 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v19 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.screenWidth I
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+.line 302
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v20 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.screenHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+.line 301
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-direct	{v12,v0,v1,v2,v3},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v12 : Landroid/graphics/RectF; , v0 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 305
+	new-instance	v13,android/graphics/RectF
+; v13 : Landroid/graphics/RectF;
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSX I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	const/16	v18,0
+; v18 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v19,v0
+; v19 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v19 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEX I
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v20 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSY I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-direct	{v13,v0,v1,v2,v3},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v13 : Landroid/graphics/RectF; , v0 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 308
+	new-instance	v14,android/graphics/RectF
+; v14 : Landroid/graphics/RectF;
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectSX I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEY I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v19,v0
+; v19 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v19 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEX I
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+.line 309
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v20
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v20 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.screenHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+.line 308
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-direct	{v14,v0,v1,v2,v3},android/graphics/RectF/<init>	; <init>(FFFF)V
+; v14 : Landroid/graphics/RectF; , v0 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 311
+	move-object/from16	v0,v16
+; v0 : Landroid/graphics/Paint; , v16 : Landroid/graphics/Paint;
+	invoke-virtual	{v4,v11,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v11 : Landroid/graphics/RectF; , v0 : Landroid/graphics/Paint;
+.line 312
+	move-object/from16	v0,v16
+; v0 : Landroid/graphics/Paint; , v16 : Landroid/graphics/Paint;
+	invoke-virtual	{v4,v12,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v12 : Landroid/graphics/RectF; , v0 : Landroid/graphics/Paint;
+.line 313
+	move-object/from16	v0,v16
+; v0 : Landroid/graphics/Paint; , v16 : Landroid/graphics/Paint;
+	invoke-virtual	{v4,v13,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v13 : Landroid/graphics/RectF; , v0 : Landroid/graphics/Paint;
+.line 314
+	move-object/from16	v0,v16
+; v0 : Landroid/graphics/Paint; , v16 : Landroid/graphics/Paint;
+	invoke-virtual	{v4,v14,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/RectF; , v0 : Landroid/graphics/Paint;
+.line 317
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEX I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getWidth;	getWidth()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	div-int/lit8	v18,v18,2
+; v18 : single-length , v18 : single-length
+	sub-int	v6,v17,v18
+; v6 : single-length , v17 : single-length , v18 : single-length
+.line 318
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.rectEY I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getHeight;	getHeight()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	div-int/lit8	v18,v18,2
+; v18 : single-length , v18 : single-length
+	sub-int	v7,v17,v18
+; v7 : single-length , v17 : single-length , v18 : single-length
+.line 320
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasWidth I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getWidth;	getWidth()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	sub-int	v17,v17,v18
+; v17 : single-length , v17 : single-length , v18 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-le	v6,v0,l9f570
+; v6 : single-length , v0 : single-length
+.line 321
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasWidth I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getWidth;	getWidth()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	sub-int	v6,v17,v18
+; v6 : single-length , v17 : single-length , v18 : single-length
+l9f570:
+.line 323
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getHeight;	getHeight()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	sub-int	v17,v17,v18
+; v17 : single-length , v17 : single-length , v18 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-le	v7,v0,l9f5f0
+; v7 : single-length , v0 : single-length
+.line 324
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget	v0,v0,codeadore/textgram/PrepareBitmapActivity.canvasHeight I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v18,v0
+; v18 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v18
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v18 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v18,v0
+; v18 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	invoke-virtual/range	{v18},android/graphics/Bitmap/getHeight;	getHeight()I
+; v18 : Landroid/graphics/Bitmap;
+	move-result	v18
+; v18 : single-length
+	sub-int	v7,v17,v18
+; v7 : single-length , v17 : single-length , v18 : single-length
+l9f5f0:
+.line 327
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-boolean	v0,v0,codeadore/textgram/PrepareBitmapActivity.pinSelected Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-eqz	v17,l9f68c
+; v17 : single-length
+.line 328
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinActiveBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v17,v0
+; v17 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	int-to-float	v0,v6
+; v0 : single-length , v6 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	int-to-float	v0,v7
+; v0 : single-length , v7 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	const/16	v20,0
+; v20 : single-length
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Bitmap; , v17 : Landroid/graphics/Bitmap;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move-object/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-virtual	{v4,v0,v1,v2,v3},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v0 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+l9f64a:
+.line 334
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.holder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	move-object/from16	v17,v0
+; v17 : Landroid/view/SurfaceHolder; , v0 : Landroid/view/SurfaceHolder;
+	move-object/from16	v0,v17
+; v0 : Landroid/view/SurfaceHolder; , v17 : Landroid/view/SurfaceHolder;
+	invoke-interface	{v0,v4},android/view/SurfaceHolder/unlockCanvasAndPost	; unlockCanvasAndPost(Landroid/graphics/Canvas;)V
+; v0 : Landroid/view/SurfaceHolder; , v4 : Landroid/graphics/Canvas;
+.line 336
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	const/16	v18,0
+; v18 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	move-object/from16	v1,v17
+; v1 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iput-boolean	v0,v1,codeadore/textgram/PrepareBitmapActivity.update Z
+; v0 : single-length , v1 : Lcodeadore/textgram/PrepareBitmapActivity;
+	goto/16	l9ef74
+l9f68c:
+.line 330
+	move-object/from16	v0,v21
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity$OurView; , v21 : Lcodeadore/textgram/PrepareBitmapActivity$OurView;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity$OurView.this$0 Lcodeadore/textgram/PrepareBitmapActivity;
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v17,v0
+; v17 : Lcodeadore/textgram/PrepareBitmapActivity; , v0 : Lcodeadore/textgram/PrepareBitmapActivity;
+	move-object/from16	v0,v17
+; v0 : Lcodeadore/textgram/PrepareBitmapActivity; , v17 : Lcodeadore/textgram/PrepareBitmapActivity;
+	iget-object	v0,v0,codeadore/textgram/PrepareBitmapActivity.resizePinBitmap Landroid/graphics/Bitmap;
+; v0 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	move-object/from16	v17,v0
+; v17 : Landroid/graphics/Bitmap; , v0 : Landroid/graphics/Bitmap;
+	int-to-float	v0,v6
+; v0 : single-length , v6 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	int-to-float	v0,v7
+; v0 : single-length , v7 : single-length
+	move/from16	v19,v0
+; v19 : single-length , v0 : single-length
+	const/16	v20,0
+; v20 : single-length
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Bitmap; , v17 : Landroid/graphics/Bitmap;
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	move/from16	v2,v19
+; v2 : single-length , v19 : single-length
+	move-object/from16	v3,v20
+; v3 : single-length , v20 : single-length
+	invoke-virtual	{v4,v0,v1,v2,v3},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v0 : Landroid/graphics/Bitmap; , v1 : single-length , v2 : single-length , v3 : single-length
+	goto	l9f64a
+.end method
+
+

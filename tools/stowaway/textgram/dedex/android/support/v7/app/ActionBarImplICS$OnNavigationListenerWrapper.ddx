@@ -1,0 +1,39 @@
+.class android/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper
+.super java/lang/Object
+.source ActionBarImplICS.java
+.implements android/app/ActionBar$OnNavigationListener
+
+.inner class OnNavigationListenerWrapper inner android/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper outer android/support/v7/app/ActionBarImplICS
+.field private final mWrappedListener Landroid/support/v7/app/ActionBar$OnNavigationListener;
+
+.method public <init>(Landroid/support/v7/app/ActionBar$OnNavigationListener;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper;)
+; parameter[0] : v1 (Landroid/support/v7/app/ActionBar$OnNavigationListener;)
+.line 316
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper;
+.line 317
+	iput-object	v1,v0,android/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper.mWrappedListener Landroid/support/v7/app/ActionBar$OnNavigationListener;
+; v1 : Landroid/support/v7/app/ActionBar$OnNavigationListener; , v0 : Landroid/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper;
+.line 318
+	return-void	
+.end method
+
+.method public onNavigationItemSelected(IJ)Z
+.limit registers 5
+; this: v1 (Landroid/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (J)
+.line 322
+	iget-object	v0,v1,android/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper.mWrappedListener Landroid/support/v7/app/ActionBar$OnNavigationListener;
+; v0 : Landroid/support/v7/app/ActionBar$OnNavigationListener; , v1 : Landroid/support/v7/app/ActionBarImplICS$OnNavigationListenerWrapper;
+	invoke-interface	{v0,v2,v3,v4},android/support/v7/app/ActionBar$OnNavigationListener/onNavigationItemSelected	; onNavigationItemSelected(IJ)Z
+; v0 : Landroid/support/v7/app/ActionBar$OnNavigationListener; , v2 : single-length , v3 : double-length
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

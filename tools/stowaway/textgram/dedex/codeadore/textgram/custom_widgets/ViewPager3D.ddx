@@ -1,0 +1,1716 @@
+.class public codeadore/textgram/custom_widgets/ViewPager3D
+.super android/support/v4/view/ViewPager
+.source ViewPager3D.java
+
+.inner class MyOnPageChangeListener inner codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener outer codeadore/textgram/custom_widgets/ViewPager3D
+.inner class OverscrollEffect inner codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect outer codeadore/textgram/custom_widgets/ViewPager3D
+.field private static final DEBUG_TAG Ljava/lang/String; = null
+.field private static final DEFAULT_ANIMATE_ALPHA Z = true
+.field private static final DEFAULT_OVERSCROLL_ANIMATION_DURATION I = 400	; 0x190
+.field static final DEFAULT_OVERSCROLL_ROTATION F = 2.0
+.field static final DEFAULT_OVERSCROLL_TRANSLATION I = 150	; 0x96
+.field static final DEFAULT_SWIPE_ROTATION F = 3.0
+.field static final DEFAULT_SWIPE_TRANSLATION I = 100	; 0x64
+.field private static final INVALID_POINTER_ID I = -1	; 0xffffffff
+.field private static final RADIANS D = 57.29577951308232
+.field enable3D Z
+.field private mActivePointerId I
+.field private mAnimateAlpha Z
+.field private final mCamera Landroid/graphics/Camera;
+.field private mLastMotionX F
+.field private mLastPosition I
+.field private mOverscrollAnimationDuration I
+.field private final mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+.field private mOverscrollRotation F
+.field private mOverscrollTranslation I
+.field private mScrollListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.field private mScrollPosition I
+.field private mScrollPositionOffset F
+.field private mSwipeRotation F
+.field private mSwipeTranslation I
+.field private final mTouchSlop I
+
+.method static <clinit>()V
+.limit registers 1
+.line 62
+	const-class	v0,android/support/v4/view/ViewPager
+; v0 : Ljava/lang/Class;
+	invoke-virtual	{v0},java/lang/Class/getSimpleName	; getSimpleName()Ljava/lang/String;
+; v0 : Ljava/lang/Class;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,codeadore/textgram/custom_widgets/ViewPager3D.DEBUG_TAG Ljava/lang/String;
+; v0 : Ljava/lang/String;
+.line 64
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 7
+; this: v4 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/util/AttributeSet;)
+	const/4	v3,0
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 159
+	invoke-direct	{v4,v5,v6},android/support/v4/view/ViewPager/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet;
+.line 72
+	iput-boolean	v2,v4,codeadore/textgram/custom_widgets/ViewPager3D.enable3D Z
+; v2 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 141
+	new-instance	v1,codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	invoke-direct	{v1,v4,v3},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/<init>	; <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D;Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)V
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v3 : single-length
+	iput-object	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 142
+	new-instance	v1,android/graphics/Camera
+; v1 : Landroid/graphics/Camera;
+	invoke-direct	{v1},android/graphics/Camera/<init>	; <init>()V
+; v1 : Landroid/graphics/Camera;
+	iput-object	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v1 : Landroid/graphics/Camera; , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 262
+	iput	v2,v4,codeadore/textgram/custom_widgets/ViewPager3D.mLastPosition I
+; v2 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 160
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v4,v1},codeadore/textgram/custom_widgets/ViewPager3D/setStaticTransformationsEnabled	; setStaticTransformationsEnabled(Z)V
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : single-length
+.line 161
+	invoke-static	{v5},android/view/ViewConfiguration/get	; get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+; v5 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/view/ViewConfiguration;
+.line 163
+	invoke-static	{v0},android/support/v4/view/ViewConfigurationCompat/getScaledPagingTouchSlop	; getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
+; v0 : Landroid/view/ViewConfiguration;
+	move-result	v1
+; v1 : single-length
+.line 162
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mTouchSlop I
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 164
+	new-instance	v1,codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+	invoke-direct	{v1,v4,v3},codeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener/<init>	; <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D;Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;)V
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener; , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v3 : single-length
+	invoke-super	{v4,v1},android/support/v4/view/ViewPager/setOnPageChangeListener	; setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$MyOnPageChangeListener;
+.line 165
+	invoke-direct	{v4,v6},codeadore/textgram/custom_widgets/ViewPager3D/init	; init(Landroid/util/AttributeSet;)V
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v6 : Landroid/util/AttributeSet;
+.line 166
+	return-void	
+.end method
+
+.method static access$0(Lcodeadore/textgram/custom_widgets/ViewPager3D;)I
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 262
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mLastPosition I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$1(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[1] : v1 (I)
+.line 242
+	invoke-direct	{v0,v1},codeadore/textgram/custom_widgets/ViewPager3D/invalidateVisibleChilds	; invalidateVisibleChilds(I)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : single-length
+	return-void	
+.end method
+
+.method static access$2(Lcodeadore/textgram/custom_widgets/ViewPager3D;)I
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 155
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollAnimationDuration I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$3(Lcodeadore/textgram/custom_widgets/ViewPager3D;)I
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 147
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPosition I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 144
+	iget-object	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mScrollListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return-object	v0
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.end method
+
+.method static access$5(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[1] : v1 (I)
+.line 147
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPosition I
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return-void	
+.end method
+
+.method static access$6(Lcodeadore/textgram/custom_widgets/ViewPager3D;F)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[1] : v1 (F)
+.line 148
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return-void	
+.end method
+
+.method static access$7(Lcodeadore/textgram/custom_widgets/ViewPager3D;I)V
+.limit registers 2
+; parameter[0] : v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[1] : v1 (I)
+.line 262
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mLastPosition I
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return-void	
+.end method
+
+.method private init(Landroid/util/AttributeSet;)V
+.limit registers 6
+; this: v4 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v5 (Landroid/util/AttributeSet;)
+	const/4	v3,1
+; v3 : single-length
+.line 169
+	invoke-virtual	{v4},codeadore/textgram/custom_widgets/ViewPager3D/getContext	; getContext()Landroid/content/Context;
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+.line 170
+	sget-object	v2,codeadore/textgram/R$styleable.ViewPager3D [I
+; v2 : [I
+.line 169
+	invoke-virtual	{v1,v5,v2},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+; v1 : Landroid/content/Context; , v5 : Landroid/util/AttributeSet; , v2 : [I
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 172
+	const/4	v1,0
+; v1 : single-length
+.line 173
+	const/high16	v2,16384
+; v2 : single-length
+.line 171
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getFloat	; getFloat(IF)F
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollRotation F
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 174
+	const/4	v1,2
+; v1 : single-length
+.line 175
+	const/high16	v2,16448
+; v2 : single-length
+.line 174
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getFloat	; getFloat(IF)F
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 176
+	const/4	v1,3
+; v1 : single-length
+.line 177
+	const/16	v2,100
+; v2 : single-length
+.line 176
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeTranslation I
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 180
+	const/16	v1,150
+; v1 : single-length
+.line 178
+	invoke-virtual	{v0,v3,v1},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v3 : single-length , v1 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollTranslation I
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 182
+	const/4	v1,4
+; v1 : single-length
+.line 183
+	const/16	v2,400
+; v2 : single-length
+.line 181
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollAnimationDuration I
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 184
+	const/4	v1,5
+; v1 : single-length
+	invoke-virtual	{v0,v1,v3},android/content/res/TypedArray/getBoolean	; getBoolean(IZ)Z
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v3 : single-length
+	move-result	v1
+; v1 : single-length
+	iput-boolean	v1,v4,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v1 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 186
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 187
+	return-void	
+.end method
+
+.method private invalidateVisibleChilds(I)V
+.limit registers 7
+; this: v5 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v6 (I)
+.var 0 is child Landroid/view/View; from lf21c4 to lf21fc
+.var 2 is next Landroid/view/View; from lf21dc to lf21fc
+.var 3 is previous Landroid/view/View; from lf21d0 to lf21fc
+.line 243
+	const/4	v1,0
+; v1 : single-length
+lf21aa:
+	invoke-virtual	{v5},codeadore/textgram/custom_widgets/ViewPager3D/getChildCount	; getChildCount()I
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v4
+; v4 : single-length
+	if-lt	v1,v4,lf21fc
+; v1 : single-length , v4 : single-length
+.line 247
+	invoke-virtual	{v5},codeadore/textgram/custom_widgets/ViewPager3D/invalidate	; invalidate()V
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 248
+	invoke-virtual	{v5,v6},codeadore/textgram/custom_widgets/ViewPager3D/getChildAt	; getChildAt(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v6 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 249
+	add-int/lit8	v4,v6,255
+; v4 : single-length , v6 : single-length
+	invoke-virtual	{v5,v4},codeadore/textgram/custom_widgets/ViewPager3D/getChildAt	; getChildAt(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v4 : single-length
+	move-result-object	v3
+; v3 : Landroid/view/View;
+.line 250
+	add-int/lit8	v4,v6,1
+; v4 : single-length , v6 : single-length
+	invoke-virtual	{v5,v4},codeadore/textgram/custom_widgets/ViewPager3D/getChildAt	; getChildAt(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v4 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+.line 251
+	if-eqz	v0,lf21e6
+; v0 : Landroid/view/View;
+.line 252
+	invoke-virtual	{v0},android/view/View/invalidate	; invalidate()V
+; v0 : Landroid/view/View;
+lf21e6:
+.line 254
+	if-eqz	v3,lf21f0
+; v3 : Landroid/view/View;
+.line 255
+	invoke-virtual	{v3},android/view/View/invalidate	; invalidate()V
+; v3 : Landroid/view/View;
+lf21f0:
+.line 257
+	if-eqz	v2,lf21fa
+; v2 : Landroid/view/View;
+.line 258
+	invoke-virtual	{v2},android/view/View/invalidate	; invalidate()V
+; v2 : Landroid/view/View;
+lf21fa:
+.line 260
+	return-void	
+lf21fc:
+.line 244
+	invoke-virtual	{v5,v1},codeadore/textgram/custom_widgets/ViewPager3D/getChildAt	; getChildAt(I)Landroid/view/View;
+; v5 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v1 : single-length
+	move-result-object	v4
+; v4 : Landroid/view/View;
+	invoke-virtual	{v4},android/view/View/invalidate	; invalidate()V
+; v4 : Landroid/view/View;
+.line 243
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	goto	lf21aa
+.end method
+
+.method protected getChildStaticTransformation(Landroid/view/View;Landroid/view/animation/Transformation;)Z
+.limit registers 16
+; this: v13 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v14 (Landroid/view/View;)
+; parameter[1] : v15 (Landroid/view/animation/Transformation;)
+.var 0 is degrees F from lf2314 to lf23e0
+.var 2 is dx F from lf228c to lf23e0
+.var 3 is dy I from lf2298 to lf23e0
+.var 4 is isFirstOrLast Z from lf226a to lf23e0
+.var 6 is translateZ F from lf22da to lf23e0
+.var 0 is degrees F from lf23e6 to lf23ee
+.var 2 is dx F from lf23e6 to lf23ee
+.var 3 is dy I from lf23e6 to lf23ee
+.var 6 is translateZ F from lf23e6 to lf23ee
+.var 0 is degrees D from lf2494 to lf2542
+.var 6 is translateZ F from lf24ba to lf2542
+.var 0 is degrees D from lf25ba to lf25c6
+.var 2 is dx F from lf240a to lf25c6
+.var 3 is dy F from lf2418 to lf25c6
+.var 6 is translateZ F from lf25be to lf25c6
+.var 4 is isFirstOrLast Z from lf23e6 to lf25cc
+.var 5 is position I from lf224c to lf25cc
+.line 416
+	iget-boolean	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.enable3D Z
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	if-eqz	v7,lf25cc
+; v7 : single-length
+.line 417
+	invoke-virtual	{v14},android/view/View/getWidth	; getWidth()I
+; v14 : Landroid/view/View;
+	move-result	v7
+; v7 : single-length
+	if-nez	v7,lf2238
+; v7 : single-length
+.line 418
+	const/4	v7,0
+; v7 : single-length
+lf2236:
+.line 503
+	return	v7
+; v7 : single-length
+lf2238:
+.line 420
+	invoke-virtual	{v14},android/view/View/getLeft	; getLeft()I
+; v14 : Landroid/view/View;
+	move-result	v7
+; v7 : single-length
+	invoke-virtual	{v14},android/view/View/getWidth	; getWidth()I
+; v14 : Landroid/view/View;
+	move-result	v8
+; v8 : single-length
+	div-int	v5,v7,v8
+; v5 : single-length , v7 : single-length , v8 : single-length
+.line 421
+	if-eqz	v5,lf23e0
+; v5 : single-length
+.line 422
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v7
+; v7 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual	{v7},android/support/v4/view/PagerAdapter/getCount	; getCount()I
+; v7 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v7
+; v7 : single-length
+	add-int/lit8	v7,v7,255
+; v7 : single-length , v7 : single-length
+	if-eq	v5,v7,lf23e0
+; v5 : single-length , v7 : single-length
+.line 421
+	const/4	v4,0
+; v4 : single-length
+lf226a:
+.line 423
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v7 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-static	{v7},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$3	; access$3(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)Z
+; v7 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,lf23ee
+; v7 : single-length
+	if-eqz	v4,lf23ee
+; v4 : single-length
+.line 424
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getWidth	; getWidth()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	div-int/lit8	v7,v7,2
+; v7 : single-length , v7 : single-length
+	int-to-float	v2,v7
+; v2 : single-length , v7 : single-length
+.line 425
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getHeight	; getHeight()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	div-int/lit8	v3,v7,2
+; v3 : single-length , v7 : single-length
+.line 426
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7},android/graphics/Matrix/reset	; reset()V
+; v7 : Landroid/graphics/Matrix;
+.line 427
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollTranslation I
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	int-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+.line 428
+	const-wide	v9,4614256656552045848	; 0x400921fb54442d18
+; v9 : double-length
+	iget-object	v11,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v11 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-static	{v11},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)F
+; v11 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-result	v11
+; v11 : single-length
+	invoke-static	{v11},java/lang/Math/abs	; abs(F)F
+; v11 : single-length
+	move-result	v11
+; v11 : single-length
+	float-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+	mul-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+	invoke-static	{v9,v10},java/lang/Math/sin	; sin(D)D
+; v9 : double-length
+	move-result-wide	v9
+; v9 : double-length
+.line 427
+	mul-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	double-to-float	v6,v7
+; v6 : single-length , v7 : double-length
+.line 429
+	const/high16	v7,17076
+; v7 : single-length
+.line 430
+	iget	v8,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollRotation F
+; v8 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 429
+	div-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+.line 431
+	const-wide	v8,4633260481411531256	; 0x404ca5dc1a63c1f8
+; v8 : double-length
+.line 432
+	iget-object	v10,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v10 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-static	{v10},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)F
+; v10 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-result	v10
+; v10 : single-length
+	float-to-double	v10,v10
+; v10 : double-length , v10 : double-length
+	invoke-static	{v10,v11},java/lang/Math/acos	; acos(D)D
+; v10 : double-length
+	move-result-wide	v10
+; v10 : double-length
+.line 431
+	mul-double/2addr	v8,v10
+; v8 : double-length , v10 : double-length
+.line 432
+	iget	v10,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollRotation F
+; v10 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v10,v10
+; v10 : double-length , v10 : double-length
+.line 431
+	div-double/2addr	v8,v10
+; v8 : double-length , v10 : double-length
+	double-to-float	v8,v8
+; v8 : single-length , v8 : single-length
+.line 429
+	sub-float	v0,v7,v8
+; v0 : single-length , v7 : single-length , v8 : single-length
+.line 434
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v7},android/graphics/Camera/save	; save()V
+; v7 : Landroid/graphics/Camera;
+.line 435
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v7,v0},android/graphics/Camera/rotateY	; rotateY(F)V
+; v7 : Landroid/graphics/Camera; , v0 : single-length
+.line 436
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	const/4	v8,0
+; v8 : single-length
+	const/4	v9,0
+; v9 : single-length
+	invoke-virtual	{v7,v8,v9,v6},android/graphics/Camera/translate	; translate(FFF)V
+; v7 : Landroid/graphics/Camera; , v8 : single-length , v9 : single-length , v6 : single-length
+.line 437
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v8
+; v8 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7,v8},android/graphics/Camera/getMatrix	; getMatrix(Landroid/graphics/Matrix;)V
+; v7 : Landroid/graphics/Camera; , v8 : Landroid/graphics/Matrix;
+.line 438
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v7},android/graphics/Camera/restore	; restore()V
+; v7 : Landroid/graphics/Camera;
+.line 439
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	neg-float	v8,v2
+; v8 : single-length , v2 : single-length
+	neg-int	v9,v3
+; v9 : single-length , v3 : single-length
+	int-to-float	v9,v9
+; v9 : single-length , v9 : single-length
+	invoke-virtual	{v7,v8,v9},android/graphics/Matrix/preTranslate	; preTranslate(FF)Z
+; v7 : Landroid/graphics/Matrix; , v8 : single-length , v9 : single-length
+.line 440
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	int-to-float	v8,v3
+; v8 : single-length , v3 : single-length
+	invoke-virtual	{v7,v2,v8},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v7 : Landroid/graphics/Matrix; , v2 : single-length , v8 : single-length
+.line 442
+	iget-boolean	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	if-eqz	v7,lf23c6
+; v7 : single-length
+.line 443
+	sget	v7,android/view/animation/Transformation.TYPE_BOTH I
+; v7 : single-length
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setTransformationType	; setTransformationType(I)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+.line 444
+	const/high16	v7,16256
+; v7 : single-length
+.line 445
+	iget-object	v8,v13,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v8 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-static	{v8},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$4	; access$4(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)F
+; v8 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-result	v8
+; v8 : single-length
+	invoke-static	{v8},java/lang/Math/abs	; abs(F)F
+; v8 : single-length
+	move-result	v8
+; v8 : single-length
+	sub-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	float-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+	const-wide	v9,4614256656552045848	; 0x400921fb54442d18
+; v9 : double-length
+	mul-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	const-wide/high16	v9,16384
+; v9 : double-length
+	div-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	double-to-float	v7,v7
+; v7 : single-length , v7 : single-length
+.line 444
+	invoke-static	{v7},android/util/FloatMath/sin	; sin(F)F
+; v7 : single-length
+	move-result	v7
+; v7 : single-length
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setAlpha	; setAlpha(F)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+lf23c6:
+.line 447
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getChildCount	; getChildCount()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	const/4	v8,1
+; v8 : single-length
+	if-ne	v7,v8,lf23e6
+; v7 : single-length , v8 : single-length
+.line 448
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/invalidate	; invalidate()V
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+lf23da:
+.line 452
+	const/4	v7,1
+; v7 : single-length
+	goto/16	lf2236
+lf23e0:
+.line 421
+	const/4	v4,1
+; v4 : single-length
+	goto/16	lf226a
+lf23e6:
+.line 450
+	invoke-virtual	{v14},android/view/View/invalidate	; invalidate()V
+; v14 : Landroid/view/View;
+	goto	lf23da
+lf23ee:
+.line 453
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	const/4	v8,0
+; v8 : single-length
+	cmpl-float	v7,v7,v8
+; v7 : single-length , v7 : single-length , v8 : single-length
+	if-lez	v7,lf25c6
+; v7 : single-length
+.line 455
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getWidth	; getWidth()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	div-int/lit8	v7,v7,2
+; v7 : single-length , v7 : single-length
+	int-to-float	v2,v7
+; v2 : single-length , v7 : single-length
+.line 456
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getHeight	; getHeight()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	div-int/lit8	v7,v7,2
+; v7 : single-length , v7 : single-length
+	int-to-float	v3,v7
+; v3 : single-length , v7 : single-length
+.line 459
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPosition I
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	if-le	v5,v7,lf2542
+; v5 : single-length , v7 : single-length
+.line 460
+	iget-boolean	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	if-eqz	v7,lf245a
+; v7 : single-length
+.line 461
+	sget	v7,android/view/animation/Transformation.TYPE_BOTH I
+; v7 : single-length
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setTransformationType	; setTransformationType(I)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+.line 463
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+	const-wide	v9,4614256656552045848	; 0x400921fb54442d18
+; v9 : double-length
+	mul-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	const-wide/high16	v9,16384
+; v9 : double-length
+	div-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	double-to-float	v7,v7
+; v7 : single-length , v7 : single-length
+	invoke-static	{v7},android/util/FloatMath/sin	; sin(F)F
+; v7 : single-length
+	move-result	v7
+; v7 : single-length
+.line 462
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setAlpha	; setAlpha(F)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+lf245a:
+.line 466
+	const/high16	v7,17076
+; v7 : single-length
+	iget	v8,v13,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v8 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	div-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	neg-float	v7,v7
+; v7 : single-length , v7 : single-length
+	float-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+.line 467
+	const-wide	v9,4633260481411531256	; 0x404ca5dc1a63c1f8
+; v9 : double-length
+	const/high16	v11,16256
+; v11 : single-length
+	iget	v12,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v12 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	sub-float/2addr	v11,v12
+; v11 : single-length , v12 : single-length
+	float-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+	invoke-static	{v11,v12},java/lang/Math/acos	; acos(D)D
+; v11 : double-length
+	move-result-wide	v11
+; v11 : double-length
+	mul-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+.line 468
+	iget	v11,v13,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v11 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+.line 467
+	div-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+.line 466
+	add-double	v0,v7,v9
+; v0 : double-length , v7 : double-length , v9 : double-length
+lf2494:
+.line 481
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeTranslation I
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	int-to-float	v7,v7
+; v7 : single-length , v7 : single-length
+.line 482
+	const-wide	v8,4614256656552045848	; 0x400921fb54442d18
+; v8 : double-length
+	iget	v10,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v10 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v10,v10
+; v10 : double-length , v10 : double-length
+	mul-double/2addr	v8,v10
+; v8 : double-length , v10 : double-length
+	double-to-float	v8,v8
+; v8 : single-length , v8 : single-length
+	invoke-static	{v8},android/util/FloatMath/sin	; sin(F)F
+; v8 : single-length
+	move-result	v8
+; v8 : single-length
+.line 481
+	mul-float	v6,v7,v8
+; v6 : single-length , v7 : single-length , v8 : single-length
+.line 484
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7},android/graphics/Matrix/reset	; reset()V
+; v7 : Landroid/graphics/Matrix;
+.line 485
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v7},android/graphics/Camera/save	; save()V
+; v7 : Landroid/graphics/Camera;
+.line 486
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	double-to-float	v8,v0
+; v8 : single-length , v0 : double-length
+	invoke-virtual	{v7,v8},android/graphics/Camera/rotateY	; rotateY(F)V
+; v7 : Landroid/graphics/Camera; , v8 : single-length
+.line 487
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	const/4	v8,0
+; v8 : single-length
+	const/4	v9,0
+; v9 : single-length
+	invoke-virtual	{v7,v8,v9,v6},android/graphics/Camera/translate	; translate(FFF)V
+; v7 : Landroid/graphics/Camera; , v8 : single-length , v9 : single-length , v6 : single-length
+.line 488
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v8
+; v8 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7,v8},android/graphics/Camera/getMatrix	; getMatrix(Landroid/graphics/Matrix;)V
+; v7 : Landroid/graphics/Camera; , v8 : Landroid/graphics/Matrix;
+.line 489
+	iget-object	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mCamera Landroid/graphics/Camera;
+; v7 : Landroid/graphics/Camera; , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	invoke-virtual	{v7},android/graphics/Camera/restore	; restore()V
+; v7 : Landroid/graphics/Camera;
+.line 491
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	neg-float	v8,v2
+; v8 : single-length , v2 : single-length
+	neg-float	v9,v3
+; v9 : single-length , v3 : single-length
+	invoke-virtual	{v7,v8,v9},android/graphics/Matrix/preTranslate	; preTranslate(FF)Z
+; v7 : Landroid/graphics/Matrix; , v8 : single-length , v9 : single-length
+.line 492
+	invoke-virtual	{v15},android/view/animation/Transformation/getMatrix	; getMatrix()Landroid/graphics/Matrix;
+; v15 : Landroid/view/animation/Transformation;
+	move-result-object	v7
+; v7 : Landroid/graphics/Matrix;
+	invoke-virtual	{v7,v2,v3},android/graphics/Matrix/postTranslate	; postTranslate(FF)Z
+; v7 : Landroid/graphics/Matrix; , v2 : single-length , v3 : single-length
+.line 493
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/getChildCount	; getChildCount()I
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v7
+; v7 : single-length
+	const/4	v8,1
+; v8 : single-length
+	if-ne	v7,v8,lf25be
+; v7 : single-length , v8 : single-length
+.line 494
+	invoke-virtual	{v13},codeadore/textgram/custom_widgets/ViewPager3D/invalidate	; invalidate()V
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+lf253c:
+.line 498
+	const/4	v7,1
+; v7 : single-length
+	goto/16	lf2236
+lf2542:
+.line 470
+	iget-boolean	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	if-eqz	v7,lf2588
+; v7 : single-length
+.line 471
+	sget	v7,android/view/animation/Transformation.TYPE_BOTH I
+; v7 : single-length
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setTransformationType	; setTransformationType(I)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+.line 473
+	iget	v7,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v7 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+	const-wide	v9,4614256656552045848	; 0x400921fb54442d18
+; v9 : double-length
+	mul-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+.line 474
+	const-wide/high16	v9,16384
+; v9 : double-length
+.line 473
+	div-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+.line 474
+	const-wide	v9,4609753056924675352	; 0x3ff921fb54442d18
+; v9 : double-length
+.line 473
+	add-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	double-to-float	v7,v7
+; v7 : single-length , v7 : single-length
+	invoke-static	{v7},android/util/FloatMath/sin	; sin(F)F
+; v7 : single-length
+	move-result	v7
+; v7 : single-length
+.line 472
+	invoke-virtual	{v15,v7},android/view/animation/Transformation/setAlpha	; setAlpha(F)V
+; v15 : Landroid/view/animation/Transformation; , v7 : single-length
+lf2588:
+.line 477
+	const/high16	v7,17076
+; v7 : single-length
+	iget	v8,v13,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v8 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	div-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	float-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+.line 478
+	const-wide	v9,4633260481411531256	; 0x404ca5dc1a63c1f8
+; v9 : double-length
+	iget	v11,v13,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v11 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+	invoke-static	{v11,v12},java/lang/Math/acos	; acos(D)D
+; v11 : double-length
+	move-result-wide	v11
+; v11 : double-length
+	mul-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+.line 479
+	iget	v11,v13,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v11 : single-length , v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	float-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+.line 478
+	div-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+.line 477
+	sub-double	v0,v7,v9
+; v0 : double-length , v7 : double-length , v9 : double-length
+lf25ba:
+	goto/16	lf2494
+lf25be:
+.line 496
+	invoke-virtual	{v14},android/view/View/invalidate	; invalidate()V
+; v14 : Landroid/view/View;
+	goto	lf253c
+lf25c6:
+.line 500
+	const/4	v7,0
+; v7 : single-length
+	goto/16	lf2236
+lf25cc:
+.line 502
+	invoke-super	{v13,v14,v15},android/support/v4/view/ViewPager/getChildStaticTransformation	; getChildStaticTransformation(Landroid/view/View;Landroid/view/animation/Transformation;)Z
+; v13 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v14 : Landroid/view/View; , v15 : Landroid/view/animation/Transformation;
+.line 503
+	const/4	v7,0
+; v7 : single-length
+	goto/16	lf2236
+.end method
+
+.method public getOverscrollAnimationDuration()I
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 198
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollAnimationDuration I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getOverscrollRotation()F
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 230
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollRotation F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getOverscrollTranslation()I
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 214
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollTranslation I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getSwipeRotation()F
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 222
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getSwipeTranslation()I
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 206
+	iget	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeTranslation I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isAnimateAlpha()Z
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 190
+	iget-boolean	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isEnable3D()Z
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+.line 24
+	iget-boolean	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.enable3D Z
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 6
+; this: v4 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v5 (Landroid/view/MotionEvent;)
+.line 301
+	invoke-virtual	{v5},android/view/MotionEvent/getAction	; getAction()I
+; v5 : Landroid/view/MotionEvent;
+	move-result	v3
+; v3 : single-length
+	and-int/lit16	v0,v3,255
+; v0 : single-length , v3 : single-length
+.line 302
+	sparse-switch	v0
+		0 : spf269c_f26ac
+		5 : spf269c_f26c8
+		default: spf269c_default
+; v0 : single-length
+lf26a2:
+.line 316
+	invoke-super	{v4,v5},android/support/v4/view/ViewPager/onInterceptTouchEvent	; onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+; v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v5 : Landroid/view/MotionEvent;
+	move-result	v3
+; v3 : single-length
+	return	v3
+; v3 : single-length
+spf269c_f26ac:
+.line 304
+	invoke-virtual	{v5},android/view/MotionEvent/getX	; getX()F
+; v5 : Landroid/view/MotionEvent;
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v3 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 305
+	const/4	v3,0
+; v3 : single-length
+	invoke-static	{v5,v3},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v5 : Landroid/view/MotionEvent; , v3 : single-length
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v3 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	goto	lf26a2
+spf269c_f26c8:
+.line 309
+	invoke-static	{v5},android/support/v4/view/MotionEventCompat/getActionIndex	; getActionIndex(Landroid/view/MotionEvent;)I
+; v5 : Landroid/view/MotionEvent;
+	move-result	v1
+; v1 : single-length
+.line 310
+	invoke-static	{v5,v1},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v5 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v2
+; v2 : single-length
+.line 311
+	iput	v2,v4,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v2 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 312
+	invoke-static	{v5,v1},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v5 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v3 : single-length , v4 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	goto	lf26a2
+.line 302
+lf26ea:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 24
+; this: v22 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v23 (Landroid/view/MotionEvent;)
+.var 2 is action I from lf272a to lf2750
+.var 4 is callSuper Z from lf2722 to lf2750
+.var 7 is index I from lf2794 to lf27c6
+.var 19 is x F from lf27a0 to lf27c6
+.var 12 is over F from lf28d6 to lf28fa
+.var 12 is over F from lf2936 to lf295a
+.var 3 is activePointerIndex I from lf27fe to lf296a
+.var 5 is currentItemIndex I from lf2858 to lf296a
+.var 6 is deltaX F from lf281a to lf296a
+.var 8 is lastItemIndex I from lf2850 to lf296a
+.var 9 is leftBound F from lf2872 to lf296a
+.var 11 is oldScrollX F from lf2828 to lf296a
+.var 15 is rightBound F from lf288c to lf296a
+.var 16 is scrollX F from lf2890 to lf296a
+.var 17 is width I from lf2830 to lf296a
+.var 18 is widthWithMargin I from lf283c to lf296a
+.var 19 is x F from lf280a to lf296a
+.var 10 is newPointerIndex I from lf29e4 to lf2a1a
+.var 13 is pointerId I from lf29ca to lf2a1e
+.var 14 is pointerIndex I from lf29be to lf2a1e
+.var 2 is action I from lf2752 to lf2a2a
+.var 4 is callSuper Z from lf2752 to lf2a2a
+.line 321
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-boolean	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.enable3D Z
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	if-eqz	v20,lf2a2a
+; v20 : single-length
+.line 322
+	const/4	v4,0
+; v4 : single-length
+.line 324
+	invoke-virtual/range	{v23},android/view/MotionEvent/getAction;	getAction()I
+; v23 : Landroid/view/MotionEvent;
+	move-result	v2
+; v2 : single-length
+.line 325
+	packed-switch	v2,0
+		psf272a_f2752	; case 0
+		psf272a_f2980	; case 1
+		psf272a_f27c6	; case 2
+		psf272a_f2980	; case 3
+		psf272a_f2730	; case 4
+		psf272a_f278a	; case 5
+		psf272a_f29a8	; case 6
+		default: psf272a_default
+; v2 : single-length
+lf2730:
+.line 403
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-object	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	invoke-static/range	{v20},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$3;	access$3(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)Z
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-result	v20
+; v20 : single-length
+	if-eqz	v20,lf2a1e
+; v20 : single-length
+	if-nez	v4,lf2a1e
+; v4 : single-length
+.line 404
+	const/16	v20,1
+; v20 : single-length
+lf2750:
+.line 411
+	return	v20
+; v20 : single-length
+psf272a_f2752:
+.line 327
+	const/4	v4,1
+; v4 : single-length
+.line 328
+	invoke-virtual/range	{v23},android/view/MotionEvent/getX;	getX()F
+; v23 : Landroid/view/MotionEvent;
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 329
+	const/16	v20,0
+; v20 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	move/from16	v1,v20
+; v1 : single-length , v20 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	goto	lf2730
+psf272a_f278a:
+.line 333
+	const/4	v4,1
+; v4 : single-length
+.line 334
+	invoke-static/range	{v23},android/support/v4/view/MotionEventCompat/getActionIndex;	getActionIndex(Landroid/view/MotionEvent;)I
+; v23 : Landroid/view/MotionEvent;
+	move-result	v7
+; v7 : single-length
+.line 335
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v7},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v0 : Landroid/view/MotionEvent; , v7 : single-length
+	move-result	v19
+; v19 : single-length
+.line 336
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 337
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v7},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v7 : single-length
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	goto	lf2730
+psf272a_f27c6:
+.line 341
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	const/16	v21,65535
+; v21 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move/from16	v1,v21
+; v1 : single-length , v21 : single-length
+	if-eq	v0,v1,lf296a
+; v0 : single-length , v1 : single-length
+.line 344
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	move/from16	v1,v20
+; v1 : single-length , v20 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/findPointerIndex	; findPointerIndex(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v3
+; v3 : single-length
+.line 345
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v3},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v0 : Landroid/view/MotionEvent; , v3 : single-length
+	move-result	v19
+; v19 : single-length
+.line 347
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	sub-float	v6,v20,v19
+; v6 : single-length , v20 : single-length , v19 : single-length
+.line 348
+	invoke-virtual/range	{v22},codeadore/textgram/custom_widgets/ViewPager3D/getScrollX;	getScrollX()I
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v11,v0
+; v11 : single-length , v0 : single-length
+.line 349
+	invoke-virtual/range	{v22},codeadore/textgram/custom_widgets/ViewPager3D/getWidth;	getWidth()I
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v17
+; v17 : single-length
+.line 350
+	invoke-virtual/range	{v22},codeadore/textgram/custom_widgets/ViewPager3D/getPageMargin;	getPageMargin()I
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v20
+; v20 : single-length
+	add-int	v18,v17,v20
+; v18 : single-length , v17 : single-length , v20 : single-length
+.line 351
+	invoke-virtual/range	{v22},codeadore/textgram/custom_widgets/ViewPager3D/getAdapter;	getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result-object	v20
+; v20 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual/range	{v20},android/support/v4/view/PagerAdapter/getCount;	getCount()I
+; v20 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v20
+; v20 : single-length
+	add-int/lit8	v8,v20,255
+; v8 : single-length , v20 : single-length
+.line 352
+	invoke-virtual/range	{v22},codeadore/textgram/custom_widgets/ViewPager3D/getCurrentItem;	getCurrentItem()I
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	move-result	v5
+; v5 : single-length
+.line 353
+	const/16	v20,0
+; v20 : single-length
+	add-int/lit8	v21,v5,255
+; v21 : single-length , v5 : single-length
+.line 354
+	mul-int	v21,v21,v18
+; v21 : single-length , v21 : single-length , v18 : single-length
+.line 353
+	invoke-static/range	{v20..v21},java/lang/Math/max;	max(II)I
+; v20 : single-length , v21 : single-length
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v9,v0
+; v9 : single-length , v0 : single-length
+.line 355
+	add-int/lit8	v20,v5,1
+; v20 : single-length , v5 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	invoke-static	{v0,v8},java/lang/Math/min	; min(II)I
+; v0 : single-length , v8 : single-length
+	move-result	v20
+; v20 : single-length
+	mul-int	v20,v20,v18
+; v20 : single-length , v20 : single-length , v18 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v15,v0
+; v15 : single-length , v0 : single-length
+.line 357
+	add-float	v16,v11,v6
+; v16 : single-length , v11 : single-length , v6 : single-length
+.line 358
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mScrollPositionOffset F
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	const/16	v21,0
+; v21 : single-length
+	cmpl-float	v20,v20,v21
+; v20 : single-length , v20 : single-length , v21 : single-length
+	if-nez	v20,lf295a
+; v20 : single-length
+.line 359
+	cmpg-float	v20,v16,v9
+; v20 : single-length , v16 : single-length , v9 : single-length
+	if-gez	v20,lf28fa
+; v20 : single-length
+.line 360
+	const/16	v20,0
+; v20 : single-length
+	cmpl-float	v20,v9,v20
+; v20 : single-length , v9 : single-length , v20 : single-length
+	if-nez	v20,lf2730
+; v20 : single-length
+.line 361
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mTouchSlop I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	add-float	v12,v6,v20
+; v12 : single-length , v6 : single-length , v20 : single-length
+.line 362
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-object	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v21,v0
+; v21 : single-length , v0 : single-length
+	div-float	v21,v12,v21
+; v21 : single-length , v12 : single-length , v21 : single-length
+	invoke-virtual/range	{v20..v21},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/setPull;	setPull(F)V
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v21 : single-length
+	goto/16	lf2730
+lf28fa:
+.line 364
+	cmpl-float	v20,v16,v15
+; v20 : single-length , v16 : single-length , v15 : single-length
+	if-lez	v20,lf2730
+; v20 : single-length
+.line 365
+	mul-int	v20,v8,v18
+; v20 : single-length , v8 : single-length , v18 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	cmpl-float	v20,v15,v20
+; v20 : single-length , v15 : single-length , v20 : single-length
+	if-nez	v20,lf2730
+; v20 : single-length
+.line 366
+	sub-float	v20,v16,v15
+; v20 : single-length , v16 : single-length , v15 : single-length
+.line 367
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mTouchSlop I
+; v0 : single-length , v0 : single-length
+	move/from16	v21,v0
+; v21 : single-length , v0 : single-length
+	move/from16	v0,v21
+; v0 : single-length , v21 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v21,v0
+; v21 : single-length , v0 : single-length
+.line 366
+	sub-float	v12,v20,v21
+; v12 : single-length , v20 : single-length , v21 : single-length
+.line 368
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-object	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v21,v0
+; v21 : single-length , v0 : single-length
+	div-float	v21,v12,v21
+; v21 : single-length , v12 : single-length , v21 : single-length
+	invoke-virtual/range	{v20..v21},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/setPull;	setPull(F)V
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v21 : single-length
+	goto/16	lf2730
+lf295a:
+.line 372
+	move/from16	v0,v19
+; v0 : single-length , v19 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	goto/16	lf2730
+lf296a:
+.line 375
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-object	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	invoke-static/range	{v20},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$2;	access$2(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)V
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	goto/16	lf2730
+psf272a_f2980:
+.line 381
+	const/4	v4,1
+; v4 : single-length
+.line 382
+	const/16	v20,65535
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 383
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget-object	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollEffect Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	move-object/from16	v20,v0
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	invoke-static/range	{v20},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$2;	access$2(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)V
+; v20 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+	goto/16	lf2730
+psf272a_f29a8:
+.line 387
+	invoke-virtual/range	{v23},android/view/MotionEvent/getAction;	getAction()I
+; v23 : Landroid/view/MotionEvent;
+	move-result	v20
+; v20 : single-length
+	const	v21,65280	; 0xff00
+; v21 : single-length
+	and-int	v20,v20,v21
+; v20 : single-length , v20 : single-length , v21 : single-length
+	shr-int/lit8	v14,v20,8
+; v14 : single-length , v20 : single-length
+.line 388
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v14},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v14 : single-length
+	move-result	v13
+; v13 : single-length
+.line 390
+	move-object/from16	v0,v22
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iget	v0,v0,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v20,v0
+; v20 : single-length , v0 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	if-ne	v13,v0,lf2730
+; v13 : single-length , v0 : single-length
+.line 393
+	if-nez	v14,lf2a1a
+; v14 : single-length
+	const/4	v10,1
+; v10 : single-length
+lf29e4:
+.line 394
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-virtual	{v0,v10},android/view/MotionEvent/getX	; getX(I)F
+; v0 : Landroid/view/MotionEvent; , v10 : single-length
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mLastMotionX F
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 395
+	move-object/from16	v0,v23
+; v0 : Landroid/view/MotionEvent; , v23 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v10},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v10 : single-length
+	move-result	v20
+; v20 : single-length
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	move-object/from16	v1,v22
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+	iput	v0,v1,codeadore/textgram/custom_widgets/ViewPager3D.mActivePointerId I
+; v0 : single-length , v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 397
+	const/4	v4,1
+; v4 : single-length
+	goto/16	lf2730
+lf2a1a:
+.line 393
+	const/4	v10,0
+; v10 : single-length
+	goto	lf29e4
+lf2a1e:
+.line 406
+	invoke-super/range	{v22..v23},android/support/v4/view/ViewPager/onTouchEvent;	onTouchEvent(Landroid/view/MotionEvent;)Z
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v23 : Landroid/view/MotionEvent;
+	move-result	v20
+; v20 : single-length
+	goto/16	lf2750
+lf2a2a:
+.line 409
+	invoke-super/range	{v22..v23},android/support/v4/view/ViewPager/onTouchEvent;	onTouchEvent(Landroid/view/MotionEvent;)Z
+; v22 : Lcodeadore/textgram/custom_widgets/ViewPager3D; , v23 : Landroid/view/MotionEvent;
+.line 411
+	const/16	v20,1
+; v20 : single-length
+	goto/16	lf2750
+.line 325
+.end method
+
+.method public setAnimateAlpha(Z)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (Z)
+.line 194
+	iput-boolean	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mAnimateAlpha Z
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 195
+	return-void	
+.end method
+
+.method public setEnable3D(Z)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (Z)
+.line 28
+	iput-boolean	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.enable3D Z
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 29
+	return-void	
+.end method
+
+.method public setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (Landroid/support/v4/view/ViewPager$OnPageChangeListener;)
+.line 239
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mScrollListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v1 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 240
+	return-void	
+.end method
+
+.method public setOverscrollAnimationDuration(I)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (I)
+.line 202
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollAnimationDuration I
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 203
+	return-void	
+.end method
+
+.method public setOverscrollRotation(F)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (F)
+.line 234
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollRotation F
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 235
+	return-void	
+.end method
+
+.method public setOverscrollTranslation(I)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (I)
+.line 218
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mOverscrollTranslation I
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 219
+	return-void	
+.end method
+
+.method public setSwipeRotation(F)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (F)
+.line 226
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeRotation F
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 227
+	return-void	
+.end method
+
+.method public setSwipeTranslation(I)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D;)
+; parameter[0] : v1 (I)
+.line 210
+	iput	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D.mSwipeTranslation I
+; v1 : single-length , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D;
+.line 211
+	return-void	
+.end method
+
+

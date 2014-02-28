@@ -1,0 +1,66 @@
+.class android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl
+.super android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl
+.source AccessibilityRecordCompat.java
+
+.inner class AccessibilityRecordIcsMr1Impl inner android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl outer android/support/v4/view/accessibility/AccessibilityRecordCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;)
+.line 476
+	invoke-direct	{v0},android/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;
+	return-void	
+.end method
+
+.method public getMaxScrollX(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 479
+	invoke-static	{v2},android/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1/getMaxScrollX	; getMaxScrollX(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getMaxScrollY(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 484
+	invoke-static	{v2},android/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1/getMaxScrollY	; getMaxScrollY(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setMaxScrollX(Ljava/lang/Object;I)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+.line 489
+	invoke-static	{v1,v2},android/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1/setMaxScrollX	; setMaxScrollX(Ljava/lang/Object;I)V
+; v1 : Ljava/lang/Object; , v2 : single-length
+.line 490
+	return-void	
+.end method
+
+.method public setMaxScrollY(Ljava/lang/Object;I)V
+.limit registers 3
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+.line 494
+	invoke-static	{v1,v2},android/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1/setMaxScrollY	; setMaxScrollY(Ljava/lang/Object;I)V
+; v1 : Ljava/lang/Object; , v2 : single-length
+.line 495
+	return-void	
+.end method
+
+

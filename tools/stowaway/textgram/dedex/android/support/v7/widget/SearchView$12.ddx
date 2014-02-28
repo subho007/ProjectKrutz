@@ -1,0 +1,56 @@
+.class android/support/v7/widget/SearchView$12
+.super java/lang/Object
+.source SearchView.java
+.implements android/text/TextWatcher
+
+.inner class 12 inner android/support/v7/widget/SearchView$12 outer android/support/v7/widget/SearchView
+.field final this$0 Landroid/support/v7/widget/SearchView;
+
+.method <init>(Landroid/support/v7/widget/SearchView;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$12;)
+; parameter[0] : v1 (Landroid/support/v7/widget/SearchView;)
+.line 1572
+	iput-object	v1,v0,android/support/v7/widget/SearchView$12.this$0 Landroid/support/v7/widget/SearchView;
+; v1 : Landroid/support/v7/widget/SearchView; , v0 : Landroid/support/v7/widget/SearchView$12;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v7/widget/SearchView$12;
+	return-void	
+.end method
+
+.method public afterTextChanged(Landroid/text/Editable;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/widget/SearchView$12;)
+; parameter[0] : v1 (Landroid/text/Editable;)
+.line 1582
+	return-void	
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+.limit registers 5
+; this: v0 (Landroid/support/v7/widget/SearchView$12;)
+; parameter[0] : v1 (Ljava/lang/CharSequence;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+.line 1574
+	return-void	
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+.limit registers 6
+; this: v1 (Landroid/support/v7/widget/SearchView$12;)
+; parameter[0] : v2 (Ljava/lang/CharSequence;)
+; parameter[1] : v3 (I)
+; parameter[2] : v4 (I)
+; parameter[3] : v5 (I)
+.line 1578
+	iget-object	v0,v1,android/support/v7/widget/SearchView$12.this$0 Landroid/support/v7/widget/SearchView;
+; v0 : Landroid/support/v7/widget/SearchView; , v1 : Landroid/support/v7/widget/SearchView$12;
+	invoke-static	{v0,v2},android/support/v7/widget/SearchView/access$2000	; access$2000(Landroid/support/v7/widget/SearchView;Ljava/lang/CharSequence;)V
+; v0 : Landroid/support/v7/widget/SearchView; , v2 : Ljava/lang/CharSequence;
+.line 1579
+	return-void	
+.end method
+
+

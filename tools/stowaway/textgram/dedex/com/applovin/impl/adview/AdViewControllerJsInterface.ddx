@@ -1,0 +1,1232 @@
+.class public com/applovin/impl/adview/AdViewControllerJsInterface
+.super java/lang/Object
+
+.field private static TAG Ljava/lang/String;
+.field private adVideoPlaybackListener Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+.field private adWebView Lcom/applovin/impl/adview/v;
+.field private currentAd Lcom/applovin/sdk/AppLovinAd;
+.field private volatile currentlyWaiting Z
+.field private volatile interruptNotify Z
+.field private lastKnownDuration I
+.field private lastParameters Ljava/util/Map;
+.field private logger Lcom/applovin/sdk/AppLovinLogger;
+.field private parentActivity Landroid/app/Activity;
+.field private parentView Landroid/view/ViewGroup;
+.field private sdk Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+.field private videoFilename Ljava/lang/String;
+.field private videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+.field private final videoOverlayLock Ljava/lang/Object;
+
+.method static <clinit>()V
+.limit registers 1
+	const-string	v0,"AdViewControllerJsInterface"
+; v0 : Ljava/lang/String;
+	sput-object	v0,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public <init>(Lcom/applovin/sdk/AppLovinSdk;Lcom/applovin/impl/adview/v;Landroid/app/Activity;Landroid/view/ViewGroup;Lcom/applovin/sdk/AppLovinAd;Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)V
+.limit registers 10
+; this: v3 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v4 (Lcom/applovin/sdk/AppLovinSdk;)
+; parameter[1] : v5 (Lcom/applovin/impl/adview/v;)
+; parameter[2] : v6 (Landroid/app/Activity;)
+; parameter[3] : v7 (Landroid/view/ViewGroup;)
+; parameter[4] : v8 (Lcom/applovin/sdk/AppLovinAd;)
+; parameter[5] : v9 (Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v3},java/lang/Object/<init>	; <init>()V
+; v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	new-instance	v0,java/lang/Object
+; v0 : Ljava/lang/Object;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ljava/lang/Object;
+	iput-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlayLock Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-boolean	v1,v3,com/applovin/impl/adview/AdViewControllerJsInterface.interruptNotify Z
+; v1 : single-length , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-boolean	v1,v3,com/applovin/impl/adview/AdViewControllerJsInterface.currentlyWaiting Z
+; v1 : single-length , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	move-object	v0,v4
+; v0 : Lcom/applovin/sdk/AppLovinSdk; , v4 : Lcom/applovin/sdk/AppLovinSdk;
+	check-cast	v0,com/applovin/impl/sdk/AppLovinSdkImpl
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+	iput-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.sdk Lcom/applovin/impl/sdk/AppLovinSdkImpl;
+; v0 : Lcom/applovin/impl/sdk/AppLovinSdkImpl; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-virtual	{v4},com/applovin/sdk/AppLovinSdk/getLogger	; getLogger()Lcom/applovin/sdk/AppLovinLogger;
+; v4 : Lcom/applovin/sdk/AppLovinSdk;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinLogger;
+	iput-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-object	v6,v3,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v6 : Landroid/app/Activity; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-object	v5,v3,com/applovin/impl/adview/AdViewControllerJsInterface.adWebView Lcom/applovin/impl/adview/v;
+; v5 : Lcom/applovin/impl/adview/v; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-object	v7,v3,com/applovin/impl/adview/AdViewControllerJsInterface.parentView Landroid/view/ViewGroup;
+; v7 : Landroid/view/ViewGroup; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.videoFilename Ljava/lang/String;
+; v0 : single-length , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-object	v9,v3,com/applovin/impl/adview/AdViewControllerJsInterface.adVideoPlaybackListener Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+; v9 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iput-object	v8,v3,com/applovin/impl/adview/AdViewControllerJsInterface.currentAd Lcom/applovin/sdk/AppLovinAd;
+; v8 : Lcom/applovin/sdk/AppLovinAd; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"New instance created."
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method static access$000(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Landroid/view/ViewGroup;
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.parentView Landroid/view/ViewGroup;
+; v0 : Landroid/view/ViewGroup; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Landroid/view/ViewGroup;
+.end method
+
+.method static access$100(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.adVideoPlaybackListener Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+; v0 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+.end method
+
+.method static access$200(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Lcom/applovin/sdk/AppLovinAd;
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.currentAd Lcom/applovin/sdk/AppLovinAd;
+; v0 : Lcom/applovin/sdk/AppLovinAd; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAd;
+.end method
+
+.method static access$300(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+.end method
+
+.method static access$400()Ljava/lang/String;
+.limit registers 1
+	sget-object	v0,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method static access$500(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Z
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-boolean	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.currentlyWaiting Z
+; v0 : single-length , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$502(Lcom/applovin/impl/adview/AdViewControllerJsInterface;Z)Z
+.limit registers 2
+; parameter[0] : v0 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[1] : v1 (Z)
+	iput-boolean	v1,v0,com/applovin/impl/adview/AdViewControllerJsInterface.currentlyWaiting Z
+; v1 : single-length , v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return	v1
+; v1 : single-length
+.end method
+
+.method static access$600(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Z
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-boolean	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.interruptNotify Z
+; v0 : single-length , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$602(Lcom/applovin/impl/adview/AdViewControllerJsInterface;Z)Z
+.limit registers 2
+; parameter[0] : v0 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[1] : v1 (Z)
+	iput-boolean	v1,v0,com/applovin/impl/adview/AdViewControllerJsInterface.interruptNotify Z
+; v1 : single-length , v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return	v1
+; v1 : single-length
+.end method
+
+.method static access$700(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)Landroid/app/Activity;
+.limit registers 2
+; parameter[0] : v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v0 : Landroid/app/Activity; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-object	v0
+; v0 : Landroid/app/Activity;
+.end method
+
+.method private calculateDimension(Ljava/lang/String;Lcom/applovin/impl/adview/r;)I
+.limit registers 5
+; this: v2 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Lcom/applovin/impl/adview/r;)
+	iget-object	v0,v2,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v0 : Landroid/app/Activity; , v2 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-static	{v0},com/applovin/impl/sdk/j/a	; a(Landroid/app/Activity;)Landroid/graphics/Point;
+; v0 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Landroid/graphics/Point;
+	sget-object	v1,com/applovin/impl/adview/r.a Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	if-ne	v4,v1,lad4e6
+; v4 : Lcom/applovin/impl/adview/r; , v1 : Lcom/applovin/impl/adview/r;
+	invoke-direct	{v2,v3},com/applovin/impl/adview/AdViewControllerJsInterface/parsePercent	; parsePercent(Ljava/lang/String;)F
+; v2 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v3 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iget	v0,v0,android/graphics/Point.x I
+; v0 : single-length , v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	mul-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	invoke-static	{v0},java/lang/Math/round	; round(F)I
+; v0 : single-length
+	move-result	v0
+; v0 : single-length
+lad4e4:
+	return	v0
+; v0 : single-length
+lad4e6:
+	sget-object	v1,com/applovin/impl/adview/r.b Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	if-ne	v4,v1,lad508
+; v4 : Lcom/applovin/impl/adview/r; , v1 : Lcom/applovin/impl/adview/r;
+	invoke-direct	{v2,v3},com/applovin/impl/adview/AdViewControllerJsInterface/parsePercent	; parsePercent(Ljava/lang/String;)F
+; v2 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v3 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	iget	v0,v0,android/graphics/Point.y I
+; v0 : single-length , v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	mul-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	invoke-static	{v0},java/lang/Math/round	; round(F)I
+; v0 : single-length
+	move-result	v0
+; v0 : single-length
+	goto	lad4e4
+lad508:
+	const/4	v0,15
+; v0 : single-length
+	goto	lad4e4
+.end method
+
+.method private notifyOfNewTime()V
+.limit registers 4
+; this: v3 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	new-instance	v1,com/applovin/impl/adview/p
+; v1 : Lcom/applovin/impl/adview/p;
+	invoke-direct	{v1,v3},com/applovin/impl/adview/p/<init>	; <init>(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)V
+; v1 : Lcom/applovin/impl/adview/p; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	const-string	v2,"JSNotificationThread"
+; v2 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+; v0 : Ljava/lang/Thread; , v1 : Lcom/applovin/impl/adview/p; , v2 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+	return-void	
+.end method
+
+.method private parsePercent(Ljava/lang/String;)F
+.limit registers 4
+; this: v2 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	invoke-static	{v3},java/lang/Float/parseFloat	; parseFloat(Ljava/lang/String;)F
+; v3 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	const/high16	v1,17096
+; v1 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public debugMessage(Ljava/util/Map;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v5 (Ljava/util/Map;)
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v2,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v3,"Received JS debug message: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v0,"text"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v5,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v5 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v0},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public destroyVideoOverlay()V
+.limit registers 5
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+.catch java/lang/Exception from lad64c to lad64e using lad64a
+.catch java/lang/Exception from lad5e4 to lad628 using lad64a
+	const/4	v1,0
+; v1 : single-length
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v2,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	const-string	v3,"Asked to stop video if playing."
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.interruptNotify Z
+; v0 : single-length , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v2,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlayLock Ljava/lang/Object;
+; v2 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	monitor-enter	v2
+; v2 : Ljava/lang/Object;
+lad5e4:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad646
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getPlaybackState	; getPlaybackState()Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result-object	v0
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	sget-object	v3,com/applovin/impl/adview/AppLovinVideoPlaybackState.PLAYING Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v3 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v0,v3,lad60a
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v3 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/requestPause	; requestPause()V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+lad60a:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getVideoLayout	; getVideoLayout()Landroid/widget/RelativeLayout;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result-object	v0
+; v0 : Landroid/widget/RelativeLayout;
+	iget-object	v3,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v3 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v3},com/applovin/impl/adview/AppLovinVideoOverlay/stopUnderlyingMediaPlayer	; stopUnderlyingMediaPlayer()V
+; v3 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	const/4	v3,0
+; v3 : single-length
+	iput-object	v3,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v3 : single-length , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+lad626:
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+lad628:
+	iput-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.currentAd Lcom/applovin/sdk/AppLovinAd;
+; v1 : single-length , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad644
+; v0 : single-length
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v1 : Landroid/app/Activity; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	new-instance	v2,com/applovin/impl/adview/n
+; v2 : Lcom/applovin/impl/adview/n;
+	invoke-direct	{v2,v4,v0},com/applovin/impl/adview/n/<init>	; <init>(Lcom/applovin/impl/adview/AdViewControllerJsInterface;Landroid/view/View;)V
+; v2 : Lcom/applovin/impl/adview/n; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : single-length
+	invoke-virtual	{v1,v2},android/app/Activity/runOnUiThread	; runOnUiThread(Ljava/lang/Runnable;)V
+; v1 : Landroid/app/Activity; , v2 : Lcom/applovin/impl/adview/n;
+lad644:
+	return-void	
+lad646:
+	move-object	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	lad626
+lad64a:
+	move-exception	v0
+; v0 : java/lang/Exception
+lad64c:
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+lad64e:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public executeJS(Ljava/lang/String;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v5 (Ljava/lang/String;)
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.adWebView Lcom/applovin/impl/adview/v;
+; v0 : Lcom/applovin/impl/adview/v; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"javascript:"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},com/applovin/impl/adview/v/loadUrl	; loadUrl(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/adview/v; , v1 : Ljava/lang/String;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Invoking JS on WebView: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public getPercentViewed()I
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,lad6f8
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	const/4	v0,0
+; v0 : single-length
+lad6f6:
+	return	v0
+; v0 : single-length
+lad6f8:
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getPercentViewed	; getPercentViewed()I
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result	v0
+; v0 : single-length
+	goto	lad6f6
+.end method
+
+.method public getPlaybackDuration()I
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad72e
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getDuration	; getDuration()I
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result	v0
+; v0 : single-length
+lad72c:
+	return	v0
+; v0 : single-length
+lad72e:
+	iget	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.lastKnownDuration I
+; v0 : single-length , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	goto	lad72c
+.end method
+
+.method public getPlaybackTime()I
+.limit registers 2
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,lad750
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	const/4	v0,0
+; v0 : single-length
+lad74e:
+	return	v0
+; v0 : single-length
+lad750:
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getPlaybackTime	; getPlaybackTime()I
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result	v0
+; v0 : single-length
+	goto	lad74e
+.end method
+
+.method public handleCommandInvocation(Ljava/lang/String;Ljava/util/Map;)V
+.limit registers 8
+; this: v5 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v6 (Ljava/lang/String;)
+; parameter[1] : v7 (Ljava/util/Map;)
+.catch java/lang/Exception from lad7c0 to lad7f2 using lad7f4
+	iget-object	v0,v5,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Asked to invoke "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3," with parameters: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/Object/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/util/Map;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+lad7c0:
+	invoke-virtual	{v5},java/lang/Object/getClass	; getClass()Ljava/lang/Class;
+; v5 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	move-result-object	v0
+; v0 : Ljava/lang/Class;
+	const/4	v1,1
+; v1 : single-length
+	new-array	v1,v1,[Ljava/lang/Class;
+; v1 : [Ljava/lang/Class; , v1 : [Ljava/lang/Class;
+	const/4	v2,0
+; v2 : single-length
+	const-class	v3,java/util/Map
+; v3 : Ljava/lang/Class;
+	aput-object	v3,v1,v2
+; v3 : Ljava/lang/Class; , v1 : [Ljava/lang/Class; , v2 : single-length
+	invoke-virtual	{v0,v6,v1},java/lang/Class/getDeclaredMethod	; getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+; v0 : Ljava/lang/Class; , v6 : Ljava/lang/String; , v1 : [Ljava/lang/Class;
+	move-result-object	v0
+; v0 : Ljava/lang/reflect/Method;
+	const/4	v1,1
+; v1 : single-length
+	new-array	v1,v1,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v1 : [Ljava/lang/Object;
+	const/4	v2,0
+; v2 : single-length
+	aput-object	v7,v1,v2
+; v7 : Ljava/util/Map; , v1 : [Ljava/lang/Object; , v2 : single-length
+	invoke-virtual	{v0,v5,v1},java/lang/reflect/Method/invoke	; invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/lang/reflect/Method; , v5 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v1 : [Ljava/lang/Object;
+lad7f2:
+	return-void	
+lad7f4:
+	move-exception	v0
+; v0 : java/lang/Exception
+	iget-object	v1,v5,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v5 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v2,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Unable to invoke method: "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	lad7f2
+.end method
+
+.method public notifyJavaScriptOfNewState(Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v5 (Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;)
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	sget-object	v1,com/applovin/impl/adview/AppLovinVideoPlaybackState.PLAYING Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v5,v1,lad85c
+; v5 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	const-string	v0,"play"
+; v0 : Ljava/lang/String;
+lad85c:
+	sget-object	v1,com/applovin/impl/adview/AppLovinVideoPlaybackState.PAUSED Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v5,v1,lad868
+; v5 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	const-string	v0,"pause"
+; v0 : Ljava/lang/String;
+lad868:
+	sget-object	v1,com/applovin/impl/adview/AppLovinVideoPlaybackState.STOPPED Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v5,v1,lad874
+; v5 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	const-string	v0,"stop"
+; v0 : Ljava/lang/String;
+lad874:
+	sget-object	v1,com/applovin/impl/adview/AppLovinVideoPlaybackState.FAILED Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v5,v1,lad880
+; v5 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v1 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	const-string	v0,"fail"
+; v0 : Ljava/lang/String;
+lad880:
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v1,lad900
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v1},com/applovin/impl/adview/AppLovinVideoOverlay/getPercentViewed	; getPercentViewed()I
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result	v1
+; v1 : single-length
+	int-to-float	v1,v1
+; v1 : single-length , v1 : single-length
+	invoke-static	{v1},java/lang/Math/round	; round(F)I
+; v1 : single-length
+	move-result	v1
+; v1 : single-length
+lad89e:
+	sget-object	v2,com/applovin/impl/adview/AppLovinVideoPlaybackState.STOPPED Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+; v2 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	if-ne	v5,v2,lad8b2
+; v5 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState; , v2 : Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;
+	const/16	v2,98
+; v2 : single-length
+	if-ge	v1,v2,lad8b2
+; v1 : single-length , v2 : single-length
+	const/16	v1,100
+; v1 : single-length
+lad8b2:
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"onPlaybackChanged('"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"','"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"')"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},com/applovin/impl/adview/AdViewControllerJsInterface/executeJS	; executeJS(Ljava/lang/String;)V
+; v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/lang/String;
+	return-void	
+lad900:
+	const/4	v1,0
+; v1 : single-length
+	goto	lad89e
+.end method
+
+.method public pauseVideo(Ljava/util/Map;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v5 (Ljava/util/Map;)
+.catch java/lang/Exception from lad91a to lad948 using lad944
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlayLock Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lad91a:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad930
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/requestPause	; requestPause()V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+lad92c:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lad930:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v2,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	const-string	v3,"Template issue: pauseVideo called before renderVideo."
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	goto	lad92c
+lad944:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lad948:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public ping(Ljava/util/Map;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v4 (Ljava/util/Map;)
+	iget-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"Received ping request, invoking JS function ping(...)"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	const-string	v0,"ping('Android SDK '5.2.2)"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},com/applovin/impl/adview/AdViewControllerJsInterface/executeJS	; executeJS(Ljava/lang/String;)V
+; v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public playVideo(Ljava/util/Map;)V
+.limit registers 6
+; this: v4 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v5 (Ljava/util/Map;)
+.catch java/lang/Exception from lad9e0 to lad9f2 using lad9da
+.catch java/lang/Exception from lad99e to lad9de using lad9da
+	iget-object	v1,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlayLock Ljava/lang/Object;
+; v1 : Ljava/lang/Object; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lad99e:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad9b4
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/requestPlay	; requestPlay()V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+lad9b0:
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	return-void	
+lad9b4:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,lad9e0
+; v0 : Ljava/util/Map;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	const-string	v2,"autoplay"
+; v2 : Ljava/lang/String;
+	const-string	v3,"true"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-virtual	{v4,v0},com/applovin/impl/adview/AdViewControllerJsInterface/renderVideo	; renderVideo(Ljava/util/Map;)V
+; v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/util/Map;
+	goto	lad9b0
+lad9da:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lad9de:
+	throw	v0
+; v0 : java/lang/Exception
+lad9e0:
+	iget-object	v0,v4,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v4 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v2,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	const-string	v3,"Template issue: playVideo called before renderVideo."
+; v3 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v3},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+lad9f2:
+	goto	lad9b0
+.end method
+
+.method public renderVideo(Ljava/util/Map;)V
+.limit registers 13
+; this: v11 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v12 (Ljava/util/Map;)
+.catch java/lang/Exception from ladbd2 to ladbd4 using ladbd0
+.catch java/lang/Exception from ladab8 to ladbba using ladbd0
+	const/4	v1,0
+; v1 : single-length
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,lada26
+; v0 : Ljava/util/Map;
+	iput-object	v12,v11,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v12 : Ljava/util/Map; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+lada26:
+	iput-boolean	v1,v11,com/applovin/impl/adview/AdViewControllerJsInterface.interruptNotify Z
+; v1 : single-length , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	const-string	v0,"widthp"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v12,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v12 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	sget-object	v1,com/applovin/impl/adview/r.a Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	invoke-direct	{v11,v0,v1},com/applovin/impl/adview/AdViewControllerJsInterface/calculateDimension	; calculateDimension(Ljava/lang/String;Lcom/applovin/impl/adview/r;)I
+; v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/lang/String; , v1 : Lcom/applovin/impl/adview/r;
+	move-result	v3
+; v3 : single-length
+	const-string	v0,"heightp"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v12,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v12 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	sget-object	v1,com/applovin/impl/adview/r.b Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	invoke-direct	{v11,v0,v1},com/applovin/impl/adview/AdViewControllerJsInterface/calculateDimension	; calculateDimension(Ljava/lang/String;Lcom/applovin/impl/adview/r;)I
+; v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/lang/String; , v1 : Lcom/applovin/impl/adview/r;
+	move-result	v4
+; v4 : single-length
+	const-string	v0,"autoplay"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v12,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v12 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Boolean/valueOf	; valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+; v0 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : Ljava/lang/Boolean;
+	const-string	v0,"x"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v12,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v12 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	const-string	v0,"y"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v12,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v12 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v0 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoFilename Ljava/lang/String;
+; v0 : Ljava/lang/String; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-eqz	v0,ladbd6
+; v0 : Ljava/lang/String;
+	iget-object	v10,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlayLock Ljava/lang/Object;
+; v10 : Ljava/lang/Object; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	monitor-enter	v10
+; v10 : Ljava/lang/Object;
+ladab8:
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,ladba8
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoFilename Ljava/lang/String;
+; v0 : Ljava/lang/String; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v5,v11,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v5 : Landroid/app/Activity; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-static	{v0,v5},com/applovin/impl/sdk/bg/a	; a(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
+; v0 : Ljava/lang/String; , v5 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Ljava/io/File;
+	iget-object	v5,v11,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v5 : Lcom/applovin/sdk/AppLovinLogger; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v6,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v6 : Ljava/lang/String;
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},java/lang/StringBuilder/<init>	; <init>()V
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"Rending video from "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v0 : Ljava/io/File;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8," at ("
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,","
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v2},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v2 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"), "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"x"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v4},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v4 : single-length
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8," autoplay is "
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7,v9},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v9 : Ljava/lang/Boolean;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-interface	{v5,v6,v7},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v5 : Lcom/applovin/sdk/AppLovinLogger; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	invoke-static	{v0},android/net/Uri/fromFile	; fromFile(Ljava/io/File;)Landroid/net/Uri;
+; v0 : Ljava/io/File;
+	move-result-object	v6
+; v6 : Landroid/net/Uri;
+	new-instance	v8,com/applovin/impl/adview/o
+; v8 : Lcom/applovin/impl/adview/o;
+	invoke-direct	{v8,v11},com/applovin/impl/adview/o/<init>	; <init>(Lcom/applovin/impl/adview/AdViewControllerJsInterface;)V
+; v8 : Lcom/applovin/impl/adview/o; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	new-instance	v0,com/applovin/impl/adview/AppLovinVideoOverlayImpl
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlayImpl;
+	iget-object	v5,v11,com/applovin/impl/adview/AdViewControllerJsInterface.parentActivity Landroid/app/Activity;
+; v5 : Landroid/app/Activity; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v7,v11,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v7 : Lcom/applovin/sdk/AppLovinLogger; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-direct/range	{v0..v8},com/applovin/impl/adview/AppLovinVideoOverlayImpl/<init>;	<init>(IIIILandroid/app/Activity;Landroid/net/Uri;Lcom/applovin/sdk/AppLovinLogger;Lcom/applovin/impl/adview/AppLovinVideoCallback;)V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlayImpl; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : single-length , v5 : Landroid/app/Activity; , v6 : Landroid/net/Uri; , v7 : Lcom/applovin/sdk/AppLovinLogger; , v8 : Lcom/applovin/impl/adview/o;
+	iput-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlayImpl; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.parentView Landroid/view/ViewGroup;
+; v0 : Landroid/view/ViewGroup; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	iget-object	v1,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v1},com/applovin/impl/adview/AppLovinVideoOverlay/getVideoLayout	; getVideoLayout()Landroid/widget/RelativeLayout;
+; v1 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result-object	v1
+; v1 : Landroid/widget/RelativeLayout;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},android/view/ViewGroup/addView	; addView(Landroid/view/View;I)V
+; v0 : Landroid/view/ViewGroup; , v1 : Landroid/widget/RelativeLayout; , v2 : single-length
+ladba8:
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0},com/applovin/impl/adview/AppLovinVideoOverlay/getDuration	; getDuration()I
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.lastKnownDuration I
+; v0 : single-length , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	monitor-exit	v10
+; v10 : Ljava/lang/Object;
+ladbba:
+	invoke-virtual	{v9},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v9 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,ladbce
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v11,v0},com/applovin/impl/adview/AdViewControllerJsInterface/playVideo	; playVideo(Ljava/util/Map;)V
+; v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : single-length
+ladbce:
+	return-void	
+ladbd0:
+	move-exception	v0
+; v0 : java/lang/Exception
+ladbd2:
+	monitor-exit	v10
+; v10 : Ljava/lang/Object;
+ladbd4:
+	throw	v0
+; v0 : java/lang/Exception
+ladbd6:
+	iget-object	v0,v11,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v11 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"renderVideo called before video filename was set"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	goto	ladbce
+.end method
+
+.method public setAdVideoPlaybackListener(Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v1 (Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;)
+	iput-object	v1,v0,com/applovin/impl/adview/AdViewControllerJsInterface.adVideoPlaybackListener Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener;
+; v1 : Lcom/applovin/sdk/AppLovinAdVideoPlaybackListener; , v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-void	
+.end method
+
+.method public setCloseButtonHidden(Ljava/util/Map;)V
+.limit registers 5
+; this: v3 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v4 (Ljava/util/Map;)
+	iget-object	v0,v3,com/applovin/impl/adview/AdViewControllerJsInterface.logger Lcom/applovin/sdk/AppLovinLogger;
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v3 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	sget-object	v1,com/applovin/impl/adview/AdViewControllerJsInterface.TAG Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	const-string	v2,"Ignoring a call to setCloseButtonHidden."
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/applovin/sdk/AppLovinLogger/d	; d(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public setPercentViewed(I)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v2 (I)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,ladc5e
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-virtual	{v1,v0},com/applovin/impl/adview/AdViewControllerJsInterface/renderVideo	; renderVideo(Ljava/util/Map;)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/util/Map;
+ladc5e:
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0,v2},com/applovin/impl/adview/AppLovinVideoOverlay/setPercentViewed	; setPercentViewed(I)V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v2 : single-length
+	invoke-direct	{v1},com/applovin/impl/adview/AdViewControllerJsInterface/notifyOfNewTime	; notifyOfNewTime()V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-void	
+.end method
+
+.method public setPlaybackPercent(Ljava/util/Map;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v2 (Ljava/util/Map;)
+	const-string	v0,"percent"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v2,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v1,v0},com/applovin/impl/adview/AdViewControllerJsInterface/setPercentViewed	; setPercentViewed(I)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : single-length
+	return-void	
+.end method
+
+.method public setPlaybackTime(I)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v2 (I)
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	if-nez	v0,ladcc2
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.lastParameters Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-virtual	{v1,v0},com/applovin/impl/adview/AdViewControllerJsInterface/renderVideo	; renderVideo(Ljava/util/Map;)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : Ljava/util/Map;
+ladcc2:
+	iget-object	v0,v1,com/applovin/impl/adview/AdViewControllerJsInterface.videoOverlay Lcom/applovin/impl/adview/AppLovinVideoOverlay;
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	invoke-interface	{v0,v2},com/applovin/impl/adview/AppLovinVideoOverlay/setPlaybackTime	; setPlaybackTime(I)V
+; v0 : Lcom/applovin/impl/adview/AppLovinVideoOverlay; , v2 : single-length
+	invoke-direct	{v1},com/applovin/impl/adview/AdViewControllerJsInterface/notifyOfNewTime	; notifyOfNewTime()V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-void	
+.end method
+
+.method public setPlaybackTime(Ljava/util/Map;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v2 (Ljava/util/Map;)
+	const-string	v0,"seconds"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v2,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v1,v0},com/applovin/impl/adview/AdViewControllerJsInterface/setPlaybackTime	; setPlaybackTime(I)V
+; v1 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v0 : single-length
+	return-void	
+.end method
+
+.method public setVideoFilename(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v1 (Ljava/lang/String;)
+	iput-object	v1,v0,com/applovin/impl/adview/AdViewControllerJsInterface.videoFilename Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface;
+	return-void	
+.end method
+
+.method public stopVideo(Ljava/util/Map;)V
+.limit registers 2
+; this: v0 (Lcom/applovin/impl/adview/AdViewControllerJsInterface;)
+; parameter[0] : v1 (Ljava/util/Map;)
+	invoke-virtual	{v0,v1},com/applovin/impl/adview/AdViewControllerJsInterface/pauseVideo	; pauseVideo(Ljava/util/Map;)V
+; v0 : Lcom/applovin/impl/adview/AdViewControllerJsInterface; , v1 : Ljava/util/Map;
+	return-void	
+.end method
+
+

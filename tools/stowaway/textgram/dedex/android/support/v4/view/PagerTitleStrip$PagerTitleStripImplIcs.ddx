@@ -1,0 +1,28 @@
+.class android/support/v4/view/PagerTitleStrip$PagerTitleStripImplIcs
+.super java/lang/Object
+.source PagerTitleStrip.java
+.implements android/support/v4/view/PagerTitleStrip$PagerTitleStripImpl
+
+.inner class PagerTitleStripImplIcs inner android/support/v4/view/PagerTitleStrip$PagerTitleStripImplIcs outer android/support/v4/view/PagerTitleStrip
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/PagerTitleStrip$PagerTitleStripImplIcs;)
+.line 92
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/PagerTitleStrip$PagerTitleStripImplIcs;
+	return-void	
+.end method
+
+.method public setSingleLineAllCaps(Landroid/widget/TextView;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/view/PagerTitleStrip$PagerTitleStripImplIcs;)
+; parameter[0] : v1 (Landroid/widget/TextView;)
+.line 94
+	invoke-static	{v1},android/support/v4/view/PagerTitleStripIcs/setSingleLineAllCaps	; setSingleLineAllCaps(Landroid/widget/TextView;)V
+; v1 : Landroid/widget/TextView;
+.line 95
+	return-void	
+.end method
+
+

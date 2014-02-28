@@ -1,0 +1,40 @@
+.class public abstract android/support/v4/widget/SearchViewCompat$OnCloseListenerCompat
+.super java/lang/Object
+.source SearchViewCompat.java
+
+.inner class OnCloseListenerCompat inner android/support/v4/widget/SearchViewCompat$OnCloseListenerCompat outer android/support/v4/widget/SearchViewCompat
+.field final mListener Ljava/lang/Object;
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)
+.line 385
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;
+.line 386
+	invoke-static	{},android/support/v4/widget/SearchViewCompat/access$000	; access$000()Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatImpl;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatImpl;
+	invoke-interface	{v0,v1},android/support/v4/widget/SearchViewCompat$SearchViewCompatImpl/newOnCloseListener	; newOnCloseListener(Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)Ljava/lang/Object;
+; v0 : Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatImpl; , v1 : Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	iput-object	v0,v1,android/support/v4/widget/SearchViewCompat$OnCloseListenerCompat.mListener Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v1 : Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;
+.line 387
+	return-void	
+.end method
+
+.method public onClose()Z
+.limit registers 2
+; this: v1 (Landroid/support/v4/widget/SearchViewCompat$OnCloseListenerCompat;)
+.line 396
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

@@ -1,0 +1,13 @@
+<template>
+<title>Glass Urban</title>
+<textcolor>#000738</textcolor>
+<text_shadow>#FFFFFF</text_shadow>
+<textsize>60</textsize>
+<padding_top>53</padding_top>
+<padding_bottom>32</padding_bottom>
+<padding_right>32</padding_right>
+<padding_left>32</padding_left>
+<background>[assets]/backgrounds/38.jpg</background>
+<font>[assets]/fonts/sing.ttf</font>
+<author></author>
+</template>

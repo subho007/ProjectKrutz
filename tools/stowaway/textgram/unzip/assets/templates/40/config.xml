@@ -1,0 +1,12 @@
+<template>
+<title>40</title>
+<textcolor>#ffde00</textcolor>
+<textsize>45</textsize>
+<padding_top>25</padding_top>
+<padding_bottom>117</padding_bottom>
+<padding_right>20</padding_right>
+<padding_left>20</padding_left>
+<background>[assets]/backgrounds/40.jpg</background>
+<font>[assets]/fonts/spray.ttf</font>
+<author></author>
+</template>

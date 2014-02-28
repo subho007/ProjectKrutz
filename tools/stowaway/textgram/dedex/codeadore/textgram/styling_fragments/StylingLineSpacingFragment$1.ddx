@@ -1,0 +1,71 @@
+.class codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1
+.super java/lang/Object
+.source StylingLineSpacingFragment.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/onActivityCreated(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment;
+.field private final val$sb Landroid/widget/SeekBar;
+.field private final val$tv Landroid/widget/TextView;
+
+.method <init>(Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment;Landroid/widget/SeekBar;Landroid/widget/TextView;)V
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment;)
+; parameter[1] : v2 (Landroid/widget/SeekBar;)
+; parameter[2] : v3 (Landroid/widget/TextView;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1.this$0 Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment;
+; v1 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment; , v0 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+	iput-object	v2,v0,codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1.val$sb Landroid/widget/SeekBar;
+; v2 : Landroid/widget/SeekBar; , v0 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+	iput-object	v3,v0,codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1.val$tv Landroid/widget/TextView;
+; v3 : Landroid/widget/TextView; , v0 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+.line 44
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 3
+; this: v2 (Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;)
+.line 48
+	iget-object	v0,v2,codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1.val$sb Landroid/widget/SeekBar;
+; v0 : Landroid/widget/SeekBar; , v2 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+	sget-object	v1,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v1 : Lcodeadore/textgram/SuperSurface;
+.line 49
+	invoke-virtual	{v1},codeadore/textgram/SuperSurface/getCurrentTextItem	; getCurrentTextItem()Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v1
+; v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	iget	v1,v1,codeadore/textgram/SuperSurfaceItem.lineSpacing I
+; v1 : single-length , v1 : single-length
+.line 48
+	invoke-virtual	{v0,v1},android/widget/SeekBar/setProgress	; setProgress(I)V
+; v0 : Landroid/widget/SeekBar; , v1 : single-length
+.line 50
+	iget-object	v0,v2,codeadore/textgram/styling_fragments/StylingLineSpacingFragment$1.val$tv Landroid/widget/TextView;
+; v0 : Landroid/widget/TextView; , v2 : Lcodeadore/textgram/styling_fragments/StylingLineSpacingFragment$1;
+	sget-object	v1,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v1 : Lcodeadore/textgram/SuperSurface;
+.line 51
+	invoke-virtual	{v1},codeadore/textgram/SuperSurface/getCurrentTextItem	; getCurrentTextItem()Lcodeadore/textgram/SuperSurfaceItem;
+; v1 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v1
+; v1 : Lcodeadore/textgram/SuperSurfaceItem;
+	iget	v1,v1,codeadore/textgram/SuperSurfaceItem.lineSpacing I
+; v1 : single-length , v1 : single-length
+.line 50
+	invoke-static	{v1},java/lang/String/valueOf	; valueOf(I)Ljava/lang/String;
+; v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v0 : Landroid/widget/TextView; , v1 : Ljava/lang/String;
+.line 52
+	return-void	
+.end method
+
+

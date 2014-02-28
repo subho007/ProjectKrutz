@@ -1,0 +1,4101 @@
+.class public com/google/ads/internal/d
+.super java/lang/Object
+.source SourceFile
+
+.field private static final a Ljava/lang/Object;
+.field private A Ljava/lang/String;
+.field private B Ljava/lang/String;
+.field private final b Lcom/google/ads/n;
+.field private c Lcom/google/ads/internal/c;
+.field private d Lcom/google/ads/AdRequest;
+.field private e Lcom/google/ads/internal/g;
+.field private f Lcom/google/ads/internal/AdWebView;
+.field private g Lcom/google/ads/internal/i;
+.field private h Z
+.field private i J
+.field private j Z
+.field private k Z
+.field private l Z
+.field private m Z
+.field private n Z
+.field private o Landroid/content/SharedPreferences;
+.field private p J
+.field private q Lcom/google/ads/af;
+.field private r Z
+.field private s Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private t Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private u Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private v I
+.field private w Ljava/lang/Boolean;
+.field private x Lcom/google/ads/d;
+.field private y Lcom/google/ads/e;
+.field private z Lcom/google/ads/f;
+
+.method static <clinit>()V
+.limit registers 1
+.line 100
+	new-instance	v0,java/lang/Object
+; v0 : Ljava/lang/Object;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ljava/lang/Object;
+	sput-object	v0,com/google/ads/internal/d.a Ljava/lang/Object;
+; v0 : Ljava/lang/Object;
+	return-void	
+.end method
+
+.method public <init>(Lcom/google/ads/Ad;Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;Landroid/view/ViewGroup;Z)V
+.limit registers 19
+; this: v12 (Lcom/google/ads/internal/d;)
+; parameter[0] : v13 (Lcom/google/ads/Ad;)
+; parameter[1] : v14 (Landroid/app/Activity;)
+; parameter[2] : v15 (Lcom/google/ads/AdSize;)
+; parameter[3] : v16 (Ljava/lang/String;)
+; parameter[4] : v17 (Landroid/view/ViewGroup;)
+; parameter[5] : v18 (Z)
+.catch java/lang/Exception from lbe39a to lbe39e using lbe38e
+.catch java/lang/Exception from lbe388 to lbe392 using lbe38e
+.catch java/lang/Exception from lbe24a to lbe2b8 using lbe38e
+.line 211
+	invoke-direct	{v12},java/lang/Object/<init>	; <init>()V
+; v12 : Lcom/google/ads/internal/d;
+.line 126
+	const/4	v1,0
+; v1 : single-length
+	iput-boolean	v1,v12,com/google/ads/internal/d.h Z
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 168
+	const/4	v1,15
+; v1 : single-length
+	iput	v1,v12,com/google/ads/internal/d.v I
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 357
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.A Ljava/lang/String;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 358
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.B Ljava/lang/String;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 212
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	iput-boolean	v0,v12,com/google/ads/internal/d.r Z
+; v0 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 215
+	new-instance	v1,com/google/ads/internal/g
+; v1 : Lcom/google/ads/internal/g;
+	invoke-direct	{v1},com/google/ads/internal/g/<init>	; <init>()V
+; v1 : Lcom/google/ads/internal/g;
+	iput-object	v1,v12,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v1 : Lcom/google/ads/internal/g; , v12 : Lcom/google/ads/internal/d;
+.line 219
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 222
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.d Lcom/google/ads/AdRequest;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 226
+	const/4	v1,0
+; v1 : single-length
+	iput-boolean	v1,v12,com/google/ads/internal/d.k Z
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 230
+	const-wide/32	v1,60000	; 0xea60
+; v1 : double-length
+	iput-wide	v1,v12,com/google/ads/internal/d.p J
+; v1 : double-length , v12 : Lcom/google/ads/internal/d;
+.line 231
+	const/4	v1,0
+; v1 : single-length
+	iput-boolean	v1,v12,com/google/ads/internal/d.l Z
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 232
+	const/4	v1,0
+; v1 : single-length
+	iput-boolean	v1,v12,com/google/ads/internal/d.n Z
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 233
+	const/4	v1,1
+; v1 : single-length
+	iput-boolean	v1,v12,com/google/ads/internal/d.m Z
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 234
+	if-nez	v15,lbe22a
+; v15 : Lcom/google/ads/AdSize;
+	sget-object	v10,com/google/ads/internal/h.a Lcom/google/ads/internal/h;
+; v10 : Lcom/google/ads/internal/h;
+lbe1ce:
+.line 237
+	instance-of	v1,v13,com/google/ads/doubleclick/SwipeableDfpAdView
+; v1 : single-length , v13 : Lcom/google/ads/Ad;
+	if-eqz	v1,lbe1de
+; v1 : single-length
+.line 238
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v10,v1},com/google/ads/internal/h/a	; a(Z)V
+; v10 : Lcom/google/ads/internal/h; , v1 : single-length
+lbe1de:
+.line 241
+	if-nez	v14,lbe244
+; v14 : Landroid/app/Activity;
+.line 244
+	new-instance	v1,com/google/ads/n
+; v1 : Lcom/google/ads/n;
+	invoke-static	{},com/google/ads/m/a	; a()Lcom/google/ads/m;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Lcom/google/ads/m;
+	instance-of	v3,v13,com/google/ads/AdView
+; v3 : single-length , v13 : Lcom/google/ads/Ad;
+	if-eqz	v3,lbe23c
+; v3 : single-length
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	check-cast	v3,com/google/ads/AdView
+; v3 : Lcom/google/ads/AdView;
+	move-object	v4,v3
+; v4 : Lcom/google/ads/AdView; , v3 : Lcom/google/ads/AdView;
+lbe1fe:
+	instance-of	v3,v13,com/google/ads/InterstitialAd
+; v3 : single-length , v13 : Lcom/google/ads/Ad;
+	if-eqz	v3,lbe240
+; v3 : single-length
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	check-cast	v3,com/google/ads/InterstitialAd
+; v3 : Lcom/google/ads/InterstitialAd;
+	move-object	v5,v3
+; v5 : Lcom/google/ads/InterstitialAd; , v3 : Lcom/google/ads/InterstitialAd;
+lbe20e:
+	const/4	v7,0
+; v7 : single-length
+	const/4	v8,0
+; v8 : single-length
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	move-object/from16	v6,v16
+; v6 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	move-object/from16	v9,v17
+; v9 : Landroid/view/ViewGroup; , v17 : Landroid/view/ViewGroup;
+	move-object	v11,v12
+; v11 : Lcom/google/ads/internal/d; , v12 : Lcom/google/ads/internal/d;
+	invoke-direct/range	{v1..v11},com/google/ads/n/<init>;	<init>(Lcom/google/ads/m;Lcom/google/ads/Ad;Lcom/google/ads/AdView;Lcom/google/ads/InterstitialAd;Ljava/lang/String;Landroid/app/Activity;Landroid/content/Context;Landroid/view/ViewGroup;Lcom/google/ads/internal/h;Lcom/google/ads/internal/d;)V
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/m; , v3 : Lcom/google/ads/Ad; , v4 : Lcom/google/ads/AdView; , v5 : Lcom/google/ads/InterstitialAd; , v6 : Ljava/lang/String; , v7 : single-length , v8 : single-length , v9 : Landroid/view/ViewGroup; , v10 : Lcom/google/ads/internal/h; , v11 : Lcom/google/ads/internal/d;
+	iput-object	v1,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+lbe228:
+.line 310
+	return-void	
+lbe22a:
+.line 234
+	invoke-virtual	{v14},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v14 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-static	{v15,v1},com/google/ads/internal/h/a	; a(Lcom/google/ads/AdSize;Landroid/content/Context;)Lcom/google/ads/internal/h;
+; v15 : Lcom/google/ads/AdSize; , v1 : Landroid/content/Context;
+	move-result-object	v10
+; v10 : Lcom/google/ads/internal/h;
+	goto	lbe1ce
+lbe23c:
+.line 244
+	const/4	v4,0
+; v4 : single-length
+	goto	lbe1fe
+lbe240:
+	const/4	v5,0
+; v5 : single-length
+	goto	lbe20e
+lbe244:
+.line 259
+	sget-object	v2,com/google/ads/internal/d.a Ljava/lang/Object;
+; v2 : Ljava/lang/Object;
+	monitor-enter	v2
+; v2 : Ljava/lang/Object;
+lbe24a:
+.line 260
+	invoke-virtual	{v14},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v14 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	const-string	v3,"GoogleAdMobAdsPrefs"
+; v3 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v1,v3,v4},android/content/Context/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v1 : Landroid/content/Context; , v3 : Ljava/lang/String; , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences;
+	iput-object	v1,v12,com/google/ads/internal/d.o Landroid/content/SharedPreferences;
+; v1 : Landroid/content/SharedPreferences; , v12 : Lcom/google/ads/internal/d;
+.line 262
+	if-eqz	v18,lbe394
+; v18 : single-length
+.line 263
+	iget-object	v1,v12,com/google/ads/internal/d.o Landroid/content/SharedPreferences;
+; v1 : Landroid/content/SharedPreferences; , v12 : Lcom/google/ads/internal/d;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Timeout"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	const-wide/16	v4,65535
+; v4 : double-length
+	invoke-interface	{v1,v3,v4,v5},android/content/SharedPreferences/getLong	; getLong(Ljava/lang/String;J)J
+; v1 : Landroid/content/SharedPreferences; , v3 : Ljava/lang/String; , v4 : double-length
+	move-result-wide	v3
+; v3 : double-length
+.line 264
+	const-wide/16	v5,0
+; v5 : double-length
+	cmp-long	v1,v3,v5
+; v1 : single-length , v3 : double-length , v5 : double-length
+	if-gez	v1,lbe388
+; v1 : single-length
+.line 266
+	const-wide/16	v3,5000
+; v3 : double-length
+	iput-wide	v3,v12,com/google/ads/internal/d.i J
+; v3 : double-length , v12 : Lcom/google/ads/internal/d;
+lbe2b6:
+.line 274
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+lbe2b8:
+.line 276
+	new-instance	v1,com/google/ads/n
+; v1 : Lcom/google/ads/n;
+	invoke-static	{},com/google/ads/m/a	; a()Lcom/google/ads/m;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Lcom/google/ads/m;
+	instance-of	v3,v13,com/google/ads/AdView
+; v3 : single-length , v13 : Lcom/google/ads/Ad;
+	if-eqz	v3,lbe3a0
+; v3 : single-length
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	check-cast	v3,com/google/ads/AdView
+; v3 : Lcom/google/ads/AdView;
+	move-object	v4,v3
+; v4 : Lcom/google/ads/AdView; , v3 : Lcom/google/ads/AdView;
+lbe2d4:
+	instance-of	v3,v13,com/google/ads/InterstitialAd
+; v3 : single-length , v13 : Lcom/google/ads/Ad;
+	if-eqz	v3,lbe3a4
+; v3 : single-length
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	check-cast	v3,com/google/ads/InterstitialAd
+; v3 : Lcom/google/ads/InterstitialAd;
+	move-object	v5,v3
+; v5 : Lcom/google/ads/InterstitialAd; , v3 : Lcom/google/ads/InterstitialAd;
+lbe2e4:
+	invoke-virtual	{v14},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v14 : Landroid/app/Activity;
+	move-result-object	v8
+; v8 : Landroid/content/Context;
+	move-object	v3,v13
+; v3 : Lcom/google/ads/Ad; , v13 : Lcom/google/ads/Ad;
+	move-object/from16	v6,v16
+; v6 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	move-object	v7,v14
+; v7 : Landroid/app/Activity; , v14 : Landroid/app/Activity;
+	move-object/from16	v9,v17
+; v9 : Landroid/view/ViewGroup; , v17 : Landroid/view/ViewGroup;
+	move-object	v11,v12
+; v11 : Lcom/google/ads/internal/d; , v12 : Lcom/google/ads/internal/d;
+	invoke-direct/range	{v1..v11},com/google/ads/n/<init>;	<init>(Lcom/google/ads/m;Lcom/google/ads/Ad;Lcom/google/ads/AdView;Lcom/google/ads/InterstitialAd;Ljava/lang/String;Landroid/app/Activity;Landroid/content/Context;Landroid/view/ViewGroup;Lcom/google/ads/internal/h;Lcom/google/ads/internal/d;)V
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/m; , v3 : Lcom/google/ads/Ad; , v4 : Lcom/google/ads/AdView; , v5 : Lcom/google/ads/InterstitialAd; , v6 : Ljava/lang/String; , v7 : Landroid/app/Activity; , v8 : Landroid/content/Context; , v9 : Landroid/view/ViewGroup; , v10 : Lcom/google/ads/internal/h; , v11 : Lcom/google/ads/internal/d;
+	iput-object	v1,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+.line 289
+	new-instance	v1,com/google/ads/af
+; v1 : Lcom/google/ads/af;
+	invoke-direct	{v1,v12},com/google/ads/af/<init>	; <init>(Lcom/google/ads/internal/d;)V
+; v1 : Lcom/google/ads/af; , v12 : Lcom/google/ads/internal/d;
+	iput-object	v1,v12,com/google/ads/internal/d.q Lcom/google/ads/af;
+; v1 : Lcom/google/ads/af; , v12 : Lcom/google/ads/internal/d;
+.line 292
+	new-instance	v1,java/util/LinkedList
+; v1 : Ljava/util/LinkedList;
+	invoke-direct	{v1},java/util/LinkedList/<init>	; <init>()V
+; v1 : Ljava/util/LinkedList;
+	iput-object	v1,v12,com/google/ads/internal/d.s Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v12 : Lcom/google/ads/internal/d;
+.line 295
+	new-instance	v1,java/util/LinkedList
+; v1 : Ljava/util/LinkedList;
+	invoke-direct	{v1},java/util/LinkedList/<init>	; <init>()V
+; v1 : Ljava/util/LinkedList;
+	iput-object	v1,v12,com/google/ads/internal/d.t Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v12 : Lcom/google/ads/internal/d;
+.line 298
+	new-instance	v1,java/util/LinkedList
+; v1 : Ljava/util/LinkedList;
+	invoke-direct	{v1},java/util/LinkedList/<init>	; <init>()V
+; v1 : Ljava/util/LinkedList;
+	iput-object	v1,v12,com/google/ads/internal/d.u Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v12 : Lcom/google/ads/internal/d;
+.line 301
+	invoke-virtual	{v12},com/google/ads/internal/d/a	; a()V
+; v12 : Lcom/google/ads/internal/d;
+.line 304
+	iget-object	v1,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/content/Context
+; v1 : Landroid/content/Context;
+	invoke-static	{v1},com/google/ads/util/AdUtil/h	; h(Landroid/content/Context;)V
+; v1 : Landroid/content/Context;
+.line 306
+	new-instance	v1,com/google/ads/d
+; v1 : Lcom/google/ads/d;
+	invoke-direct	{v1},com/google/ads/d/<init>	; <init>()V
+; v1 : Lcom/google/ads/d;
+	iput-object	v1,v12,com/google/ads/internal/d.x Lcom/google/ads/d;
+; v1 : Lcom/google/ads/d; , v12 : Lcom/google/ads/internal/d;
+.line 307
+	new-instance	v1,com/google/ads/e
+; v1 : Lcom/google/ads/e;
+	invoke-direct	{v1,v12},com/google/ads/e/<init>	; <init>(Lcom/google/ads/internal/d;)V
+; v1 : Lcom/google/ads/e; , v12 : Lcom/google/ads/internal/d;
+	iput-object	v1,v12,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v1 : Lcom/google/ads/e; , v12 : Lcom/google/ads/internal/d;
+.line 308
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.w Ljava/lang/Boolean;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+.line 309
+	const/4	v1,0
+; v1 : single-length
+	iput-object	v1,v12,com/google/ads/internal/d.z Lcom/google/ads/f;
+; v1 : single-length , v12 : Lcom/google/ads/internal/d;
+	goto/16	lbe228
+lbe388:
+.line 269
+	iput-wide	v3,v12,com/google/ads/internal/d.i J
+; v3 : double-length , v12 : Lcom/google/ads/internal/d;
+	goto	lbe2b6
+lbe38e:
+.line 274
+	move-exception	v1
+; v1 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Ljava/lang/Object;
+lbe392:
+	throw	v1
+; v1 : java/lang/Exception
+lbe394:
+.line 272
+	const-wide/32	v3,60000	; 0xea60
+; v3 : double-length
+lbe39a:
+	iput-wide	v3,v12,com/google/ads/internal/d.i J
+; v3 : double-length , v12 : Lcom/google/ads/internal/d;
+lbe39e:
+	goto	lbe2b6
+lbe3a0:
+.line 276
+	const/4	v4,0
+; v4 : single-length
+	goto	lbe2d4
+lbe3a4:
+	const/4	v5,0
+; v5 : single-length
+	goto	lbe2e4
+.end method
+
+.method private a(Lcom/google/ads/f;Ljava/lang/Boolean;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 11
+; this: v8 (Lcom/google/ads/internal/d;)
+; parameter[0] : v9 (Lcom/google/ads/f;)
+; parameter[1] : v10 (Ljava/lang/Boolean;)
+.line 816
+	invoke-virtual	{v9},com/google/ads/f/d	; d()Ljava/util/List;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v1
+; v1 : Ljava/util/List;
+.line 817
+	if-nez	v1,lbe3f4
+; v1 : Ljava/util/List;
+.line 818
+	new-instance	v1,java/util/ArrayList
+; v1 : Ljava/util/ArrayList;
+	invoke-direct	{v1},java/util/ArrayList/<init>	; <init>()V
+; v1 : Ljava/util/ArrayList;
+.line 819
+	const-string	v0,"http://e.admob.com/imp?ad_loc=@gw_adlocid@&qdata=@gw_qdata@&ad_network_id=@gw_adnetid@&js=@gw_sdkver@&session_id=@gw_sessid@&seq_num=@gw_seqnum@&nr=@gw_adnetrefresh@&adt=@gw_adt@&aec=@gw_aec"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v0},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v0 : Ljava/lang/String;
+lbe3f4:
+.line 823
+	invoke-virtual	{v9},com/google/ads/f/b	; b()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 824
+	invoke-virtual	{v9},com/google/ads/f/a	; a()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 825
+	invoke-virtual	{v9},com/google/ads/f/c	; c()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+.line 826
+	iget-object	v0,v8,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v8 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/d	; d()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/g;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	iget-object	v0,v8,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v8 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/e	; e()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/g;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	move-object	v0,v8
+; v0 : Lcom/google/ads/internal/d; , v8 : Lcom/google/ads/internal/d;
+	move-object	v5,v10
+; v5 : Ljava/lang/Boolean; , v10 : Ljava/lang/Boolean;
+	invoke-direct/range	{v0..v7},com/google/ads/internal/d/a;	a(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/internal/d; , v1 : Ljava/util/List; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Boolean; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+.line 833
+	return-void	
+.end method
+
+.method private a(Ljava/util/List;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 11
+; this: v8 (Lcom/google/ads/internal/d;)
+; parameter[0] : v9 (Ljava/util/List;)
+; parameter[1] : v10 (Ljava/lang/String;)
+	const/4	v2,0
+; v2 : single-length
+.line 872
+	if-nez	v9,lbe482
+; v9 : Ljava/util/List;
+.line 873
+	new-instance	v1,java/util/ArrayList
+; v1 : Ljava/util/ArrayList;
+	invoke-direct	{v1},java/util/ArrayList/<init>	; <init>()V
+; v1 : Ljava/util/ArrayList;
+.line 874
+	const-string	v0,"http://e.admob.com/nofill?ad_loc=@gw_adlocid@&qdata=@gw_qdata@&js=@gw_sdkver@&session_id=@gw_sessid@&seq_num=@gw_seqnum@&adt=@gw_adt@&aec=@gw_aec"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v0},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v0 : Ljava/lang/String;
+lbe45a:
+.line 877
+	iget-object	v0,v8,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v8 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/d	; d()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/g;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	iget-object	v0,v8,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v8 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/e	; e()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/g;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	move-object	v0,v8
+; v0 : Lcom/google/ads/internal/d; , v8 : Lcom/google/ads/internal/d;
+	move-object	v3,v2
+; v3 : single-length , v2 : single-length
+	move-object	v4,v10
+; v4 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v5,v2
+; v5 : single-length , v2 : single-length
+	invoke-direct/range	{v0..v7},com/google/ads/internal/d/a;	a(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/internal/d; , v1 : Ljava/util/List; , v2 : single-length , v3 : single-length , v4 : Ljava/lang/String; , v5 : single-length , v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+.line 884
+	return-void	
+lbe482:
+	move-object	v1,v9
+; v1 : Ljava/util/List; , v9 : Ljava/util/List;
+	goto	lbe45a
+.end method
+
+.method private a(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 20
+; this: v12 (Lcom/google/ads/internal/d;)
+; parameter[0] : v13 (Ljava/util/List;)
+; parameter[1] : v14 (Ljava/lang/String;)
+; parameter[2] : v15 (Ljava/lang/String;)
+; parameter[3] : v16 (Ljava/lang/String;)
+; parameter[4] : v17 (Ljava/lang/Boolean;)
+; parameter[5] : v18 (Ljava/lang/String;)
+; parameter[6] : v19 (Ljava/lang/String;)
+.line 891
+	iget-object	v0,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;)Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 894
+	invoke-static	{},com/google/ads/b/a	; a()Lcom/google/ads/b;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/b;
+.line 895
+	invoke-virtual	{v0},com/google/ads/b/b	; b()Ljava/math/BigInteger;
+; v0 : Lcom/google/ads/b;
+	move-result-object	v1
+; v1 : Ljava/math/BigInteger;
+	invoke-virtual	{v1},java/math/BigInteger/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/math/BigInteger;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+.line 896
+	invoke-virtual	{v0},com/google/ads/b/c	; c()Ljava/math/BigInteger;
+; v0 : Lcom/google/ads/b;
+	move-result-object	v0
+; v0 : Ljava/math/BigInteger;
+	invoke-virtual	{v0},java/math/BigInteger/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/math/BigInteger;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+.line 897
+	invoke-interface	{v13},java/util/List/iterator	; iterator()Ljava/util/Iterator;
+; v13 : Ljava/util/List;
+	move-result-object	v11
+; v11 : Ljava/util/Iterator;
+lbe4e4:
+	invoke-interface	{v11},java/util/Iterator/hasNext	; hasNext()Z
+; v11 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe55c
+; v0 : single-length
+	invoke-interface	{v11},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v11 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+.line 898
+	iget-object	v1,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.h Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+	move-object/from16	v2,v17
+; v2 : Ljava/lang/Boolean; , v17 : Ljava/lang/Boolean;
+	move-object	v4,v14
+; v4 : Ljava/lang/String; , v14 : Ljava/lang/String;
+	move-object	v5,v15
+; v5 : Ljava/lang/String; , v15 : Ljava/lang/String;
+	move-object/from16	v6,v16
+; v6 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	move-object/from16	v9,v18
+; v9 : Ljava/lang/String; , v18 : Ljava/lang/String;
+	move-object/from16	v10,v19
+; v10 : Ljava/lang/String; , v19 : Ljava/lang/String;
+	invoke-static/range	{v0..v10},com/google/ads/g/a;	a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Boolean; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String; , v8 : Ljava/lang/String; , v9 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 909
+	new-instance	v2,java/lang/Thread
+; v2 : Ljava/lang/Thread;
+	new-instance	v4,com/google/ads/ae
+; v4 : Lcom/google/ads/ae;
+	iget-object	v0,v12,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v12 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-direct	{v4,v1,v0},com/google/ads/ae/<init>	; <init>(Ljava/lang/String;Landroid/content/Context;)V
+; v4 : Lcom/google/ads/ae; , v1 : Ljava/lang/String; , v0 : Landroid/content/Context;
+	invoke-direct	{v2,v4},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v2 : Ljava/lang/Thread; , v4 : Lcom/google/ads/ae;
+.line 911
+	invoke-virtual	{v2},java/lang/Thread/start	; start()V
+; v2 : Ljava/lang/Thread;
+	goto	lbe4e4
+lbe55c:
+.line 915
+	iget-object	v0,v12,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v12 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/b	; b()V
+; v0 : Lcom/google/ads/internal/g;
+.line 916
+	return-void	
+.end method
+
+.method private b(Lcom/google/ads/f;Ljava/lang/Boolean;)V
+.limit registers 11
+; this: v8 (Lcom/google/ads/internal/d;)
+; parameter[0] : v9 (Lcom/google/ads/f;)
+; parameter[1] : v10 (Ljava/lang/Boolean;)
+	const/4	v6,0
+; v6 : single-length
+.line 845
+	invoke-virtual	{v9},com/google/ads/f/e	; e()Ljava/util/List;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v1
+; v1 : Ljava/util/List;
+.line 846
+	if-nez	v1,lbe59a
+; v1 : Ljava/util/List;
+.line 847
+	new-instance	v1,java/util/ArrayList
+; v1 : Ljava/util/ArrayList;
+	invoke-direct	{v1},java/util/ArrayList/<init>	; <init>()V
+; v1 : Ljava/util/ArrayList;
+.line 848
+	const-string	v0,"http://e.admob.com/clk?ad_loc=@gw_adlocid@&qdata=@gw_qdata@&ad_network_id=@gw_adnetid@&js=@gw_sdkver@&session_id=@gw_sessid@&seq_num=@gw_seqnum@&nr=@gw_adnetrefresh"
+; v0 : Ljava/lang/String;
+	invoke-interface	{v1,v0},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v1 : Ljava/util/ArrayList; , v0 : Ljava/lang/String;
+lbe59a:
+.line 852
+	invoke-virtual	{v9},com/google/ads/f/b	; b()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 853
+	invoke-virtual	{v9},com/google/ads/f/a	; a()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 854
+	invoke-virtual	{v9},com/google/ads/f/c	; c()Ljava/lang/String;
+; v9 : Lcom/google/ads/f;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	move-object	v0,v8
+; v0 : Lcom/google/ads/internal/d; , v8 : Lcom/google/ads/internal/d;
+	move-object	v5,v10
+; v5 : Ljava/lang/Boolean; , v10 : Ljava/lang/Boolean;
+	move-object	v7,v6
+; v7 : single-length , v6 : single-length
+.line 855
+	invoke-direct/range	{v0..v7},com/google/ads/internal/d/a;	a(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/internal/d; , v1 : Ljava/util/List; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Boolean; , v6 : single-length , v7 : single-length
+.line 862
+	return-void	
+.end method
+
+.method public synchronized A()V
+.limit registers 5
+; this: v4 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbe64c to lbe696 using lbe646
+.catch java/lang/Exception from lbe5de to lbe644 using lbe646
+.catch java/lang/Exception from lbe5d2 to lbe5d6 using lbe646
+.line 960
+	monitor-enter	v4
+; v4 : Lcom/google/ads/internal/d;
+lbe5d2:
+	iget-boolean	v0,v4,com/google/ads/internal/d.h Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+lbe5d6:
+	if-eqz	v0,lbe5de
+; v0 : single-length
+lbe5da:
+.line 991
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	return-void	
+lbe5de:
+.line 965
+	iget-object	v0,v4,com/google/ads/internal/d.d Lcom/google/ads/AdRequest;
+; v0 : Lcom/google/ads/AdRequest; , v4 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbe68c
+; v0 : Lcom/google/ads/AdRequest;
+.line 966
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/a	; a()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe680
+; v0 : single-length
+.line 968
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.j Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdView
+; v0 : Lcom/google/ads/AdView;
+	invoke-virtual	{v0},com/google/ads/AdView/isShown	; isShown()Z
+; v0 : Lcom/google/ads/AdView;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe64c
+; v0 : single-length
+	invoke-static	{},com/google/ads/util/AdUtil/d	; d()Z
+; 
+	nop	
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe64c
+; v0 : single-length
+.line 969
+	const-string	v0,"Refreshing ad."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 970
+	iget-object	v0,v4,com/google/ads/internal/d.d Lcom/google/ads/AdRequest;
+; v0 : Lcom/google/ads/AdRequest; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v4,v0},com/google/ads/internal/d/a	; a(Lcom/google/ads/AdRequest;)V
+; v4 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/AdRequest;
+lbe636:
+.line 978
+	iget-boolean	v0,v4,com/google/ads/internal/d.n Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbe658
+; v0 : single-length
+.line 980
+	invoke-virtual	{v4},com/google/ads/internal/d/f	; f()V
+; v4 : Lcom/google/ads/internal/d;
+lbe644:
+	goto	lbe5da
+lbe646:
+.line 960
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+lbe64c:
+.line 974
+	const-string	v0,"Not refreshing because the ad is not visible."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lbe636
+lbe658:
+.line 983
+	invoke-static	{},com/google/ads/m/a	; a()Lcom/google/ads/m;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.c Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	iget-object	v1,v4,com/google/ads/internal/d.q Lcom/google/ads/af;
+; v1 : Lcom/google/ads/af; , v4 : Lcom/google/ads/internal/d;
+	iget-wide	v2,v4,com/google/ads/internal/d.p J
+; v2 : double-length , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v1,v2,v3},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v1 : Lcom/google/ads/af; , v2 : double-length
+	goto	lbe5da
+lbe680:
+.line 986
+	const-string	v0,"Tried to refresh an ad that wasn't an AdView."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lbe5da
+lbe68c:
+.line 989
+	const-string	v0,"Tried to refresh before calling loadAd()."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbe696:
+	goto	lbe5da
+.end method
+
+.method public synchronized B()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbe738 to lbe75e using lbe732
+.catch java/lang/Exception from lbe6fc to lbe730 using lbe732
+.catch java/lang/Exception from lbe6c6 to lbe6f8 using lbe732
+.line 1073
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbe6c6:
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/b	; b()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Z)V
+; v0 : single-length
+.line 1074
+	iget-boolean	v0,v2,com/google/ads/internal/d.k Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbe754
+; v0 : single-length
+.line 1076
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v2,com/google/ads/internal/d.k Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 1080
+	iget-object	v0,v2,com/google/ads/internal/d.w Ljava/lang/Boolean;
+; v0 : Ljava/lang/Boolean; , v2 : Lcom/google/ads/internal/d;
+	if-nez	v0,lbe6fc
+; v0 : Ljava/lang/Boolean;
+.line 1081
+	const-string	v0,"isMediationFlag is null in show() with isReady() true. we should have an ad and know whether this is a mediation request or not."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbe6f8:
+.line 1100
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbe6fc:
+.line 1085
+	iget-object	v0,v2,com/google/ads/internal/d.w Ljava/lang/Boolean;
+; v0 : Ljava/lang/Boolean; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe738
+; v0 : single-length
+.line 1087
+	iget-object	v0,v2,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/e/c	; c()Z
+; v0 : Lcom/google/ads/e;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe6f8
+; v0 : single-length
+.line 1088
+	iget-object	v0,v2,com/google/ads/internal/d.z Lcom/google/ads/f;
+; v0 : Lcom/google/ads/f; , v2 : Lcom/google/ads/internal/d;
+	const/4	v1,0
+; v1 : single-length
+	invoke-static	{v1},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Boolean;
+	invoke-direct	{v2,v0,v1},com/google/ads/internal/d/a	; a(Lcom/google/ads/f;Ljava/lang/Boolean;)V
+; v2 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/f; , v1 : Ljava/lang/Boolean;
+lbe730:
+	goto	lbe6f8
+lbe732:
+.line 1073
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+lbe738:
+.line 1092
+	new-instance	v0,com/google/ads/internal/e
+; v0 : Lcom/google/ads/internal/e;
+	const-string	v1,"interstitial"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},com/google/ads/internal/e/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/google/ads/internal/e; , v1 : Ljava/lang/String;
+	invoke-static	{v2,v0},com/google/ads/AdActivity/launchAdActivity	; launchAdActivity(Lcom/google/ads/internal/d;Lcom/google/ads/internal/e;)V
+; v2 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/internal/e;
+.line 1095
+	invoke-virtual	{v2},com/google/ads/internal/d/y	; y()V
+; v2 : Lcom/google/ads/internal/d;
+	goto	lbe6f8
+lbe754:
+.line 1098
+	const-string	v0,"Cannot show interstitial because it is not loaded and ready."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbe75e:
+	goto	lbe6f8
+.end method
+
+.method public synchronized C()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbe78e to lbe7b8 using lbe7bc
+.line 1107
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbe78e:
+	iget-object	v0,v1,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbe7a6
+; v0 : Lcom/google/ads/internal/c;
+.line 1108
+	iget-object	v0,v1,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/c/a	; a()V
+; v0 : Lcom/google/ads/internal/c;
+.line 1109
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+lbe7a6:
+.line 1113
+	iget-object	v0,v1,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbe7b8
+; v0 : Lcom/google/ads/internal/AdWebView;
+.line 1114
+	iget-object	v0,v1,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/AdWebView/stopLoading	; stopLoading()V
+; v0 : Lcom/google/ads/internal/AdWebView;
+lbe7b8:
+.line 1116
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-void	
+lbe7bc:
+.line 1107
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected synchronized D()V
+.limit registers 7
+; this: v6 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbe808 to lbe84e using lbe850
+.catch java/lang/Exception from lbe7e2 to lbe804 using lbe850
+.line 1133
+	monitor-enter	v6
+; v6 : Lcom/google/ads/internal/d;
+lbe7e2:
+	iget-object	v0,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.c Lcom/google/ads/util/i$d;
+; v0 : Lcom/google/ads/util/i$d; , v0 : Lcom/google/ads/util/i$d;
+	invoke-virtual	{v0},com/google/ads/util/i$d/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$d;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+.line 1134
+	if-nez	v0,lbe808
+; v0 : Landroid/app/Activity;
+.line 1135
+	const-string	v0,"activity was null while trying to ping click tracking URLs."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbe804:
+.line 1145
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	return-void	
+lbe808:
+.line 1140
+	iget-object	v1,v6,com/google/ads/internal/d.u Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v6 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v1},java/util/LinkedList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/LinkedList;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lbe814:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lbe804
+; v1 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+.line 1141
+	new-instance	v3,java/lang/Thread
+; v3 : Ljava/lang/Thread;
+	new-instance	v4,com/google/ads/ae
+; v4 : Lcom/google/ads/ae;
+	invoke-virtual	{v0},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/app/Activity;
+	move-result-object	v5
+; v5 : Landroid/content/Context;
+	invoke-direct	{v4,v1,v5},com/google/ads/ae/<init>	; <init>(Ljava/lang/String;Landroid/content/Context;)V
+; v4 : Lcom/google/ads/ae; , v1 : Ljava/lang/String; , v5 : Landroid/content/Context;
+	invoke-direct	{v3,v4},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v3 : Ljava/lang/Thread; , v4 : Lcom/google/ads/ae;
+.line 1143
+	invoke-virtual	{v3},java/lang/Thread/start	; start()V
+; v3 : Ljava/lang/Thread;
+lbe84e:
+	goto	lbe814
+lbe850:
+.line 1133
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected synchronized E()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbe880 to lbe93a using lbe93e
+.line 1153
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+	const/4	v0,0
+; v0 : single-length
+lbe880:
+	iput-object	v0,v2,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 1156
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v2,com/google/ads/internal/d.k Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 1159
+	iget-object	v0,v2,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/internal/d;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/internal/AdWebView/setVisibility	; setVisibility(I)V
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : single-length
+.line 1163
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/a	; a()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe8b0
+; v0 : single-length
+.line 1164
+	iget-object	v0,v2,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v2,v0},com/google/ads/internal/d/a	; a(Landroid/view/View;)V
+; v2 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/internal/AdWebView;
+lbe8b0:
+.line 1168
+	iget-object	v0,v2,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/g	; g()V
+; v0 : Lcom/google/ads/internal/g;
+.line 1171
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/a	; a()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbe8d0
+; v0 : single-length
+.line 1172
+	invoke-virtual	{v2},com/google/ads/internal/d/y	; y()V
+; v2 : Lcom/google/ads/internal/d;
+lbe8d0:
+.line 1175
+	const-string	v0,"onReceiveAd()"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 1178
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 1179
+	if-eqz	v0,lbe90c
+; v0 : Lcom/google/ads/AdListener;
+.line 1180
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/AdListener/onReceiveAd	; onReceiveAd(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad;
+lbe90c:
+.line 1183
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.l Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.m Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v1 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	invoke-virtual	{v0,v1},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v1 : Ljava/lang/Object;
+.line 1184
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.m Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v1 : single-length
+lbe93a:
+.line 1185
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbe93e:
+.line 1153
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public F()Ljava/util/LinkedList;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/LinkedList" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 1311
+	iget-object	v0,v1,com/google/ads/internal/d.t Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Ljava/util/LinkedList;
+.end method
+
+.method public synchronized a()V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 4
+; this: v3 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbea6a to lbea78 using lbea7a
+.catch java/lang/Exception from lbe97a to lbea66 using lbea7a
+.line 318
+	monitor-enter	v3
+; v3 : Lcom/google/ads/internal/d;
+lbe97a:
+	iget-object	v0,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v0},com/google/ads/internal/h/c	; c()Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/internal/h;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdSize;
+.line 319
+	sget	v0,com/google/ads/util/AdUtil.a I
+; v0 : single-length
+	const/16	v2,14
+; v2 : single-length
+	if-lt	v0,v2,lbea6a
+; v0 : single-length , v2 : single-length
+	new-instance	v0,com/google/ads/util/IcsUtil$IcsAdWebView
+; v0 : Lcom/google/ads/util/IcsUtil$IcsAdWebView;
+	iget-object	v2,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	invoke-direct	{v0,v2,v1},com/google/ads/util/IcsUtil$IcsAdWebView/<init>	; <init>(Lcom/google/ads/n;Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/util/IcsUtil$IcsAdWebView; , v2 : Lcom/google/ads/n; , v1 : Lcom/google/ads/AdSize;
+lbe9b0:
+	iput-object	v0,v3,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v3 : Lcom/google/ads/internal/d;
+.line 322
+	iget-object	v0,v3,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v3 : Lcom/google/ads/internal/d;
+	const/16	v1,8
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/internal/AdWebView/setVisibility	; setVisibility(I)V
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : single-length
+.line 325
+	sget-object	v0,com/google/ads/internal/a.d Ljava/util/Map;
+; v0 : Ljava/util/Map;
+	const/4	v1,1
+; v1 : single-length
+	iget-object	v2,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v2},com/google/ads/n/b	; b()Z
+; v2 : Lcom/google/ads/n;
+	move-result	v2
+; v2 : single-length
+	invoke-static	{v3,v0,v1,v2},com/google/ads/internal/i/a	; a(Lcom/google/ads/internal/d;Ljava/util/Map;ZZ)Lcom/google/ads/internal/i;
+; v3 : Lcom/google/ads/internal/d; , v0 : Ljava/util/Map; , v1 : single-length , v2 : single-length
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/i;
+	iput-object	v0,v3,com/google/ads/internal/d.g Lcom/google/ads/internal/i;
+; v0 : Lcom/google/ads/internal/i; , v3 : Lcom/google/ads/internal/d;
+.line 327
+	iget-object	v0,v3,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v1,v3,com/google/ads/internal/d.g Lcom/google/ads/internal/i;
+; v1 : Lcom/google/ads/internal/i; , v3 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v1},com/google/ads/internal/AdWebView/setWebViewClient	; setWebViewClient(Landroid/webkit/WebViewClient;)V
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : Lcom/google/ads/internal/i;
+.line 330
+	iget-object	v0,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.d Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.b Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/m$a
+; v0 : Lcom/google/ads/m$a;
+.line 331
+	sget	v1,com/google/ads/util/AdUtil.a I
+; v1 : single-length
+	iget-object	v0,v0,com/google/ads/m$a.b Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Integer
+; v0 : Ljava/lang/Integer;
+	invoke-virtual	{v0},java/lang/Integer/intValue	; intValue()I
+; v0 : Ljava/lang/Integer;
+	move-result	v0
+; v0 : single-length
+	if-ge	v1,v0,lbea66
+; v1 : single-length , v0 : single-length
+	iget-object	v0,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v0},com/google/ads/internal/h/a	; a()Z
+; v0 : Lcom/google/ads/internal/h;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lbea66
+; v0 : single-length
+.line 333
+	const-string	v0,"Disabling hardware acceleration for a banner."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 334
+	iget-object	v0,v3,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v3 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/AdWebView/g	; g()V
+; v0 : Lcom/google/ads/internal/AdWebView;
+lbea66:
+.line 336
+	monitor-exit	v3
+; v3 : Lcom/google/ads/internal/d;
+	return-void	
+lbea6a:
+.line 319
+	new-instance	v0,com/google/ads/internal/AdWebView
+; v0 : Lcom/google/ads/internal/AdWebView;
+	iget-object	v2,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	invoke-direct	{v0,v2,v1},com/google/ads/internal/AdWebView/<init>	; <init>(Lcom/google/ads/n;Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/n; , v1 : Lcom/google/ads/AdSize;
+lbea78:
+	goto	lbe9b0
+lbea7a:
+.line 318
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized a(F)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 6
+; this: v4 (Lcom/google/ads/internal/d;)
+; parameter[0] : v5 (F)
+.catch java/lang/Exception from lbeaa6 to lbeada using lbeade
+.line 1049
+	monitor-enter	v4
+; v4 : Lcom/google/ads/internal/d;
+lbeaa6:
+	iget-wide	v0,v4,com/google/ads/internal/d.p J
+; v0 : double-length , v4 : Lcom/google/ads/internal/d;
+.line 1050
+	const/high16	v2,17530
+; v2 : single-length
+	mul-float/2addr	v2,v5
+; v2 : single-length , v5 : single-length
+	float-to-long	v2,v2
+; v2 : double-length , v2 : double-length
+	iput-wide	v2,v4,com/google/ads/internal/d.p J
+; v2 : double-length , v4 : Lcom/google/ads/internal/d;
+.line 1052
+	invoke-virtual	{v4},com/google/ads/internal/d/t	; t()Z
+; v4 : Lcom/google/ads/internal/d;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,lbeada
+; v2 : single-length
+	iget-wide	v2,v4,com/google/ads/internal/d.p J
+; v2 : double-length , v4 : Lcom/google/ads/internal/d;
+	cmp-long	v0,v2,v0
+; v0 : single-length , v2 : double-length , v0 : single-length
+	if-eqz	v0,lbeada
+; v0 : single-length
+.line 1053
+	invoke-virtual	{v4},com/google/ads/internal/d/f	; f()V
+; v4 : Lcom/google/ads/internal/d;
+.line 1054
+	invoke-virtual	{v4},com/google/ads/internal/d/g	; g()V
+; v4 : Lcom/google/ads/internal/d;
+lbeada:
+.line 1056
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	return-void	
+lbeade:
+.line 1049
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized a(I)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/d;)
+; parameter[0] : v2 (I)
+.catch java/lang/Exception from lbeb02 to lbeb06 using lbeb0a
+.line 512
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbeb02:
+	iput	v2,v1,com/google/ads/internal/d.v I
+; v2 : single-length , v1 : Lcom/google/ads/internal/d;
+lbeb06:
+.line 513
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-void	
+lbeb0a:
+.line 512
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a(IIII)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 11
+; this: v6 (Lcom/google/ads/internal/d;)
+; parameter[0] : v7 (I)
+; parameter[1] : v8 (I)
+; parameter[2] : v9 (I)
+; parameter[3] : v10 (I)
+	const/4	v4,0
+; v4 : single-length
+.line 1276
+	iget-object	v0,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/ActivationOverlay
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+.line 1277
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/content/Context
+; v1 : Landroid/content/Context;
+	if-gez	v9,lbec9a
+; v9 : single-length
+	iget-object	v2,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v2,v2,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v2 : Lcom/google/ads/util/i$b; , v2 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v2},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v2 : Lcom/google/ads/util/i$b;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,com/google/ads/internal/h
+; v2 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v2},com/google/ads/internal/h/c	; c()Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/internal/h;
+	move-result-object	v2
+; v2 : Lcom/google/ads/AdSize;
+	invoke-virtual	{v2},com/google/ads/AdSize/getWidth	; getWidth()I
+; v2 : Lcom/google/ads/AdSize;
+	move-result	v2
+; v2 : single-length
+lbeb7e:
+	invoke-static	{v1,v2},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v1 : Landroid/content/Context; , v2 : single-length
+	move-result	v3
+; v3 : single-length
+.line 1279
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/content/Context
+; v1 : Landroid/content/Context;
+	if-gez	v10,lbebc2
+; v10 : single-length
+	iget-object	v2,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v2,v2,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v2 : Lcom/google/ads/util/i$b; , v2 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v2},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v2 : Lcom/google/ads/util/i$b;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,com/google/ads/internal/h
+; v2 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v2},com/google/ads/internal/h/c	; c()Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/internal/h;
+	move-result-object	v2
+; v2 : Lcom/google/ads/AdSize;
+	invoke-virtual	{v2},com/google/ads/AdSize/getHeight	; getHeight()I
+; v2 : Lcom/google/ads/AdSize;
+	move-result	v10
+; v10 : single-length
+lbebc2:
+	invoke-static	{v1,v10},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v1 : Landroid/content/Context; , v10 : single-length
+	move-result	v1
+; v1 : single-length
+.line 1281
+	new-instance	v5,android/widget/FrameLayout$LayoutParams
+; v5 : Landroid/widget/FrameLayout$LayoutParams;
+	invoke-direct	{v5,v3,v1},android/widget/FrameLayout$LayoutParams/<init>	; <init>(II)V
+; v5 : Landroid/widget/FrameLayout$LayoutParams; , v3 : single-length , v1 : single-length
+.line 1286
+	if-gez	v9,lbeca4
+; v9 : single-length
+	move	v2,v4
+; v2 : single-length , v4 : single-length
+	move	v1,v4
+; v1 : single-length , v4 : single-length
+lbebdc:
+.line 1291
+	if-gez	v1,lbeca0
+; v1 : single-length
+.line 1292
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/internal/ActivationOverlay
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v1},com/google/ads/internal/ActivationOverlay/d	; d()I
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	move-result	v1
+; v1 : single-length
+	move	v3,v1
+; v3 : single-length , v1 : single-length
+lbebfe:
+.line 1294
+	if-gez	v2,lbec20
+; v2 : single-length
+.line 1295
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/internal/ActivationOverlay
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v1},com/google/ads/internal/ActivationOverlay/c	; c()I
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	move-result	v1
+; v1 : single-length
+	move	v2,v1
+; v2 : single-length , v1 : single-length
+lbec20:
+.line 1298
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/internal/ActivationOverlay
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v1,v3},com/google/ads/internal/ActivationOverlay/setXPosition	; setXPosition(I)V
+; v1 : Lcom/google/ads/internal/ActivationOverlay; , v3 : single-length
+.line 1299
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/internal/ActivationOverlay
+; v1 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v1,v2},com/google/ads/internal/ActivationOverlay/setYPosition	; setYPosition(I)V
+; v1 : Lcom/google/ads/internal/ActivationOverlay; , v2 : single-length
+.line 1301
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/content/Context
+; v1 : Landroid/content/Context;
+	invoke-static	{v1,v3},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v1 : Landroid/content/Context; , v3 : single-length
+	move-result	v3
+; v3 : single-length
+	iget-object	v1,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/content/Context
+; v1 : Landroid/content/Context;
+	invoke-static	{v1,v2},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v1 : Landroid/content/Context; , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v5,v3,v1,v4,v4},android/widget/FrameLayout$LayoutParams/setMargins	; setMargins(IIII)V
+; v5 : Landroid/widget/FrameLayout$LayoutParams; , v3 : single-length , v1 : single-length , v4 : single-length , v4 : single-length
+.line 1307
+	invoke-virtual	{v0,v5},com/google/ads/internal/ActivationOverlay/setLayoutParams	; setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+; v0 : Lcom/google/ads/internal/ActivationOverlay; , v5 : Landroid/widget/FrameLayout$LayoutParams;
+.line 1308
+	return-void	
+lbec9a:
+	move	v2,v9
+; v2 : single-length , v9 : single-length
+.line 1277
+	goto/16	lbeb7e
+lbeca0:
+	move	v3,v1
+; v3 : single-length , v1 : single-length
+	goto	lbebfe
+lbeca4:
+	move	v2,v8
+; v2 : single-length , v8 : single-length
+	move	v1,v7
+; v1 : single-length , v7 : single-length
+	goto	lbebdc
+.end method
+
+.method public a(J)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 7
+; this: v4 (Lcom/google/ads/internal/d;)
+; parameter[0] : v5 (J)
+.catch java/lang/Exception from lbecc2 to lbed1c using lbed18
+.line 1000
+	sget-object	v1,com/google/ads/internal/d.a Ljava/lang/Object;
+; v1 : Ljava/lang/Object;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+lbecc2:
+.line 1001
+	iget-object	v0,v4,com/google/ads/internal/d.o Landroid/content/SharedPreferences;
+; v0 : Landroid/content/SharedPreferences; , v4 : Lcom/google/ads/internal/d;
+	invoke-interface	{v0},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 1002
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Timeout"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	iget-object	v3,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v3 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v3,v3,com/google/ads/n.h Lcom/google/ads/util/i$b;
+; v3 : Lcom/google/ads/util/i$b; , v3 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Lcom/google/ads/util/i$b;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v2,v5,v6},android/content/SharedPreferences$Editor/putLong	; putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v2 : Ljava/lang/String; , v5 : double-length
+.line 1003
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 1005
+	iget-boolean	v0,v4,com/google/ads/internal/d.r Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbed14
+; v0 : single-length
+.line 1006
+	iput-wide	v5,v4,com/google/ads/internal/d.i J
+; v5 : double-length , v4 : Lcom/google/ads/internal/d;
+lbed14:
+.line 1008
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+.line 1009
+	return-void	
+lbed18:
+.line 1008
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+lbed1c:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a(Landroid/view/View;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 9
+; this: v7 (Lcom/google/ads/internal/d;)
+; parameter[0] : v8 (Landroid/view/View;)
+	const/4	v2,0
+; v2 : single-length
+	const/4	v3,15
+; v3 : single-length
+.line 1022
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.i Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+	invoke-virtual	{v0,v2},android/view/ViewGroup/setVisibility	; setVisibility(I)V
+; v0 : Landroid/view/ViewGroup; , v2 : single-length
+.line 1024
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.i Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+	invoke-virtual	{v0},android/view/ViewGroup/removeAllViews	; removeAllViews()V
+; v0 : Landroid/view/ViewGroup;
+.line 1025
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.i Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+	invoke-virtual	{v0,v8},android/view/ViewGroup/addView	; addView(Landroid/view/View;)V
+; v0 : Landroid/view/ViewGroup; , v8 : Landroid/view/View;
+.line 1027
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/h
+; v0 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v0},com/google/ads/internal/h/b	; b()Z
+; v0 : Lcom/google/ads/internal/h;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbeeb0
+; v0 : single-length
+.line 1028
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.b Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/d
+; v0 : Lcom/google/ads/internal/d;
+	iget-object	v1,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.l Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v1 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v1},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$c;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/l
+; v1 : Lcom/google/ads/l;
+	move	v4,v3
+; v4 : single-length , v3 : single-length
+	move	v5,v3
+; v5 : single-length , v3 : single-length
+	move	v6,v3
+; v6 : single-length , v3 : single-length
+	invoke-virtual/range	{v0..v6},com/google/ads/internal/d/a;	a(Lcom/google/ads/l;ZIIII)V
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/l; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length
+.line 1030
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/ActivationOverlay
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v0},com/google/ads/internal/ActivationOverlay/a	; a()Z
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbeeb0
+; v0 : single-length
+.line 1031
+	iget-object	v0,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.i Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+	iget-object	v1,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/view/View
+; v1 : Landroid/view/View;
+	iget-object	v2,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v2,v2,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v2 : Lcom/google/ads/util/i$b; , v2 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v2},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v2 : Lcom/google/ads/util/i$b;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,android/content/Context
+; v2 : Landroid/content/Context;
+	iget-object	v3,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v3 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v3,v3,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v3 : Lcom/google/ads/util/i$b; , v3 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v3},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v3 : Lcom/google/ads/util/i$b;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,com/google/ads/internal/h
+; v3 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v3},com/google/ads/internal/h/c	; c()Lcom/google/ads/AdSize;
+; v3 : Lcom/google/ads/internal/h;
+	move-result-object	v3
+; v3 : Lcom/google/ads/AdSize;
+	invoke-virtual	{v3},com/google/ads/AdSize/getWidth	; getWidth()I
+; v3 : Lcom/google/ads/AdSize;
+	move-result	v3
+; v3 : single-length
+	invoke-static	{v2,v3},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v2 : Landroid/content/Context; , v3 : single-length
+	move-result	v4
+; v4 : single-length
+	iget-object	v2,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v2 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v2,v2,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v2 : Lcom/google/ads/util/i$b; , v2 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v2},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v2 : Lcom/google/ads/util/i$b;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,android/content/Context
+; v2 : Landroid/content/Context;
+	iget-object	v3,v7,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v3 : Lcom/google/ads/n; , v7 : Lcom/google/ads/internal/d;
+	iget-object	v3,v3,com/google/ads/n.g Lcom/google/ads/util/i$b;
+; v3 : Lcom/google/ads/util/i$b; , v3 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v3},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v3 : Lcom/google/ads/util/i$b;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,com/google/ads/internal/h
+; v3 : Lcom/google/ads/internal/h;
+	invoke-virtual	{v3},com/google/ads/internal/h/c	; c()Lcom/google/ads/AdSize;
+; v3 : Lcom/google/ads/internal/h;
+	move-result-object	v3
+; v3 : Lcom/google/ads/AdSize;
+	invoke-virtual	{v3},com/google/ads/AdSize/getHeight	; getHeight()I
+; v3 : Lcom/google/ads/AdSize;
+	move-result	v3
+; v3 : single-length
+	invoke-static	{v2,v3},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;I)I
+; v2 : Landroid/content/Context; , v3 : single-length
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v0,v1,v4,v2},android/view/ViewGroup/addView	; addView(Landroid/view/View;II)V
+; v0 : Landroid/view/ViewGroup; , v1 : Landroid/view/View; , v4 : single-length , v2 : single-length
+lbeeb0:
+.line 1039
+	return-void	
+.end method
+
+.method public synchronized a(Landroid/view/View;Lcom/google/ads/h;Lcom/google/ads/f;Z)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 7
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Landroid/view/View;)
+; parameter[1] : v4 (Lcom/google/ads/h;)
+; parameter[2] : v5 (Lcom/google/ads/f;)
+; parameter[3] : v6 (Z)
+.catch java/lang/Exception from lbeec6 to lbef3a using lbef3e
+.line 687
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbeec6:
+	const-string	v0,"AdManager.onReceiveGWhirlAd() called."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 690
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v2,com/google/ads/internal/d.k Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 691
+	iput-object	v5,v2,com/google/ads/internal/d.z Lcom/google/ads/f;
+; v5 : Lcom/google/ads/f; , v2 : Lcom/google/ads/internal/d;
+.line 695
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/a	; a()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbeefe
+; v0 : single-length
+.line 696
+	invoke-virtual	{v2,v3},com/google/ads/internal/d/a	; a(Landroid/view/View;)V
+; v2 : Lcom/google/ads/internal/d; , v3 : Landroid/view/View;
+.line 697
+	invoke-static	{v6},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v6 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Boolean;
+	invoke-direct	{v2,v5,v0},com/google/ads/internal/d/a	; a(Lcom/google/ads/f;Ljava/lang/Boolean;)V
+; v2 : Lcom/google/ads/internal/d; , v5 : Lcom/google/ads/f; , v0 : Ljava/lang/Boolean;
+lbeefe:
+.line 701
+	iget-object	v0,v2,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v4},com/google/ads/e/d	; d(Lcom/google/ads/h;)V
+; v0 : Lcom/google/ads/e; , v4 : Lcom/google/ads/h;
+.line 704
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 705
+	if-eqz	v0,lbef3a
+; v0 : Lcom/google/ads/AdListener;
+.line 706
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/AdListener/onReceiveAd	; onReceiveAd(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad;
+lbef3a:
+.line 708
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbef3e:
+.line 687
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized a(Lcom/google/ads/AdRequest$ErrorCode;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Lcom/google/ads/AdRequest$ErrorCode;)
+.catch java/lang/Exception from lbf01c to lbf02e using lbf030
+.catch java/lang/Exception from lbef64 to lbf018 using lbf030
+.line 633
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+	const/4	v0,0
+; v0 : single-length
+lbef64:
+	iput-object	v0,v2,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 635
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	if-ne	v3,v0,lbef8c
+; v3 : Lcom/google/ads/AdRequest$ErrorCode; , v0 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 639
+	const/high16	v0,17008
+; v0 : single-length
+	invoke-virtual	{v2,v0},com/google/ads/internal/d/a	; a(F)V
+; v2 : Lcom/google/ads/internal/d; , v0 : single-length
+.line 640
+	invoke-virtual	{v2},com/google/ads/internal/d/t	; t()Z
+; v2 : Lcom/google/ads/internal/d;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lbef8c
+; v0 : single-length
+.line 642
+	invoke-virtual	{v2},com/google/ads/internal/d/h	; h()V
+; v2 : Lcom/google/ads/internal/d;
+lbef8c:
+.line 646
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/b	; b()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbefae
+; v0 : single-length
+.line 647
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NO_FILL Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	if-ne	v3,v0,lbf01c
+; v3 : Lcom/google/ads/AdRequest$ErrorCode; , v0 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 648
+	iget-object	v0,v2,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/B	; B()V
+; v0 : Lcom/google/ads/internal/g;
+lbefae:
+.line 654
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"onFailedToReceiveAd("
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Lcom/google/ads/AdRequest$ErrorCode;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,")"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 657
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 658
+	if-eqz	v0,lbf018
+; v0 : Lcom/google/ads/AdListener;
+.line 659
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1,v3},com/google/ads/AdListener/onFailedToReceiveAd	; onFailedToReceiveAd(Lcom/google/ads/Ad;Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad; , v3 : Lcom/google/ads/AdRequest$ErrorCode;
+lbf018:
+.line 661
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf01c:
+.line 649
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	if-ne	v3,v0,lbefae
+; v3 : Lcom/google/ads/AdRequest$ErrorCode; , v0 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 650
+	iget-object	v0,v2,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/z	; z()V
+; v0 : Lcom/google/ads/internal/g;
+lbf02e:
+	goto	lbefae
+lbf030:
+.line 633
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized a(Lcom/google/ads/AdRequest;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 6
+; this: v4 (Lcom/google/ads/internal/d;)
+; parameter[0] : v5 (Lcom/google/ads/AdRequest;)
+.catch java/lang/Exception from lbf09c to lbf1c6 using lbf096
+.catch java/lang/Exception from lbf07e to lbf094 using lbf096
+.catch java/lang/Exception from lbf05e to lbf07a using lbf096
+.line 566
+	monitor-enter	v4
+; v4 : Lcom/google/ads/internal/d;
+lbf05e:
+	const-string	v0,"v6.4.1 RC00"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 568
+	iget-boolean	v0,v4,com/google/ads/internal/d.h Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbf07e
+; v0 : single-length
+.line 569
+	const-string	v0,"loadAd called after ad was destroyed."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf07a:
+.line 623
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	return-void	
+lbf07e:
+.line 574
+	invoke-virtual	{v4},com/google/ads/internal/d/q	; q()Z
+; v4 : Lcom/google/ads/internal/d;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf09c
+; v0 : single-length
+.line 575
+	const-string	v0,"loadAd called while the ad is already loading, so aborting."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf094:
+	goto	lbf07a
+lbf096:
+.line 566
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+lbf09c:
+.line 581
+	invoke-static	{},com/google/ads/AdActivity/isShowing	; isShowing()Z
+; 
+	nop	
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf0b4
+; v0 : single-length
+.line 582
+	const-string	v0,"loadAd called while an interstitial or landing page is displayed, so aborting"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lbf07a
+lbf0b4:
+.line 588
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-static	{v0},com/google/ads/util/AdUtil/c	; c(Landroid/content/Context;)Z
+; v0 : Landroid/content/Context;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf07a
+; v0 : single-length
+.line 591
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-static	{v0},com/google/ads/util/AdUtil/b	; b(Landroid/content/Context;)Z
+; v0 : Landroid/content/Context;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf07a
+; v0 : single-length
+.line 596
+	iget-object	v0,v4,com/google/ads/internal/d.o Landroid/content/SharedPreferences;
+; v0 : Landroid/content/SharedPreferences; , v4 : Lcom/google/ads/internal/d;
+	const-string	v1,"GoogleAdMobDoritosLife"
+; v1 : Ljava/lang/String;
+	const-wide/32	v2,60000	; 0xea60
+; v2 : double-length
+	invoke-interface	{v0,v1,v2,v3},android/content/SharedPreferences/getLong	; getLong(Ljava/lang/String;J)J
+; v0 : Landroid/content/SharedPreferences; , v1 : Ljava/lang/String; , v2 : double-length
+	move-result-wide	v1
+; v1 : double-length
+.line 597
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.f Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-static	{v0,v1,v2},com/google/ads/at/a	; a(Landroid/content/Context;J)Z
+; v0 : Landroid/content/Context; , v1 : double-length
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf144
+; v0 : single-length
+.line 598
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.c Lcom/google/ads/util/i$d;
+; v0 : Lcom/google/ads/util/i$d; , v0 : Lcom/google/ads/util/i$d;
+	invoke-virtual	{v0},com/google/ads/util/i$d/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$d;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+	invoke-static	{v0},com/google/ads/at/a	; a(Landroid/app/Activity;)V
+; v0 : Landroid/app/Activity;
+lbf144:
+.line 603
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v4,com/google/ads/internal/d.k Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+.line 604
+	iget-object	v0,v4,com/google/ads/internal/d.s Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},java/util/LinkedList/clear	; clear()V
+; v0 : Ljava/util/LinkedList;
+.line 605
+	iget-object	v0,v4,com/google/ads/internal/d.t Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},java/util/LinkedList/clear	; clear()V
+; v0 : Ljava/util/LinkedList;
+.line 608
+	iput-object	v5,v4,com/google/ads/internal/d.d Lcom/google/ads/AdRequest;
+; v5 : Lcom/google/ads/AdRequest; , v4 : Lcom/google/ads/internal/d;
+.line 612
+	iget-object	v0,v4,com/google/ads/internal/d.x Lcom/google/ads/d;
+; v0 : Lcom/google/ads/d; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/d/a	; a()Z
+; v0 : Lcom/google/ads/d;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf18c
+; v0 : single-length
+.line 613
+	iget-object	v0,v4,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v1,v4,com/google/ads/internal/d.x Lcom/google/ads/d;
+; v1 : Lcom/google/ads/d; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v1},com/google/ads/d/b	; b()Lcom/google/ads/c;
+; v1 : Lcom/google/ads/d;
+	move-result-object	v1
+; v1 : Lcom/google/ads/c;
+	invoke-virtual	{v0,v1,v5},com/google/ads/e/a	; a(Lcom/google/ads/c;Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/e; , v1 : Lcom/google/ads/c; , v5 : Lcom/google/ads/AdRequest;
+	goto/16	lbf07a
+lbf18c:
+.line 617
+	new-instance	v0,com/google/ads/l
+; v0 : Lcom/google/ads/l;
+	iget-object	v1,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	invoke-direct	{v0,v1},com/google/ads/l/<init>	; <init>(Lcom/google/ads/n;)V
+; v0 : Lcom/google/ads/l; , v1 : Lcom/google/ads/n;
+.line 618
+	iget-object	v1,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.m Lcom/google/ads/util/i$c;
+; v1 : Lcom/google/ads/util/i$c; , v1 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v1,v0},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v1 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/l;
+.line 621
+	iget-object	v0,v0,com/google/ads/l.b Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/c
+; v0 : Lcom/google/ads/internal/c;
+	iput-object	v0,v4,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v4 : Lcom/google/ads/internal/d;
+.line 622
+	iget-object	v0,v4,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v5},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/internal/c; , v5 : Lcom/google/ads/AdRequest;
+lbf1c6:
+	goto/16	lbf07a
+.end method
+
+.method public synchronized a(Lcom/google/ads/c;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Lcom/google/ads/c;)
+.catch java/lang/Exception from lbf1fc to lbf20e using lbf212
+.line 670
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+	const/4	v0,0
+; v0 : single-length
+lbf1fc:
+	iput-object	v0,v2,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+.line 673
+	iget-object	v0,v2,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v2,com/google/ads/internal/d.d Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v3,v1},com/google/ads/e/a	; a(Lcom/google/ads/c;Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/e; , v3 : Lcom/google/ads/c; , v1 : Lcom/google/ads/AdRequest;
+lbf20e:
+.line 674
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf212:
+.line 670
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized a(Lcom/google/ads/f;Z)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 8
+; this: v5 (Lcom/google/ads/internal/d;)
+; parameter[0] : v6 (Lcom/google/ads/f;)
+; parameter[1] : v7 (Z)
+.catch java/lang/Exception from lbf236 to lbf26e using lbf272
+.line 718
+	monitor-enter	v5
+; v5 : Lcom/google/ads/internal/d;
+lbf236:
+	sget-object	v0,java/util/Locale.US Ljava/util/Locale;
+; v0 : Ljava/util/Locale;
+	const-string	v1,"AdManager.onGWhirlAdClicked(%b) called."
+; v1 : Ljava/lang/String;
+	const/4	v2,1
+; v2 : single-length
+	new-array	v2,v2,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v2 : [Ljava/lang/Object;
+	const/4	v3,0
+; v3 : single-length
+	invoke-static	{v7},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v7 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/Boolean;
+	aput-object	v4,v2,v3
+; v4 : Ljava/lang/Boolean; , v2 : [Ljava/lang/Object; , v3 : single-length
+	invoke-static	{v0,v1,v2},java/lang/String/format	; format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v0 : Ljava/util/Locale; , v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 720
+	invoke-static	{v7},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v7 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Boolean;
+	invoke-direct	{v5,v6,v0},com/google/ads/internal/d/b	; b(Lcom/google/ads/f;Ljava/lang/Boolean;)V
+; v5 : Lcom/google/ads/internal/d; , v6 : Lcom/google/ads/f; , v0 : Ljava/lang/Boolean;
+lbf26e:
+.line 721
+	monitor-exit	v5
+; v5 : Lcom/google/ads/internal/d;
+	return-void	
+lbf272:
+.line 718
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v5
+; v5 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a(Lcom/google/ads/l;ZIIII)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 9
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Lcom/google/ads/l;)
+; parameter[1] : v4 (Z)
+; parameter[2] : v5 (I)
+; parameter[3] : v6 (I)
+; parameter[4] : v7 (I)
+; parameter[5] : v8 (I)
+.line 1253
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/ActivationOverlay
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	if-nez	v4,lbf302
+; v4 : single-length
+	const/4	v1,1
+; v1 : single-length
+lbf2ae:
+	invoke-virtual	{v0,v1},com/google/ads/internal/ActivationOverlay/setOverlayActivated	; setOverlayActivated(Z)V
+; v0 : Lcom/google/ads/internal/ActivationOverlay; , v1 : single-length
+.line 1255
+	invoke-virtual	{v2,v5,v6,v7,v8},com/google/ads/internal/d/a	; a(IIII)V
+; v2 : Lcom/google/ads/internal/d; , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length
+.line 1257
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.q Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	if-eqz	v0,lbf300
+; v0 : Ljava/lang/Object;
+.line 1258
+	if-eqz	v4,lbf306
+; v4 : single-length
+.line 1259
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.q Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/SwipeableAdListener
+; v0 : Lcom/google/ads/SwipeableAdListener;
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/SwipeableAdListener/onAdActivated	; onAdActivated(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/SwipeableAdListener; , v1 : Lcom/google/ads/Ad;
+lbf300:
+.line 1264
+	return-void	
+lbf302:
+.line 1253
+	const/4	v1,0
+; v1 : single-length
+	goto	lbf2ae
+lbf306:
+.line 1261
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.q Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/SwipeableAdListener
+; v0 : Lcom/google/ads/SwipeableAdListener;
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/SwipeableAdListener/onAdDeactivated	; onAdDeactivated(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/SwipeableAdListener; , v1 : Lcom/google/ads/Ad;
+	goto	lbf300
+.end method
+
+.method public a(Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 8
+; this: v6 (Lcom/google/ads/internal/d;)
+; parameter[0] : v7 (Ljava/lang/String;)
+.line 365
+	iput-object	v7,v6,com/google/ads/internal/d.B Ljava/lang/String;
+; v7 : Ljava/lang/String; , v6 : Lcom/google/ads/internal/d;
+.line 368
+	new-instance	v0,android/net/Uri$Builder
+; v0 : Landroid/net/Uri$Builder;
+	invoke-direct	{v0},android/net/Uri$Builder/<init>	; <init>()V
+; v0 : Landroid/net/Uri$Builder;
+	invoke-virtual	{v0,v7},android/net/Uri$Builder/encodedQuery	; encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
+; v0 : Landroid/net/Uri$Builder; , v7 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/net/Uri$Builder;
+	invoke-virtual	{v0},android/net/Uri$Builder/build	; build()Landroid/net/Uri;
+; v0 : Landroid/net/Uri$Builder;
+	move-result-object	v0
+; v0 : Landroid/net/Uri;
+.line 370
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+.line 371
+	invoke-static	{v0},com/google/ads/util/AdUtil/b	; b(Landroid/net/Uri;)Ljava/util/HashMap;
+; v0 : Landroid/net/Uri;
+	move-result-object	v2
+; v2 : Ljava/util/HashMap;
+.line 372
+	invoke-interface	{v2},java/util/Map/keySet	; keySet()Ljava/util/Set;
+; v2 : Ljava/util/HashMap;
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	invoke-interface	{v0},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v0 : Ljava/util/Set;
+	move-result-object	v3
+; v3 : Ljava/util/Iterator;
+lbf388:
+	invoke-interface	{v3},java/util/Iterator/hasNext	; hasNext()Z
+; v3 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf3d4
+; v0 : single-length
+	invoke-interface	{v3},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v3 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+.line 373
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v5," = "
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-interface	{v2,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/util/HashMap; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v4,"
+"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	goto	lbf388
+lbf3d4:
+.line 380
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/trim	; trim()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	iput-object	v0,v6,com/google/ads/internal/d.A Ljava/lang/String;
+; v0 : Ljava/lang/String; , v6 : Lcom/google/ads/internal/d;
+.line 381
+	iget-object	v0,v6,com/google/ads/internal/d.A Ljava/lang/String;
+; v0 : Ljava/lang/String; , v6 : Lcom/google/ads/internal/d;
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf3fe
+; v0 : single-length
+.line 382
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v6,com/google/ads/internal/d.A Ljava/lang/String;
+; v0 : single-length , v6 : Lcom/google/ads/internal/d;
+lbf3fe:
+.line 384
+	return-void	
+.end method
+
+.method public synchronized a(Ljava/lang/String;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 5
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Ljava/lang/String;)
+.catch java/lang/Exception from lbf412 to lbf444 using lbf448
+.line 792
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbf412:
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.p Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AppEventListener
+; v0 : Lcom/google/ads/AppEventListener;
+.line 793
+	if-eqz	v0,lbf444
+; v0 : Lcom/google/ads/AppEventListener;
+.line 794
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1,v3,v4},com/google/ads/AppEventListener/onAppEvent	; onAppEvent(Lcom/google/ads/Ad;Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/AppEventListener; , v1 : Lcom/google/ads/Ad; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+lbf444:
+.line 796
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf448:
+.line 792
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected synchronized a(Ljava/util/LinkedList;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 6
+; this: v4 (Lcom/google/ads/internal/d;)
+; parameter[0] : v5 (Ljava/util/LinkedList;)
+.catch java/lang/Exception from lbf4c2 to lbf4c6 using lbf4bc
+.catch java/lang/Exception from lbf46e to lbf4ba using lbf4bc
+.line 1214
+	monitor-enter	v4
+; v4 : Lcom/google/ads/internal/d;
+lbf46e:
+	invoke-virtual	{v5},java/util/LinkedList/iterator	; iterator()Ljava/util/Iterator;
+; v5 : Ljava/util/LinkedList;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+lbf476:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf4c2
+; v0 : single-length
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+.line 1215
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Adding a click tracking URL: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf4ba:
+	goto	lbf476
+lbf4bc:
+.line 1214
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+lbf4c2:
+.line 1217
+	iput-object	v5,v4,com/google/ads/internal/d.u Ljava/util/LinkedList;
+; v5 : Ljava/util/LinkedList; , v4 : Lcom/google/ads/internal/d;
+lbf4c6:
+.line 1218
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	return-void	
+.end method
+
+.method public synchronized a(Z)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/Boolean;" , "Ljava/lang/String;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/d;)
+; parameter[0] : v2 (Z)
+.catch java/lang/Exception from lbf4f2 to lbf4f6 using lbf4fa
+.line 1015
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbf4f2:
+	iput-boolean	v2,v1,com/google/ads/internal/d.j Z
+; v2 : single-length , v1 : Lcom/google/ads/internal/d;
+lbf4f6:
+.line 1016
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-void	
+lbf4fa:
+.line 1015
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized b()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf51e to lbf574 using lbf578
+.line 343
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbf51e:
+	iget-object	v0,v2,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v2 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbf530
+; v0 : Lcom/google/ads/e;
+.line 344
+	iget-object	v0,v2,com/google/ads/internal/d.y Lcom/google/ads/e;
+; v0 : Lcom/google/ads/e; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/e/b	; b()V
+; v0 : Lcom/google/ads/e;
+lbf530:
+.line 346
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v1 : single-length
+.line 347
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.p Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v1 : single-length
+.line 348
+	invoke-virtual	{v2},com/google/ads/internal/d/C	; C()V
+; v2 : Lcom/google/ads/internal/d;
+.line 349
+	invoke-virtual	{v2},com/google/ads/internal/d/f	; f()V
+; v2 : Lcom/google/ads/internal/d;
+.line 350
+	iget-object	v0,v2,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbf56e
+; v0 : Lcom/google/ads/internal/AdWebView;
+.line 351
+	iget-object	v0,v2,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/AdWebView/destroy	; destroy()V
+; v0 : Lcom/google/ads/internal/AdWebView;
+lbf56e:
+.line 353
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v2,com/google/ads/internal/d.h Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+lbf574:
+.line 354
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf578:
+.line 343
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized b(J)V
+.limit registers 5
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (J)
+.catch java/lang/Exception from lbf5aa to lbf5c8 using lbf5cc
+.line 1064
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+	const-wide/16	v0,0
+; v0 : double-length
+	cmp-long	v0,v3,v0
+; v0 : single-length , v3 : double-length , v0 : single-length
+	if-lez	v0,lbf5c8
+; v0 : single-length
+lbf5aa:
+.line 1065
+	iget-object	v0,v2,com/google/ads/internal/d.o Landroid/content/SharedPreferences;
+; v0 : Landroid/content/SharedPreferences; , v2 : Lcom/google/ads/internal/d;
+	invoke-interface	{v0},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	const-string	v1,"GoogleAdMobDoritosLife"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v3,v4},android/content/SharedPreferences$Editor/putLong	; putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v1 : Ljava/lang/String; , v3 : double-length
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+lbf5c8:
+.line 1067
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf5cc:
+.line 1064
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized b(Lcom/google/ads/c;)V
+.limit registers 5
+; this: v3 (Lcom/google/ads/internal/d;)
+; parameter[0] : v4 (Lcom/google/ads/c;)
+.catch java/lang/Exception from lbf5f2 to lbf648 using lbf64c
+.line 730
+	monitor-enter	v3
+; v3 : Lcom/google/ads/internal/d;
+lbf5f2:
+	const-string	v0,"AdManager.onGWhirlNoFill() called."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 733
+	invoke-virtual	{v4},com/google/ads/c/i	; i()Ljava/util/List;
+; v4 : Lcom/google/ads/c;
+	move-result-object	v0
+; v0 : Ljava/util/List;
+	invoke-virtual	{v4},com/google/ads/c/c	; c()Ljava/lang/String;
+; v4 : Lcom/google/ads/c;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-direct	{v3,v0,v1},com/google/ads/internal/d/a	; a(Ljava/util/List;Ljava/lang/String;)V
+; v3 : Lcom/google/ads/internal/d; , v0 : Ljava/util/List; , v1 : Ljava/lang/String;
+.line 736
+	iget-object	v0,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 737
+	if-eqz	v0,lbf648
+; v0 : Lcom/google/ads/AdListener;
+.line 738
+	iget-object	v1,v3,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v3 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	sget-object	v2,com/google/ads/AdRequest$ErrorCode.NO_FILL Lcom/google/ads/AdRequest$ErrorCode;
+; v2 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-interface	{v0,v1,v2},com/google/ads/AdListener/onFailedToReceiveAd	; onFailedToReceiveAd(Lcom/google/ads/Ad;Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad; , v2 : Lcom/google/ads/AdRequest$ErrorCode;
+lbf648:
+.line 740
+	monitor-exit	v3
+; v3 : Lcom/google/ads/internal/d;
+	return-void	
+lbf64c:
+.line 730
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v3
+; v3 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method protected synchronized b(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.catch java/lang/Exception from lbf672 to lbf6a8 using lbf6ac
+.line 1193
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbf672:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Adding a tracking URL: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 1194
+	iget-object	v0,v2,com/google/ads/internal/d.s Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v3},java/util/LinkedList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/LinkedList; , v3 : Ljava/lang/String;
+lbf6a8:
+.line 1195
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf6ac:
+.line 1193
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public b(Z)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/d;)
+; parameter[0] : v2 (Z)
+.line 1233
+	invoke-static	{v2},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Boolean;
+	iput-object	v0,v1,com/google/ads/internal/d.w Ljava/lang/Boolean;
+; v0 : Ljava/lang/Boolean; , v1 : Lcom/google/ads/internal/d;
+.line 1234
+	return-void	
+.end method
+
+.method public c()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 390
+	iget-object	v0,v1,com/google/ads/internal/d.A Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method protected synchronized c(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/d;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.catch java/lang/Exception from lbf70a to lbf744 using lbf748
+.line 1203
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbf70a:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Adding a manual tracking URL: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 1204
+	invoke-virtual	{v2},com/google/ads/internal/d/F	; F()Ljava/util/LinkedList;
+; v2 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Ljava/util/LinkedList;
+	invoke-virtual	{v0,v3},java/util/LinkedList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/LinkedList; , v3 : Ljava/lang/String;
+lbf744:
+.line 1205
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf748:
+.line 1203
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public d()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 397
+	iget-object	v0,v1,com/google/ads/internal/d.B Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public synchronized e()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf788 to lbf796 using lbf79a
+.line 404
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+	const/4	v0,0
+; v0 : single-length
+lbf788:
+	iput-boolean	v0,v1,com/google/ads/internal/d.m Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+.line 405
+	const-string	v0,"Refreshing is no longer allowed on this AdView."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf796:
+.line 406
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-void	
+lbf79a:
+.line 404
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized f()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf7fc to lbf806 using lbf808
+.catch java/lang/Exception from lbf7be to lbf7f8 using lbf808
+.line 413
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbf7be:
+	iget-boolean	v0,v2,com/google/ads/internal/d.l Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbf7fc
+; v0 : single-length
+.line 415
+	const-string	v0,"Disabling refreshing."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 416
+	invoke-static	{},com/google/ads/m/a	; a()Lcom/google/ads/m;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.c Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	iget-object	v1,v2,com/google/ads/internal/d.q Lcom/google/ads/af;
+; v1 : Lcom/google/ads/af; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v1},android/os/Handler/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)V
+; v0 : Landroid/os/Handler; , v1 : Lcom/google/ads/af;
+.line 417
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v2,com/google/ads/internal/d.l Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/d;
+lbf7f8:
+.line 421
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbf7fc:
+.line 419
+	const-string	v0,"Refreshing is already disabled."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf806:
+	goto	lbf7f8
+lbf808:
+.line 413
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized g()V
+.limit registers 5
+; this: v4 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf8da to lbf8f0 using lbf8d4
+.catch java/lang/Exception from lbf8c8 to lbf8d2 using lbf8d4
+.catch java/lang/Exception from lbf838 to lbf8c4 using lbf8d4
+.line 428
+	monitor-enter	v4
+; v4 : Lcom/google/ads/internal/d;
+	const/4	v0,0
+; v0 : single-length
+lbf838:
+	iput-boolean	v0,v4,com/google/ads/internal/d.n Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+.line 430
+	iget-object	v0,v4,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/n/a	; a()Z
+; v0 : Lcom/google/ads/n;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lbf8e6
+; v0 : single-length
+.line 431
+	iget-boolean	v0,v4,com/google/ads/internal/d.m Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+	if-eqz	v0,lbf8da
+; v0 : single-length
+.line 432
+	iget-boolean	v0,v4,com/google/ads/internal/d.l Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+	if-nez	v0,lbf8c8
+; v0 : single-length
+.line 434
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Enabling refreshing every "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-wide	v1,v4,com/google/ads/internal/d.p J
+; v1 : double-length , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v1,v2},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," milliseconds."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 435
+	invoke-static	{},com/google/ads/m/a	; a()Lcom/google/ads/m;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.c Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	iget-object	v1,v4,com/google/ads/internal/d.q Lcom/google/ads/af;
+; v1 : Lcom/google/ads/af; , v4 : Lcom/google/ads/internal/d;
+	iget-wide	v2,v4,com/google/ads/internal/d.p J
+; v2 : double-length , v4 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0,v1,v2,v3},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v1 : Lcom/google/ads/af; , v2 : double-length
+.line 436
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v4,com/google/ads/internal/d.l Z
+; v0 : single-length , v4 : Lcom/google/ads/internal/d;
+lbf8c4:
+.line 447
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	return-void	
+lbf8c8:
+.line 439
+	const-string	v0,"Refreshing is already enabled."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf8d2:
+	goto	lbf8c4
+lbf8d4:
+.line 428
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v4
+; v4 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+lbf8da:
+.line 442
+	const-string	v0,"Refreshing disabled on this AdView"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lbf8c4
+lbf8e6:
+.line 445
+	const-string	v0,"Tried to enable refreshing on something other than an AdView."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbf8f0:
+	goto	lbf8c4
+.end method
+
+.method public h()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 453
+	invoke-virtual	{v1},com/google/ads/internal/d/g	; g()V
+; v1 : Lcom/google/ads/internal/d;
+.line 454
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,com/google/ads/internal/d.n Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+.line 455
+	return-void	
+.end method
+
+.method public i()Lcom/google/ads/n;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 468
+	iget-object	v0,v1,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/n;
+.end method
+
+.method public synchronized j()Lcom/google/ads/d;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf95a to lbf95e using lbf962
+.line 475
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbf95a:
+	iget-object	v0,v1,com/google/ads/internal/d.x Lcom/google/ads/d;
+; v0 : Lcom/google/ads/d; , v1 : Lcom/google/ads/internal/d;
+lbf95e:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/d;
+lbf962:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized k()Lcom/google/ads/internal/c;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf986 to lbf98a using lbf98e
+.line 482
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbf986:
+	iget-object	v0,v1,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/internal/d;
+lbf98a:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/c;
+lbf98e:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized l()Lcom/google/ads/internal/AdWebView;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf9b2 to lbf9b6 using lbf9ba
+.line 489
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbf9b2:
+	iget-object	v0,v1,com/google/ads/internal/d.f Lcom/google/ads/internal/AdWebView;
+; v0 : Lcom/google/ads/internal/AdWebView; , v1 : Lcom/google/ads/internal/d;
+lbf9b6:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/AdWebView;
+lbf9ba:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized m()Lcom/google/ads/internal/i;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbf9de to lbf9e2 using lbf9e6
+.line 496
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbf9de:
+	iget-object	v0,v1,com/google/ads/internal/d.g Lcom/google/ads/internal/i;
+; v0 : Lcom/google/ads/internal/i; , v1 : Lcom/google/ads/internal/d;
+lbf9e2:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/i;
+lbf9e6:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public n()Lcom/google/ads/internal/g;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 503
+	iget-object	v0,v1,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v1 : Lcom/google/ads/internal/d;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/g;
+.end method
+
+.method public synchronized o()I
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfa22 to lbfa26 using lbfa2a
+.line 519
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbfa22:
+	iget	v0,v1,com/google/ads/internal/d.v I
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+lbfa26:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return	v0
+; v0 : single-length
+lbfa2a:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public p()J
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.line 526
+	iget-wide	v0,v2,com/google/ads/internal/d.i J
+; v0 : double-length , v2 : Lcom/google/ads/internal/d;
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method public synchronized q()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfa66 to lbfa6a using lbfa78
+.line 535
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbfa66:
+	iget-object	v0,v1,com/google/ads/internal/d.c Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/internal/d;
+lbfa6a:
+	if-eqz	v0,lbfa74
+; v0 : Lcom/google/ads/internal/c;
+	const/4	v0,1
+; v0 : single-length
+lbfa70:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return	v0
+; v0 : single-length
+lbfa74:
+	const/4	v0,0
+; v0 : single-length
+	goto	lbfa70
+lbfa78:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized r()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfa9e to lbfaa2 using lbfaa6
+.line 542
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbfa9e:
+	iget-boolean	v0,v1,com/google/ads/internal/d.j Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+lbfaa2:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return	v0
+; v0 : single-length
+lbfaa6:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized s()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfaca to lbface using lbfad2
+.line 549
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbfaca:
+	iget-boolean	v0,v1,com/google/ads/internal/d.k Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+lbface:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return	v0
+; v0 : single-length
+lbfad2:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized t()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfaf6 to lbfafa using lbfafe
+.line 556
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/d;
+lbfaf6:
+	iget-boolean	v0,v1,com/google/ads/internal/d.l Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/d;
+lbfafa:
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	return	v0
+; v0 : single-length
+lbfafe:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized u()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfb22 to lbfb68 using lbfb6c
+.line 749
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbfb22:
+	iget-object	v0,v2,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v2 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/C	; C()V
+; v0 : Lcom/google/ads/internal/g;
+.line 751
+	const-string	v0,"onDismissScreen()"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 754
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 755
+	if-eqz	v0,lbfb68
+; v0 : Lcom/google/ads/AdListener;
+.line 756
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/AdListener/onDismissScreen	; onDismissScreen(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad;
+lbfb68:
+.line 758
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbfb6c:
+.line 749
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized v()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfb92 to lbfbce using lbfbd2
+.line 766
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbfb92:
+	const-string	v0,"onPresentScreen()"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 768
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 769
+	if-eqz	v0,lbfbce
+; v0 : Lcom/google/ads/AdListener;
+.line 770
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/AdListener/onPresentScreen	; onPresentScreen(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad;
+lbfbce:
+.line 772
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbfbd2:
+.line 766
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized w()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfbf6 to lbfc32 using lbfc36
+.line 780
+	monitor-enter	v2
+; v2 : Lcom/google/ads/internal/d;
+lbfbf6:
+	const-string	v0,"onLeaveApplication()"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 782
+	iget-object	v0,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.o Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0},com/google/ads/util/i$c/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$c;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/AdListener
+; v0 : Lcom/google/ads/AdListener;
+.line 783
+	if-eqz	v0,lbfc32
+; v0 : Lcom/google/ads/AdListener;
+.line 784
+	iget-object	v1,v2,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/internal/d;
+	iget-object	v1,v1,com/google/ads/n.a Lcom/google/ads/util/i$b;
+; v1 : Lcom/google/ads/util/i$b; , v1 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v1},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v1 : Lcom/google/ads/util/i$b;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,com/google/ads/Ad
+; v1 : Lcom/google/ads/Ad;
+	invoke-interface	{v0,v1},com/google/ads/AdListener/onLeaveApplication	; onLeaveApplication(Lcom/google/ads/Ad;)V
+; v0 : Lcom/google/ads/AdListener; , v1 : Lcom/google/ads/Ad;
+lbfc32:
+.line 786
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	return-void	
+lbfc36:
+.line 780
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public x()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/d;)
+.line 802
+	iget-object	v0,v1,com/google/ads/internal/d.e Lcom/google/ads/internal/g;
+; v0 : Lcom/google/ads/internal/g; , v1 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v0},com/google/ads/internal/g/f	; f()V
+; v0 : Lcom/google/ads/internal/g;
+.line 803
+	invoke-virtual	{v1},com/google/ads/internal/d/D	; D()V
+; v1 : Lcom/google/ads/internal/d;
+.line 804
+	return-void	
+.end method
+
+.method public synchronized y()V
+.limit registers 7
+; this: v6 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfca4 to lbfcea using lbfcec
+.catch java/lang/Exception from lbfc7e to lbfca0 using lbfcec
+.line 923
+	monitor-enter	v6
+; v6 : Lcom/google/ads/internal/d;
+lbfc7e:
+	iget-object	v0,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.c Lcom/google/ads/util/i$d;
+; v0 : Lcom/google/ads/util/i$d; , v0 : Lcom/google/ads/util/i$d;
+	invoke-virtual	{v0},com/google/ads/util/i$d/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$d;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+.line 924
+	if-nez	v0,lbfca4
+; v0 : Landroid/app/Activity;
+.line 925
+	const-string	v0,"activity was null while trying to ping tracking URLs."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbfca0:
+.line 935
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	return-void	
+lbfca4:
+.line 930
+	iget-object	v1,v6,com/google/ads/internal/d.s Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v6 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v1},java/util/LinkedList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/LinkedList;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lbfcb0:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lbfca0
+; v1 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+.line 931
+	new-instance	v3,java/lang/Thread
+; v3 : Ljava/lang/Thread;
+	new-instance	v4,com/google/ads/ae
+; v4 : Lcom/google/ads/ae;
+	invoke-virtual	{v0},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/app/Activity;
+	move-result-object	v5
+; v5 : Landroid/content/Context;
+	invoke-direct	{v4,v1,v5},com/google/ads/ae/<init>	; <init>(Ljava/lang/String;Landroid/content/Context;)V
+; v4 : Lcom/google/ads/ae; , v1 : Ljava/lang/String; , v5 : Landroid/content/Context;
+	invoke-direct	{v3,v4},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v3 : Ljava/lang/Thread; , v4 : Lcom/google/ads/ae;
+.line 933
+	invoke-virtual	{v3},java/lang/Thread/start	; start()V
+; v3 : Ljava/lang/Thread;
+lbfcea:
+	goto	lbfcb0
+lbfcec:
+.line 923
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public synchronized z()V
+.limit registers 7
+; this: v6 (Lcom/google/ads/internal/d;)
+.catch java/lang/Exception from lbfd40 to lbfd86 using lbfd88
+.catch java/lang/Exception from lbfd1a to lbfd3c using lbfd88
+.line 942
+	monitor-enter	v6
+; v6 : Lcom/google/ads/internal/d;
+lbfd1a:
+	iget-object	v0,v6,com/google/ads/internal/d.b Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v6 : Lcom/google/ads/internal/d;
+	iget-object	v0,v0,com/google/ads/n.c Lcom/google/ads/util/i$d;
+; v0 : Lcom/google/ads/util/i$d; , v0 : Lcom/google/ads/util/i$d;
+	invoke-virtual	{v0},com/google/ads/util/i$d/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$d;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+.line 943
+	if-nez	v0,lbfd40
+; v0 : Landroid/app/Activity;
+.line 944
+	const-string	v0,"activity was null while trying to ping manual tracking URLs."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lbfd3c:
+.line 954
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	return-void	
+lbfd40:
+.line 949
+	iget-object	v1,v6,com/google/ads/internal/d.t Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v6 : Lcom/google/ads/internal/d;
+	invoke-virtual	{v1},java/util/LinkedList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/LinkedList;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lbfd4c:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,lbfd3c
+; v1 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,java/lang/String
+; v1 : Ljava/lang/String;
+.line 950
+	new-instance	v3,java/lang/Thread
+; v3 : Ljava/lang/Thread;
+	new-instance	v4,com/google/ads/ae
+; v4 : Lcom/google/ads/ae;
+	invoke-virtual	{v0},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/app/Activity;
+	move-result-object	v5
+; v5 : Landroid/content/Context;
+	invoke-direct	{v4,v1,v5},com/google/ads/ae/<init>	; <init>(Ljava/lang/String;Landroid/content/Context;)V
+; v4 : Lcom/google/ads/ae; , v1 : Ljava/lang/String; , v5 : Landroid/content/Context;
+	invoke-direct	{v3,v4},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v3 : Ljava/lang/Thread; , v4 : Lcom/google/ads/ae;
+.line 952
+	invoke-virtual	{v3},java/lang/Thread/start	; start()V
+; v3 : Ljava/lang/Thread;
+lbfd86:
+	goto	lbfd4c
+lbfd88:
+.line 942
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v6
+; v6 : Lcom/google/ads/internal/d;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+

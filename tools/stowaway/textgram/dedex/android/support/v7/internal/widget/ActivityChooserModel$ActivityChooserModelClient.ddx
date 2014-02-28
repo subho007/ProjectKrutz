@@ -1,0 +1,10 @@
+.interface public abstract android/support/v7/internal/widget/ActivityChooserModel$ActivityChooserModelClient
+.super java/lang/Object
+.source ActivityChooserModel.java
+
+.inner class ActivityChooserModelClient inner android/support/v7/internal/widget/ActivityChooserModel$ActivityChooserModelClient outer android/support/v7/internal/widget/ActivityChooserModel
+
+.method public abstract setActivityChooserModel(Landroid/support/v7/internal/widget/ActivityChooserModel;)V
+.end method
+
+

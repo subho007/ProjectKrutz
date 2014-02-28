@@ -1,0 +1,29 @@
+.class android/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs
+.super android/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread
+.source ScrollerCompat.java
+
+.inner class ScrollerCompatImplIcs inner android/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs outer android/support/v4/widget/ScrollerCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs;)
+.line 231
+	invoke-direct	{v0},android/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs;
+	return-void	
+.end method
+
+.method public getCurrVelocity(Ljava/lang/Object;)F
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 234
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatIcs/getCurrVelocity	; getCurrVelocity(Ljava/lang/Object;)F
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

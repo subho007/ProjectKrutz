@@ -1,0 +1,243 @@
+.class android/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread
+.super java/lang/Object
+.source ScrollerCompat.java
+.implements android/support/v4/widget/ScrollerCompat$ScrollerCompatImpl
+
+.inner class ScrollerCompatImplGingerbread inner android/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread outer android/support/v4/widget/ScrollerCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+.line 143
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;
+	return-void	
+.end method
+
+.method public abortAnimation(Ljava/lang/Object;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 201
+	invoke-static	{v1},android/support/v4/widget/ScrollerCompatGingerbread/abortAnimation	; abortAnimation(Ljava/lang/Object;)V
+; v1 : Ljava/lang/Object;
+.line 202
+	return-void	
+.end method
+
+.method public computeScrollOffset(Ljava/lang/Object;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 171
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/computeScrollOffset	; computeScrollOffset(Ljava/lang/Object;)Z
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public createScroller(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
+.limit registers 4
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/view/animation/Interpolator;)
+.line 146
+	invoke-static	{v2,v3},android/support/v4/widget/ScrollerCompatGingerbread/createScroller	; createScroller(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
+; v2 : Landroid/content/Context; , v3 : Landroid/view/animation/Interpolator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public fling(Ljava/lang/Object;IIIIIIII)V
+.limit registers 10
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+; parameter[4] : v5 (I)
+; parameter[5] : v6 (I)
+; parameter[6] : v7 (I)
+; parameter[7] : v8 (I)
+; parameter[8] : v9 (I)
+.line 188
+	invoke-static/range	{v1..v9},android/support/v4/widget/ScrollerCompatGingerbread/fling;	fling(Ljava/lang/Object;IIIIIIII)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length
+.line 190
+	return-void	
+.end method
+
+.method public fling(Ljava/lang/Object;IIIIIIIIII)V
+.limit registers 12
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+; parameter[4] : v5 (I)
+; parameter[5] : v6 (I)
+; parameter[6] : v7 (I)
+; parameter[7] : v8 (I)
+; parameter[8] : v9 (I)
+; parameter[9] : v10 (I)
+; parameter[10] : v11 (I)
+.line 195
+	invoke-static/range	{v1..v11},android/support/v4/widget/ScrollerCompatGingerbread/fling;	fling(Ljava/lang/Object;IIIIIIIIII)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length
+.line 197
+	return-void	
+.end method
+
+.method public getCurrVelocity(Ljava/lang/Object;)F
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 166
+	const/4	v0,0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getCurrX(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 156
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/getCurrX	; getCurrX(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getCurrY(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 161
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/getCurrY	; getCurrY(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFinalX(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 222
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/getFinalX	; getFinalX(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFinalY(Ljava/lang/Object;)I
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 227
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/getFinalY	; getFinalY(Ljava/lang/Object;)I
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isFinished(Ljava/lang/Object;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 151
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/isFinished	; isFinished(Ljava/lang/Object;)Z
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public isOverScrolled(Ljava/lang/Object;)Z
+.limit registers 3
+; this: v1 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v2 (Ljava/lang/Object;)
+.line 217
+	invoke-static	{v2},android/support/v4/widget/ScrollerCompatGingerbread/isOverScrolled	; isOverScrolled(Ljava/lang/Object;)Z
+; v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public notifyHorizontalEdgeReached(Ljava/lang/Object;III)V
+.limit registers 5
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+.line 207
+	invoke-static	{v1,v2,v3,v4},android/support/v4/widget/ScrollerCompatGingerbread/notifyHorizontalEdgeReached	; notifyHorizontalEdgeReached(Ljava/lang/Object;III)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length
+.line 208
+	return-void	
+.end method
+
+.method public notifyVerticalEdgeReached(Ljava/lang/Object;III)V
+.limit registers 5
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+.line 212
+	invoke-static	{v1,v2,v3,v4},android/support/v4/widget/ScrollerCompatGingerbread/notifyVerticalEdgeReached	; notifyVerticalEdgeReached(Ljava/lang/Object;III)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length
+.line 213
+	return-void	
+.end method
+
+.method public startScroll(Ljava/lang/Object;IIII)V
+.limit registers 6
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+; parameter[4] : v5 (I)
+.line 176
+	invoke-static	{v1,v2,v3,v4,v5},android/support/v4/widget/ScrollerCompatGingerbread/startScroll	; startScroll(Ljava/lang/Object;IIII)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length
+.line 177
+	return-void	
+.end method
+
+.method public startScroll(Ljava/lang/Object;IIIII)V
+.limit registers 7
+; this: v0 (Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;)
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (I)
+; parameter[3] : v4 (I)
+; parameter[4] : v5 (I)
+; parameter[5] : v6 (I)
+.line 182
+	invoke-static/range	{v1..v6},android/support/v4/widget/ScrollerCompatGingerbread/startScroll;	startScroll(Ljava/lang/Object;IIIII)V
+; v1 : Ljava/lang/Object; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length
+.line 183
+	return-void	
+.end method
+
+

@@ -1,0 +1,7 @@
+.class android/support/v4/widget/AutoScrollHelper$1
+.super java/lang/Object
+.source AutoScrollHelper.java
+
+.inner class 1 inner android/support/v4/widget/AutoScrollHelper$1 outer android/support/v4/widget/AutoScrollHelper
+
+

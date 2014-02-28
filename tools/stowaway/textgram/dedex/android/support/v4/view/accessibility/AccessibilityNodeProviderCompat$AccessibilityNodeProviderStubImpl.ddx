@@ -1,0 +1,28 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl
+.super java/lang/Object
+.source AccessibilityNodeProviderCompat.java
+.implements android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl
+
+.inner class AccessibilityNodeProviderStubImpl inner android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl outer android/support/v4/view/accessibility/AccessibilityNodeProviderCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;)
+.line 36
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;
+	return-void	
+.end method
+
+.method public newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;)
+; parameter[0] : v2 (Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)
+.line 39
+	const/4	v0,0
+; v0 : single-length
+	return-object	v0
+; v0 : single-length
+.end method
+
+

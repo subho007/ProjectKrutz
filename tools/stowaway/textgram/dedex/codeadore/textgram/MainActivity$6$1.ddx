@@ -1,0 +1,236 @@
+.class codeadore/textgram/MainActivity$6$1
+.super java/lang/Object
+.source MainActivity.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/run()V
+.field final this$1 Lcodeadore/textgram/MainActivity$6;
+
+.method <init>(Lcodeadore/textgram/MainActivity$6;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/MainActivity$6$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/MainActivity$6;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/MainActivity$6$1.this$1 Lcodeadore/textgram/MainActivity$6;
+; v1 : Lcodeadore/textgram/MainActivity$6; , v0 : Lcodeadore/textgram/MainActivity$6$1;
+.line 294
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/MainActivity$6$1;
+	return-void	
+.end method
+
+.method static access$0(Lcodeadore/textgram/MainActivity$6$1;)Lcodeadore/textgram/MainActivity$6;
+.limit registers 2
+; parameter[0] : v1 (Lcodeadore/textgram/MainActivity$6$1;)
+.line 294
+	iget-object	v0,v1,codeadore/textgram/MainActivity$6$1.this$1 Lcodeadore/textgram/MainActivity$6;
+; v0 : Lcodeadore/textgram/MainActivity$6; , v1 : Lcodeadore/textgram/MainActivity$6$1;
+	return-object	v0
+; v0 : Lcodeadore/textgram/MainActivity$6;
+.end method
+
+.method public run()V
+.limit registers 11
+; this: v10 (Lcodeadore/textgram/MainActivity$6$1;)
+.catch java/io/IOException from l9e820 to l9e826 using l9e828
+.catch org/json/JSONException from l9e75e to l9e81c using l9e81e
+.catch java/io/IOException from l9e75e to l9e81c using l9e828
+.catch java/io/IOException from l9e70c to l9e75e using l9e828
+.var 1 is editor Landroid/content/SharedPreferences$Editor; from l9e74e to l9e802
+.var 2 is lastReadMessage I from l9e7aa to l9e802
+.var 3 is message_html Ljava/lang/String; from l9e78c to l9e802
+.var 4 is message_id I from l9e77c to l9e802
+.var 5 is settingsGET Ljava/lang/String; from l9e736 to l9e802
+.var 6 is show Ljava/lang/Boolean; from l9e7b8 to l9e802
+.var 2 is lastReadMessage I from l9e804 to l9e81e
+.var 3 is message_html Ljava/lang/String; from l9e804 to l9e81e
+.var 4 is message_id I from l9e804 to l9e81e
+.var 6 is show Ljava/lang/Boolean; from l9e804 to l9e81e
+.var 0 is e Lorg/json/JSONException; from l9e820 to l9e828
+.var 1 is editor Landroid/content/SharedPreferences$Editor; from l9e804 to l9e828
+.var 5 is settingsGET Ljava/lang/String; from l9e804 to l9e828
+l9e70c:
+.line 300
+	new-instance	v7,java/lang/StringBuilder
+; v7 : Ljava/lang/StringBuilder;
+	const-string	v8,"http://www.codeadore.net/secure/tg_settings/settings_json.php?build="
+; v8 : Ljava/lang/String;
+	invoke-direct	{v7,v8},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+.line 301
+	sget-object	v8,codeadore/textgram/Settings.buildFor Ljava/lang/String;
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v7 : Ljava/lang/StringBuilder; , v8 : Ljava/lang/String;
+	move-result-object	v7
+; v7 : Ljava/lang/StringBuilder;
+.line 300
+	invoke-virtual	{v7},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v7 : Ljava/lang/StringBuilder;
+	move-result-object	v7
+; v7 : Ljava/lang/String;
+	invoke-static	{v7},codeadore/textgram/el7rUtilities/geHTTPtContents	; geHTTPtContents(Ljava/lang/String;)Ljava/lang/String;
+; v7 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+.line 303
+	iget-object	v7,v10,codeadore/textgram/MainActivity$6$1.this$1 Lcodeadore/textgram/MainActivity$6;
+; v7 : Lcodeadore/textgram/MainActivity$6; , v10 : Lcodeadore/textgram/MainActivity$6$1;
+	invoke-static	{v7},codeadore/textgram/MainActivity$6/access$0	; access$0(Lcodeadore/textgram/MainActivity$6;)Lcodeadore/textgram/MainActivity;
+; v7 : Lcodeadore/textgram/MainActivity$6;
+	move-result-object	v7
+; v7 : Lcodeadore/textgram/MainActivity;
+	iget-object	v7,v7,codeadore/textgram/MainActivity.settings Landroid/content/SharedPreferences;
+; v7 : Landroid/content/SharedPreferences; , v7 : Landroid/content/SharedPreferences;
+	invoke-interface	{v7},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v7 : Landroid/content/SharedPreferences;
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences$Editor;
+.line 304
+	const-string	v7,"settingsJSON"
+; v7 : Ljava/lang/String;
+	invoke-interface	{v1,v7,v5},android/content/SharedPreferences$Editor/putString	; putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+; v1 : Landroid/content/SharedPreferences$Editor; , v7 : Ljava/lang/String; , v5 : Ljava/lang/String;
+.line 305
+	invoke-interface	{v1},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v1 : Landroid/content/SharedPreferences$Editor;
+l9e75e:
+.line 310
+	new-instance	v7,org/json/JSONObject
+; v7 : Lorg/json/JSONObject;
+	invoke-direct	{v7,v5},org/json/JSONObject/<init>	; <init>(Ljava/lang/String;)V
+; v7 : Lorg/json/JSONObject; , v5 : Ljava/lang/String;
+	sput-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+.line 312
+	sget-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+.line 313
+	const-string	v8,"message_id"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},org/json/JSONObject/getInt	; getInt(Ljava/lang/String;)I
+; v7 : Lorg/json/JSONObject; , v8 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+.line 314
+	sget-object	v7,codeadore/textgram/Settings.json Lorg/json/JSONObject;
+; v7 : Lorg/json/JSONObject;
+.line 315
+	const-string	v8,"message_html"
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},org/json/JSONObject/getString	; getString(Ljava/lang/String;)Ljava/lang/String;
+; v7 : Lorg/json/JSONObject; , v8 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 317
+	iget-object	v7,v10,codeadore/textgram/MainActivity$6$1.this$1 Lcodeadore/textgram/MainActivity$6;
+; v7 : Lcodeadore/textgram/MainActivity$6; , v10 : Lcodeadore/textgram/MainActivity$6$1;
+	invoke-static	{v7},codeadore/textgram/MainActivity$6/access$0	; access$0(Lcodeadore/textgram/MainActivity$6;)Lcodeadore/textgram/MainActivity;
+; v7 : Lcodeadore/textgram/MainActivity$6;
+	move-result-object	v7
+; v7 : Lcodeadore/textgram/MainActivity;
+	iget-object	v7,v7,codeadore/textgram/MainActivity.settings Landroid/content/SharedPreferences;
+; v7 : Landroid/content/SharedPreferences; , v7 : Landroid/content/SharedPreferences;
+.line 318
+	const-string	v8,"lastReadMessage"
+; v8 : Ljava/lang/String;
+	const/4	v9,0
+; v9 : single-length
+.line 317
+	invoke-interface	{v7,v8,v9},android/content/SharedPreferences/getInt	; getInt(Ljava/lang/String;I)I
+; v7 : Landroid/content/SharedPreferences; , v8 : Ljava/lang/String; , v9 : single-length
+	move-result	v2
+; v2 : single-length
+.line 320
+	if-eqz	v4,l9e802
+; v4 : single-length
+.line 321
+	const/4	v7,0
+; v7 : single-length
+	invoke-static	{v7},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v7 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/Boolean;
+.line 322
+	if-nez	v2,l9e804
+; v2 : single-length
+.line 323
+	const-string	v7,"lastReadMessage"
+; v7 : Ljava/lang/String;
+	invoke-interface	{v1,v7,v4},android/content/SharedPreferences$Editor/putInt	; putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+; v1 : Landroid/content/SharedPreferences$Editor; , v7 : Ljava/lang/String; , v4 : single-length
+.line 325
+	const/4	v7,1
+; v7 : single-length
+	invoke-static	{v7},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v7 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/Boolean;
+l9e7d0:
+.line 332
+	invoke-interface	{v1},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v1 : Landroid/content/SharedPreferences$Editor;
+.line 334
+	invoke-virtual	{v6},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v6 : Ljava/lang/Boolean;
+	move-result	v7
+; v7 : single-length
+	if-eqz	v7,l9e802
+; v7 : single-length
+.line 335
+	iget-object	v7,v10,codeadore/textgram/MainActivity$6$1.this$1 Lcodeadore/textgram/MainActivity$6;
+; v7 : Lcodeadore/textgram/MainActivity$6; , v10 : Lcodeadore/textgram/MainActivity$6$1;
+	invoke-static	{v7},codeadore/textgram/MainActivity$6/access$0	; access$0(Lcodeadore/textgram/MainActivity$6;)Lcodeadore/textgram/MainActivity;
+; v7 : Lcodeadore/textgram/MainActivity$6;
+	move-result-object	v7
+; v7 : Lcodeadore/textgram/MainActivity;
+	iget-object	v7,v7,codeadore/textgram/MainActivity.handler Landroid/os/Handler;
+; v7 : Landroid/os/Handler; , v7 : Landroid/os/Handler;
+	new-instance	v8,codeadore/textgram/MainActivity$6$1$1
+; v8 : Lcodeadore/textgram/MainActivity$6$1$1;
+	invoke-direct	{v8,v10,v3},codeadore/textgram/MainActivity$6$1$1/<init>	; <init>(Lcodeadore/textgram/MainActivity$6$1;Ljava/lang/String;)V
+; v8 : Lcodeadore/textgram/MainActivity$6$1$1; , v10 : Lcodeadore/textgram/MainActivity$6$1; , v3 : Ljava/lang/String;
+	invoke-virtual	{v7,v8},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v7 : Landroid/os/Handler; , v8 : Lcodeadore/textgram/MainActivity$6$1$1;
+l9e802:
+.line 356
+	return-void	
+l9e804:
+.line 326
+	if-ge	v2,v4,l9e7d0
+; v2 : single-length , v4 : single-length
+.line 327
+	const/4	v7,1
+; v7 : single-length
+	invoke-static	{v7},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v7 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/Boolean;
+.line 328
+	const-string	v7,"lastReadMessage"
+; v7 : Ljava/lang/String;
+	invoke-interface	{v1,v7,v4},android/content/SharedPreferences$Editor/putInt	; putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+; v1 : Landroid/content/SharedPreferences$Editor; , v7 : Ljava/lang/String; , v4 : single-length
+l9e81c:
+	goto	l9e7d0
+l9e81e:
+.line 350
+	move-exception	v0
+; v0 : org/json/JSONException
+l9e820:
+.line 351
+	invoke-virtual	{v0},org/json/JSONException/printStackTrace	; printStackTrace()V
+; v0 : org/json/JSONException
+l9e826:
+	goto	l9e802
+l9e828:
+.line 353
+	move-exception	v0
+; v0 : java/io/IOException
+.line 354
+	invoke-virtual	{v0},java/io/IOException/printStackTrace	; printStackTrace()V
+; v0 : java/io/IOException
+	goto	l9e802
+.end method
+
+

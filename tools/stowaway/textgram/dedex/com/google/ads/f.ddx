@@ -1,0 +1,130 @@
+.class public com/google/ads/f
+.super java/lang/Object
+.source SourceFile
+
+.field private final a Ljava/lang/String;
+.field private final b Ljava/lang/String;
+.field private final c Ljava/lang/String;
+.field private final d Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private final e Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private final f Ljava/util/List;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/lang/String;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;)V" }
+.end annotation
+.limit registers 7
+; this: v0 (Lcom/google/ads/f;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (Ljava/lang/String;)
+; parameter[3] : v4 (Ljava/util/List;)
+; parameter[4] : v5 (Ljava/util/List;)
+; parameter[5] : v6 (Ljava/util/List;)
+.line 41
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/f;
+.line 42
+	invoke-static	{v2},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v2 : Ljava/lang/String;
+.line 43
+	if-eqz	v1,lb9cb2
+; v1 : Ljava/lang/String;
+.line 44
+	invoke-static	{v1},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+lb9cb2:
+.line 46
+	invoke-static	{v3},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v3 : Ljava/lang/String;
+.line 47
+	iput-object	v1,v0,com/google/ads/f.a Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/google/ads/f;
+.line 48
+	iput-object	v2,v0,com/google/ads/f.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcom/google/ads/f;
+.line 49
+	iput-object	v3,v0,com/google/ads/f.c Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcom/google/ads/f;
+.line 50
+	iput-object	v4,v0,com/google/ads/f.d Ljava/util/List;
+; v4 : Ljava/util/List; , v0 : Lcom/google/ads/f;
+.line 51
+	iput-object	v5,v0,com/google/ads/f.e Ljava/util/List;
+; v5 : Ljava/util/List; , v0 : Lcom/google/ads/f;
+.line 52
+	iput-object	v6,v0,com/google/ads/f.f Ljava/util/List;
+; v6 : Ljava/util/List; , v0 : Lcom/google/ads/f;
+.line 53
+	return-void	
+.end method
+
+.method public a()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/f;)
+.line 61
+	iget-object	v0,v1,com/google/ads/f.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/f;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public b()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/f;)
+.line 65
+	iget-object	v0,v1,com/google/ads/f.b Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/f;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public c()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/f;)
+.line 69
+	iget-object	v0,v1,com/google/ads/f.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/f;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public d()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/f;)
+.line 74
+	iget-object	v0,v1,com/google/ads/f.d Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/f;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+.method public e()Ljava/util/List;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/List" , "<" , "Ljava/lang/String;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/f;)
+.line 79
+	iget-object	v0,v1,com/google/ads/f.e Ljava/util/List;
+; v0 : Ljava/util/List; , v1 : Lcom/google/ads/f;
+	return-object	v0
+; v0 : Ljava/util/List;
+.end method
+
+

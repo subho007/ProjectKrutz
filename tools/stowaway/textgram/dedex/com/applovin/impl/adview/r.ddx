@@ -1,0 +1,57 @@
+.class final com/applovin/impl/adview/r
+.super java/lang/Enum
+
+.field public static final a Lcom/applovin/impl/adview/r;
+.field public static final b Lcom/applovin/impl/adview/r;
+.field private static final c [Lcom/applovin/impl/adview/r;
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	new-instance	v0,com/applovin/impl/adview/r
+; v0 : Lcom/applovin/impl/adview/r;
+	const-string	v1,"WIDTH"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},com/applovin/impl/adview/r/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/adview/r; , v1 : Ljava/lang/String; , v2 : single-length
+	sput-object	v0,com/applovin/impl/adview/r.a Lcom/applovin/impl/adview/r;
+; v0 : Lcom/applovin/impl/adview/r;
+	new-instance	v0,com/applovin/impl/adview/r
+; v0 : Lcom/applovin/impl/adview/r;
+	const-string	v1,"HEIGHT"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3},com/applovin/impl/adview/r/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/adview/r; , v1 : Ljava/lang/String; , v3 : single-length
+	sput-object	v0,com/applovin/impl/adview/r.b Lcom/applovin/impl/adview/r;
+; v0 : Lcom/applovin/impl/adview/r;
+	const/4	v0,2
+; v0 : single-length
+	new-array	v0,v0,[Lcom/applovin/impl/adview/r;
+; v0 : [Lcom/applovin/impl/adview/r; , v0 : [Lcom/applovin/impl/adview/r;
+	sget-object	v1,com/applovin/impl/adview/r.a Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	aput-object	v1,v0,v2
+; v1 : Lcom/applovin/impl/adview/r; , v0 : [Lcom/applovin/impl/adview/r; , v2 : single-length
+	sget-object	v1,com/applovin/impl/adview/r.b Lcom/applovin/impl/adview/r;
+; v1 : Lcom/applovin/impl/adview/r;
+	aput-object	v1,v0,v3
+; v1 : Lcom/applovin/impl/adview/r; , v0 : [Lcom/applovin/impl/adview/r; , v3 : single-length
+	sput-object	v0,com/applovin/impl/adview/r.c [Lcom/applovin/impl/adview/r;
+; v0 : [Lcom/applovin/impl/adview/r;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;I)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/adview/r;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lcom/applovin/impl/adview/r; , v1 : Ljava/lang/String; , v2 : single-length
+	return-void	
+.end method
+
+

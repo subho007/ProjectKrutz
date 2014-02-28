@@ -1,0 +1,86 @@
+.class public com/google/ads/mediation/customevent/CustomEventExtras
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/mediation/NetworkExtras
+
+.field private final a Ljava/util/HashMap;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/HashMap" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/customevent/CustomEventExtras;)
+.line 12
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+.line 13
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v1,com/google/ads/mediation/customevent/CustomEventExtras.a Ljava/util/HashMap;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+	return-void	
+.end method
+
+.method public addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/customevent/CustomEventExtras;
+.limit registers 4
+; this: v1 (Lcom/google/ads/mediation/customevent/CustomEventExtras;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+.line 22
+	iget-object	v0,v1,com/google/ads/mediation/customevent/CustomEventExtras.a Ljava/util/HashMap;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+	invoke-virtual	{v0,v2,v3},java/util/HashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Object;
+.line 23
+	return-object	v1
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+.end method
+
+.method public clearExtras()Lcom/google/ads/mediation/customevent/CustomEventExtras;
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/customevent/CustomEventExtras;)
+.line 30
+	iget-object	v0,v1,com/google/ads/mediation/customevent/CustomEventExtras.a Ljava/util/HashMap;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+	invoke-virtual	{v0},java/util/HashMap/clear	; clear()V
+; v0 : Ljava/util/HashMap;
+.line 31
+	return-object	v1
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+.end method
+
+.method public getExtra(Ljava/lang/String;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Lcom/google/ads/mediation/customevent/CustomEventExtras;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 40
+	iget-object	v0,v1,com/google/ads/mediation/customevent/CustomEventExtras.a Ljava/util/HashMap;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+	invoke-virtual	{v0,v2},java/util/HashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+.method public removeExtra(Ljava/lang/String;)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Lcom/google/ads/mediation/customevent/CustomEventExtras;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 49
+	iget-object	v0,v1,com/google/ads/mediation/customevent/CustomEventExtras.a Ljava/util/HashMap;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/customevent/CustomEventExtras;
+	invoke-virtual	{v0,v2},java/util/HashMap/remove	; remove(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	return-object	v0
+; v0 : Ljava/lang/Object;
+.end method
+
+

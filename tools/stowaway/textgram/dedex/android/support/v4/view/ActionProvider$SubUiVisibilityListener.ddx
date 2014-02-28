@@ -1,0 +1,10 @@
+.interface public abstract android/support/v4/view/ActionProvider$SubUiVisibilityListener
+.super java/lang/Object
+.source ActionProvider.java
+
+.inner class SubUiVisibilityListener inner android/support/v4/view/ActionProvider$SubUiVisibilityListener outer android/support/v4/view/ActionProvider
+
+.method public abstract onSubUiVisibilityChanged(Z)V
+.end method
+
+

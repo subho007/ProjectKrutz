@@ -1,0 +1,3560 @@
+.class public com/viewpagerindicator/TitlePageIndicator
+.super android/view/View
+.source TitlePageIndicator.java
+.implements com/viewpagerindicator/PageIndicator
+
+.inner class IndicatorStyle inner com/viewpagerindicator/TitlePageIndicator$IndicatorStyle outer com/viewpagerindicator/TitlePageIndicator
+.inner class LinePosition inner com/viewpagerindicator/TitlePageIndicator$LinePosition outer com/viewpagerindicator/TitlePageIndicator
+.inner class OnCenterItemClickListener inner com/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener outer com/viewpagerindicator/TitlePageIndicator
+.inner class SavedState inner com/viewpagerindicator/TitlePageIndicator$SavedState outer com/viewpagerindicator/TitlePageIndicator
+.field private static $SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle [I = null
+.field private static final BOLD_FADE_PERCENTAGE F = 0.05
+.field private static final EMPTY_TITLE Ljava/lang/String; = ""
+.field private static final INVALID_POINTER I = -1	; 0xffffffff
+.field private static final SELECTION_FADE_PERCENTAGE F = 0.25
+.field private mActivePointerId I
+.field private mBoldText Z
+.field private final mBounds Landroid/graphics/Rect;
+.field private mCenterItemClickListener Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+.field private mClipPadding F
+.field private mColorSelected I
+.field private mColorText I
+.field private mCurrentPage I
+.field private mFooterIndicatorHeight F
+.field private mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.field private mFooterIndicatorUnderlinePadding F
+.field private mFooterLineHeight F
+.field private mFooterPadding F
+.field private mIsDragging Z
+.field private mLastMotionX F
+.field private mLinePosition Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.field private mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.field private mPageOffset F
+.field private final mPaintFooterIndicator Landroid/graphics/Paint;
+.field private final mPaintFooterLine Landroid/graphics/Paint;
+.field private final mPaintText Landroid/graphics/Paint;
+.field private mPath Landroid/graphics/Path;
+.field private mScrollState I
+.field private mTitlePadding F
+.field private mTopPadding F
+.field private mTouchSlop I
+.field private mViewPager Landroid/support/v4/view/ViewPager;
+
+.method static $SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle()[I
+.limit registers 3
+.catch java/lang/NoSuchFieldError from l160048 to l16005a using l160060
+.catch java/lang/NoSuchFieldError from l160036 to l160048 using l160064
+.catch java/lang/NoSuchFieldError from l160024 to l160036 using l160068
+.line 47
+	sget-object	v0,com/viewpagerindicator/TitlePageIndicator.$SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle [I
+; v0 : [I
+	if-eqz	v0,l160016
+; v0 : [I
+l160014:
+	return-object	v0
+; v0 : [I
+l160016:
+	invoke-static	{},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/values	; values()[Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; 
+	nop	
+	move-result-object	v0
+; v0 : [Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	array-length	v0,v0
+; v0 : single-length , v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+l160024:
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.None Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/ordinal	; ordinal()I
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l160036:
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Triangle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/ordinal	; ordinal()I
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,2
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l160048:
+	sget-object	v1,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.Underline Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/ordinal	; ordinal()I
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,3
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l16005a:
+	sput-object	v0,com/viewpagerindicator/TitlePageIndicator.$SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle [I
+; v0 : [I
+	goto	l160014
+l160060:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l16005a
+l160064:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l160048
+l160068:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l160036
+.end method
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 152
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},com/viewpagerindicator/TitlePageIndicator/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v2 : Landroid/content/Context; , v0 : single-length
+.line 153
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+.line 156
+	sget	v0,com/viewpagerindicator/R$attr.vpiTitlePageIndicatorStyle I
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},com/viewpagerindicator/TitlePageIndicator/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet; , v0 : single-length
+.line 157
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.limit registers 31
+; this: v27 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v28 (Landroid/content/Context;)
+; parameter[1] : v29 (Landroid/util/AttributeSet;)
+; parameter[2] : v30 (I)
+.line 160
+	invoke-direct/range	{v27..v30},android/view/View/<init>;	<init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+; v27 : Lcom/viewpagerindicator/TitlePageIndicator; , v28 : Landroid/content/Context; , v29 : Landroid/util/AttributeSet; , v30 : single-length
+.line 119
+	const/16	v25,65535
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 122
+	new-instance	v25,android/graphics/Paint
+; v25 : Landroid/graphics/Paint;
+	invoke-direct/range	{v25},android/graphics/Paint/<init>;	<init>()V
+; v25 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 126
+	new-instance	v25,android/graphics/Path
+; v25 : Landroid/graphics/Path;
+	invoke-direct/range	{v25},android/graphics/Path/<init>;	<init>()V
+; v25 : Landroid/graphics/Path;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Path; , v25 : Landroid/graphics/Path;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v0 : Landroid/graphics/Path; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 127
+	new-instance	v25,android/graphics/Rect
+; v25 : Landroid/graphics/Rect;
+	invoke-direct/range	{v25},android/graphics/Rect/<init>;	<init>()V
+; v25 : Landroid/graphics/Rect;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Rect; , v25 : Landroid/graphics/Rect;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mBounds Landroid/graphics/Rect;
+; v0 : Landroid/graphics/Rect; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 128
+	new-instance	v25,android/graphics/Paint
+; v25 : Landroid/graphics/Paint;
+	invoke-direct/range	{v25},android/graphics/Paint/<init>;	<init>()V
+; v25 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 131
+	new-instance	v25,android/graphics/Paint
+; v25 : Landroid/graphics/Paint;
+	invoke-direct/range	{v25},android/graphics/Paint/<init>;	<init>()V
+; v25 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 144
+	const/high16	v25,49024
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 145
+	const/16	v25,65535
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 161
+	invoke-virtual/range	{v27},com/viewpagerindicator/TitlePageIndicator/isInEditMode;	isInEditMode()Z
+; v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v25
+; v25 : single-length
+	if-eqz	v25,l16018e
+; v25 : single-length
+l16018c:
+.line 216
+	return-void	
+l16018e:
+.line 164
+	invoke-virtual/range	{v27},com/viewpagerindicator/TitlePageIndicator/getResources;	getResources()Landroid/content/res/Resources;
+; v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result-object	v23
+; v23 : Landroid/content/res/Resources;
+.line 165
+	sget	v25,com/viewpagerindicator/R$color.default_title_indicator_footer_color I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getColor	; getColor(I)I
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v9
+; v9 : single-length
+.line 166
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_footer_line_height I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v13
+; v13 : single-length
+.line 167
+	sget	v25,com/viewpagerindicator/R$integer.default_title_indicator_footer_indicator_style I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getInteger	; getInteger(I)I
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v11
+; v11 : single-length
+.line 168
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_footer_indicator_height I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v10
+; v10 : single-length
+.line 169
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_footer_indicator_underline_padding I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v12
+; v12 : single-length
+.line 170
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_footer_padding I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v14
+; v14 : single-length
+.line 171
+	sget	v25,com/viewpagerindicator/R$integer.default_title_indicator_line_position I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getInteger	; getInteger(I)I
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v15
+; v15 : single-length
+.line 172
+	sget	v25,com/viewpagerindicator/R$color.default_title_indicator_selected_color I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getColor	; getColor(I)I
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+.line 173
+	sget	v25,com/viewpagerindicator/R$bool.default_title_indicator_selected_bold I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getBoolean	; getBoolean(I)Z
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+.line 174
+	sget	v25,com/viewpagerindicator/R$color.default_title_indicator_text_color I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getColor	; getColor(I)I
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v18
+; v18 : single-length
+.line 175
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_text_size I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v19
+; v19 : single-length
+.line 176
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_title_padding I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v20
+; v20 : single-length
+.line 177
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_clip_padding I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v8
+; v8 : single-length
+.line 178
+	sget	v25,com/viewpagerindicator/R$dimen.default_title_indicator_top_padding I
+; v25 : single-length
+	move-object/from16	v0,v23
+; v0 : Landroid/content/res/Resources; , v23 : Landroid/content/res/Resources;
+	move/from16	v1,v25
+; v1 : single-length , v25 : single-length
+	invoke-virtual	{v0,v1},android/content/res/Resources/getDimension	; getDimension(I)F
+; v0 : Landroid/content/res/Resources; , v1 : single-length
+	move-result	v21
+; v21 : single-length
+.line 181
+	sget-object	v25,com/viewpagerindicator/R$styleable.TitlePageIndicator [I
+; v25 : [I
+	const/16	v26,0
+; v26 : single-length
+	move-object/from16	v0,v28
+; v0 : Landroid/content/Context; , v28 : Landroid/content/Context;
+	move-object/from16	v1,v29
+; v1 : Landroid/util/AttributeSet; , v29 : Landroid/util/AttributeSet;
+	move-object/from16	v2,v25
+; v2 : [I , v25 : [I
+	move/from16	v3,v30
+; v3 : single-length , v30 : single-length
+	move/from16	v4,v26
+; v4 : single-length , v26 : single-length
+	invoke-virtual	{v0,v1,v2,v3,v4},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+; v0 : Landroid/content/Context; , v1 : Landroid/util/AttributeSet; , v2 : [I , v3 : single-length , v4 : single-length
+	move-result-object	v5
+; v5 : Landroid/content/res/TypedArray;
+.line 184
+	const/16	v25,6
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v13},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v13 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 185
+	const/16	v25,7
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v11},android/content/res/TypedArray/getInteger	; getInteger(II)I
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v11 : single-length
+	move-result	v25
+; v25 : single-length
+	invoke-static/range	{v25},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/fromValue;	fromValue(I)Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v25 : single-length
+	move-result-object	v25
+; v25 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-object/from16	v0,v25
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v25 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 186
+	const/16	v25,8
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v10},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v10 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorHeight F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 187
+	const/16	v25,9
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v12},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v12 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorUnderlinePadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 188
+	const/16	v25,10
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v14},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v14 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 189
+	const/16	v25,11
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v15},android/content/res/TypedArray/getInteger	; getInteger(II)I
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v15 : single-length
+	move-result	v25
+; v25 : single-length
+	invoke-static/range	{v25},com/viewpagerindicator/TitlePageIndicator$LinePosition/fromValue;	fromValue(I)Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v25 : single-length
+	move-result-object	v25
+; v25 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	move-object/from16	v0,v25
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v25 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLinePosition Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 190
+	const/16	v25,14
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v21
+; v1 : single-length , v21 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 191
+	const/16	v25,13
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v20
+; v1 : single-length , v20 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 192
+	const/16	v25,4
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v8},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v8 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 193
+	const/16	v25,3
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getColor	; getColor(II)I
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mColorSelected I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 194
+	const/16	v25,1
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getColor	; getColor(II)I
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mColorText I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 195
+	const/16	v25,12
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getBoolean	; getBoolean(IZ)Z
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-boolean	v0,v1,com/viewpagerindicator/TitlePageIndicator.mBoldText Z
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 197
+	const/16	v25,0
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move/from16	v1,v19
+; v1 : single-length , v19 : single-length
+	invoke-virtual	{v5,v0,v1},android/content/res/TypedArray/getDimension	; getDimension(IF)F
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v1 : single-length
+	move-result	v24
+; v24 : single-length
+.line 198
+	const/16	v25,5
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0,v9},android/content/res/TypedArray/getColor	; getColor(II)I
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length , v9 : single-length
+	move-result	v22
+; v22 : single-length
+.line 199
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move/from16	v1,v24
+; v1 : single-length , v24 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setTextSize	; setTextSize(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 200
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	const/16	v26,1
+; v26 : single-length
+	invoke-virtual/range	{v25..v26},android/graphics/Paint/setAntiAlias;	setAntiAlias(Z)V
+; v25 : Landroid/graphics/Paint; , v26 : single-length
+.line 201
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	sget-object	v26,android/graphics/Paint$Style.FILL_AND_STROKE Landroid/graphics/Paint$Style;
+; v26 : Landroid/graphics/Paint$Style;
+	invoke-virtual/range	{v25..v26},android/graphics/Paint/setStyle;	setStyle(Landroid/graphics/Paint$Style;)V
+; v25 : Landroid/graphics/Paint; , v26 : Landroid/graphics/Paint$Style;
+.line 202
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v0 : single-length , v0 : single-length
+	move/from16	v26,v0
+; v26 : single-length , v0 : single-length
+	invoke-virtual/range	{v25..v26},android/graphics/Paint/setStrokeWidth;	setStrokeWidth(F)V
+; v25 : Landroid/graphics/Paint; , v26 : single-length
+.line 203
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move/from16	v1,v22
+; v1 : single-length , v22 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 204
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	sget-object	v26,android/graphics/Paint$Style.FILL_AND_STROKE Landroid/graphics/Paint$Style;
+; v26 : Landroid/graphics/Paint$Style;
+	invoke-virtual/range	{v25..v26},android/graphics/Paint/setStyle;	setStyle(Landroid/graphics/Paint$Style;)V
+; v25 : Landroid/graphics/Paint; , v26 : Landroid/graphics/Paint$Style;
+.line 205
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v25,v0
+; v25 : Landroid/graphics/Paint; , v0 : Landroid/graphics/Paint;
+	move-object/from16	v0,v25
+; v0 : Landroid/graphics/Paint; , v25 : Landroid/graphics/Paint;
+	move/from16	v1,v22
+; v1 : single-length , v22 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 207
+	const/16	v25,2
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	invoke-virtual	{v5,v0},android/content/res/TypedArray/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v5 : Landroid/content/res/TypedArray; , v0 : single-length
+	move-result-object	v6
+; v6 : Landroid/graphics/drawable/Drawable;
+.line 208
+	if-eqz	v6,l160536
+; v6 : Landroid/graphics/drawable/Drawable;
+.line 209
+	move-object/from16	v0,v27
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v6},com/viewpagerindicator/TitlePageIndicator/setBackgroundDrawable	; setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v6 : Landroid/graphics/drawable/Drawable;
+l160536:
+.line 212
+	invoke-virtual	{v5},android/content/res/TypedArray/recycle	; recycle()V
+; v5 : Landroid/content/res/TypedArray;
+.line 214
+	invoke-static/range	{v28},android/view/ViewConfiguration/get;	get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+; v28 : Landroid/content/Context;
+	move-result-object	v7
+; v7 : Landroid/view/ViewConfiguration;
+.line 215
+	invoke-static	{v7},android/support/v4/view/ViewConfigurationCompat/getScaledPagingTouchSlop	; getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
+; v7 : Landroid/view/ViewConfiguration;
+	move-result	v25
+; v25 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	move-object/from16	v1,v27
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v27 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mTouchSlop I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	goto/16	l16018c
+.end method
+
+.method private calcBounds(ILandroid/graphics/Paint;)Landroid/graphics/Rect;
+.limit registers 7
+; this: v4 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v5 (I)
+; parameter[1] : v6 (Landroid/graphics/Paint;)
+.line 700
+	new-instance	v0,android/graphics/Rect
+; v0 : Landroid/graphics/Rect;
+	invoke-direct	{v0},android/graphics/Rect/<init>	; <init>()V
+; v0 : Landroid/graphics/Rect;
+.line 701
+	invoke-direct	{v4,v5},com/viewpagerindicator/TitlePageIndicator/getTitle	; getTitle(I)Ljava/lang/CharSequence;
+; v4 : Lcom/viewpagerindicator/TitlePageIndicator; , v5 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/CharSequence;
+.line 702
+	const/4	v2,0
+; v2 : single-length
+	invoke-interface	{v1},java/lang/CharSequence/length	; length()I
+; v1 : Ljava/lang/CharSequence;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v6,v1,v2,v3},android/graphics/Paint/measureText	; measureText(Ljava/lang/CharSequence;II)F
+; v6 : Landroid/graphics/Paint; , v1 : Ljava/lang/CharSequence; , v2 : single-length , v3 : single-length
+	move-result	v2
+; v2 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	iput	v2,v0,android/graphics/Rect.right I
+; v2 : single-length , v0 : Landroid/graphics/Rect;
+.line 703
+	invoke-virtual	{v6},android/graphics/Paint/descent	; descent()F
+; v6 : Landroid/graphics/Paint;
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v6},android/graphics/Paint/ascent	; ascent()F
+; v6 : Landroid/graphics/Paint;
+	move-result	v3
+; v3 : single-length
+	sub-float/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	float-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	iput	v2,v0,android/graphics/Rect.bottom I
+; v2 : single-length , v0 : Landroid/graphics/Rect;
+.line 704
+	return-object	v0
+; v0 : Landroid/graphics/Rect;
+.end method
+
+.method private calculateAllBounds(Landroid/graphics/Paint;)Ljava/util/ArrayList;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/graphics/Paint;" , ")" , "Ljava/util/ArrayList" , "<" , "Landroid/graphics/Rect;" , ">;" }
+.end annotation
+.limit registers 13
+; this: v11 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v12 (Landroid/graphics/Paint;)
+.line 672
+	new-instance	v5,java/util/ArrayList
+; v5 : Ljava/util/ArrayList;
+	invoke-direct	{v5},java/util/ArrayList/<init>	; <init>()V
+; v5 : Ljava/util/ArrayList;
+.line 674
+	iget-object	v8,v11,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v8 : Landroid/support/v4/view/ViewPager; , v11 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v8},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v8 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v8
+; v8 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual	{v8},android/support/v4/view/PagerAdapter/getCount	; getCount()I
+; v8 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v1
+; v1 : single-length
+.line 675
+	invoke-virtual	{v11},com/viewpagerindicator/TitlePageIndicator/getWidth	; getWidth()I
+; v11 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v7
+; v7 : single-length
+.line 676
+	div-int/lit8	v3,v7,2
+; v3 : single-length , v7 : single-length
+.line 677
+	const/4	v4,0
+; v4 : single-length
+l1605ec:
+	if-lt	v4,v1,l1605f2
+; v4 : single-length , v1 : single-length
+.line 688
+	return-object	v5
+; v5 : Ljava/util/ArrayList;
+l1605f2:
+.line 678
+	invoke-direct	{v11,v4,v12},com/viewpagerindicator/TitlePageIndicator/calcBounds	; calcBounds(ILandroid/graphics/Paint;)Landroid/graphics/Rect;
+; v11 : Lcom/viewpagerindicator/TitlePageIndicator; , v4 : single-length , v12 : Landroid/graphics/Paint;
+	move-result-object	v0
+; v0 : Landroid/graphics/Rect;
+.line 679
+	iget	v8,v0,android/graphics/Rect.right I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+	iget	v9,v0,android/graphics/Rect.left I
+; v9 : single-length , v0 : Landroid/graphics/Rect;
+	sub-int	v6,v8,v9
+; v6 : single-length , v8 : single-length , v9 : single-length
+.line 680
+	iget	v8,v0,android/graphics/Rect.bottom I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+	iget	v9,v0,android/graphics/Rect.top I
+; v9 : single-length , v0 : Landroid/graphics/Rect;
+	sub-int	v2,v8,v9
+; v2 : single-length , v8 : single-length , v9 : single-length
+.line 681
+	int-to-float	v8,v3
+; v8 : single-length , v3 : single-length
+	int-to-float	v9,v6
+; v9 : single-length , v6 : single-length
+	const/high16	v10,16384
+; v10 : single-length
+	div-float/2addr	v9,v10
+; v9 : single-length , v10 : single-length
+	sub-float/2addr	v8,v9
+; v8 : single-length , v9 : single-length
+	iget	v9,v11,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v9 : single-length , v11 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-int	v9,v4,v9
+; v9 : single-length , v4 : single-length , v9 : single-length
+	int-to-float	v9,v9
+; v9 : single-length , v9 : single-length
+	iget	v10,v11,com/viewpagerindicator/TitlePageIndicator.mPageOffset F
+; v10 : single-length , v11 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float/2addr	v9,v10
+; v9 : single-length , v10 : single-length
+	int-to-float	v10,v7
+; v10 : single-length , v7 : single-length
+	mul-float/2addr	v9,v10
+; v9 : single-length , v10 : single-length
+	add-float/2addr	v8,v9
+; v8 : single-length , v9 : single-length
+	float-to-int	v8,v8
+; v8 : single-length , v8 : single-length
+	iput	v8,v0,android/graphics/Rect.left I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+.line 682
+	iget	v8,v0,android/graphics/Rect.left I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+	add-int/2addr	v8,v6
+; v8 : single-length , v6 : single-length
+	iput	v8,v0,android/graphics/Rect.right I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+.line 683
+	const/4	v8,0
+; v8 : single-length
+	iput	v8,v0,android/graphics/Rect.top I
+; v8 : single-length , v0 : Landroid/graphics/Rect;
+.line 684
+	iput	v2,v0,android/graphics/Rect.bottom I
+; v2 : single-length , v0 : Landroid/graphics/Rect;
+.line 685
+	invoke-virtual	{v5,v0},java/util/ArrayList/add	; add(Ljava/lang/Object;)Z
+; v5 : Ljava/util/ArrayList; , v0 : Landroid/graphics/Rect;
+.line 677
+	add-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	goto	l1605ec
+.end method
+
+.method private clipViewOnTheLeft(Landroid/graphics/Rect;FI)V
+.limit registers 6
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (Landroid/graphics/Rect;)
+; parameter[1] : v4 (F)
+; parameter[2] : v5 (I)
+.line 661
+	int-to-float	v0,v5
+; v0 : single-length , v5 : single-length
+	iget	v1,v2,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v1 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	iput	v0,v3,android/graphics/Rect.left I
+; v0 : single-length , v3 : Landroid/graphics/Rect;
+.line 662
+	iget	v0,v2,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v0 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v0,v4
+; v0 : single-length , v4 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	iput	v0,v3,android/graphics/Rect.right I
+; v0 : single-length , v3 : Landroid/graphics/Rect;
+.line 663
+	return-void	
+.end method
+
+.method private clipViewOnTheRight(Landroid/graphics/Rect;FI)V
+.limit registers 6
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (Landroid/graphics/Rect;)
+; parameter[1] : v4 (F)
+; parameter[2] : v5 (I)
+.line 648
+	int-to-float	v0,v5
+; v0 : single-length , v5 : single-length
+	iget	v1,v2,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v1 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	iput	v0,v3,android/graphics/Rect.right I
+; v0 : single-length , v3 : Landroid/graphics/Rect;
+.line 649
+	iget	v0,v3,android/graphics/Rect.right I
+; v0 : single-length , v3 : Landroid/graphics/Rect;
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	sub-float/2addr	v0,v4
+; v0 : single-length , v4 : single-length
+	float-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	iput	v0,v3,android/graphics/Rect.left I
+; v0 : single-length , v3 : Landroid/graphics/Rect;
+.line 650
+	return-void	
+.end method
+
+.method private getTitle(I)Ljava/lang/CharSequence;
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (I)
+.line 864
+	iget-object	v1,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v1 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v1},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v1 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v1
+; v1 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual	{v1,v3},android/support/v4/view/PagerAdapter/getPageTitle	; getPageTitle(I)Ljava/lang/CharSequence;
+; v1 : Landroid/support/v4/view/PagerAdapter; , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/CharSequence;
+.line 865
+	if-nez	v0,l1606e4
+; v0 : Ljava/lang/CharSequence;
+.line 866
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+l1606e4:
+.line 868
+	return-object	v0
+; v0 : Ljava/lang/CharSequence;
+.end method
+
+.method public getClipPadding()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 331
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFooterColor()I
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 220
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0},android/graphics/Paint/getColor	; getColor()I
+; v0 : Landroid/graphics/Paint;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFooterIndicatorHeight()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 240
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorHeight F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFooterIndicatorPadding()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 249
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getFooterIndicatorStyle()Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 258
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.end method
+
+.method public getFooterLineHeight()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 230
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getLinePosition()Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 267
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLinePosition Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.end method
+
+.method public getSelectedColor()I
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 276
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mColorSelected I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getTextColor()I
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 294
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mColorText I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getTextSize()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 304
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0},android/graphics/Paint/getTextSize	; getTextSize()F
+; v0 : Landroid/graphics/Paint;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getTitlePadding()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 313
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getTopPadding()F
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 322
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getTypeface()Landroid/graphics/Typeface;
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 345
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0},android/graphics/Paint/getTypeface	; getTypeface()Landroid/graphics/Typeface;
+; v0 : Landroid/graphics/Paint;
+	move-result-object	v0
+; v0 : Landroid/graphics/Typeface;
+	return-object	v0
+; v0 : Landroid/graphics/Typeface;
+.end method
+
+.method public isSelectedBold()Z
+.limit registers 2
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 285
+	iget-boolean	v0,v1,com/viewpagerindicator/TitlePageIndicator.mBoldText Z
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public notifyDataSetChanged()V
+.limit registers 1
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 731
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 732
+	return-void	
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+.limit registers 45
+; this: v43 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v44 (Landroid/graphics/Canvas;)
+.var 28 is i I from l160a5c to l160a60
+.var 28 is i I from l160a7c to l160a84
+.var 14 is colorTextAlpha I from l160a90 to l160c02
+.var 17 is curPageBound Landroid/graphics/Rect; from l1609dc to l160c02
+.var 18 is curPageWidth F from l1609f4 to l160c02
+.var 19 is currentBold Z from l1609b8 to l160c02
+.var 21 is currentSelected Z from l1609a6 to l160c02
+.var 22 is footerIndicatorLineHeight F from l160ab4 to l160c02
+.var 23 is footerLineHeight F from l160aa8 to l160c02
+.var 26 is heightMinusLine F from l160b60 to l160c02
+.var 28 is i I from l160a94 to l160c02
+.var 33 is offsetPercent F from l160996 to l160c02
+.var 39 is selectedPercent F from l1609c8 to l160c02
+.var 36 is rightBound Landroid/graphics/Rect; from l160c78 to l160cc4
+.var 41 is w I from l160c54 to l160cc4
+.var 11 is bound Landroid/graphics/Rect; from l160c3a to l160ccc
+.var 30 is leftBound Landroid/graphics/Rect; from l160d1a to l160d62
+.var 41 is w I from l160cf6 to l160d62
+.var 11 is bound Landroid/graphics/Rect; from l160cdc to l160d6a
+.var 36 is rightBound Landroid/graphics/Rect; from l160e42 to l160e9a
+.var 41 is w I from l160e70 to l160e9a
+.var 5 is pageTitle Ljava/lang/CharSequence; from l160dca to l160f3e
+.var 20 is currentPage Z from l160dba to l160f3e
+.var 5 is pageTitle Ljava/lang/CharSequence; from l160f4e to l160f54
+.var 11 is bound Landroid/graphics/Rect; from l160d7a to l160f54
+.var 20 is currentPage Z from l160f4e to l160f54
+.line 355
+	invoke-super/range	{v43..v44},android/view/View/onDraw;	onDraw(Landroid/graphics/Canvas;)V
+; v43 : Lcom/viewpagerindicator/TitlePageIndicator; , v44 : Landroid/graphics/Canvas;
+.line 357
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-nez	v4,l16088c
+; v4 : Landroid/support/v4/view/ViewPager;
+l16088a:
+.line 542
+	return-void	
+l16088c:
+.line 360
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v4 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v4
+; v4 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual	{v4},android/support/v4/view/PagerAdapter/getCount	; getCount()I
+; v4 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v15
+; v15 : single-length
+.line 361
+	if-eqz	v15,l16088a
+; v15 : single-length
+.line 366
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	const/4	v6,15
+; v6 : single-length
+	if-ne	v4,v6,l1608da
+; v4 : single-length , v6 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v4,l1608da
+; v4 : Landroid/support/v4/view/ViewPager;
+.line 367
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v4 : Landroid/support/v4/view/ViewPager; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/support/v4/view/ViewPager/getCurrentItem	; getCurrentItem()I
+; v4 : Landroid/support/v4/view/ViewPager;
+	move-result	v4
+; v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+l1608da:
+.line 371
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-direct	{v0,v4},com/viewpagerindicator/TitlePageIndicator/calculateAllBounds	; calculateAllBounds(Landroid/graphics/Paint;)Ljava/util/ArrayList;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v4 : Landroid/graphics/Paint;
+	move-result-object	v12
+; v12 : Ljava/util/ArrayList;
+.line 372
+	invoke-virtual	{v12},java/util/ArrayList/size	; size()I
+; v12 : Ljava/util/ArrayList;
+	move-result	v13
+; v13 : single-length
+.line 375
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-lt	v4,v13,l160912
+; v4 : single-length , v13 : single-length
+.line 376
+	add-int/lit8	v4,v13,255
+; v4 : single-length , v13 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v4},com/viewpagerindicator/TitlePageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v4 : single-length
+	goto	l16088a
+l160912:
+.line 380
+	add-int/lit8	v16,v15,255
+; v16 : single-length , v15 : single-length
+.line 381
+	invoke-virtual/range	{v43},com/viewpagerindicator/TitlePageIndicator/getWidth;	getWidth()I
+; v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v4
+; v4 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	const/high16	v6,16384
+; v6 : single-length
+	div-float	v24,v4,v6
+; v24 : single-length , v4 : single-length , v6 : single-length
+.line 382
+	invoke-virtual/range	{v43},com/viewpagerindicator/TitlePageIndicator/getLeft;	getLeft()I
+; v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v29
+; v29 : single-length
+.line 383
+	move/from16	v0,v29
+; v0 : single-length , v29 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float	v31,v4,v6
+; v31 : single-length , v4 : single-length , v6 : single-length
+.line 384
+	invoke-virtual/range	{v43},com/viewpagerindicator/TitlePageIndicator/getWidth;	getWidth()I
+; v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v42
+; v42 : single-length
+.line 385
+	invoke-virtual/range	{v43},com/viewpagerindicator/TitlePageIndicator/getHeight;	getHeight()I
+; v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v25
+; v25 : single-length
+.line 386
+	add-int	v35,v29,v42
+; v35 : single-length , v29 : single-length , v42 : single-length
+.line 387
+	move/from16	v0,v35
+; v0 : single-length , v35 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float	v37,v4,v6
+; v37 : single-length , v4 : single-length , v6 : single-length
+.line 389
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v34,v0
+; v34 : single-length , v0 : single-length
+.line 391
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPageOffset F
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	float-to-double	v6,v4
+; v6 : double-length , v4 : single-length
+	const-wide/high16	v8,16352
+; v8 : double-length
+	cmpg-double	v4,v6,v8
+; v4 : single-length , v6 : double-length , v8 : double-length
+	if-gtz	v4,l160c02
+; v4 : single-length
+.line 392
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mPageOffset F
+; v0 : single-length , v0 : single-length
+	move/from16	v33,v0
+; v33 : single-length , v0 : single-length
+l160996:
+.line 397
+	const/high16	v4,16000
+; v4 : single-length
+	cmpg-float	v4,v33,v4
+; v4 : single-length , v33 : single-length , v4 : single-length
+	if-gtz	v4,l160c1a
+; v4 : single-length
+	const/16	v21,1
+; v21 : single-length
+l1609a6:
+.line 398
+	const	v4,1028443341	; 0x3d4ccccd
+; v4 : single-length
+	cmpg-float	v4,v33,v4
+; v4 : single-length , v33 : single-length , v4 : single-length
+	if-gtz	v4,l160c22
+; v4 : single-length
+	const/16	v19,1
+; v19 : single-length
+l1609b8:
+.line 399
+	const/high16	v4,16000
+; v4 : single-length
+	sub-float	v4,v4,v33
+; v4 : single-length , v4 : single-length , v33 : single-length
+	const/high16	v6,16000
+; v6 : single-length
+	div-float	v39,v4,v6
+; v39 : single-length , v4 : single-length , v6 : single-length
+.line 402
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v12,v4},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v4 : single-length
+	move-result-object	v17
+; v17 : Ljava/lang/Object;
+	check-cast	v17,android/graphics/Rect
+; v17 : Landroid/graphics/Rect;
+.line 403
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.right I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	iget	v6,v0,android/graphics/Rect.left I
+; v6 : single-length , v0 : Landroid/graphics/Rect;
+	sub-int/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	int-to-float	v0,v4
+; v0 : single-length , v4 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+.line 404
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.left I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	cmpg-float	v4,v4,v31
+; v4 : single-length , v4 : single-length , v31 : single-length
+	if-gez	v4,l160a1c
+; v4 : single-length
+.line 406
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v1,v17
+; v1 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	move/from16	v2,v18
+; v2 : single-length , v18 : single-length
+	move/from16	v3,v29
+; v3 : single-length , v29 : single-length
+	invoke-direct	{v0,v1,v2,v3},com/viewpagerindicator/TitlePageIndicator/clipViewOnTheLeft	; clipViewOnTheLeft(Landroid/graphics/Rect;FI)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v1 : Landroid/graphics/Rect; , v2 : single-length , v3 : single-length
+l160a1c:
+.line 408
+	move-object/from16	v0,v17
+; v0 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.right I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	cmpl-float	v4,v4,v37
+; v4 : single-length , v4 : single-length , v37 : single-length
+	if-lez	v4,l160a44
+; v4 : single-length
+.line 410
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v1,v17
+; v1 : Landroid/graphics/Rect; , v17 : Landroid/graphics/Rect;
+	move/from16	v2,v18
+; v2 : single-length , v18 : single-length
+	move/from16	v3,v35
+; v3 : single-length , v35 : single-length
+	invoke-direct	{v0,v1,v2,v3},com/viewpagerindicator/TitlePageIndicator/clipViewOnTheRight	; clipViewOnTheRight(Landroid/graphics/Rect;FI)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v1 : Landroid/graphics/Rect; , v2 : single-length , v3 : single-length
+l160a44:
+.line 414
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-lez	v4,l160a60
+; v4 : single-length
+.line 415
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-int/lit8	v28,v4,255
+; v28 : single-length , v4 : single-length
+l160a5c:
+	if-gez	v28,l160c2a
+; v28 : single-length
+l160a60:
+.line 433
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	if-ge	v4,v0,l160a84
+; v4 : single-length , v0 : single-length
+.line 434
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-int/lit8	v28,v4,1
+; v28 : single-length , v4 : single-length
+l160a7c:
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	if-lt	v0,v15,l160ccc
+; v0 : single-length , v15 : single-length
+l160a84:
+.line 453
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v0,com/viewpagerindicator/TitlePageIndicator.mColorText I
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	ushr-int/lit8	v14,v4,24
+; v14 : single-length , v4 : single-length
+.line 454
+	const/16	v28,0
+; v28 : single-length
+l160a94:
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	if-lt	v0,v15,l160d6a
+; v0 : single-length , v15 : single-length
+.line 494
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+.line 495
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorHeight F
+; v0 : single-length , v0 : single-length
+	move/from16	v22,v0
+; v22 : single-length , v0 : single-length
+.line 496
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mLinePosition Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v4 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sget-object	v6,com/viewpagerindicator/TitlePageIndicator$LinePosition.Top Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v6 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+	if-ne	v4,v6,l160adc
+; v4 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v6 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+.line 497
+	const/16	v25,0
+; v25 : single-length
+.line 498
+	move/from16	v0,v23
+; v0 : single-length , v23 : single-length
+	neg-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v23,v0
+; v23 : single-length , v0 : single-length
+.line 499
+	move/from16	v0,v22
+; v0 : single-length , v22 : single-length
+	neg-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v22,v0
+; v22 : single-length , v0 : single-length
+l160adc:
+.line 503
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/reset	; reset()V
+; v4 : Landroid/graphics/Path;
+.line 504
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	const/4	v6,0
+; v6 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	int-to-float	v7,v0
+; v7 : single-length , v0 : single-length
+	const/high16	v8,16384
+; v8 : single-length
+	div-float	v8,v23,v8
+; v8 : single-length , v23 : single-length , v8 : single-length
+	sub-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	invoke-virtual	{v4,v6,v7},android/graphics/Path/moveTo	; moveTo(FF)V
+; v4 : Landroid/graphics/Path; , v6 : single-length , v7 : single-length
+.line 505
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v42
+; v0 : single-length , v42 : single-length
+	int-to-float	v6,v0
+; v6 : single-length , v0 : single-length
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	int-to-float	v7,v0
+; v7 : single-length , v0 : single-length
+	const/high16	v8,16384
+; v8 : single-length
+	div-float	v8,v23,v8
+; v8 : single-length , v23 : single-length , v8 : single-length
+	sub-float/2addr	v7,v8
+; v7 : single-length , v8 : single-length
+	invoke-virtual	{v4,v6,v7},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v6 : single-length , v7 : single-length
+.line 506
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/close	; close()V
+; v4 : Landroid/graphics/Path;
+.line 507
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v6,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v6 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v44
+; v0 : Landroid/graphics/Canvas; , v44 : Landroid/graphics/Canvas;
+	invoke-virtual	{v0,v4,v6},android/graphics/Canvas/drawPath	; drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v4 : Landroid/graphics/Path; , v6 : Landroid/graphics/Paint;
+.line 509
+	move/from16	v0,v25
+; v0 : single-length , v25 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	sub-float	v26,v4,v23
+; v26 : single-length , v4 : single-length , v23 : single-length
+.line 510
+	invoke-static	{},com/viewpagerindicator/TitlePageIndicator/$SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle	; $SWITCH_TABLE$com$viewpagerindicator$TitlePageIndicator$IndicatorStyle()[I
+; 
+	nop	
+	move-result-object	v4
+; v4 : [I
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v6,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v6 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v6},com/viewpagerindicator/TitlePageIndicator$IndicatorStyle/ordinal	; ordinal()I
+; v6 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	move-result	v6
+; v6 : single-length
+	aget	v4,v4,v6
+; v4 : single-length , v4 : single-length , v6 : single-length
+	packed-switch	v4,2
+		ps160b7c_160b86	; case 2
+		ps160b7c_160f54	; case 3
+		default: ps160b7c_default
+; v4 : single-length
+ps160b7c_default:
+	goto/16	l16088a
+ps160b7c_160b86:
+.line 512
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/reset	; reset()V
+; v4 : Landroid/graphics/Path;
+.line 513
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float	v6,v26,v22
+; v6 : single-length , v26 : single-length , v22 : single-length
+	move/from16	v0,v24
+; v0 : single-length , v24 : single-length
+	invoke-virtual	{v4,v0,v6},android/graphics/Path/moveTo	; moveTo(FF)V
+; v4 : Landroid/graphics/Path; , v0 : single-length , v6 : single-length
+.line 514
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float	v6,v24,v22
+; v6 : single-length , v24 : single-length , v22 : single-length
+	move/from16	v0,v26
+; v0 : single-length , v26 : single-length
+	invoke-virtual	{v4,v6,v0},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v6 : single-length , v0 : single-length
+.line 515
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float	v6,v24,v22
+; v6 : single-length , v24 : single-length , v22 : single-length
+	move/from16	v0,v26
+; v0 : single-length , v26 : single-length
+	invoke-virtual	{v4,v6,v0},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v6 : single-length , v0 : single-length
+.line 516
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/close	; close()V
+; v4 : Landroid/graphics/Path;
+.line 517
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v6,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v6 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v44
+; v0 : Landroid/graphics/Canvas; , v44 : Landroid/graphics/Canvas;
+	invoke-virtual	{v0,v4,v6},android/graphics/Canvas/drawPath	; drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v4 : Landroid/graphics/Path; , v6 : Landroid/graphics/Paint;
+	goto/16	l16088a
+l160c02:
+.line 394
+	add-int/lit8	v34,v34,1
+; v34 : single-length , v34 : single-length
+.line 395
+	const/high16	v4,16256
+; v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mPageOffset F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float	v33,v4,v6
+; v33 : single-length , v4 : single-length , v6 : single-length
+	goto/16	l160996
+l160c1a:
+.line 397
+	const/16	v21,0
+; v21 : single-length
+	goto/16	l1609a6
+l160c22:
+.line 398
+	const/16	v19,0
+; v19 : single-length
+	goto/16	l1609b8
+l160c2a:
+.line 416
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	invoke-virtual	{v12,v0},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v0 : single-length
+	move-result-object	v11
+; v11 : Ljava/lang/Object;
+	check-cast	v11,android/graphics/Rect
+; v11 : Landroid/graphics/Rect;
+.line 418
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	cmpg-float	v4,v4,v31
+; v4 : single-length , v4 : single-length , v31 : single-length
+	if-gez	v4,l160cc4
+; v4 : single-length
+.line 419
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	iget	v6,v11,android/graphics/Rect.left I
+; v6 : single-length , v11 : Landroid/graphics/Rect;
+	sub-int	v41,v4,v6
+; v41 : single-length , v4 : single-length , v6 : single-length
+.line 421
+	move/from16	v0,v41
+; v0 : single-length , v41 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v1,v29
+; v1 : single-length , v29 : single-length
+	invoke-direct	{v0,v11,v4,v1},com/viewpagerindicator/TitlePageIndicator/clipViewOnTheLeft	; clipViewOnTheLeft(Landroid/graphics/Rect;FI)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v11 : Landroid/graphics/Rect; , v4 : single-length , v1 : single-length
+.line 423
+	add-int/lit8	v4,v28,1
+; v4 : single-length , v28 : single-length
+	invoke-virtual	{v12,v4},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v4 : single-length
+	move-result-object	v36
+; v36 : Ljava/lang/Object;
+	check-cast	v36,android/graphics/Rect
+; v36 : Landroid/graphics/Rect;
+.line 425
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	move-object/from16	v0,v36
+; v0 : Landroid/graphics/Rect; , v36 : Landroid/graphics/Rect;
+	iget	v6,v0,android/graphics/Rect.left I
+; v6 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	cmpl-float	v4,v4,v6
+; v4 : single-length , v4 : single-length , v6 : single-length
+	if-lez	v4,l160cc4
+; v4 : single-length
+.line 426
+	move-object/from16	v0,v36
+; v0 : Landroid/graphics/Rect; , v36 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.left I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	sub-int	v4,v4,v41
+; v4 : single-length , v4 : single-length , v41 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	float-to-int	v4,v4
+; v4 : single-length , v4 : single-length
+	iput	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+.line 427
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	add-int	v4,v4,v41
+; v4 : single-length , v4 : single-length , v41 : single-length
+	iput	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+l160cc4:
+.line 415
+	add-int/lit8	v28,v28,255
+; v28 : single-length , v28 : single-length
+	goto/16	l160a5c
+l160ccc:
+.line 435
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	invoke-virtual	{v12,v0},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v0 : single-length
+	move-result-object	v11
+; v11 : Ljava/lang/Object;
+	check-cast	v11,android/graphics/Rect
+; v11 : Landroid/graphics/Rect;
+.line 437
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	cmpl-float	v4,v4,v37
+; v4 : single-length , v4 : single-length , v37 : single-length
+	if-lez	v4,l160d62
+; v4 : single-length
+.line 438
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	iget	v6,v11,android/graphics/Rect.left I
+; v6 : single-length , v11 : Landroid/graphics/Rect;
+	sub-int	v41,v4,v6
+; v41 : single-length , v4 : single-length , v6 : single-length
+.line 440
+	move/from16	v0,v41
+; v0 : single-length , v41 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v1,v35
+; v1 : single-length , v35 : single-length
+	invoke-direct	{v0,v11,v4,v1},com/viewpagerindicator/TitlePageIndicator/clipViewOnTheRight	; clipViewOnTheRight(Landroid/graphics/Rect;FI)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v11 : Landroid/graphics/Rect; , v4 : single-length , v1 : single-length
+.line 442
+	add-int/lit8	v4,v28,255
+; v4 : single-length , v28 : single-length
+	invoke-virtual	{v12,v4},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v4 : single-length
+	move-result-object	v30
+; v30 : Ljava/lang/Object;
+	check-cast	v30,android/graphics/Rect
+; v30 : Landroid/graphics/Rect;
+.line 444
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	move-object/from16	v0,v30
+; v0 : Landroid/graphics/Rect; , v30 : Landroid/graphics/Rect;
+	iget	v6,v0,android/graphics/Rect.right I
+; v6 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	cmpg-float	v4,v4,v6
+; v4 : single-length , v4 : single-length , v6 : single-length
+	if-gez	v4,l160d62
+; v4 : single-length
+.line 445
+	move-object/from16	v0,v30
+; v0 : Landroid/graphics/Rect; , v30 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.right I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	float-to-int	v4,v4
+; v4 : single-length , v4 : single-length
+	iput	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+.line 446
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	add-int	v4,v4,v41
+; v4 : single-length , v4 : single-length , v41 : single-length
+	iput	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+l160d62:
+.line 434
+	add-int/lit8	v28,v28,1
+; v28 : single-length , v28 : single-length
+	goto/16	l160a7c
+l160d6a:
+.line 456
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	invoke-virtual	{v12,v0},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v0 : single-length
+	move-result-object	v11
+; v11 : Ljava/lang/Object;
+	check-cast	v11,android/graphics/Rect
+; v11 : Landroid/graphics/Rect;
+.line 458
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	move/from16	v0,v29
+; v0 : single-length , v29 : single-length
+	if-le	v4,v0,l160d92
+; v4 : single-length , v0 : single-length
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	move/from16	v0,v35
+; v0 : single-length , v35 : single-length
+	if-lt	v4,v0,l160daa
+; v4 : single-length , v0 : single-length
+l160d92:
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	move/from16	v0,v29
+; v0 : single-length , v29 : single-length
+	if-le	v4,v0,l160f3e
+; v4 : single-length , v0 : single-length
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	move/from16	v0,v35
+; v0 : single-length , v35 : single-length
+	if-ge	v4,v0,l160f3e
+; v4 : single-length , v0 : single-length
+l160daa:
+.line 459
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	move/from16	v1,v34
+; v1 : single-length , v34 : single-length
+	if-ne	v0,v1,l160f46
+; v0 : single-length , v1 : single-length
+	const/16	v20,1
+; v20 : single-length
+l160dba:
+.line 460
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v1,v28
+; v1 : single-length , v28 : single-length
+	invoke-direct	{v0,v1},com/viewpagerindicator/TitlePageIndicator/getTitle	; getTitle(I)Ljava/lang/CharSequence;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v1 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/CharSequence;
+.line 463
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v6,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v6 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v20,l160f4e
+; v20 : single-length
+	if-eqz	v19,l160f4e
+; v19 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-boolean	v4,v0,com/viewpagerindicator/TitlePageIndicator.mBoldText Z
+; v4 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v4,l160f4e
+; v4 : single-length
+	const/4	v4,1
+; v4 : single-length
+l160de8:
+	invoke-virtual	{v6,v4},android/graphics/Paint/setFakeBoldText	; setFakeBoldText(Z)V
+; v6 : Landroid/graphics/Paint; , v4 : single-length
+.line 466
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mColorText I
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4,v6},android/graphics/Paint/setColor	; setColor(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+.line 467
+	if-eqz	v20,l160e26
+; v20 : single-length
+	if-eqz	v21,l160e26
+; v21 : single-length
+.line 469
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	int-to-float	v6,v14
+; v6 : single-length , v14 : single-length
+	mul-float	v6,v6,v39
+; v6 : single-length , v6 : single-length , v39 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	sub-int	v6,v14,v6
+; v6 : single-length , v14 : single-length , v6 : single-length
+	invoke-virtual	{v4,v6},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+l160e26:
+.line 473
+	add-int/lit8	v4,v13,255
+; v4 : single-length , v13 : single-length
+	move/from16	v0,v28
+; v0 : single-length , v28 : single-length
+	if-ge	v0,v4,l160e9a
+; v0 : single-length , v4 : single-length
+.line 474
+	add-int/lit8	v4,v28,1
+; v4 : single-length , v28 : single-length
+	invoke-virtual	{v12,v4},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v4 : single-length
+	move-result-object	v36
+; v36 : Ljava/lang/Object;
+	check-cast	v36,android/graphics/Rect
+; v36 : Landroid/graphics/Rect;
+.line 476
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	move-object/from16	v0,v36
+; v0 : Landroid/graphics/Rect; , v36 : Landroid/graphics/Rect;
+	iget	v6,v0,android/graphics/Rect.left I
+; v6 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	cmpl-float	v4,v4,v6
+; v4 : single-length , v4 : single-length , v6 : single-length
+	if-lez	v4,l160e9a
+; v4 : single-length
+.line 477
+	iget	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	iget	v6,v11,android/graphics/Rect.left I
+; v6 : single-length , v11 : Landroid/graphics/Rect;
+	sub-int	v41,v4,v6
+; v41 : single-length , v4 : single-length , v6 : single-length
+.line 478
+	move-object/from16	v0,v36
+; v0 : Landroid/graphics/Rect; , v36 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.left I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	sub-int	v4,v4,v41
+; v4 : single-length , v4 : single-length , v41 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float/2addr	v4,v6
+; v4 : single-length , v6 : single-length
+	float-to-int	v4,v4
+; v4 : single-length , v4 : single-length
+	iput	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+.line 479
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	add-int	v4,v4,v41
+; v4 : single-length , v4 : single-length , v41 : single-length
+	iput	v4,v11,android/graphics/Rect.right I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+l160e9a:
+.line 482
+	const/4	v6,0
+; v6 : single-length
+	invoke-interface	{v5},java/lang/CharSequence/length	; length()I
+; v5 : Ljava/lang/CharSequence;
+	move-result	v7
+; v7 : single-length
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v8,v4
+; v8 : single-length , v4 : single-length
+	iget	v4,v11,android/graphics/Rect.bottom I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v9,v0,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v9 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v9,v4
+; v9 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v10,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v10 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v4,v44
+; v4 : Landroid/graphics/Canvas; , v44 : Landroid/graphics/Canvas;
+	invoke-virtual/range	{v4..v10},android/graphics/Canvas/drawText;	drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v5 : Ljava/lang/CharSequence; , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length , v10 : Landroid/graphics/Paint;
+.line 485
+	if-eqz	v20,l160f3e
+; v20 : single-length
+	if-eqz	v21,l160f3e
+; v21 : single-length
+.line 486
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mColorSelected I
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4,v6},android/graphics/Paint/setColor	; setColor(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+.line 487
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mColorSelected I
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	ushr-int/lit8	v6,v6,24
+; v6 : single-length , v6 : single-length
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	mul-float	v6,v6,v39
+; v6 : single-length , v6 : single-length , v39 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	invoke-virtual	{v4,v6},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+.line 488
+	const/4	v6,0
+; v6 : single-length
+	invoke-interface	{v5},java/lang/CharSequence/length	; length()I
+; v5 : Ljava/lang/CharSequence;
+	move-result	v7
+; v7 : single-length
+	iget	v4,v11,android/graphics/Rect.left I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v8,v4
+; v8 : single-length , v4 : single-length
+	iget	v4,v11,android/graphics/Rect.bottom I
+; v4 : single-length , v11 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v9,v0,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v9 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v9,v4
+; v9 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v10,v0,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v10 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v4,v44
+; v4 : Landroid/graphics/Canvas; , v44 : Landroid/graphics/Canvas;
+	invoke-virtual/range	{v4..v10},android/graphics/Canvas/drawText;	drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
+; v4 : Landroid/graphics/Canvas; , v5 : Ljava/lang/CharSequence; , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length , v10 : Landroid/graphics/Paint;
+l160f3e:
+.line 454
+	add-int/lit8	v28,v28,1
+; v28 : single-length , v28 : single-length
+	goto/16	l160a94
+l160f46:
+.line 459
+	const/16	v20,0
+; v20 : single-length
+	goto/16	l160dba
+l160f4e:
+.line 463
+	const/4	v4,0
+; v4 : single-length
+	goto/16	l160de8
+ps160b7c_160f54:
+.line 521
+	if-eqz	v21,l16088a
+; v21 : single-length
+	move/from16	v0,v34
+; v0 : single-length , v34 : single-length
+	if-ge	v0,v13,l16088a
+; v0 : single-length , v13 : single-length
+.line 525
+	move/from16	v0,v34
+; v0 : single-length , v34 : single-length
+	invoke-virtual	{v12,v0},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v12 : Ljava/util/ArrayList; , v0 : single-length
+	move-result-object	v40
+; v40 : Ljava/lang/Object;
+	check-cast	v40,android/graphics/Rect
+; v40 : Landroid/graphics/Rect;
+.line 526
+	move-object/from16	v0,v40
+; v0 : Landroid/graphics/Rect; , v40 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.right I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorUnderlinePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float	v38,v4,v6
+; v38 : single-length , v4 : single-length , v6 : single-length
+.line 527
+	move-object/from16	v0,v40
+; v0 : Landroid/graphics/Rect; , v40 : Landroid/graphics/Rect;
+	iget	v4,v0,android/graphics/Rect.left I
+; v4 : single-length , v0 : Landroid/graphics/Rect;
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v6,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorUnderlinePadding F
+; v6 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sub-float	v32,v4,v6
+; v32 : single-length , v4 : single-length , v6 : single-length
+.line 528
+	sub-float	v27,v26,v22
+; v27 : single-length , v26 : single-length , v22 : single-length
+.line 530
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/reset	; reset()V
+; v4 : Landroid/graphics/Path;
+.line 531
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v32
+; v0 : single-length , v32 : single-length
+	move/from16	v1,v26
+; v1 : single-length , v26 : single-length
+	invoke-virtual	{v4,v0,v1},android/graphics/Path/moveTo	; moveTo(FF)V
+; v4 : Landroid/graphics/Path; , v0 : single-length , v1 : single-length
+.line 532
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v38
+; v0 : single-length , v38 : single-length
+	move/from16	v1,v26
+; v1 : single-length , v26 : single-length
+	invoke-virtual	{v4,v0,v1},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v0 : single-length , v1 : single-length
+.line 533
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v38
+; v0 : single-length , v38 : single-length
+	move/from16	v1,v27
+; v1 : single-length , v27 : single-length
+	invoke-virtual	{v4,v0,v1},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v0 : single-length , v1 : single-length
+.line 534
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move/from16	v0,v32
+; v0 : single-length , v32 : single-length
+	move/from16	v1,v27
+; v1 : single-length , v27 : single-length
+	invoke-virtual	{v4,v0,v1},android/graphics/Path/lineTo	; lineTo(FF)V
+; v4 : Landroid/graphics/Path; , v0 : single-length , v1 : single-length
+.line 535
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Path/close	; close()V
+; v4 : Landroid/graphics/Path;
+.line 537
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	const/high16	v6,17279
+; v6 : single-length
+	mul-float	v6,v6,v39
+; v6 : single-length , v6 : single-length , v39 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	invoke-virtual	{v4,v6},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+.line 538
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPath Landroid/graphics/Path;
+; v4 : Landroid/graphics/Path; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v6,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v6 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-object/from16	v0,v44
+; v0 : Landroid/graphics/Canvas; , v44 : Landroid/graphics/Canvas;
+	invoke-virtual	{v0,v4,v6},android/graphics/Canvas/drawPath	; drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v4 : Landroid/graphics/Path; , v6 : Landroid/graphics/Paint;
+.line 539
+	move-object/from16	v0,v43
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v43 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v4,v0,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+	const/16	v6,255
+; v6 : single-length
+	invoke-virtual	{v4,v6},android/graphics/Paint/setAlpha	; setAlpha(I)V
+; v4 : Landroid/graphics/Paint; , v6 : single-length
+	goto/16	l16088a
+.line 510
+.end method
+
+.method protected onMeasure(II)V
+.limit registers 10
+; this: v7 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v8 (I)
+; parameter[1] : v9 (I)
+.var 0 is height F from l16109e to l1610a8
+.var 2 is measuredHeight I from l1610a0 to l1610a8
+.line 793
+	invoke-static	{v8},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v8 : single-length
+	move-result	v3
+; v3 : single-length
+.line 797
+	invoke-static	{v9},android/view/View$MeasureSpec/getMode	; getMode(I)I
+; v9 : single-length
+	move-result	v1
+; v1 : single-length
+.line 798
+	const/high16	v4,16384
+; v4 : single-length
+	if-ne	v1,v4,l1610a8
+; v1 : single-length , v4 : single-length
+.line 800
+	invoke-static	{v9},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v9 : single-length
+	move-result	v4
+; v4 : single-length
+	int-to-float	v0,v4
+; v0 : single-length , v4 : single-length
+l16109e:
+.line 810
+	float-to-int	v2,v0
+; v2 : single-length , v0 : single-length
+.line 812
+	invoke-virtual	{v7,v3,v2},com/viewpagerindicator/TitlePageIndicator/setMeasuredDimension	; setMeasuredDimension(II)V
+; v7 : Lcom/viewpagerindicator/TitlePageIndicator; , v3 : single-length , v2 : single-length
+.line 813
+	return-void	
+l1610a8:
+.line 803
+	iget-object	v4,v7,com/viewpagerindicator/TitlePageIndicator.mBounds Landroid/graphics/Rect;
+; v4 : Landroid/graphics/Rect; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v4},android/graphics/Rect/setEmpty	; setEmpty()V
+; v4 : Landroid/graphics/Rect;
+.line 804
+	iget-object	v4,v7,com/viewpagerindicator/TitlePageIndicator.mBounds Landroid/graphics/Rect;
+; v4 : Landroid/graphics/Rect; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v5,v7,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v5 : Landroid/graphics/Paint; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v5},android/graphics/Paint/descent	; descent()F
+; v5 : Landroid/graphics/Paint;
+	move-result	v5
+; v5 : single-length
+	iget-object	v6,v7,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v6 : Landroid/graphics/Paint; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v6},android/graphics/Paint/ascent	; ascent()F
+; v6 : Landroid/graphics/Paint;
+	move-result	v6
+; v6 : single-length
+	sub-float/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	float-to-int	v5,v5
+; v5 : single-length , v5 : single-length
+	iput	v5,v4,android/graphics/Rect.bottom I
+; v5 : single-length , v4 : Landroid/graphics/Rect;
+.line 805
+	iget-object	v4,v7,com/viewpagerindicator/TitlePageIndicator.mBounds Landroid/graphics/Rect;
+; v4 : Landroid/graphics/Rect; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v4,v4,android/graphics/Rect.bottom I
+; v4 : single-length , v4 : single-length
+	iget-object	v5,v7,com/viewpagerindicator/TitlePageIndicator.mBounds Landroid/graphics/Rect;
+; v5 : Landroid/graphics/Rect; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v5,v5,android/graphics/Rect.top I
+; v5 : single-length , v5 : single-length
+	sub-int/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	iget	v5,v7,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v5 : single-length , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	iget	v5,v7,com/viewpagerindicator/TitlePageIndicator.mFooterPadding F
+; v5 : single-length , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v4,v5
+; v4 : single-length , v5 : single-length
+	iget	v5,v7,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v5 : single-length , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float	v0,v4,v5
+; v0 : single-length , v4 : single-length , v5 : single-length
+.line 806
+	iget-object	v4,v7,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v4 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	sget-object	v5,com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.None Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v5 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+	if-eq	v4,v5,l16109e
+; v4 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v5 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+.line 807
+	iget	v4,v7,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorHeight F
+; v4 : single-length , v7 : Lcom/viewpagerindicator/TitlePageIndicator;
+	add-float/2addr	v0,v4
+; v0 : single-length , v4 : single-length
+	goto	l16109e
+.end method
+
+.method public onPageScrollStateChanged(I)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (I)
+.line 755
+	iput	v2,v1,com/viewpagerindicator/TitlePageIndicator.mScrollState I
+; v2 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 757
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v0,l16113a
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 758
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-interface	{v0,v2},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrollStateChanged	; onPageScrollStateChanged(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length
+l16113a:
+.line 760
+	return-void	
+.end method
+
+.method public onPageScrolled(IFI)V
+.limit registers 5
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (F)
+; parameter[2] : v4 (I)
+.line 764
+	iput	v2,v1,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v2 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 765
+	iput	v3,v1,com/viewpagerindicator/TitlePageIndicator.mPageOffset F
+; v3 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 766
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 768
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v0,l16116c
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 769
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-interface	{v0,v2,v3,v4},android/support/v4/view/ViewPager$OnPageChangeListener/onPageScrolled	; onPageScrolled(IFI)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length , v3 : single-length , v4 : single-length
+l16116c:
+.line 771
+	return-void	
+.end method
+
+.method public onPageSelected(I)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (I)
+.line 775
+	iget	v0,v1,com/viewpagerindicator/TitlePageIndicator.mScrollState I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-nez	v0,l161192
+; v0 : single-length
+.line 776
+	iput	v2,v1,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v2 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 777
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+l161192:
+.line 780
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v0,l1611a4
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+.line 781
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-interface	{v0,v2},android/support/v4/view/ViewPager$OnPageChangeListener/onPageSelected	; onPageSelected(I)V
+; v0 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v2 : single-length
+l1611a4:
+.line 783
+	return-void	
+.end method
+
+.method public onRestoreInstanceState(Landroid/os/Parcelable;)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (Landroid/os/Parcelable;)
+.line 817
+	move-object	v0,v3
+; v0 : Landroid/os/Parcelable; , v3 : Landroid/os/Parcelable;
+	check-cast	v0,com/viewpagerindicator/TitlePageIndicator$SavedState
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.line 818
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator$SavedState/getSuperState	; getSuperState()Landroid/os/Parcelable;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	move-result-object	v1
+; v1 : Landroid/os/Parcelable;
+	invoke-super	{v2,v1},android/view/View/onRestoreInstanceState	; onRestoreInstanceState(Landroid/os/Parcelable;)V
+; v2 : Lcom/viewpagerindicator/TitlePageIndicator; , v1 : Landroid/os/Parcelable;
+.line 819
+	iget	v1,v0,com/viewpagerindicator/TitlePageIndicator$SavedState.currentPage I
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	iput	v1,v2,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v1 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 820
+	invoke-virtual	{v2},com/viewpagerindicator/TitlePageIndicator/requestLayout	; requestLayout()V
+; v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 821
+	return-void	
+.end method
+
+.method public onSaveInstanceState()Landroid/os/Parcelable;
+.limit registers 4
+; this: v3 (Lcom/viewpagerindicator/TitlePageIndicator;)
+.line 825
+	invoke-super	{v3},android/view/View/onSaveInstanceState	; onSaveInstanceState()Landroid/os/Parcelable;
+; v3 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result-object	v1
+; v1 : Landroid/os/Parcelable;
+.line 826
+	new-instance	v0,com/viewpagerindicator/TitlePageIndicator$SavedState
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+	invoke-direct	{v0,v1},com/viewpagerindicator/TitlePageIndicator$SavedState/<init>	; <init>(Landroid/os/Parcelable;)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState; , v1 : Landroid/os/Parcelable;
+.line 827
+	iget	v2,v3,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v2 : single-length , v3 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v2,v0,com/viewpagerindicator/TitlePageIndicator$SavedState.currentPage I
+; v2 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.line 828
+	return-object	v0
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$SavedState;
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 21
+; this: v19 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v20 (Landroid/view/MotionEvent;)
+.var 3 is activePointerIndex I from l1612ce to l161396
+.var 5 is deltaX F from l1612ea to l161396
+.var 16 is x F from l1612da to l161396
+.var 4 is count I from l1613c2 to l1614d8
+.var 6 is eventX F from l1613f6 to l1614d8
+.var 7 is halfWidth F from l1613d8 to l1614d8
+.var 9 is leftThird F from l1613ea to l1614d8
+.var 13 is rightThird F from l1613ee to l1614d8
+.var 14 is sixthWidth F from l1613e6 to l1614d8
+.var 15 is width I from l1613ca to l1614d8
+.var 8 is index I from l16152e to l161562
+.var 10 is newPointerIndex I from l161590 to l1615a8
+.line 545
+	invoke-super/range	{v19..v20},android/view/View/onTouchEvent;	onTouchEvent(Landroid/view/MotionEvent;)Z
+; v19 : Lcom/viewpagerindicator/TitlePageIndicator; , v20 : Landroid/view/MotionEvent;
+	move-result	v17
+; v17 : single-length
+	if-eqz	v17,l16122a
+; v17 : single-length
+.line 546
+	const/16	v17,1
+; v17 : single-length
+l161228:
+.line 636
+	return	v17
+; v17 : single-length
+l16122a:
+.line 548
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	if-eqz	v17,l16125a
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/getAdapter;	getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v17
+; v17 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual/range	{v17},android/support/v4/view/PagerAdapter/getCount;	getCount()I
+; v17 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v17
+; v17 : single-length
+	if-nez	v17,l161260
+; v17 : single-length
+l16125a:
+.line 549
+	const/16	v17,0
+; v17 : single-length
+	goto	l161228
+l161260:
+.line 552
+	invoke-virtual/range	{v20},android/view/MotionEvent/getAction;	getAction()I
+; v20 : Landroid/view/MotionEvent;
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	and-int/lit16	v2,v0,255
+; v2 : single-length , v0 : single-length
+.line 553
+	packed-switch	v2,0
+		ps161270_16127c	; case 0
+		ps161270_161396	; case 1
+		ps161270_1612b2	; case 2
+		ps161270_161396	; case 3
+		ps161270_161276	; case 4
+		ps161270_161526	; case 5
+		ps161270_161562	; case 6
+		default: ps161270_default
+; v2 : single-length
+l161276:
+.line 636
+	const/16	v17,1
+; v17 : single-length
+	goto	l161228
+ps161270_16127c:
+.line 555
+	const/16	v17,0
+; v17 : single-length
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 556
+	invoke-virtual/range	{v20},android/view/MotionEvent/getX;	getX()F
+; v20 : Landroid/view/MotionEvent;
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	goto	l161276
+ps161270_1612b2:
+.line 560
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/findPointerIndex	; findPointerIndex(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v3
+; v3 : single-length
+.line 561
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v3},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v0 : Landroid/view/MotionEvent; , v3 : single-length
+	move-result	v16
+; v16 : single-length
+.line 562
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	sub-float	v5,v16,v17
+; v5 : single-length , v16 : single-length , v17 : single-length
+.line 564
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-boolean	v0,v0,com/viewpagerindicator/TitlePageIndicator.mIsDragging Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-nez	v17,l161330
+; v17 : single-length
+.line 565
+	invoke-static	{v5},java/lang/Math/abs	; abs(F)F
+; v5 : single-length
+	move-result	v17
+; v17 : single-length
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mTouchSlop I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	move/from16	v0,v18
+; v0 : single-length , v18 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	cmpl-float	v17,v17,v18
+; v17 : single-length , v17 : single-length , v18 : single-length
+	if-lez	v17,l161330
+; v17 : single-length
+.line 566
+	const/16	v17,1
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-boolean	v0,v1,com/viewpagerindicator/TitlePageIndicator.mIsDragging Z
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+l161330:
+.line 570
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-boolean	v0,v0,com/viewpagerindicator/TitlePageIndicator.mIsDragging Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-eqz	v17,l161276
+; v17 : single-length
+.line 571
+	move/from16	v0,v16
+; v0 : single-length , v16 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 572
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/isFakeDragging;	isFakeDragging()Z
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-result	v17
+; v17 : single-length
+	if-nez	v17,l16137c
+; v17 : single-length
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/beginFakeDrag;	beginFakeDrag()Z
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-result	v17
+; v17 : single-length
+	if-eqz	v17,l161276
+; v17 : single-length
+l16137c:
+.line 573
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v0,v17
+; v0 : Landroid/support/v4/view/ViewPager; , v17 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual	{v0,v5},android/support/v4/view/ViewPager/fakeDragBy	; fakeDragBy(F)V
+; v0 : Landroid/support/v4/view/ViewPager; , v5 : single-length
+	goto/16	l161276
+ps161270_161396:
+.line 582
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-boolean	v0,v0,com/viewpagerindicator/TitlePageIndicator.mIsDragging Z
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-nez	v17,l1614d8
+; v17 : single-length
+.line 583
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/getAdapter;	getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v17
+; v17 : Landroid/support/v4/view/PagerAdapter;
+	invoke-virtual/range	{v17},android/support/v4/view/PagerAdapter/getCount;	getCount()I
+; v17 : Landroid/support/v4/view/PagerAdapter;
+	move-result	v4
+; v4 : single-length
+.line 584
+	invoke-virtual/range	{v19},com/viewpagerindicator/TitlePageIndicator/getWidth;	getWidth()I
+; v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	move-result	v15
+; v15 : single-length
+.line 585
+	int-to-float	v0,v15
+; v0 : single-length , v15 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	const/high16	v18,16384
+; v18 : single-length
+	div-float	v7,v17,v18
+; v7 : single-length , v17 : single-length , v18 : single-length
+.line 586
+	int-to-float	v0,v15
+; v0 : single-length , v15 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	const/high16	v18,16576
+; v18 : single-length
+	div-float	v14,v17,v18
+; v14 : single-length , v17 : single-length , v18 : single-length
+.line 587
+	sub-float	v9,v7,v14
+; v9 : single-length , v7 : single-length , v14 : single-length
+.line 588
+	add-float	v13,v7,v14
+; v13 : single-length , v7 : single-length , v14 : single-length
+.line 589
+	invoke-virtual/range	{v20},android/view/MotionEvent/getX;	getX()F
+; v20 : Landroid/view/MotionEvent;
+	move-result	v6
+; v6 : single-length
+.line 591
+	cmpg-float	v17,v6,v9
+; v17 : single-length , v6 : single-length , v9 : single-length
+	if-gez	v17,l161444
+; v17 : single-length
+.line 592
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	if-lez	v17,l1614d8
+; v17 : single-length
+.line 593
+	const/16	v17,3
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-eq	v2,v0,l16143c
+; v2 : single-length , v0 : single-length
+.line 594
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	add-int/lit8	v18,v18,255
+; v18 : single-length , v18 : single-length
+	invoke-virtual/range	{v17..v18},android/support/v4/view/ViewPager/setCurrentItem;	setCurrentItem(I)V
+; v17 : Landroid/support/v4/view/ViewPager; , v18 : single-length
+l16143c:
+.line 596
+	const/16	v17,1
+; v17 : single-length
+	goto/16	l161228
+l161444:
+.line 598
+	cmpl-float	v17,v6,v13
+; v17 : single-length , v6 : single-length , v13 : single-length
+	if-lez	v17,l16149e
+; v17 : single-length
+.line 599
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	add-int/lit8	v18,v4,255
+; v18 : single-length , v4 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move/from16	v1,v18
+; v1 : single-length , v18 : single-length
+	if-ge	v0,v1,l1614d8
+; v0 : single-length , v1 : single-length
+.line 600
+	const/16	v17,3
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-eq	v2,v0,l161496
+; v2 : single-length , v0 : single-length
+.line 601
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	add-int/lit8	v18,v18,1
+; v18 : single-length , v18 : single-length
+	invoke-virtual/range	{v17..v18},android/support/v4/view/ViewPager/setCurrentItem;	setCurrentItem(I)V
+; v17 : Landroid/support/v4/view/ViewPager; , v18 : single-length
+l161496:
+.line 603
+	const/16	v17,1
+; v17 : single-length
+	goto/16	l161228
+l16149e:
+.line 607
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCenterItemClickListener Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+	move-object/from16	v17,v0
+; v17 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+	if-eqz	v17,l1614d8
+; v17 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+	const/16	v17,3
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-eq	v2,v0,l1614d8
+; v2 : single-length , v0 : single-length
+.line 608
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCenterItemClickListener Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+	move-object/from16	v17,v0
+; v17 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v0 : single-length , v0 : single-length
+	move/from16	v18,v0
+; v18 : single-length , v0 : single-length
+	invoke-interface/range	{v17..v18},com/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener/onCenterItemClick;	onCenterItemClick(I)V
+; v17 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v18 : single-length
+l1614d8:
+.line 613
+	const/16	v17,0
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput-boolean	v0,v1,com/viewpagerindicator/TitlePageIndicator.mIsDragging Z
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 614
+	const/16	v17,65535
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 615
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/isFakeDragging;	isFakeDragging()Z
+; v17 : Landroid/support/v4/view/ViewPager;
+	move-result	v17
+; v17 : single-length
+	if-eqz	v17,l161276
+; v17 : single-length
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget-object	v0,v0,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	move-object/from16	v17,v0
+; v17 : Landroid/support/v4/view/ViewPager; , v0 : Landroid/support/v4/view/ViewPager;
+	invoke-virtual/range	{v17},android/support/v4/view/ViewPager/endFakeDrag;	endFakeDrag()V
+; v17 : Landroid/support/v4/view/ViewPager;
+	goto/16	l161276
+ps161270_161526:
+.line 619
+	invoke-static/range	{v20},android/support/v4/view/MotionEventCompat/getActionIndex;	getActionIndex(Landroid/view/MotionEvent;)I
+; v20 : Landroid/view/MotionEvent;
+	move-result	v8
+; v8 : single-length
+.line 620
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v8},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v0 : Landroid/view/MotionEvent; , v8 : single-length
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 621
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v8},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v8 : single-length
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	goto/16	l161276
+ps161270_161562:
+.line 626
+	invoke-static/range	{v20},android/support/v4/view/MotionEventCompat/getActionIndex;	getActionIndex(Landroid/view/MotionEvent;)I
+; v20 : Landroid/view/MotionEvent;
+	move-result	v12
+; v12 : single-length
+.line 627
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v12},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v12 : single-length
+	move-result	v11
+; v11 : single-length
+.line 628
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	if-ne	v11,v0,l1615a8
+; v11 : single-length , v0 : single-length
+.line 629
+	if-nez	v12,l1615e4
+; v12 : single-length
+	const/4	v10,1
+; v10 : single-length
+l161590:
+.line 630
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	invoke-static	{v0,v10},android/support/v4/view/MotionEventCompat/getPointerId	; getPointerId(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v10 : single-length
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+l1615a8:
+.line 632
+	move-object/from16	v0,v19
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v0,v0,com/viewpagerindicator/TitlePageIndicator.mActivePointerId I
+; v0 : single-length , v0 : single-length
+	move/from16	v17,v0
+; v17 : single-length , v0 : single-length
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/findPointerIndex	; findPointerIndex(Landroid/view/MotionEvent;I)I
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	move-object/from16	v0,v20
+; v0 : Landroid/view/MotionEvent; , v20 : Landroid/view/MotionEvent;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-static	{v0,v1},android/support/v4/view/MotionEventCompat/getX	; getX(Landroid/view/MotionEvent;I)F
+; v0 : Landroid/view/MotionEvent; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	move/from16	v0,v17
+; v0 : single-length , v17 : single-length
+	move-object/from16	v1,v19
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator; , v19 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iput	v0,v1,com/viewpagerindicator/TitlePageIndicator.mLastMotionX F
+; v0 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	goto/16	l161276
+l1615e4:
+.line 629
+	const/4	v10,0
+; v10 : single-length
+	goto	l161590
+.line 553
+.end method
+
+.method public setClipPadding(F)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (F)
+.line 335
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mClipPadding F
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 336
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 337
+	return-void	
+.end method
+
+.method public setCurrentItem(I)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (I)
+.line 745
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-nez	v0,l161650
+; v0 : Landroid/support/v4/view/ViewPager;
+.line 746
+	new-instance	v0,java/lang/IllegalStateException
+; v0 : Ljava/lang/IllegalStateException;
+	const-string	v1,"ViewPager has not been bound."
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalStateException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalStateException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalStateException;
+l161650:
+.line 748
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v3},android/support/v4/view/ViewPager/setCurrentItem	; setCurrentItem(I)V
+; v0 : Landroid/support/v4/view/ViewPager; , v3 : single-length
+.line 749
+	iput	v3,v2,com/viewpagerindicator/TitlePageIndicator.mCurrentPage I
+; v3 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 750
+	invoke-virtual	{v2},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 751
+	return-void	
+.end method
+
+.method public setFooterColor(I)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (I)
+.line 224
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length
+.line 225
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintFooterIndicator Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length
+.line 226
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 227
+	return-void	
+.end method
+
+.method public setFooterIndicatorHeight(F)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (F)
+.line 244
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorHeight F
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 245
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 246
+	return-void	
+.end method
+
+.method public setFooterIndicatorPadding(F)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (F)
+.line 253
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mFooterPadding F
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 254
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 255
+	return-void	
+.end method
+
+.method public setFooterIndicatorStyle(Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;)
+.line 262
+	iput-object	v1,v0,com/viewpagerindicator/TitlePageIndicator.mFooterIndicatorStyle Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$IndicatorStyle; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 263
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 264
+	return-void	
+.end method
+
+.method public setFooterLineHeight(F)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (F)
+.line 234
+	iput	v3,v2,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v3 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 235
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mPaintFooterLine Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	iget	v1,v2,com/viewpagerindicator/TitlePageIndicator.mFooterLineHeight F
+; v1 : single-length , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v1},android/graphics/Paint/setStrokeWidth	; setStrokeWidth(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 236
+	invoke-virtual	{v2},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 237
+	return-void	
+.end method
+
+.method public setLinePosition(Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;)
+.line 271
+	iput-object	v1,v0,com/viewpagerindicator/TitlePageIndicator.mLinePosition Lcom/viewpagerindicator/TitlePageIndicator$LinePosition;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$LinePosition; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 272
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 273
+	return-void	
+.end method
+
+.method public setOnCenterItemClickListener(Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;)
+.line 740
+	iput-object	v1,v0,com/viewpagerindicator/TitlePageIndicator.mCenterItemClickListener Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener;
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator$OnCenterItemClickListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 741
+	return-void	
+.end method
+
+.method public setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Landroid/support/v4/view/ViewPager$OnPageChangeListener;)
+.line 787
+	iput-object	v1,v0,com/viewpagerindicator/TitlePageIndicator.mListener Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+; v1 : Landroid/support/v4/view/ViewPager$OnPageChangeListener; , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 788
+	return-void	
+.end method
+
+.method public setSelectedBold(Z)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Z)
+.line 289
+	iput-boolean	v1,v0,com/viewpagerindicator/TitlePageIndicator.mBoldText Z
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 290
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 291
+	return-void	
+.end method
+
+.method public setSelectedColor(I)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (I)
+.line 280
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mColorSelected I
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 281
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 282
+	return-void	
+.end method
+
+.method public setTextColor(I)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (I)
+.line 298
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length
+.line 299
+	iput	v2,v1,com/viewpagerindicator/TitlePageIndicator.mColorText I
+; v2 : single-length , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 300
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 301
+	return-void	
+.end method
+
+.method public setTextSize(F)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (F)
+.line 308
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setTextSize	; setTextSize(F)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length
+.line 309
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 310
+	return-void	
+.end method
+
+.method public setTitlePadding(F)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (F)
+.line 317
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mTitlePadding F
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 318
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 319
+	return-void	
+.end method
+
+.method public setTopPadding(F)V
+.limit registers 2
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (F)
+.line 326
+	iput	v1,v0,com/viewpagerindicator/TitlePageIndicator.mTopPadding F
+; v1 : single-length , v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 327
+	invoke-virtual	{v0},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 328
+	return-void	
+.end method
+
+.method public setTypeface(Landroid/graphics/Typeface;)V
+.limit registers 3
+; this: v1 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v2 (Landroid/graphics/Typeface;)
+.line 340
+	iget-object	v0,v1,com/viewpagerindicator/TitlePageIndicator.mPaintText Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setTypeface	; setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+; v0 : Landroid/graphics/Paint; , v2 : Landroid/graphics/Typeface;
+.line 341
+	invoke-virtual	{v1},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v1 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 342
+	return-void	
+.end method
+
+.method public setViewPager(Landroid/support/v4/view/ViewPager;)V
+.limit registers 4
+; this: v2 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v3 (Landroid/support/v4/view/ViewPager;)
+.line 709
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-ne	v0,v3,l16185a
+; v0 : Landroid/support/v4/view/ViewPager; , v3 : Landroid/support/v4/view/ViewPager;
+l161858:
+.line 721
+	return-void	
+l16185a:
+.line 712
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	if-eqz	v0,l16186e
+; v0 : Landroid/support/v4/view/ViewPager;
+.line 713
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/support/v4/view/ViewPager/setOnPageChangeListener	; setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+; v0 : Landroid/support/v4/view/ViewPager; , v1 : single-length
+l16186e:
+.line 715
+	invoke-virtual	{v3},android/support/v4/view/ViewPager/getAdapter	; getAdapter()Landroid/support/v4/view/PagerAdapter;
+; v3 : Landroid/support/v4/view/ViewPager;
+	move-result-object	v0
+; v0 : Landroid/support/v4/view/PagerAdapter;
+	if-nez	v0,l16188a
+; v0 : Landroid/support/v4/view/PagerAdapter;
+.line 716
+	new-instance	v0,java/lang/IllegalStateException
+; v0 : Ljava/lang/IllegalStateException;
+	const-string	v1,"ViewPager does not have adapter instance."
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalStateException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalStateException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalStateException;
+l16188a:
+.line 718
+	iput-object	v3,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v3 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 719
+	iget-object	v0,v2,com/viewpagerindicator/TitlePageIndicator.mViewPager Landroid/support/v4/view/ViewPager;
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	invoke-virtual	{v0,v2},android/support/v4/view/ViewPager/setOnPageChangeListener	; setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+; v0 : Landroid/support/v4/view/ViewPager; , v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+.line 720
+	invoke-virtual	{v2},com/viewpagerindicator/TitlePageIndicator/invalidate	; invalidate()V
+; v2 : Lcom/viewpagerindicator/TitlePageIndicator;
+	goto	l161858
+.end method
+
+.method public setViewPager(Landroid/support/v4/view/ViewPager;I)V
+.limit registers 3
+; this: v0 (Lcom/viewpagerindicator/TitlePageIndicator;)
+; parameter[0] : v1 (Landroid/support/v4/view/ViewPager;)
+; parameter[1] : v2 (I)
+.line 725
+	invoke-virtual	{v0,v1},com/viewpagerindicator/TitlePageIndicator/setViewPager	; setViewPager(Landroid/support/v4/view/ViewPager;)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v1 : Landroid/support/v4/view/ViewPager;
+.line 726
+	invoke-virtual	{v0,v2},com/viewpagerindicator/TitlePageIndicator/setCurrentItem	; setCurrentItem(I)V
+; v0 : Lcom/viewpagerindicator/TitlePageIndicator; , v2 : single-length
+.line 727
+	return-void	
+.end method
+
+

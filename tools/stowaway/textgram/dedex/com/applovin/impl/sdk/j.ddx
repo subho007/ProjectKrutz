@@ -1,0 +1,140 @@
+.class public com/applovin/impl/sdk/j
+.super java/lang/Object
+
+
+.method public static a(Landroid/app/Activity;)Landroid/graphics/Point;
+.limit registers 5
+; parameter[0] : v4 (Landroid/app/Activity;)
+.catch java/lang/Throwable from lb1eea to lb1f26 using lb1f28
+	new-instance	v0,android/graphics/Point
+; v0 : Landroid/graphics/Point;
+	invoke-direct	{v0},android/graphics/Point/<init>	; <init>()V
+; v0 : Landroid/graphics/Point;
+	const/16	v1,320
+; v1 : single-length
+	iput	v1,v0,android/graphics/Point.x I
+; v1 : single-length , v0 : Landroid/graphics/Point;
+	const/16	v1,240
+; v1 : single-length
+	iput	v1,v0,android/graphics/Point.y I
+; v1 : single-length , v0 : Landroid/graphics/Point;
+lb1eea:
+	invoke-virtual	{v4},android/app/Activity/getWindowManager	; getWindowManager()Landroid/view/WindowManager;
+; v4 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/view/WindowManager;
+	invoke-interface	{v1},android/view/WindowManager/getDefaultDisplay	; getDefaultDisplay()Landroid/view/Display;
+; v1 : Landroid/view/WindowManager;
+	move-result-object	v1
+; v1 : Landroid/view/Display;
+	sget	v2,android/os/Build$VERSION.SDK_INT I
+; v2 : single-length
+	const/16	v3,13
+; v3 : single-length
+	if-lt	v2,v3,lb1f0e
+; v2 : single-length , v3 : single-length
+	invoke-virtual	{v1,v0},android/view/Display/getSize	; getSize(Landroid/graphics/Point;)V
+; v1 : Landroid/view/Display; , v0 : Landroid/graphics/Point;
+lb1f0c:
+	return-object	v0
+; v0 : Landroid/graphics/Point;
+lb1f0e:
+	invoke-virtual	{v1},android/view/Display/getWidth	; getWidth()I
+; v1 : Landroid/view/Display;
+	move-result	v2
+; v2 : single-length
+	iput	v2,v0,android/graphics/Point.x I
+; v2 : single-length , v0 : Landroid/graphics/Point;
+	invoke-virtual	{v1},android/view/Display/getHeight	; getHeight()I
+; v1 : Landroid/view/Display;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v0,android/graphics/Point.y I
+; v1 : single-length , v0 : Landroid/graphics/Point;
+lb1f26:
+	goto	lb1f0c
+lb1f28:
+	move-exception	v1
+; v1 : java/lang/Throwable
+	goto	lb1f0c
+.end method
+
+.method static a()V
+.limit registers 2
+.catch java/lang/Throwable from lb1f4c to lb1f78 using lb1f7a
+lb1f4c:
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v1,9
+; v1 : single-length
+	if-lt	v0,v1,lb1f78
+; v0 : single-length , v1 : single-length
+	new-instance	v0,android/os/StrictMode$ThreadPolicy$Builder
+; v0 : Landroid/os/StrictMode$ThreadPolicy$Builder;
+	invoke-direct	{v0},android/os/StrictMode$ThreadPolicy$Builder/<init>	; <init>()V
+; v0 : Landroid/os/StrictMode$ThreadPolicy$Builder;
+	invoke-virtual	{v0},android/os/StrictMode$ThreadPolicy$Builder/permitAll	; permitAll()Landroid/os/StrictMode$ThreadPolicy$Builder;
+; v0 : Landroid/os/StrictMode$ThreadPolicy$Builder;
+	move-result-object	v0
+; v0 : Landroid/os/StrictMode$ThreadPolicy$Builder;
+	invoke-virtual	{v0},android/os/StrictMode$ThreadPolicy$Builder/build	; build()Landroid/os/StrictMode$ThreadPolicy;
+; v0 : Landroid/os/StrictMode$ThreadPolicy$Builder;
+	move-result-object	v0
+; v0 : Landroid/os/StrictMode$ThreadPolicy;
+	invoke-static	{v0},android/os/StrictMode/setThreadPolicy	; setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+; v0 : Landroid/os/StrictMode$ThreadPolicy;
+lb1f78:
+	return-void	
+lb1f7a:
+	move-exception	v0
+; v0 : java/lang/Throwable
+	goto	lb1f78
+.end method
+
+.method public static a(Ljava/lang/Class;Landroid/content/Context;)Z
+.limit registers 5
+; parameter[0] : v3 (Ljava/lang/Class;)
+; parameter[1] : v4 (Landroid/content/Context;)
+	const/4	v0,0
+; v0 : single-length
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	invoke-direct	{v1,v4,v3},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v1 : Landroid/content/Intent; , v4 : Landroid/content/Context; , v3 : Ljava/lang/Class;
+	invoke-virtual	{v4},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v4 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/content/pm/PackageManager;
+	invoke-virtual	{v2,v1,v0},android/content/pm/PackageManager/resolveActivity	; resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+; v2 : Landroid/content/pm/PackageManager; , v1 : Landroid/content/Intent; , v0 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/pm/ResolveInfo;
+	if-eqz	v1,lb1fc2
+; v1 : Landroid/content/pm/ResolveInfo;
+	const/4	v0,1
+; v0 : single-length
+lb1fc2:
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static b()Z
+.limit registers 2
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v1,15
+; v1 : single-length
+	if-lt	v0,v1,lb1fe4
+; v0 : single-length , v1 : single-length
+	const/4	v0,1
+; v0 : single-length
+lb1fe2:
+	return	v0
+; v0 : single-length
+lb1fe4:
+	const/4	v0,0
+; v0 : single-length
+	goto	lb1fe2
+.end method
+
+

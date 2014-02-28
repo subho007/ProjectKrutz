@@ -1,0 +1,44 @@
+.class android/support/v4/media/TransportMediatorJellybeanMR2$2
+.super java/lang/Object
+.source TransportMediatorJellybeanMR2.java
+.implements android/view/ViewTreeObserver$OnWindowFocusChangeListener
+
+.inner class 2 inner android/support/v4/media/TransportMediatorJellybeanMR2$2 outer android/support/v4/media/TransportMediatorJellybeanMR2
+.field final this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+
+.method <init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;)
+; parameter[0] : v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2;)
+.line 53
+	iput-object	v1,v0,android/support/v4/media/TransportMediatorJellybeanMR2$2.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	return-void	
+.end method
+
+.method public onWindowFocusChanged(Z)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;)
+; parameter[0] : v2 (Z)
+.line 56
+	if-eqz	v2,l7c3d8
+; v2 : single-length
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2$2.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	invoke-virtual	{v0},android/support/v4/media/TransportMediatorJellybeanMR2/gainFocus	; gainFocus()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+l7c3d6:
+.line 58
+	return-void	
+l7c3d8:
+.line 57
+	iget-object	v0,v1,android/support/v4/media/TransportMediatorJellybeanMR2$2.this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2; , v1 : Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	invoke-virtual	{v0},android/support/v4/media/TransportMediatorJellybeanMR2/loseFocus	; loseFocus()V
+; v0 : Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	goto	l7c3d6
+.end method
+
+

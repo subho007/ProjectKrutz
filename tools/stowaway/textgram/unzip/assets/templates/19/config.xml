@@ -1,0 +1,13 @@
+<template>
+<title>19</title>
+<textcolor>#4d1c19</textcolor>
+<textsize>40</textsize>
+<text_shadow>#ffebd5</text_shadow>
+<padding_top>86</padding_top>
+<padding_bottom>293</padding_bottom>
+<padding_right>32</padding_right>
+<padding_left>32</padding_left>
+<background>[assets]/backgrounds/19.jpg</background>
+<font>[assets]/fonts/TYPEABRIL.ttf</font>
+<author></author>
+</template>

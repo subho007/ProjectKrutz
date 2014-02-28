@@ -1,0 +1,7 @@
+.class android/support/v4/app/FragmentTabHost$1
+.super java/lang/Object
+.source FragmentTabHost.java
+
+.inner class 1 inner android/support/v4/app/FragmentTabHost$1 outer android/support/v4/app/FragmentTabHost
+
+

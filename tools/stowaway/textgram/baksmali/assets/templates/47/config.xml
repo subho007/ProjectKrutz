@@ -1,0 +1,12 @@
+<template>
+<title>47</title>
+<textcolor>#789a44</textcolor>
+<textsize>50</textsize>
+<padding_top>25</padding_top>
+<padding_bottom>282</padding_bottom>
+<padding_right>20</padding_right>
+<padding_left>20</padding_left>
+<background>[assets]/backgrounds/47.jpg</background>
+<font>[assets]/fonts/Starry Night.ttf</font>
+<author></author>
+</template>

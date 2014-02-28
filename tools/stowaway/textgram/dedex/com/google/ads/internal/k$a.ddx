@@ -1,0 +1,252 @@
+.class public com/google/ads/internal/k$a
+.super java/lang/Object
+.source SourceFile
+.implements android/gesture/GestureOverlayView$OnGesturePerformedListener
+
+.inner class a inner com/google/ads/internal/k$a outer com/google/ads/internal/k
+.field private final a Landroid/gesture/GestureStore;
+.field private b Landroid/app/Activity;
+.field private c Lcom/google/ads/internal/d;
+
+.method public <init>(Landroid/app/Activity;Lcom/google/ads/internal/d;Landroid/gesture/GestureStore;)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/internal/k$a;)
+; parameter[0] : v1 (Landroid/app/Activity;)
+; parameter[1] : v2 (Lcom/google/ads/internal/d;)
+; parameter[2] : v3 (Landroid/gesture/GestureStore;)
+.line 67
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/internal/k$a;
+.line 68
+	iput-object	v1,v0,com/google/ads/internal/k$a.b Landroid/app/Activity;
+; v1 : Landroid/app/Activity; , v0 : Lcom/google/ads/internal/k$a;
+.line 69
+	iput-object	v2,v0,com/google/ads/internal/k$a.c Lcom/google/ads/internal/d;
+; v2 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/internal/k$a;
+.line 70
+	iput-object	v3,v0,com/google/ads/internal/k$a.a Landroid/gesture/GestureStore;
+; v3 : Landroid/gesture/GestureStore; , v0 : Lcom/google/ads/internal/k$a;
+.line 71
+	return-void	
+.end method
+
+.method static a(Lcom/google/ads/internal/k$a;)Lcom/google/ads/internal/d;
+.limit registers 2
+; parameter[0] : v1 (Lcom/google/ads/internal/k$a;)
+.line 62
+	iget-object	v0,v1,com/google/ads/internal/k$a.c Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/internal/k$a;
+	return-object	v0
+; v0 : Lcom/google/ads/internal/d;
+.end method
+
+.method static b(Lcom/google/ads/internal/k$a;)Landroid/app/Activity;
+.limit registers 2
+; parameter[0] : v1 (Lcom/google/ads/internal/k$a;)
+.line 62
+	iget-object	v0,v1,com/google/ads/internal/k$a.b Landroid/app/Activity;
+; v0 : Landroid/app/Activity; , v1 : Lcom/google/ads/internal/k$a;
+	return-object	v0
+; v0 : Landroid/app/Activity;
+.end method
+
+.method public onGesturePerformed(Landroid/gesture/GestureOverlayView;Landroid/gesture/Gesture;)V
+.limit registers 10
+; this: v7 (Lcom/google/ads/internal/k$a;)
+; parameter[0] : v8 (Landroid/gesture/GestureOverlayView;)
+; parameter[1] : v9 (Landroid/gesture/Gesture;)
+	const/4	v6,0
+; v6 : single-length
+.line 75
+	iget-object	v0,v7,com/google/ads/internal/k$a.a Landroid/gesture/GestureStore;
+; v0 : Landroid/gesture/GestureStore; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-virtual	{v0,v9},android/gesture/GestureStore/recognize	; recognize(Landroid/gesture/Gesture;)Ljava/util/ArrayList;
+; v0 : Landroid/gesture/GestureStore; , v9 : Landroid/gesture/Gesture;
+	move-result-object	v1
+; v1 : Ljava/util/ArrayList;
+.line 77
+	invoke-virtual	{v1},java/util/ArrayList/iterator	; iterator()Ljava/util/Iterator;
+; v1 : Ljava/util/ArrayList;
+	move-result-object	v2
+; v2 : Ljava/util/Iterator;
+lc1b52:
+	invoke-interface	{v2},java/util/Iterator/hasNext	; hasNext()Z
+; v2 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lc1bb4
+; v0 : single-length
+	invoke-interface	{v2},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v2 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/gesture/Prediction
+; v0 : Landroid/gesture/Prediction;
+.line 78
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Gesture: '"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	iget-object	v4,v0,android/gesture/Prediction.name Ljava/lang/String;
+; v4 : Ljava/lang/String; , v0 : Landroid/gesture/Prediction;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"' = "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	iget-wide	v4,v0,android/gesture/Prediction.score D
+; v4 : double-length , v0 : Landroid/gesture/Prediction;
+	invoke-virtual	{v3,v4,v5},java/lang/StringBuilder/append	; append(D)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lc1b52
+lc1bb4:
+.line 81
+	invoke-virtual	{v1},java/util/ArrayList/size	; size()I
+; v1 : Ljava/util/ArrayList;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,lc1bcc
+; v0 : single-length
+.line 82
+	const-string	v0,"Gesture: No remotely reasonable predictions"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+lc1bca:
+.line 124
+	return-void	
+lc1bcc:
+.line 83
+	invoke-virtual	{v1,v6},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v1 : Ljava/util/ArrayList; , v6 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/gesture/Prediction
+; v0 : Landroid/gesture/Prediction;
+	iget-wide	v2,v0,android/gesture/Prediction.score D
+; v2 : double-length , v0 : Landroid/gesture/Prediction;
+	const-wide/high16	v4,16384
+; v4 : double-length
+	cmpl-double	v0,v2,v4
+; v0 : single-length , v2 : double-length , v4 : double-length
+	if-lez	v0,lc1bca
+; v0 : single-length
+.line 84
+	const-string	v2,"debug"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v6},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v1 : Ljava/util/ArrayList; , v6 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/gesture/Prediction
+; v0 : Landroid/gesture/Prediction;
+	iget-object	v0,v0,android/gesture/Prediction.name Ljava/lang/String;
+; v0 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	invoke-virtual	{v2,v0},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,lc1bca
+; v0 : single-length
+.line 85
+	iget-object	v0,v7,com/google/ads/internal/k$a.c Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v7 : Lcom/google/ads/internal/k$a;
+	if-eqz	v0,lc1bca
+; v0 : Lcom/google/ads/internal/d;
+.line 86
+	iget-object	v0,v7,com/google/ads/internal/k$a.c Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-virtual	{v0},com/google/ads/internal/d/c	; c()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-nez	v0,lc1c98
+; v0 : Ljava/lang/String;
+	const-string	v0,"[No diagnostics available]"
+; v0 : Ljava/lang/String;
+lc1c24:
+.line 89
+	new-instance	v1,android/app/AlertDialog$Builder
+; v1 : Landroid/app/AlertDialog$Builder;
+	iget-object	v2,v7,com/google/ads/internal/k$a.b Landroid/app/Activity;
+; v2 : Landroid/app/Activity; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-direct	{v1,v2},android/app/AlertDialog$Builder/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/app/AlertDialog$Builder; , v2 : Landroid/app/Activity;
+	invoke-virtual	{v1,v0},android/app/AlertDialog$Builder/setMessage	; setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+; v1 : Landroid/app/AlertDialog$Builder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/app/AlertDialog$Builder;
+	const-string	v2,"Ad Information"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/app/AlertDialog$Builder/setTitle	; setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+; v1 : Landroid/app/AlertDialog$Builder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/app/AlertDialog$Builder;
+	const-string	v2,"Share"
+; v2 : Ljava/lang/String;
+	new-instance	v3,com/google/ads/internal/k$a$3
+; v3 : Lcom/google/ads/internal/k$a$3;
+	invoke-direct	{v3,v7,v0},com/google/ads/internal/k$a$3/<init>	; <init>(Lcom/google/ads/internal/k$a;Ljava/lang/String;)V
+; v3 : Lcom/google/ads/internal/k$a$3; , v7 : Lcom/google/ads/internal/k$a; , v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v2,v3},android/app/AlertDialog$Builder/setPositiveButton	; setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v1 : Landroid/app/AlertDialog$Builder; , v2 : Ljava/lang/String; , v3 : Lcom/google/ads/internal/k$a$3;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const-string	v1,"Report"
+; v1 : Ljava/lang/String;
+	new-instance	v2,com/google/ads/internal/k$a$2
+; v2 : Lcom/google/ads/internal/k$a$2;
+	invoke-direct	{v2,v7},com/google/ads/internal/k$a$2/<init>	; <init>(Lcom/google/ads/internal/k$a;)V
+; v2 : Lcom/google/ads/internal/k$a$2; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-virtual	{v0,v1,v2},android/app/AlertDialog$Builder/setNeutralButton	; setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : Ljava/lang/String; , v2 : Lcom/google/ads/internal/k$a$2;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	const-string	v1,"Close"
+; v1 : Ljava/lang/String;
+	new-instance	v2,com/google/ads/internal/k$a$1
+; v2 : Lcom/google/ads/internal/k$a$1;
+	invoke-direct	{v2,v7},com/google/ads/internal/k$a$1/<init>	; <init>(Lcom/google/ads/internal/k$a;)V
+; v2 : Lcom/google/ads/internal/k$a$1; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-virtual	{v0,v1,v2},android/app/AlertDialog$Builder/setNegativeButton	; setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v1 : Ljava/lang/String; , v2 : Lcom/google/ads/internal/k$a$1;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+	invoke-virtual	{v0},android/app/AlertDialog$Builder/create	; create()Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog$Builder;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog;
+	invoke-virtual	{v0},android/app/AlertDialog/show	; show()V
+; v0 : Landroid/app/AlertDialog;
+	goto	lc1bca
+lc1c98:
+.line 86
+	iget-object	v0,v7,com/google/ads/internal/k$a.c Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v7 : Lcom/google/ads/internal/k$a;
+	invoke-virtual	{v0},com/google/ads/internal/d/c	; c()Ljava/lang/String;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	lc1c24
+.end method
+
+

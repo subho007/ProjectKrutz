@@ -1,0 +1,739 @@
+.class public codeadore/textgram/adapters/StylingImagesAdapter
+.super android/widget/BaseAdapter
+.source StylingImagesAdapter.java
+
+.field TAG Ljava/lang/String;
+.field context Landroid/content/Context;
+.field mGalleryItemBackground I
+.field theList Ljava/util/ArrayList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/ArrayList" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field type Ljava/lang/String;
+
+.method public <init>(Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/content/Context;" , "Ljava/util/ArrayList" , "<" , "Ljava/lang/String;" , ">;" , "Ljava/lang/String;" , ")V" }
+.end annotation
+.limit registers 5
+; this: v1 (Lcodeadore/textgram/adapters/StylingImagesAdapter;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Ljava/util/ArrayList;)
+; parameter[2] : v4 (Ljava/lang/String;)
+.line 31
+	invoke-direct	{v1},android/widget/BaseAdapter/<init>	; <init>()V
+; v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 25
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v0 : single-length , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 26
+	const-string	v0,"gallery"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,codeadore/textgram/adapters/StylingImagesAdapter.type Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 27
+	const-string	v0,"StylingImagesAdapter"
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,codeadore/textgram/adapters/StylingImagesAdapter.TAG Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 32
+	iput-object	v3,v1,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 33
+	iput-object	v4,v1,codeadore/textgram/adapters/StylingImagesAdapter.type Ljava/lang/String;
+; v4 : Ljava/lang/String; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 34
+	invoke-static	{},java/lang/System/gc	; gc()V
+; 
+	nop	
+.line 35
+	iput-object	v2,v1,codeadore/textgram/adapters/StylingImagesAdapter.context Landroid/content/Context;
+; v2 : Landroid/content/Context; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 43
+	return-void	
+.end method
+
+.method public getCount()I
+.limit registers 2
+; this: v1 (Lcodeadore/textgram/adapters/StylingImagesAdapter;)
+.line 46
+	iget-object	v0,v1,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	if-nez	v0,la72c0
+; v0 : Ljava/util/ArrayList;
+.line 47
+	const/4	v0,0
+; v0 : single-length
+la72be:
+.line 49
+	return	v0
+; v0 : single-length
+la72c0:
+	iget-object	v0,v1,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v0 : Ljava/util/ArrayList; , v1 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	invoke-virtual	{v0},java/util/ArrayList/size	; size()I
+; v0 : Ljava/util/ArrayList;
+	move-result	v0
+; v0 : single-length
+	goto	la72be
+.end method
+
+.method public getItem(I)Ljava/lang/Object;
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/adapters/StylingImagesAdapter;)
+; parameter[0] : v2 (I)
+.line 53
+	invoke-static	{v2},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Integer;
+	return-object	v0
+; v0 : Ljava/lang/Integer;
+.end method
+
+.method public getItemId(I)J
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/adapters/StylingImagesAdapter;)
+; parameter[0] : v3 (I)
+.line 57
+	int-to-long	v0,v3
+; v0 : double-length , v3 : single-length
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.annotation buildVisibility Landroid/annotation/SuppressLint;
+    value [Ljava/lang/String; = { "NewApi" }
+.end annotation
+.limit registers 23
+; this: v19 (Lcodeadore/textgram/adapters/StylingImagesAdapter;)
+; parameter[0] : v20 (I)
+; parameter[1] : v21 (Landroid/view/View;)
+; parameter[2] : v22 (Landroid/view/ViewGroup;)
+.catch java/lang/Exception from la7680 to la768e using la7694
+.catch java/lang/Exception from la7532 to la75c0 using la762c
+.var 14 is final_bitmap Landroid/graphics/Bitmap; from la7368 to la73a2
+.var 15 is final_view Landroid/view/View; from la7354 to la73a2
+.var 17 is iv Landroid/widget/ImageView; from la7366 to la73a2
+.var 15 is final_view Landroid/view/View; from la73ba to la73bc
+.var 2 is c Landroid/graphics/Canvas; from la7464 to la74d6
+.var 18 is pickerBitmap Landroid/graphics/Bitmap; from la7446 to la74d6
+.var 1 is gradient Landroid/graphics/RadialGradient; from la7578 to la75c6
+.var 2 is c Landroid/graphics/Canvas; from la75ae to la75c6
+.var 7 is p Landroid/graphics/Paint; from la7582 to la75c6
+.var 8 is bitmap Landroid/graphics/Bitmap; from la75a4 to la75c6
+.var 9 is colors [Ljava/lang/String; from la7542 to la75c6
+.var 13 is finalNameThumbed Ljava/lang/String; from la74fe to la75c6
+.var 13 is finalNameThumbed Ljava/lang/String; from la7600 to la7604
+.var 10 is e Ljava/lang/Exception; from la762e to la7666
+.var 10 is e Ljava/lang/Exception; from la7696 to la76e4
+.var 11 is finalBitmap Landroid/graphics/Bitmap; from la7676 to la76e4
+.var 12 is finalCanvas Landroid/graphics/Canvas; from la7680 to la76e4
+.line 65
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	move/from16	v0,v20
+; v0 : single-length , v20 : single-length
+	invoke-virtual	{v3,v0},java/util/ArrayList/get	; get(I)Ljava/lang/Object;
+; v3 : Ljava/util/ArrayList; , v0 : single-length
+	move-result-object	v16
+; v16 : Ljava/lang/Object;
+	check-cast	v16,java/lang/String
+; v16 : Ljava/lang/String;
+.line 69
+	if-nez	v21,la73bc
+; v21 : Landroid/view/View;
+.line 70
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.type Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	const-string	v4,"gallery"
+; v4 : Ljava/lang/String;
+	if-ne	v3,v4,la73a2
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+.line 71
+	sget-object	v3,codeadore/textgram/StylingActivity.layoutInflater Landroid/view/LayoutInflater;
+; v3 : Landroid/view/LayoutInflater;
+.line 72
+	const	v4,2130903083	; 0x7f03002b
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+.line 71
+	move-object/from16	v0,v22
+; v0 : Landroid/view/ViewGroup; , v22 : Landroid/view/ViewGroup;
+	invoke-virtual	{v3,v4,v0,v5},android/view/LayoutInflater/inflate	; inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+; v3 : Landroid/view/LayoutInflater; , v4 : single-length , v0 : Landroid/view/ViewGroup; , v5 : single-length
+	move-result-object	v15
+; v15 : Landroid/view/View;
+la7354:
+.line 81
+	const	v3,2131099796	; 0x7f060094
+; v3 : single-length
+	invoke-virtual	{v15,v3},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v15 : Landroid/view/View; , v3 : single-length
+	move-result-object	v17
+; v17 : Landroid/view/View;
+	check-cast	v17,android/widget/ImageView
+; v17 : Landroid/widget/ImageView;
+.line 82
+	const/4	v14,0
+; v14 : single-length
+.line 84
+	const-string	v3,"[custom]"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la73c2
+; v3 : single-length
+.line 86
+	sget-object	v3,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v3 : Landroid/content/Context;
+	invoke-virtual	{v3},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v3 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Landroid/content/res/Resources;
+	const	v4,2130837649	; 0x7f020091
+; v4 : single-length
+.line 85
+	invoke-static	{v3,v4},android/graphics/BitmapFactory/decodeResource	; decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/res/Resources; , v4 : single-length
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+la7396:
+.line 169
+	move-object/from16	v0,v17
+; v0 : Landroid/widget/ImageView; , v17 : Landroid/widget/ImageView;
+	invoke-virtual	{v0,v14},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v0 : Landroid/widget/ImageView; , v14 : Landroid/graphics/Bitmap;
+.line 171
+	return-object	v15
+; v15 : Landroid/view/View;
+la73a2:
+.line 74
+	sget-object	v3,codeadore/textgram/StylingActivity.layoutInflater Landroid/view/LayoutInflater;
+; v3 : Landroid/view/LayoutInflater;
+.line 75
+	const	v4,2130903084	; 0x7f03002c
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+.line 74
+	move-object/from16	v0,v22
+; v0 : Landroid/view/ViewGroup; , v22 : Landroid/view/ViewGroup;
+	invoke-virtual	{v3,v4,v0,v5},android/view/LayoutInflater/inflate	; inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+; v3 : Landroid/view/LayoutInflater; , v4 : single-length , v0 : Landroid/view/ViewGroup; , v5 : single-length
+	move-result-object	v15
+; v15 : Landroid/view/View;
+.line 77
+	goto	la7354
+la73bc:
+.line 78
+	move-object/from16	v15,v21
+; v15 : Landroid/view/View; , v21 : Landroid/view/View;
+	goto	la7354
+la73c2:
+.line 87
+	const-string	v3,"[none]"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la73f2
+; v3 : single-length
+.line 89
+	sget-object	v3,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v3 : Landroid/content/Context;
+	invoke-virtual	{v3},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v3 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Landroid/content/res/Resources;
+	const	v4,2130837650	; 0x7f020092
+; v4 : single-length
+.line 88
+	invoke-static	{v3,v4},android/graphics/BitmapFactory/decodeResource	; decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/res/Resources; , v4 : single-length
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+.line 90
+	goto	la7396
+la73f2:
+	const-string	v3,"[get_more]"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la7422
+; v3 : single-length
+.line 92
+	sget-object	v3,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v3 : Landroid/content/Context;
+	invoke-virtual	{v3},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v3 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Landroid/content/res/Resources;
+	const	v4,2130837648	; 0x7f020090
+; v4 : single-length
+.line 91
+	invoke-static	{v3,v4},android/graphics/BitmapFactory/decodeResource	; decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/res/Resources; , v4 : single-length
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+.line 93
+	goto	la7396
+la7422:
+	const-string	v3,"[custom_color]"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la74d6
+; v3 : single-length
+.line 95
+	sget-object	v3,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v3 : Landroid/content/Context;
+	const-string	v4,"data/gv_icon_custom_color.png"
+; v4 : Ljava/lang/String;
+	invoke-static	{v3,v4},codeadore/textgram/el7rUtilities/getBitmapFromAsset	; getBitmapFromAsset(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/Context; , v4 : Ljava/lang/String;
+	move-result-object	v18
+; v18 : Landroid/graphics/Bitmap;
+.line 97
+	const/16	v3,100
+; v3 : single-length
+	const/16	v4,100
+; v4 : single-length
+	sget-object	v5,android/graphics/Bitmap$Config.RGB_565 Landroid/graphics/Bitmap$Config;
+; v5 : Landroid/graphics/Bitmap$Config;
+	invoke-static	{v3,v4,v5},android/graphics/Bitmap/createBitmap	; createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+; v3 : single-length , v4 : single-length , v5 : Landroid/graphics/Bitmap$Config;
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+.line 98
+	new-instance	v2,android/graphics/Canvas
+; v2 : Landroid/graphics/Canvas;
+	invoke-direct	{v2,v14},android/graphics/Canvas/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v2 : Landroid/graphics/Canvas; , v14 : Landroid/graphics/Bitmap;
+.line 99
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	sget-object	v4,codeadore/textgram/StylingActivity.colorsList Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList;
+	if-ne	v3,v4,la74a6
+; v3 : Ljava/util/ArrayList; , v4 : Ljava/util/ArrayList;
+.line 100
+	sget-object	v3,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v3 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3},codeadore/textgram/SuperSurface/getCurrentTextItem	; getCurrentTextItem()Lcodeadore/textgram/SuperSurfaceItem;
+; v3 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	iget-object	v3,v3,codeadore/textgram/SuperSurfaceItem.textViewDraw Lcodeadore/textgram/custom_widgets/el7rTextView;
+; v3 : Lcodeadore/textgram/custom_widgets/el7rTextView; , v3 : Lcodeadore/textgram/custom_widgets/el7rTextView;
+	invoke-virtual	{v3},codeadore/textgram/custom_widgets/el7rTextView/getCurrentTextColor	; getCurrentTextColor()I
+; v3 : Lcodeadore/textgram/custom_widgets/el7rTextView;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/graphics/Canvas/drawColor	; drawColor(I)V
+; v2 : Landroid/graphics/Canvas; , v3 : single-length
+la7492:
+.line 105
+	const/4	v3,0
+; v3 : single-length
+	const/4	v4,0
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/graphics/Bitmap; , v18 : Landroid/graphics/Bitmap;
+	invoke-virtual	{v2,v0,v3,v4,v5},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v0 : Landroid/graphics/Bitmap; , v3 : single-length , v4 : single-length , v5 : single-length
+	goto/16	la7396
+la74a6:
+.line 101
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	sget-object	v4,codeadore/textgram/StylingActivity.shadowColorsList Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList;
+	if-ne	v3,v4,la7492
+; v3 : Ljava/util/ArrayList; , v4 : Ljava/util/ArrayList;
+.line 103
+	sget-object	v3,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v3 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v3},codeadore/textgram/SuperSurface/getCurrentTextItem	; getCurrentTextItem()Lcodeadore/textgram/SuperSurfaceItem;
+; v3 : Lcodeadore/textgram/SuperSurface;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/SuperSurfaceItem;
+	iget-object	v3,v3,codeadore/textgram/SuperSurfaceItem.textViewDraw Lcodeadore/textgram/custom_widgets/el7rTextView;
+; v3 : Lcodeadore/textgram/custom_widgets/el7rTextView; , v3 : Lcodeadore/textgram/custom_widgets/el7rTextView;
+	invoke-virtual	{v3},codeadore/textgram/custom_widgets/el7rTextView/getShadowColor	; getShadowColor()I
+; v3 : Lcodeadore/textgram/custom_widgets/el7rTextView;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/graphics/Canvas/drawColor	; drawColor(I)V
+; v2 : Landroid/graphics/Canvas; , v3 : single-length
+	goto	la7492
+la74d6:
+.line 109
+	const-string	v3,".ttf"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/endsWith	; endsWith(Ljava/lang/String;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la75c6
+; v3 : single-length
+.line 110
+	const-string	v3,".ttf"
+; v3 : Ljava/lang/String;
+	const-string	v4,".jpg"
+; v4 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3,v4},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+la74fe:
+.line 121
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	sget-object	v4,codeadore/textgram/StylingActivity.colorsList Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList;
+	if-eq	v3,v4,la751e
+; v3 : Ljava/util/ArrayList; , v4 : Ljava/util/ArrayList;
+.line 122
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.theList Ljava/util/ArrayList;
+; v3 : Ljava/util/ArrayList; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	sget-object	v4,codeadore/textgram/StylingActivity.shadowColorsList Ljava/util/ArrayList;
+; v4 : Ljava/util/ArrayList;
+	if-ne	v3,v4,la76e4
+; v3 : Ljava/util/ArrayList; , v4 : Ljava/util/ArrayList;
+la751e:
+.line 124
+	const-string	v3,":"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la7666
+; v3 : single-length
+la7532:
+.line 126
+	const-string	v3,":"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/split	; split(Ljava/lang/String;)[Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result-object	v9
+; v9 : [Ljava/lang/String;
+.line 127
+	new-instance	v1,android/graphics/RadialGradient
+; v1 : Landroid/graphics/RadialGradient;
+	const/high16	v2,16968
+; v2 : single-length
+	const/high16	v3,17096
+; v3 : single-length
+.line 128
+	const/high16	v4,17096
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+	aget-object	v5,v9,v5
+; v5 : Ljava/lang/String; , v9 : [Ljava/lang/String; , v5 : Ljava/lang/String;
+	invoke-static	{v5},android/graphics/Color/parseColor	; parseColor(Ljava/lang/String;)I
+; v5 : Ljava/lang/String;
+	move-result	v5
+; v5 : single-length
+.line 129
+	const/4	v6,1
+; v6 : single-length
+	aget-object	v6,v9,v6
+; v6 : Ljava/lang/String; , v9 : [Ljava/lang/String; , v6 : Ljava/lang/String;
+	invoke-static	{v6},android/graphics/Color/parseColor	; parseColor(Ljava/lang/String;)I
+; v6 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+.line 130
+	sget-object	v7,android/graphics/Shader$TileMode.CLAMP Landroid/graphics/Shader$TileMode;
+; v7 : Landroid/graphics/Shader$TileMode;
+.line 127
+	invoke-direct/range	{v1..v7},android/graphics/RadialGradient/<init>;	<init>(FFFIILandroid/graphics/Shader$TileMode;)V
+; v1 : Landroid/graphics/RadialGradient; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : Landroid/graphics/Shader$TileMode;
+.line 131
+	new-instance	v7,android/graphics/Paint
+; v7 : Landroid/graphics/Paint;
+	invoke-direct	{v7},android/graphics/Paint/<init>	; <init>()V
+; v7 : Landroid/graphics/Paint;
+.line 132
+	const/4	v3,1
+; v3 : single-length
+	invoke-virtual	{v7,v3},android/graphics/Paint/setDither	; setDither(Z)V
+; v7 : Landroid/graphics/Paint; , v3 : single-length
+.line 133
+	invoke-virtual	{v7,v1},android/graphics/Paint/setShader	; setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+; v7 : Landroid/graphics/Paint; , v1 : Landroid/graphics/RadialGradient;
+.line 135
+	const/16	v3,100
+; v3 : single-length
+	const/16	v4,100
+; v4 : single-length
+.line 136
+	sget-object	v5,android/graphics/Bitmap$Config.ARGB_8888 Landroid/graphics/Bitmap$Config;
+; v5 : Landroid/graphics/Bitmap$Config;
+.line 135
+	invoke-static	{v3,v4,v5},android/graphics/Bitmap/createBitmap	; createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+; v3 : single-length , v4 : single-length , v5 : Landroid/graphics/Bitmap$Config;
+	move-result-object	v8
+; v8 : Landroid/graphics/Bitmap;
+.line 137
+	new-instance	v2,android/graphics/Canvas
+; v2 : Landroid/graphics/Canvas;
+	invoke-direct	{v2,v8},android/graphics/Canvas/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v2 : Landroid/graphics/Canvas; , v8 : Landroid/graphics/Bitmap;
+.line 138
+	const/4	v3,0
+; v3 : single-length
+	const/4	v4,0
+; v4 : single-length
+	const/high16	v5,17096
+; v5 : single-length
+	const/high16	v6,17096
+; v6 : single-length
+	invoke-virtual/range	{v2..v7},android/graphics/Canvas/drawRect;	drawRect(FFFFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : Landroid/graphics/Paint;
+la75c0:
+.line 140
+	move-object	v14,v8
+; v14 : Landroid/graphics/Bitmap; , v8 : Landroid/graphics/Bitmap;
+	goto/16	la7396
+la75c6:
+.line 112
+	const-string	v3,"templates/"
+; v3 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la7604
+; v3 : single-length
+.line 113
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-static/range	{v16},java/lang/String/valueOf;	valueOf(Ljava/lang/Object;)Ljava/lang/String;
+; v16 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-direct	{v3,v4},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	const-string	v4,"/icon.jpg"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+.line 115
+	goto/16	la74fe
+la7604:
+.line 116
+	const-string	v3,".jpg"
+; v3 : Ljava/lang/String;
+	const-string	v4,".thumb.jpg"
+; v4 : Ljava/lang/String;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v0,v3,v4},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+.line 117
+	const-string	v3,".png"
+; v3 : Ljava/lang/String;
+.line 118
+	const-string	v4,".thumb.jpg"
+; v4 : Ljava/lang/String;
+.line 117
+	invoke-virtual	{v13,v3,v4},java/lang/String/replace	; replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+; v13 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	goto/16	la74fe
+la762c:
+.line 141
+	move-exception	v10
+; v10 : java/lang/Exception
+.line 142
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.TAG Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+.line 143
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v5,"in getView - itemVal.contains(:): "
+; v5 : Ljava/lang/String;
+	invoke-direct	{v4,v5},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+.line 144
+	invoke-virtual	{v10},java/lang/Exception/toString	; toString()Ljava/lang/String;
+; v10 : java/lang/Exception
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+.line 143
+	invoke-virtual	{v4},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v4 : Ljava/lang/StringBuilder;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+.line 142
+	invoke-static	{v3,v4},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	goto/16	la7396
+la7666:
+.line 148
+	const/4	v3,1
+; v3 : single-length
+	const/4	v4,1
+; v4 : single-length
+.line 149
+	sget-object	v5,android/graphics/Bitmap$Config.RGB_565 Landroid/graphics/Bitmap$Config;
+; v5 : Landroid/graphics/Bitmap$Config;
+.line 148
+	invoke-static	{v3,v4,v5},android/graphics/Bitmap/createBitmap	; createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+; v3 : single-length , v4 : single-length , v5 : Landroid/graphics/Bitmap$Config;
+	move-result-object	v11
+; v11 : Landroid/graphics/Bitmap;
+.line 150
+	new-instance	v12,android/graphics/Canvas
+; v12 : Landroid/graphics/Canvas;
+	invoke-direct	{v12,v11},android/graphics/Canvas/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v12 : Landroid/graphics/Canvas; , v11 : Landroid/graphics/Bitmap;
+la7680:
+.line 152
+	invoke-static/range	{v16},android/graphics/Color/parseColor;	parseColor(Ljava/lang/String;)I
+; v16 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v12,v3},android/graphics/Canvas/drawColor	; drawColor(I)V
+; v12 : Landroid/graphics/Canvas; , v3 : single-length
+la768e:
+.line 157
+	move-object	v14,v11
+; v14 : Landroid/graphics/Bitmap; , v11 : Landroid/graphics/Bitmap;
+.line 159
+	goto/16	la7396
+la7694:
+.line 153
+	move-exception	v10
+; v10 : java/lang/Exception
+.line 154
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.TAG Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v5,"in finalCanvas.drawColor: "
+; v5 : Ljava/lang/String;
+	invoke-direct	{v4,v5},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	invoke-virtual	{v10},java/lang/Exception/toString	; toString()Ljava/lang/String;
+; v10 : java/lang/Exception
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+.line 155
+	const-string	v5," :: "
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v4 : Ljava/lang/StringBuilder;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+.line 154
+	invoke-static	{v3,v4},android/util/Log/e	; e(Ljava/lang/String;Ljava/lang/String;)I
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	goto	la768e
+la76e4:
+.line 160
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.context Landroid/content/Context;
+; v3 : Landroid/content/Context; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	invoke-static	{v3,v13},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/Context; , v13 : Ljava/lang/String;
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+.line 161
+	if-nez	v14,la7396
+; v14 : Landroid/graphics/Bitmap;
+.line 162
+	move-object/from16	v0,v19
+; v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter; , v19 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	iget-object	v3,v0,codeadore/textgram/adapters/StylingImagesAdapter.context Landroid/content/Context;
+; v3 : Landroid/content/Context; , v0 : Lcodeadore/textgram/adapters/StylingImagesAdapter;
+	move-object/from16	v0,v16
+; v0 : Ljava/lang/String; , v16 : Ljava/lang/String;
+	invoke-static	{v3,v0},codeadore/textgram/Utilities/getBitmapFromPath	; getBitmapFromPath(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v3 : Landroid/content/Context; , v0 : Ljava/lang/String;
+	move-result-object	v14
+; v14 : Landroid/graphics/Bitmap;
+	goto/16	la7396
+.end method
+
+

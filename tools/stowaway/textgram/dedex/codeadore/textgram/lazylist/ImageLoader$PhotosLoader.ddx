@@ -1,0 +1,110 @@
+.class codeadore/textgram/lazylist/ImageLoader$PhotosLoader
+.super java/lang/Object
+.source ImageLoader.java
+.implements java/lang/Runnable
+
+.inner class PhotosLoader inner codeadore/textgram/lazylist/ImageLoader$PhotosLoader outer codeadore/textgram/lazylist/ImageLoader
+.field photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+.field final this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+
+.method <init>(Lcodeadore/textgram/lazylist/ImageLoader;Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;)
+; parameter[0] : v1 (Lcodeadore/textgram/lazylist/ImageLoader;)
+; parameter[1] : v2 (Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)
+.line 140
+	iput-object	v1,v0,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v1 : Lcodeadore/textgram/lazylist/ImageLoader; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+.line 141
+	iput-object	v2,v0,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v2 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+.line 142
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 6
+; this: v5 (Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;)
+.catch java/lang/Throwable from la88a8 to la891c using la891e
+.var 0 is bd Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer; from la890e to la891e
+.var 1 is bmp Landroid/graphics/Bitmap; from la88d2 to la891e
+la88a8:
+.line 147
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	invoke-virtual	{v3,v4},codeadore/textgram/lazylist/ImageLoader/imageViewReused	; imageViewReused(Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)Z
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la88be
+; v3 : single-length
+la88bc:
+.line 158
+	return-void	
+la88be:
+.line 149
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v4,codeadore/textgram/lazylist/ImageLoader$PhotoToLoad.url Ljava/lang/String;
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	invoke-static	{v3,v4},codeadore/textgram/lazylist/ImageLoader/access$0	; access$0(Lcodeadore/textgram/lazylist/ImageLoader;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v4 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+.line 150
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v3,v3,codeadore/textgram/lazylist/ImageLoader.memoryCache Lcodeadore/textgram/lazylist/MemoryCache;
+; v3 : Lcodeadore/textgram/lazylist/MemoryCache; , v3 : Lcodeadore/textgram/lazylist/MemoryCache;
+	iget-object	v4,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v4,codeadore/textgram/lazylist/ImageLoader$PhotoToLoad.url Ljava/lang/String;
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4,v1},codeadore/textgram/lazylist/MemoryCache/put	; put(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+; v3 : Lcodeadore/textgram/lazylist/MemoryCache; , v4 : Ljava/lang/String; , v1 : Landroid/graphics/Bitmap;
+.line 151
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	invoke-virtual	{v3,v4},codeadore/textgram/lazylist/ImageLoader/imageViewReused	; imageViewReused(Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)Z
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,la88bc
+; v3 : single-length
+.line 153
+	new-instance	v0,codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v4,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.photoToLoad Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+; v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	invoke-direct	{v0,v3,v1,v4},codeadore/textgram/lazylist/ImageLoader$BitmapDisplayer/<init>	; <init>(Lcodeadore/textgram/lazylist/ImageLoader;Landroid/graphics/Bitmap;Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;)V
+; v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer; , v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v1 : Landroid/graphics/Bitmap; , v4 : Lcodeadore/textgram/lazylist/ImageLoader$PhotoToLoad;
+.line 154
+	iget-object	v3,v5,codeadore/textgram/lazylist/ImageLoader$PhotosLoader.this$0 Lcodeadore/textgram/lazylist/ImageLoader;
+; v3 : Lcodeadore/textgram/lazylist/ImageLoader; , v5 : Lcodeadore/textgram/lazylist/ImageLoader$PhotosLoader;
+	iget-object	v3,v3,codeadore/textgram/lazylist/ImageLoader.handler Landroid/os/Handler;
+; v3 : Landroid/os/Handler; , v3 : Landroid/os/Handler;
+	invoke-virtual	{v3,v0},android/os/Handler/post	; post(Ljava/lang/Runnable;)Z
+; v3 : Landroid/os/Handler; , v0 : Lcodeadore/textgram/lazylist/ImageLoader$BitmapDisplayer;
+la891c:
+	goto	la88bc
+la891e:
+.line 155
+	move-exception	v2
+; v2 : java/lang/Throwable
+.line 156
+	invoke-virtual	{v2},java/lang/Throwable/printStackTrace	; printStackTrace()V
+; v2 : java/lang/Throwable
+	goto	la88bc
+.end method
+
+

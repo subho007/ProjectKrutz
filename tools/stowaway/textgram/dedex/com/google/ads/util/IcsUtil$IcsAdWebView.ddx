@@ -1,0 +1,123 @@
+.class public com/google/ads/util/IcsUtil$IcsAdWebView
+.super com/google/ads/internal/AdWebView
+.source SourceFile
+
+.inner class IcsAdWebView inner com/google/ads/util/IcsUtil$IcsAdWebView outer com/google/ads/util/IcsUtil
+
+.method public <init>(Lcom/google/ads/n;Lcom/google/ads/AdSize;)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/util/IcsUtil$IcsAdWebView;)
+; parameter[0] : v1 (Lcom/google/ads/n;)
+; parameter[1] : v2 (Lcom/google/ads/AdSize;)
+.line 54
+	invoke-direct	{v0,v1,v2},com/google/ads/internal/AdWebView/<init>	; <init>(Lcom/google/ads/n;Lcom/google/ads/AdSize;)V
+; v0 : Lcom/google/ads/util/IcsUtil$IcsAdWebView; , v1 : Lcom/google/ads/n; , v2 : Lcom/google/ads/AdSize;
+.line 55
+	return-void	
+.end method
+
+.method public canScrollHorizontally(I)Z
+.limit registers 3
+; this: v1 (Lcom/google/ads/util/IcsUtil$IcsAdWebView;)
+; parameter[0] : v2 (I)
+.line 59
+	iget-object	v0,v1,com/google/ads/util/IcsUtil$IcsAdWebView.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	if-eqz	v0,l14b128
+; v0 : Ljava/lang/Object;
+.line 60
+	iget-object	v0,v1,com/google/ads/util/IcsUtil$IcsAdWebView.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/ActivationOverlay
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v0},com/google/ads/internal/ActivationOverlay/b	; b()Z
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l14b124
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l14b122:
+.line 62
+	return	v0
+; v0 : single-length
+l14b124:
+.line 60
+	const/4	v0,0
+; v0 : single-length
+	goto	l14b122
+l14b128:
+.line 62
+	invoke-super	{v1,v2},com/google/ads/internal/AdWebView/canScrollHorizontally	; canScrollHorizontally(I)Z
+; v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView; , v2 : single-length
+	move-result	v0
+; v0 : single-length
+	goto	l14b122
+.end method
+
+.method public canScrollVertically(I)Z
+.limit registers 3
+; this: v1 (Lcom/google/ads/util/IcsUtil$IcsAdWebView;)
+; parameter[0] : v2 (I)
+.line 69
+	iget-object	v0,v1,com/google/ads/util/IcsUtil$IcsAdWebView.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	if-eqz	v0,l14b180
+; v0 : Ljava/lang/Object;
+.line 70
+	iget-object	v0,v1,com/google/ads/util/IcsUtil$IcsAdWebView.a Lcom/google/ads/n;
+; v0 : Lcom/google/ads/n; , v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView;
+	iget-object	v0,v0,com/google/ads/n.e Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/ActivationOverlay
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	invoke-virtual	{v0},com/google/ads/internal/ActivationOverlay/b	; b()Z
+; v0 : Lcom/google/ads/internal/ActivationOverlay;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l14b17c
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l14b17a:
+.line 72
+	return	v0
+; v0 : single-length
+l14b17c:
+.line 70
+	const/4	v0,0
+; v0 : single-length
+	goto	l14b17a
+l14b180:
+.line 72
+	invoke-super	{v1,v2},com/google/ads/internal/AdWebView/canScrollVertically	; canScrollVertically(I)Z
+; v1 : Lcom/google/ads/util/IcsUtil$IcsAdWebView; , v2 : single-length
+	move-result	v0
+; v0 : single-length
+	goto	l14b17a
+.end method
+
+

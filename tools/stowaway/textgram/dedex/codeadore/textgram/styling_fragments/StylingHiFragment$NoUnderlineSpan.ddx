@@ -1,0 +1,38 @@
+.class public codeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan
+.super android/text/style/UnderlineSpan
+.source StylingHiFragment.java
+
+.inner class NoUnderlineSpan inner codeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan outer codeadore/textgram/styling_fragments/StylingHiFragment
+.field final this$0 Lcodeadore/textgram/styling_fragments/StylingHiFragment;
+
+.method public <init>(Lcodeadore/textgram/styling_fragments/StylingHiFragment;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan;)
+; parameter[0] : v1 (Lcodeadore/textgram/styling_fragments/StylingHiFragment;)
+.line 322
+	iput-object	v1,v0,codeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan.this$0 Lcodeadore/textgram/styling_fragments/StylingHiFragment;
+; v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment; , v0 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan;
+.line 323
+	invoke-direct	{v0},android/text/style/UnderlineSpan/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan;
+.line 324
+	return-void	
+.end method
+
+.method public updateDrawState(Landroid/text/TextPaint;)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan;)
+; parameter[0] : v2 (Landroid/text/TextPaint;)
+.line 328
+	invoke-super	{v1,v2},android/text/style/UnderlineSpan/updateDrawState	; updateDrawState(Landroid/text/TextPaint;)V
+; v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$NoUnderlineSpan; , v2 : Landroid/text/TextPaint;
+.line 329
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v2,v0},android/text/TextPaint/setUnderlineText	; setUnderlineText(Z)V
+; v2 : Landroid/text/TextPaint; , v0 : single-length
+.line 330
+	return-void	
+.end method
+
+

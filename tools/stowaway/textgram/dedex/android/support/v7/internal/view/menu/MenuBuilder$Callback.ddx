@@ -1,0 +1,13 @@
+.interface public abstract android/support/v7/internal/view/menu/MenuBuilder$Callback
+.super java/lang/Object
+.source MenuBuilder.java
+
+.inner class Callback inner android/support/v7/internal/view/menu/MenuBuilder$Callback outer android/support/v7/internal/view/menu/MenuBuilder
+
+.method public abstract onMenuItemSelected(Landroid/support/v7/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
+.end method
+
+.method public abstract onMenuModeChange(Landroid/support/v7/internal/view/menu/MenuBuilder;)V
+.end method
+
+

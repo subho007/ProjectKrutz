@@ -1,0 +1,237 @@
+.class android/support/v4/util/ContainerHelpers
+.super java/lang/Object
+.source ContainerHelpers.java
+
+.field static final EMPTY_INTS [I
+.field static final EMPTY_LONGS [J
+.field static final EMPTY_OBJECTS [Ljava/lang/Object;
+
+.method static <clinit>()V
+.limit registers 2
+	const/4	v1,0
+; v1 : single-length
+.line 20
+	new-array	v0,v1,[I
+; v0 : [I , v1 : single-length
+	sput-object	v0,android/support/v4/util/ContainerHelpers.EMPTY_INTS [I
+; v0 : [I
+.line 21
+	new-array	v0,v1,[J
+; v0 : [J , v1 : single-length
+	sput-object	v0,android/support/v4/util/ContainerHelpers.EMPTY_LONGS [J
+; v0 : [J
+.line 22
+	new-array	v0,v1,[Ljava/lang/Object;
+; v0 : [Ljava/lang/Object; , v1 : single-length
+	sput-object	v0,android/support/v4/util/ContainerHelpers.EMPTY_OBJECTS [Ljava/lang/Object;
+; v0 : [Ljava/lang/Object;
+	return-void	
+.end method
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/util/ContainerHelpers;)
+.line 19
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/util/ContainerHelpers;
+	return-void	
+.end method
+
+.method static binarySearch([III)I
+.limit registers 8
+; parameter[0] : v5 ([I)
+; parameter[1] : v6 (I)
+; parameter[2] : v7 (I)
+.var 2 is mid I from l7eb82 to l7eb9a
+.var 3 is midVal I from l7eb86 to l7eb9a
+.line 46
+	const/4	v1,0
+; v1 : single-length
+.line 47
+	add-int/lit8	v0,v6,255
+; v0 : single-length , v6 : single-length
+l7eb76:
+.line 49
+	if-gt	v1,v0,l7eb9a
+; v1 : single-length , v0 : single-length
+.line 50
+	add-int	v4,v1,v0
+; v4 : single-length , v1 : single-length , v0 : single-length
+	ushr-int/lit8	v2,v4,1
+; v2 : single-length , v4 : single-length
+.line 51
+	aget	v3,v5,v2
+; v3 : single-length , v5 : [I , v2 : single-length
+.line 53
+	if-ge	v3,v7,l7eb90
+; v3 : single-length , v7 : single-length
+.line 54
+	add-int/lit8	v1,v2,1
+; v1 : single-length , v2 : single-length
+	goto	l7eb76
+l7eb90:
+.line 55
+	if-le	v3,v7,l7eb9e
+; v3 : single-length , v7 : single-length
+.line 56
+	add-int/lit8	v0,v2,255
+; v0 : single-length , v2 : single-length
+	goto	l7eb76
+l7eb9a:
+.line 61
+	xor-int/lit8	v2,v1,255
+; v2 : single-length , v1 : single-length
+l7eb9e:
+	return	v2
+; v2 : single-length
+.end method
+
+.method static binarySearch([JIJ)I
+.limit registers 10
+; parameter[0] : v6 ([J)
+; parameter[1] : v7 (I)
+; parameter[2] : v8 (J)
+.var 2 is mid I from l7ebc2 to l7ebe2
+.var 3 is midVal J from l7ebc6 to l7ebe2
+.line 65
+	const/4	v1,0
+; v1 : single-length
+.line 66
+	add-int/lit8	v0,v7,255
+; v0 : single-length , v7 : single-length
+l7ebb6:
+.line 68
+	if-gt	v1,v0,l7ebe2
+; v1 : single-length , v0 : single-length
+.line 69
+	add-int	v5,v1,v0
+; v5 : single-length , v1 : single-length , v0 : single-length
+	ushr-int/lit8	v2,v5,1
+; v2 : single-length , v5 : single-length
+.line 70
+	aget-wide	v3,v6,v2
+; v3 : double-length , v6 : [J , v2 : single-length
+.line 72
+	cmp-long	v5,v3,v8
+; v5 : single-length , v3 : double-length , v8 : double-length
+	if-gez	v5,l7ebd4
+; v5 : single-length
+.line 73
+	add-int/lit8	v1,v2,1
+; v1 : single-length , v2 : single-length
+	goto	l7ebb6
+l7ebd4:
+.line 74
+	cmp-long	v5,v3,v8
+; v5 : single-length , v3 : double-length , v8 : double-length
+	if-lez	v5,l7ebe6
+; v5 : single-length
+.line 75
+	add-int/lit8	v0,v2,255
+; v0 : single-length , v2 : single-length
+	goto	l7ebb6
+l7ebe2:
+.line 80
+	xor-int/lit8	v2,v1,255
+; v2 : single-length , v1 : single-length
+l7ebe6:
+	return	v2
+; v2 : single-length
+.end method
+
+.method public static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+.limit registers 3
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (Ljava/lang/Object;)
+.line 41
+	if-eq	v1,v2,l7ec0c
+; v1 : Ljava/lang/Object; , v2 : Ljava/lang/Object;
+	if-eqz	v1,l7ec10
+; v1 : Ljava/lang/Object;
+	invoke-virtual	{v1,v2},java/lang/Object/equals	; equals(Ljava/lang/Object;)Z
+; v1 : Ljava/lang/Object; , v2 : Ljava/lang/Object;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l7ec10
+; v0 : single-length
+l7ec0c:
+	const/4	v0,1
+; v0 : single-length
+l7ec0e:
+	return	v0
+; v0 : single-length
+l7ec10:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7ec0e
+.end method
+
+.method public static idealByteArraySize(I)I
+.limit registers 4
+; parameter[0] : v3 (I)
+	const/4	v2,1
+; v2 : single-length
+.line 33
+	const/4	v0,4
+; v0 : single-length
+l7ec28:
+	const/16	v1,32
+; v1 : single-length
+	if-ge	v0,v1,l7ec44
+; v0 : single-length , v1 : single-length
+.line 34
+	shl-int	v1,v2,v0
+; v1 : single-length , v2 : single-length , v0 : single-length
+	add-int/lit8	v1,v1,244
+; v1 : single-length , v1 : single-length
+	if-gt	v3,v1,l7ec46
+; v3 : single-length , v1 : single-length
+.line 35
+	shl-int	v1,v2,v0
+; v1 : single-length , v2 : single-length , v0 : single-length
+	add-int/lit8	v3,v1,244
+; v3 : single-length , v1 : single-length
+l7ec44:
+.line 37
+	return	v3
+; v3 : single-length
+l7ec46:
+.line 33
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l7ec28
+.end method
+
+.method public static idealIntArraySize(I)I
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 25
+	mul-int/lit-8	v0,v1,4
+; v0 : single-length , v1 : single-length
+	invoke-static	{v0},android/support/v4/util/ContainerHelpers/idealByteArraySize	; idealByteArraySize(I)I
+; v0 : single-length
+	move-result	v0
+; v0 : single-length
+	div-int/lit8	v0,v0,4
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static idealLongArraySize(I)I
+.limit registers 2
+; parameter[0] : v1 (I)
+.line 29
+	mul-int/lit-8	v0,v1,8
+; v0 : single-length , v1 : single-length
+	invoke-static	{v0},android/support/v4/util/ContainerHelpers/idealByteArraySize	; idealByteArraySize(I)I
+; v0 : single-length
+	move-result	v0
+; v0 : single-length
+	div-int/lit8	v0,v0,8
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

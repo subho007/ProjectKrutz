@@ -1,0 +1,123 @@
+.class codeadore/textgram/styling_fragments/StylingImagesFragment$10
+.super java/lang/Object
+.source StylingImagesFragment.java
+.implements yuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener
+
+.enclosing method codeadore/gvItemClicked(Ljava/lang/String;Landroid/view/View;I)V
+.field final this$0 Lcodeadore/textgram/styling_fragments/StylingImagesFragment;
+.field private final val$view Landroid/view/View;
+
+.method <init>(Lcodeadore/textgram/styling_fragments/StylingImagesFragment;Landroid/view/View;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;)
+; parameter[0] : v1 (Lcodeadore/textgram/styling_fragments/StylingImagesFragment;)
+; parameter[1] : v2 (Landroid/view/View;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/styling_fragments/StylingImagesFragment$10.this$0 Lcodeadore/textgram/styling_fragments/StylingImagesFragment;
+; v1 : Lcodeadore/textgram/styling_fragments/StylingImagesFragment; , v0 : Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;
+	iput-object	v2,v0,codeadore/textgram/styling_fragments/StylingImagesFragment$10.val$view Landroid/view/View;
+; v2 : Landroid/view/View; , v0 : Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;
+.line 615
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;
+	return-void	
+.end method
+
+.method public onCancel(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;)
+; parameter[0] : v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 642
+	return-void	
+.end method
+
+.method public onOk(Lyuku/ambilwarna/AmbilWarnaDialog;I)V
+.limit registers 14
+; this: v11 (Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;)
+; parameter[0] : v12 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[1] : v13 (I)
+	const/16	v10,100
+; v10 : single-length
+	const/4	v9,0
+; v9 : single-length
+.line 618
+	iget-object	v5,v11,codeadore/textgram/styling_fragments/StylingImagesFragment$10.val$view Landroid/view/View;
+; v5 : Landroid/view/View; , v11 : Lcodeadore/textgram/styling_fragments/StylingImagesFragment$10;
+.line 619
+	const	v6,2131099796	; 0x7f060094
+; v6 : single-length
+	invoke-virtual	{v5,v6},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v5 : Landroid/view/View; , v6 : single-length
+	move-result-object	v3
+; v3 : Landroid/view/View;
+.line 618
+	check-cast	v3,android/widget/ImageView
+; v3 : Landroid/widget/ImageView;
+.line 621
+	const-string	v5,"#%06X"
+; v5 : Ljava/lang/String;
+	const/4	v6,1
+; v6 : single-length
+	new-array	v6,v6,[Ljava/lang/Object;
+; v6 : [Ljava/lang/Object; , v6 : [Ljava/lang/Object;
+	const/4	v7,0
+; v7 : single-length
+.line 622
+	const	v8,16777215	; 0xffffff
+; v8 : single-length
+	and-int/2addr	v8,v13
+; v8 : single-length , v13 : single-length
+	invoke-static	{v8},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v8 : single-length
+	move-result-object	v8
+; v8 : Ljava/lang/Integer;
+	aput-object	v8,v6,v7
+; v8 : Ljava/lang/Integer; , v6 : [Ljava/lang/Object; , v7 : single-length
+.line 621
+	invoke-static	{v5,v6},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v5 : Ljava/lang/String; , v6 : [Ljava/lang/Object;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 624
+	invoke-static	{v2},codeadore/textgram/StylingActivity/applyHighlightColor	; applyHighlightColor(Ljava/lang/String;)V
+; v2 : Ljava/lang/String;
+.line 627
+	sget-object	v5,codeadore/textgram/StylingActivity.c Landroid/content/Context;
+; v5 : Landroid/content/Context;
+.line 628
+	const-string	v6,"data/gv_icon_custom_color.png"
+; v6 : Ljava/lang/String;
+.line 627
+	invoke-static	{v5,v6},codeadore/textgram/el7rUtilities/getBitmapFromAsset	; getBitmapFromAsset(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/Bitmap;
+; v5 : Landroid/content/Context; , v6 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Landroid/graphics/Bitmap;
+.line 631
+	sget-object	v5,android/graphics/Bitmap$Config.RGB_565 Landroid/graphics/Bitmap$Config;
+; v5 : Landroid/graphics/Bitmap$Config;
+.line 630
+	invoke-static	{v10,v10,v5},android/graphics/Bitmap/createBitmap	; createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+; v10 : single-length , v10 : single-length , v5 : Landroid/graphics/Bitmap$Config;
+	move-result-object	v1
+; v1 : Landroid/graphics/Bitmap;
+.line 632
+	new-instance	v0,android/graphics/Canvas
+; v0 : Landroid/graphics/Canvas;
+	invoke-direct	{v0,v1},android/graphics/Canvas/<init>	; <init>(Landroid/graphics/Bitmap;)V
+; v0 : Landroid/graphics/Canvas; , v1 : Landroid/graphics/Bitmap;
+.line 633
+	invoke-virtual	{v0,v13},android/graphics/Canvas/drawColor	; drawColor(I)V
+; v0 : Landroid/graphics/Canvas; , v13 : single-length
+.line 634
+	const/4	v5,0
+; v5 : single-length
+	invoke-virtual	{v0,v4,v9,v9,v5},android/graphics/Canvas/drawBitmap	; drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v4 : Landroid/graphics/Bitmap; , v9 : single-length , v9 : single-length , v5 : single-length
+.line 636
+	invoke-virtual	{v3,v1},android/widget/ImageView/setImageBitmap	; setImageBitmap(Landroid/graphics/Bitmap;)V
+; v3 : Landroid/widget/ImageView; , v1 : Landroid/graphics/Bitmap;
+.line 637
+	return-void	
+.end method
+
+

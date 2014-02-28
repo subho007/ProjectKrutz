@@ -1,0 +1,64 @@
+.class codeadore/textgram/CreateTextboxActivity$3
+.super java/lang/Object
+.source CreateTextboxActivity.java
+.implements android/view/View$OnClickListener
+
+.enclosing method codeadore/onCreate(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/CreateTextboxActivity;
+
+.method <init>(Lcodeadore/textgram/CreateTextboxActivity;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/CreateTextboxActivity$3;)
+; parameter[0] : v1 (Lcodeadore/textgram/CreateTextboxActivity;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/CreateTextboxActivity$3.this$0 Lcodeadore/textgram/CreateTextboxActivity;
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v0 : Lcodeadore/textgram/CreateTextboxActivity$3;
+.line 102
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/CreateTextboxActivity$3;
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 5
+; this: v3 (Lcodeadore/textgram/CreateTextboxActivity$3;)
+; parameter[0] : v4 (Landroid/view/View;)
+.line 108
+	iget-object	v1,v3,codeadore/textgram/CreateTextboxActivity$3.this$0 Lcodeadore/textgram/CreateTextboxActivity;
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v3 : Lcodeadore/textgram/CreateTextboxActivity$3;
+	iget-object	v1,v1,codeadore/textgram/CreateTextboxActivity.smileysLL Landroid/widget/LinearLayout;
+; v1 : Landroid/widget/LinearLayout; , v1 : Landroid/widget/LinearLayout;
+	invoke-virtual	{v1},android/widget/LinearLayout/getVisibility	; getVisibility()I
+; v1 : Landroid/widget/LinearLayout;
+	move-result	v0
+; v0 : single-length
+.line 109
+	if-nez	v0,l9d6d2
+; v0 : single-length
+.line 110
+	iget-object	v1,v3,codeadore/textgram/CreateTextboxActivity$3.this$0 Lcodeadore/textgram/CreateTextboxActivity;
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v3 : Lcodeadore/textgram/CreateTextboxActivity$3;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v1,v2},codeadore/textgram/CreateTextboxActivity/toggleEmojis	; toggleEmojis(Z)V
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v2 : single-length
+l9d6d0:
+.line 117
+	return-void	
+l9d6d2:
+.line 111
+	const/16	v1,8
+; v1 : single-length
+	if-ne	v0,v1,l9d6d0
+; v0 : single-length , v1 : single-length
+.line 112
+	iget-object	v1,v3,codeadore/textgram/CreateTextboxActivity$3.this$0 Lcodeadore/textgram/CreateTextboxActivity;
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v3 : Lcodeadore/textgram/CreateTextboxActivity$3;
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v1,v2},codeadore/textgram/CreateTextboxActivity/toggleEmojis	; toggleEmojis(Z)V
+; v1 : Lcodeadore/textgram/CreateTextboxActivity; , v2 : single-length
+	goto	l9d6d0
+.end method
+
+

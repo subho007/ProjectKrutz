@@ -1,0 +1,50 @@
+.class android/support/v4/app/ActivityCompatJB
+.super java/lang/Object
+.source ActivityCompatJB.java
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/app/ActivityCompatJB;)
+.line 24
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/app/ActivityCompatJB;
+	return-void	
+.end method
+
+.method public static finishAffinity(Landroid/app/Activity;)V
+.limit registers 1
+; parameter[0] : v0 (Landroid/app/Activity;)
+.line 34
+	invoke-virtual	{v0},android/app/Activity/finishAffinity	; finishAffinity()V
+; v0 : Landroid/app/Activity;
+.line 35
+	return-void	
+.end method
+
+.method public static startActivity(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
+.limit registers 3
+; parameter[0] : v0 (Landroid/content/Context;)
+; parameter[1] : v1 (Landroid/content/Intent;)
+; parameter[2] : v2 (Landroid/os/Bundle;)
+.line 26
+	invoke-virtual	{v0,v1,v2},android/content/Context/startActivity	; startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+; v0 : Landroid/content/Context; , v1 : Landroid/content/Intent; , v2 : Landroid/os/Bundle;
+.line 27
+	return-void	
+.end method
+
+.method public static startActivityForResult(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
+.limit registers 4
+; parameter[0] : v0 (Landroid/app/Activity;)
+; parameter[1] : v1 (Landroid/content/Intent;)
+; parameter[2] : v2 (I)
+; parameter[3] : v3 (Landroid/os/Bundle;)
+.line 30
+	invoke-virtual	{v0,v1,v2,v3},android/app/Activity/startActivityForResult	; startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
+; v0 : Landroid/app/Activity; , v1 : Landroid/content/Intent; , v2 : single-length , v3 : Landroid/os/Bundle;
+.line 31
+	return-void	
+.end method
+
+

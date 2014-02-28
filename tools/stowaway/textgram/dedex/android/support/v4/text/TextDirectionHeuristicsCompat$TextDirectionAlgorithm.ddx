@@ -1,0 +1,10 @@
+.interface abstract android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm
+.super java/lang/Object
+.source TextDirectionHeuristicsCompat.java
+
+.inner class TextDirectionAlgorithm inner android/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm outer android/support/v4/text/TextDirectionHeuristicsCompat
+
+.method public abstract checkRtl(Ljava/lang/CharSequence;II)I
+.end method
+
+

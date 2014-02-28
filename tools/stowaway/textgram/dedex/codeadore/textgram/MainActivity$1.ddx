@@ -1,0 +1,44 @@
+.class codeadore/textgram/MainActivity$1
+.super java/lang/Object
+.source MainActivity.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/onCreate(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/MainActivity;
+
+.method <init>(Lcodeadore/textgram/MainActivity;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/MainActivity$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/MainActivity;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/MainActivity$1.this$0 Lcodeadore/textgram/MainActivity;
+; v1 : Lcodeadore/textgram/MainActivity; , v0 : Lcodeadore/textgram/MainActivity$1;
+.line 103
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/MainActivity$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcodeadore/textgram/MainActivity$1;)
+.line 107
+	iget-object	v0,v3,codeadore/textgram/MainActivity$1.this$0 Lcodeadore/textgram/MainActivity;
+; v0 : Lcodeadore/textgram/MainActivity; , v3 : Lcodeadore/textgram/MainActivity$1;
+.line 108
+	iget-object	v1,v3,codeadore/textgram/MainActivity$1.this$0 Lcodeadore/textgram/MainActivity;
+; v1 : Lcodeadore/textgram/MainActivity; , v3 : Lcodeadore/textgram/MainActivity$1;
+	const	v2,2131099731	; 0x7f060053
+; v2 : single-length
+	invoke-virtual	{v1,v2},codeadore/textgram/MainActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Lcodeadore/textgram/MainActivity; , v2 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 107
+	invoke-static	{v0,v1},codeadore/textgram/AdUtilities/installAd	; installAd(Landroid/app/Activity;Landroid/view/View;)V
+; v0 : Lcodeadore/textgram/MainActivity; , v1 : Landroid/view/View;
+.line 109
+	return-void	
+.end method
+
+

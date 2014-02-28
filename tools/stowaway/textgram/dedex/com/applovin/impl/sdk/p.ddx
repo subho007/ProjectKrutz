@@ -1,0 +1,146 @@
+.class com/applovin/impl/sdk/p
+.super java/lang/Thread
+
+.field final a Ljava/util/concurrent/atomic/AtomicReference;
+.field final b Ljava/util/concurrent/CountDownLatch;
+.field final c Lcom/applovin/impl/sdk/n;
+
+.method <init>(Lcom/applovin/impl/sdk/n;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/CountDownLatch;)V
+.limit registers 5
+; this: v0 (Lcom/applovin/impl/sdk/p;)
+; parameter[0] : v1 (Lcom/applovin/impl/sdk/n;)
+; parameter[1] : v2 (Ljava/lang/String;)
+; parameter[2] : v3 (Ljava/util/concurrent/atomic/AtomicReference;)
+; parameter[3] : v4 (Ljava/util/concurrent/CountDownLatch;)
+	iput-object	v1,v0,com/applovin/impl/sdk/p.c Lcom/applovin/impl/sdk/n;
+; v1 : Lcom/applovin/impl/sdk/n; , v0 : Lcom/applovin/impl/sdk/p;
+	iput-object	v3,v0,com/applovin/impl/sdk/p.a Ljava/util/concurrent/atomic/AtomicReference;
+; v3 : Ljava/util/concurrent/atomic/AtomicReference; , v0 : Lcom/applovin/impl/sdk/p;
+	iput-object	v4,v0,com/applovin/impl/sdk/p.b Ljava/util/concurrent/CountDownLatch;
+; v4 : Ljava/util/concurrent/CountDownLatch; , v0 : Lcom/applovin/impl/sdk/p;
+	invoke-direct	{v0,v2},java/lang/Thread/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lcom/applovin/impl/sdk/p; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 7
+; this: v6 (Lcom/applovin/impl/sdk/p;)
+.catch java/lang/Exception from lb340a to lb3420 using lb342c
+.catch java/lang/Exception from lb3368 to lb33fc using lb3408
+.catch java/lang/Exception from lb3368 to lb33fc using lb342c
+lb3368:
+	const-string	v1,""
+; v1 : Ljava/lang/String;
+	const/4	v0,2
+; v0 : single-length
+	new-array	v0,v0,[Ljava/lang/String;
+; v0 : [Ljava/lang/String; , v0 : [Ljava/lang/String;
+	const/4	v2,0
+; v2 : single-length
+	const-string	v3,"/system/bin/cat"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v0,v2
+; v3 : Ljava/lang/String; , v0 : [Ljava/lang/String; , v2 : single-length
+	const/4	v2,1
+; v2 : single-length
+	const-string	v3,"/proc/cpuinfo"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v0,v2
+; v3 : Ljava/lang/String; , v0 : [Ljava/lang/String; , v2 : single-length
+	new-instance	v2,java/lang/ProcessBuilder
+; v2 : Ljava/lang/ProcessBuilder;
+	invoke-direct	{v2,v0},java/lang/ProcessBuilder/<init>	; <init>([Ljava/lang/String;)V
+; v2 : Ljava/lang/ProcessBuilder; , v0 : [Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/ProcessBuilder/start	; start()Ljava/lang/Process;
+; v2 : Ljava/lang/ProcessBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/Process;
+	invoke-virtual	{v0},java/lang/Process/getInputStream	; getInputStream()Ljava/io/InputStream;
+; v0 : Ljava/lang/Process;
+	move-result-object	v2
+; v2 : Ljava/io/InputStream;
+	const/16	v0,1024
+; v0 : single-length
+	new-array	v3,v0,[B
+; v3 : [B , v0 : single-length
+	invoke-virtual	{v2,v3},java/io/InputStream/read	; read([B)I
+; v2 : Ljava/io/InputStream; , v3 : [B
+	move-result	v0
+; v0 : single-length
+lb33b0:
+	if-lez	v0,lb33ec
+; v0 : single-length
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	invoke-direct	{v4},java/lang/StringBuilder/<init>	; <init>()V
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	new-instance	v4,java/lang/String
+; v4 : Ljava/lang/String;
+	const/4	v5,0
+; v5 : single-length
+	invoke-direct	{v4,v3,v5,v0},java/lang/String/<init>	; <init>([BII)V
+; v4 : Ljava/lang/String; , v3 : [B , v5 : single-length , v0 : single-length
+	invoke-virtual	{v1,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/io/InputStream/read	; read([B)I
+; v2 : Ljava/io/InputStream; , v3 : [B
+	move-result	v0
+; v0 : single-length
+	goto	lb33b0
+lb33ec:
+	invoke-virtual	{v2},java/io/InputStream/close	; close()V
+; v2 : Ljava/io/InputStream;
+	iget-object	v0,v6,com/applovin/impl/sdk/p.a Ljava/util/concurrent/atomic/AtomicReference;
+; v0 : Ljava/util/concurrent/atomic/AtomicReference; , v6 : Lcom/applovin/impl/sdk/p;
+	invoke-virtual	{v0,v1},java/util/concurrent/atomic/AtomicReference/set	; set(Ljava/lang/Object;)V
+; v0 : Ljava/util/concurrent/atomic/AtomicReference; , v1 : Ljava/lang/String;
+lb33fc:
+	iget-object	v0,v6,com/applovin/impl/sdk/p.b Ljava/util/concurrent/CountDownLatch;
+; v0 : Ljava/util/concurrent/CountDownLatch; , v6 : Lcom/applovin/impl/sdk/p;
+	invoke-virtual	{v0},java/util/concurrent/CountDownLatch/countDown	; countDown()V
+; v0 : Ljava/util/concurrent/CountDownLatch;
+lb3406:
+	return-void	
+lb3408:
+	move-exception	v0
+; v0 : java/lang/Exception
+lb340a:
+	iget-object	v1,v6,com/applovin/impl/sdk/p.c Lcom/applovin/impl/sdk/n;
+; v1 : Lcom/applovin/impl/sdk/n; , v6 : Lcom/applovin/impl/sdk/p;
+	iget-object	v1,v1,com/applovin/impl/sdk/n.d Lcom/applovin/sdk/AppLovinLogger;
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v1 : Lcom/applovin/sdk/AppLovinLogger;
+	const-string	v2,"DataCollector"
+; v2 : Ljava/lang/String;
+	const-string	v3,"Unable to collect CPU into"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3,v0},com/applovin/sdk/AppLovinLogger/e	; e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Lcom/applovin/sdk/AppLovinLogger; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v0 : java/lang/Exception
+lb3420:
+	iget-object	v0,v6,com/applovin/impl/sdk/p.b Ljava/util/concurrent/CountDownLatch;
+; v0 : Ljava/util/concurrent/CountDownLatch; , v6 : Lcom/applovin/impl/sdk/p;
+	invoke-virtual	{v0},java/util/concurrent/CountDownLatch/countDown	; countDown()V
+; v0 : Ljava/util/concurrent/CountDownLatch;
+	goto	lb3406
+lb342c:
+	move-exception	v0
+; v0 : java/lang/Exception
+	iget-object	v1,v6,com/applovin/impl/sdk/p.b Ljava/util/concurrent/CountDownLatch;
+; v1 : Ljava/util/concurrent/CountDownLatch; , v6 : Lcom/applovin/impl/sdk/p;
+	invoke-virtual	{v1},java/util/concurrent/CountDownLatch/countDown	; countDown()V
+; v1 : Ljava/util/concurrent/CountDownLatch;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+

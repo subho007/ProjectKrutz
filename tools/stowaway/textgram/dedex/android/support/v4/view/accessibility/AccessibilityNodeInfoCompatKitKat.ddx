@@ -1,0 +1,42 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat
+.super java/lang/Object
+.source AccessibilityNodeInfoCompatKitKat.java
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat;)
+.line 24
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatKitKat;
+	return-void	
+.end method
+
+.method public static getLiveRegion(Ljava/lang/Object;)I
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 26
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1},android/view/accessibility/AccessibilityNodeInfo/getLiveRegion	; getLiveRegion()I
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static setLiveRegion(Ljava/lang/Object;I)V
+.limit registers 2
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (I)
+.line 30
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1},android/view/accessibility/AccessibilityNodeInfo/setLiveRegion	; setLiveRegion(I)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : single-length
+.line 31
+	return-void	
+.end method
+
+

@@ -1,0 +1,67 @@
+.class codeadore/textgram/StylingActivity$5
+.super java/lang/Object
+.source StylingActivity.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/onActivityResult(IILandroid/content/Intent;)V
+.field final this$0 Lcodeadore/textgram/StylingActivity;
+.field private final val$bitmap Landroid/graphics/Bitmap;
+.field private final val$theURI Ljava/lang/String;
+
+.method <init>(Lcodeadore/textgram/StylingActivity;Landroid/graphics/Bitmap;Ljava/lang/String;)V
+.limit registers 4
+; this: v0 (Lcodeadore/textgram/StylingActivity$5;)
+; parameter[0] : v1 (Lcodeadore/textgram/StylingActivity;)
+; parameter[1] : v2 (Landroid/graphics/Bitmap;)
+; parameter[2] : v3 (Ljava/lang/String;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/StylingActivity$5.this$0 Lcodeadore/textgram/StylingActivity;
+; v1 : Lcodeadore/textgram/StylingActivity; , v0 : Lcodeadore/textgram/StylingActivity$5;
+	iput-object	v2,v0,codeadore/textgram/StylingActivity$5.val$bitmap Landroid/graphics/Bitmap;
+; v2 : Landroid/graphics/Bitmap; , v0 : Lcodeadore/textgram/StylingActivity$5;
+	iput-object	v3,v0,codeadore/textgram/StylingActivity$5.val$theURI Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcodeadore/textgram/StylingActivity$5;
+.line 776
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/StylingActivity$5;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 5
+; this: v4 (Lcodeadore/textgram/StylingActivity$5;)
+.line 780
+	sget-object	v0,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v0 : Lcodeadore/textgram/SuperSurface;
+	iget-object	v1,v4,codeadore/textgram/StylingActivity$5.val$bitmap Landroid/graphics/Bitmap;
+; v1 : Landroid/graphics/Bitmap; , v4 : Lcodeadore/textgram/StylingActivity$5;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"[URI]/"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+.line 781
+	iget-object	v3,v4,codeadore/textgram/StylingActivity$5.val$theURI Ljava/lang/String;
+; v3 : Ljava/lang/String; , v4 : Lcodeadore/textgram/StylingActivity$5;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+.line 780
+	invoke-virtual	{v0,v1,v2},codeadore/textgram/SuperSurface/setBackground	; setBackground(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+; v0 : Lcodeadore/textgram/SuperSurface; , v1 : Landroid/graphics/Bitmap; , v2 : Ljava/lang/String;
+.line 782
+	sget-object	v0,codeadore/textgram/StylingActivity.superSurface Lcodeadore/textgram/SuperSurface;
+; v0 : Lcodeadore/textgram/SuperSurface;
+	invoke-virtual	{v0},codeadore/textgram/SuperSurface/requestUpdate	; requestUpdate()V
+; v0 : Lcodeadore/textgram/SuperSurface;
+.line 783
+	return-void	
+.end method
+
+

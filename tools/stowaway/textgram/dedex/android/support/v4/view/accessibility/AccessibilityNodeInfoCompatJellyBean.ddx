@@ -1,0 +1,197 @@
+.class android/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellyBean
+.super java/lang/Object
+.source AccessibilityNodeInfoCompatJellyBean.java
+
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellyBean;)
+.line 26
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatJellyBean;
+	return-void	
+.end method
+
+.method public static addChild(Ljava/lang/Object;Landroid/view/View;I)V
+.limit registers 3
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (Landroid/view/View;)
+; parameter[2] : v2 (I)
+.line 29
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1,v2},android/view/accessibility/AccessibilityNodeInfo/addChild	; addChild(Landroid/view/View;I)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : Landroid/view/View; , v2 : single-length
+.line 30
+	return-void	
+.end method
+
+.method public static findFocus(Ljava/lang/Object;I)Ljava/lang/Object;
+.limit registers 3
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+.line 61
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1,v2},android/view/accessibility/AccessibilityNodeInfo/findFocus	; findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	return-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+.end method
+
+.method public static focusSearch(Ljava/lang/Object;I)Ljava/lang/Object;
+.limit registers 3
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+.line 65
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1,v2},android/view/accessibility/AccessibilityNodeInfo/focusSearch	; focusSearch(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	return-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+.end method
+
+.method public static getMovementGranularities(Ljava/lang/Object;)I
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 53
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1},android/view/accessibility/AccessibilityNodeInfo/getMovementGranularities	; getMovementGranularities()I
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static isAccessibilityFocused(Ljava/lang/Object;)Z
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 73
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1},android/view/accessibility/AccessibilityNodeInfo/isAccessibilityFocused	; isAccessibilityFocused()Z
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static isVisibleToUser(Ljava/lang/Object;)Z
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/Object;)
+.line 37
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1},android/view/accessibility/AccessibilityNodeInfo/isVisibleToUser	; isVisibleToUser()Z
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static obtain(Landroid/view/View;I)Ljava/lang/Object;
+.limit registers 3
+; parameter[0] : v1 (Landroid/view/View;)
+; parameter[1] : v2 (I)
+.line 57
+	invoke-static	{v1,v2},android/view/accessibility/AccessibilityNodeInfo/obtain	; obtain(Landroid/view/View;I)Landroid/view/accessibility/AccessibilityNodeInfo;
+; v1 : Landroid/view/View; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	return-object	v0
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+.end method
+
+.method public static performAction(Ljava/lang/Object;ILandroid/os/Bundle;)Z
+.limit registers 4
+; parameter[0] : v1 (Ljava/lang/Object;)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Landroid/os/Bundle;)
+.line 45
+	check-cast	v1,android/view/accessibility/AccessibilityNodeInfo
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v1,v2,v3},android/view/accessibility/AccessibilityNodeInfo/performAction	; performAction(ILandroid/os/Bundle;)Z
+; v1 : Landroid/view/accessibility/AccessibilityNodeInfo; , v2 : single-length , v3 : Landroid/os/Bundle;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static setAccesibilityFocused(Ljava/lang/Object;Z)V
+.limit registers 2
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (Z)
+.line 77
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1},android/view/accessibility/AccessibilityNodeInfo/setAccessibilityFocused	; setAccessibilityFocused(Z)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : single-length
+.line 78
+	return-void	
+.end method
+
+.method public static setMovementGranularities(Ljava/lang/Object;I)V
+.limit registers 2
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (I)
+.line 49
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1},android/view/accessibility/AccessibilityNodeInfo/setMovementGranularities	; setMovementGranularities(I)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : single-length
+.line 50
+	return-void	
+.end method
+
+.method public static setParent(Ljava/lang/Object;Landroid/view/View;I)V
+.limit registers 3
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (Landroid/view/View;)
+; parameter[2] : v2 (I)
+.line 69
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1,v2},android/view/accessibility/AccessibilityNodeInfo/setParent	; setParent(Landroid/view/View;I)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : Landroid/view/View; , v2 : single-length
+.line 70
+	return-void	
+.end method
+
+.method public static setSource(Ljava/lang/Object;Landroid/view/View;I)V
+.limit registers 3
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (Landroid/view/View;)
+; parameter[2] : v2 (I)
+.line 33
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1,v2},android/view/accessibility/AccessibilityNodeInfo/setSource	; setSource(Landroid/view/View;I)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : Landroid/view/View; , v2 : single-length
+.line 34
+	return-void	
+.end method
+
+.method public static setVisibleToUser(Ljava/lang/Object;Z)V
+.limit registers 2
+; parameter[0] : v0 (Ljava/lang/Object;)
+; parameter[1] : v1 (Z)
+.line 41
+	check-cast	v0,android/view/accessibility/AccessibilityNodeInfo
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo;
+	invoke-virtual	{v0,v1},android/view/accessibility/AccessibilityNodeInfo/setVisibleToUser	; setVisibleToUser(Z)V
+; v0 : Landroid/view/accessibility/AccessibilityNodeInfo; , v1 : single-length
+.line 42
+	return-void	
+.end method
+
+

@@ -1,0 +1,10 @@
+.interface abstract android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl
+.super java/lang/Object
+.source AccessibilityNodeProviderCompat.java
+
+.inner class AccessibilityNodeProviderImpl inner android/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl outer android/support/v4/view/accessibility/AccessibilityNodeProviderCompat
+
+.method public abstract newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
+.end method
+
+

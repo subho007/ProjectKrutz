@@ -1,0 +1,213 @@
+.class android/support/v4/text/ICUCompatIcs
+.super java/lang/Object
+.source ICUCompatIcs.java
+
+.field private static final TAG Ljava/lang/String; = "ICUCompatIcs"
+.field private static sAddLikelySubtagsMethod Ljava/lang/reflect/Method;
+.field private static sGetScriptMethod Ljava/lang/reflect/Method;
+
+.method static <clinit>()V
+.limit registers 6
+.catch java/lang/Exception from l7e2f8 to l7e348 using l7e34a
+l7e2f8:
+.line 33
+	const-string	v2,"libcore.icu.ICU"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2},java/lang/Class/forName	; forName(Ljava/lang/String;)Ljava/lang/Class;
+; v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Class;
+.line 34
+	if-eqz	v0,l7e348
+; v0 : Ljava/lang/Class;
+.line 35
+	const-string	v2,"getScript"
+; v2 : Ljava/lang/String;
+	const/4	v3,1
+; v3 : single-length
+	new-array	v3,v3,[Ljava/lang/Class;
+; v3 : [Ljava/lang/Class; , v3 : [Ljava/lang/Class;
+	const/4	v4,0
+; v4 : single-length
+	const-class	v5,java/lang/String
+; v5 : Ljava/lang/Class;
+	aput-object	v5,v3,v4
+; v5 : Ljava/lang/Class; , v3 : [Ljava/lang/Class; , v4 : single-length
+	invoke-virtual	{v0,v2,v3},java/lang/Class/getMethod	; getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+; v0 : Ljava/lang/Class; , v2 : Ljava/lang/String; , v3 : [Ljava/lang/Class;
+	move-result-object	v2
+; v2 : Ljava/lang/reflect/Method;
+	sput-object	v2,android/support/v4/text/ICUCompatIcs.sGetScriptMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+.line 37
+	const-string	v2,"addLikelySubtags"
+; v2 : Ljava/lang/String;
+	const/4	v3,1
+; v3 : single-length
+	new-array	v3,v3,[Ljava/lang/Class;
+; v3 : [Ljava/lang/Class; , v3 : [Ljava/lang/Class;
+	const/4	v4,0
+; v4 : single-length
+	const-class	v5,java/lang/String
+; v5 : Ljava/lang/Class;
+	aput-object	v5,v3,v4
+; v5 : Ljava/lang/Class; , v3 : [Ljava/lang/Class; , v4 : single-length
+	invoke-virtual	{v0,v2,v3},java/lang/Class/getMethod	; getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+; v0 : Ljava/lang/Class; , v2 : Ljava/lang/String; , v3 : [Ljava/lang/Class;
+	move-result-object	v2
+; v2 : Ljava/lang/reflect/Method;
+	sput-object	v2,android/support/v4/text/ICUCompatIcs.sAddLikelySubtagsMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+l7e348:
+.line 44
+	return-void	
+l7e34a:
+.line 40
+	move-exception	v1
+; v1 : java/lang/Exception
+.line 42
+	const-string	v2,"ICUCompatIcs"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v1 : java/lang/Exception
+	goto	l7e348
+.end method
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/text/ICUCompatIcs;)
+.line 24
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Landroid/support/v4/text/ICUCompatIcs;
+	return-void	
+.end method
+
+.method public static addLikelySubtags(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 5
+; parameter[0] : v4 (Ljava/lang/String;)
+.catch java/lang/IllegalAccessException from l7e390 to l7e3b6 using l7e3b8
+.catch java/lang/reflect/InvocationTargetException from l7e390 to l7e3b6 using l7e3c8
+.var 0 is args [Ljava/lang/Object; from l7e3a4 to l7e3b6
+.var 1 is e Ljava/lang/IllegalAccessException; from l7e3ba to l7e3c4
+l7e390:
+.line 65
+	sget-object	v2,android/support/v4/text/ICUCompatIcs.sAddLikelySubtagsMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+	if-eqz	v2,l7e3c4
+; v2 : Ljava/lang/reflect/Method;
+.line 66
+	const/4	v2,1
+; v2 : single-length
+	new-array	v0,v2,[Ljava/lang/Object;
+; v0 : [Ljava/lang/Object; , v2 : single-length
+	const/4	v2,0
+; v2 : single-length
+	aput-object	v4,v0,v2
+; v4 : Ljava/lang/String; , v0 : [Ljava/lang/Object; , v2 : single-length
+.line 67
+	sget-object	v2,android/support/v4/text/ICUCompatIcs.sAddLikelySubtagsMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v2,v3,v0},java/lang/reflect/Method/invoke	; invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/lang/reflect/Method; , v3 : single-length , v0 : [Ljava/lang/Object;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,java/lang/String
+; v2 : Ljava/lang/String;
+l7e3b6:
+.line 77
+	return-object	v2
+; v2 : Ljava/lang/String;
+l7e3b8:
+.line 69
+	move-exception	v1
+; v1 : java/lang/IllegalAccessException
+.line 71
+	const-string	v2,"ICUCompatIcs"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v1 : java/lang/IllegalAccessException
+l7e3c4:
+	move-object	v2,v4
+; v2 : Ljava/lang/String; , v4 : Ljava/lang/String;
+.line 77
+	goto	l7e3b6
+l7e3c8:
+.line 73
+	move-exception	v1
+; v1 : java/lang/reflect/InvocationTargetException
+.line 75
+	const-string	v2,"ICUCompatIcs"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v1 : java/lang/reflect/InvocationTargetException
+	goto	l7e3c4
+.end method
+
+.method public static getScript(Ljava/lang/String;)Ljava/lang/String;
+.limit registers 6
+; parameter[0] : v5 (Ljava/lang/String;)
+.catch java/lang/IllegalAccessException from l7e3fa to l7e420 using l7e422
+.catch java/lang/reflect/InvocationTargetException from l7e3fa to l7e420 using l7e432
+.var 0 is args [Ljava/lang/Object; from l7e40e to l7e420
+.var 1 is e Ljava/lang/IllegalAccessException; from l7e424 to l7e42e
+	const/4	v3,0
+; v3 : single-length
+l7e3fa:
+.line 48
+	sget-object	v2,android/support/v4/text/ICUCompatIcs.sGetScriptMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+	if-eqz	v2,l7e42e
+; v2 : Ljava/lang/reflect/Method;
+.line 49
+	const/4	v2,1
+; v2 : single-length
+	new-array	v0,v2,[Ljava/lang/Object;
+; v0 : [Ljava/lang/Object; , v2 : single-length
+	const/4	v2,0
+; v2 : single-length
+	aput-object	v5,v0,v2
+; v5 : Ljava/lang/String; , v0 : [Ljava/lang/Object; , v2 : single-length
+.line 50
+	sget-object	v2,android/support/v4/text/ICUCompatIcs.sGetScriptMethod Ljava/lang/reflect/Method;
+; v2 : Ljava/lang/reflect/Method;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v2,v4,v0},java/lang/reflect/Method/invoke	; invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+; v2 : Ljava/lang/reflect/Method; , v4 : single-length , v0 : [Ljava/lang/Object;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,java/lang/String
+; v2 : Ljava/lang/String;
+l7e420:
+.line 60
+	return-object	v2
+; v2 : single-length
+l7e422:
+.line 52
+	move-exception	v1
+; v1 : java/lang/IllegalAccessException
+.line 54
+	const-string	v2,"ICUCompatIcs"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v1 : java/lang/IllegalAccessException
+l7e42e:
+	move-object	v2,v3
+; v2 : single-length , v3 : single-length
+.line 60
+	goto	l7e420
+l7e432:
+.line 56
+	move-exception	v1
+; v1 : java/lang/reflect/InvocationTargetException
+.line 58
+	const-string	v2,"ICUCompatIcs"
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/Throwable;)I
+; v2 : Ljava/lang/String; , v1 : java/lang/reflect/InvocationTargetException
+	goto	l7e42e
+.end method
+
+

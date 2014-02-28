@@ -1,0 +1,71 @@
+.class codeadore/textgram/styling_fragments/StylingHiFragment$4
+.super java/lang/Object
+.source StylingHiFragment.java
+.implements android/view/View$OnClickListener
+
+.enclosing method codeadore/onActivityCreated(Landroid/os/Bundle;)V
+.field final this$0 Lcodeadore/textgram/styling_fragments/StylingHiFragment;
+.field private final val$randomizeBtn Landroid/widget/Button;
+
+.method <init>(Lcodeadore/textgram/styling_fragments/StylingHiFragment;Landroid/widget/Button;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;)
+; parameter[0] : v1 (Lcodeadore/textgram/styling_fragments/StylingHiFragment;)
+; parameter[1] : v2 (Landroid/widget/Button;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/styling_fragments/StylingHiFragment$4.this$0 Lcodeadore/textgram/styling_fragments/StylingHiFragment;
+; v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment; , v0 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+	iput-object	v2,v0,codeadore/textgram/styling_fragments/StylingHiFragment$4.val$randomizeBtn Landroid/widget/Button;
+; v2 : Landroid/widget/Button; , v0 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+.line 107
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 7
+; this: v5 (Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;)
+; parameter[0] : v6 (Landroid/view/View;)
+	const-wide/16	v3,1000
+; v3 : double-length
+.line 111
+	iget-object	v0,v5,codeadore/textgram/styling_fragments/StylingHiFragment$4.val$randomizeBtn Landroid/widget/Button;
+; v0 : Landroid/widget/Button; , v5 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/Button/setEnabled	; setEnabled(Z)V
+; v0 : Landroid/widget/Button; , v1 : single-length
+.line 113
+	iget-object	v0,v5,codeadore/textgram/styling_fragments/StylingHiFragment$4.val$randomizeBtn Landroid/widget/Button;
+; v0 : Landroid/widget/Button; , v5 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+	invoke-static	{v0},com/nineoldandroids/view/ViewPropertyAnimator/animate	; animate(Landroid/view/View;)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+; v0 : Landroid/widget/Button;
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/ViewPropertyAnimator;
+	invoke-virtual	{v0,v3,v4},com/nineoldandroids/view/ViewPropertyAnimator/setDuration	; setDuration(J)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+; v0 : Lcom/nineoldandroids/view/ViewPropertyAnimator; , v3 : double-length
+	move-result-object	v0
+; v0 : Lcom/nineoldandroids/view/ViewPropertyAnimator;
+	const/high16	v1,17332
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/nineoldandroids/view/ViewPropertyAnimator/rotationYBy	; rotationYBy(F)Lcom/nineoldandroids/view/ViewPropertyAnimator;
+; v0 : Lcom/nineoldandroids/view/ViewPropertyAnimator; , v1 : single-length
+.line 117
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-direct	{v0},android/os/Handler/<init>	; <init>()V
+; v0 : Landroid/os/Handler;
+	new-instance	v1,codeadore/textgram/styling_fragments/StylingHiFragment$4$1
+; v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4$1;
+	iget-object	v2,v5,codeadore/textgram/styling_fragments/StylingHiFragment$4.val$randomizeBtn Landroid/widget/Button;
+; v2 : Landroid/widget/Button; , v5 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;
+	invoke-direct	{v1,v5,v2},codeadore/textgram/styling_fragments/StylingHiFragment$4$1/<init>	; <init>(Lcodeadore/textgram/styling_fragments/StylingHiFragment$4;Landroid/widget/Button;)V
+; v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4$1; , v5 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4; , v2 : Landroid/widget/Button;
+	invoke-virtual	{v0,v1,v3,v4},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v1 : Lcodeadore/textgram/styling_fragments/StylingHiFragment$4$1; , v3 : double-length
+.line 143
+	return-void	
+.end method
+
+

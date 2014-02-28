@@ -1,0 +1,8 @@
+.interface public abstract com/applovin/impl/adview/AppLovinVideoCallback
+.super java/lang/Object
+
+
+.method public abstract onPlaybackStateChanged(Lcom/applovin/impl/adview/AppLovinVideoPlaybackState;)V
+.end method
+
+

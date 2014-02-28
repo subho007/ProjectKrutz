@@ -1,0 +1,61 @@
+.class codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1
+.super java/lang/Object
+.source ViewPager3D.java
+.implements android/animation/Animator$AnimatorListener
+
+.enclosing method codeadore/onRelease()V
+.field final this$1 Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+
+.method <init>(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1.this$1 Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v1 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;
+.line 93
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;
+	return-void	
+.end method
+
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;)
+; parameter[0] : v1 (Landroid/animation/Animator;)
+.line 110
+	return-void	
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+.limit registers 4
+; this: v2 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;)
+; parameter[0] : v3 (Landroid/animation/Animator;)
+.line 105
+	iget-object	v0,v2,codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1.this$1 Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v2 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;
+	const/4	v1,0
+; v1 : single-length
+	invoke-static	{v0,v1},codeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect/access$1	; access$1(Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect;F)V
+; v0 : Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect; , v1 : single-length
+.line 106
+	return-void	
+.end method
+
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;)
+; parameter[0] : v1 (Landroid/animation/Animator;)
+.line 101
+	return-void	
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/custom_widgets/ViewPager3D$OverscrollEffect$1;)
+; parameter[0] : v1 (Landroid/animation/Animator;)
+.line 97
+	return-void	
+.end method
+
+

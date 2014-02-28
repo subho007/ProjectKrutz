@@ -1,0 +1,58 @@
+.class android/support/v7/app/ActionBarActivityDelegateHC
+.super android/support/v7/app/ActionBarActivityDelegateBase
+.source ActionBarActivityDelegateHC.java
+
+
+.method <init>(Landroid/support/v7/app/ActionBarActivity;)V
+.limit registers 2
+; this: v0 (Landroid/support/v7/app/ActionBarActivityDelegateHC;)
+; parameter[0] : v1 (Landroid/support/v7/app/ActionBarActivity;)
+.line 25
+	invoke-direct	{v0,v1},android/support/v7/app/ActionBarActivityDelegateBase/<init>	; <init>(Landroid/support/v7/app/ActionBarActivity;)V
+; v0 : Landroid/support/v7/app/ActionBarActivityDelegateHC; , v1 : Landroid/support/v7/app/ActionBarActivity;
+.line 26
+	return-void	
+.end method
+
+.method public createSupportActionBar()Landroid/support/v7/app/ActionBar;
+.limit registers 4
+; this: v3 (Landroid/support/v7/app/ActionBarActivityDelegateHC;)
+.line 44
+	invoke-virtual	{v3},android/support/v7/app/ActionBarActivityDelegateHC/ensureSubDecor	; ensureSubDecor()V
+; v3 : Landroid/support/v7/app/ActionBarActivityDelegateHC;
+.line 45
+	new-instance	v0,android/support/v7/app/ActionBarImplHC
+; v0 : Landroid/support/v7/app/ActionBarImplHC;
+	iget-object	v1,v3,android/support/v7/app/ActionBarActivityDelegateHC.mActivity Landroid/support/v7/app/ActionBarActivity;
+; v1 : Landroid/support/v7/app/ActionBarActivity; , v3 : Landroid/support/v7/app/ActionBarActivityDelegateHC;
+	iget-object	v2,v3,android/support/v7/app/ActionBarActivityDelegateHC.mActivity Landroid/support/v7/app/ActionBarActivity;
+; v2 : Landroid/support/v7/app/ActionBarActivity; , v3 : Landroid/support/v7/app/ActionBarActivityDelegateHC;
+	invoke-direct	{v0,v1,v2},android/support/v7/app/ActionBarImplHC/<init>	; <init>(Landroid/support/v7/app/ActionBarActivity;Landroid/support/v7/app/ActionBar$Callback;)V
+; v0 : Landroid/support/v7/app/ActionBarImplHC; , v1 : Landroid/support/v7/app/ActionBarActivity; , v2 : Landroid/support/v7/app/ActionBarActivity;
+	return-object	v0
+; v0 : Landroid/support/v7/app/ActionBarImplHC;
+.end method
+
+.method onCreate(Landroid/os/Bundle;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/app/ActionBarActivityDelegateHC;)
+; parameter[0] : v3 (Landroid/os/Bundle;)
+.line 38
+	iget-object	v0,v2,android/support/v7/app/ActionBarActivityDelegateHC.mActivity Landroid/support/v7/app/ActionBarActivity;
+; v0 : Landroid/support/v7/app/ActionBarActivity; , v2 : Landroid/support/v7/app/ActionBarActivityDelegateHC;
+	invoke-virtual	{v0},android/support/v7/app/ActionBarActivity/getWindow	; getWindow()Landroid/view/Window;
+; v0 : Landroid/support/v7/app/ActionBarActivity;
+	move-result-object	v0
+; v0 : Landroid/view/Window;
+	const/16	v1,10
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/view/Window/requestFeature	; requestFeature(I)Z
+; v0 : Landroid/view/Window; , v1 : single-length
+.line 39
+	invoke-super	{v2,v3},android/support/v7/app/ActionBarActivityDelegateBase/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v2 : Landroid/support/v7/app/ActionBarActivityDelegateHC; , v3 : Landroid/os/Bundle;
+.line 40
+	return-void	
+.end method
+
+

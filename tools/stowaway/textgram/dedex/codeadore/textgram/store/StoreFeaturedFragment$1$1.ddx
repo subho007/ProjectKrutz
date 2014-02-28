@@ -1,0 +1,174 @@
+.class codeadore/textgram/store/StoreFeaturedFragment$1$1
+.super java/lang/Object
+.source StoreFeaturedFragment.java
+.implements java/lang/Runnable
+
+.enclosing method codeadore/run()V
+.field final this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+.field private final val$finalStatus Ljava/lang/String;
+
+.method <init>(Lcodeadore/textgram/store/StoreFeaturedFragment$1;Ljava/lang/String;)V
+.limit registers 3
+; this: v0 (Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;)
+; parameter[0] : v1 (Lcodeadore/textgram/store/StoreFeaturedFragment$1;)
+; parameter[1] : v2 (Ljava/lang/String;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v1 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	iput-object	v2,v0,codeadore/textgram/store/StoreFeaturedFragment$1$1.val$finalStatus Ljava/lang/String;
+; v2 : Ljava/lang/String; , v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+.line 70
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 10
+; this: v9 (Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;)
+.catch java/lang/Exception from la9424 to la9432 using la9434
+.var 1 is pb Landroid/widget/ProgressBar; from la93be to la93e8
+.var 2 is tv Landroid/widget/TextView; from la93da to la93e8
+	const	v8,2131099799	; 0x7f060097
+; v8 : single-length
+	const	v7,2131099798	; 0x7f060096
+; v7 : single-length
+	const/16	v6,8
+; v6 : single-length
+	const/4	v5,0
+; v5 : single-length
+.line 75
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.val$finalStatus Ljava/lang/String;
+; v3 : Ljava/lang/String; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	if-eqz	v3,la93e8
+; v3 : Ljava/lang/String;
+.line 76
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.val$finalStatus Ljava/lang/String;
+; v3 : Ljava/lang/String; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	const-string	v4,"[yes]"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/String/contains	; contains(Ljava/lang/CharSequence;)Z
+; v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,la93a2
+; v3 : single-length
+.line 78
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	invoke-static	{v3},codeadore/textgram/store/StoreFeaturedFragment$1/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$1;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	const/4	v4,1
+; v4 : single-length
+	invoke-static	{v4},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v4 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/Boolean;
+	iput-object	v4,v3,codeadore/textgram/store/StoreFeaturedFragment.areWeOk Ljava/lang/Boolean;
+; v4 : Ljava/lang/Boolean; , v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+la93a0:
+.line 105
+	return-void	
+la93a2:
+.line 83
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	invoke-static	{v3},codeadore/textgram/store/StoreFeaturedFragment$1/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$1;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	iget-object	v3,v3,codeadore/textgram/store/StoreFeaturedFragment.mainActivity Lcodeadore/textgram/el7rFragmentActivity;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v3 : Lcodeadore/textgram/el7rFragmentActivity;
+.line 84
+	invoke-virtual	{v3,v7},codeadore/textgram/el7rFragmentActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v7 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 83
+	check-cast	v1,android/widget/ProgressBar
+; v1 : Landroid/widget/ProgressBar;
+.line 85
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	invoke-static	{v3},codeadore/textgram/store/StoreFeaturedFragment$1/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$1;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	iget-object	v3,v3,codeadore/textgram/store/StoreFeaturedFragment.mainActivity Lcodeadore/textgram/el7rFragmentActivity;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v3 : Lcodeadore/textgram/el7rFragmentActivity;
+.line 86
+	invoke-virtual	{v3,v8},codeadore/textgram/el7rFragmentActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v8 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+.line 85
+	check-cast	v2,android/widget/TextView
+; v2 : Landroid/widget/TextView;
+.line 88
+	invoke-virtual	{v1,v6},android/widget/ProgressBar/setVisibility	; setVisibility(I)V
+; v1 : Landroid/widget/ProgressBar; , v6 : single-length
+.line 89
+	invoke-virtual	{v2,v5},android/widget/TextView/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/TextView; , v5 : single-length
+	goto	la93a0
+la93e8:
+.line 92
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	invoke-static	{v3},codeadore/textgram/store/StoreFeaturedFragment$1/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$1;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	iget-object	v3,v3,codeadore/textgram/store/StoreFeaturedFragment.mainActivity Lcodeadore/textgram/el7rFragmentActivity;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v3 : Lcodeadore/textgram/el7rFragmentActivity;
+.line 93
+	invoke-virtual	{v3,v7},codeadore/textgram/el7rFragmentActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v7 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 92
+	check-cast	v1,android/widget/ProgressBar
+; v1 : Landroid/widget/ProgressBar;
+.line 94
+	iget-object	v3,v9,codeadore/textgram/store/StoreFeaturedFragment$1$1.this$1 Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1; , v9 : Lcodeadore/textgram/store/StoreFeaturedFragment$1$1;
+	invoke-static	{v3},codeadore/textgram/store/StoreFeaturedFragment$1/access$0	; access$0(Lcodeadore/textgram/store/StoreFeaturedFragment$1;)Lcodeadore/textgram/store/StoreFeaturedFragment;
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment$1;
+	move-result-object	v3
+; v3 : Lcodeadore/textgram/store/StoreFeaturedFragment;
+	iget-object	v3,v3,codeadore/textgram/store/StoreFeaturedFragment.mainActivity Lcodeadore/textgram/el7rFragmentActivity;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v3 : Lcodeadore/textgram/el7rFragmentActivity;
+.line 95
+	invoke-virtual	{v3,v8},codeadore/textgram/el7rFragmentActivity/findViewById	; findViewById(I)Landroid/view/View;
+; v3 : Lcodeadore/textgram/el7rFragmentActivity; , v8 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+.line 94
+	check-cast	v2,android/widget/TextView
+; v2 : Landroid/widget/TextView;
+.line 98
+	const/16	v3,8
+; v3 : single-length
+la9424:
+	invoke-virtual	{v1,v3},android/widget/ProgressBar/setVisibility	; setVisibility(I)V
+; v1 : Landroid/widget/ProgressBar; , v3 : single-length
+.line 99
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/TextView/setVisibility	; setVisibility(I)V
+; v2 : Landroid/widget/TextView; , v3 : single-length
+la9432:
+	goto	la93a0
+la9434:
+.line 100
+	move-exception	v0
+; v0 : java/lang/Exception
+.line 101
+	invoke-virtual	{v0},java/lang/Exception/printStackTrace	; printStackTrace()V
+; v0 : java/lang/Exception
+	goto	la93a0
+.end method
+
+

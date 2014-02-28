@@ -1,0 +1,42 @@
+.class android/support/v4/content/IntentCompat$IntentCompatImplHC
+.super android/support/v4/content/IntentCompat$IntentCompatImplBase
+.source IntentCompat.java
+
+.inner class IntentCompatImplHC inner android/support/v4/content/IntentCompat$IntentCompatImplHC outer android/support/v4/content/IntentCompat
+
+.method <init>()V
+.limit registers 1
+; this: v0 (Landroid/support/v4/content/IntentCompat$IntentCompatImplHC;)
+.line 65
+	invoke-direct	{v0},android/support/v4/content/IntentCompat$IntentCompatImplBase/<init>	; <init>()V
+; v0 : Landroid/support/v4/content/IntentCompat$IntentCompatImplHC;
+	return-void	
+.end method
+
+.method public makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+.limit registers 3
+; this: v1 (Landroid/support/v4/content/IntentCompat$IntentCompatImplHC;)
+; parameter[0] : v2 (Landroid/content/ComponentName;)
+.line 68
+	invoke-static	{v2},android/support/v4/content/IntentCompatHoneycomb/makeMainActivity	; makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v2 : Landroid/content/ComponentName;
+	move-result-object	v0
+; v0 : Landroid/content/Intent;
+	return-object	v0
+; v0 : Landroid/content/Intent;
+.end method
+
+.method public makeRestartActivityTask(Landroid/content/ComponentName;)Landroid/content/Intent;
+.limit registers 3
+; this: v1 (Landroid/support/v4/content/IntentCompat$IntentCompatImplHC;)
+; parameter[0] : v2 (Landroid/content/ComponentName;)
+.line 72
+	invoke-static	{v2},android/support/v4/content/IntentCompatHoneycomb/makeRestartActivityTask	; makeRestartActivityTask(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v2 : Landroid/content/ComponentName;
+	move-result-object	v0
+; v0 : Landroid/content/Intent;
+	return-object	v0
+; v0 : Landroid/content/Intent;
+.end method
+
+

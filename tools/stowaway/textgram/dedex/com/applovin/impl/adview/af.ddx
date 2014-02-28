@@ -1,0 +1,40 @@
+.class com/applovin/impl/adview/af
+.super java/lang/Object
+.implements com/applovin/sdk/AppLovinAdClickListener
+
+.field final a Lcom/applovin/impl/adview/aj;
+.field final b Lcom/applovin/impl/adview/ad;
+
+.method <init>(Lcom/applovin/impl/adview/ad;Lcom/applovin/impl/adview/aj;)V
+.limit registers 3
+; this: v0 (Lcom/applovin/impl/adview/af;)
+; parameter[0] : v1 (Lcom/applovin/impl/adview/ad;)
+; parameter[1] : v2 (Lcom/applovin/impl/adview/aj;)
+	iput-object	v1,v0,com/applovin/impl/adview/af.b Lcom/applovin/impl/adview/ad;
+; v1 : Lcom/applovin/impl/adview/ad; , v0 : Lcom/applovin/impl/adview/af;
+	iput-object	v2,v0,com/applovin/impl/adview/af.a Lcom/applovin/impl/adview/aj;
+; v2 : Lcom/applovin/impl/adview/aj; , v0 : Lcom/applovin/impl/adview/af;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/applovin/impl/adview/af;
+	return-void	
+.end method
+
+.method public adClicked(Lcom/applovin/sdk/AppLovinAd;)V
+.limit registers 3
+; this: v1 (Lcom/applovin/impl/adview/af;)
+; parameter[0] : v2 (Lcom/applovin/sdk/AppLovinAd;)
+	iget-object	v0,v1,com/applovin/impl/adview/af.a Lcom/applovin/impl/adview/aj;
+; v0 : Lcom/applovin/impl/adview/aj; , v1 : Lcom/applovin/impl/adview/af;
+	invoke-virtual	{v0},com/applovin/impl/adview/aj/d	; d()Lcom/applovin/sdk/AppLovinAdClickListener;
+; v0 : Lcom/applovin/impl/adview/aj;
+	move-result-object	v0
+; v0 : Lcom/applovin/sdk/AppLovinAdClickListener;
+	if-eqz	v0,lf6856
+; v0 : Lcom/applovin/sdk/AppLovinAdClickListener;
+	invoke-interface	{v0,v2},com/applovin/sdk/AppLovinAdClickListener/adClicked	; adClicked(Lcom/applovin/sdk/AppLovinAd;)V
+; v0 : Lcom/applovin/sdk/AppLovinAdClickListener; , v2 : Lcom/applovin/sdk/AppLovinAd;
+lf6856:
+	return-void	
+.end method
+
+

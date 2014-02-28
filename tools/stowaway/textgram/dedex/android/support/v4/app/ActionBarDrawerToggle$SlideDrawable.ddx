@@ -1,0 +1,230 @@
+.class android/support/v4/app/ActionBarDrawerToggle$SlideDrawable
+.super android/graphics/drawable/LevelListDrawable
+.source ActionBarDrawerToggle.java
+.implements android/graphics/drawable/Drawable$Callback
+
+.inner class SlideDrawable inner android/support/v4/app/ActionBarDrawerToggle$SlideDrawable outer android/support/v4/app/ActionBarDrawerToggle
+.field private final mHasMirroring Z
+.field private mOffset F
+.field private mPosition F
+.field private final mTmpRect Landroid/graphics/Rect;
+.field final this$0 Landroid/support/v4/app/ActionBarDrawerToggle;
+
+.method private <init>(Landroid/support/v4/app/ActionBarDrawerToggle;Landroid/graphics/drawable/Drawable;)V
+.limit registers 7
+; this: v4 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+; parameter[0] : v5 (Landroid/support/v4/app/ActionBarDrawerToggle;)
+; parameter[1] : v6 (Landroid/graphics/drawable/Drawable;)
+	const/4	v1,1
+; v1 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 392
+	iput-object	v5,v4,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.this$0 Landroid/support/v4/app/ActionBarDrawerToggle;
+; v5 : Landroid/support/v4/app/ActionBarDrawerToggle; , v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 393
+	invoke-direct	{v4},android/graphics/drawable/LevelListDrawable/<init>	; <init>()V
+; v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 386
+	sget	v0,android/os/Build$VERSION.SDK_INT I
+; v0 : single-length
+	const/16	v3,18
+; v3 : single-length
+	if-le	v0,v3,l73530
+; v0 : single-length , v3 : single-length
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+l73504:
+	iput-boolean	v0,v4,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mHasMirroring Z
+; v0 : single-length , v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 387
+	new-instance	v0,android/graphics/Rect
+; v0 : Landroid/graphics/Rect;
+	invoke-direct	{v0},android/graphics/Rect/<init>	; <init>()V
+; v0 : Landroid/graphics/Rect;
+	iput-object	v0,v4,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mTmpRect Landroid/graphics/Rect;
+; v0 : Landroid/graphics/Rect; , v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 395
+	invoke-static	{v6},android/support/v4/graphics/drawable/DrawableCompat/isAutoMirrored	; isAutoMirrored(Landroid/graphics/drawable/Drawable;)Z
+; v6 : Landroid/graphics/drawable/Drawable;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l73528
+; v0 : single-length
+.line 396
+	invoke-static	{v4,v1},android/support/v4/graphics/drawable/DrawableCompat/setAutoMirrored	; setAutoMirrored(Landroid/graphics/drawable/Drawable;Z)V
+; v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable; , v1 : single-length
+l73528:
+.line 399
+	invoke-virtual	{v4,v2,v2,v6},android/support/v4/app/ActionBarDrawerToggle$SlideDrawable/addLevel	; addLevel(IILandroid/graphics/drawable/Drawable;)V
+; v4 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable; , v2 : single-length , v2 : single-length , v6 : Landroid/graphics/drawable/Drawable;
+.line 400
+	return-void	
+l73530:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+.line 386
+	goto	l73504
+.end method
+
+.method <init>(Landroid/support/v4/app/ActionBarDrawerToggle;Landroid/graphics/drawable/Drawable;Landroid/support/v4/app/ActionBarDrawerToggle$1;)V
+.limit registers 4
+; this: v0 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+; parameter[0] : v1 (Landroid/support/v4/app/ActionBarDrawerToggle;)
+; parameter[1] : v2 (Landroid/graphics/drawable/Drawable;)
+; parameter[2] : v3 (Landroid/support/v4/app/ActionBarDrawerToggle$1;)
+.line 385
+	invoke-direct	{v0,v1,v2},android/support/v4/app/ActionBarDrawerToggle$SlideDrawable/<init>	; <init>(Landroid/support/v4/app/ActionBarDrawerToggle;Landroid/graphics/drawable/Drawable;)V
+; v0 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable; , v1 : Landroid/support/v4/app/ActionBarDrawerToggle; , v2 : Landroid/graphics/drawable/Drawable;
+	return-void	
+.end method
+
+.method public draw(Landroid/graphics/Canvas;)V
+.limit registers 8
+; this: v6 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+; parameter[0] : v7 (Landroid/graphics/Canvas;)
+.var 0 is flipRtl I from l735a0 to l735f6
+.var 1 is isLayoutRTL Z from l7359a to l735f6
+.var 2 is width I from l735ac to l735f6
+	const/4	v5,0
+; v5 : single-length
+	const/4	v0,1
+; v0 : single-length
+.line 430
+	iget-object	v3,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mTmpRect Landroid/graphics/Rect;
+; v3 : Landroid/graphics/Rect; , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	invoke-virtual	{v6,v3},android/support/v4/app/ActionBarDrawerToggle$SlideDrawable/copyBounds	; copyBounds(Landroid/graphics/Rect;)V
+; v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable; , v3 : Landroid/graphics/Rect;
+.line 431
+	invoke-virtual	{v7},android/graphics/Canvas/save	; save()I
+; v7 : Landroid/graphics/Canvas;
+.line 434
+	iget-object	v3,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.this$0 Landroid/support/v4/app/ActionBarDrawerToggle;
+; v3 : Landroid/support/v4/app/ActionBarDrawerToggle; , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	invoke-static	{v3},android/support/v4/app/ActionBarDrawerToggle/access$300	; access$300(Landroid/support/v4/app/ActionBarDrawerToggle;)Landroid/app/Activity;
+; v3 : Landroid/support/v4/app/ActionBarDrawerToggle;
+	move-result-object	v3
+; v3 : Landroid/app/Activity;
+	invoke-virtual	{v3},android/app/Activity/getWindow	; getWindow()Landroid/view/Window;
+; v3 : Landroid/app/Activity;
+	move-result-object	v3
+; v3 : Landroid/view/Window;
+	invoke-virtual	{v3},android/view/Window/getDecorView	; getDecorView()Landroid/view/View;
+; v3 : Landroid/view/Window;
+	move-result-object	v3
+; v3 : Landroid/view/View;
+	invoke-static	{v3},android/support/v4/view/ViewCompat/getLayoutDirection	; getLayoutDirection(Landroid/view/View;)I
+; v3 : Landroid/view/View;
+	move-result	v3
+; v3 : single-length
+	if-ne	v3,v0,l735f6
+; v3 : single-length , v0 : single-length
+	move	v1,v0
+; v1 : single-length , v0 : single-length
+l7359a:
+.line 436
+	if-eqz	v1,l735a0
+; v1 : single-length
+	const/4	v0,15
+; v0 : single-length
+l735a0:
+.line 437
+	iget-object	v3,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mTmpRect Landroid/graphics/Rect;
+; v3 : Landroid/graphics/Rect; , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	invoke-virtual	{v3},android/graphics/Rect/width	; width()I
+; v3 : Landroid/graphics/Rect;
+	move-result	v2
+; v2 : single-length
+.line 438
+	iget	v3,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mOffset F
+; v3 : single-length , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	neg-float	v3,v3
+; v3 : single-length , v3 : single-length
+	int-to-float	v4,v2
+; v4 : single-length , v2 : single-length
+	mul-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	iget	v4,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mPosition F
+; v4 : single-length , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	mul-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	mul-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	invoke-virtual	{v7,v3,v5},android/graphics/Canvas/translate	; translate(FF)V
+; v7 : Landroid/graphics/Canvas; , v3 : single-length , v5 : single-length
+.line 441
+	if-eqz	v1,l735e8
+; v1 : single-length
+	iget-boolean	v3,v6,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mHasMirroring Z
+; v3 : single-length , v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	if-nez	v3,l735e8
+; v3 : single-length
+.line 442
+	int-to-float	v3,v2
+; v3 : single-length , v2 : single-length
+	invoke-virtual	{v7,v3,v5},android/graphics/Canvas/translate	; translate(FF)V
+; v7 : Landroid/graphics/Canvas; , v3 : single-length , v5 : single-length
+.line 443
+	const/high16	v3,49024
+; v3 : single-length
+	const/high16	v4,16256
+; v4 : single-length
+	invoke-virtual	{v7,v3,v4},android/graphics/Canvas/scale	; scale(FF)V
+; v7 : Landroid/graphics/Canvas; , v3 : single-length , v4 : single-length
+l735e8:
+.line 446
+	invoke-super	{v6,v7},android/graphics/drawable/LevelListDrawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v6 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable; , v7 : Landroid/graphics/Canvas;
+.line 447
+	invoke-virtual	{v7},android/graphics/Canvas/restore	; restore()V
+; v7 : Landroid/graphics/Canvas;
+.line 448
+	return-void	
+l735f6:
+.line 434
+	const/4	v1,0
+; v1 : single-length
+	goto	l7359a
+.end method
+
+.method public getPosition()F
+.limit registers 2
+; this: v1 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+.line 413
+	iget	v0,v1,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mPosition F
+; v0 : single-length , v1 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setOffset(F)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+; parameter[0] : v1 (F)
+.line 424
+	iput	v1,v0,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mOffset F
+; v1 : single-length , v0 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 425
+	invoke-virtual	{v0},android/support/v4/app/ActionBarDrawerToggle$SlideDrawable/invalidateSelf	; invalidateSelf()V
+; v0 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 426
+	return-void	
+.end method
+
+.method public setPosition(F)V
+.limit registers 2
+; this: v0 (Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;)
+; parameter[0] : v1 (F)
+.line 408
+	iput	v1,v0,android/support/v4/app/ActionBarDrawerToggle$SlideDrawable.mPosition F
+; v1 : single-length , v0 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 409
+	invoke-virtual	{v0},android/support/v4/app/ActionBarDrawerToggle$SlideDrawable/invalidateSelf	; invalidateSelf()V
+; v0 : Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+.line 410
+	return-void	
+.end method
+
+

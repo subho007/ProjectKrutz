@@ -1,0 +1,548 @@
+.class public com/google/ads/mediation/admob/AdMobAdapter
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/mediation/MediationBannerAdapter
+.implements com/google/ads/mediation/MediationInterstitialAdapter
+
+.inner class 1 inner com/google/ads/mediation/admob/AdMobAdapter$1 outer com/google/ads/mediation/admob/AdMobAdapter
+.inner class b inner com/google/ads/mediation/admob/AdMobAdapter$b outer com/google/ads/mediation/admob/AdMobAdapter
+.inner class a inner com/google/ads/mediation/admob/AdMobAdapter$a outer com/google/ads/mediation/admob/AdMobAdapter
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Object;" , "Lcom/google/ads/mediation/MediationBannerAdapter" , "<" , "Lcom/google/ads/mediation/admob/AdMobAdapterExtras;" , "Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;" , ">;" , "Lcom/google/ads/mediation/MediationInterstitialAdapter" , "<" , "Lcom/google/ads/mediation/admob/AdMobAdapterExtras;" , "Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;" , ">;" }
+.end annotation
+
+.field private a Lcom/google/ads/mediation/MediationBannerListener;
+.field private b Lcom/google/ads/mediation/MediationInterstitialListener;
+.field private c Lcom/google/ads/AdView;
+.field private d Lcom/google/ads/InterstitialAd;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 25
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 302
+	return-void	
+.end method
+
+.method private a(Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)Lcom/google/ads/AdRequest;
+.limit registers 8
+; this: v3 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v4 (Landroid/app/Activity;)
+; parameter[1] : v5 (Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;)
+; parameter[2] : v6 (Lcom/google/ads/mediation/MediationAdRequest;)
+; parameter[3] : v7 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 88
+	new-instance	v0,com/google/ads/mediation/admob/AdMobAdapterExtras
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	invoke-direct	{v0,v7},com/google/ads/mediation/admob/AdMobAdapterExtras/<init>	; <init>(Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras; , v7 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 91
+	const-string	v1,"_norefresh"
+; v1 : Ljava/lang/String;
+	const-string	v2,"t"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},com/google/ads/mediation/admob/AdMobAdapterExtras/addExtra	; addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 94
+	const-string	v1,"gw"
+; v1 : Ljava/lang/String;
+	const/4	v2,1
+; v2 : single-length
+	invoke-static	{v2},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Integer;
+	invoke-virtual	{v0,v1,v2},com/google/ads/mediation/admob/AdMobAdapterExtras/addExtra	; addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Integer;
+.line 96
+	iget-object	v1,v5,com/google/ads/mediation/admob/AdMobAdapterServerParameters.allowHouseAds Ljava/lang/String;
+; v1 : Ljava/lang/String; , v5 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	if-eqz	v1,l15c28e
+; v1 : Ljava/lang/String;
+.line 97
+	const-string	v1,"mad_hac"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/mediation/admob/AdMobAdapterServerParameters.allowHouseAds Ljava/lang/String;
+; v2 : Ljava/lang/String; , v5 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	invoke-virtual	{v0,v1,v2},com/google/ads/mediation/admob/AdMobAdapterExtras/addExtra	; addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l15c28e:
+.line 101
+	new-instance	v1,com/google/ads/AdRequest
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-direct	{v1},com/google/ads/AdRequest/<init>	; <init>()V
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v6},com/google/ads/mediation/MediationAdRequest/getBirthday	; getBirthday()Ljava/util/Date;
+; v6 : Lcom/google/ads/mediation/MediationAdRequest;
+	move-result-object	v2
+; v2 : Ljava/util/Date;
+	invoke-virtual	{v1,v2},com/google/ads/AdRequest/setBirthday	; setBirthday(Ljava/util/Date;)Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v2 : Ljava/util/Date;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v6},com/google/ads/mediation/MediationAdRequest/getGender	; getGender()Lcom/google/ads/AdRequest$Gender;
+; v6 : Lcom/google/ads/mediation/MediationAdRequest;
+	move-result-object	v2
+; v2 : Lcom/google/ads/AdRequest$Gender;
+	invoke-virtual	{v1,v2},com/google/ads/AdRequest/setGender	; setGender(Lcom/google/ads/AdRequest$Gender;)Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v2 : Lcom/google/ads/AdRequest$Gender;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v6},com/google/ads/mediation/MediationAdRequest/getKeywords	; getKeywords()Ljava/util/Set;
+; v6 : Lcom/google/ads/mediation/MediationAdRequest;
+	move-result-object	v2
+; v2 : Ljava/util/Set;
+	invoke-virtual	{v1,v2},com/google/ads/AdRequest/setKeywords	; setKeywords(Ljava/util/Set;)Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v2 : Ljava/util/Set;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v6},com/google/ads/mediation/MediationAdRequest/getLocation	; getLocation()Landroid/location/Location;
+; v6 : Lcom/google/ads/mediation/MediationAdRequest;
+	move-result-object	v2
+; v2 : Landroid/location/Location;
+	invoke-virtual	{v1,v2},com/google/ads/AdRequest/setLocation	; setLocation(Landroid/location/Location;)Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v2 : Landroid/location/Location;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v1,v0},com/google/ads/AdRequest/setNetworkExtras	; setNetworkExtras(Lcom/google/ads/mediation/NetworkExtras;)Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-result-object	v0
+; v0 : Lcom/google/ads/AdRequest;
+.line 108
+	invoke-virtual	{v6},com/google/ads/mediation/MediationAdRequest/isTesting	; isTesting()Z
+; v6 : Lcom/google/ads/mediation/MediationAdRequest;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l15c2fa
+; v1 : single-length
+.line 114
+	invoke-static	{v4},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;)Ljava/lang/String;
+; v4 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},com/google/ads/AdRequest/addTestDevice	; addTestDevice(Ljava/lang/String;)Lcom/google/ads/AdRequest;
+; v0 : Lcom/google/ads/AdRequest; , v1 : Ljava/lang/String;
+l15c2fa:
+.line 117
+	return-object	v0
+; v0 : Lcom/google/ads/AdRequest;
+.end method
+
+.method static a(Lcom/google/ads/mediation/admob/AdMobAdapter;)Lcom/google/ads/mediation/MediationBannerListener;
+.limit registers 2
+; parameter[0] : v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 25
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.a Lcom/google/ads/mediation/MediationBannerListener;
+; v0 : Lcom/google/ads/mediation/MediationBannerListener; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	return-object	v0
+; v0 : Lcom/google/ads/mediation/MediationBannerListener;
+.end method
+
+.method private a()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 60
+	invoke-direct	{v2},com/google/ads/mediation/admob/AdMobAdapter/b	; b()Z
+; v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l15c340
+; v0 : single-length
+.line 61
+	new-instance	v0,java/lang/IllegalStateException
+; v0 : Ljava/lang/IllegalStateException;
+	const-string	v1,"Adapter has already been destroyed"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalStateException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalStateException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalStateException;
+l15c340:
+.line 63
+	return-void	
+.end method
+
+.method static b(Lcom/google/ads/mediation/admob/AdMobAdapter;)Lcom/google/ads/mediation/MediationInterstitialListener;
+.limit registers 2
+; parameter[0] : v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 25
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	return-object	v0
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener;
+.end method
+
+.method private b()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 70
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	if-nez	v0,l15c380
+; v0 : Lcom/google/ads/AdView;
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	if-nez	v0,l15c380
+; v0 : Lcom/google/ads/InterstitialAd;
+	const/4	v0,1
+; v0 : single-length
+l15c37e:
+	return	v0
+; v0 : single-length
+l15c380:
+	const/4	v0,0
+; v0 : single-length
+	goto	l15c37e
+.end method
+
+.method protected a(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)Lcom/google/ads/AdView;
+.limit registers 5
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v2 (Landroid/app/Activity;)
+; parameter[1] : v3 (Lcom/google/ads/AdSize;)
+; parameter[2] : v4 (Ljava/lang/String;)
+.line 127
+	new-instance	v0,com/google/ads/AdView
+; v0 : Lcom/google/ads/AdView;
+	invoke-direct	{v0,v2,v3,v4},com/google/ads/AdView/<init>	; <init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/AdView; , v2 : Landroid/app/Activity; , v3 : Lcom/google/ads/AdSize; , v4 : Ljava/lang/String;
+	return-object	v0
+; v0 : Lcom/google/ads/AdView;
+.end method
+
+.method protected a(Landroid/app/Activity;Ljava/lang/String;)Lcom/google/ads/InterstitialAd;
+.limit registers 4
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v2 (Landroid/app/Activity;)
+; parameter[1] : v3 (Ljava/lang/String;)
+.line 131
+	new-instance	v0,com/google/ads/InterstitialAd
+; v0 : Lcom/google/ads/InterstitialAd;
+	invoke-direct	{v0,v2,v3},com/google/ads/InterstitialAd/<init>	; <init>(Landroid/app/Activity;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/InterstitialAd; , v2 : Landroid/app/Activity; , v3 : Ljava/lang/String;
+	return-object	v0
+; v0 : Lcom/google/ads/InterstitialAd;
+.end method
+
+.method public destroy()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+	const/4	v1,0
+; v1 : single-length
+.line 220
+	invoke-direct	{v2},com/google/ads/mediation/admob/AdMobAdapter/a	; a()V
+; v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 223
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	if-eqz	v0,l15c3f4
+; v0 : Lcom/google/ads/AdView;
+.line 224
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-virtual	{v0},com/google/ads/AdView/stopLoading	; stopLoading()V
+; v0 : Lcom/google/ads/AdView;
+.line 225
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-virtual	{v0},com/google/ads/AdView/destroy	; destroy()V
+; v0 : Lcom/google/ads/AdView;
+.line 226
+	iput-object	v1,v2,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v1 : single-length , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+l15c3f4:
+.line 229
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	if-eqz	v0,l15c40a
+; v0 : Lcom/google/ads/InterstitialAd;
+.line 230
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-virtual	{v0},com/google/ads/InterstitialAd/stopLoading	; stopLoading()V
+; v0 : Lcom/google/ads/InterstitialAd;
+.line 231
+	iput-object	v1,v2,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v1 : single-length , v2 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+l15c40a:
+.line 233
+	return-void	
+.end method
+
+.method public getAdditionalParametersType()Ljava/lang/Class;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/lang/Class" , "<" , "Lcom/google/ads/mediation/admob/AdMobAdapterExtras;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 145
+	const-class	v0,com/google/ads/mediation/admob/AdMobAdapterExtras
+; v0 : Ljava/lang/Class;
+	return-object	v0
+; v0 : Ljava/lang/Class;
+.end method
+
+.method public getBannerView()Landroid/view/View;
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 212
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	return-object	v0
+; v0 : Lcom/google/ads/AdView;
+.end method
+
+.method public getServerParametersType()Ljava/lang/Class;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/lang/Class" , "<" , "Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 153
+	const-class	v0,com/google/ads/mediation/admob/AdMobAdapterServerParameters
+; v0 : Ljava/lang/Class;
+	return-object	v0
+; v0 : Ljava/lang/Class;
+.end method
+
+.method public requestBannerAd(Lcom/google/ads/mediation/MediationBannerListener;Landroid/app/Activity;Lcom/google/ads/mediation/MediationServerParameters;Lcom/google/ads/AdSize;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/NetworkExtras;)V
+.limit registers 14
+; this: v7 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v8 (Lcom/google/ads/mediation/MediationBannerListener;)
+; parameter[1] : v9 (Landroid/app/Activity;)
+; parameter[2] : v10 (Lcom/google/ads/mediation/MediationServerParameters;)
+; parameter[3] : v11 (Lcom/google/ads/AdSize;)
+; parameter[4] : v12 (Lcom/google/ads/mediation/MediationAdRequest;)
+; parameter[5] : v13 (Lcom/google/ads/mediation/NetworkExtras;)
+.line 25
+	move-object	v3,v10
+; v3 : Lcom/google/ads/mediation/MediationServerParameters; , v10 : Lcom/google/ads/mediation/MediationServerParameters;
+	check-cast	v3,com/google/ads/mediation/admob/AdMobAdapterServerParameters
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	move-object	v6,v13
+; v6 : Lcom/google/ads/mediation/NetworkExtras; , v13 : Lcom/google/ads/mediation/NetworkExtras;
+	check-cast	v6,com/google/ads/mediation/admob/AdMobAdapterExtras
+; v6 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-object	v0,v7
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v7 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	move-object	v1,v8
+; v1 : Lcom/google/ads/mediation/MediationBannerListener; , v8 : Lcom/google/ads/mediation/MediationBannerListener;
+	move-object	v2,v9
+; v2 : Landroid/app/Activity; , v9 : Landroid/app/Activity;
+	move-object	v4,v11
+; v4 : Lcom/google/ads/AdSize; , v11 : Lcom/google/ads/AdSize;
+	move-object	v5,v12
+; v5 : Lcom/google/ads/mediation/MediationAdRequest; , v12 : Lcom/google/ads/mediation/MediationAdRequest;
+	invoke-virtual/range	{v0..v6},com/google/ads/mediation/admob/AdMobAdapter/requestBannerAd;	requestBannerAd(Lcom/google/ads/mediation/MediationBannerListener;Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/AdSize;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v1 : Lcom/google/ads/mediation/MediationBannerListener; , v2 : Landroid/app/Activity; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters; , v4 : Lcom/google/ads/AdSize; , v5 : Lcom/google/ads/mediation/MediationAdRequest; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	return-void	
+.end method
+
+.method public requestBannerAd(Lcom/google/ads/mediation/MediationBannerListener;Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/AdSize;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+.limit registers 10
+; this: v3 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v4 (Lcom/google/ads/mediation/MediationBannerListener;)
+; parameter[1] : v5 (Landroid/app/Activity;)
+; parameter[2] : v6 (Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;)
+; parameter[3] : v7 (Lcom/google/ads/AdSize;)
+; parameter[4] : v8 (Lcom/google/ads/mediation/MediationAdRequest;)
+; parameter[5] : v9 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 167
+	iput-object	v4,v3,com/google/ads/mediation/admob/AdMobAdapter.a Lcom/google/ads/mediation/MediationBannerListener;
+; v4 : Lcom/google/ads/mediation/MediationBannerListener; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 176
+	invoke-virtual	{v7},com/google/ads/AdSize/isAutoHeight	; isAutoHeight()Z
+; v7 : Lcom/google/ads/AdSize;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l15c4b0
+; v0 : single-length
+	invoke-virtual	{v7},com/google/ads/AdSize/isFullWidth	; isFullWidth()Z
+; v7 : Lcom/google/ads/AdSize;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l15c4ea
+; v0 : single-length
+l15c4b0:
+.line 202
+	iget-object	v0,v6,com/google/ads/mediation/admob/AdMobAdapterServerParameters.adUnitId Ljava/lang/String;
+; v0 : Ljava/lang/String; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	invoke-virtual	{v3,v5,v7,v0},com/google/ads/mediation/admob/AdMobAdapter/a	; a(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)Lcom/google/ads/AdView;
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v5 : Landroid/app/Activity; , v7 : Lcom/google/ads/AdSize; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Lcom/google/ads/AdView;
+	iput-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 203
+	iget-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	new-instance	v1,com/google/ads/mediation/admob/AdMobAdapter$a
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$a;
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v1,v3,v2},com/google/ads/mediation/admob/AdMobAdapter$a/<init>	; <init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)V
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$a; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v2 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/AdView/setAdListener	; setAdListener(Lcom/google/ads/AdListener;)V
+; v0 : Lcom/google/ads/AdView; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$a;
+.line 204
+	iget-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.c Lcom/google/ads/AdView;
+; v0 : Lcom/google/ads/AdView; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-direct	{v3,v5,v6,v8,v9},com/google/ads/mediation/admob/AdMobAdapter/a	; a(Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)Lcom/google/ads/AdRequest;
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v5 : Landroid/app/Activity; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters; , v8 : Lcom/google/ads/mediation/MediationAdRequest; , v9 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v0,v1},com/google/ads/AdView/loadAd	; loadAd(Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/AdView; , v1 : Lcom/google/ads/AdRequest;
+l15c4e8:
+.line 205
+	return-void	
+l15c4ea:
+.line 184
+	if-eqz	v9,l15c4fa
+; v9 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	invoke-virtual	{v9},com/google/ads/mediation/admob/AdMobAdapterExtras/getUseExactAdSize	; getUseExactAdSize()Z
+; v9 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l15c4b0
+; v0 : single-length
+l15c4fa:
+.line 187
+	const/4	v0,5
+; v0 : single-length
+	new-array	v0,v0,[Lcom/google/ads/AdSize;
+; v0 : [Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize;
+	const/4	v1,0
+; v1 : single-length
+	sget-object	v2,com/google/ads/AdSize.BANNER Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	aput-object	v2,v0,v1
+; v2 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize; , v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+	sget-object	v2,com/google/ads/AdSize.IAB_BANNER Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	aput-object	v2,v0,v1
+; v2 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize; , v1 : single-length
+	const/4	v1,2
+; v1 : single-length
+	sget-object	v2,com/google/ads/AdSize.IAB_LEADERBOARD Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	aput-object	v2,v0,v1
+; v2 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize; , v1 : single-length
+	const/4	v1,3
+; v1 : single-length
+	sget-object	v2,com/google/ads/AdSize.IAB_MRECT Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	aput-object	v2,v0,v1
+; v2 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize; , v1 : single-length
+	const/4	v1,4
+; v1 : single-length
+	sget-object	v2,com/google/ads/AdSize.IAB_WIDE_SKYSCRAPER Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	aput-object	v2,v0,v1
+; v2 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize; , v1 : single-length
+	invoke-virtual	{v7,v0},com/google/ads/AdSize/findBestSize	; findBestSize([Lcom/google/ads/AdSize;)Lcom/google/ads/AdSize;
+; v7 : Lcom/google/ads/AdSize; , v0 : [Lcom/google/ads/AdSize;
+	move-result-object	v7
+; v7 : Lcom/google/ads/AdSize;
+.line 195
+	if-nez	v7,l15c4b0
+; v7 : Lcom/google/ads/AdSize;
+.line 196
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NO_FILL Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-interface	{v4,v3,v0},com/google/ads/mediation/MediationBannerListener/onFailedToReceiveAd	; onFailedToReceiveAd(Lcom/google/ads/mediation/MediationBannerAdapter;Lcom/google/ads/AdRequest$ErrorCode;)V
+; v4 : Lcom/google/ads/mediation/MediationBannerListener; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	goto	l15c4e8
+.end method
+
+.method public requestInterstitialAd(Lcom/google/ads/mediation/MediationInterstitialListener;Landroid/app/Activity;Lcom/google/ads/mediation/MediationServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/NetworkExtras;)V
+.limit registers 12
+; this: v6 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v7 (Lcom/google/ads/mediation/MediationInterstitialListener;)
+; parameter[1] : v8 (Landroid/app/Activity;)
+; parameter[2] : v9 (Lcom/google/ads/mediation/MediationServerParameters;)
+; parameter[3] : v10 (Lcom/google/ads/mediation/MediationAdRequest;)
+; parameter[4] : v11 (Lcom/google/ads/mediation/NetworkExtras;)
+.line 25
+	move-object	v3,v9
+; v3 : Lcom/google/ads/mediation/MediationServerParameters; , v9 : Lcom/google/ads/mediation/MediationServerParameters;
+	check-cast	v3,com/google/ads/mediation/admob/AdMobAdapterServerParameters
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	move-object	v5,v11
+; v5 : Lcom/google/ads/mediation/NetworkExtras; , v11 : Lcom/google/ads/mediation/NetworkExtras;
+	check-cast	v5,com/google/ads/mediation/admob/AdMobAdapterExtras
+; v5 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-object	v0,v6
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	move-object	v1,v7
+; v1 : Lcom/google/ads/mediation/MediationInterstitialListener; , v7 : Lcom/google/ads/mediation/MediationInterstitialListener;
+	move-object	v2,v8
+; v2 : Landroid/app/Activity; , v8 : Landroid/app/Activity;
+	move-object	v4,v10
+; v4 : Lcom/google/ads/mediation/MediationAdRequest; , v10 : Lcom/google/ads/mediation/MediationAdRequest;
+	invoke-virtual/range	{v0..v5},com/google/ads/mediation/admob/AdMobAdapter/requestInterstitialAd;	requestInterstitialAd(Lcom/google/ads/mediation/MediationInterstitialListener;Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v1 : Lcom/google/ads/mediation/MediationInterstitialListener; , v2 : Landroid/app/Activity; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters; , v4 : Lcom/google/ads/mediation/MediationAdRequest; , v5 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	return-void	
+.end method
+
+.method public requestInterstitialAd(Lcom/google/ads/mediation/MediationInterstitialListener;Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+.limit registers 9
+; this: v3 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+; parameter[0] : v4 (Lcom/google/ads/mediation/MediationInterstitialListener;)
+; parameter[1] : v5 (Landroid/app/Activity;)
+; parameter[2] : v6 (Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;)
+; parameter[3] : v7 (Lcom/google/ads/mediation/MediationAdRequest;)
+; parameter[4] : v8 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 246
+	iput-object	v4,v3,com/google/ads/mediation/admob/AdMobAdapter.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v4 : Lcom/google/ads/mediation/MediationInterstitialListener; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 248
+	iget-object	v0,v6,com/google/ads/mediation/admob/AdMobAdapterServerParameters.adUnitId Ljava/lang/String;
+; v0 : Ljava/lang/String; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;
+	invoke-virtual	{v3,v5,v0},com/google/ads/mediation/admob/AdMobAdapter/a	; a(Landroid/app/Activity;Ljava/lang/String;)Lcom/google/ads/InterstitialAd;
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v5 : Landroid/app/Activity; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Lcom/google/ads/InterstitialAd;
+	iput-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+.line 249
+	iget-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	new-instance	v1,com/google/ads/mediation/admob/AdMobAdapter$b
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$b;
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v1,v3,v2},com/google/ads/mediation/admob/AdMobAdapter$b/<init>	; <init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)V
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$b; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v2 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/InterstitialAd/setAdListener	; setAdListener(Lcom/google/ads/AdListener;)V
+; v0 : Lcom/google/ads/InterstitialAd; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter$b;
+.line 250
+	iget-object	v0,v3,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-direct	{v3,v5,v6,v7,v8},com/google/ads/mediation/admob/AdMobAdapter/a	; a(Landroid/app/Activity;Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters;Lcom/google/ads/mediation/MediationAdRequest;Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)Lcom/google/ads/AdRequest;
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapter; , v5 : Landroid/app/Activity; , v6 : Lcom/google/ads/mediation/admob/AdMobAdapterServerParameters; , v7 : Lcom/google/ads/mediation/MediationAdRequest; , v8 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	move-result-object	v1
+; v1 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v0,v1},com/google/ads/InterstitialAd/loadAd	; loadAd(Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/InterstitialAd; , v1 : Lcom/google/ads/AdRequest;
+.line 251
+	return-void	
+.end method
+
+.method public showInterstitial()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapter;)
+.line 255
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapter.d Lcom/google/ads/InterstitialAd;
+; v0 : Lcom/google/ads/InterstitialAd; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapter;
+	invoke-virtual	{v0},com/google/ads/InterstitialAd/show	; show()V
+; v0 : Lcom/google/ads/InterstitialAd;
+.line 256
+	return-void	
+.end method
+
+

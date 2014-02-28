@@ -1,0 +1,35 @@
+.class codeadore/textgram/AppRater$2
+.super java/lang/Object
+.source AppRater.java
+.implements android/view/View$OnClickListener
+
+.enclosing method codeadore/showRateDialog(Landroid/content/Context;Landroid/content/SharedPreferences$Editor;)V
+.field private final val$dialog Landroid/app/Dialog;
+
+.method <init>(Landroid/app/Dialog;)V
+.limit registers 2
+; this: v0 (Lcodeadore/textgram/AppRater$2;)
+; parameter[0] : v1 (Landroid/app/Dialog;)
+.line 1
+	iput-object	v1,v0,codeadore/textgram/AppRater$2.val$dialog Landroid/app/Dialog;
+; v1 : Landroid/app/Dialog; , v0 : Lcodeadore/textgram/AppRater$2;
+.line 91
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/AppRater$2;
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/AppRater$2;)
+; parameter[0] : v2 (Landroid/view/View;)
+.line 93
+	iget-object	v0,v1,codeadore/textgram/AppRater$2.val$dialog Landroid/app/Dialog;
+; v0 : Landroid/app/Dialog; , v1 : Lcodeadore/textgram/AppRater$2;
+	invoke-virtual	{v0},android/app/Dialog/dismiss	; dismiss()V
+; v0 : Landroid/app/Dialog;
+.line 94
+	return-void	
+.end method
+
+

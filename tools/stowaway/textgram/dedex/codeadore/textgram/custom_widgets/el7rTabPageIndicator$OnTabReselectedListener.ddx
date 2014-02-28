@@ -1,0 +1,10 @@
+.interface public abstract codeadore/textgram/custom_widgets/el7rTabPageIndicator$OnTabReselectedListener
+.super java/lang/Object
+.source el7rTabPageIndicator.java
+
+.inner class OnTabReselectedListener inner codeadore/textgram/custom_widgets/el7rTabPageIndicator$OnTabReselectedListener outer codeadore/textgram/custom_widgets/el7rTabPageIndicator
+
+.method public abstract onTabReselected(I)V
+.end method
+
+

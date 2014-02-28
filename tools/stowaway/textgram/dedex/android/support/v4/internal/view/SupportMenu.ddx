@@ -1,0 +1,11 @@
+.interface public abstract android/support/v4/internal/view/SupportMenu
+.super java/lang/Object
+.source SupportMenu.java
+.implements android/view/Menu
+
+.field public static final CATEGORY_MASK I = -65536	; 0xffff0000
+.field public static final CATEGORY_SHIFT I = 16	; 0x10
+.field public static final USER_MASK I = 65535	; 0xffff
+.field public static final USER_SHIFT I
+
+

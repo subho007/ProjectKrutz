@@ -1,0 +1,70 @@
+.class android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl
+.super android/support/v4/hardware/display/DisplayManagerCompat
+.source DisplayManagerCompat.java
+
+.inner class JellybeanMr1Impl inner android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl outer android/support/v4/hardware/display/DisplayManagerCompat
+.field private final mDisplayManagerObj Ljava/lang/Object;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;)
+; parameter[0] : v2 (Landroid/content/Context;)
+.line 135
+	invoke-direct	{v1},android/support/v4/hardware/display/DisplayManagerCompat/<init>	; <init>()V
+; v1 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+.line 136
+	invoke-static	{v2},android/support/v4/hardware/display/DisplayManagerJellybeanMr1/getDisplayManager	; getDisplayManager(Landroid/content/Context;)Ljava/lang/Object;
+; v2 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	iput-object	v0,v1,android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl.mDisplayManagerObj Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v1 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+.line 137
+	return-void	
+.end method
+
+.method public getDisplay(I)Landroid/view/Display;
+.limit registers 3
+; this: v1 (Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;)
+; parameter[0] : v2 (I)
+.line 141
+	iget-object	v0,v1,android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl.mDisplayManagerObj Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v1 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+	invoke-static	{v0,v2},android/support/v4/hardware/display/DisplayManagerJellybeanMr1/getDisplay	; getDisplay(Ljava/lang/Object;I)Landroid/view/Display;
+; v0 : Ljava/lang/Object; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/Display;
+	return-object	v0
+; v0 : Landroid/view/Display;
+.end method
+
+.method public getDisplays()[Landroid/view/Display;
+.limit registers 2
+; this: v1 (Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;)
+.line 146
+	iget-object	v0,v1,android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl.mDisplayManagerObj Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v1 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+	invoke-static	{v0},android/support/v4/hardware/display/DisplayManagerJellybeanMr1/getDisplays	; getDisplays(Ljava/lang/Object;)[Landroid/view/Display;
+; v0 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : [Landroid/view/Display;
+	return-object	v0
+; v0 : [Landroid/view/Display;
+.end method
+
+.method public getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+.limit registers 3
+; this: v1 (Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.line 151
+	iget-object	v0,v1,android/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl.mDisplayManagerObj Ljava/lang/Object;
+; v0 : Ljava/lang/Object; , v1 : Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+	invoke-static	{v0,v2},android/support/v4/hardware/display/DisplayManagerJellybeanMr1/getDisplays	; getDisplays(Ljava/lang/Object;Ljava/lang/String;)[Landroid/view/Display;
+; v0 : Ljava/lang/Object; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : [Landroid/view/Display;
+	return-object	v0
+; v0 : [Landroid/view/Display;
+.end method
+
+

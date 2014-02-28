@@ -1,0 +1,682 @@
+.class public android/support/v7/internal/widget/LinearLayoutICS
+.super android/widget/LinearLayout
+.source LinearLayoutICS.java
+
+.field private static final SHOW_DIVIDER_BEGINNING I = 1	; 0x1
+.field private static final SHOW_DIVIDER_END I = 4	; 0x4
+.field private static final SHOW_DIVIDER_MIDDLE I = 2	; 0x2
+.field private static final SHOW_DIVIDER_NONE I
+.field private final mDivider Landroid/graphics/drawable/Drawable;
+.field private final mDividerHeight I
+.field private final mDividerPadding I
+.field private final mDividerWidth I
+.field private final mShowDividers I
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 7
+; this: v4 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Landroid/util/AttributeSet;)
+	const/4	v1,1
+; v1 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 44
+	invoke-direct	{v4,v5,v6},android/widget/LinearLayout/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v4 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet;
+.line 46
+	sget-object	v3,android/support/v7/appcompat/R$styleable.LinearLayoutICS [I
+; v3 : [I
+	invoke-virtual	{v5,v6,v3},android/content/Context/obtainStyledAttributes	; obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+; v5 : Landroid/content/Context; , v6 : Landroid/util/AttributeSet; , v3 : [I
+	move-result-object	v0
+; v0 : Landroid/content/res/TypedArray;
+.line 48
+	invoke-virtual	{v0,v2},android/content/res/TypedArray/getDrawable	; getDrawable(I)Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/content/res/TypedArray; , v2 : single-length
+	move-result-object	v3
+; v3 : Landroid/graphics/drawable/Drawable;
+	iput-object	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+.line 49
+	iget-object	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	if-eqz	v3,l98f22
+; v3 : Landroid/graphics/drawable/Drawable;
+.line 50
+	iget-object	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v3},android/graphics/drawable/Drawable/getIntrinsicWidth	; getIntrinsicWidth()I
+; v3 : Landroid/graphics/drawable/Drawable;
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+.line 51
+	iget-object	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v3},android/graphics/drawable/Drawable/getIntrinsicHeight	; getIntrinsicHeight()I
+; v3 : Landroid/graphics/drawable/Drawable;
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+l98ef2:
+.line 56
+	invoke-virtual	{v0,v1,v2},android/content/res/TypedArray/getInt	; getInt(II)I
+; v0 : Landroid/content/res/TypedArray; , v1 : single-length , v2 : single-length
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mShowDividers I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+.line 57
+	const/4	v3,2
+; v3 : single-length
+	invoke-virtual	{v0,v3,v2},android/content/res/TypedArray/getDimensionPixelSize	; getDimensionPixelSize(II)I
+; v0 : Landroid/content/res/TypedArray; , v3 : single-length , v2 : single-length
+	move-result	v3
+; v3 : single-length
+	iput	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerPadding I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+.line 59
+	invoke-virtual	{v0},android/content/res/TypedArray/recycle	; recycle()V
+; v0 : Landroid/content/res/TypedArray;
+.line 61
+	iget-object	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	if-nez	v3,l98f2c
+; v3 : Landroid/graphics/drawable/Drawable;
+l98f1a:
+	invoke-virtual	{v4,v1},android/support/v7/internal/widget/LinearLayoutICS/setWillNotDraw	; setWillNotDraw(Z)V
+; v4 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v1 : single-length
+.line 62
+	return-void	
+l98f22:
+.line 53
+	iput	v2,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v2 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	iput	v2,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v2 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	goto	l98ef2
+l98f2c:
+	move	v1,v2
+; v1 : single-length , v2 : single-length
+.line 61
+	goto	l98f1a
+.end method
+
+.method drawSupportDividersHorizontal(Landroid/graphics/Canvas;)V
+.limit registers 9
+; this: v7 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v8 (Landroid/graphics/Canvas;)
+.var 3 is lp Landroid/widget/LinearLayout$LayoutParams; from l98f82 to l98f96
+.var 0 is child Landroid/view/View; from l98f56 to l98f9c
+.var 0 is child Landroid/view/View; from l98fb4 to l98fda
+.var 4 is right I from l98fb6 to l98fda
+.line 135
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getChildCount	; getChildCount()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v1
+; v1 : single-length
+.line 136
+	const/4	v2,0
+; v2 : single-length
+l98f4a:
+	if-ge	v2,v1,l98f9c
+; v2 : single-length , v1 : single-length
+.line 137
+	invoke-virtual	{v7,v2},android/support/v7/internal/widget/LinearLayoutICS/getChildAt	; getChildAt(I)Landroid/view/View;
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 138
+	if-eqz	v0,l98f96
+; v0 : Landroid/view/View;
+	invoke-virtual	{v0},android/view/View/getVisibility	; getVisibility()I
+; v0 : Landroid/view/View;
+	move-result	v5
+; v5 : single-length
+	const/16	v6,8
+; v6 : single-length
+	if-eq	v5,v6,l98f96
+; v5 : single-length , v6 : single-length
+	invoke-virtual	{v7,v2},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v2 : single-length
+	move-result	v5
+; v5 : single-length
+	if-eqz	v5,l98f96
+; v5 : single-length
+.line 140
+	invoke-virtual	{v0},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v0 : Landroid/view/View;
+	move-result-object	v3
+; v3 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v3,android/widget/LinearLayout$LayoutParams
+; v3 : Landroid/widget/LinearLayout$LayoutParams;
+.line 141
+	invoke-virtual	{v0},android/view/View/getLeft	; getLeft()I
+; v0 : Landroid/view/View;
+	move-result	v5
+; v5 : single-length
+	iget	v6,v3,android/widget/LinearLayout$LayoutParams.leftMargin I
+; v6 : single-length , v3 : Landroid/widget/LinearLayout$LayoutParams;
+	sub-int/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	invoke-virtual	{v7,v8,v5},android/support/v7/internal/widget/LinearLayoutICS/drawSupportVerticalDivider	; drawSupportVerticalDivider(Landroid/graphics/Canvas;I)V
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v8 : Landroid/graphics/Canvas; , v5 : single-length
+l98f96:
+.line 136
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	l98f4a
+l98f9c:
+.line 145
+	invoke-virtual	{v7,v1},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v1 : single-length
+	move-result	v5
+; v5 : single-length
+	if-eqz	v5,l98fda
+; v5 : single-length
+.line 146
+	add-int/lit8	v5,v1,255
+; v5 : single-length , v1 : single-length
+	invoke-virtual	{v7,v5},android/support/v7/internal/widget/LinearLayoutICS/getChildAt	; getChildAt(I)Landroid/view/View;
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v5 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+.line 147
+	const/4	v4,0
+; v4 : single-length
+.line 148
+	if-nez	v0,l98fdc
+; v0 : Landroid/view/View;
+.line 149
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getWidth	; getWidth()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v5
+; v5 : single-length
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getPaddingRight	; getPaddingRight()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v6
+; v6 : single-length
+	sub-int/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	iget	v6,v7,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v6 : single-length , v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	sub-int	v4,v5,v6
+; v4 : single-length , v5 : single-length , v6 : single-length
+l98fd4:
+.line 153
+	invoke-virtual	{v7,v8,v4},android/support/v7/internal/widget/LinearLayoutICS/drawSupportVerticalDivider	; drawSupportVerticalDivider(Landroid/graphics/Canvas;I)V
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v8 : Landroid/graphics/Canvas; , v4 : single-length
+l98fda:
+.line 155
+	return-void	
+l98fdc:
+.line 151
+	invoke-virtual	{v0},android/view/View/getRight	; getRight()I
+; v0 : Landroid/view/View;
+	move-result	v4
+; v4 : single-length
+	goto	l98fd4
+.end method
+
+.method drawSupportDividersVertical(Landroid/graphics/Canvas;)V
+.limit registers 9
+; this: v7 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v8 (Landroid/graphics/Canvas;)
+.var 4 is lp Landroid/widget/LinearLayout$LayoutParams; from l9903a to l9904e
+.var 1 is child Landroid/view/View; from l9900e to l99054
+.var 0 is bottom I from l9906e to l99092
+.var 1 is child Landroid/view/View; from l9906c to l99092
+.line 112
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getChildCount	; getChildCount()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v2
+; v2 : single-length
+.line 113
+	const/4	v3,0
+; v3 : single-length
+l99002:
+	if-ge	v3,v2,l99054
+; v3 : single-length , v2 : single-length
+.line 114
+	invoke-virtual	{v7,v3},android/support/v7/internal/widget/LinearLayoutICS/getChildAt	; getChildAt(I)Landroid/view/View;
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 115
+	if-eqz	v1,l9904e
+; v1 : Landroid/view/View;
+	invoke-virtual	{v1},android/view/View/getVisibility	; getVisibility()I
+; v1 : Landroid/view/View;
+	move-result	v5
+; v5 : single-length
+	const/16	v6,8
+; v6 : single-length
+	if-eq	v5,v6,l9904e
+; v5 : single-length , v6 : single-length
+	invoke-virtual	{v7,v3},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v3 : single-length
+	move-result	v5
+; v5 : single-length
+	if-eqz	v5,l9904e
+; v5 : single-length
+.line 117
+	invoke-virtual	{v1},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v1 : Landroid/view/View;
+	move-result-object	v4
+; v4 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v4,android/widget/LinearLayout$LayoutParams
+; v4 : Landroid/widget/LinearLayout$LayoutParams;
+.line 118
+	invoke-virtual	{v1},android/view/View/getTop	; getTop()I
+; v1 : Landroid/view/View;
+	move-result	v5
+; v5 : single-length
+	iget	v6,v4,android/widget/LinearLayout$LayoutParams.topMargin I
+; v6 : single-length , v4 : Landroid/widget/LinearLayout$LayoutParams;
+	sub-int/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	invoke-virtual	{v7,v8,v5},android/support/v7/internal/widget/LinearLayoutICS/drawSupportHorizontalDivider	; drawSupportHorizontalDivider(Landroid/graphics/Canvas;I)V
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v8 : Landroid/graphics/Canvas; , v5 : single-length
+l9904e:
+.line 113
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	l99002
+l99054:
+.line 122
+	invoke-virtual	{v7,v2},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v2 : single-length
+	move-result	v5
+; v5 : single-length
+	if-eqz	v5,l99092
+; v5 : single-length
+.line 123
+	add-int/lit8	v5,v2,255
+; v5 : single-length , v2 : single-length
+	invoke-virtual	{v7,v5},android/support/v7/internal/widget/LinearLayoutICS/getChildAt	; getChildAt(I)Landroid/view/View;
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v5 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 124
+	const/4	v0,0
+; v0 : single-length
+.line 125
+	if-nez	v1,l99094
+; v1 : Landroid/view/View;
+.line 126
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getHeight	; getHeight()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v5
+; v5 : single-length
+	invoke-virtual	{v7},android/support/v7/internal/widget/LinearLayoutICS/getPaddingBottom	; getPaddingBottom()I
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v6
+; v6 : single-length
+	sub-int/2addr	v5,v6
+; v5 : single-length , v6 : single-length
+	iget	v6,v7,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v6 : single-length , v7 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	sub-int	v0,v5,v6
+; v0 : single-length , v5 : single-length , v6 : single-length
+l9908c:
+.line 130
+	invoke-virtual	{v7,v8,v0},android/support/v7/internal/widget/LinearLayoutICS/drawSupportHorizontalDivider	; drawSupportHorizontalDivider(Landroid/graphics/Canvas;I)V
+; v7 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v8 : Landroid/graphics/Canvas; , v0 : single-length
+l99092:
+.line 132
+	return-void	
+l99094:
+.line 128
+	invoke-virtual	{v1},android/view/View/getBottom	; getBottom()I
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	goto	l9908c
+.end method
+
+.method drawSupportHorizontalDivider(Landroid/graphics/Canvas;I)V
+.limit registers 7
+; this: v4 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v5 (Landroid/graphics/Canvas;)
+; parameter[1] : v6 (I)
+.line 158
+	iget-object	v0,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v4},android/support/v7/internal/widget/LinearLayoutICS/getPaddingLeft	; getPaddingLeft()I
+; v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v1
+; v1 : single-length
+	iget	v2,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerPadding I
+; v2 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	add-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	invoke-virtual	{v4},android/support/v7/internal/widget/LinearLayoutICS/getWidth	; getWidth()I
+; v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v4},android/support/v7/internal/widget/LinearLayoutICS/getPaddingRight	; getPaddingRight()I
+; v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v3
+; v3 : single-length
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	iget	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerPadding I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	iget	v3,v4,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v3 : single-length , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	add-int/2addr	v3,v6
+; v3 : single-length , v6 : single-length
+	invoke-virtual	{v0,v1,v6,v2,v3},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v0 : Landroid/graphics/drawable/Drawable; , v1 : single-length , v6 : single-length , v2 : single-length , v3 : single-length
+.line 160
+	iget-object	v0,v4,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v4 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v0,v5},android/graphics/drawable/Drawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/graphics/Canvas;
+.line 161
+	return-void	
+.end method
+
+.method drawSupportVerticalDivider(Landroid/graphics/Canvas;I)V
+.limit registers 8
+; this: v5 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v6 (Landroid/graphics/Canvas;)
+; parameter[1] : v7 (I)
+.line 164
+	iget-object	v0,v5,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getPaddingTop	; getPaddingTop()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v1
+; v1 : single-length
+	iget	v2,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerPadding I
+; v2 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	add-int/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	iget	v2,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v2 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	add-int/2addr	v2,v7
+; v2 : single-length , v7 : single-length
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getHeight	; getHeight()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getPaddingBottom	; getPaddingBottom()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v4
+; v4 : single-length
+	sub-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	iget	v4,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerPadding I
+; v4 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	sub-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	invoke-virtual	{v0,v7,v1,v2,v3},android/graphics/drawable/Drawable/setBounds	; setBounds(IIII)V
+; v0 : Landroid/graphics/drawable/Drawable; , v7 : single-length , v1 : single-length , v2 : single-length , v3 : single-length
+.line 166
+	iget-object	v0,v5,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	invoke-virtual	{v0,v6},android/graphics/drawable/Drawable/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Landroid/graphics/drawable/Drawable; , v6 : Landroid/graphics/Canvas;
+.line 167
+	return-void	
+.end method
+
+.method public getSupportDividerWidth()I
+.limit registers 2
+; this: v1 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+.line 65
+	iget	v0,v1,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v0 : single-length , v1 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	return	v0
+; v0 : single-length
+.end method
+
+.method protected hasSupportDividerBeforeChildAt(I)Z
+.limit registers 7
+; this: v5 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v6 (I)
+.var 0 is hasVisibleViewBefore Z from l991b4 to l991e0
+.var 1 is i I from l991b8 to l991e0
+	const/4	v2,1
+; v2 : single-length
+	const/4	v3,0
+; v3 : single-length
+.line 176
+	if-nez	v6,l9918a
+; v6 : single-length
+.line 177
+	iget	v4,v5,android/support/v7/internal/widget/LinearLayoutICS.mShowDividers I
+; v4 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	and-int/lit8	v4,v4,1
+; v4 : single-length , v4 : single-length
+	if-eqz	v4,l99186
+; v4 : single-length
+l99184:
+.line 190
+	return	v2
+; v2 : single-length
+l99186:
+	move	v2,v3
+; v2 : single-length , v3 : single-length
+.line 177
+	goto	l99184
+l9918a:
+.line 178
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getChildCount	; getChildCount()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v4
+; v4 : single-length
+	if-ne	v6,v4,l991a6
+; v6 : single-length , v4 : single-length
+.line 179
+	iget	v4,v5,android/support/v7/internal/widget/LinearLayoutICS.mShowDividers I
+; v4 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	and-int/lit8	v4,v4,4
+; v4 : single-length , v4 : single-length
+	if-nez	v4,l99184
+; v4 : single-length
+	move	v2,v3
+; v2 : single-length , v3 : single-length
+	goto	l99184
+l991a6:
+.line 180
+	iget	v2,v5,android/support/v7/internal/widget/LinearLayoutICS.mShowDividers I
+; v2 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	and-int/lit8	v2,v2,2
+; v2 : single-length , v2 : single-length
+	if-eqz	v2,l991e0
+; v2 : single-length
+.line 181
+	const/4	v0,0
+; v0 : single-length
+.line 182
+	add-int/lit8	v1,v6,255
+; v1 : single-length , v6 : single-length
+l991b8:
+	if-ltz	v1,l991d6
+; v1 : single-length
+.line 183
+	invoke-virtual	{v5,v1},android/support/v7/internal/widget/LinearLayoutICS/getChildAt	; getChildAt(I)Landroid/view/View;
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v1 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	invoke-virtual	{v2},android/view/View/getVisibility	; getVisibility()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	const/16	v3,8
+; v3 : single-length
+	if-eq	v2,v3,l991da
+; v2 : single-length , v3 : single-length
+.line 184
+	const/4	v0,1
+; v0 : single-length
+l991d6:
+	move	v2,v0
+; v2 : single-length , v0 : single-length
+.line 188
+	goto	l99184
+l991da:
+.line 182
+	add-int/lit8	v1,v1,255
+; v1 : single-length , v1 : single-length
+	goto	l991b8
+l991e0:
+	move	v2,v3
+; v2 : single-length , v3 : single-length
+.line 190
+	goto	l99184
+.end method
+
+.method protected measureChildWithMargins(Landroid/view/View;IIII)V
+.limit registers 11
+; this: v5 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v6 (Landroid/view/View;)
+; parameter[1] : v7 (I)
+; parameter[2] : v8 (I)
+; parameter[3] : v9 (I)
+; parameter[4] : v10 (I)
+.var 0 is childIndex I from l99204 to l9923a
+.var 1 is count I from l9920c to l9923a
+.var 2 is params Landroid/widget/LinearLayout$LayoutParams; from l99218 to l9923a
+.line 85
+	iget-object	v3,v5,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v3 : Landroid/graphics/drawable/Drawable; , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	if-eqz	v3,l9923a
+; v3 : Landroid/graphics/drawable/Drawable;
+.line 86
+	invoke-virtual	{v5,v6},android/support/v7/internal/widget/LinearLayoutICS/indexOfChild	; indexOfChild(Landroid/view/View;)I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v6 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+.line 87
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getChildCount	; getChildCount()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v1
+; v1 : single-length
+.line 88
+	invoke-virtual	{v6},android/view/View/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v6 : Landroid/view/View;
+	move-result-object	v2
+; v2 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v2,android/widget/LinearLayout$LayoutParams
+; v2 : Landroid/widget/LinearLayout$LayoutParams;
+.line 92
+	invoke-virtual	{v5},android/support/v7/internal/widget/LinearLayoutICS/getOrientation	; getOrientation()I
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v3
+; v3 : single-length
+	const/4	v4,1
+; v4 : single-length
+	if-ne	v3,v4,l99260
+; v3 : single-length , v4 : single-length
+.line 93
+	invoke-virtual	{v5,v0},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v0 : single-length
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l99242
+; v3 : single-length
+.line 94
+	iget	v3,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	iput	v3,v2,android/widget/LinearLayout$LayoutParams.topMargin I
+; v3 : single-length , v2 : Landroid/widget/LinearLayout$LayoutParams;
+l9923a:
+.line 107
+	invoke-super/range	{v5..v10},android/widget/LinearLayout/measureChildWithMargins;	measureChildWithMargins(Landroid/view/View;IIII)V
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v6 : Landroid/view/View; , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length
+.line 109
+	return-void	
+l99242:
+.line 95
+	add-int/lit8	v3,v1,255
+; v3 : single-length , v1 : single-length
+	if-ne	v0,v3,l9923a
+; v0 : single-length , v3 : single-length
+	invoke-virtual	{v5,v1},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v1 : single-length
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l9923a
+; v3 : single-length
+.line 96
+	iget	v3,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerHeight I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	iput	v3,v2,android/widget/LinearLayout$LayoutParams.bottomMargin I
+; v3 : single-length , v2 : Landroid/widget/LinearLayout$LayoutParams;
+	goto	l9923a
+l99260:
+.line 99
+	invoke-virtual	{v5,v0},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v0 : single-length
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l99276
+; v3 : single-length
+.line 100
+	iget	v3,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	iput	v3,v2,android/widget/LinearLayout$LayoutParams.leftMargin I
+; v3 : single-length , v2 : Landroid/widget/LinearLayout$LayoutParams;
+	goto	l9923a
+l99276:
+.line 101
+	add-int/lit8	v3,v1,255
+; v3 : single-length , v1 : single-length
+	if-ne	v0,v3,l9923a
+; v0 : single-length , v3 : single-length
+	invoke-virtual	{v5,v1},android/support/v7/internal/widget/LinearLayoutICS/hasSupportDividerBeforeChildAt	; hasSupportDividerBeforeChildAt(I)Z
+; v5 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v1 : single-length
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l9923a
+; v3 : single-length
+.line 102
+	iget	v3,v5,android/support/v7/internal/widget/LinearLayoutICS.mDividerWidth I
+; v3 : single-length , v5 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	iput	v3,v2,android/widget/LinearLayout$LayoutParams.rightMargin I
+; v3 : single-length , v2 : Landroid/widget/LinearLayout$LayoutParams;
+	goto	l9923a
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+.limit registers 4
+; this: v2 (Landroid/support/v7/internal/widget/LinearLayoutICS;)
+; parameter[0] : v3 (Landroid/graphics/Canvas;)
+.line 70
+	iget-object	v0,v2,android/support/v7/internal/widget/LinearLayoutICS.mDivider Landroid/graphics/drawable/Drawable;
+; v0 : Landroid/graphics/drawable/Drawable; , v2 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	if-nez	v0,l992ae
+; v0 : Landroid/graphics/drawable/Drawable;
+l992ac:
+.line 79
+	return-void	
+l992ae:
+.line 74
+	invoke-virtual	{v2},android/support/v7/internal/widget/LinearLayoutICS/getOrientation	; getOrientation()I
+; v2 : Landroid/support/v7/internal/widget/LinearLayoutICS;
+	move-result	v0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	if-ne	v0,v1,l992c4
+; v0 : single-length , v1 : single-length
+.line 75
+	invoke-virtual	{v2,v3},android/support/v7/internal/widget/LinearLayoutICS/drawSupportDividersVertical	; drawSupportDividersVertical(Landroid/graphics/Canvas;)V
+; v2 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v3 : Landroid/graphics/Canvas;
+	goto	l992ac
+l992c4:
+.line 77
+	invoke-virtual	{v2,v3},android/support/v7/internal/widget/LinearLayoutICS/drawSupportDividersHorizontal	; drawSupportDividersHorizontal(Landroid/graphics/Canvas;)V
+; v2 : Landroid/support/v7/internal/widget/LinearLayoutICS; , v3 : Landroid/graphics/Canvas;
+	goto	l992ac
+.end method
+
+

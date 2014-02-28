@@ -1,0 +1,342 @@
+.class final com/nineoldandroids/view/ViewHelper$Honeycomb
+.super java/lang/Object
+.source ViewHelper.java
+
+.inner class Honeycomb inner com/nineoldandroids/view/ViewHelper$Honeycomb outer com/nineoldandroids/view/ViewHelper
+
+.method private <init>()V
+.limit registers 1
+; this: v0 (Lcom/nineoldandroids/view/ViewHelper$Honeycomb;)
+.line 179
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/nineoldandroids/view/ViewHelper$Honeycomb;
+	return-void	
+.end method
+
+.method static getAlpha(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 181
+	invoke-virtual	{v1},android/view/View/getAlpha	; getAlpha()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getPivotX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 189
+	invoke-virtual	{v1},android/view/View/getPivotX	; getPivotX()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getPivotY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 197
+	invoke-virtual	{v1},android/view/View/getPivotY	; getPivotY()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getRotation(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 205
+	invoke-virtual	{v1},android/view/View/getRotation	; getRotation()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getRotationX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 213
+	invoke-virtual	{v1},android/view/View/getRotationX	; getRotationX()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getRotationY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 221
+	invoke-virtual	{v1},android/view/View/getRotationY	; getRotationY()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getScaleX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 229
+	invoke-virtual	{v1},android/view/View/getScaleX	; getScaleX()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getScaleY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 237
+	invoke-virtual	{v1},android/view/View/getScaleY	; getScaleY()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getScrollX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 245
+	invoke-virtual	{v1},android/view/View/getScrollX	; getScrollX()I
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getScrollY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 253
+	invoke-virtual	{v1},android/view/View/getScrollY	; getScrollY()I
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getTranslationX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 261
+	invoke-virtual	{v1},android/view/View/getTranslationX	; getTranslationX()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getTranslationY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 269
+	invoke-virtual	{v1},android/view/View/getTranslationY	; getTranslationY()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getX(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 277
+	invoke-virtual	{v1},android/view/View/getX	; getX()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static getY(Landroid/view/View;)F
+.limit registers 2
+; parameter[0] : v1 (Landroid/view/View;)
+.line 285
+	invoke-virtual	{v1},android/view/View/getY	; getY()F
+; v1 : Landroid/view/View;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static setAlpha(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 185
+	invoke-virtual	{v0,v1},android/view/View/setAlpha	; setAlpha(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 186
+	return-void	
+.end method
+
+.method static setPivotX(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 193
+	invoke-virtual	{v0,v1},android/view/View/setPivotX	; setPivotX(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 194
+	return-void	
+.end method
+
+.method static setPivotY(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 201
+	invoke-virtual	{v0,v1},android/view/View/setPivotY	; setPivotY(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 202
+	return-void	
+.end method
+
+.method static setRotation(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 209
+	invoke-virtual	{v0,v1},android/view/View/setRotation	; setRotation(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 210
+	return-void	
+.end method
+
+.method static setRotationX(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 217
+	invoke-virtual	{v0,v1},android/view/View/setRotationX	; setRotationX(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 218
+	return-void	
+.end method
+
+.method static setRotationY(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 225
+	invoke-virtual	{v0,v1},android/view/View/setRotationY	; setRotationY(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 226
+	return-void	
+.end method
+
+.method static setScaleX(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 233
+	invoke-virtual	{v0,v1},android/view/View/setScaleX	; setScaleX(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 234
+	return-void	
+.end method
+
+.method static setScaleY(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 241
+	invoke-virtual	{v0,v1},android/view/View/setScaleY	; setScaleY(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 242
+	return-void	
+.end method
+
+.method static setScrollX(Landroid/view/View;I)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (I)
+.line 249
+	invoke-virtual	{v0,v1},android/view/View/setScrollX	; setScrollX(I)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 250
+	return-void	
+.end method
+
+.method static setScrollY(Landroid/view/View;I)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (I)
+.line 257
+	invoke-virtual	{v0,v1},android/view/View/setScrollY	; setScrollY(I)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 258
+	return-void	
+.end method
+
+.method static setTranslationX(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 265
+	invoke-virtual	{v0,v1},android/view/View/setTranslationX	; setTranslationX(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 266
+	return-void	
+.end method
+
+.method static setTranslationY(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 273
+	invoke-virtual	{v0,v1},android/view/View/setTranslationY	; setTranslationY(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 274
+	return-void	
+.end method
+
+.method static setX(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 281
+	invoke-virtual	{v0,v1},android/view/View/setX	; setX(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 282
+	return-void	
+.end method
+
+.method static setY(Landroid/view/View;F)V
+.limit registers 2
+; parameter[0] : v0 (Landroid/view/View;)
+; parameter[1] : v1 (F)
+.line 289
+	invoke-virtual	{v0,v1},android/view/View/setY	; setY(F)V
+; v0 : Landroid/view/View; , v1 : single-length
+.line 290
+	return-void	
+.end method
+
+

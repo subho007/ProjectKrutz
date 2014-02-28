@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/align_left_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/align_left" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/align_center_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/align_center" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/align_right_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/align_right" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/bold_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/bold" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/underline_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/underline" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/strike_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:src="@drawable/strikethrough" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/styling_edittext_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/button_edit_text" android:drawableLeft="@drawable/edit_text" android:layout_weight="1.0" />
+        <Button android:id="@id/styling_reset_btn" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/button_reset" android:drawableLeft="@drawable/reset" android:layout_weight="1.0" />
+    </LinearLayout>
+    <Button android:id="@id/add_textbox_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/add_text" android:drawableLeft="@drawable/add_textbox" android:layout_weight="0.0" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <Button android:textSize="20.0dip" android:id="@id/styling_go_templates_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/choose_template" android:drawableLeft="@drawable/template" />
+    </LinearLayout>
+    <Button android:textSize="25.0dip" android:id="@id/styling_randomize_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_radnomize" android:drawableLeft="@drawable/randomize" />
+</LinearLayout>

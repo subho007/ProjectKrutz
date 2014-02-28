@@ -1,0 +1,564 @@
+.class public final codeadore/textgram/R$styleable
+.super java/lang/Object
+.source R.java
+
+.inner class styleable inner codeadore/textgram/R$styleable outer codeadore/textgram/R
+.field public static final ActionBar [I = null
+.field public static final ActionBarLayout [I = null
+.field public static final ActionBarLayout_android_layout_gravity I = 0	; 0x0
+.field public static final ActionBarWindow [I = null
+.field public static final ActionBarWindow_windowActionBar I = 0	; 0x0
+.field public static final ActionBarWindow_windowActionBarOverlay I = 1	; 0x1
+.field public static final ActionBarWindow_windowSplitActionBar I = 2	; 0x2
+.field public static final ActionBar_background I = 10	; 0xa
+.field public static final ActionBar_backgroundSplit I = 12	; 0xc
+.field public static final ActionBar_backgroundStacked I = 11	; 0xb
+.field public static final ActionBar_customNavigationLayout I = 13	; 0xd
+.field public static final ActionBar_displayOptions I = 3	; 0x3
+.field public static final ActionBar_divider I = 9	; 0x9
+.field public static final ActionBar_height I = 1	; 0x1
+.field public static final ActionBar_homeLayout I = 14	; 0xe
+.field public static final ActionBar_icon I = 7	; 0x7
+.field public static final ActionBar_indeterminateProgressStyle I = 16	; 0x10
+.field public static final ActionBar_itemPadding I = 18	; 0x12
+.field public static final ActionBar_logo I = 8	; 0x8
+.field public static final ActionBar_navigationMode I = 2	; 0x2
+.field public static final ActionBar_progressBarPadding I = 17	; 0x11
+.field public static final ActionBar_progressBarStyle I = 15	; 0xf
+.field public static final ActionBar_subtitle I = 4	; 0x4
+.field public static final ActionBar_subtitleTextStyle I = 6	; 0x6
+.field public static final ActionBar_title I = 0	; 0x0
+.field public static final ActionBar_titleTextStyle I = 5	; 0x5
+.field public static final ActionMenuItemView [I = null
+.field public static final ActionMenuItemView_android_minWidth I = 0	; 0x0
+.field public static final ActionMenuView [I = null
+.field public static final ActionMode [I = null
+.field public static final ActionMode_background I = 3	; 0x3
+.field public static final ActionMode_backgroundSplit I = 4	; 0x4
+.field public static final ActionMode_height I = 0	; 0x0
+.field public static final ActionMode_subtitleTextStyle I = 2	; 0x2
+.field public static final ActionMode_titleTextStyle I = 1	; 0x1
+.field public static final ActivityChooserView [I = null
+.field public static final ActivityChooserView_expandActivityOverflowButtonDrawable I = 1	; 0x1
+.field public static final ActivityChooserView_initialActivityCount I = 0	; 0x0
+.field public static final CirclePageIndicator [I = null
+.field public static final CirclePageIndicator_android_background I = 1	; 0x1
+.field public static final CirclePageIndicator_android_orientation I = 0	; 0x0
+.field public static final CirclePageIndicator_centered I = 2	; 0x2
+.field public static final CirclePageIndicator_fillColor I = 4	; 0x4
+.field public static final CirclePageIndicator_pageColor I = 5	; 0x5
+.field public static final CirclePageIndicator_radius I = 6	; 0x6
+.field public static final CirclePageIndicator_snap I = 7	; 0x7
+.field public static final CirclePageIndicator_strokeColor I = 8	; 0x8
+.field public static final CirclePageIndicator_strokeWidth I = 3	; 0x3
+.field public static final CompatTextView [I = null
+.field public static final CompatTextView_textAllCaps I = 0	; 0x0
+.field public static final LinePageIndicator [I = null
+.field public static final LinePageIndicator_android_background I = 0	; 0x0
+.field public static final LinePageIndicator_centered I = 1	; 0x1
+.field public static final LinePageIndicator_gapWidth I = 6	; 0x6
+.field public static final LinePageIndicator_lineWidth I = 5	; 0x5
+.field public static final LinePageIndicator_selectedColor I = 2	; 0x2
+.field public static final LinePageIndicator_strokeWidth I = 3	; 0x3
+.field public static final LinePageIndicator_unselectedColor I = 4	; 0x4
+.field public static final LinearLayoutICS [I = null
+.field public static final LinearLayoutICS_divider I = 0	; 0x0
+.field public static final LinearLayoutICS_dividerPadding I = 2	; 0x2
+.field public static final LinearLayoutICS_showDividers I = 1	; 0x1
+.field public static final MenuGroup [I = null
+.field public static final MenuGroup_android_checkableBehavior I = 5	; 0x5
+.field public static final MenuGroup_android_enabled I = 0	; 0x0
+.field public static final MenuGroup_android_id I = 1	; 0x1
+.field public static final MenuGroup_android_menuCategory I = 3	; 0x3
+.field public static final MenuGroup_android_orderInCategory I = 4	; 0x4
+.field public static final MenuGroup_android_visible I = 2	; 0x2
+.field public static final MenuItem [I = null
+.field public static final MenuItem_actionLayout I = 14	; 0xe
+.field public static final MenuItem_actionProviderClass I = 16	; 0x10
+.field public static final MenuItem_actionViewClass I = 15	; 0xf
+.field public static final MenuItem_android_alphabeticShortcut I = 9	; 0x9
+.field public static final MenuItem_android_checkable I = 11	; 0xb
+.field public static final MenuItem_android_checked I = 3	; 0x3
+.field public static final MenuItem_android_enabled I = 1	; 0x1
+.field public static final MenuItem_android_icon I = 0	; 0x0
+.field public static final MenuItem_android_id I = 2	; 0x2
+.field public static final MenuItem_android_menuCategory I = 5	; 0x5
+.field public static final MenuItem_android_numericShortcut I = 10	; 0xa
+.field public static final MenuItem_android_onClick I = 12	; 0xc
+.field public static final MenuItem_android_orderInCategory I = 6	; 0x6
+.field public static final MenuItem_android_title I = 7	; 0x7
+.field public static final MenuItem_android_titleCondensed I = 8	; 0x8
+.field public static final MenuItem_android_visible I = 4	; 0x4
+.field public static final MenuItem_showAsAction I = 13	; 0xd
+.field public static final MenuView [I = null
+.field public static final MenuView_android_headerBackground I = 4	; 0x4
+.field public static final MenuView_android_horizontalDivider I = 2	; 0x2
+.field public static final MenuView_android_itemBackground I = 5	; 0x5
+.field public static final MenuView_android_itemIconDisabledAlpha I = 6	; 0x6
+.field public static final MenuView_android_itemTextAppearance I = 1	; 0x1
+.field public static final MenuView_android_preserveIconSpacing I = 7	; 0x7
+.field public static final MenuView_android_verticalDivider I = 3	; 0x3
+.field public static final MenuView_android_windowAnimationStyle I = 0	; 0x0
+.field public static final SearchView [I = null
+.field public static final SearchView_android_imeOptions I = 2	; 0x2
+.field public static final SearchView_android_inputType I = 1	; 0x1
+.field public static final SearchView_android_maxWidth I = 0	; 0x0
+.field public static final SearchView_iconifiedByDefault I = 3	; 0x3
+.field public static final SearchView_queryHint I = 4	; 0x4
+.field public static final Spinner [I = null
+.field public static final Spinner_android_dropDownHorizontalOffset I = 4	; 0x4
+.field public static final Spinner_android_dropDownSelector I = 1	; 0x1
+.field public static final Spinner_android_dropDownVerticalOffset I = 5	; 0x5
+.field public static final Spinner_android_dropDownWidth I = 3	; 0x3
+.field public static final Spinner_android_gravity I = 0	; 0x0
+.field public static final Spinner_android_popupBackground I = 2	; 0x2
+.field public static final Spinner_disableChildrenWhenDisabled I = 9	; 0x9
+.field public static final Spinner_popupPromptView I = 8	; 0x8
+.field public static final Spinner_prompt I = 6	; 0x6
+.field public static final Spinner_spinnerMode I = 7	; 0x7
+.field public static final Theme [I = null
+.field public static final Theme_actionDropDownStyle I = 0	; 0x0
+.field public static final Theme_dropdownListPreferredItemHeight I = 1	; 0x1
+.field public static final Theme_listChoiceBackgroundIndicator I = 5	; 0x5
+.field public static final Theme_panelMenuListTheme I = 4	; 0x4
+.field public static final Theme_panelMenuListWidth I = 3	; 0x3
+.field public static final Theme_popupMenuStyle I = 2	; 0x2
+.field public static final TitlePageIndicator [I = null
+.field public static final TitlePageIndicator_android_background I = 2	; 0x2
+.field public static final TitlePageIndicator_android_textColor I = 1	; 0x1
+.field public static final TitlePageIndicator_android_textSize I = 0	; 0x0
+.field public static final TitlePageIndicator_clipPadding I = 4	; 0x4
+.field public static final TitlePageIndicator_footerColor I = 5	; 0x5
+.field public static final TitlePageIndicator_footerIndicatorHeight I = 8	; 0x8
+.field public static final TitlePageIndicator_footerIndicatorStyle I = 7	; 0x7
+.field public static final TitlePageIndicator_footerIndicatorUnderlinePadding I = 9	; 0x9
+.field public static final TitlePageIndicator_footerLineHeight I = 6	; 0x6
+.field public static final TitlePageIndicator_footerPadding I = 10	; 0xa
+.field public static final TitlePageIndicator_linePosition I = 11	; 0xb
+.field public static final TitlePageIndicator_selectedBold I = 12	; 0xc
+.field public static final TitlePageIndicator_selectedColor I = 3	; 0x3
+.field public static final TitlePageIndicator_titlePadding I = 13	; 0xd
+.field public static final TitlePageIndicator_topPadding I = 14	; 0xe
+.field public static final UnderlinePageIndicator [I = null
+.field public static final UnderlinePageIndicator_android_background I = 0	; 0x0
+.field public static final UnderlinePageIndicator_fadeDelay I = 3	; 0x3
+.field public static final UnderlinePageIndicator_fadeLength I = 4	; 0x4
+.field public static final UnderlinePageIndicator_fades I = 2	; 0x2
+.field public static final UnderlinePageIndicator_selectedColor I = 1	; 0x1
+.field public static final View [I = null
+.field public static final ViewPager3D [I = null
+.field public static final ViewPager3D_animate_alpha I = 5	; 0x5
+.field public static final ViewPager3D_overscroll_animation_duration I = 4	; 0x4
+.field public static final ViewPager3D_overscroll_rotation I = 0	; 0x0
+.field public static final ViewPager3D_overscroll_translation I = 1	; 0x1
+.field public static final ViewPager3D_swipe_rotation I = 2	; 0x2
+.field public static final ViewPager3D_swipe_translation I = 3	; 0x3
+.field public static final ViewPagerIndicator [I = null
+.field public static final ViewPagerIndicator_vpiCirclePageIndicatorStyle I = 0	; 0x0
+.field public static final ViewPagerIndicator_vpiIconPageIndicatorStyle I = 1	; 0x1
+.field public static final ViewPagerIndicator_vpiLinePageIndicatorStyle I = 2	; 0x2
+.field public static final ViewPagerIndicator_vpiTabPageIndicatorStyle I = 4	; 0x4
+.field public static final ViewPagerIndicator_vpiTitlePageIndicatorStyle I = 3	; 0x3
+.field public static final ViewPagerIndicator_vpiUnderlinePageIndicatorStyle I = 5	; 0x5
+.field public static final View_android_focusable I = 0	; 0x0
+.field public static final View_paddingEnd I = 2	; 0x2
+.field public static final View_paddingStart I = 1	; 0x1
+
+.method static <clinit>()V
+.limit registers 7
+	const/4	v6,5
+; v6 : single-length
+	const/4	v5,3
+; v5 : single-length
+	const/4	v4,1
+; v4 : single-length
+	const/4	v3,6
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 2249
+	const/16	v0,19
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9f960
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ActionBar [I
+; v0 : [I
+.line 2544
+	new-array	v0,v4,[I
+; v0 : [I , v4 : single-length
+.line 2545
+	const	v1,16842931	; 0x10100b3
+; v1 : single-length
+	aput	v1,v0,v2
+; v1 : single-length , v0 : [I , v2 : single-length
+.line 2544
+	sput-object	v0,codeadore/textgram/R$styleable.ActionBarLayout [I
+; v0 : [I
+.line 2570
+	new-array	v0,v5,[I
+; v0 : [I , v5 : single-length
+	fill-array-data	v0,l9f9b4
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ActionBarWindow [I
+; v0 : [I
+.line 2625
+	new-array	v0,v4,[I
+; v0 : [I , v4 : single-length
+.line 2626
+	const	v1,16843071	; 0x101013f
+; v1 : single-length
+	aput	v1,v0,v2
+; v1 : single-length , v0 : [I , v2 : single-length
+.line 2625
+	sput-object	v0,codeadore/textgram/R$styleable.ActionMenuItemView [I
+; v0 : [I
+.line 2636
+	new-array	v0,v2,[I
+; v0 : [I , v2 : single-length
+	sput-object	v0,codeadore/textgram/R$styleable.ActionMenuView [I
+; v0 : [I
+.line 2657
+	new-array	v0,v6,[I
+; v0 : [I , v6 : single-length
+	fill-array-data	v0,l9f9c8
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ActionMode [I
+; v0 : [I
+.line 2741
+	const/4	v0,2
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9f9e4
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ActivityChooserView [I
+; v0 : [I
+.line 2803
+	const/16	v0,9
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9f9f4
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.CirclePageIndicator [I
+; v0 : [I
+.line 2955
+	new-array	v0,v4,[I
+; v0 : [I , v4 : single-length
+.line 2956
+	const	v1,2130772073	; 0x7f010069
+; v1 : single-length
+	aput	v1,v0,v2
+; v1 : single-length , v0 : [I , v2 : single-length
+.line 2955
+	sput-object	v0,codeadore/textgram/R$styleable.CompatTextView [I
+; v0 : [I
+.line 2993
+	const/4	v0,7
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9fa20
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.LinePageIndicator [I
+; v0 : [I
+.line 3124
+	new-array	v0,v5,[I
+; v0 : [I , v5 : single-length
+	fill-array-data	v0,l9fa44
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.LinearLayoutICS [I
+; v0 : [I
+.line 3198
+	new-array	v0,v3,[I
+; v0 : [I , v3 : single-length
+	fill-array-data	v0,l9fa58
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.MenuGroup [I
+; v0 : [I
+.line 3303
+	const/16	v0,17
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9fa78
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.MenuItem [I
+; v0 : [I
+.line 3541
+	const/16	v0,8
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9fac4
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.MenuView [I
+; v0 : [I
+.line 3634
+	new-array	v0,v6,[I
+; v0 : [I , v6 : single-length
+	fill-array-data	v0,l9faec
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.SearchView [I
+; v0 : [I
+.line 3730
+	const/16	v0,10
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9fb08
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.Spinner [I
+; v0 : [I
+.line 3874
+	new-array	v0,v3,[I
+; v0 : [I , v3 : single-length
+	fill-array-data	v0,l9fb38
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.Theme [I
+; v0 : [I
+.line 4000
+	const/16	v0,15
+; v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+	fill-array-data	v0,l9fb58
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.TitlePageIndicator [I
+; v0 : [I
+.line 4266
+	new-array	v0,v6,[I
+; v0 : [I , v6 : single-length
+	fill-array-data	v0,l9fb9c
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.UnderlinePageIndicator [I
+; v0 : [I
+.line 4358
+	new-array	v0,v5,[I
+; v0 : [I , v5 : single-length
+	fill-array-data	v0,l9fbb8
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.View [I
+; v0 : [I
+.line 4432
+	new-array	v0,v3,[I
+; v0 : [I , v3 : single-length
+	fill-array-data	v0,l9fbcc
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ViewPager3D [I
+; v0 : [I
+.line 4555
+	new-array	v0,v3,[I
+; v0 : [I , v3 : single-length
+	fill-array-data	v0,l9fbec
+; v0 : [I
+	sput-object	v0,codeadore/textgram/R$styleable.ViewPagerIndicator [I
+; v0 : [I
+.line 4630
+	return-void	
+.line 2249
+l9f95e:	data-array
+		0x00, 0x00
+	end data-array
+l9f960:	data-array
+		0x21, 0x00, 0x01, 0x7F	; #0
+		0x22, 0x00, 0x01, 0x7F	; #1
+		0x23, 0x00, 0x01, 0x7F	; #2
+		0x24, 0x00, 0x01, 0x7F	; #3
+		0x25, 0x00, 0x01, 0x7F	; #4
+		0x26, 0x00, 0x01, 0x7F	; #5
+		0x27, 0x00, 0x01, 0x7F	; #6
+		0x28, 0x00, 0x01, 0x7F	; #7
+		0x29, 0x00, 0x01, 0x7F	; #8
+		0x2A, 0x00, 0x01, 0x7F	; #9
+		0x2B, 0x00, 0x01, 0x7F	; #10
+		0x2C, 0x00, 0x01, 0x7F	; #11
+		0x2D, 0x00, 0x01, 0x7F	; #12
+		0x2E, 0x00, 0x01, 0x7F	; #13
+		0x2F, 0x00, 0x01, 0x7F	; #14
+		0x30, 0x00, 0x01, 0x7F	; #15
+		0x31, 0x00, 0x01, 0x7F	; #16
+		0x32, 0x00, 0x01, 0x7F	; #17
+		0x33, 0x00, 0x01, 0x7F	; #18
+	end data-array
+.line 2570
+l9f9b4:	data-array
+		0x00, 0x00, 0x01, 0x7F	; #0
+		0x01, 0x00, 0x01, 0x7F	; #1
+		0x02, 0x00, 0x01, 0x7F	; #2
+	end data-array
+.line 2657
+l9f9c8:	data-array
+		0x22, 0x00, 0x01, 0x7F	; #0
+		0x26, 0x00, 0x01, 0x7F	; #1
+		0x27, 0x00, 0x01, 0x7F	; #2
+		0x2B, 0x00, 0x01, 0x7F	; #3
+		0x2D, 0x00, 0x01, 0x7F	; #4
+	end data-array
+.line 2741
+l9f9e4:	data-array
+		0x66, 0x00, 0x01, 0x7F	; #0
+		0x67, 0x00, 0x01, 0x7F	; #1
+	end data-array
+.line 2803
+l9f9f4:	data-array
+		0xC4, 0x00, 0x01, 0x01	; #0
+		0xD4, 0x00, 0x01, 0x01	; #1
+		0x70, 0x00, 0x01, 0x7F	; #2
+		0x72, 0x00, 0x01, 0x7F	; #3
+		0x74, 0x00, 0x01, 0x7F	; #4
+		0x75, 0x00, 0x01, 0x7F	; #5
+		0x76, 0x00, 0x01, 0x7F	; #6
+		0x77, 0x00, 0x01, 0x7F	; #7
+		0x78, 0x00, 0x01, 0x7F	; #8
+	end data-array
+.line 2993
+l9fa20:	data-array
+		0xD4, 0x00, 0x01, 0x01	; #0
+		0x70, 0x00, 0x01, 0x7F	; #1
+		0x71, 0x00, 0x01, 0x7F	; #2
+		0x72, 0x00, 0x01, 0x7F	; #3
+		0x73, 0x00, 0x01, 0x7F	; #4
+		0x79, 0x00, 0x01, 0x7F	; #5
+		0x7A, 0x00, 0x01, 0x7F	; #6
+	end data-array
+.line 3124
+l9fa44:	data-array
+		0x2A, 0x00, 0x01, 0x7F	; #0
+		0x51, 0x00, 0x01, 0x7F	; #1
+		0x52, 0x00, 0x01, 0x7F	; #2
+	end data-array
+.line 3198
+l9fa58:	data-array
+		0x0E, 0x00, 0x01, 0x01	; #0
+		0xD0, 0x00, 0x01, 0x01	; #1
+		0x94, 0x01, 0x01, 0x01	; #2
+		0xDE, 0x01, 0x01, 0x01	; #3
+		0xDF, 0x01, 0x01, 0x01	; #4
+		0xE0, 0x01, 0x01, 0x01	; #5
+	end data-array
+.line 3303
+l9fa78:	data-array
+		0x02, 0x00, 0x01, 0x01	; #0
+		0x0E, 0x00, 0x01, 0x01	; #1
+		0xD0, 0x00, 0x01, 0x01	; #2
+		0x06, 0x01, 0x01, 0x01	; #3
+		0x94, 0x01, 0x01, 0x01	; #4
+		0xDE, 0x01, 0x01, 0x01	; #5
+		0xDF, 0x01, 0x01, 0x01	; #6
+		0xE1, 0x01, 0x01, 0x01	; #7
+		0xE2, 0x01, 0x01, 0x01	; #8
+		0xE3, 0x01, 0x01, 0x01	; #9
+		0xE4, 0x01, 0x01, 0x01	; #10
+		0xE5, 0x01, 0x01, 0x01	; #11
+		0x6F, 0x02, 0x01, 0x01	; #12
+		0x49, 0x00, 0x01, 0x7F	; #13
+		0x4A, 0x00, 0x01, 0x7F	; #14
+		0x4B, 0x00, 0x01, 0x7F	; #15
+		0x4C, 0x00, 0x01, 0x7F	; #16
+	end data-array
+.line 3541
+l9fac4:	data-array
+		0xAE, 0x00, 0x01, 0x01	; #0
+		0x2C, 0x01, 0x01, 0x01	; #1
+		0x2D, 0x01, 0x01, 0x01	; #2
+		0x2E, 0x01, 0x01, 0x01	; #3
+		0x2F, 0x01, 0x01, 0x01	; #4
+		0x30, 0x01, 0x01, 0x01	; #5
+		0x31, 0x01, 0x01, 0x01	; #6
+		0x1A, 0x04, 0x01, 0x01	; #7
+	end data-array
+.line 3634
+l9faec:	data-array
+		0x1F, 0x01, 0x01, 0x01	; #0
+		0x20, 0x02, 0x01, 0x01	; #1
+		0x64, 0x02, 0x01, 0x01	; #2
+		0x56, 0x00, 0x01, 0x7F	; #3
+		0x57, 0x00, 0x01, 0x7F	; #4
+	end data-array
+.line 3730
+l9fb08:	data-array
+		0xAF, 0x00, 0x01, 0x01	; #0
+		0x75, 0x01, 0x01, 0x01	; #1
+		0x76, 0x01, 0x01, 0x01	; #2
+		0x62, 0x02, 0x01, 0x01	; #3
+		0xAC, 0x02, 0x01, 0x01	; #4
+		0xAD, 0x02, 0x01, 0x01	; #5
+		0x4D, 0x00, 0x01, 0x7F	; #6
+		0x4E, 0x00, 0x01, 0x7F	; #7
+		0x4F, 0x00, 0x01, 0x7F	; #8
+		0x50, 0x00, 0x01, 0x7F	; #9
+	end data-array
+.line 3874
+l9fb38:	data-array
+		0x43, 0x00, 0x01, 0x7F	; #0
+		0x44, 0x00, 0x01, 0x7F	; #1
+		0x45, 0x00, 0x01, 0x7F	; #2
+		0x46, 0x00, 0x01, 0x7F	; #3
+		0x47, 0x00, 0x01, 0x7F	; #4
+		0x48, 0x00, 0x01, 0x7F	; #5
+	end data-array
+.line 4000
+l9fb58:	data-array
+		0x95, 0x00, 0x01, 0x01	; #0
+		0x98, 0x00, 0x01, 0x01	; #1
+		0xD4, 0x00, 0x01, 0x01	; #2
+		0x71, 0x00, 0x01, 0x7F	; #3
+		0x7B, 0x00, 0x01, 0x7F	; #4
+		0x7C, 0x00, 0x01, 0x7F	; #5
+		0x7D, 0x00, 0x01, 0x7F	; #6
+		0x7E, 0x00, 0x01, 0x7F	; #7
+		0x7F, 0x00, 0x01, 0x7F	; #8
+		0x80, 0x00, 0x01, 0x7F	; #9
+		0x81, 0x00, 0x01, 0x7F	; #10
+		0x82, 0x00, 0x01, 0x7F	; #11
+		0x83, 0x00, 0x01, 0x7F	; #12
+		0x84, 0x00, 0x01, 0x7F	; #13
+		0x85, 0x00, 0x01, 0x7F	; #14
+	end data-array
+.line 4266
+l9fb9c:	data-array
+		0xD4, 0x00, 0x01, 0x01	; #0
+		0x71, 0x00, 0x01, 0x7F	; #1
+		0x86, 0x00, 0x01, 0x7F	; #2
+		0x87, 0x00, 0x01, 0x7F	; #3
+		0x88, 0x00, 0x01, 0x7F	; #4
+	end data-array
+.line 4358
+l9fbb8:	data-array
+		0xDA, 0x00, 0x01, 0x01	; #0
+		0x34, 0x00, 0x01, 0x7F	; #1
+		0x35, 0x00, 0x01, 0x7F	; #2
+	end data-array
+.line 4432
+l9fbcc:	data-array
+		0x89, 0x00, 0x01, 0x7F	; #0
+		0x8A, 0x00, 0x01, 0x7F	; #1
+		0x8B, 0x00, 0x01, 0x7F	; #2
+		0x8C, 0x00, 0x01, 0x7F	; #3
+		0x8D, 0x00, 0x01, 0x7F	; #4
+		0x8E, 0x00, 0x01, 0x7F	; #5
+	end data-array
+.line 4555
+l9fbec:	data-array
+		0x6A, 0x00, 0x01, 0x7F	; #0
+		0x6B, 0x00, 0x01, 0x7F	; #1
+		0x6C, 0x00, 0x01, 0x7F	; #2
+		0x6D, 0x00, 0x01, 0x7F	; #3
+		0x6E, 0x00, 0x01, 0x7F	; #4
+		0x6F, 0x00, 0x01, 0x7F	; #5
+	end data-array
+.end method
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcodeadore/textgram/R$styleable;)
+.line 2194
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/R$styleable;
+	return-void	
+.end method
+
+

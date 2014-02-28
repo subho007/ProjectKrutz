@@ -1,0 +1,701 @@
+.class public yuku/ambilwarna/AmbilWarnaDialog
+.super java/lang/Object
+.source AmbilWarnaDialog.java
+
+.inner class OnAmbilWarnaListener inner yuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener outer yuku/ambilwarna/AmbilWarnaDialog
+.field final currentColorHsv [F
+.field final dialog Landroid/app/AlertDialog;
+.field final listener Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+.field final viewContainer Landroid/view/ViewGroup;
+.field final viewCursor Landroid/widget/ImageView;
+.field final viewHue Landroid/view/View;
+.field final viewNewColor Landroid/view/View;
+.field final viewOldColor Landroid/view/View;
+.field final viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+.field final viewTarget Landroid/widget/ImageView;
+
+.method public <init>(Landroid/content/Context;ILyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;)V
+.limit registers 11
+; this: v7 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[0] : v8 (Landroid/content/Context;)
+; parameter[1] : v9 (I)
+; parameter[2] : v10 (Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;)
+	const/4	v2,0
+; v2 : single-length
+.line 37
+	invoke-direct	{v7},java/lang/Object/<init>	; <init>()V
+; v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 25
+	const/4	v0,3
+; v0 : single-length
+	new-array	v0,v0,[F
+; v0 : [F , v0 : [F
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 38
+	iput-object	v10,v7,yuku/ambilwarna/AmbilWarnaDialog.listener Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener;
+; v10 : Lyuku/ambilwarna/AmbilWarnaDialog$OnAmbilWarnaListener; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 39
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-static	{v9,v0},android/graphics/Color/colorToHSV	; colorToHSV(I[F)V
+; v9 : single-length , v0 : [F
+.line 41
+	invoke-static	{v8},android/view/LayoutInflater/from	; from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+; v8 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/view/LayoutInflater;
+	sget	v3,yuku/ambilwarna/R$layout.ambilwarna_dialog I
+; v3 : single-length
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v0,v3,v4},android/view/LayoutInflater/inflate	; inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+; v0 : Landroid/view/LayoutInflater; , v3 : single-length , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+.line 42
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_viewHue I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 43
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_viewSatBri I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,yuku/ambilwarna/AmbilWarnaKotak
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 44
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_cursor I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/ImageView
+; v0 : Landroid/widget/ImageView;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewCursor Landroid/widget/ImageView;
+; v0 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 45
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_warnaLama I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewOldColor Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 46
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_warnaBaru I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewNewColor Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 47
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_target I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/ImageView
+; v0 : Landroid/widget/ImageView;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewTarget Landroid/widget/ImageView;
+; v0 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 48
+	sget	v0,yuku/ambilwarna/R$id.ambilwarna_viewContainer I
+; v0 : single-length
+	invoke-virtual	{v1,v0},android/view/View/findViewById	; findViewById(I)Landroid/view/View;
+; v1 : Landroid/view/View; , v0 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/view/ViewGroup
+; v0 : Landroid/view/ViewGroup;
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewContainer Landroid/view/ViewGroup;
+; v0 : Landroid/view/ViewGroup; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 50
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-direct	{v7},yuku/ambilwarna/AmbilWarnaDialog/getHue	; getHue()F
+; v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v0,v3},yuku/ambilwarna/AmbilWarnaKotak/setHue	; setHue(F)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak; , v3 : single-length
+.line 51
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewOldColor Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v9},android/view/View/setBackgroundColor	; setBackgroundColor(I)V
+; v0 : Landroid/view/View; , v9 : single-length
+.line 52
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewNewColor Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v9},android/view/View/setBackgroundColor	; setBackgroundColor(I)V
+; v0 : Landroid/view/View; , v9 : single-length
+.line 54
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v0 : Landroid/view/View; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	new-instance	v3,yuku/ambilwarna/AmbilWarnaDialog$1
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$1;
+	invoke-direct	{v3,v7},yuku/ambilwarna/AmbilWarnaDialog$1/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$1; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v3},android/view/View/setOnTouchListener	; setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+; v0 : Landroid/view/View; , v3 : Lyuku/ambilwarna/AmbilWarnaDialog$1;
+.line 77
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	new-instance	v3,yuku/ambilwarna/AmbilWarnaDialog$2
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$2;
+	invoke-direct	{v3,v7},yuku/ambilwarna/AmbilWarnaDialog$2/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$2; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v3},yuku/ambilwarna/AmbilWarnaKotak/setOnTouchListener	; setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaKotak; , v3 : Lyuku/ambilwarna/AmbilWarnaDialog$2;
+.line 104
+	new-instance	v0,android/app/AlertDialog$Builder
+; v0 : Landroid/app/AlertDialog$Builder;
+	invoke-direct	{v0,v8},android/app/AlertDialog$Builder/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/app/AlertDialog$Builder; , v8 : Landroid/content/Context;
+.line 105
+	const	v3,17039370	; 0x104000a
+; v3 : single-length
+	new-instance	v4,yuku/ambilwarna/AmbilWarnaDialog$3
+; v4 : Lyuku/ambilwarna/AmbilWarnaDialog$3;
+	invoke-direct	{v4,v7},yuku/ambilwarna/AmbilWarnaDialog$3/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v4 : Lyuku/ambilwarna/AmbilWarnaDialog$3; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v3,v4},android/app/AlertDialog$Builder/setPositiveButton	; setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v3 : single-length , v4 : Lyuku/ambilwarna/AmbilWarnaDialog$3;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+.line 112
+	const/high16	v3,260
+; v3 : single-length
+	new-instance	v4,yuku/ambilwarna/AmbilWarnaDialog$4
+; v4 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	invoke-direct	{v4,v7},yuku/ambilwarna/AmbilWarnaDialog$4/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v4 : Lyuku/ambilwarna/AmbilWarnaDialog$4; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v3,v4},android/app/AlertDialog$Builder/setNegativeButton	; setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v3 : single-length , v4 : Lyuku/ambilwarna/AmbilWarnaDialog$4;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+.line 119
+	new-instance	v3,yuku/ambilwarna/AmbilWarnaDialog$5
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$5;
+	invoke-direct	{v3,v7},yuku/ambilwarna/AmbilWarnaDialog$5/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;)V
+; v3 : Lyuku/ambilwarna/AmbilWarnaDialog$5; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0,v3},android/app/AlertDialog$Builder/setOnCancelListener	; setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
+; v0 : Landroid/app/AlertDialog$Builder; , v3 : Lyuku/ambilwarna/AmbilWarnaDialog$5;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog$Builder;
+.line 128
+	invoke-virtual	{v0},android/app/AlertDialog$Builder/create	; create()Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog$Builder;
+	move-result-object	v0
+; v0 : Landroid/app/AlertDialog;
+.line 104
+	iput-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.dialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+.line 130
+	iget-object	v0,v7,yuku/ambilwarna/AmbilWarnaDialog.dialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move	v3,v2
+; v3 : single-length , v2 : single-length
+	move	v4,v2
+; v4 : single-length , v2 : single-length
+	move	v5,v2
+; v5 : single-length , v2 : single-length
+	invoke-virtual/range	{v0..v5},android/app/AlertDialog/setView;	setView(Landroid/view/View;IIII)V
+; v0 : Landroid/app/AlertDialog; , v1 : Landroid/view/View; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length
+.line 133
+	invoke-virtual	{v1},android/view/View/getViewTreeObserver	; getViewTreeObserver()Landroid/view/ViewTreeObserver;
+; v1 : Landroid/view/View;
+	move-result-object	v6
+; v6 : Landroid/view/ViewTreeObserver;
+.line 134
+	new-instance	v0,yuku/ambilwarna/AmbilWarnaDialog$6
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$6;
+	invoke-direct	{v0,v7,v1},yuku/ambilwarna/AmbilWarnaDialog$6/<init>	; <init>(Lyuku/ambilwarna/AmbilWarnaDialog;Landroid/view/View;)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog$6; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog; , v1 : Landroid/view/View;
+	invoke-virtual	{v6,v0},android/view/ViewTreeObserver/addOnGlobalLayoutListener	; addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+; v6 : Landroid/view/ViewTreeObserver; , v0 : Lyuku/ambilwarna/AmbilWarnaDialog$6;
+.line 141
+	return-void	
+.end method
+
+.method static access$0(Lyuku/ambilwarna/AmbilWarnaDialog;F)V
+.limit registers 2
+; parameter[0] : v0 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[1] : v1 (F)
+.line 179
+	invoke-direct	{v0,v1},yuku/ambilwarna/AmbilWarnaDialog/setHue	; setHue(F)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog; , v1 : single-length
+	return-void	
+.end method
+
+.method static access$1(Lyuku/ambilwarna/AmbilWarnaDialog;)F
+.limit registers 2
+; parameter[0] : v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 167
+	invoke-direct	{v1},yuku/ambilwarna/AmbilWarnaDialog/getHue	; getHue()F
+; v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$2(Lyuku/ambilwarna/AmbilWarnaDialog;)I
+.limit registers 2
+; parameter[0] : v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 163
+	invoke-direct	{v1},yuku/ambilwarna/AmbilWarnaDialog/getColor	; getColor()I
+; v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method static access$3(Lyuku/ambilwarna/AmbilWarnaDialog;F)V
+.limit registers 2
+; parameter[0] : v0 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[1] : v1 (F)
+.line 183
+	invoke-direct	{v0,v1},yuku/ambilwarna/AmbilWarnaDialog/setSat	; setSat(F)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog; , v1 : single-length
+	return-void	
+.end method
+
+.method static access$4(Lyuku/ambilwarna/AmbilWarnaDialog;F)V
+.limit registers 2
+; parameter[0] : v0 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[1] : v1 (F)
+.line 187
+	invoke-direct	{v0,v1},yuku/ambilwarna/AmbilWarnaDialog/setVal	; setVal(F)V
+; v0 : Lyuku/ambilwarna/AmbilWarnaDialog; , v1 : single-length
+	return-void	
+.end method
+
+.method private getColor()I
+.limit registers 2
+; this: v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 164
+	iget-object	v0,v1,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-static	{v0},android/graphics/Color/HSVToColor	; HSVToColor([F)I
+; v0 : [F
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private getHue()F
+.limit registers 3
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 168
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,0
+; v1 : single-length
+	aget	v0,v0,v1
+; v0 : single-length , v0 : single-length , v1 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private getSat()F
+.limit registers 3
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 172
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,1
+; v1 : single-length
+	aget	v0,v0,v1
+; v0 : single-length , v0 : single-length , v1 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private getVal()F
+.limit registers 3
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 176
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,2
+; v1 : single-length
+	aget	v0,v0,v1
+; v0 : single-length , v0 : single-length , v1 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method private setHue(F)V
+.limit registers 4
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[0] : v3 (F)
+.line 180
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,0
+; v1 : single-length
+	aput	v3,v0,v1
+; v3 : single-length , v0 : [F , v1 : single-length
+.line 181
+	return-void	
+.end method
+
+.method private setSat(F)V
+.limit registers 4
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[0] : v3 (F)
+.line 184
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,1
+; v1 : single-length
+	aput	v3,v0,v1
+; v3 : single-length , v0 : [F , v1 : single-length
+.line 185
+	return-void	
+.end method
+
+.method private setVal(F)V
+.limit registers 4
+; this: v2 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+; parameter[0] : v3 (F)
+.line 188
+	iget-object	v0,v2,yuku/ambilwarna/AmbilWarnaDialog.currentColorHsv [F
+; v0 : [F , v2 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	const/4	v1,2
+; v1 : single-length
+	aput	v3,v0,v1
+; v3 : single-length , v0 : [F , v1 : single-length
+.line 189
+	return-void	
+.end method
+
+.method public getDialog()Landroid/app/AlertDialog;
+.limit registers 2
+; this: v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 196
+	iget-object	v0,v1,yuku/ambilwarna/AmbilWarnaDialog.dialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	return-object	v0
+; v0 : Landroid/app/AlertDialog;
+.end method
+
+.method protected moveCursor()V
+.limit registers 7
+; this: v6 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 144
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v2 : Landroid/view/View; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2},android/view/View/getMeasuredHeight	; getMeasuredHeight()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-direct	{v6},yuku/ambilwarna/AmbilWarnaDialog/getHue	; getHue()F
+; v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v3
+; v3 : single-length
+	iget-object	v4,v6,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v4 : Landroid/view/View; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},android/view/View/getMeasuredHeight	; getMeasuredHeight()I
+; v4 : Landroid/view/View;
+	move-result	v4
+; v4 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	mul-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	const/high16	v4,17332
+; v4 : single-length
+	div-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	sub-float	v1,v2,v3
+; v1 : single-length , v2 : single-length , v3 : single-length
+.line 145
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v2 : Landroid/view/View; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2},android/view/View/getMeasuredHeight	; getMeasuredHeight()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	cmpl-float	v2,v1,v2
+; v2 : single-length , v1 : single-length , v2 : single-length
+	if-nez	v2,ld0d14
+; v2 : single-length
+	const/4	v1,0
+; v1 : single-length
+ld0d14:
+.line 146
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewCursor Landroid/widget/ImageView;
+; v2 : Landroid/widget/ImageView; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2},android/widget/ImageView/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v2 : Landroid/widget/ImageView;
+	move-result-object	v0
+; v0 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v0,android/widget/RelativeLayout$LayoutParams
+; v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 147
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v2 : Landroid/view/View; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2},android/view/View/getLeft	; getLeft()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	int-to-double	v2,v2
+; v2 : double-length , v2 : double-length
+	iget-object	v4,v6,yuku/ambilwarna/AmbilWarnaDialog.viewCursor Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},android/widget/ImageView/getMeasuredWidth	; getMeasuredWidth()I
+; v4 : Landroid/widget/ImageView;
+	move-result	v4
+; v4 : single-length
+	div-int/lit8	v4,v4,2
+; v4 : single-length , v4 : single-length
+	int-to-double	v4,v4
+; v4 : double-length , v4 : double-length
+	invoke-static	{v4,v5},java/lang/Math/floor	; floor(D)D
+; v4 : double-length
+	move-result-wide	v4
+; v4 : double-length
+	sub-double/2addr	v2,v4
+; v2 : double-length , v4 : double-length
+	iget-object	v4,v6,yuku/ambilwarna/AmbilWarnaDialog.viewContainer Landroid/view/ViewGroup;
+; v4 : Landroid/view/ViewGroup; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},android/view/ViewGroup/getPaddingLeft	; getPaddingLeft()I
+; v4 : Landroid/view/ViewGroup;
+	move-result	v4
+; v4 : single-length
+	int-to-double	v4,v4
+; v4 : double-length , v4 : double-length
+	sub-double/2addr	v2,v4
+; v2 : double-length , v4 : double-length
+	double-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	iput	v2,v0,android/widget/RelativeLayout$LayoutParams.leftMargin I
+; v2 : single-length , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 149
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewHue Landroid/view/View;
+; v2 : Landroid/view/View; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2},android/view/View/getTop	; getTop()I
+; v2 : Landroid/view/View;
+	move-result	v2
+; v2 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	add-float/2addr	v2,v1
+; v2 : single-length , v1 : single-length
+	float-to-double	v2,v2
+; v2 : double-length , v2 : double-length
+	iget-object	v4,v6,yuku/ambilwarna/AmbilWarnaDialog.viewCursor Landroid/widget/ImageView;
+; v4 : Landroid/widget/ImageView; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},android/widget/ImageView/getMeasuredHeight	; getMeasuredHeight()I
+; v4 : Landroid/widget/ImageView;
+	move-result	v4
+; v4 : single-length
+	div-int/lit8	v4,v4,2
+; v4 : single-length , v4 : single-length
+	int-to-double	v4,v4
+; v4 : double-length , v4 : double-length
+	invoke-static	{v4,v5},java/lang/Math/floor	; floor(D)D
+; v4 : double-length
+	move-result-wide	v4
+; v4 : double-length
+	sub-double/2addr	v2,v4
+; v2 : double-length , v4 : double-length
+	iget-object	v4,v6,yuku/ambilwarna/AmbilWarnaDialog.viewContainer Landroid/view/ViewGroup;
+; v4 : Landroid/view/ViewGroup; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},android/view/ViewGroup/getPaddingTop	; getPaddingTop()I
+; v4 : Landroid/view/ViewGroup;
+	move-result	v4
+; v4 : single-length
+	int-to-double	v4,v4
+; v4 : double-length , v4 : double-length
+	sub-double/2addr	v2,v4
+; v2 : double-length , v4 : double-length
+	double-to-int	v2,v2
+; v2 : single-length , v2 : single-length
+	iput	v2,v0,android/widget/RelativeLayout$LayoutParams.topMargin I
+; v2 : single-length , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 151
+	iget-object	v2,v6,yuku/ambilwarna/AmbilWarnaDialog.viewCursor Landroid/widget/ImageView;
+; v2 : Landroid/widget/ImageView; , v6 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v2,v0},android/widget/ImageView/setLayoutParams	; setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+; v2 : Landroid/widget/ImageView; , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 152
+	return-void	
+.end method
+
+.method protected moveTarget()V
+.limit registers 8
+; this: v7 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 155
+	invoke-direct	{v7},yuku/ambilwarna/AmbilWarnaDialog/getSat	; getSat()F
+; v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v3
+; v3 : single-length
+	iget-object	v4,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v4 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},yuku/ambilwarna/AmbilWarnaKotak/getMeasuredWidth	; getMeasuredWidth()I
+; v4 : Lyuku/ambilwarna/AmbilWarnaKotak;
+	move-result	v4
+; v4 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	mul-float	v1,v3,v4
+; v1 : single-length , v3 : single-length , v4 : single-length
+.line 156
+	const/high16	v3,16256
+; v3 : single-length
+	invoke-direct	{v7},yuku/ambilwarna/AmbilWarnaDialog/getVal	; getVal()F
+; v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	move-result	v4
+; v4 : single-length
+	sub-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	iget-object	v4,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v4 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v4},yuku/ambilwarna/AmbilWarnaKotak/getMeasuredHeight	; getMeasuredHeight()I
+; v4 : Lyuku/ambilwarna/AmbilWarnaKotak;
+	move-result	v4
+; v4 : single-length
+	int-to-float	v4,v4
+; v4 : single-length , v4 : single-length
+	mul-float	v2,v3,v4
+; v2 : single-length , v3 : single-length , v4 : single-length
+.line 157
+	iget-object	v3,v7,yuku/ambilwarna/AmbilWarnaDialog.viewTarget Landroid/widget/ImageView;
+; v3 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v3},android/widget/ImageView/getLayoutParams	; getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+; v3 : Landroid/widget/ImageView;
+	move-result-object	v0
+; v0 : Landroid/view/ViewGroup$LayoutParams;
+	check-cast	v0,android/widget/RelativeLayout$LayoutParams
+; v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 158
+	iget-object	v3,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v3 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v3},yuku/ambilwarna/AmbilWarnaKotak/getLeft	; getLeft()I
+; v3 : Lyuku/ambilwarna/AmbilWarnaKotak;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	add-float/2addr	v3,v1
+; v3 : single-length , v1 : single-length
+	float-to-double	v3,v3
+; v3 : double-length , v3 : double-length
+	iget-object	v5,v7,yuku/ambilwarna/AmbilWarnaDialog.viewTarget Landroid/widget/ImageView;
+; v5 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v5},android/widget/ImageView/getMeasuredWidth	; getMeasuredWidth()I
+; v5 : Landroid/widget/ImageView;
+	move-result	v5
+; v5 : single-length
+	div-int/lit8	v5,v5,2
+; v5 : single-length , v5 : single-length
+	int-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	invoke-static	{v5,v6},java/lang/Math/floor	; floor(D)D
+; v5 : double-length
+	move-result-wide	v5
+; v5 : double-length
+	sub-double/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	iget-object	v5,v7,yuku/ambilwarna/AmbilWarnaDialog.viewContainer Landroid/view/ViewGroup;
+; v5 : Landroid/view/ViewGroup; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v5},android/view/ViewGroup/getPaddingLeft	; getPaddingLeft()I
+; v5 : Landroid/view/ViewGroup;
+	move-result	v5
+; v5 : single-length
+	int-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	sub-double/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	double-to-int	v3,v3
+; v3 : single-length , v3 : single-length
+	iput	v3,v0,android/widget/RelativeLayout$LayoutParams.leftMargin I
+; v3 : single-length , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 159
+	iget-object	v3,v7,yuku/ambilwarna/AmbilWarnaDialog.viewSatVal Lyuku/ambilwarna/AmbilWarnaKotak;
+; v3 : Lyuku/ambilwarna/AmbilWarnaKotak; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v3},yuku/ambilwarna/AmbilWarnaKotak/getTop	; getTop()I
+; v3 : Lyuku/ambilwarna/AmbilWarnaKotak;
+	move-result	v3
+; v3 : single-length
+	int-to-float	v3,v3
+; v3 : single-length , v3 : single-length
+	add-float/2addr	v3,v2
+; v3 : single-length , v2 : single-length
+	float-to-double	v3,v3
+; v3 : double-length , v3 : double-length
+	iget-object	v5,v7,yuku/ambilwarna/AmbilWarnaDialog.viewTarget Landroid/widget/ImageView;
+; v5 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v5},android/widget/ImageView/getMeasuredHeight	; getMeasuredHeight()I
+; v5 : Landroid/widget/ImageView;
+	move-result	v5
+; v5 : single-length
+	div-int/lit8	v5,v5,2
+; v5 : single-length , v5 : single-length
+	int-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	invoke-static	{v5,v6},java/lang/Math/floor	; floor(D)D
+; v5 : double-length
+	move-result-wide	v5
+; v5 : double-length
+	sub-double/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	iget-object	v5,v7,yuku/ambilwarna/AmbilWarnaDialog.viewContainer Landroid/view/ViewGroup;
+; v5 : Landroid/view/ViewGroup; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v5},android/view/ViewGroup/getPaddingTop	; getPaddingTop()I
+; v5 : Landroid/view/ViewGroup;
+	move-result	v5
+; v5 : single-length
+	int-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	sub-double/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	double-to-int	v3,v3
+; v3 : single-length , v3 : single-length
+	iput	v3,v0,android/widget/RelativeLayout$LayoutParams.topMargin I
+; v3 : single-length , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 160
+	iget-object	v3,v7,yuku/ambilwarna/AmbilWarnaDialog.viewTarget Landroid/widget/ImageView;
+; v3 : Landroid/widget/ImageView; , v7 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v3,v0},android/widget/ImageView/setLayoutParams	; setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+; v3 : Landroid/widget/ImageView; , v0 : Landroid/widget/RelativeLayout$LayoutParams;
+.line 161
+	return-void	
+.end method
+
+.method public show()V
+.limit registers 2
+; this: v1 (Lyuku/ambilwarna/AmbilWarnaDialog;)
+.line 192
+	iget-object	v0,v1,yuku/ambilwarna/AmbilWarnaDialog.dialog Landroid/app/AlertDialog;
+; v0 : Landroid/app/AlertDialog; , v1 : Lyuku/ambilwarna/AmbilWarnaDialog;
+	invoke-virtual	{v0},android/app/AlertDialog/show	; show()V
+; v0 : Landroid/app/AlertDialog;
+.line 193
+	return-void	
+.end method
+
+

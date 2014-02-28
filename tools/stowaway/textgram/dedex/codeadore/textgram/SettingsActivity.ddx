@@ -1,0 +1,35 @@
+.class public codeadore/textgram/SettingsActivity
+.super android/support/v7/app/ActionBarActivity
+.source SettingsActivity.java
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcodeadore/textgram/SettingsActivity;)
+.line 8
+	invoke-direct	{v0},android/support/v7/app/ActionBarActivity/<init>	; <init>()V
+; v0 : Lcodeadore/textgram/SettingsActivity;
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 3
+; this: v1 (Lcodeadore/textgram/SettingsActivity;)
+; parameter[0] : v2 (Landroid/os/Bundle;)
+.line 11
+	invoke-super	{v1,v2},android/support/v7/app/ActionBarActivity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v1 : Lcodeadore/textgram/SettingsActivity; , v2 : Landroid/os/Bundle;
+.line 14
+	const	v0,2131427423	; 0x7f0b005f
+; v0 : single-length
+	invoke-virtual	{v1,v0},codeadore/textgram/SettingsActivity/getString	; getString(I)Ljava/lang/String;
+; v1 : Lcodeadore/textgram/SettingsActivity; , v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},codeadore/textgram/SettingsActivity/setTitle	; setTitle(Ljava/lang/CharSequence;)V
+; v1 : Lcodeadore/textgram/SettingsActivity; , v0 : Ljava/lang/String;
+.line 16
+	return-void	
+.end method
+
+

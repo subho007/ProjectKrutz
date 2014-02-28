@@ -1,0 +1,66 @@
+.class public final com/google/ads/av
+.super java/lang/Object
+.source SourceFile
+
+.field static final a I
+.field static final b I
+.field static final c I
+.field static final d I
+
+.method static <clinit>()V
+.limit registers 4
+	const/4	v3,3
+; v3 : single-length
+	const/4	v2,2
+; v2 : single-length
+	const/4	v1,1
+; v1 : single-length
+.line 127
+	invoke-static	{v1,v3},com/google/ads/av/a	; a(II)I
+; v1 : single-length , v3 : single-length
+	move-result	v0
+; v0 : single-length
+	sput	v0,com/google/ads/av.a I
+; v0 : I
+.line 129
+	const/4	v0,4
+; v0 : single-length
+	invoke-static	{v1,v0},com/google/ads/av/a	; a(II)I
+; v1 : single-length , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	sput	v0,com/google/ads/av.b I
+; v0 : I
+.line 131
+	const/4	v0,0
+; v0 : single-length
+	invoke-static	{v2,v0},com/google/ads/av/a	; a(II)I
+; v2 : single-length , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	sput	v0,com/google/ads/av.c I
+; v0 : I
+.line 133
+	invoke-static	{v3,v2},com/google/ads/av/a	; a(II)I
+; v3 : single-length , v2 : single-length
+	move-result	v0
+; v0 : single-length
+	sput	v0,com/google/ads/av.d I
+; v0 : I
+	return-void	
+.end method
+
+.method static a(II)I
+.limit registers 3
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+.line 42
+	shl-int/lit8	v0,v1,3
+; v0 : single-length , v1 : single-length
+	or-int/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+
