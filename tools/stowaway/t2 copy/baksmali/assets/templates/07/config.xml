@@ -1,0 +1,13 @@
+<template>
+<title>Wood T</title>
+<textcolor>#FFFFFF</textcolor>
+<textsize>40</textsize>
+<text_shadow>#a07238</text_shadow>
+<padding_top>100</padding_top>
+<padding_bottom>100</padding_bottom>
+<padding_right>50</padding_right>
+<padding_left>50</padding_left>
+<background>[assets]/backgrounds/07.jpg</background>
+<font>[assets]/fonts/raavi.ttf</font>
+<author></author>
+</template>

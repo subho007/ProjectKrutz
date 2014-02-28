@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff2f1f0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/prepare_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="4.0dip" android:layout_weight="0.72" />
+    <LinearLayout android:gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="15.0dip" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <ImageButton android:id="@id/prepare_rotate_left" android:background="@drawable/btn_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/rotate_left" />
+        <ImageButton android:id="@id/prepare_rotate_right" android:background="@drawable/btn_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/rotate_right" />
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <codeadore.textgram.custom_widgets.NewButton android:textSize="19.0dip" android:textColor="#ff999999" android:id="@id/prepare_next" android:background="@drawable/btn_icon" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/button_next" android:drawableLeft="@drawable/done_icon" android:drawablePadding="5.0dip" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<template>
+<title>Gray D</title>
+<textcolor>#FFFFFF</textcolor>
+<textsize>40</textsize>
+<text_shadow>#000000</text_shadow>
+<padding_top>60</padding_top>
+<padding_bottom>60</padding_bottom>
+<padding_right>60</padding_right>
+<padding_left>60</padding_left>
+<background>[assets]/backgrounds/13.jpg</background>
+<font>[assets]/fonts/hyperball.ttf</font>
+<author></author>
+</template>

@@ -1,0 +1,12 @@
+<template>
+<title>46</title>
+<textcolor>#e6a4b0</textcolor>
+<textsize>55</textsize>
+<padding_top>25</padding_top>
+<padding_bottom>246</padding_bottom>
+<padding_right>20</padding_right>
+<padding_left>25</padding_left>
+<background>[assets]/backgrounds/46.jpg</background>
+<font>[assets]/fonts/za_6.ttf</font>
+<author></author>
+</template>

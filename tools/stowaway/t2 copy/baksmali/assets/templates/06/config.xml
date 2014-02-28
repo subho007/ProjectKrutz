@@ -1,0 +1,13 @@
+<template>
+<title>Paper</title>
+<textcolor>#595959</textcolor>
+<textsize>38</textsize>
+<text_shadow>#FFFFFF</text_shadow>
+<padding_top>40</padding_top>
+<padding_bottom>40</padding_bottom>
+<padding_right>40</padding_right>
+<padding_left>40</padding_left>
+<background>[assets]/backgrounds/06.jpg</background>
+<font>[assets]/fonts/eager.ttf</font>
+<author></author>
+</template>

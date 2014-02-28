@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/app_name">
+        <Preference android:title="@string/feedback" android:key="prefFeedback" android:summary="@string/feeback_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/miscellaneous">
+        <CheckBoxPreference android:title="@string/rewards_notifications" android:key="rewardsNotification" android:summary="@string/rewards_notifications_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shudy="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/menu_progress" android:visible="false" shudy:showAsAction="always" />
+    <item android:id="@id/menu_next" android:visible="false" android:title="@string/button_next" shudy:showAsAction="always|withText" />
+    <item android:icon="@drawable/abs__ic_menu_moreoverflow_normal_holo_light" android:id="@id/menu_main" android:title="@string/menu_more" shudy:showAsAction="always">
+        <menu>
+            <item android:id="@id/menu_store" android:title="@string/menu_store" />
+            <item android:id="@id/menu_r_apps" android:title="@string/recommended_apps" shudy:showAsAction="never" />
+            <item android:id="@id/menu_gopro" android:visible="true" android:title="@string/upgrade" shudy:showAsAction="never" />
+            <item android:id="@id/menu_about" android:visible="true" android:title="@string/button_about" shudy:showAsAction="never" />
+            <item android:id="@id/menu_settings" android:visible="false" android:title="@string/settings" />
+        </menu>
+    </item>
+</menu>

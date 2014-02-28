@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/styling_images_top_bar_for_filters" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:id="@id/styling_images_top_bar_for_highlight" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/styling_images_options_btn" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Button android:id="@id/styling_images_back_btn" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="40.0dip" android:text="@string/button_back" android:drawableLeft="@drawable/abs__ic_ab_back_holo_light" />
+        <ImageButton android:id="@id/styling_images_all_btn" android:background="@drawable/gallery_item_bg" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" android:text="^" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@id/styling_images_pro" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <GridView android:id="@id/styling_images_gv" android:layout_width="wrap_content" android:layout_height="fill_parent" android:columnWidth="70.0dip" android:numColumns="4" android:layout_weight="1.0" />
+    <TextView android:id="@id/res_detecter" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+</LinearLayout>

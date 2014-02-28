@@ -11,6 +11,11 @@ LOC=$1
 chmod u+x *.rb
 chmod u+x *.py
 
+#Clean out directory if there are any files in it.
+# In the past, this would cause errors.
+echo "Clean $2"
+rm -rf $2
+
 #############################################################################
 # SPECIAL CASE: ACCORDING TO ARGS, FIRST TIME THIS HAS BEEN RUN
 #############################################################################
@@ -62,6 +67,8 @@ fi
 #############################################################################
 # PLAIN API CALLS
 #############################################################################
+
+
 
 find $LOC -name "*.ddx" > $LOC/dedex/DDXFILELIST
 

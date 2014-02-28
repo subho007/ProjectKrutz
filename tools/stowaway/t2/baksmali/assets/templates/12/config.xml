@@ -1,0 +1,12 @@
+<template>
+<title>Blue Jeans</title>
+<textcolor>#FFFFFF</textcolor>
+<textsize>40</textsize>
+<padding_top>32</padding_top>
+<padding_bottom>32</padding_bottom>
+<padding_right>32</padding_right>
+<padding_left>32</padding_left>
+<background>[assets]/backgrounds/12.jpg</background>
+<font>[assets]/fonts/alkiash.ttf</font>
+<author></author>
+</template>

@@ -1,0 +1,12 @@
+<template>
+<title>Forest</title>
+<textcolor>#124256</textcolor>
+<textsize>50</textsize>
+<padding_top>32</padding_top>
+<padding_bottom>32</padding_bottom>
+<padding_right>32</padding_right>
+<padding_left>32</padding_left>
+<background>[assets]/backgrounds/26.jpg</background>
+<font>[assets]/fonts/swinsberg.ttf</font>
+<author></author>
+</template>

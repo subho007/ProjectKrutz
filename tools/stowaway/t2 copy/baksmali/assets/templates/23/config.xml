@@ -1,0 +1,12 @@
+<template>
+<title>Oily Board</title>
+<textcolor>#FFFFFF</textcolor>
+<textsize>80</textsize>
+<padding_top>50</padding_top>
+<padding_bottom>50</padding_bottom>
+<padding_right>50</padding_right>
+<padding_left>50</padding_left>
+<background>[assets]/backgrounds/23.jpg</background>
+<font>[assets]/fonts/gilles_handwriting.ttf</font>
+<author></author>
+</template>

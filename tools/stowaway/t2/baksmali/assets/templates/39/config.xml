@@ -1,0 +1,12 @@
+<template>
+<title>XMass1</title>
+<textcolor>#D8000B</textcolor>
+<textsize>75</textsize>
+<padding_top>92</padding_top>
+<padding_bottom>92</padding_bottom>
+<padding_right>92</padding_right>
+<padding_left>92</padding_left>
+<background>[assets]/backgrounds/39.jpg</background>
+<font>[assets]/fonts/journal.ttf</font>
+<author></author>
+</template>

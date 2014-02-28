@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#bf000000" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/scrollView1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/firsttime_step2" android:layout_width="fill_parent" android:layout_height="210.0dip">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/firsttime_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="100.0dip" android:text="@string/you_are_almost_there" android:shadowColor="#ffffffff" android:shadowRadius="13.0" />
+            <Button android:id="@id/btnInstagram" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="TextgramOfficial" android:drawableLeft="@drawable/instagram_icon" android:drawablePadding="10.0dip" />
+            <Button android:id="@id/btnFacebook" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="facebook.com/Textgram" android:drawableLeft="@drawable/facebook_icon" android:drawablePadding="10.0dip" />
+            <Button android:id="@id/btnTwitter" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="twitter.com/Textgram" android:drawableLeft="@drawable/twitter_icon" android:drawablePadding="10.0dip" />
+            <Button android:textStyle="bold" android:gravity="center" android:id="@id/firsttime_start" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/start_using_theapp" android:drawablePadding="20.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
