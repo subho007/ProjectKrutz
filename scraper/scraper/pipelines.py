@@ -1,28 +1,31 @@
 from scrapy import log
 from scrapy import signals
 from scrapy.xlib.pydispatch import dispatcher
+from scraper.items import ApkItem
+from os import path
 import sqlite3
 
 class SQLiteStorePipeline(object):
-	filename = 'data.sqlite'
-
-	def __init__(self):
+    filename = 'Evolution of Android Applications.sqlite'
+    
+    def __init__(self):
         self.conn = None
         dispatcher.connect(self.initialize, signals.engine_started)
         dispatcher.connect(self.finalize, signals.engine_stopped)
 
     def process_item(self, item, spider):
-		try:
-            self.conn.execute('')
-        except:
-            log.msg('Failed to insert item: ' + item['url'], level=log.ERROR)
-        return item
+        if isinstance(item, ApkItem):
+            try:
+                self.conn.execute('INSERT INTO Apk Information VALUES (?,?)', (item['name'], item['software_version']))
+            except:
+                log.msg('Failed to insert item: ' + item['name'], level=log.ERROR)
+            return item
 
     def initialize(self):
         if path.exists(self.filename):
             self.conn = sqlite3.connect(self.filename)
         else:
-            log.mst('File does not exist: ' + self.filename, level=log.ERROR)
+            log.msg('File does not exist: ' + self.filename, level=log.ERROR)
  
     def finalize(self):
         if self.conn is not None:

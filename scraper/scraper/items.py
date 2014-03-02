@@ -20,6 +20,8 @@ class ApkItem(Item):
     # Where the APK file came from
     download_url = Field()
 
+class ApkDownloadItem(Item):
+
     # For Files Pipeline
     file_urls = Field()
     files = Field()
