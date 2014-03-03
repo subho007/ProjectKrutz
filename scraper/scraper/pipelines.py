@@ -16,7 +16,7 @@ class SQLiteStorePipeline(object):
     def process_item(self, item, spider):
         if isinstance(item, ApkItem):
             try:
-                self.conn.execute("INSERT INTO ApkInformation (Name, Version) VALUES (item['name'], item['software_version'])");
+                self.conn.execute('''INSERT INTO ApkInformation (Name, Developer, Version, URL, Rating, Genre, DatePublished, NumberOfDownloads, OSSupported, FileSize) VALUES(?,?,?,?,?,?,?,?,?,?)''' , (item['name'], item['developer'], item['software_version'], item['download_url'], item['score'], item['genre'], item['date_published'], item['num_downloads'], item['operating_systems'], item['file_size']));
             except:
                 log.msg('Failed to insert item: ' + item['name'], level=log.ERROR)
             return item
