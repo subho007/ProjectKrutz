@@ -7,12 +7,12 @@ echo
 
 pushd ../tools/stowaway/stowaway/Stowaway-1.2.4
 
-FILES=../apkFiles/*
+FILES=../../../../ProjectKrutz/downloads/*
 for f in $FILES
 do
 	APK="apkOutput/"
 	OUTPUT="_output"
-	OUTPUT_FOLDER=$APK${f#../apkFiles/}$OUTPUT
+	OUTPUT_FOLDER=$APK${f#../../../../ProjectKrutz/downloads/}$OUTPUT
 	echo $f
 	echo $OUTPUT_FOLDER
 
