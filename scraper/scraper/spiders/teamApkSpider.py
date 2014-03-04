@@ -19,7 +19,7 @@ class TeamApkSpider(CrawlSpider):
 
         next_page = sel.xpath('//a[@class="nextpostslink"]/@href').extract()
         
-        #yield Request(next_page[0])
+        yield Request(next_page[0])
 
     # Parses pages for individual APK files
     def parse_page(self, response):
