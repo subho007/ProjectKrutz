@@ -6,7 +6,6 @@ from play import parse_google
 
 class ApkFilesSpider(CrawlSpider):
     name = "apkfiles"
-    allowed_domains = ["apkfiles.com"]
     start_urls = ["http://www.apkfiles.com/cat/applications/"]
 
     # Parses the F-Droid "Browse" page and subsequent pages

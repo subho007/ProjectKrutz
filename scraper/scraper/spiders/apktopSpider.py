@@ -6,7 +6,6 @@ from play import parse_google
 
 class APKTOPSpider(CrawlSpider):
     name = "apktop"
-    allowed_domains = ["papktop.com", "play.google.com"]
     start_urls = ["http://www.papktop.com/category/android-apps"]
 
     # Parses the APKTOP "Android Apps" page and subsequent pages
@@ -19,7 +18,7 @@ class APKTOPSpider(CrawlSpider):
 
         next_page = sel.xpath('//a[@class="next"]/@href').extract()
         
-        #yield Request(next_page[0])
+        yield Request(next_page[0])
 
     # Parses pages for individual APK files
     def parse_page(self, response):
@@ -28,7 +27,7 @@ class APKTOPSpider(CrawlSpider):
         app_id = response.url[response.url.find('id=') + 3:]
         google_play_url = sel.xpath('//a[contains(@href, "play.google.com/store/apps")]/@href').extract()        
         
-        if download_url:
+        if download_url and google_play_url:
             item = ApkDownloadItem()
             item['file_urls'] = [download_url[0]]
             yield item

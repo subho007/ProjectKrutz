@@ -6,7 +6,6 @@ from play import parse_google
 
 class AppsApkSpider(CrawlSpider):
     name = "appsapk"
-    allowed_domains = ["appsapk.com"]
     start_urls = ["http://www.appsapk.com/android/all-apps/"]
     
     # Parses the AppsApk "All Apps" page and subsequent pages

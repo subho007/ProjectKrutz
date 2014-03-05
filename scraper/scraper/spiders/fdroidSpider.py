@@ -6,7 +6,6 @@ from play import parse_google
 
 class FDroidSpider(CrawlSpider):
     name = "fdroid"
-    allowed_domains = ["f-droid.org", "play.google.com"]
     start_urls = ["https://f-droid.org/repository/browse/"]
 
     # Parses the F-Droid "Browse" page and subsequent pages
@@ -28,7 +27,7 @@ class FDroidSpider(CrawlSpider):
         app_id = response.url[response.url.find('id=') + 3:]
         google_play_url = 'https://play.google.com/store/apps/details?id=' + app_id
         
-        if download_url:
+        if download_url and google_play_url:
             item = ApkDownloadItem()
             item['file_urls'] = [download_url[0]]
             yield item
