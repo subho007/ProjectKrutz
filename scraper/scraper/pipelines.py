@@ -16,11 +16,10 @@ class SQLiteStorePipeline(object):
     def process_item(self, item, spider):
         if isinstance(item, ApkItem):
             try:
-                self.conn.execute('''INSERT INTO ApkInformation (Name, Developer, Version, URL, Rating, Genre, DatePublished, NumberOfDownloads, OSSupported, FileSize) VALUES(?,?,?,?,?,?,?,?,?,?)''' , (item['name'], item['developer'], item['software_version'], item['download_url'], item['score'], item['genre'], item['date_published'], item['num_downloads'], item['operating_systems'], item['file_size']));
+                self.conn.execute('''INSERT INTO ApkInformation (Name, Version, Rating, DatePublished, FileSize, NumberOfDownloads, URL, Genre, OSSupported) VALUES(?,?,?,?,?,?,?,?,?)''' , (item['name'], item['software_version'],item['score'], item['date_published'], item['file_size'], item['num_downloads'], item['download_url'], item['genre'], item['operating_systems']));
             except:
                 log.msg('Failed to insert item: ' + item['name'], level=log.ERROR)
             return item
-
     def initialize(self):
         if path.exists(self.filename):
             self.conn = sqlite3.connect(self.filename)
