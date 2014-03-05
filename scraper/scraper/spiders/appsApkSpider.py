@@ -23,9 +23,10 @@ class AppsApkSpider(CrawlSpider):
     # Parses pages for individual APK files
     def parse_page(self, response):
         sel = Selector(response)
-        download_url = sel.xpath('//a[contains(@href, ".apk")]/@href').extract()
+        download_url = sel.xpath('//a[".apk" = substring(@href, string-length(@href) - 3)]/@href').extract()
 
         if download_url:
             item = ApkDownloadItem()
             item['file_urls'] = [download_url[0]]
+            item['come_from'] = response.url
             yield item

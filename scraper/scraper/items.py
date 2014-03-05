@@ -17,11 +17,12 @@ class ApkItem(Item):
     software_version = Field()
     operating_systems = Field()
 
-    # Where the APK file came from
-    download_url = Field()
+    # URL where the APK file came from
+    come_from = Field()
 
 class ApkDownloadItem(Item):
 
     # For Files Pipeline
     file_urls = Field()
     files = Field()
+    come_from = Field()

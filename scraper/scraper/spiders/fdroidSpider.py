@@ -23,13 +23,14 @@ class FDroidSpider(CrawlSpider):
     # Parses pages for individual APK files
     def parse_page(self, response):
         sel = Selector(response)
-        download_url = sel.xpath('//a[contains(@href, ".apk") and text()[contains(., "download apk")]]/@href').extract()
+        download_url = sel.xpath('//a[".apk" = substring(@href, string-length(@href) - 3) and text()[contains(., "download apk")]]/@href').extract()
         app_id = response.url[response.url.find('id=') + 3:]
         google_play_url = 'https://play.google.com/store/apps/details?id=' + app_id
         
         if download_url and google_play_url:
             item = ApkDownloadItem()
             item['file_urls'] = [download_url[0]]
+            item['come_from'] = response.url
             yield item
 
-            yield Request(google_play_url, meta={'download_url': response.url}, callback=parse_google)
+            yield Request(google_play_url, meta={'url': response.url}, callback=parse_google)

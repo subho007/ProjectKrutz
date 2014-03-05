@@ -31,4 +31,5 @@ class ApkFilesSpider(CrawlSpider):
         if download_url:
             item = ApkDownloadItem()
             item['file_urls'] = ['http://www.apkfiles.com' + download_url[0]]
+            item['come_from'] = response.url
             yield item

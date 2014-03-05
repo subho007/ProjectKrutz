@@ -6,7 +6,7 @@ def parse_google(response):
     sel = Selector(response)
     item = ApkItem()
 
-    item['download_url'] = response.meta['download_url']
+    item['come_from'] = response.meta['url']
 
     info_container = sel.xpath('//div[@class="info-container"]')
     item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]

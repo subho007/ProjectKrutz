@@ -4,8 +4,8 @@ SPIDER_MODULES = ['scraper.spiders']
 NEWSPIDER_MODULE = 'scraper.spiders'
 
 ITEM_PIPELINES = {
-	'scraper.files.FilesPipeline' : 300,
-	'scraper.pipelines.SQLiteStorePipeline' : 800,
+	'scraper.pipelines.SQLiteStorePipeline' : 300,
+	'scraper.files.FilesPipeline' : 800,
 }
 
 DOWNLOAD_DELAY = 0.25

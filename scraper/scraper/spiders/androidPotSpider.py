@@ -24,16 +24,17 @@ class AndroidPotSpider(CrawlSpider):
     # Parses pages for individual APK files
     def parse_page(self, response):
         sel = Selector(response)
-        download_url = sel.xpath('//a[contains(@href, ".apk")]/@href').extract()
+        download_url = sel.xpath('//a[".apk" = substring(@href, string-length(@href) - 3)]/@href').extract()
         google_play_url = sel.xpath('//a[contains(@href, "play.google.com/store/apps")]/@href').extract()
         
         if download_url and google_play_url:
-            yield Request(download_url[0], callback=self.parse_file)
-            yield Request(google_play_url[0], meta={'download_url': response.url}, callback=parse_google)
+            yield Request(download_url[0], meta={'url': response.url}, callback=self.parse_file)
+            yield Request(google_play_url[0], meta={'url': response.url}, callback=parse_google)
 
     # Download the APK file
     def parse_file(self, response):
         item = ApkDownloadItem()
         item['file_urls'] = [response.url]
+        item['come_from'] = response.meta['url']
         
         yield item
