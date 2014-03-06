@@ -7,12 +7,13 @@ echo
 
 pushd ./tools/stowaway/Stowaway-1.2.4
 
-FILES=../../../ProjectKrutz/tools/testAndroidApps/*
+FILES=../../testAndroidApps/*
 for f in $FILES
 do
-	APK="apkOutput/"
+	APK="./apkOutput/"
 	OUTPUT="_output"
-	OUTPUT_FOLDER=$APK${f#../../../ProjectKrutz/tools/testAndroidApps/}$OUTPUT
+	OUTPUT_FOLDER=$APK${f#../../testAndroidApps/}$OUTPUT
+
 	echo $f
 	echo $OUTPUT_FOLDER
 
@@ -24,13 +25,12 @@ popd
 echo "Stowaway Complete"
 echo "Starting Androguard"
 
-pushd ./tools/Androguard
+pushd ./tools/androguard
 
-FILES=../../../ProjectKrutz/tools/testAndroidApps/*
+FILES=../testAndroidApps/*
 for f in $FILES
 do
-	echo $f
-	bash ./androrisk.py -m -i ../testAndroidApps/$f
+	./androrisk.py -m -i $f
 done
 
 popd
