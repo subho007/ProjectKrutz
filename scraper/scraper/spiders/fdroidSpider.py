@@ -1,6 +1,5 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
-from scraper.items import ApkDownloadItem
 from scrapy.http import Request
 from play import parse_google
 
@@ -28,9 +27,4 @@ class FDroidSpider(CrawlSpider):
         google_play_url = 'https://play.google.com/store/apps/details?id=' + app_id
         
         if download_url and google_play_url:
-            item = ApkDownloadItem()
-            item['file_urls'] = [download_url[0]]
-            item['come_from'] = response.url
-            yield item
-
-            yield Request(google_play_url, meta={'url': response.url}, callback=parse_google)
+            yield Request(google_play_url, meta={'url': response.url, 'file_urls': [download_url[0]]}, callback=parse_google)

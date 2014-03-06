@@ -1,8 +1,7 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
-from scraper.items import ApkDownloadItem
+from scraper.items import ApkItem
 from scrapy.http import Request
-from play import parse_google
 
 class ApkFilesSpider(CrawlSpider):
     name = "apkfiles"
@@ -29,7 +28,7 @@ class ApkFilesSpider(CrawlSpider):
         download_url = sel.xpath('//a[@class="yellow_button"]/@href').extract()
         
         if download_url:
-            item = ApkDownloadItem()
+            item = ApkItem()
             item['file_urls'] = ['http://www.apkfiles.com' + download_url[0]]
-            item['come_from'] = response.url
+            item['url'] = response.url
             yield item

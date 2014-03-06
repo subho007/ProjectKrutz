@@ -18,11 +18,8 @@ class ApkItem(Item):
     operating_systems = Field()
 
     # URL where the APK file came from
-    come_from = Field()
-
-class ApkDownloadItem(Item):
+    url = Field()
 
     # For Files Pipeline
     file_urls = Field()
     files = Field()
-    come_from = Field()

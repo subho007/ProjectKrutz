@@ -1,6 +1,5 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
-from scraper.items import ApkDownloadItem
 from scrapy.http import Request
 from play import parse_google
 
@@ -27,8 +26,7 @@ class TeamApkSpider(CrawlSpider):
         google_play_url = sel.xpath('//p/a[contains(@href, "play.google.com/store/apps")]/@href').extract()
         
         if download_url and google_play_url:
-            yield Request(download_url[0], meta={'url': response.url}, callback=self.parse_file)
-            yield Request(google_play_url[0], meta={'url': response.url}, callback=parse_google)
+            yield Request(download_url[0], meta={'url': response.url, 'google_play_url': google_play_url[0]}, callback=self.parse_file)
 
     # Parses the URL to an actual APK file
     def parse_file(self, response):
@@ -36,12 +34,8 @@ class TeamApkSpider(CrawlSpider):
         form_action = sel.xpath('//form/@action').extract()
         
         if form_action:
-            return [Request(url=form_action[0], method="POST", meta={'url': response.meta['url']}, callback=self.after_post)]
+            return [Request(url=form_action[0], method="POST", meta={'url': response.meta['url'], 'google_play_url': response.meta['google_play_url']}, callback=self.after_post)]
 
     # Download the APK file
     def after_post(self, response):
-        item = ApkDownloadItem()
-        item['file_urls'] = [response.url]
-        item['come_from'] = response.meta['url']
-        
-        yield item
+        yield Request(response.meta['google_play_url'], meta={'url': response.meta['url'], 'file_urls': [response.url]}, callback=parse_google)
