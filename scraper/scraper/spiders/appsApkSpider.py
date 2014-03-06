@@ -26,6 +26,6 @@ class AppsApkSpider(CrawlSpider):
 
         if download_url:
             item = ApkItem()
-            item['file_urls'] = download_url
+            item['file_urls'] = [download_url[0]]
             item['url'] = response.url
             yield item
