@@ -17,7 +17,7 @@ class GooglePlaySpider(CrawlSpider):
 	]
 	rules = (
 		# Rule(SgmlLinkExtractor(allow=('/store/apps$', )), callback='parse_category_group', follow=True),
-		#Rule(SgmlLinkExtractor(allow=('/store/apps/category/.*', )), callback='parse_category', follow=True),
+		Rule(SgmlLinkExtractor(allow=('/store/apps/category/.*', )), callback='parse_category', follow=True),
 		# Rule(SgmlLinkExtractor(allow=('/store/search\?.*', )), callback='parse_search', follow=True),
 	)
 
@@ -116,6 +116,29 @@ class GooglePlaySpider(CrawlSpider):
 				}
 
 				post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data)
-				yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
+
+				# yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
+
+				item = ApkItem()
+
+				item['url'] = response.url
+				item['file_urls'] = [post_data.json()['url']]
+
+				info_container = sel.xpath('//div[@class="info-container"]')
+				item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]
+				item['developer'] = info_container.xpath('//div[@itemprop="author"]/a/span[@itemprop="name"]/text()').extract()[0]
+				item['genre'] = info_container.xpath('//span[@itemprop="genre"]/text()').extract()[0]
+
+				score_container = sel.xpath('//div[@class="score-container"]')
+				item['score'] = score_container.xpath('//div[@class="score"]/text()').extract()[0]
+
+				additional_information = sel.xpath('//div[@class="details-section metadata"]')
+				item['date_published'] = additional_information.xpath('//div[@itemprop="datePublished"]/text()').extract()[0]
+				item['file_size'] = additional_information.xpath('//div[@itemprop="fileSize"]/text()').extract()[0]
+				item['num_downloads'] = additional_information.xpath('//div[@itemprop="numDownloads"]/text()').extract()[0]
+				item['software_version'] = additional_information.xpath('//div[@itemprop="softwareVersion"]/text()').extract()[0]
+				item['operating_systems'] = additional_information.xpath('//div[@itemprop="operatingSystems"]/text()').extract()[0]
+
+				yield item
 		except ValueError:
 			log.msg('Not a free app: ' + response.url, log.INFO)
