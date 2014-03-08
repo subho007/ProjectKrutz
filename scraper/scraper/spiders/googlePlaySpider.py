@@ -11,13 +11,13 @@ import requests
 
 class GooglePlaySpider(CrawlSpider):
 	name = 'googleplay'
-	allowed_domains = ['play.google.com', 'apps.evozi.com', 'api.evozi.com', 'storage.evozi.com']
+	# allowed_domains = ['play.google.com', 'apps.evozi.com', 'api.evozi.com', 'storage.evozi.com']
 	start_urls = [
 		'https://play.google.com/store/apps'
 	]
 	rules = (
 		# Rule(SgmlLinkExtractor(allow=('/store/apps$', )), callback='parse_category_group', follow=True),
-		Rule(SgmlLinkExtractor(allow=('/store/apps/category/.*', )), callback='parse_category', follow=True),
+		#Rule(SgmlLinkExtractor(allow=('/store/apps/category/.*', )), callback='parse_category', follow=True),
 		# Rule(SgmlLinkExtractor(allow=('/store/search\?.*', )), callback='parse_search', follow=True),
 	)
 
@@ -103,15 +103,19 @@ class GooglePlaySpider(CrawlSpider):
 		try:
 			if int(price) == 0:
 				package_name = response.url[response.url.find('id=') + 3:]
-				url = 'http://api.evozi.com/apk-downloader/download'
-        		data = {
-            		'packagename': package_name, 
-            		'fccfeadfb': 'Hs6RVv7hBbUgLkDqUz5adQ', 
-            		't': '1394221463', 
-            		'fetch': 'false'
-        		}
-        		post_response = requests.post(url, data=data)
-        		json = post_response.json()	# Invalid or Expired Token, Please refresh the page and try again
-				# yield Request(response.url, meta={'url': response.url, 'file_urls': [json['url']]}, callback=parse_google)
+				download_page = requests.get('http://apps.evozi.com/apk-downloader/')
+
+				var_name, var_value = re.search("var\s*fetched_desc = '';\r*\n*\s+var\s*(\w*)\s*=\s*\W*([a-zA-Z\d\-\_]*)", download_page.text, re.MULTILINE).groups()
+				timestamp = re.search(", t: (\w*)", download_page.text, re.MULTILINE).group(1)
+
+				data = {
+					'fccfeadfb': var_value,
+					'fetch': 'false',
+					'packagename': package_name,
+					't': timestamp
+				}
+
+				post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data)
+				yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
 		except ValueError:
 			log.msg('Not a free app: ' + response.url, log.INFO)
