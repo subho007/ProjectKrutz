@@ -105,18 +105,19 @@ class GooglePlaySpider(CrawlSpider):
 				package_name = response.url[response.url.find('id=') + 3:]
 				download_page = requests.get('http://apps.evozi.com/apk-downloader/')
 
-				var_name, var_value = re.search("var\s*fetched_desc = '';\r*\n*\s+var\s*(\w*)\s*=\s*\W*([a-zA-Z\d\-\_]*)", download_page.text, re.MULTILINE).groups()
+				var_key = re.search("data:\s+{packagename:\s+packagename,\s+([-\w]*):\s+[-\w]*,", download_page.text, re.MULTILINE).group(1)
+				var_name, var_value = re.search("var\s+fetched_desc = '';\r*\n*\s+var\s+(\w*)\s+=\s+\"([-\w]*)\";", download_page.text, re.MULTILINE).groups()
 				timestamp = re.search(", t: (\w*)", download_page.text, re.MULTILINE).group(1)
 
 				data = {
-					'fccfeadfb': var_value,
-					'fetch': 'false',
 					'packagename': package_name,
-					't': timestamp
+					var_key: var_value,
+					't': timestamp,
+					'fetch': 'false'
 				}
 
 				post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data)
-
+				
 				# yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
 
 				item = ApkItem()
