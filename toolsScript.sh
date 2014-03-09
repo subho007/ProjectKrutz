@@ -7,17 +7,24 @@ echo
 
 pushd ./tools/stowaway/Stowaway-1.2.4
 
+cd ../
+rm -rf apkOutput
+mkdir apkOutput
+cd Stowaway-1.2.4
+
 FILES=../../testAndroidApps/*
 for f in $FILES
 do
-	APK="apkOutput/"
+	APK="../apkOutput/"
 	OUTPUT="_output"
 	OUTPUT_FOLDER=$APK${f#../../testAndroidApps/}$OUTPUT
-
+	
+	echo "*************************************"
 	echo $f
 	echo $OUTPUT_FOLDER
+	echo "*************************************"
 
-	bash stowaway.sh $f ../$OUTPUT_FOLDER &>output.txt
+	bash stowaway.sh $f $OUTPUT_FOLDER
 done
 
 popd
