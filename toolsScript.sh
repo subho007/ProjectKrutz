@@ -10,7 +10,7 @@ pushd ./tools/stowaway/Stowaway-1.2.4
 FILES=../../testAndroidApps/*
 for f in $FILES
 do
-	APK="./apkOutput/"
+	APK="apkOutput/"
 	OUTPUT="_output"
 	OUTPUT_FOLDER=$APK${f#../../testAndroidApps/}$OUTPUT
 

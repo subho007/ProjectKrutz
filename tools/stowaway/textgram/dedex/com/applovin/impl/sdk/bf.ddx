@@ -1,8 +1,0 @@
-.interface abstract com/applovin/impl/sdk/bf
-.super java/lang/Object
-
-
-.method public abstract a(Ljava/lang/String;)Ljava/lang/String;
-.end method
-
-

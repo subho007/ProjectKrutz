@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <WebView android:id="@id/about_wv" android:background="#fff2f1f0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/about_adview_container" android:layout_alignParentTop="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/about_adview_container" android:background="#fff2f1f0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
-</RelativeLayout>

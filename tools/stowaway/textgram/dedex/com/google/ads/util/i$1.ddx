@@ -1,7 +1,0 @@
-.class com/google/ads/util/i$1
-.super java/lang/Object
-.source SourceFile
-
-.inner class 1 inner com/google/ads/util/i$1 outer com/google/ads/util/i
-
-

@@ -1,7 +1,0 @@
-.class android/support/v4/print/PrintHelper$1
-.super java/lang/Object
-.source PrintHelper.java
-
-.inner class 1 inner android/support/v4/print/PrintHelper$1 outer android/support/v4/print/PrintHelper
-
-
