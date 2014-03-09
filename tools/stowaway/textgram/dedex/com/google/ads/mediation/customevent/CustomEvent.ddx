@@ -1,9 +1,0 @@
-.interface public abstract com/google/ads/mediation/customevent/CustomEvent
-.super java/lang/Object
-.source SourceFile
-
-
-.method public abstract destroy()V
-.end method
-
-

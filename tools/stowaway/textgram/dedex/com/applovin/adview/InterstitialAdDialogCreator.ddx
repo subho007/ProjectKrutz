@@ -1,8 +1,0 @@
-.interface public abstract com/applovin/adview/InterstitialAdDialogCreator
-.super java/lang/Object
-
-
-.method public abstract createInterstitialAdDialog(Lcom/applovin/sdk/AppLovinSdk;Landroid/app/Activity;)Lcom/applovin/adview/AppLovinInterstitialAdDialog;
-.end method
-
-

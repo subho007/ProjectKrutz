@@ -1,8 +1,0 @@
-.interface public abstract com/applovin/sdk/AppLovinAdClickListener
-.super java/lang/Object
-
-
-.method public abstract adClicked(Lcom/applovin/sdk/AppLovinAd;)V
-.end method
-
-

@@ -1,8 +1,0 @@
-.interface public abstract android/support/v4/internal/view/SupportSubMenu
-.super java/lang/Object
-.source SupportSubMenu.java
-.implements android/support/v4/internal/view/SupportMenu
-.implements android/view/SubMenu
-
-
-
