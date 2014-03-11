@@ -17,17 +17,32 @@ for f in $FILES
 do
 	APK="../apkOutput/"
 	OUTPUT="_output"
-	OUTPUT_FOLDER=$APK${f#../../testAndroidApps/}$OUTPUT
+	O_F=$APK${f#../../testAndroidApps/}
+	OUTPUT_FOLDER=${O_F%.apk}$OUTPUT
 	
 	echo "*************************************"
 	echo $f
 	echo $OUTPUT_FOLDER
+	pwd
 	echo "*************************************"
-
-	bash stowaway.sh $f $OUTPUT_FOLDER
+	
+	mkdir $OUTPUT_FOLDER
+		
+	bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
 done
 
 popd
+
+#conn=sqlite3.connect('Evolution of Android Applications.sqlite')
+#c=$conn.cursor()
+#try:
+	#add the column to the databse if it doesn't exist
+#    c.execute('ALTER TABLE Evolution of Android Applications ADD COLUMN COLNew text;')
+#	c.execute('INSERT INTO Permissions (perm1, perm2, perm3) VALUES(?,?,?)', ('true','false','true'))
+	
+#except:
+#    pass # handle the error
+#$c.close()
 
 echo "Stowaway Complete"
 echo "Starting Androguard"
