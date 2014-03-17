@@ -28,7 +28,7 @@ do
 	
 	mkdir $OUTPUT_FOLDER
 		
-	#bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
+	bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
 done
 
 popd
@@ -53,7 +53,7 @@ FILES=../testAndroidApps/*
 for f in $FILES
 do
 	echo "***********AndroRisk for $f******************"
-	#./androrisk.py -m -i $f
+	./androrisk.py -m -i $f
 	echo "***********AndroAPKInfo for $f **************"
 	./androapkinfo.py -i $f
 done
