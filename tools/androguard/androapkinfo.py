@@ -58,7 +58,7 @@ def main(options, arguments) :
                 a = apk.APK(options.input, zipmodule=2)
                 if a.is_valid_APK() :
                     a.show()
-                    display_dvm_info( a )
+                    #display_dvm_info( a )
                 else :
                     print "INVALID"
             except Exception, e :

@@ -28,7 +28,7 @@ do
 	
 	mkdir $OUTPUT_FOLDER
 		
-	bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
+	#bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
 done
 
 popd
@@ -52,7 +52,10 @@ pushd ./tools/androguard
 FILES=../testAndroidApps/*
 for f in $FILES
 do
-	./androrisk.py -m -i $f
+	echo "***********AndroRisk for $f******************"
+	#./androrisk.py -m -i $f
+	echo "***********AndroAPKInfo for $f **************"
+	./androapkinfo.py -i $f
 done
 
 popd
