@@ -1,11 +1,15 @@
+import re
+import sqlite3
+from os import path
 from scrapy import log
 from scrapy import signals
 from scrapy.exceptions import DropItem
 from scrapy.xlib.pydispatch import dispatcher
+from scrapy.contrib.pipeline.files import FilesPipeline
+from scrapy.http import Request
 from scraper.items import ApkItem
-from os import path
-import sqlite3
 
+# Stores the APK information in the database
 class SQLiteStorePipeline(object):
     filename = 'Evolution of Android Applications.sqlite'
     
@@ -37,3 +41,15 @@ class SQLiteStorePipeline(object):
             self.conn.commit()
             self.conn.close()
             self.conn = None
+
+# Names the downloaded file in the format APK-Name_Version.apk
+class APKFilesPipeline(FilesPipeline):
+    def file_name(self, item):
+        return re.sub('\s+', '-', item['name'] + '_' + item['software_version'])
+
+    def get_media_requests(self, item, info):
+        return [Request(x, meta={'file_name': self.file_name(item)}) for x in item.get(self.FILES_URLS_FIELD, [])]
+
+    def file_path(self, request, response=None, info=None):
+        media_ext = path.splitext(request.url)[1]
+        return 'full/%s%s' % (request.meta['file_name'], media_ext)

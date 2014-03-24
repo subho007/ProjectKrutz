@@ -1,3 +1,6 @@
+import re
+import string
+import requests
 from scrapy import log
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -5,20 +8,16 @@ from scrapy.selector import Selector
 from scrapy.http import Request
 from scraper.items import ApkItem
 from play import parse_google
-import re
-import string
-import requests
 
 class GooglePlaySpider(CrawlSpider):
 	name = 'googleplay'
-	# allowed_domains = ['play.google.com', 'apps.evozi.com', 'api.evozi.com', 'storage.evozi.com']
 	start_urls = [
 		'https://play.google.com/store/apps'
 	]
 	rules = (
-		# Rule(SgmlLinkExtractor(allow=('/store/apps$', )), callback='parse_category_group', follow=True),
+		Rule(SgmlLinkExtractor(allow=('/store/apps$', )), callback='parse_category_group', follow=True),
 		Rule(SgmlLinkExtractor(allow=('/store/apps/category/.*', )), callback='parse_category', follow=True),
-		# Rule(SgmlLinkExtractor(allow=('/store/search\?.*', )), callback='parse_search', follow=True),
+		Rule(SgmlLinkExtractor(allow=('/store/search\?.*', )), callback='parse_search', follow=True),
 	)
 
 	def parse_category_group(self, response):
@@ -69,7 +68,7 @@ class GooglePlaySpider(CrawlSpider):
 					start_number = 24                  
 				else:
 					start_number = int(m.group(2)) + 24
-				# yield Request(base_path + '?start=' + str(start_number) + '&num=24', callback=self.parse_category)
+				yield Request(base_path + '?start=' + str(start_number) + '&num=24', callback=self.parse_category)
 
 		return
 
@@ -118,28 +117,28 @@ class GooglePlaySpider(CrawlSpider):
 
 				post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data)
 				
-				# yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
+				yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
 
-				item = ApkItem()
+				# item = ApkItem()
 
-				item['url'] = response.url
-				item['file_urls'] = [post_data.json()['url']]
+				# item['url'] = response.url
+				# item['file_urls'] = [post_data.json()['url']]
 
-				info_container = sel.xpath('//div[@class="info-container"]')
-				item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]
-				item['developer'] = info_container.xpath('//div[@itemprop="author"]/a/span[@itemprop="name"]/text()').extract()[0]
-				item['genre'] = info_container.xpath('//span[@itemprop="genre"]/text()').extract()[0]
+				# info_container = sel.xpath('//div[@class="info-container"]')
+				# item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]
+				# item['developer'] = info_container.xpath('//div[@itemprop="author"]/a/span[@itemprop="name"]/text()').extract()[0]
+				# item['genre'] = info_container.xpath('//span[@itemprop="genre"]/text()').extract()[0]
 
-				score_container = sel.xpath('//div[@class="score-container"]')
-				item['score'] = score_container.xpath('//div[@class="score"]/text()').extract()[0]
+				# score_container = sel.xpath('//div[@class="score-container"]')
+				# item['score'] = score_container.xpath('//div[@class="score"]/text()').extract()[0]
 
-				additional_information = sel.xpath('//div[@class="details-section metadata"]')
-				item['date_published'] = additional_information.xpath('//div[@itemprop="datePublished"]/text()').extract()[0]
-				item['file_size'] = additional_information.xpath('//div[@itemprop="fileSize"]/text()').extract()[0]
-				item['num_downloads'] = additional_information.xpath('//div[@itemprop="numDownloads"]/text()').extract()[0]
-				item['software_version'] = additional_information.xpath('//div[@itemprop="softwareVersion"]/text()').extract()[0]
-				item['operating_systems'] = additional_information.xpath('//div[@itemprop="operatingSystems"]/text()').extract()[0]
+				# additional_information = sel.xpath('//div[@class="details-section metadata"]')
+				# item['date_published'] = additional_information.xpath('//div[@itemprop="datePublished"]/text()').extract()[0]
+				# item['file_size'] = additional_information.xpath('//div[@itemprop="fileSize"]/text()').extract()[0]
+				# item['num_downloads'] = additional_information.xpath('//div[@itemprop="numDownloads"]/text()').extract()[0]
+				# item['software_version'] = additional_information.xpath('//div[@itemprop="softwareVersion"]/text()').extract()[0]
+				# item['operating_systems'] = additional_information.xpath('//div[@itemprop="operatingSystems"]/text()').extract()[0]
 
-				yield item
+				# yield item
 		except ValueError:
 			log.msg('Not a free app: ' + response.url, log.INFO)
