@@ -1,6 +1,7 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
+from scrapy.http import FormRequest
 from play import parse_app
 
 class TeamApkSpider(CrawlSpider):
@@ -30,11 +31,7 @@ class TeamApkSpider(CrawlSpider):
 
     # Parses the URL to an actual APK file
     def parse_file(self, response):
-        sel = Selector(response)
-        form_action = sel.xpath('//form/@action').extract()
-        
-        if form_action:
-            return [Request(url=form_action[0], method="POST", meta={'url': response.meta['url'], 'google_play_url': response.meta['google_play_url']}, callback=self.after_post)]
+        return [FormRequest.from_response(response, method="POST", meta={'url': response.meta['url'], 'google_play_url': response.meta['google_play_url']}, callback=self.after_post)]
 
     # Download the APK file
     def after_post(self, response):
