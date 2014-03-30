@@ -1,7 +1,7 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
-from play import parse_google
+from play import parse_app
 
 class TeamApkSpider(CrawlSpider):
     name = "teamapk"
@@ -38,4 +38,4 @@ class TeamApkSpider(CrawlSpider):
 
     # Download the APK file
     def after_post(self, response):
-        yield Request(response.meta['google_play_url'], meta={'url': response.meta['url'], 'file_urls': [response.url]}, callback=parse_google)
+        yield Request(response.meta['google_play_url'], meta={'url': response.meta['url'], 'file_urls': [response.url], 'come_from': self.name}, callback=parse_app)

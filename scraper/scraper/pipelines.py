@@ -26,15 +26,14 @@ class SQLiteStorePipeline(object):
         try:
             self.conn.execute('INSERT INTO ApkInformation (Name, Version, Rating, DatePublished, FileSize, NumberOfDownloads, URL, Genre, OSSupported) VALUES(?,?,?,?,?,?,?,?,?)', (item['name'], item['software_version'],item['score'], item['date_published'], item['file_size'], item['num_downloads'], item['url'], item['genre'], item['operating_systems']))
             return item
-        except:
-            log.msg('Failed to insert item: ' + item['url'], level=log.ERROR)
-            raise DropItem(item['url'])
+        except Exception as e:
+            raise DropItem('%s <%s>' % (e.message, item['url']))
 
     def initialize(self):
         if path.exists(self.filename):
             self.conn = sqlite3.connect(self.filename)
         else:
-            log.msg('File does not exist: ' + self.filename, level=log.ERROR)
+            log.msg('File does not exist: %s' % self.filename, level=log.ERROR)
  
     def finalize(self):
         if self.conn is not None:
@@ -52,4 +51,9 @@ class APKFilesPipeline(FilesPipeline):
 
     def file_path(self, request, response=None, info=None):
         media_ext = path.splitext(request.url)[1]
+
+        # For Google Play spider, which yields something along the lines of ".apk?h=syrPj2oViqBMGpbX5XEB7g&t=1396043020"
+        if len(media_ext) > 4 and media_ext.startswith('.apk'):
+            media_ext = media_ext[:4]
+
         return 'full/%s%s' % (request.meta['file_name'], media_ext)

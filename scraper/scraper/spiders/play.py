@@ -1,13 +1,45 @@
+import requests
+from scrapy import log
 from scrapy.selector import Selector
 from scraper.items import ApkItem
+from key import api_key
 
 # Parse the information for an individual APK from the Google Play store
-def parse_google(response):
+def parse_app(response):
     sel = Selector(response)
     item = ApkItem()
 
-    item['url'] = response.meta['url']
-    item['file_urls'] = response.meta['file_urls']
+    # Special logic for GooglePlaySpider
+    if response.meta['come_from'] == 'googleplay':
+        price = sel.xpath('//meta[@itemprop="price"]/@content').extract()[0]
+
+        # We are only downloading free apps
+        if price != '0':
+            log.msg('Not a free app, skipping item: %s' % response.url, level=log.INFO)
+            return
+
+        package_name = response.url[response.url.find('id=') + 3:]
+
+        data = {
+            'packagename': package_name,
+            'fetch': 'false',
+            'api_key': api_key
+        }
+
+        post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data).json()
+
+        # If a download URL is not sent back, we know that an error occurred
+        if 'url' not in post_data:
+            log.msg('< %s >' % response.url, level=log.ERROR)
+            return
+
+        item['url'] = response.url
+        item['file_urls'] = [post_data['url']]
+
+    # Logic for all other Spider objects
+    else:
+        item['url'] = response.meta['url']
+        item['file_urls'] = response.meta['file_urls']
 
     info_container = sel.xpath('//div[@class="info-container"]')
     item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]

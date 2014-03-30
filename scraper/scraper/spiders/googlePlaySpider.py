@@ -7,7 +7,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from scrapy.http import Request
 from scraper.items import ApkItem
-from play import parse_google
+from play import parse_app
 
 class GooglePlaySpider(CrawlSpider):
 	name = 'googleplay'
@@ -60,7 +60,7 @@ class GooglePlaySpider(CrawlSpider):
 				has_app = True
 				app_name = app.xpath('text()').extract()
 				app_url = app.xpath('@href').extract()
-				yield Request('https://play.google.com' + app_url[0], callback=self.parse_app)
+				yield Request('https://play.google.com' + app_url[0], meta={'come_from': self.name}, callback=parse_app)
 
 			if has_app:
 				m = re.match(r'(.*)\?start=(\d+)&num=24', response.url)
@@ -88,57 +88,9 @@ class GooglePlaySpider(CrawlSpider):
 		for app in apps:
 			has_app = True
 			app_url = app.xpath('@href').extract()
-			yield Request('https://play.google.com' + app_url[0], callback=self.parse_app)
+			yield Request('https://play.google.com' + app_url[0], meta={'come_from': self.name}, callback=parse_app)
 
 		if has_app:
 			yield Request(base_path + '&start=' + str(start_number) + '&num=24', callback=self.parse_search)
 
 		return
-
-	def parse_app(self, response):
-		sel = Selector(response)
-		price = sel.xpath('//meta[@itemprop="price"]/@content').extract()[0]
-
-		try:
-			if int(price) == 0:
-				package_name = response.url[response.url.find('id=') + 3:]
-				download_page = requests.get('http://apps.evozi.com/apk-downloader/')
-
-				var_key = re.search("data:\s+{packagename:\s+packagename,\s+([-\w]*):\s+[-\w]*,", download_page.text, re.MULTILINE).group(1)
-				var_name, var_value = re.search("var\s+fetched_desc = '';\r*\n*\s+var\s+(\w*)\s+=\s+\"([-\w]*)\";", download_page.text, re.MULTILINE).groups()
-				timestamp = re.search(", t: (\w*)", download_page.text, re.MULTILINE).group(1)
-
-				data = {
-					'packagename': package_name,
-					var_key: var_value,
-					't': timestamp,
-					'fetch': 'false'
-				}
-
-				post_data = requests.post('http://api.evozi.com/apk-downloader/download', data=data)
-				
-				yield Request(response.url, meta={'url': response.url, 'file_urls': [post_data.json()['url']]}, callback=parse_google)
-
-				# item = ApkItem()
-
-				# item['url'] = response.url
-				# item['file_urls'] = [post_data.json()['url']]
-
-				# info_container = sel.xpath('//div[@class="info-container"]')
-				# item['name'] = info_container.xpath('//div[@class="document-title"]/div/text()').extract()[0]
-				# item['developer'] = info_container.xpath('//div[@itemprop="author"]/a/span[@itemprop="name"]/text()').extract()[0]
-				# item['genre'] = info_container.xpath('//span[@itemprop="genre"]/text()').extract()[0]
-
-				# score_container = sel.xpath('//div[@class="score-container"]')
-				# item['score'] = score_container.xpath('//div[@class="score"]/text()').extract()[0]
-
-				# additional_information = sel.xpath('//div[@class="details-section metadata"]')
-				# item['date_published'] = additional_information.xpath('//div[@itemprop="datePublished"]/text()').extract()[0]
-				# item['file_size'] = additional_information.xpath('//div[@itemprop="fileSize"]/text()').extract()[0]
-				# item['num_downloads'] = additional_information.xpath('//div[@itemprop="numDownloads"]/text()').extract()[0]
-				# item['software_version'] = additional_information.xpath('//div[@itemprop="softwareVersion"]/text()').extract()[0]
-				# item['operating_systems'] = additional_information.xpath('//div[@itemprop="operatingSystems"]/text()').extract()[0]
-
-				# yield item
-		except ValueError:
-			log.msg('Not a free app: ' + response.url, log.INFO)
