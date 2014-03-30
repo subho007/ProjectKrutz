@@ -5,6 +5,24 @@ clear
 echo "The script starts now"
 echo
 
+if [ $(date +%u) -eq 1 ]
+then
+        echo "today is Monday"
+        #srapy scrape
+elif [ $(date +%u) -eq 2 ]
+then
+        echo "today is Tuesday"
+elif [ $(date +%u) -eq 3 ]
+then
+        echo "today is Wednesday"
+elif [ $(date +%u) -eq 4 ]
+then
+        echo "today is Thursday"
+elif [ $(date +%u) -eq 5 ]
+then
+        echo "today is Friday"
+fi
+
 pushd ./tools/stowaway/Stowaway-1.2.4
 
 cd ../
@@ -15,36 +33,31 @@ cd Stowaway-1.2.4
 FILES=../../testAndroidApps/*
 for f in $FILES
 do
-	APK="../apkOutput/"
-	OUTPUT="_output"
-	O_F=$APK${f#../../testAndroidApps/}
-	OUTPUT_FOLDER=${O_F%.apk}$OUTPUT
-	
-	echo "*************************************"
-	echo $f
-	echo $OUTPUT_FOLDER
-	pwd
-	echo "*************************************"
-	
-	mkdir $OUTPUT_FOLDER
-		
-	bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
+        APK="../apkOutput/"
+        OUTPUT="_output"
+        O_F=$APK${f#../../testAndroidApps/}
+              OUTPUT_FOLDER=${O_F%.apk}$OUTPUT
+
+        echo "*************************************"
+        echo $f
+        echo $OUTPUT_FOLDER
+        pwd
+        echo "*************************************"
+
+        mkdir $OUTPUT_FOLDER
+
+        bash ./stowaway.sh $f $OUTPUT_FOLDER&>../../../output.txt
 done
 
 popd
 
-#conn=sqlite3.connect('Evolution of Android Applications.sqlite')
-#c=$conn.cursor()
-#try:
-	#add the column to the databse if it doesn't exist
-#    c.execute('ALTER TABLE Evolution of Android Applications ADD COLUMN COLNew text;')
-#	c.execute('INSERT INTO Permissions (perm1, perm2, perm3) VALUES(?,?,?)', ('true','false','true'))
-	
-#except:
-#    pass # handle the error
-#$c.close()
+echo
+pushd ./scraper
+echo "Inserting into the database now"
+sqlite3 Evolution\ of\ Android\ Applications.sqlite  "INSERT INTO ApkInformation (Name,Version,Rating) VALUES ('ShannonsApp','1.0','5.0');"
+sqlite3 Evolution\ of\ Android\ Applications.sqlite "SELECT Rating FROM ApkInformation WHERE Name = 'ShannonsApp'"
+popd
 
-echo "Stowaway Complete"
 echo "Starting Androguard"
 
 pushd ./tools/androguard
@@ -52,10 +65,10 @@ pushd ./tools/androguard
 FILES=../testAndroidApps/*
 for f in $FILES
 do
-	echo "***********AndroRisk for $f******************"
-	./androrisk.py -m -i $f
-	echo "***********AndroAPKInfo for $f **************"
-	./androapkinfo.py -i $f
+        echo "***********AndroRisk for $f******************"
+        ./androrisk.py -m -i $f
+        echo "***********AndroAPKInfo for $f **************"
+        #./androapkinfo.py -i $f
 done
 
 popd
