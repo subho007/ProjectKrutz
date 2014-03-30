@@ -1,3 +1,4 @@
+from scrapy import log
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
@@ -18,7 +19,11 @@ class TeamApkSpider(CrawlSpider):
 
         next_page = sel.xpath('//a[@class="nextpostslink"]/@href').extract()
         
-        yield Request(next_page[0])
+        try:
+            yield Request(next_page[0])
+        except IndexError:
+            log.msg('Crawling last page, spider will close soon', level=log.INFO)
+            return
 
     # Parses pages for individual APK files
     def parse_page(self, response):
