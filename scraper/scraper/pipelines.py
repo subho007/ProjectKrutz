@@ -44,7 +44,8 @@ class SQLiteStorePipeline(object):
 # Names the downloaded file in the format APK-Name_Version.apk
 class APKFilesPipeline(FilesPipeline):
     def file_name(self, item):
-        return re.sub('\s+', '-', item['name'] + '_' + item['software_version'])
+        name = item['name'].replace('/', '_')
+        return re.sub('\s+', '-', name + '_' + item['software_version'])
 
     def get_media_requests(self, item, info):
         return [Request(x, meta={'file_name': self.file_name(item)}) for x in item.get(self.FILES_URLS_FIELD, [])]
@@ -55,5 +56,9 @@ class APKFilesPipeline(FilesPipeline):
         # For Google Play spider, which yields something along the lines of ".apk?h=syrPj2oViqBMGpbX5XEB7g&t=1396043020"
         if len(media_ext) > 4 and media_ext.startswith('.apk'):
             media_ext = media_ext[:4]
+
+        # Ignore any files that are not APK files
+        elif media_ext != '.apk':
+            raise DropItem('File is not an APK file: %s' % request.url)
 
         return 'full/%s%s' % (request.meta['file_name'], media_ext)
