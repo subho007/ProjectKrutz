@@ -8,11 +8,11 @@ ITEM_PIPELINES = {
 	'scraper.pipelines.APKFilesPipeline' : 800,
 }
 
-DOWNLOAD_DELAY = 0.25
-
 FILES_STORE = './downloads'
+
+DOWNLOAD_DELAY = 0.25
 
 COOKIES_ENABLED = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'apkSpider (+http://www.yourdomain.com)'
+# USER_AGENT = 'APK File Scraper (+https://github.com/amb8805/ProjectKrutz)'
