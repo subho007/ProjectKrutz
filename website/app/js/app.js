@@ -9,16 +9,16 @@ androidApp.config(['$routeProvider',
 		$routeProvider
 			.when('/', {
 				templateUrl	: 'partials/home.html',
-				controller	: 'mainController'
+				controller	: 'MainController'
 			})
 
 			.when('/data', {
 				templateUrl	: 'partials/data.html',
-				controller	: 'dataController'
+				controller	: 'DataController'
 			})
 
 			.when('/about', {
 				templateUrl	: 'partials/about.html',
-				controller	: 'aboutController'
+				controller	: 'AboutController'
 			});
 	}]);
