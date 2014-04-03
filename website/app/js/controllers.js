@@ -24,11 +24,11 @@ androidControllers.controller('NavController', function($scope, $location) {
 });
 
 androidControllers.controller('MainController', function($scope) {
-	$scope.message = 'Home';
+
 });
 
 androidControllers.controller('DataController', function($scope) {
-	$scope.message = 'Data';
+	
 });
 
 androidControllers.controller('AboutController', function($scope) {
