@@ -1,5 +1,18 @@
 <div class="container">
 	<div class="row">
+		<div class="col-lg-10">
+			<ui-select ng-model="format.selected" theme="bootstrap">
+		    	<match placeholder="Select download format...">{{ $select.selected }}</match>
+		    	<choices repeat="item in formats | filter: $select.search">
+		      		<div ng-bind-html="item | highlight: $select.search"></div>
+		    	</choices>
+		  	</ui-select>
+	  	</div>
+	  	<div class="col-lg-2">
+	  		<button type="button" class="btn btn-default" ng-model="format.selected">Download</button>
+	  	</div>
+	  </div>
+	<div class="row">
 		<div class="col-lg-12">
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -27,6 +40,11 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+		    <pagination boundary-links="true" total-items="totalItems" page="currentPage" class="pagination" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
 		</div>
 	</div>
 </div>

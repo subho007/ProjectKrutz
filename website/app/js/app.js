@@ -1,5 +1,7 @@
 var androidApp = angular.module('androidApp', [
 	'ui.bootstrap',
+	'ui.select',
+	'ngSanitize',
 	'ngRoute',
 	'androidControllers'
 ]);
