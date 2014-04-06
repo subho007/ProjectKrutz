@@ -43,12 +43,6 @@ angular.module('androidApp.controllers', []).
         $scope.rows = 'Error!';
     });
 
-    // Pagination
-    $scope.totalItems = 1;
-    $scope.currentPage = 1;
-    $scope.itemsPerPage = 50;
-    $scope.maxSize = 5;
-
     // Download format dropdown
     $scope.disabled = undefined;
 
@@ -70,6 +64,18 @@ angular.module('androidApp.controllers', []).
       'JSON',
       'CSV'
     ];
+
+    // Pagination
+    $scope.totalItems = 1;
+    $scope.currentPage = 1;
+    $scope.itemsPerPage = 25;
+    $scope.maxSize = 5;
+
+    $scope.getPaginatedRows = function() {
+      if ($scope.rows) {
+        return $scope.rows.slice(($scope.currentPage - 1) * $scope.itemsPerPage, ($scope.itemsPerPage * $scope.currentPage) - 1);
+      }
+    };
 
   }).
   controller('AboutController', function ($scope) {

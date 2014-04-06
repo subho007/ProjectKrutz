@@ -22,7 +22,7 @@ div.container
 							th Release Date
 							th File Size
 					tbody
-						tr(ng-repeat='row in rows.slice((currentPage - 1) * itemsPerPage, itemsPerPage * currentPage - 1)')
+						tr(ng-repeat='row in getPaginatedRows()')
 							td {{ row.Name }}
 							td {{ row.Version }}
 							td {{ row.Developer }}
@@ -33,4 +33,4 @@ div.container
 
 	div.row
 		div.col-lg-12.text-center
-			pagination.pagination(boundary-links='true', page='currentPage', total-items='totalItems', items-per-page='itemsPerPage', max-size='maxSize', previous-text!='&lsaquo;', next-text!='&rsaquo;', first-text!='&laquo;', last-text!='&raquo;', rotate='false')
+			pagination.pagination(boundary-links='true', page='currentPage', total-items='totalItems', items-per-page='itemsPerPage', max-size='maxSize', previous-text!='&lsaquo;', next-text!='&rsaquo;', first-text!='&laquo;', last-text!='&raquo;', rotate='false', on-select-page='pageChanged(page)')
