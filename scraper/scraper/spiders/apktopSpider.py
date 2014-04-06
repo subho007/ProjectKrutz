@@ -16,9 +16,7 @@ class APKTOPSpider(CrawlSpider):
         for url in apk_page_urls:
             yield Request(url, callback=self.parse_page)
 
-        # next_page = sel.xpath('//a[@class="next"]/@href').extract()
-
-        next_page = []
+        next_page = sel.xpath('//a[@class="next"]/@href').extract()
         
         try:
             yield Request(next_page[0])

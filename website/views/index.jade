@@ -1,0 +1,35 @@
+extends layout
+
+block body
+  div(ng-controller='AppController')
+    nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+      div.container
+        div.navbar-header
+          button.navbar-toggle(type='button', ng-click='isCollapsed = !isCollapsed')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Evolution of Android Applications
+
+        div.collapse.navbar-collapse(ng-class='isCollapsed ? "collapse" : "in"')
+          ul.nav.navbar-nav.navbar-right
+            li(ng-class='getClass("/")')
+              a(href='#/') Home
+            li(ng-class='getClass("/data")')
+              a(href='#/data') Data
+            li(ng-class='getClass("/about")')
+              a(href='#/about') About
+
+    div(ng-view)
+
+  script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-route.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-sanitize.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js')
+  script(src='js/select.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
