@@ -1,0 +1,36 @@
+div.container
+	div.row
+		div.col-lg-10
+			ui-select(ng-model='format.selected', theme='bootstrap')
+				match(placeholder='Select download format...') {{ $select.selected }}
+				choices(repeat='item in formats | filter: $select.search')
+					div(ng-bind-html='item | highlight: $select.search')
+		div.col-lg-2
+			button.btn.btn-primary(type='button', ng-model='format.selected') Download
+
+	div.row
+		div.col-lg-12
+			div.table-responsive
+				table.table.table-hover
+					thead
+						tr
+							th Name
+							th Version
+							th Developer
+							th Genre
+							th User Rating
+							th Release Date
+							th File Size
+					tbody
+						tr(ng-repeat='row in getPaginatedRows()')
+							td {{ row.Name }}
+							td {{ row.Version }}
+							td {{ row.Developer }}
+							td {{ row.Genre }}
+							td {{ row.Rating }}
+							td {{ row.DatePublished }}
+							td {{ row.FileSize }}
+
+	div.row
+		div.col-lg-12.text-center
+			pagination.pagination(boundary-links='true', page='currentPage', total-items='totalItems', items-per-page='itemsPerPage', max-size='maxSize', previous-text!='&lsaquo;', next-text!='&rsaquo;', first-text!='&laquo;', last-text!='&raquo;', rotate='false', on-select-page='pageChanged(page)')

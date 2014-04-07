@@ -11,7 +11,7 @@ from scraper.items import ApkItem
 
 # Stores the APK information in the database
 class SQLiteStorePipeline(object):
-    filename = 'Evolution of Android Applications.sqlite'
+    filename = '../Evolution of Android Applications.sqlite'
     
     def __init__(self):
         self.conn = None
@@ -24,7 +24,7 @@ class SQLiteStorePipeline(object):
     # into the database.
     def process_item(self, item, spider):
         try:
-            self.conn.execute('INSERT INTO ApkInformation (Name, Version, Rating, DatePublished, FileSize, NumberOfDownloads, URL, Genre, OSSupported) VALUES(?,?,?,?,?,?,?,?,?)', (item['name'], item['software_version'],item['score'], item['date_published'], item['file_size'], item['num_downloads'], item['url'], item['genre'], item['operating_systems']))
+            self.conn.execute('INSERT INTO ApkInformation (Name, Version, Rating, DatePublished, FileSize, NumberOfDownloads, URL, Genre, OSSupported, Developer) VALUES(?,?,?,?,?,?,?,?,?,?)', (item['name'], item['software_version'],item['score'], item['date_published'], item['file_size'], item['num_downloads'], item['url'], item['genre'], item['operating_systems'], item['developer']))
             return item
         except Exception as e:
             raise DropItem('%s <%s>' % (e.message, item['url']))
